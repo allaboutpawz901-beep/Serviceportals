@@ -1,391 +1,199 @@
 'use client';
 
-import React, { useState } from 'react';
-import { 
-  DollarSign, 
-  Tag, 
-  Settings, 
-  Percent, 
-  Scissors, 
-  Sparkles, 
-  Clock, 
-  HelpCircle, 
-  RefreshCw, 
-  Download, 
-  Lock,
-  Plus
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { DollarSign, Tag, Clock, Plus, Save, CheckCircle2, Percent, Scissors } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import type { SystemSettings } from '@/lib/settings-types';
 
 interface ScreenProps {
   onNavigateScreen?: (screenId: string) => void;
   selectedLocation?: string;
   onSelectLocation?: (loc: string) => void;
+  systemSettings?: SystemSettings;
+  saveSettingsToDb?: (updates: Partial<SystemSettings>) => void;
+}
+
+interface ServiceItem {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  duration: number;
+  description: string;
 }
 
 export const ServicesPricingMatrixScreen: React.FC<ScreenProps> = ({
-  onNavigateScreen,
-  selectedLocation,
-  onSelectLocation,
+  systemSettings,
+  saveSettingsToDb,
 }) => {
-  const [toastMsg, setToastMsg] = useState<string | null>(null);
-  const [sizeTier, setSizeTier] = useState<'toy' | 'small' | 'medium' | 'large' | 'giant'>('medium');
-  
-  const [services, setServices] = useState([
-    { id: 'bath-brush', name: 'Bath & Brush Out', category: 'STANDARD', dur: '45-60 min', toy: '45.00', small: '55.00', medium: '65.00', large: '80.00', giant: '110.00' },
-    { id: 'full-groom', name: 'Full Style & Precision Haircut', category: 'PREMIUM', dur: '90-120 min', toy: '75.00', small: '85.00', medium: '95.00', large: '115.00', giant: '150.00' },
-    { id: 'dematting-tx', name: 'Specialty Dematting & Fur Prep', category: 'THERAPY', dur: '30-45 min', toy: '35.00', small: '40.00', medium: '50.00', large: '65.00', giant: '85.00' },
-    { id: 'deshed-ultra', name: 'Furminator Deshedding Therapy', category: 'THERAPY', dur: '45 min', toy: '30.00', small: '35.00', medium: '45.00', large: '55.00', giant: '75.00' },
-    { id: 'puppy-intro', name: 'Puppy Socialization & First Trim', category: 'STANDARD', dur: '45 min', toy: '40.00', small: '45.00', medium: '—', large: '—', giant: '—' },
+  const [form, setForm] = useState<Record<string, any>>({});
+  const [saved, setSaved] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [showAddService, setShowAddService] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [services, setServices] = useState<ServiceItem[]>([
+    { id: '1', name: 'Full Groom — Small', category: 'Full Groom', price: 65, duration: 90, description: 'Bath, blow dry, trim, nails, ears' },
+    { id: '2', name: 'Full Groom — Medium', category: 'Full Groom', price: 85, duration: 120, description: 'Bath, blow dry, trim, nails, ears' },
+    { id: '3', name: 'Full Groom — Large', category: 'Full Groom', price: 95, duration: 150, description: 'Bath, blow dry, trim, nails, ears' },
+    { id: '4', name: 'Bath & Brush — Small', category: 'Bath & Brush', price: 35, duration: 45, description: 'Bath, blow dry, brush out' },
+    { id: '5', name: 'Bath & Brush — Medium', category: 'Bath & Brush', price: 45, duration: 60, description: 'Bath, blow dry, brush out' },
+    { id: '6', name: 'Nail Trim Only', category: 'Add-on', price: 15, duration: 15, description: 'Nail clipping and filing' },
   ]);
 
-  const [addons, setAddons] = useState([
-    { id: 'blueberry-facial', name: 'Blueberry Revitalizing Facial', price: '14.00', category: 'COSMETIC', opt: 'Auto-applied to VIP Package' },
-    { id: 'teeth-brushing', name: 'Dental Enzymes & Teeth Brushing', price: '12.00', category: 'WELLNESS', opt: 'Includes dental foam' },
-    { id: 'nail-grinding', name: 'Nail Grinding & Dremel Finish', price: '18.00', category: 'STANDARD', opt: 'Upgrade from standard clip' },
-    { id: 'gland-expression', name: 'Anal Gland Manual Expression', price: '15.00', category: 'WELLNESS', opt: 'Hygienic prep' },
-    { id: 'flea-tick-dip', name: 'Medicated Flea & Tick Botanical Bath', price: '25.00', category: 'THERAPY', opt: 'Requires 10-min soak' },
-  ]);
+  // New service form state
+  const [newName, setNewName] = useState('');
+  const [newCategory, setNewCategory] = useState('Full Groom');
+  const [newPrice, setNewPrice] = useState('');
+  const [newDuration, setNewDuration] = useState('');
+  const [newDesc, setNewDesc] = useState('');
 
-  const showToast = (msg: string) => {
-    setToastMsg(msg);
-    setTimeout(() => setToastMsg(null), 3500);
+  useEffect(() => {
+    if (systemSettings) {
+      setForm(systemSettings as any);
+      setLoading(false);
+    }
+  }, [systemSettings]);
+
+  const update = (key: string, value: any) => setForm(prev => ({ ...prev, [key]: value }));
+  const handleSave = () => { saveSettingsToDb?.(form); setSaved(true); setTimeout(() => setSaved(false), 3000); };
+
+  const handleAddService = () => {
+    if (!newName || !newPrice) return;
+    setServices(prev => [...prev, { id: `svc-${Date.now()}`, name: newName, category: newCategory, price: parseFloat(newPrice), duration: parseInt(newDuration) || 60, description: newDesc }]);
+    setShowAddService(false);
+    setNewName(''); setNewPrice(''); setNewDuration(''); setNewDesc('');
   };
 
-  const handlePriceChange = (serviceId: string, sizeField: string, val: string) => {
-    setServices(prev => prev.map(s => {
-      if (s.id === serviceId) {
-        return { ...s, [sizeField]: val };
-      }
-      return s;
-    }));
-    showToast('PRICE POINT CELL MUTATED - READY TO PERSIST');
-  };
+  const categories = ['all', 'Full Groom', 'Bath & Brush', 'Add-on', 'A La Carte'];
+  const filtered = activeCategory === 'all' ? services : services.filter(s => s.category === activeCategory);
+
+  if (loading) return <div className="p-8 text-center text-muted-foreground text-[13px]">Loading services & pricing...</div>;
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
-      {/* Toast */}
-      {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
-          <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
-          <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
+    <div className="p-6 space-y-6 font-bar">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-xl font-semibold tracking-tight text-foreground">Services & Pricing Matrix</h2>
+          <p className="text-[13px] text-muted-foreground mt-1">Core grooming tiers, breed weight surcharges, and recurring membership packages.</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <button onClick={() => setShowAddService(!showAddService)} className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background hover:bg-accent h-9 px-3.5 text-[13px] font-medium cursor-pointer">
+            <Plus className="size-4" /> Add New Service
+          </button>
+          <button onClick={handleSave} className={cn('inline-flex items-center gap-1.5 rounded-md h-9 px-3.5 text-[13px] font-medium shadow-card transition-colors cursor-pointer', saved ? 'bg-success text-success-foreground' : 'bg-primary text-primary-foreground hover:bg-primary/90')}>
+            {saved ? (<><CheckCircle2 className="size-4" /> Saved!</>) : (<><Save className="size-4" /> Save</>)}
+          </button>
+        </div>
+      </div>
+
+      {/* Add Service Form */}
+      {showAddService && (
+        <div className="bg-card border border-border rounded-xl shadow-card p-5 space-y-4">
+          <h3 className="text-[15px] font-semibold text-foreground">Add New Service</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Service Name *</label>
+              <div className="relative">
+                <Tag className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="Full Groom — Extra Large" className="w-full pl-9 pr-3 h-9 bg-background border border-input rounded-md text-[13px] focus:outline-none focus:ring-2 focus:ring-ring" />
+              </div>
+            </div>
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Category</label>
+              <select value={newCategory} onChange={(e) => setNewCategory(e.target.value)} className="w-full h-9 bg-background border border-input rounded-md px-3 text-[13px] cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring">
+                <option>Full Groom</option>
+                <option>Bath & Brush</option>
+                <option>Add-on</option>
+                <option>A La Carte</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Price ($)</label>
+              <div className="relative">
+                <DollarSign className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <input type="number" step="0.01" value={newPrice} onChange={(e) => setNewPrice(e.target.value)} placeholder="125.00" className="w-full pl-7 pr-3 h-9 bg-background border border-input rounded-md text-[13px] tabular-nums focus:outline-none focus:ring-2 focus:ring-ring" />
+              </div>
+            </div>
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Duration (minutes)</label>
+              <div className="relative">
+                <Clock className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <input type="number" value={newDuration} onChange={(e) => setNewDuration(e.target.value)} placeholder="120" className="w-full pl-9 pr-3 h-9 bg-background border border-input rounded-md text-[13px] tabular-nums focus:outline-none focus:ring-2 focus:ring-ring" />
+              </div>
+            </div>
+            <div className="md:col-span-2">
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Description</label>
+              <input type="text" value={newDesc} onChange={(e) => setNewDesc(e.target.value)} placeholder="Bath, blow dry, trim, nails, ears" className="w-full h-9 bg-background border border-input rounded-md px-3 text-[13px] focus:outline-none focus:ring-2 focus:ring-ring" />
+            </div>
+          </div>
+          <div className="flex justify-end gap-2">
+            <button onClick={() => setShowAddService(false)} className="inline-flex items-center h-9 px-3.5 rounded-md border border-border bg-background hover:bg-accent text-foreground text-[13px] font-medium cursor-pointer">Cancel</button>
+            <button onClick={handleAddService} className="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 text-[13px] font-medium shadow-card cursor-pointer"><Plus className="size-4" /> Add Service</button>
+          </div>
         </div>
       )}
 
-      {/* SECURITY CLEARANCE BAR */}
-      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
-        <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-destructive"></span>
-          <span className="text-destructive font-bold tracking-tight">RESTRICTED SERVICES LEDGER</span>
-          <span className="text-muted-foreground">{"//"}</span>
-          <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
-          <span className="text-muted-foreground">{"//"}</span>
-          <span className="text-muted-foreground/50">NODE: TX-PROD-PRICING-01</span>
-        </div>
-        <div className="flex items-center gap-4 text-[10px] tabular-nums text-muted-foreground/70">
-          <span>CATALOG REVISION: v4.2.1-COMMIT</span>
-          <span>CURRENCY: USD</span>
-        </div>
+      {/* Category filters */}
+      <div className="flex items-center gap-2 flex-wrap">
+        {categories.map((cat) => (
+          <button key={cat} onClick={() => setActiveCategory(cat)} className={cn('rounded-full px-3 py-1.5 text-[12px] font-medium border cursor-pointer transition-colors capitalize', activeCategory === cat ? 'bg-primary text-primary-foreground border-primary' : 'bg-background border-border text-muted-foreground hover:bg-accent')}>{cat === 'all' ? 'All' : cat}</button>
+        ))}
       </div>
 
-      {/* BREADCRUMB & EXECUTIVE TOOLBAR */}
-      <div className="w-full bg-card border-b border-border p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-2 tabular-nums text-[10px] text-muted-foreground">
-            <span>ADMIN SETTINGS</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="text-foreground font-bold">SERVICES &amp; PRICING MATRIX</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">PRICING MATRIX</span>
-          </div>
-          <div className="flex items-baseline gap-2">
-            <h1 className="font-bold text-lg md:text-xl tracking-tight uppercase text-foreground">SERVICES, ADD-ONS &amp; PRICING MATRIX</h1>
-            <span className="tabular-nums text-[11px] text-muted-foreground">{"// SCALE: CANINE MASS INDEX"}</span>
-          </div>
-        </div>
-        
-        {/* ACTION BUTTONS */}
-        <div className="flex flex-wrap items-center gap-2">
-          <button 
-            onClick={() => showToast('NEW BASE SERVICE SKU CREATED')}
-            className="h-8 px-3 bg-card border border-border text-foreground tabular-nums text-[10px] uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1.5 cursor-pointer"
-          >
-            <Plus className="w-3.5 h-3.5" />
-            + CREATE BASE SERVICE SKU
-          </button>
-          <button 
-            onClick={() => showToast('SERVICE MATRIX EXPORTED IN JSON')}
-            className="h-8 px-3 bg-card border border-border text-foreground tabular-nums text-[10px] uppercase hover:bg-muted/40 transition-none flex items-center gap-1.5 cursor-pointer"
-          >
-            <Download className="w-3.5 h-3.5" />
-            EXPORT MATRIX JSON
-          </button>
-          <button 
-            onClick={() => showToast('PRICING RULES SAVED TO POSTGRES SCHEMAS')}
-            className="h-8 px-3 bg-primary text-primary-foreground border border-border tabular-nums text-[10px] uppercase hover:bg-muted transition-none flex items-center gap-1.5 cursor-pointer"
-          >
-            SAVE PRICING POLICY
-          </button>
-        </div>
-      </div>
-
-      {/* RESTRICTED SETTINGS SUB-NAV TAB MATRIX */}
-      <div className="w-full bg-muted/40 border-b border-border overflow-x-auto">
-        <div className="flex items-stretch min-w-max text-[11px] tabular-nums">
-          <button onClick={() => onNavigateScreen?.('org-multiloc')} className="px-4 py-2 border-r border-border/20 hover:bg-card text-muted-foreground cursor-pointer">
-            01 LOCATIONS &amp; SALONS
-          </button>
-          <button onClick={() => onNavigateScreen?.('users-staff')} className="px-4 py-2 border-r border-border/20 hover:bg-card text-muted-foreground cursor-pointer">
-            02 USERS, STAFF &amp; ROLES
-          </button>
-          <button onClick={() => onNavigateScreen?.('booking-rules')} className="px-4 py-2 border-r border-border/20 hover:bg-card text-muted-foreground cursor-pointer">
-            03 BOOKING RULES &amp; POLICIES
-          </button>
-          <button onClick={() => onNavigateScreen?.('revenue-stripe')} className="px-4 py-2 border-r border-border/20 hover:bg-card text-muted-foreground cursor-pointer">
-            04 REVENUE &amp; STRIPE GATEWAY
-          </button>
-          <button onClick={() => onNavigateScreen?.('system-telemetry')} className="px-4 py-2 border-r border-border/20 hover:bg-card text-muted-foreground cursor-pointer">
-            05 SYSTEM HEALTH &amp; TELEMETRY
-          </button>
-          <div className="px-4 py-2 bg-primary text-primary-foreground border-r border-border flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-card inline-block"></span>
-            <span>06 SERVICES &amp; PRICING MATRIX</span>
-            <span className="text-[9px] px-1 bg-card text-foreground uppercase font-bold ml-1">[ACTIVE]</span>
-          </div>
-          <button onClick={() => onNavigateScreen?.('analytics-reporting')} className="px-4 py-2 border-r border-border/20 hover:bg-card text-muted-foreground cursor-pointer">
-            07 ANALYTICS &amp; REPORTING
-          </button>
-          <button onClick={() => onNavigateScreen?.('cms-wizard')} className="px-4 py-2 text-muted-foreground hover:bg-card cursor-pointer">
-            08 CMS &amp; BOOKING WIZARD
-          </button>
-        </div>
-      </div>
-
-      {/* TWO COLUMN SERVICE MATRIX CONTENT */}
-      <div className="p-6 grid grid-cols-1 xl:grid-cols-12 gap-6">
-        
-        {/* COLUMN 1-8: MAIN PRICING TABLE BY CANINE BREED MASS SIZES */}
-        <div className="xl:col-span-8 bg-card border-2 border-border flex flex-col shadow-card-md">
-          <div className="px-4 py-2.5  border-border bg-muted/40 flex items-center justify-between tabular-nums">
-            <div className="flex items-center gap-2">
-              <Scissors className="w-4 h-4 text-foreground" />
-              <span className="font-bold text-xs uppercase text-foreground">SEC:A // BASE SERVICES PRICING SCALE BY MASS BRACKET</span>
-            </div>
-            <span className="text-[10px] text-muted-foreground">MANDATORY RE-CALCULATION ENG: ACTIVE</span>
-          </div>
-
-          <div className="p-4 bg-muted/30 border-b border-border tabular-nums text-xs leading-relaxed text-muted-foreground">
-            Base services are dynamic. The Booking Wizard prompts owners for pet weight, lookup table maps the breed to the corresponding Mass Bracket, and locks in the precise rate. Cells below can be directly adjusted.
-          </div>
-
-          <div className="overflow-x-auto w-full">
-            <table className="w-full text-left border-collapse tabular-nums text-xs">
-              <thead>
-                <tr className="bg-muted/40  border-border text-[10px] uppercase text-foreground">
-                  <th className="p-3 w-1/3 border-r border-border font-bold">SERVICE CODE / BASE DESIGNATION</th>
-                  <th className="p-3 border-r border-border text-center font-bold">TOY BRACKET<span className="block text-[9px] text-muted-foreground font-normal">&lt; 10 LBS</span></th>
-                  <th className="p-3 border-r border-border text-center font-bold">SMALL BRACKET<span className="block text-[9px] text-muted-foreground font-normal">10 - 25 LBS</span></th>
-                  <th className="p-3 border-r border-border text-center font-bold">MEDIUM BRACKET<span className="block text-[9px] text-muted-foreground font-normal">25 - 50 LBS</span></th>
-                  <th className="p-3 border-r border-border text-center font-bold">LARGE BRACKET<span className="block text-[9px] text-muted-foreground font-normal">50 - 90 LBS</span></th>
-                  <th className="p-3 text-center font-bold">GIANT BRACKET<span className="block text-[9px] text-muted-foreground font-normal">&gt; 90 LBS</span></th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border bg-card">
-                {services.map((s) => (
-                  <tr key={s.id} className="hover:bg-muted/30">
-                    <td className="p-3 border-r border-border">
-                      <div className="flex flex-col">
-                        <span className="font-bold text-foreground text-xs uppercase">{s.name}</span>
-                        <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground mt-1">
-                          <span className="bg-muted/40 border border-border/20 px-1 text-[9px] font-bold text-foreground">{s.category}</span>
-                          <span>• Duration: {s.dur}</span>
-                        </div>
-                      </div>
-                    </td>
-                    
-                    {/* TOY */}
-                    <td className="p-3 border-r border-border text-center">
-                      {s.toy === '—' ? (
-                        <span className="text-muted-foreground/70 font-bold">N/A</span>
-                      ) : (
-                        <div className="flex items-center justify-center gap-1">
-                          <span className="text-muted-foreground/70 text-[10px]">$</span>
-                          <input 
-                            type="text" 
-                            value={s.toy} 
-                            onChange={(e) => handlePriceChange(s.id, 'toy', e.target.value)}
-                            className="w-14 border border-border/30 p-1 text-center font-bold tabular-nums focus:outline-none focus:border-border" 
-                          />
-                        </div>
-                      )}
-                    </td>
-
-                    {/* SMALL */}
-                    <td className="p-3 border-r border-border text-center">
-                      {s.small === '—' ? (
-                        <span className="text-muted-foreground/70 font-bold">N/A</span>
-                      ) : (
-                        <div className="flex items-center justify-center gap-1">
-                          <span className="text-muted-foreground/70 text-[10px]">$</span>
-                          <input 
-                            type="text" 
-                            value={s.small} 
-                            onChange={(e) => handlePriceChange(s.id, 'small', e.target.value)}
-                            className="w-14 border border-border/30 p-1 text-center font-bold tabular-nums focus:outline-none focus:border-border" 
-                          />
-                        </div>
-                      )}
-                    </td>
-
-                    {/* MEDIUM */}
-                    <td className="p-3 border-r border-border text-center">
-                      {s.medium === '—' ? (
-                        <span className="text-muted-foreground/70 font-bold">N/A</span>
-                      ) : (
-                        <div className="flex items-center justify-center gap-1">
-                          <span className="text-muted-foreground/70 text-[10px]">$</span>
-                          <input 
-                            type="text" 
-                            value={s.medium} 
-                            onChange={(e) => handlePriceChange(s.id, 'medium', e.target.value)}
-                            className="w-14 border border-border/30 p-1 text-center font-bold tabular-nums focus:outline-none focus:border-border" 
-                          />
-                        </div>
-                      )}
-                    </td>
-
-                    {/* LARGE */}
-                    <td className="p-3 border-r border-border text-center">
-                      {s.large === '—' ? (
-                        <span className="text-muted-foreground/70 font-bold">N/A</span>
-                      ) : (
-                        <div className="flex items-center justify-center gap-1">
-                          <span className="text-muted-foreground/70 text-[10px]">$</span>
-                          <input 
-                            type="text" 
-                            value={s.large} 
-                            onChange={(e) => handlePriceChange(s.id, 'large', e.target.value)}
-                            className="w-14 border border-border/30 p-1 text-center font-bold tabular-nums focus:outline-none focus:border-border" 
-                          />
-                        </div>
-                      )}
-                    </td>
-
-                    {/* GIANT */}
-                    <td className="p-3 text-center">
-                      {s.giant === '—' ? (
-                        <span className="text-muted-foreground/70 font-bold">N/A</span>
-                      ) : (
-                        <div className="flex items-center justify-center gap-1">
-                          <span className="text-muted-foreground/70 text-[10px]">$</span>
-                          <input 
-                            type="text" 
-                            value={s.giant} 
-                            onChange={(e) => handlePriceChange(s.id, 'giant', e.target.value)}
-                            className="w-14 border border-border/30 p-1 text-center font-bold tabular-nums focus:outline-none focus:border-border" 
-                          />
-                        </div>
-                      )}
-                    </td>
-
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="p-4 bg-muted/40 border-t border-border flex flex-wrap items-center justify-between tabular-nums text-[11px] gap-2">
-            <span>• TOY BRACKET: CHIHUAHUA, POMERANIAN // GIANT BRACKET: GREAT DANE, MASTIFF</span>
-            <button onClick={() => showToast('MASS BRACKET MATRIX EDITOR OPENED')} className="border border-border bg-card px-2.5 py-1 text-xs hover:bg-muted/40 font-bold uppercase cursor-pointer">
-              [EDIT MASS BRACKET ASSIGNMENTS]
-            </button>
-          </div>
-        </div>
-
-        {/* COLUMN 9-12: SALON ADD-ONS & RETAIL UPSELLS LIST */}
-        <div className="xl:col-span-4 bg-card border-2 border-border flex flex-col shadow-card-md">
-          <div className="px-4 py-2.5  border-border bg-muted/40 flex items-center justify-between tabular-nums">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-foreground" />
-              <span className="font-bold text-xs uppercase text-foreground">SEC:B // CO-BOOKING ADD-ONS CATALOG</span>
-            </div>
-            <button onClick={() => showToast('ADD-ON CREATOR INITIALIZED')} className="text-[10px] font-bold border border-border px-1.5 py-0.5 bg-card uppercase hover:bg-black hover:text-white cursor-pointer">+ ADD</button>
-          </div>
-
-          <div className="divide-y divide-border tabular-nums text-xs">
-            {addons.map((a) => (
-              <div key={a.id} className="p-3 bg-card flex flex-col justify-between hover:bg-muted/30">
-                <div className="flex items-start justify-between gap-2">
-                  <div className="space-y-0.5">
-                    <span className="font-bold text-foreground uppercase text-xs">{a.name}</span>
-                    <span className="block text-[10px] text-muted-foreground uppercase">{a.category} {"//"} {a.opt}</span>
-                  </div>
-                  <div className="flex items-center gap-1 shrink-0">
-                    <span className="text-muted-foreground/70 text-[11px]">$</span>
-                    <input 
-                      type="text" 
-                      value={a.price} 
-                      onChange={(e) => {
-                        setAddons(prev => prev.map(item => item.id === a.id ? { ...item, price: e.target.value } : item));
-                        showToast('ADD-ON PRICE UPDATED');
-                      }}
-                      className="w-14 border border-border/30 p-1 text-center font-bold text-foreground bg-muted/30 focus:outline-none focus:bg-card focus:border-border" 
-                    />
-                  </div>
-                </div>
-              </div>
+      {/* Services table */}
+      <div className="bg-card border border-border rounded-xl shadow-card overflow-hidden">
+        <table className="w-full text-left text-[13px] text-foreground">
+          <thead>
+            <tr className="bg-muted/40 border-b border-border text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+              <th className="p-3 font-semibold">Service</th>
+              <th className="p-3 font-semibold">Category</th>
+              <th className="p-3 text-right font-semibold">Price</th>
+              <th className="p-3 font-semibold">Duration</th>
+              <th className="p-3 font-semibold">Description</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-border">
+            {filtered.map((svc) => (
+              <tr key={svc.id} className="hover:bg-accent/50 transition-colors">
+                <td className="p-3 font-medium text-foreground">{svc.name}</td>
+                <td className="p-3"><span className="inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-muted text-muted-foreground border border-border">{svc.category}</span></td>
+                <td className="p-3 text-right font-semibold tabular-nums text-primary">${svc.price.toFixed(2)}</td>
+                <td className="p-3 text-muted-foreground tabular-nums">{svc.duration} min</td>
+                <td className="p-3 text-muted-foreground text-[12px]">{svc.description}</td>
+              </tr>
             ))}
-          </div>
-
-          <div className="mt-auto p-3 border-t border-border bg-muted/30 tabular-nums text-[11px]">
-            <div className="flex items-center justify-between mb-1 text-[10px] text-muted-foreground font-bold uppercase">
-              <span>SALON-OWNED APPOINTMENT EXTRAS</span>
-              <span>COUNT: 5</span>
-            </div>
-            <p className="text-muted-foreground font-sans leading-tight">These addons populate the &apos;Add-ons&apos; stage of the Booking Wizard, increasing average ticket size by 24.8% blended.</p>
-          </div>
-        </div>
-
+          </tbody>
+        </table>
       </div>
 
-      {/* SUPER ADMIN SECURITY LOCK FOOTER / HARDWARE ATTESTATION */}
-      <div className="w-full bg-muted/30 border-t border-border border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-xs">
-        <div className="flex items-center gap-3">
-          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-bold">
-            <Lock className="w-3.5 h-3.5" />
-          </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-foreground uppercase">
-              <span>SUPER_ADMIN LEVEL 0 // SERVICE CORE MATRIX ACCESS</span>
-              <span className="border border-border px-1.5 bg-card text-[9px] font-bold">[YUBIKEY_FIDO2_ACTIVE]</span>
+      {/* Pricing Policies */}
+      <div className="bg-card border border-border rounded-xl shadow-card p-6">
+        <h3 className="text-[15px] font-semibold text-foreground mb-4">Services & Pricing Policies</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div>
+            <label className="text-[12px] font-medium text-muted-foreground block mb-1">Weekend Surcharge ($)</label>
+            <div className="relative">
+              <DollarSign className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <input type="number" step="0.01" value={form.weekend_surcharge || ''} onChange={(e) => update('weekend_surcharge', parseFloat(e.target.value))} placeholder="10.00" className="w-full pl-7 pr-3 h-9 bg-background border border-input rounded-md text-[13px] tabular-nums focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
-            <span className="text-[11px] text-muted-foreground">
-              Changes to core pricing metrics, commission distributions, or Stripe merchant catalog mappings require dual-signature multi-factor ratification.
-            </span>
+            <p className="text-[11px] text-muted-foreground mt-1">Additional fee for Saturday/Sunday appointments</p>
           </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <span className="text-muted-foreground text-[10px] uppercase">AUDIT TRAIL:</span>
-          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-bold tabular-nums">PRICE_REF #TX-48210-2025</span>
-          <button 
-            onClick={() => showToast('SUPER_ADMIN ENCLAVE SESSION TERMINATED')}
-            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-bold hover:bg-muted transition-none cursor-pointer"
-          >
-            TERMINATE SESSION
-          </button>
-        </div>
-      </div>
-
-      {/* MONOCHROME TERMINAL STATUS LINE */}
-      <div className="w-full bg-primary text-primary-foreground px-4 py-1.5 flex items-center justify-between tabular-nums text-[11px]">
-        <div className="flex items-center gap-2">
-          <span>&gt; CATALOG_DAEMON: ONLINE</span>
-          <span className="inline-block w-[7px] h-[14px] bg-card animate-pulse"></span>
-        </div>
-        <div className="flex items-center gap-4 text-muted-foreground/70">
-          <span>CATALOG_ID: CTL-4920</span>
-          <span>CURRENCY: USD</span>
-          <span>DAWG-OS CATALOG ENGINE v4.2</span>
+          <div>
+            <label className="text-[12px] font-medium text-muted-foreground block mb-1">Severe Matting Fee ($)</label>
+            <div className="relative">
+              <DollarSign className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <input type="number" step="0.01" value={form.matting_fee || ''} onChange={(e) => update('matting_fee', parseFloat(e.target.value))} placeholder="25.00" className="w-full pl-7 pr-3 h-9 bg-background border border-input rounded-md text-[13px] tabular-nums focus:outline-none focus:ring-2 focus:ring-ring" />
+            </div>
+            <p className="text-[11px] text-muted-foreground mt-1">Charged for severely matted coats requiring extra time</p>
+          </div>
+          <div>
+            <label className="text-[12px] font-medium text-muted-foreground block mb-1">Senior Pet Surcharge (%)</label>
+            <div className="relative">
+              <Percent className="size-4 absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <input type="number" step="0.1" value={form.senior_surcharge_percent || ''} onChange={(e) => update('senior_surcharge_percent', parseFloat(e.target.value))} placeholder="10.0" className="w-full pl-9 pr-3 h-9 bg-background border border-input rounded-md text-[13px] tabular-nums focus:outline-none focus:ring-2 focus:ring-ring" />
+            </div>
+            <p className="text-[11px] text-muted-foreground mt-1">Special handling surcharge for senior pets (10yr+)</p>
+          </div>
         </div>
       </div>
     </div>
