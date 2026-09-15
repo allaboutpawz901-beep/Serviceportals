@@ -1,0 +1,346 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-bar: var(--font-bar), var(--font-sans), ui-sans-serif, system-ui,
+    sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-topbar: var(--topbar);
+  --color-topbar-foreground: var(--topbar-foreground);
+  --color-topbar-border: var(--topbar-border);
+  --color-quick: var(--quick);
+  --color-quick-foreground: var(--quick-foreground);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* -----------------------------------------------------------------------
+ * All About Pawz OS — Design System (revised per mockup + client spec)
+ *
+ *   Fonts:
+ *     --font-bar   = Montserrat Medium   (sidebar + topbar)
+ *     --font-sans  = Laski Sans Regular  (canvas / content)
+ *                    └─ fallback: Hanken Grotesk (free Google alternative)
+ *
+ *   Brand palette (client spec — exact hex):
+ *     CANVAS               #FFFFFF  → background, card, popover
+ *     SIDE & TOP BAR       #4A4A4A  → sidebar, topbar (gray)
+ *     SIDE & TOP BAR TEXT  #FBFCFD  → sidebar-foreground, topbar-foreground
+ *     BUTTONS              #007C7D  → primary (TEAL — per mockup, not terracotta)
+ *     BUTTON TEXT          #FFFFFF  → primary-foreground (white)
+ *     QUICK ACTIONS        #007C7D  → quick (teal)
+ *     BRAND ACCENT         #AA3F15  → terracotta (logo mark only, NOT buttons)
+ *
+ *   Active sidebar item: gray pill (lighter than sidebar bg) + white text/icon.
+ *   No orange/terracotta highlight on click.
+ * --------------------------------------------------------------------- */
+:root {
+  --radius: 0.5rem;
+
+  /* Surfaces */
+  --background: #FFFFFF;
+  --foreground: #111827;
+  --card: #FFFFFF;
+  --card-foreground: #111827;
+  --popover: #FFFFFF;
+  --popover-foreground: #111827;
+
+  /* Brand actions — TEAL per mockup + client revision */
+  --primary: #007C7D;
+  --primary-foreground: #FFFFFF;
+  --quick: #007C7D;
+  --quick-foreground: #FFFFFF;
+
+  /* Brand accent — terracotta (logo mark / brand identity only, NOT buttons) */
+  --brand: #AA3F15;
+  --brand-foreground: #FBFCFD;
+
+  /* Sidebar / topbar chrome — gray per client spec */
+  --sidebar: #4A4A4A;
+  --sidebar-foreground: #FBFCFD;
+  --sidebar-primary: #5A5A5A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #5A5A5A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #3D3D3D;
+  --sidebar-ring: #007C7D;
+
+  --topbar: #4A4A4A;
+  --topbar-foreground: #FBFCFD;
+  --topbar-border: #3D3D3D;
+
+  /* Neutral surfaces */
+  --secondary: #F5F5F4;
+  --secondary-foreground: #111827;
+  --muted: #F4F4F3;
+  --muted-foreground: #6B7280;
+  --accent: #EFEDEC;
+  --accent-foreground: #111827;
+
+  /* Semantic */
+  --destructive: #B91C1C;
+  --destructive-foreground: #FFFFFF;
+  --success: #15803D;
+  --success-foreground: #FFFFFF;
+  --warning: #B45309;
+  --warning-foreground: #FFFFFF;
+  --info: #007C7D;
+  --info-foreground: #FFFFFF;
+
+  --border: #E5E7EB;
+  --input: #D1D5DB;
+  --ring: #007C7D;
+
+  --chart-1: #007C7D;
+  --chart-2: #AA3F15;
+  --chart-3: #15803D;
+  --chart-4: #B45309;
+  --chart-5: #6B7280;
+}
+
+.dark {
+  --background: #1A1A1A;
+  --foreground: #FBFCFD;
+  --card: #262626;
+  --card-foreground: #FBFCFD;
+  --popover: #262626;
+  --popover-foreground: #FBFCFD;
+
+  --primary: #007C7D;
+  --primary-foreground: #FFFFFF;
+  --quick: #007C7D;
+  --quick-foreground: #FFFFFF;
+
+  --brand: #AA3F15;
+  --brand-foreground: #FBFCFD;
+
+  --sidebar: #2A2A2A;
+  --sidebar-foreground: #FBFCFD;
+  --sidebar-primary: #3A3A3A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3A3A3A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #3D3D3D;
+  --sidebar-ring: #007C7D;
+
+  --topbar: #2A2A2A;
+  --topbar-foreground: #FBFCFD;
+  --topbar-border: #3D3D3D;
+
+  --secondary: #2F2F2F;
+  --secondary-foreground: #FBFCFD;
+  --muted: #2F2F2F;
+  --muted-foreground: #B5B5B5;
+  --accent: #383838;
+  --accent-foreground: #FBFCFD;
+
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --success: #16A34A;
+  --success-foreground: #FFFFFF;
+  --warning: #D97706;
+  --warning-foreground: #FFFFFF;
+  --info: #0E7490;
+  --info-foreground: #FFFFFF;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #007C7D;
+
+  --chart-1: #007C7D;
+  --chart-2: #AA3F15;
+  --chart-3: #16A34A;
+  --chart-4: #D97706;
+  --chart-5: #B5B5B5;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html,
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  /* Sidebar + topbar use Montserrat (font-bar) */
+  .font-bar,
+  [data-slot="sidebar"],
+  header[class*="bg-topbar"],
+  aside[class*="bg-sidebar"] {
+    font-family: var(--font-bar), ui-sans-serif, system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.011em;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Enterprise polish utilities (minimalist — per mockup)
+ * ------------------------------------------------------------------------- */
+
+.shadow-card {
+  box-shadow: 0 1px 3px 0 rgb(15 23 42 / 0.06), 0 0 0 1px rgb(15 23 42 / 0.02);
+}
+.shadow-card-md {
+  box-shadow: 0 4px 6px -1px rgb(15 23 42 / 0.07), 0 0 0 1px rgb(15 23 42 / 0.02);
+}
+.shadow-popover {
+  box-shadow:
+    0 10px 15px -3px rgb(15 23 42 / 0.1),
+    0 4px 6px -2px rgb(15 23 42 / 0.05),
+    0 0 0 1px rgb(15 23 42 / 0.03);
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Minimalist scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--muted-foreground) 25%, transparent);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--muted-foreground) 45%, transparent);
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: color-mix(in srgb, var(--muted-foreground) 85%, transparent);
+  font-size: 0.875rem;
+}
+
+/* FullCalendar harmonized with brand */
+.fullcalendar-custom-wrapper .fc {
+  font-family: var(--font-sans), sans-serif;
+  --fc-border-color: var(--border);
+  --fc-button-bg-color: var(--primary);
+  --fc-button-border-color: var(--primary);
+  --fc-button-hover-bg-color: color-mix(in srgb, var(--primary) 92%, black);
+  --fc-button-hover-border-color: color-mix(in srgb, var(--primary) 92%, black);
+  --fc-button-active-bg-color: color-mix(in srgb, var(--primary) 85%, black);
+  --fc-button-active-border-color: color-mix(in srgb, var(--primary) 85%, black);
+  --fc-today-bg-color: color-mix(in srgb, var(--primary) 6%, white);
+}
+
+.fullcalendar-custom-wrapper .fc-theme-standard td,
+.fullcalendar-custom-wrapper .fc-theme-standard th {
+  border-color: var(--border) !important;
+}
+
+.fullcalendar-custom-wrapper .fc-toolbar-title {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.018em;
+  color: var(--foreground) !important;
+}
+
+.fullcalendar-custom-wrapper .fc-col-header-cell {
+  background-color: var(--muted) !important;
+  padding: 8px 0 !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground) !important;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.2s ease-out both;
+}
+
+.brand-dot::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--primary);
+  margin-right: 8px;
+  vertical-align: middle;
+}

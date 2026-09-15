@@ -1,0 +1,680 @@
+     1→     1→'use client';
+     2→     2→
+     3→     3→import React, { useState } from 'react';
+     4→     4→import Image from 'next/image';
+     5→     5→import { 
+     6→     6→  Eye, 
+     7→     7→  EyeOff, 
+     8→     8→  ShieldCheck, 
+     9→     9→  Scissors, 
+    10→    10→  X, 
+    11→    11→  CheckCircle2,
+    12→    12→  ArrowRight,
+    13→    13→  PawPrint,
+    14→    14→  Sparkles,
+    15→    15→  MapPin,
+    16→    16→  Phone,
+    17→    17→  Clock,
+    18→    18→  Instagram,
+    19→    19→  Facebook,
+    20→    20→  Heart
+    21→    21→} from 'lucide-react';
+    22→    22→import { AuthUser } from '@/lib/types';
+    23→    23→import { DEMO_AUTH_USERS } from '@/lib/dawg-mock-data';
+    24→    24→
+    25→    25→interface LandingLoginViewProps {
+    26→    26→  onLogin: (user: AuthUser, initialSection?: string) => void;
+    27→    27→}
+    28→    28→
+    29→    29→export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) => {
+    30→    30→  // Login mode: 'member' or 'staff'
+    31→    31→  const [authMode, setAuthMode] = useState<'member' | 'staff'>('member');
+    32→    32→
+    33→    33→  // Member credentials
+    34→    34→  const [usernameOrEmail, setUsernameOrEmail] = useState('');
+    35→    35→  const [password, setPassword] = useState('');
+    36→    36→  const [showPassword, setShowPassword] = useState(false);
+    37→    37→  const [isSubmitting, setIsSubmitting] = useState(false);
+    38→    38→
+    39→    39→  // Staff specific state
+    40→    40→  const [staffRole, setStaffRole] = useState<'admin' | 'groomer' | 'frontdesk'>('admin');
+    41→    41→
+    42→    42→  // Modals
+    43→    43→  const [forgotPasswordOpen, setForgotPasswordOpen] = useState(false);
+    44→    44→  const [resetSentEmail, setResetSentEmail] = useState('');
+    45→    45→  const [registerModalOpen, setRegisterModalOpen] = useState(false);
+    46→    46→
+    47→    47→  // Registration modal state
+    48→    48→  const [regName, setRegName] = useState('');
+    49→    49→  const [regEmail, setRegEmail] = useState('');
+    50→    50→  const [regPhone, setRegPhone] = useState('');
+    51→    51→  const [regPetName, setRegPetName] = useState('');
+    52→    52→  const [regPetBreed, setRegPetBreed] = useState('');
+    53→    53→  const [regSuccess, setRegSuccess] = useState(false);
+    54→    54→
+    55→    55→  // Google OAuth / Mock Action
+    56→    56→  const handleGoogleSignIn = () => {
+    57→    57→    setIsSubmitting(true);
+    58→    58→    setTimeout(() => {
+    59→    59→      onLogin({
+    60→    60→        id: 'usr-google-1',
+    61→    61→        name: 'Sarah Johnson',
+    62→    62→        email: 'sarah.johnson@gmail.com',
+    63→    63→        role: 'customer',
+    64→    64→        avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    65→    65→      });
+    66→    66→      setIsSubmitting(false);
+    67→    67→    }, 300);
+    68→    68→  };
+    69→    69→
+    70→    70→  const handleMemberLogin = (e: React.FormEvent) => {
+    71→    71→    e.preventDefault();
+    72→    72→    setIsSubmitting(true);
+    73→    73→
+    74→    74→    setTimeout(() => {
+    75→    75→      if (usernameOrEmail.toLowerCase().includes('admin')) {
+    76→    76→        onLogin(
+    77→    77→          {
+    78→    78→            id: 'usr-admin-1',
+    79→    79→            name: 'Salon Administrator',
+    80→    80→            email: usernameOrEmail || 'admin@allaboutpawz.com',
+    81→    81→            role: 'admin',
+    82→    82→            avatarUrl: DEMO_AUTH_USERS[0].avatarUrl,
+    83→    83→            stationName: 'Central Management & RBAC Portal',
+    84→    84→          },
+    85→    85→          'dashboard'
+    86→    86→        );
+    87→    87→      } else if (
+    88→    88→        usernameOrEmail.toLowerCase().includes('groomer') || 
+    89→    89→        usernameOrEmail.toLowerCase().includes('sarah')
+    90→    90→      ) {
+    91→    91→        onLogin({
+    92→    92→          id: 'usr-groomer-1',
+    93→    93→          name: 'Sarah Miller',
+    94→    94→          email: usernameOrEmail || 'sarah.groomer@allaboutpawz.com',
+    95→    95→          role: 'groomer',
+    96→    96→          avatarUrl: DEMO_AUTH_USERS[1].avatarUrl,
+    97→    97→          stationName: 'Station #3 (Master Grooming Suite)',
+    98→    98→        });
+    99→    99→      } else {
+   100→   100→        onLogin({
+   101→   101→          id: 'usr-client-1',
+   102→   102→          name: usernameOrEmail.split('@')[0] || 'Sarah Johnson',
+   103→   103→          email: usernameOrEmail || 'sarah.johnson@client.com',
+   104→   104→          role: 'customer',
+   105→   105→          avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+   106→   106→        });
+   107→   107→      }
+   108→   108→      setIsSubmitting(false);
+   109→   109→    }, 180);
+   110→   110→  };
+   111→   111→
+   112→   112→  const handleStaffLogin = (e: React.FormEvent) => {
+   113→   113→    e.preventDefault();
+   114→   114→    setIsSubmitting(true);
+   115→   115→
+   116→   116→    setTimeout(() => {
+   117→   117→      if (staffRole === 'admin') {
+   118→   118→        onLogin(
+   119→   119→          {
+   120→   120→            id: 'usr-admin-1',
+   121→   121→            name: 'Salon Administrator',
+   122→   122→            email: usernameOrEmail || 'admin@allaboutpawz.com',
+   123→   123→            role: 'admin',
+   124→   124→            avatarUrl: DEMO_AUTH_USERS[0].avatarUrl,
+   125→   125→            stationName: 'Central Management & RBAC Portal',
+   126→   126→          },
+   127→   127→          'dashboard'
+   128→   128→        );
+   129→   129→      } else if (staffRole === 'groomer') {
+   130→   130→        onLogin({
+   131→   131→          id: 'usr-groomer-1',
+   132→   132→          name: 'Sarah Miller',
+   133→   133→          email: usernameOrEmail || 'sarah.groomer@allaboutpawz.com',
+   134→   134→          role: 'groomer',
+   135→   135→          avatarUrl: DEMO_AUTH_USERS[1].avatarUrl,
+   136→   136→          stationName: 'Station #3 (Master Grooming Suite)',
+   137→   137→        });
+   138→   138→      } else {
+   139→   139→        onLogin({
+   140→   140→          id: 'usr-frontdesk-1',
+   141→   141→          name: 'Front Desk Reception',
+   142→   142→          email: usernameOrEmail || 'reception@allaboutpawz.com',
+   143→   143→          role: 'admin',
+   144→   144→          avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+   145→   145→          stationName: 'Intake & Concierge Desk',
+   146→   146→        }, 'dashboard');
+   147→   147→      }
+   148→   148→      setIsSubmitting(false);
+   149→   149→    }, 180);
+   150→   150→  };
+   151→   151→
+   152→   152→  const handleRegisterSubmit = (e: React.FormEvent) => {
+   153→   153→    e.preventDefault();
+   154→   154→    setRegSuccess(true);
+   155→   155→    setTimeout(() => {
+   156→   156→      onLogin({
+   157→   157→        id: `usr-cust-${Date.now()}`,
+   158→   158→        name: regName || 'Valued Pet Parent',
+   159→   159→        email: regEmail || 'member@allaboutpawz.com',
+   160→   160→        role: 'customer',
+   161→   161→        avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+   162→   162→      });
+   163→   163→      setRegisterModalOpen(false);
+   164→   164→      setRegSuccess(false);
+   165→   165→    }, 500);
+   166→   166→  };
+   167→   167→
+   168→   168→  return (
+   169→   169→    <div className="w-full min-h-screen bg-black flex flex-col antialiased selection:bg-amber-500 selection:text-white">
+   170→   170→      
+   171→   171→      {/* 2-Column Responsive Layout (Scrollable - No Locked Height) */}
+   172→   172→      <main className="w-full grid grid-cols-1 lg:grid-cols-2 bg-black">
+   173→   173→        
+   174→   174→        {/* ================= LEFT HALF: FULL IMAGE IN NATURAL FLOW ================= */}
+   175→   175→        <section 
+   176→   176→          aria-label="All About Pawz Presentation"
+   177→   177→          className="w-full bg-black flex flex-col items-center justify-start select-none"
+   178→   178→        >
+   179→   179→          <div className="w-full bg-black flex items-center justify-center">
+   180→   180→            {/* The Image is displayed with 100% natural aspect ratio so you can scroll down to the bottom where it ends */}
+   181→   181→            <Image
+   182→   182→              src="/assets/auth_image.png_2K_202609060354.jpeg"
+   183→   183→              alt="All About Pawz - Luxury Grooming Salon"
+   184→   184→              width={1000}
+   185→   185→              height={1400}
+   186→   186→              priority
+   187→   187→              className="w-full h-auto object-contain block"
+   188→   188→              referrerPolicy="no-referrer"
+   189→   189→            />
+   190→   190→          </div>
+   191→   191→        </section>
+   192→   192→
+   193→   193→
+   194→   194→        {/* ================= RIGHT HALF: AUTHENTICATION FORM ================= */}
+   195→   195→        <section 
+   196→   196→          aria-label="Member Authentication Terminal"
+   197→   197→          className="bg-white flex flex-col items-center justify-center p-6 sm:p-12 lg:p-16 min-h-[500px]"
+   198→   198→        >
+   199→   199→          <div className="w-full max-w-[360px] flex flex-col my-auto py-8">
+   200→   200→            
+   201→   201→            {/* Mode Switcher / Title */}
+   202→   202→            {authMode === 'member' ? (
+   203→   203→              <div className="text-center mb-6">
+   204→   204→                <h1 className="text-2xl sm:text-[26px] font-serif tracking-[0.16em] text-zinc-900 uppercase font-normal mb-1">
+   205→   205→                  MEMBER LOGIN
+   206→   206→                </h1>
+   207→   207→                <p className="text-[12px] text-zinc-400 font-light">
+   208→   208→                  Sign in to book &amp; manage pet spa appointments
+   209→   209→                </p>
+   210→   210→              </div>
+   211→   211→            ) : (
+   212→   212→              <div className="text-center mb-6">
+   213→   213→                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-900 text-amber-400 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2">
+   214→   214→                  <ShieldCheck className="w-3.5 h-3.5" /> Staff &amp; Admin OS
+   215→   215→                </div>
+   216→   216→                <h1 className="text-2xl sm:text-[26px] font-serif tracking-[0.14em] text-zinc-900 uppercase font-normal">
+   217→   217→                  STAFF PORTAL
+   218→   218→                </h1>
+   219→   219→                <p className="text-[12px] text-zinc-400 font-light">
+   220→   220→                  Authorized salon personnel &amp; management access
+   221→   221→                </p>
+   222→   222→              </div>
+   223→   223→            )}
+   224→   224→
+   225→   225→            {/* Google Sign-in Button */}
+   226→   226→            <button
+   227→   227→              type="button"
+   228→   228→              onClick={handleGoogleSignIn}
+   229→   229→              disabled={isSubmitting}
+   230→   230→              className="w-full py-2.5 px-4 bg-white hover:bg-zinc-50 active:bg-zinc-100 border border-zinc-300 rounded-md text-zinc-700 text-xs font-semibold flex items-center justify-center gap-3 transition shadow-2xs cursor-pointer mb-5"
+   231→   231→            >
+   232→   232→              <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+   233→   233→                <path
+   234→   234→                  fill="#4285F4"
+   235→   235→                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+   236→   236→                />
+   237→   237→                <path
+   238→   238→                  fill="#34A853"
+   239→   239→                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+   240→   240→                />
+   241→   241→                <path
+   242→   242→                  fill="#FBBC05"
+   243→   243→                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+   244→   244→                />
+   245→   245→                <path
+   246→   246→                  fill="#EA4335"
+   247→   247→                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+   248→   248→                />
+   249→   249→              </svg>
+   250→   250→              <span>Continue with Google</span>
+   251→   251→            </button>
+   252→   252→
+   253→   253→            {/* Divider */}
+   254→   254→            <div className="relative flex items-center justify-center mb-5">
+   255→   255→              <div className="border-t border-zinc-200 w-full" />
+   256→   256→              <span className="bg-white px-3 text-[11px] text-zinc-400 uppercase tracking-wider">
+   257→   257→                Or with email
+   258→   258→              </span>
+   259→   259→              <div className="border-t border-zinc-200 w-full" />
+   260→   260→            </div>
+   261→   261→
+   262→   262→            {/* ================= MEMBER FORM ================= */}
+   263→   263→            {authMode === 'member' ? (
+   264→   264→              <form onSubmit={handleMemberLogin} className="space-y-4">
+   265→   265→                
+   266→   266→                {/* Username/Email */}
+   267→   267→                <div>
+   268→   268→                  <label 
+   269→   269→                    htmlFor="member-username" 
+   270→   270→                    className="block text-[13px] font-normal text-zinc-700 mb-1.5"
+   271→   271→                  >
+   272→   272→                    Username/Email
+   273→   273→                  </label>
+   274→   274→                  <input
+   275→   275→                    id="member-username"
+   276→   276→                    type="text"
+   277→   277→                    value={usernameOrEmail}
+   278→   278→                    onChange={(e) => setUsernameOrEmail(e.target.value)}
+   279→   279→                    placeholder="Username/Email"
+   280→   280→                    className="w-full bg-white border border-zinc-300 rounded-md px-3.5 py-2.5 text-sm text-zinc-800 placeholder:text-zinc-300 focus:outline-none focus:border-zinc-700 transition"
+   281→   281→                  />
+   282→   282→                </div>
+   283→   283→
+   284→   284→                {/* Password */}
+   285→   285→                <div>
+   286→   286→                  <label 
+   287→   287→                    htmlFor="member-password" 
+   288→   288→                    className="block text-[13px] font-normal text-zinc-700 mb-1.5"
+   289→   289→                  >
+   290→   290→                    Password
+   291→   291→                  </label>
+   292→   292→                  <div className="relative">
+   293→   293→                    <input
+   294→   294→                      id="member-password"
+   295→   295→                      type={showPassword ? 'text' : 'password'}
+   296→   296→                      value={password}
+   297→   297→                      onChange={(e) => setPassword(e.target.value)}
+   298→   298→                      placeholder="Password"
+   299→   299→                      className="w-full bg-white border border-zinc-300 rounded-md px-3.5 pr-10 py-2.5 text-sm text-zinc-800 placeholder:text-zinc-300 focus:outline-none focus:border-zinc-700 transition"
+   300→   300→                    />
+   301→   301→                    <button
+   302→   302→                      type="button"
+   303→   303→                      onClick={() => setShowPassword(!showPassword)}
+   304→   304→                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-zinc-400 hover:text-zinc-700 cursor-pointer"
+   305→   305→                    >
+   306→   306→                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+   307→   307→                    </button>
+   308→   308→                  </div>
+   309→   309→
+   310→   310→                  {/* Right-aligned Forgot Password? */}
+   311→   311→                  <div className="flex justify-end pt-1.5">
+   312→   312→                    <button
+   313→   313→                      type="button"
+   314→   314→                      onClick={() => setForgotPasswordOpen(true)}
+   315→   315→                      className="text-[12px] text-zinc-500 hover:text-zinc-900 font-serif italic transition cursor-pointer"
+   316→   316→                    >
+   317→   317→                      Forgot Password?
+   318→   318→                    </button>
+   319→   319→                  </div>
+   320→   320→                </div>
+   321→   321→
+   322→   322→                {/* Buttons */}
+   323→   323→                <div className="pt-2 space-y-2.5">
+   324→   324→                  <button
+   325→   325→                    type="submit"
+   326→   326→                    disabled={isSubmitting}
+   327→   327→                    className="w-full py-3 bg-black hover:bg-zinc-800 active:bg-zinc-900 text-white font-medium text-xs tracking-[0.18em] uppercase rounded-md transition shadow-xs flex items-center justify-center cursor-pointer disabled:opacity-60"
+   328→   328→                  >
+   329→   329→                    {isSubmitting ? (
+   330→   330→                      <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+   331→   331→                    ) : (
+   332→   332→                      <span>LOG IN</span>
+   333→   333→                    )}
+   334→   334→                  </button>
+   335→   335→
+   336→   336→                  <button
+   337→   337→                    type="button"
+   338→   338→                    onClick={() => setRegisterModalOpen(true)}
+   339→   339→                    className="w-full py-2.5 bg-white hover:bg-zinc-50 active:bg-zinc-100 text-zinc-900 font-medium text-xs tracking-[0.18em] uppercase border border-zinc-900 rounded-md transition flex items-center justify-center cursor-pointer"
+   340→   340→                  >
+   341→   341→                    REGISTER
+   342→   342→                  </button>
+   343→   343→                </div>
+   344→   344→
+   345→   345→                {/* Bottom Route to Staff */}
+   346→   346→                <div className="pt-4 text-center">
+   347→   347→                  <button
+   348→   348→                    type="button"
+   349→   349→                    onClick={() => setAuthMode('staff')}
+   350→   350→                    className="text-[13px] font-serif text-zinc-700 hover:text-black underline underline-offset-4 transition cursor-pointer"
+   351→   351→                  >
+   352→   352→                    Staff here.
+   353→   353→                  </button>
+   354→   354→                </div>
+   355→   355→
+   356→   356→              </form>
+   357→   357→            ) : (
+   358→   358→              /* ================= STAFF & ADMIN ROUTE FORM ================= */
+   359→   359→              <form onSubmit={handleStaffLogin} className="space-y-4 animate-in fade-in duration-200">
+   360→   360→                
+   361→   361→                {/* Staff Role Selector Tabs */}
+   362→   362→                <div className="grid grid-cols-3 gap-1 p-1 bg-zinc-100 rounded-lg border border-zinc-200">
+   363→   363→                  <button
+   364→   364→                    type="button"
+   365→   365→                    onClick={() => setStaffRole('admin')}
+   366→   366→                    className={`py-1.5 text-xs font-semibold rounded-md transition cursor-pointer ${
+   367→   367→                      staffRole === 'admin' 
+   368→   368→                        ? 'bg-zinc-900 text-white shadow-xs' 
+   369→   369→                        : 'text-zinc-600 hover:text-zinc-900'
+   370→   370→                    }`}
+   371→   371→                  >
+   372→   372→                    Administrator
+   373→   373→                  </button>
+   374→   374→                  <button
+   375→   375→                    type="button"
+   376→   376→                    onClick={() => setStaffRole('groomer')}
+   377→   377→                    className={`py-1.5 text-xs font-semibold rounded-md transition cursor-pointer ${
+   378→   378→                      staffRole === 'groomer' 
+   379→   379→                        ? 'bg-zinc-900 text-white shadow-xs' 
+   380→   380→                        : 'text-zinc-600 hover:text-zinc-900'
+   381→   381→                    }`}
+   382→   382→                  >
+   383→   383→                    Groomer
+   384→   384→                  </button>
+   385→   385→                  <button
+   386→   386→                    type="button"
+   387→   387→                    onClick={() => setStaffRole('frontdesk')}
+   388→   388→                    className={`py-1.5 text-xs font-semibold rounded-md transition cursor-pointer ${
+   389→   389→                      staffRole === 'frontdesk' 
+   390→   390→                        ? 'bg-zinc-900 text-white shadow-xs' 
+   391→   391→                        : 'text-zinc-600 hover:text-zinc-900'
+   392→   392→                    }`}
+   393→   393→                  >
+   394→   394→                    Front Desk
+   395→   395→                  </button>
+   396→   396→                </div>
+   397→   397→
+   398→   398→                {/* Staff Email or Employee ID */}
+   399→   399→                <div>
+   400→   400→                  <label 
+   401→   401→                    htmlFor="staff-id" 
+   402→   402→                    className="block text-[13px] font-normal text-zinc-700 mb-1.5"
+   403→   403→                  >
+   404→   404→                    Staff Email or ID
+   405→   405→                  </label>
+   406→   406→                  <input
+   407→   407→                    id="staff-id"
+   408→   408→                    type="text"
+   409→   409→                    value={usernameOrEmail || (staffRole === 'admin' ? 'admin@allaboutpawz.com' : staffRole === 'groomer' ? 'sarah.groomer@allaboutpawz.com' : 'reception@allaboutpawz.com')}
+   410→   410→                    onChange={(e) => setUsernameOrEmail(e.target.value)}
+   411→   411→                    className="w-full bg-white border border-zinc-300 rounded-md px-3.5 py-2.5 text-sm text-zinc-800 focus:outline-none focus:border-zinc-700 transition"
+   412→   412→                  />
+   413→   413→                </div>
+   414→   414→
+   415→   415→                {/* Security Passcode / Password */}
+   416→   416→                <div>
+   417→   417→                  <label 
+   418→   418→                    htmlFor="staff-passcode" 
+   419→   419→                    className="block text-[13px] font-normal text-zinc-700 mb-1.5"
+   420→   420→                  >
+   421→   421→                    Password or 4-Digit Station PIN
+   422→   422→                  </label>
+   423→   423→                  <input
+   424→   424→                    id="staff-passcode"
+   425→   425→                    type="password"
+   426→   426→                    defaultValue="••••••••"
+   427→   427→                    className="w-full bg-white border border-zinc-300 rounded-md px-3.5 py-2.5 text-sm text-zinc-800 focus:outline-none focus:border-zinc-700 transition"
+   428→   428→                  />
+   429→   429→                </div>
+   430→   430→
+   431→   431→                {/* Staff Actions */}
+   432→   432→                <div className="pt-2 space-y-2.5">
+   433→   433→                  <button
+   434→   434→                    type="submit"
+   435→   435→                    disabled={isSubmitting}
+   436→   436→                    className="w-full py-3 bg-zinc-900 hover:bg-black text-white font-medium text-xs tracking-[0.18em] uppercase rounded-md transition shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+   437→   437→                  >
+   438→   438→                    {isSubmitting ? (
+   439→   439→                      <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+   440→   440→                    ) : (
+   441→   441→                      <>
+   442→   442→                        <span>ENTER {staffRole === 'admin' ? 'ADMIN OS' : staffRole === 'groomer' ? 'GROOMER SUITE' : 'FRONT DESK'}</span>
+   443→   443→                        <ArrowRight className="w-3.5 h-3.5" />
+   444→   444→                      </>
+   445→   445→                    )}
+   446→   446→                  </button>
+   447→   447→
+   448→   448→                  <button
+   449→   449→                    type="button"
+   450→   450→                    onClick={() => setAuthMode('member')}
+   451→   451→                    className="w-full py-2.5 text-zinc-600 hover:text-zinc-900 text-xs font-medium transition cursor-pointer"
+   452→   452→                  >
+   453→   453→                    ← Return to Member Login
+   454→   454→                  </button>
+   455→   455→                </div>
+   456→   456→
+   457→   457→              </form>
+   458→   458→            )}
+   459→   459→
+   460→   460→          </div>
+   461→   461→        </section>
+   462→   462→
+   463→   463→      </main>
+   464→   464→
+   465→   465→
+   466→   466→      {/* ================= MINIMALIST SALON FOOTER ================= */}
+   467→   467→      <footer className="w-full bg-black border-t border-zinc-900 text-zinc-500 py-4 px-6 sm:px-10">
+   468→   468→        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] tracking-wide">
+   469→   469→          <div className="flex items-center gap-2 text-zinc-400">
+   470→   470→            <span className="font-semibold text-zinc-300 uppercase tracking-widest text-[10px]">ALL ABOUT PAWZ</span>
+   471→   471→            <span>·</span>
+   472→   472→            <span>© {new Date().getFullYear()}</span>
+   473→   473→          </div>
+   474→   474→
+   475→   475→          <div className="flex items-center gap-5 text-zinc-400">
+   476→   476→            <button 
+   477→   477→              type="button"
+   478→   478→              onClick={() => setAuthMode('member')}
+   479→   479→              className="hover:text-white transition cursor-pointer"
+   480→   480→            >
+   481→   481→              Member Portal
+   482→   482→            </button>
+   483→   483→            <button 
+   484→   484→              type="button"
+   485→   485→              onClick={() => setAuthMode('staff')}
+   486→   486→              className="hover:text-white transition cursor-pointer"
+   487→   487→            >
+   488→   488→              Staff Access
+   489→   489→            </button>
+   490→   490→            <span className="text-zinc-700">|</span>
+   491→   491→            <span className="text-zinc-500 hover:text-zinc-300 transition cursor-pointer">
+   492→   492→              Privacy
+   493→   493→            </span>
+   494→   494→          </div>
+   495→   495→        </div>
+   496→   496→      </footer>
+   497→   497→
+   498→   498→
+   499→   499→      {/* ================= REGISTER PET PARENT MODAL ================= */}
+   500→   500→      {registerModalOpen && (
+   501→   501→        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4 animate-in fade-in duration-150">
+   502→   502→          <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-zinc-200 overflow-hidden">
+   503→   503→            <div className="p-5 bg-zinc-900 text-white flex items-center justify-between">
+   504→   504→              <div className="flex items-center gap-2.5">
+   505→   505→                <div className="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center font-bold">
+   506→   506→                  <PawPrint className="w-4 h-4" />
+   507→   507→                </div>
+   508→   508→                <div>
+   509→   509→                  <h3 className="text-sm font-bold tracking-tight">New Member Registration</h3>
+   510→   510→                  <p className="text-[11px] text-zinc-300">Join All About Pawz Rewards &amp; Booking Portal</p>
+   511→   511→                </div>
+   512→   512→              </div>
+   513→   513→              <button
+   514→   514→                onClick={() => setRegisterModalOpen(false)}
+   515→   515→                className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition cursor-pointer"
+   516→   516→              >
+   517→   517→                <X className="w-4 h-4" />
+   518→   518→              </button>
+   519→   519→            </div>
+   520→   520→
+   521→   521→            <form onSubmit={handleRegisterSubmit} className="p-6 space-y-4">
+   522→   522→              {regSuccess ? (
+   523→   523→                <div className="p-8 text-center space-y-3">
+   524→   524→                  <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto animate-bounce" />
+   525→   525→                  <h4 className="text-base font-bold text-zinc-900">Welcome to All About Pawz!</h4>
+   526→   526→                  <p className="text-xs text-zinc-600">Setting up your member dashboard...</p>
+   527→   527→                </div>
+   528→   528→              ) : (
+   529→   529→                <>
+   530→   530→                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+   531→   531→                    <div>
+   532→   532→                      <label className="block text-xs font-semibold text-zinc-700 mb-1">Your Full Name</label>
+   533→   533→                      <input
+   534→   534→                        type="text"
+   535→   535→                        required
+   536→   536→                        value={regName}
+   537→   537→                        onChange={(e) => setRegName(e.target.value)}
+   538→   538→                        placeholder="e.g. Jessica Williams"
+   539→   539→                        className="w-full border border-zinc-300 rounded-lg px-3 py-2 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+   540→   540→                      />
+   541→   541→                    </div>
+   542→   542→                    <div>
+   543→   543→                      <label className="block text-xs font-semibold text-zinc-700 mb-1">Email Address</label>
+   544→   544→                      <input
+   545→   545→                        type="email"
+   546→   546→                        required
+   547→   547→                        value={regEmail}
+   548→   548→                        onChange={(e) => setRegEmail(e.target.value)}
+   549→   549→                        placeholder="jessica@example.com"
+   550→   550→                        className="w-full border border-zinc-300 rounded-lg px-3 py-2 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+   551→   551→                      />
+   552→   552→                    </div>
+   553→   553→                  </div>
+   554→   554→
+   555→   555→                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+   556→   556→                    <div>
+   557→   557→                      <label className="block text-xs font-semibold text-zinc-700 mb-1">Phone Number</label>
+   558→   558→                      <input
+   559→   559→                        type="tel"
+   560→   560→                        required
+   561→   561→                        value={regPhone}
+   562→   562→                        onChange={(e) => setRegPhone(e.target.value)}
+   563→   563→                        placeholder="(214) 555-0199"
+   564→   564→                        className="w-full border border-zinc-300 rounded-lg px-3 py-2 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+   565→   565→                      />
+   566→   566→                    </div>
+   567→   567→                    <div>
+   568→   568→                      <label className="block text-xs font-semibold text-zinc-700 mb-1">Pet Name</label>
+   569→   569→                      <input
+   570→   570→                        type="text"
+   571→   571→                        required
+   572→   572→                        value={regPetName}
+   573→   573→                        onChange={(e) => setRegPetName(e.target.value)}
+   574→   574→                        placeholder="e.g. Milo"
+   575→   575→                        className="w-full border border-zinc-300 rounded-lg px-3 py-2 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+   576→   576→                      />
+   577→   577→                    </div>
+   578→   578→                  </div>
+   579→   579→
+   580→   580→                  <div>
+   581→   581→                    <label className="block text-xs font-semibold text-zinc-700 mb-1">Pet Breed &amp; Details</label>
+   582→   582→                    <input
+   583→   583→                      type="text"
+   584→   584→                      value={regPetBreed}
+   585→   585→                      onChange={(e) => setRegPetBreed(e.target.value)}
+   586→   586→                      placeholder="e.g. Mini Goldendoodle, 22 lbs"
+   587→   587→                      className="w-full border border-zinc-300 rounded-lg px-3 py-2 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+   588→   588→                    />
+   589→   589→                  </div>
+   590→   590→
+   591→   591→                  <div className="pt-2 flex items-center justify-end gap-2">
+   592→   592→                    <button
+   593→   593→                      type="button"
+   594→   594→                      onClick={() => setRegisterModalOpen(false)}
+   595→   595→                      className="px-4 py-2 border border-zinc-300 text-xs font-semibold text-zinc-700 rounded-lg hover:bg-zinc-100 cursor-pointer"
+   596→   596→                    >
+   597→   597→                      Cancel
+   598→   598→                    </button>
+   599→   599→                    <button
+   600→   600→                      type="submit"
+   601→   601→                      className="px-5 py-2 bg-black hover:bg-zinc-800 text-white text-xs font-bold rounded-lg transition cursor-pointer"
+   602→   602→                    >
+   603→   603→                      Complete Registration
+   604→   604→                    </button>
+   605→   605→                  </div>
+   606→   606→                </>
+   607→   607→              )}
+   608→   608→            </form>
+   609→   609→          </div>
+   610→   610→        </div>
+   611→   611→      )}
+   612→   612→
+   613→   613→
+   614→   614→      {/* ================= FORGOT PASSWORD MODAL ================= */}
+   615→   615→      {forgotPasswordOpen && (
+   616→   616→        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4 animate-in fade-in duration-150">
+   617→   617→          <div className="w-full max-w-sm bg-white rounded-2xl shadow-2xl border border-zinc-200 p-6 space-y-4">
+   618→   618→            <div className="flex items-center justify-between">
+   619→   619→              <h3 className="text-sm font-bold text-zinc-900">Reset Your Password</h3>
+   620→   620→              <button
+   621→   621→                onClick={() => {
+   622→   622→                  setForgotPasswordOpen(false);
+   623→   623→                  setResetSentEmail('');
+   624→   624→                }}
+   625→   625→                className="text-zinc-400 hover:text-zinc-700 p-1 rounded-lg"
+   626→   626→              >
+   627→   627→                <X className="w-4 h-4" />
+   628→   628→              </button>
+   629→   629→            </div>
+   630→   630→
+   631→   631→            {resetSentEmail ? (
+   632→   632→              <div className="space-y-3 text-center py-2">
+   633→   633→                <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
+   634→   634→                <p className="text-xs text-zinc-700">
+   635→   635→                  Password reset link sent to <strong>{resetSentEmail}</strong>. Please check your inbox.
+   636→   636→                </p>
+   637→   637→                <button
+   638→   638→                  onClick={() => {
+   639→   639→                    setForgotPasswordOpen(false);
+   640→   640→                    setResetSentEmail('');
+   641→   641→                  }}
+   642→   642→                  className="w-full py-2 bg-zinc-900 text-white text-xs font-semibold rounded-lg mt-2 cursor-pointer"
+   643→   643→                >
+   644→   644→                  Return to Login
+   645→   645→                </button>
+   646→   646→              </div>
+   647→   647→            ) : (
+   648→   648→              <form
+   649→   649→                onSubmit={(e) => {
+   650→   650→                  e.preventDefault();
+   651→   651→                  setResetSentEmail(usernameOrEmail || 'your.email@example.com');
+   652→   652→                }}
+   653→   653→                className="space-y-3"
+   654→   654→              >
+   655→   655→                <p className="text-xs text-zinc-500">
+   656→   656→                  Enter your registered username or email and we will send you a password recovery link.
+   657→   657→                </p>
+   658→   658→                <input
+   659→   659→                  type="email"
+   660→   660→                  required
+   661→   661→                  defaultValue={usernameOrEmail}
+   662→   662→                  placeholder="Enter your email"
+   663→   663→                  className="w-full border border-zinc-300 rounded-lg px-3 py-2 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+   664→   664→                />
+   665→   665→                <button
+   666→   666→                  type="submit"
+   667→   667→                  className="w-full py-2.5 bg-black hover:bg-zinc-900 text-white font-semibold text-xs rounded-lg transition cursor-pointer"
+   668→   668→                >
+   669→   669→                  Send Reset Link
+   670→   670→                </button>
+   671→   671→              </form>
+   672→   672→            )}
+   673→   673→          </div>
+   674→   674→        </div>
+   675→   675→      )}
+   676→   676→
+   677→   677→    </div>
+   678→   678→  );
+   679→   679→};
+   680→   680→
