@@ -5,6 +5,7 @@ import {
   Bell,
   Calendar,
   ChevronDown,
+  LayoutGrid,
   LogOut,
   MapPin,
   Menu,
@@ -18,6 +19,7 @@ import {
   UserCog,
   Users,
 } from 'lucide-react';
+import { useAppStore } from '@/lib/store';
 import { AuthUser, DawgNavSection } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -322,6 +324,58 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   <Bell className="size-4" />
                   Notifications
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                {/* Portal Switcher */}
+                <DropdownMenuLabel className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground px-2 py-1.5">
+                  Switch Portal
+                </DropdownMenuLabel>
+                <DropdownMenuItem
+                  onClick={() => {
+                    useAppStore.getState().setUser({
+                      id: 'usr-admin-1',
+                      name: 'Admin User',
+                      email: 'admin@test.com',
+                      role: 'admin',
+                      stationName: 'Central Management',
+                    });
+                    window.location.href = '/admin/dashboard';
+                  }}
+                  className="cursor-pointer text-[13px]"
+                >
+                  <LayoutGrid className="size-4" />
+                  Admin OS
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => {
+                    useAppStore.getState().setUser({
+                      id: 'usr-groomer-1',
+                      name: 'Sarah M.',
+                      email: 'groomer@test.com',
+                      role: 'groomer',
+                      stationName: 'Station #3 (Spa Suite)',
+                    });
+                    window.location.href = '/groomer/dashboard';
+                  }}
+                  className="cursor-pointer text-[13px]"
+                >
+                  <Scissors className="size-4" />
+                  Groomer Suite
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => {
+                    useAppStore.getState().setUser({
+                      id: 'usr-customer-1',
+                      name: 'Elena Rostova',
+                      email: 'elena@gmail.com',
+                      role: 'customer',
+                    });
+                    window.location.href = '/customer/dashboard';
+                  }}
+                  className="cursor-pointer text-[13px]"
+                >
+                  <Users className="size-4" />
+                  Customer Portal
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem

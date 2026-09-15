@@ -5,28 +5,34 @@ import { useRouter } from 'next/navigation';
 import { useAppStore } from '@/lib/store';
 import { Sidebar } from '@/components/pawz/Sidebar';
 import { Header } from '@/components/pawz/Header';
-import { ModuleNav } from '@/components/pawz/_shared/ModuleNav';
 import { cn } from '@/lib/utils';
 import type { DawgNavSection } from '@/lib/types';
+import {
+  LayoutGrid, Calendar, CalendarClock, FileText, PawPrint, Scissors,
+} from 'lucide-react';
 
-// Groomer-specific nav sections
-const groomerSections: { id: DawgNavSection; label: string }[] = [
-  { id: 'appointments', label: 'My Appointments' },
-  { id: 'schedule', label: 'My Schedule' },
-  { id: 'pets', label: 'Pets' },
-  { id: 'grooming-records', label: 'Grooming Log' },
+// Groomer-specific sidebar nav groups
+const groomerNavGroups = [
+  {
+    category: 'GROOMER STATION',
+    categoryDefaultSection: 'dashboard' as DawgNavSection,
+    items: [
+      { id: 'dashboard' as DawgNavSection, label: 'Station Dashboard', icon: LayoutGrid },
+      { id: 'appointments' as DawgNavSection, label: 'Assigned Appointments', icon: Calendar },
+      { id: 'schedule' as DawgNavSection, label: 'Shifts', icon: CalendarClock },
+      { id: 'grooming-records' as DawgNavSection, label: 'Handling Notes', icon: FileText },
+      { id: 'pets' as DawgNavSection, label: 'Style Records', icon: Scissors },
+    ],
+  },
 ];
 
 export default function GroomerLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-// eslint-disable-next-line react-hooks/set-state-in-effect
   const [hasHydrated, setHasHydrated] = useState(false);
   const { currentUser, setUser, activeSection, setActiveSection, mobileOpen, setMobileOpen, isSidebarCollapsed, toggleSidebar, selectedLocation, setSelectedLocation, locations, activeModal, setActiveModal } = useAppStore();
 
   useEffect(() => {
-// eslint-disable-next-line react-hooks/set-state-in-effect
     const unsub = useAppStore.persist.onFinishHydration(() => setHasHydrated(true));
-// eslint-disable-next-line react-hooks/set-state-in-effect
     if (useAppStore.persist.hasHydrated()) setHasHydrated(true);
     return unsub;
   }, []);
@@ -53,6 +59,7 @@ export default function GroomerLayout({ children }: { children: React.ReactNode 
 
   return (
     <div className="h-screen w-screen flex overflow-hidden bg-background text-foreground antialiased font-sans">
+      {/* Same shared Sidebar — but with groomer nav groups */}
       <Sidebar
         activeSection={activeSection}
         onSelectSection={navigate}
@@ -86,8 +93,10 @@ export default function GroomerLayout({ children }: { children: React.ReactNode 
         />
 
         <div className="flex-1 overflow-y-auto custom-scrollbar bg-background">
+          {/* Groomer sub-nav */}
           <nav className="flex items-center gap-1 px-4 py-1.5 border-b border-border bg-card overflow-x-auto custom-scrollbar">
-            {groomerSections.map((item) => {
+            {groomerNavGroups[0].items.map((item) => {
+              const Icon = item.icon;
               const isActive = activeSection === item.id;
               return (
                 <button
@@ -98,6 +107,7 @@ export default function GroomerLayout({ children }: { children: React.ReactNode 
                     isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
                   )}
                 >
+                  <Icon className="size-3.5 shrink-0" />
                   {item.label}
                 </button>
               );

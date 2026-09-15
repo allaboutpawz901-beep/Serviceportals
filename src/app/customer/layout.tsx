@@ -7,24 +7,32 @@ import { Sidebar } from '@/components/pawz/Sidebar';
 import { Header } from '@/components/pawz/Header';
 import { cn } from '@/lib/utils';
 import type { DawgNavSection } from '@/lib/types';
+import {
+  LayoutGrid, Calendar, PawPrint, FileText, MessageSquare,
+} from 'lucide-react';
 
-const customerSections: { id: DawgNavSection; label: string }[] = [
-  { id: 'dashboard', label: 'Dashboard' },
-  { id: 'appointments', label: 'My Appointments' },
-  { id: 'pets', label: 'My Pets' },
-  { id: 'invoices', label: 'Invoices' },
+// Customer-specific sidebar nav groups
+const customerNavGroups = [
+  {
+    category: 'PET PARENT',
+    categoryDefaultSection: 'dashboard' as DawgNavSection,
+    items: [
+      { id: 'dashboard' as DawgNavSection, label: 'Parent Dashboard', icon: LayoutGrid },
+      { id: 'appointments' as DawgNavSection, label: 'Appointments', icon: Calendar },
+      { id: 'pets' as DawgNavSection, label: 'My Pets', icon: PawPrint },
+      { id: 'invoices' as DawgNavSection, label: 'Billing', icon: FileText },
+      { id: 'messages' as DawgNavSection, label: 'Messages', icon: MessageSquare },
+    ],
+  },
 ];
 
 export default function CustomerLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-// eslint-disable-next-line react-hooks/set-state-in-effect
   const [hasHydrated, setHasHydrated] = useState(false);
   const { currentUser, setUser, activeSection, setActiveSection, mobileOpen, setMobileOpen, isSidebarCollapsed, toggleSidebar, selectedLocation, setSelectedLocation, locations, activeModal, setActiveModal } = useAppStore();
 
   useEffect(() => {
-// eslint-disable-next-line react-hooks/set-state-in-effect
     const unsub = useAppStore.persist.onFinishHydration(() => setHasHydrated(true));
-// eslint-disable-next-line react-hooks/set-state-in-effect
     if (useAppStore.persist.hasHydrated()) setHasHydrated(true);
     return unsub;
   }, []);
@@ -85,7 +93,8 @@ export default function CustomerLayout({ children }: { children: React.ReactNode
 
         <div className="flex-1 overflow-y-auto custom-scrollbar bg-background">
           <nav className="flex items-center gap-1 px-4 py-1.5 border-b border-border bg-card overflow-x-auto custom-scrollbar">
-            {customerSections.map((item) => {
+            {customerNavGroups[0].items.map((item) => {
+              const Icon = item.icon;
               const isActive = activeSection === item.id;
               return (
                 <button
@@ -96,6 +105,7 @@ export default function CustomerLayout({ children }: { children: React.ReactNode
                     isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
                   )}
                 >
+                  <Icon className="size-3.5 shrink-0" />
                   {item.label}
                 </button>
               );
