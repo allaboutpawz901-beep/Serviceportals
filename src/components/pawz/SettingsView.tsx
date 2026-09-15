@@ -30,6 +30,7 @@ import {
 // Import All 16 Dedicated Design Screens
 import { SettingsOverviewDashboardScreen } from './settings/screens/SettingsOverviewDashboardScreen';
 import { OrgMultiLocationScreen } from './settings/screens/OrgMultiLocationScreen';
+import { BusinessProfileScreen } from './settings/screens/BusinessProfileScreen';
 import { OrgBrandIdentityScreen } from './settings/screens/OrgBrandIdentityScreen';
 import { UsersStaffRolesScreen } from './settings/screens/UsersStaffRolesScreen';
 import { BookingOperationsRulesScreen } from './settings/screens/BookingOperationsRulesScreen';
@@ -111,6 +112,7 @@ const TAB_CATEGORIES: TabCategory[] = [
     title: 'ORGANIZATION & LOCATIONS',
     tabs: [
       { id: 'overview', label: 'Settings Overview', icon: LayoutGrid },
+      { id: 'business-profile', label: 'Business Profile', icon: Building2 },
       { id: 'org-multiloc', label: 'Locations & Branches', icon: Building2 },
       { id: 'org-brand', label: 'Brand & Identity', icon: Tag },
     ],
@@ -420,6 +422,16 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               onNavigateScreen={navigateToScreen}
               selectedLocation={selectedLocation}
               onSelectLocation={onSelectLocation}
+            />
+          )}
+
+          {activeTab === 'business-profile' && (
+            <BusinessProfileScreen
+              onNavigateScreen={navigateToScreen}
+              selectedLocation={selectedLocation}
+              onSelectLocation={onSelectLocation}
+              systemSettings={systemSettings}
+              saveSettingsToDb={saveSettingsToDb}
             />
           )}
 
