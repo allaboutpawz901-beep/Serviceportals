@@ -230,14 +230,14 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   const ActiveIcon = activeTabConfig.icon;
 
   return (
-    <div className="min-h-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="min-h-full bg-card text-foreground font-bar antialiased text-[13px]">
       {/* Top Header Bar */}
       <header className="px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border bg-card sticky top-0 z-40">
         <div>
-          <h1 className="text-base font-bold uppercase tracking-tight text-foreground font-sans">
+          <h1 className="text-base font-semibold tracking-tight text-foreground font-bar">
             Organization Settings
           </h1>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Manage branches, team permissions, booking parameters, service matrices, and salon operations.
           </p>
         </div>
@@ -252,7 +252,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search settings..."
-              className="w-full pl-9 pr-8 py-1.5 bg-muted/30 border border-border text-xs focus:bg-card focus:outline-none"
+              className="w-full pl-9 pr-8 h-8 bg-muted/30 border border-border rounded-md text-[13px] focus:bg-card focus:outline-none focus:ring-2 focus:ring-ring"
             />
             {searchQuery.trim().length > 0 && (
               <div className="absolute left-0 right-0 top-full mt-1 bg-card border border-border shadow-2xl p-1 z-50 space-y-1">
@@ -327,7 +327,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           {/* Public Wizard Action */}
           <button
             onClick={() => navigateToScreen('cms-wizard')}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-black hover:bg-muted text-white tabular-nums text-xs font-bold uppercase border border-border cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 h-8 bg-primary hover:bg-primary/90 text-primary-foreground text-[12px] font-medium rounded-md border border-border cursor-pointer transition-colors duration-150"
           >
             <span>Public Wizard</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -337,12 +337,12 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
       {/* 2-Column Workspace: Left Settings Nav + Right Screen Canvas */}
       <div className="flex flex-col lg:flex-row min-h-[calc(100vh-65px)] lg:h-[calc(100vh-65px)] lg:overflow-hidden">
-        {/* Left Navigation Sidebar */}
-        <aside className="w-full lg:w-64 xl:w-72 bg-muted/30 border-r border-border shrink-0 flex flex-col justify-between tabular-nums text-xs select-none lg:overflow-y-auto lg:h-full">
+        {/* Left Navigation Sidebar — matches global sidebar font (Montserrat) */}
+        <aside className="w-full lg:w-64 xl:w-72 bg-card border-r border-border shrink-0 flex flex-col justify-between text-[13px] select-none lg:overflow-y-auto lg:h-full font-bar">
           <div className="p-3 space-y-5">
             {TAB_CATEGORIES.map((cat, catIdx) => (
               <div key={catIdx} className="space-y-1">
-                <div className="px-2 pb-1 text-[10px] tabular-nums font-bold tracking-widest text-muted-foreground uppercase">
+                <div className="px-2 pb-1 text-[10px] font-medium tracking-wider text-muted-foreground uppercase">
                   {cat.title}
                 </div>
                 <div className="space-y-0.5">
@@ -366,19 +366,19 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                       <button
                         key={tab.id}
                         onClick={() => navigateToScreen(tab.id)}
-                        className={`w-full text-left px-3 py-2 text-xs font-bold flex items-center justify-between cursor-pointer transition-none border ${
+                        className={`w-full text-left px-3 py-2 text-[13px] font-medium flex items-center justify-between cursor-pointer transition-colors duration-150 rounded-md border ${
                           isTabActive
-                            ? 'bg-primary text-primary-foreground border-border'
-                            : 'bg-card text-foreground border-border hover:border-border hover:bg-muted/40'
+                            ? 'bg-primary/10 text-primary border-primary/20'
+                            : 'border-transparent text-muted-foreground hover:bg-accent hover:text-accent-foreground'
                         }`}
                       >
                         <div className="flex items-center gap-2 truncate">
-                          <Icon className={`w-3.5 h-3.5 shrink-0 ${isTabActive ? 'text-white' : 'text-foreground'}`} />
+                          <Icon className={`w-3.5 h-3.5 shrink-0 ${isTabActive ? 'text-primary' : 'text-muted-foreground'}`} />
                           <span className="truncate">{tab.label}</span>
                         </div>
                         {tab.badge && (
                           <span
-                            className={`text-[9px] uppercase font-bold px-1.5 py-0.2 ${
+                            className={`text-[9px] uppercase font-semibold px-1.5 py-0.5 rounded-full ${
                               isTabActive
                                 ? 'bg-muted text-white border border-border'
                                 : 'bg-muted/40 text-foreground border border-border'

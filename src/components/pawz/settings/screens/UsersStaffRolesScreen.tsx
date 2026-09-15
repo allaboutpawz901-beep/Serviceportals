@@ -1,24 +1,35 @@
 'use client';
 
-import React, { useState } from 'react';
-import { 
-  Shield, 
-  Terminal, 
-  Users, 
-  Check, 
-  Lock, 
-  Eye, 
-  Edit2, 
-  Trash2, 
-  Key, 
-  EyeOff, 
-  HelpCircle,
-  FileJson,
-  Maximize2,
-  CheckSquare,
-  Square,
-  Save
+import React, { useState, useEffect } from 'react';
+import {
+  Users, Shield, Plus, Trash2, Edit2, Lock, Check, X,
+  Key, Mail, Phone, UserCircle, ChevronDown,
 } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface AdminUser {
+  id: string;
+  userId: string;
+  email: string;
+  name: string;
+  role: string;
+  twoFactorEnabled: boolean;
+  status: string;
+  lastActive: string;
+  avatarInitials: string;
+  scope: string;
+}
+
+interface RoleDef {
+  id: string;
+  role_key: string;
+  label: string;
+  description: string;
+  permissions: string[];
+  is_system: boolean;
+  can_sign_off: boolean;
+  signoff_max_level: number;
+}
 
 interface ScreenProps {
   onNavigateScreen?: (screenId: string) => void;
@@ -26,462 +37,420 @@ interface ScreenProps {
   onSelectLocation?: (loc: string) => void;
 }
 
-interface Permission {
-  id: string;
-  module: string;
-  desc: string;
-  view: boolean;
-  edit: boolean;
-  del: boolean;
-  pii: boolean | 'masked';
-  editLabel?: string;
-  viewLabel?: string;
-  piiLabel?: string;
-  restricted?: boolean;
-  hidden?: boolean;
-  locked?: boolean;
-}
-
 export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
   onNavigateScreen,
-  selectedLocation = 'FRISCO HQ (MAIN LOC)',
+  selectedLocation = 'All Locations',
 }) => {
-  const [activeSubTab, setActiveSubTab] = useState<'roster' | 'magic' | 'checklist' | 'audit'>('checklist');
-  const [activeTier, setActiveTier] = useState<'tier1' | 'tier2' | 'tier3' | 'tier4' | 'tier5' | 'tier6'>('tier4');
+  const [activeSubTab, setActiveSubTab] = useState<'users' | 'roles' | 'invitations'>('users');
+  const [users, setUsers] = useState<AdminUser[]>([]);
+  const [roles, setRoles] = useState<RoleDef[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [showCreateForm, setShowCreateForm] = useState(false);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+
+  // Create user form state
+  const [newEmail, setNewEmail] = useState('');
+  const [newName, setNewName] = useState('');
+  const [newRole, setNewRole] = useState('staff');
+  const [newPhone, setNewPhone] = useState('');
+  const [newScope, setNewScope] = useState('employee');
+  const [enforce2FA, setEnforce2FA] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
     setTimeout(() => setToastMsg(null), 3500);
   };
 
-  const [permissions, setPermissions] = useState<Permission[]>([
-    { id: '1', module: 'Daily Grooming Dashboard', desc: 'Overview of assigned stations, daily kennel load, and dog queue status', view: true, edit: false, del: false, pii: false },
-    { id: '2', module: 'Appointments Queue & Calendar', desc: 'View schedule; groomer reassigns styling slot and updates appointment status', view: true, edit: true, del: false, pii: false, editLabel: 'YES [STATUS]' },
-    { id: '3', module: 'Live 21-Stage Kanban Pipeline', desc: 'Bath, Blow Dry, Dematting, Scissor Finish, Quality Inspection transitions', view: true, edit: true, del: false, pii: false, editLabel: 'YES [STAGE]' },
-    { id: '4', module: 'Time Tracking & Clock In/Out', desc: 'Personal shift punch registry and grooming station timer capture', view: true, edit: true, del: false, pii: false, editLabel: 'YES [PUNCH]' },
-    { id: '5', module: 'Customers & Canine Health Records', desc: 'Canine coat condition, behavioral flags, vet vaccines. PII address/phone masked.', view: true, edit: true, del: false, pii: 'masked', viewLabel: 'YES [PET ONLY]', editLabel: 'YES [NOTES/IMG]' },
-    { id: '6', module: 'Walk-in Register & POS', desc: 'Retail cash drawer, swipe hardware, tips distribution, and walk-in invoice tenders', view: false, edit: false, del: false, pii: false, restricted: true },
-    { id: '7', module: 'Retail Products & Backbar Inventory', desc: 'Check stock of shampoos, specialty conditioners, dematting sprays, and ear cleaners', view: true, edit: false, del: false, pii: 'masked', viewLabel: 'YES [STOCK]', piiLabel: 'NO [COST MASKED]' },
-    { id: '8', module: 'Purchase Orders & Vendor Receiving', desc: 'Wholesale supplier agreements, freight receiving dock, and inventory invoicing', view: false, edit: false, del: false, pii: false, hidden: true },
-    { id: '9', module: 'Order Fulfillment & Outbound Shipping', desc: 'E-commerce order dispatch, carrier label generation, and logistics manifest', view: false, edit: false, del: false, pii: false, hidden: true },
-    { id: '10', module: 'Personal Commission & Tip Ledger', desc: 'Employee-specific styling split percentages, cash tip payouts, and payroll cycle review', view: true, edit: false, del: false, pii: true, viewLabel: 'YES [OWN]', piiLabel: 'YES [SELF]' },
-    { id: '11', module: 'Salon Invoices & Aging Ledger', desc: 'Storewide accounts receivable, delinquent accounts, batch tax breakdowns', view: false, edit: false, del: false, pii: false, restricted: true },
-    { id: '12', module: 'Escrow Deposits & Forfeitures', desc: 'Pre-booking holiday deposits, no-show forfeitures, balance releases', view: false, edit: false, del: false, pii: false, restricted: true },
-    { id: '13', module: 'Stripe Gateway & Direct Bank Payouts', desc: 'Live merchant token configuration, ACH transfer schedules, gateway webhooks', view: false, edit: false, del: false, pii: false, restricted: true },
-    { id: '14', module: 'Salon Configuration & Business Rules Engine', desc: 'Organization entity, tax matrices, Twilio SMS webhooks, and Booking Wizard rules', view: false, edit: false, del: false, pii: false, locked: true },
-  ]);
-
-  const togglePermission = (id: string, field: 'view' | 'edit' | 'del' | 'pii') => {
-    setPermissions(prev => prev.map(p => {
-      if (p.id === id) {
-        if (p.restricted || p.hidden || p.locked) return p;
-        if (field === 'pii') {
-          const nextVal = p.pii === true ? false : p.pii === 'masked' ? true : 'masked';
-          return { ...p, pii: nextVal };
+  // Fetch users + roles from live API
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch('/api/admin/users');
+        if (res.ok) {
+          const data = await res.json();
+          setUsers([...(data.admins || []), ...(data.staff || []), ...(data.customers || [])]);
+          setRoles(data.roles || []);
         }
-        const boolField = field as 'view' | 'edit' | 'del';
-        return { ...p, [boolField]: !p[boolField] };
+      } catch (err) {
+        console.error('Failed to fetch users:', err);
+      } finally {
+        setLoading(false);
       }
-      return p;
-    }));
-    showToast('MUTATED PERMISSION CELL - STAGED FOR REVISION LEDGER');
+    }
+    fetchData();
+  }, []);
+
+  const handleCreateUser = async () => {
+    if (!newEmail || !newRole) {
+      showToast('Email and Role are required');
+      return;
+    }
+    try {
+      const res = await fetch('/api/admin/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: newEmail,
+          name: newName,
+          role: newRole,
+          scope: newScope,
+          phone: newPhone,
+          enforce2FA,
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        showToast(`User ${newEmail} provisioned as ${newRole}`);
+        // Refresh users
+        const refreshRes = await fetch('/api/admin/users');
+        if (refreshRes.ok) {
+          const refreshData = await refreshRes.json();
+          setUsers([...(refreshData.admins || []), ...(refreshData.staff || []), ...(refreshData.customers || [])]);
+        }
+        setShowCreateForm(false);
+        setNewEmail('');
+        setNewName('');
+        setNewPhone('');
+      } else {
+        const err = await res.json();
+        showToast(err.error || 'Failed to create user');
+      }
+    } catch (err) {
+      showToast('Network error');
+    }
+  };
+
+  const handleUpdateUser = async (userId: string, updates: { role?: string; status?: string }) => {
+    try {
+      const res = await fetch('/api/admin/users', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, ...updates }),
+      });
+      if (res.ok) {
+        showToast('User updated');
+        setUsers(prev => prev.map(u => u.userId === userId ? { ...u, ...updates } : u));
+      }
+    } catch (err) {
+      showToast('Update failed');
+    }
+  };
+
+  const handleDeleteUser = async (userId: string) => {
+    if (!confirm('Revoke access for this user?')) return;
+    try {
+      const res = await fetch(`/api/admin/users?userId=${userId}`, { method: 'DELETE' });
+      if (res.ok) {
+        showToast('Access revoked');
+        setUsers(prev => prev.filter(u => u.userId !== userId));
+      }
+    } catch (err) {
+      showToast('Delete failed');
+    }
+  };
+
+  const roleLabels: Record<string, string> = {
+    owner: 'Super Admin / Owner',
+    admin: 'Salon Manager',
+    manager: 'Salon Manager',
+    groomer: 'Groomer / Stylist',
+    front_desk: 'Front Desk / Reception',
+    staff: 'Staff',
+    customer: 'Customer',
   };
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="p-6 space-y-6 font-bar">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
-          <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
-          <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
+        <div className="fixed top-4 right-4 z-50 bg-card text-foreground border border-border rounded-md shadow-popover px-4 py-2.5 text-[13px] font-medium">
+          {toastMsg}
         </div>
       )}
 
-      {/* TOP GLOBAL ADMIN SUB-NAVIGATION */}
-      <div className="w-full bg-card border-b border-border">
-        {/* Level 1 Settings Tabs */}
-        <div className="flex items-center overflow-x-auto border-b border-border bg-muted/40 px-6">
-          <button onClick={() => onNavigateScreen?.('overview')} className="px-4 py-3 tabular-nums font-bold text-muted-foreground hover:text-foreground whitespace-nowrap">
-            01 OVERVIEW
-          </button>
-          <button onClick={() => onNavigateScreen?.('org-multiloc')} className="px-4 py-3 tabular-nums font-bold text-muted-foreground hover:text-foreground whitespace-nowrap">
-            02 ORGANIZATION
-          </button>
-          <button onClick={() => showToast('VIEWING USERS & ACCESS')} className="px-4 py-3 tabular-nums bg-card text-foreground font-bold  border-border whitespace-nowrap flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-black"></span>
-            03 USERS &amp; ACCESS [ACTIVE]
-          </button>
-          <button onClick={() => onNavigateScreen?.('booking-ops')} className="px-4 py-3 tabular-nums font-bold text-muted-foreground hover:text-foreground whitespace-nowrap">
-            04 BOOKING &amp; OPS
-          </button>
-          <button onClick={() => onNavigateScreen?.('services-pricing')} className="px-4 py-3 tabular-nums font-bold text-muted-foreground hover:text-foreground whitespace-nowrap">
-            05 SERVICES &amp; PRICING
-          </button>
-          <button onClick={() => onNavigateScreen?.('revenue-stripe')} className="px-4 py-3 tabular-nums font-bold text-muted-foreground hover:text-foreground whitespace-nowrap">
-            06 PAYMENTS
-          </button>
-          <button onClick={() => onNavigateScreen?.('cms-wizard')} className="px-4 py-3 tabular-nums font-bold text-muted-foreground hover:text-foreground whitespace-nowrap">
-            07 WEBSITE
-          </button>
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-xl font-semibold tracking-tight text-foreground">Users & Access</h2>
+          <p className="text-[13px] text-muted-foreground mt-1">Manage team members, assign roles, and control portal access.</p>
         </div>
-
-        {/* Level 2 Contextual Pills Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between px-6 py-2 bg-card gap-2 border-b border-border">
-          <div className="flex items-center gap-2 overflow-x-auto tabular-nums">
-            <button 
-              onClick={() => { setActiveSubTab('roster'); showToast('ROSTER TAB'); }}
-              className={`px-3 py-1 text-xs border border-border hover:bg-muted/40 whitespace-nowrap cursor-pointer ${
-                activeSubTab === 'roster' ? 'bg-primary text-primary-foreground' : 'bg-muted/40 text-foreground'
-              }`}
-            >
-              STAFF ROSTER [24]
-            </button>
-            <button 
-              onClick={() => { setActiveSubTab('magic'); showToast('Invites & tokens tab'); }}
-              className={`px-3 py-1 text-xs border border-border hover:bg-muted/40 whitespace-nowrap cursor-pointer ${
-                activeSubTab === 'magic' ? 'bg-primary text-primary-foreground' : 'bg-muted/40 text-foreground'
-              }`}
-            >
-              EMAIL INVITES &amp; TOKENS
-            </button>
-            <button 
-              onClick={() => { setActiveSubTab('checklist'); showToast('ROLE MATRIX ACTIVE'); }}
-              className={`px-3 py-1 text-xs font-bold border border-border whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
-                activeSubTab === 'checklist' ? 'bg-primary text-primary-foreground' : 'bg-muted/40 text-foreground'
-              }`}
-            >
-              <CheckSquare className="w-3.5 h-3.5" />
-              ROLE CHECKLIST &amp; PERMISSIONS [ACTIVE]
-            </button>
-            <button 
-              onClick={() => { setActiveSubTab('audit'); showToast('AUDIT LOGS TAB'); }}
-              className={`px-3 py-1 text-xs border border-border hover:bg-muted/40 whitespace-nowrap cursor-pointer ${
-                activeSubTab === 'audit' ? 'bg-primary text-primary-foreground' : 'bg-muted/40 text-foreground'
-              }`}
-            >
-              AUDIT &amp; ACCESS LOGS
-            </button>
-          </div>
-          <div className="hidden lg:flex items-center gap-2 tabular-nums text-[10px]">
-            <span>POLICY REV: <strong className="text-foreground font-bold">SEC-4029-B</strong></span>
-            <span className="bg-success/10 border border-success text-success px-2 py-0.5 font-bold">STRICT ENFORCEMENT</span>
-          </div>
-        </div>
+        <button
+          onClick={() => setShowCreateForm(!showCreateForm)}
+          className="inline-flex items-center gap-1.5 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-3.5 text-[13px] font-medium shadow-card transition-colors cursor-pointer"
+        >
+          <Plus className="size-4" />
+          Add Team Member
+        </button>
       </div>
 
-      {/* WORKSPACE CANVAS */}
-      <div className="p-6 space-y-6">
-        {/* Executive Header Banner */}
-        <div className="border border-border bg-card p-5">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-            <div className="space-y-1 max-w-3xl">
-              <h2 className="text-xl font-bold uppercase tracking-tight text-foreground">
-                Staff Roles &amp; Permissions Matrix
-              </h2>
-              <p className="text-muted-foreground leading-relaxed font-sans text-xs">
-                Configure module access and action permissions for each staff tier (Managers, Groomers, Bathers, Front Desk, and Assistants).
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <button onClick={() => showToast('Role matrix reset to defaults')} className="px-3 py-1.5 bg-card hover:bg-muted/30 border border-border font-bold uppercase cursor-pointer text-xs">
-                Reset Defaults
-              </button>
-              <button 
-                onClick={() => showToast('Permissions saved successfully')}
-                className="px-4 py-1.5 bg-black hover:bg-muted text-white font-bold uppercase flex items-center gap-1.5 cursor-pointer text-xs"
-              >
-                <Save className="w-3.5 h-3.5" />
-                Save Changes
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Role Tier Horizontal Selector Bar */}
-        <div className="border border-border bg-card">
-          <div className="px-4 py-2 bg-muted/40 border-b border-border flex items-center justify-between tabular-nums text-[11px]">
-            <span className="font-bold text-foreground uppercase">SELECT ACTIVE TIER TO CONFIGURE / 06 TIERS DEFINED</span>
-            <span className="text-muted-foreground">SCOPE: TENANT_ALL_FACILITIES</span>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-y lg:divide-y-0 divide-black bg-muted/30">
-            {[
-              { id: 'tier1', code: 'TIER_01', title: 'Super Admin', desc: 'FULL ROOT ACCESS', bg: 'bg-black' },
-              { id: 'tier2', code: 'TIER_02', title: 'General Manager', desc: 'BRANCH LEVEL OP', bg: 'bg-muted/300' },
-              { id: 'tier3', code: 'TIER_03', title: 'Lead Groomer', desc: 'MASTER STYLIST', bg: 'bg-muted' },
-              { id: 'tier4', code: 'TIER_04', title: 'Staff Groomer', desc: 'STATION APPOINTMENTS', bg: 'bg-black', active: true },
-              { id: 'tier5', code: 'TIER_05', title: 'Bather & Assistant', desc: 'BATHING / PREP', bg: 'bg-muted/300' },
-              { id: 'tier6', code: 'TIER_06', title: 'Front Desk / POS', desc: 'CASHIER & INTAKE', bg: 'bg-muted' },
-            ].map((tier) => (
-              <button 
-                key={tier.id}
-                onClick={() => { setActiveTier(tier.id as any); showToast(`SWITCHED EDITING SCOPE TO ${tier.title.toUpperCase()}`); }}
-                className={`p-3 text-left transition-colors flex flex-col justify-between h-20 cursor-pointer ${
-                  tier.active ? 'bg-card border-2 border-border -m-[1.5px] z-10 shadow-card' : 'hover:bg-muted/40'
-                }`}
-              >
-                <div className="flex items-center justify-between mb-1 tabular-nums text-[10px]">
-                  <span className={tier.active ? 'text-warning font-bold' : 'text-muted-foreground'}>{tier.code} {tier.active && '[ACTIVE]'}</span>
-                  <span className={`w-2 h-2 ${tier.bg}`}></span>
-                </div>
-                <span className="font-bold text-foreground font-sans leading-tight block truncate">{tier.title}</span>
-                <span className="text-[10px] text-muted-foreground uppercase block tracking-wider leading-none mt-1">{tier.desc}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Main Granular Permission Matrix Table */}
-        <div className="border border-border bg-card shadow-card-md">
-          {/* Matrix Header Info Bar */}
-          <div className="px-4 py-3 bg-muted/40  border-border flex flex-col md:flex-row md:items-center justify-between gap-2 tabular-nums">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="font-bold text-foreground uppercase">ROLE TARGET: STAFF GROOMER (STAFF_TIER_04)</span>
-              <span className="border border-border px-1.5 bg-card text-[10px] font-bold text-foreground">14 GRANTED / 26 RESTRICTED</span>
-            </div>
-            <div className="flex items-center gap-4 text-[11px]">
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 bg-success inline-block border border-border"></span>
-                <span className="text-foreground">ENABLED [GRANT]</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 bg-muted inline-block border border-border"></span>
-                <span className="text-muted-foreground">DENIED [LOCKED]</span>
+      {/* Create User Form */}
+      {showCreateForm && (
+        <div className="bg-card border border-border rounded-xl shadow-card p-5 space-y-4">
+          <h3 className="text-[15px] font-semibold text-foreground">Provision New User</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Name */}
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Full Name</label>
+              <div className="relative">
+                <UserCircle className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <input
+                  type="text"
+                  value={newName}
+                  onChange={(e) => setNewName(e.target.value)}
+                  placeholder="Jane Smith"
+                  className="w-full pl-9 pr-3 h-9 bg-background border border-input rounded-md text-[13px] text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                />
               </div>
             </div>
+            {/* Email */}
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Email Address *</label>
+              <div className="relative">
+                <Mail className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <input
+                  type="email"
+                  value={newEmail}
+                  onChange={(e) => setNewEmail(e.target.value)}
+                  placeholder="jane@allaboutpawz.com"
+                  className="w-full pl-9 pr-3 h-9 bg-background border border-input rounded-md text-[13px] text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+              </div>
+            </div>
+            {/* Phone */}
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Phone</label>
+              <div className="relative">
+                <Phone className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <input
+                  type="tel"
+                  value={newPhone}
+                  onChange={(e) => setNewPhone(e.target.value)}
+                  placeholder="(214) 555-0000"
+                  className="w-full pl-9 pr-3 h-9 bg-background border border-input rounded-md text-[13px] text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+              </div>
+            </div>
+            {/* Role */}
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Assigned Role *</label>
+              <div className="relative">
+                <Shield className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <select
+                  value={newRole}
+                  onChange={(e) => setNewRole(e.target.value)}
+                  className="w-full pl-9 pr-8 h-9 bg-background border border-input rounded-md text-[13px] text-foreground cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring appearance-none"
+                >
+                  <option value="owner">Super Admin / Owner</option>
+                  <option value="admin">Salon Manager</option>
+                  <option value="groomer">Groomer / Stylist</option>
+                  <option value="front_desk">Front Desk / Reception</option>
+                  <option value="staff">Staff</option>
+                  <option value="customer">Customer Portal</option>
+                </select>
+                <ChevronDown className="size-4 absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+              </div>
+            </div>
+            {/* Scope */}
+            <div>
+              <label className="text-[12px] font-medium text-muted-foreground block mb-1">Portal Scope</label>
+              <div className="relative">
+                <Users className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <select
+                  value={newScope}
+                  onChange={(e) => setNewScope(e.target.value)}
+                  className="w-full pl-9 pr-8 h-9 bg-background border border-input rounded-md text-[13px] text-foreground cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring appearance-none"
+                >
+                  <option value="admin">Admin Portal</option>
+                  <option value="employee">Employee / Groomer Portal</option>
+                  <option value="customer">Customer Portal</option>
+                </select>
+                <ChevronDown className="size-4 absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+              </div>
+            </div>
+            {/* 2FA */}
+            <div className="flex items-center gap-2 pt-6">
+              <button
+                type="button"
+                onClick={() => setEnforce2FA(!enforce2FA)}
+                className={cn(
+                  'inline-flex items-center gap-2 h-9 px-3 rounded-md border text-[13px] font-medium cursor-pointer transition-colors',
+                  enforce2FA
+                    ? 'bg-primary/10 text-primary border-primary/20'
+                    : 'border-border text-muted-foreground hover:bg-accent'
+                )}
+              >
+                <Lock className="size-4" />
+                {enforce2FA ? '2FA Required' : '2FA Optional'}
+              </button>
+            </div>
           </div>
+          <div className="flex justify-end gap-2 pt-2">
+            <button
+              onClick={() => setShowCreateForm(false)}
+              className="inline-flex items-center h-9 px-3.5 rounded-md border border-border bg-background hover:bg-accent text-foreground text-[13px] font-medium cursor-pointer"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleCreateUser}
+              className="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 text-[13px] font-medium shadow-card cursor-pointer"
+            >
+              <Plus className="size-4" />
+              Create User
+            </button>
+          </div>
+        </div>
+      )}
 
-          {/* Table Structure */}
-          <div className="overflow-x-auto w-full">
-            <table className="w-full text-left border-collapse">
+      {/* Sub-tabs */}
+      <div className="flex items-center gap-1 border-b border-border">
+        {([
+          { id: 'users', label: 'Users' },
+          { id: 'roles', label: 'Roles & Permissions' },
+          { id: 'invitations', label: 'Pending Invitations' },
+        ] as const).map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveSubTab(tab.id)}
+            className={cn(
+              'px-4 py-2 text-[13px] font-medium transition-colors cursor-pointer border-b-2 -mb-px',
+              activeSubTab === tab.id
+                ? 'border-primary text-primary'
+                : 'border-transparent text-muted-foreground hover:text-foreground'
+            )}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Users tab */}
+      {activeSubTab === 'users' && (
+        <div className="bg-card border border-border rounded-xl shadow-card overflow-hidden">
+          {loading ? (
+            <div className="p-8 text-center text-muted-foreground text-[13px]">Loading users from database...</div>
+          ) : users.length === 0 ? (
+            <div className="p-8 text-center text-muted-foreground text-[13px]">No users found. Click "Add Team Member" to create one.</div>
+          ) : (
+            <table className="w-full text-left text-[13px] text-foreground">
               <thead>
-                <tr className="bg-muted/40  border-border tabular-nums text-[11px] uppercase tracking-wider text-foreground">
-                  <th className="p-3 w-2/5 border-r border-border font-bold">MODULE ENTITY &amp; ACTION CONTEXT</th>
-                  <th className="p-3 text-center w-[15%] border-r border-border">
-                    <div className="flex items-center justify-center gap-1">
-                      <Eye className="w-3.5 h-3.5" />
-                      <span>VIEW / READ</span>
-                    </div>
-                  </th>
-                  <th className="p-3 text-center w-[15%] border-r border-border">
-                    <div className="flex items-center justify-center gap-1">
-                      <Edit2 className="w-3.5 h-3.5" />
-                      <span>CREATE / EDIT</span>
-                    </div>
-                  </th>
-                  <th className="p-3 text-center w-[15%] border-r border-border">
-                    <div className="flex items-center justify-center gap-1">
-                      <Trash2 className="w-3.5 h-3.5" />
-                      <span>DELETE / VOID</span>
-                    </div>
-                  </th>
-                  <th className="p-3 text-center w-[15%]">
-                    <div className="flex items-center justify-center gap-1 text-warning">
-                      <Lock className="w-3.5 h-3.5" />
-                      <span>FINANCIAL / PII</span>
-                    </div>
-                  </th>
+                <tr className="bg-muted/40 border-b border-border text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  <th className="p-3 font-semibold">User</th>
+                  <th className="p-3 font-semibold">Email</th>
+                  <th className="p-3 font-semibold">Assigned Role</th>
+                  <th className="p-3 font-semibold">2FA</th>
+                  <th className="p-3 font-semibold">Status</th>
+                  <th className="p-3 font-semibold">Last Active</th>
+                  <th className="p-3 text-center font-semibold">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border tabular-nums text-[11px]">
-                
-                {/* SECTION 1: SALON OPS */}
-                <tr className="bg-muted/30  border-b border-border">
-                  <td className="px-4 py-2 tabular-nums font-bold text-foreground" colSpan={5}>
-                    <div className="flex items-center justify-between">
+              <tbody className="divide-y divide-border">
+                {users.map((user) => (
+                  <tr key={user.id + user.userId} className="hover:bg-accent/50 transition-colors">
+                    <td className="p-3">
                       <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 bg-black inline-block"></span>
-                        <span className="uppercase text-[10px] tracking-wider">SEC:01 // SALON OPERATIONS MODULES</span>
-                      </div>
-                      <span className="text-muted-foreground uppercase text-[9px]">CORE GROOMING WORKFLOWS</span>
-                    </div>
-                  </td>
-                </tr>
-
-                {permissions.map((p) => {
-                  if (p.restricted || p.hidden || p.locked) {
-                    let label = 'LOCKED';
-                    let cellBg = 'bg-muted/40 opacity-60';
-                    if (p.hidden) { label = 'HIDDEN'; }
-                    if (p.restricted) { label = 'RESTRICTED'; }
-
-                    return (
-                      <tr key={p.id} className="hover:bg-muted/30 transition-colors">
-                        <td className="p-3 border-r border-border">
-                          <div className="flex flex-col">
-                            <span className="font-bold text-foreground text-xs block">{p.module}</span>
-                            <span className="text-muted-foreground text-[10px] leading-tight mt-0.5">{p.desc}</span>
-                          </div>
-                        </td>
-                        <td className={`p-3 text-center border-r border-border ${cellBg}`} colSpan={4}>
-                          <div className="inline-flex items-center gap-1 px-3 py-1 border border-border bg-muted/40 text-muted-foreground font-bold uppercase tracking-widest text-[10px]">
-                            <Lock className="w-3.5 h-3.5" />
-                            <span>{label}</span>
-                          </div>
-                        </td>
-                      </tr>
-                    );
-                  }
-
-                  return (
-                    <tr key={p.id} className="hover:bg-muted/30 transition-colors">
-                      <td className="p-3 border-r border-border">
-                        <div className="flex flex-col">
-                          <span className="font-bold text-foreground text-xs block">{p.module}</span>
-                          <span className="text-muted-foreground text-[10px] leading-tight mt-0.5">{p.desc}</span>
+                        <div className="size-8 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center justify-center text-[11px] font-semibold">
+                          {user.avatarInitials}
                         </div>
-                      </td>
-                      
-                      {/* VIEW */}
-                      <td className="p-3 text-center border-r border-border bg-card">
-                        <button 
-                          onClick={() => togglePermission(p.id, 'view')}
-                          className={`inline-flex items-center gap-1.5 px-2.5 py-1 border transition-all cursor-pointer ${
-                            p.view 
-                              ? 'border-success bg-success/10 text-success font-bold' 
-                              : 'border-border bg-card text-muted-foreground/70'
-                          }`}
-                        >
-                          <span className="material-symbols-outlined text-[14px]">
-                            {p.view ? 'check_box' : 'check_box_outline_blank'}
-                          </span>
-                          <span className="text-[10px] uppercase font-bold">{p.view ? (p.viewLabel || 'YES') : 'NO'}</span>
-                        </button>
-                      </td>
-
-                      {/* EDIT */}
-                      <td className="p-3 text-center border-r border-border bg-card">
-                        <button 
-                          onClick={() => togglePermission(p.id, 'edit')}
-                          className={`inline-flex items-center gap-1.5 px-2.5 py-1 border transition-all cursor-pointer ${
-                            p.edit 
-                              ? 'border-success bg-success/10 text-success font-bold' 
-                              : 'border-border bg-card text-muted-foreground/70'
-                          }`}
-                        >
-                          <span className="material-symbols-outlined text-[14px]">
-                            {p.edit ? 'check_box' : 'check_box_outline_blank'}
-                          </span>
-                          <span className="text-[10px] uppercase font-bold">{p.edit ? (p.editLabel || 'YES') : 'NO'}</span>
-                        </button>
-                      </td>
-
-                      {/* DELETE */}
-                      <td className="p-3 text-center border-r border-border bg-card">
-                        <button 
-                          onClick={() => togglePermission(p.id, 'del')}
-                          className={`inline-flex items-center gap-1.5 px-2.5 py-1 border transition-all cursor-pointer ${
-                            p.del 
-                              ? 'border-success bg-success/10 text-success font-bold' 
-                              : 'border-border bg-card text-muted-foreground/70'
-                          }`}
-                        >
-                          <span className="material-symbols-outlined text-[14px]">
-                            {p.del ? 'check_box' : 'check_box_outline_blank'}
-                          </span>
-                          <span className="text-[10px] uppercase font-bold">{p.del ? 'YES' : 'NO'}</span>
-                        </button>
-                      </td>
-
-                      {/* FINANCIAL / PII */}
-                      <td className="p-3 text-center bg-card">
-                        {p.pii === 'masked' ? (
-                          <div className="inline-flex items-center gap-1 px-2.5 py-1 border border-warning bg-warning/5 text-warning font-bold text-[10px] uppercase">
-                            <EyeOff className="w-3.5 h-3.5" />
-                            <span>MASKED</span>
-                          </div>
-                        ) : (
-                          <button 
-                            onClick={() => togglePermission(p.id, 'pii')}
-                            className={`inline-flex items-center gap-1.5 px-2.5 py-1 border transition-all cursor-pointer ${
-                              p.pii === true
-                                ? 'border-success bg-success/10 text-success font-bold' 
-                                : 'border-border bg-card text-muted-foreground/70'
-                            }`}
-                          >
-                            <span className="material-symbols-outlined text-[14px]">
-                              {p.pii === true ? 'check_box' : 'check_box_outline_blank'}
-                            </span>
-                            <span className="text-[10px] uppercase font-bold">{p.pii === true ? (p.piiLabel || 'YES') : 'NO'}</span>
-                          </button>
-                        )}
-                      </td>
-                    </tr>
-                  );
-                })}
-
+                        <span className="font-medium text-foreground">{user.name}</span>
+                      </div>
+                    </td>
+                    <td className="p-3 text-muted-foreground">{user.email}</td>
+                    <td className="p-3">
+                      <select
+                        value={user.role}
+                        onChange={(e) => handleUpdateUser(user.userId, { role: e.target.value })}
+                        className="bg-background border border-input rounded-md h-7 px-2 text-[12px] text-foreground cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring"
+                      >
+                        <option value="owner">Super Admin</option>
+                        <option value="admin">Salon Manager</option>
+                        <option value="groomer">Groomer</option>
+                        <option value="front_desk">Front Desk</option>
+                        <option value="staff">Staff</option>
+                        <option value="customer">Customer</option>
+                      </select>
+                    </td>
+                    <td className="p-3">
+                      {user.twoFactorEnabled ? (
+                        <span className="inline-flex items-center gap-1 text-success text-[12px] font-medium">
+                          <Check className="size-3.5" /> Enabled
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 text-muted-foreground text-[12px]">
+                          <X className="size-3.5" /> Disabled
+                        </span>
+                      )}
+                    </td>
+                    <td className="p-3">
+                      <span className={cn(
+                        'inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full border uppercase',
+                        user.status === 'Active' ? 'bg-success/10 text-success border-success/20' :
+                        user.status === 'Invited' ? 'bg-warning/10 text-warning border-warning/20' :
+                        'bg-muted text-muted-foreground border-border'
+                      )}>
+                        {user.status}
+                      </span>
+                    </td>
+                    <td className="p-3 text-muted-foreground text-[12px] tabular-nums">{user.lastActive}</td>
+                    <td className="p-3 text-center">
+                      <button
+                        onClick={() => handleDeleteUser(user.userId)}
+                        className="inline-flex items-center justify-center size-7 rounded-md hover:bg-destructive/10 text-muted-foreground hover:text-destructive cursor-pointer transition-colors"
+                        title="Revoke Access"
+                      >
+                        <Trash2 className="size-3.5" />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
-          </div>
-
-          {/* Quick Toggle Action Toolbar */}
-          <div className="p-4 bg-muted/40 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 tabular-nums">
-            <div className="flex items-center gap-2">
-              <label className="flex items-center gap-2 cursor-pointer select-none">
-                <input type="checkbox" defaultChecked className="w-4 h-4 rounded-md accent-black border border-border cursor-pointer" />
-                <span className="font-bold text-foreground text-xs">AUTO-COMMIT PERMISSION GRANTS TO REVISION LEDGER</span>
-              </label>
-            </div>
-            <div className="flex items-center gap-2">
-              <button onClick={() => showToast('EXPANDED ALL CAPABILITY EXCRIPTORS')} className="px-3 py-1.5 bg-card border border-border hover:bg-muted/40 cursor-pointer font-bold">
-                EXPAND ALL DESCRIPTORS
-              </button>
-              <button onClick={() => showToast('EXPORTED SECURITY REVISION POLICY')} className="px-3 py-1.5 bg-card border border-border hover:bg-muted/40 cursor-pointer font-bold flex items-center gap-1.5">
-                <FileJson className="w-3.5 h-3.5" />
-                EXPORT POLICY JSON [SEC_TIER_04]
-              </button>
-            </div>
-          </div>
+          )}
         </div>
+      )}
 
-        {/* Summary & Override Rules Callout Banner */}
-        <div className="border border-border bg-muted/30 p-5 space-y-4 shadow-card-md">
-          <div className="flex items-center justify-between border-b border-border pb-2">
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-foreground" />
-              <span className="font-bold font-sans text-sm text-foreground">GROOMER VIEW RESTRICTION POLICY ACTIVE</span>
-            </div>
-            <span className="tabular-nums text-[9px] px-2 py-0.5 bg-primary text-primary-foreground font-bold uppercase">
-              SEC_POLICY_ENFORCED
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 tabular-nums text-[11px] leading-relaxed">
-            <div className="border border-border bg-card p-3 space-y-1">
-              <div className="flex items-center gap-1.5 text-warning font-bold uppercase">
-                <EyeOff className="w-3.5 h-3.5" />
-                <span>RESTRICTED CAPABILITIES</span>
+      {/* Roles & Permissions tab */}
+      {activeSubTab === 'roles' && (
+        <div className="space-y-4">
+          {roles.length === 0 ? (
+            <div className="p-8 text-center text-muted-foreground text-[13px]">No role definitions found in database.</div>
+          ) : (
+            roles.map((role) => (
+              <div key={role.id} className="bg-card border border-border rounded-xl shadow-card p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <h3 className="text-[15px] font-semibold text-foreground">{role.label}</h3>
+                    <p className="text-[12px] text-muted-foreground mt-0.5">{role.description}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {role.is_system && (
+                      <span className="inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-muted text-muted-foreground border border-border uppercase">System</span>
+                    )}
+                    {role.can_sign_off && (
+                      <span className="inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 uppercase">Can Sign Off</span>
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {role.permissions?.map((perm, idx) => (
+                    <span key={idx} className="inline-flex items-center text-[11px] font-medium px-2 py-1 rounded-md bg-muted/40 text-muted-foreground border border-border">
+                      <Shield className="size-3 mr-1" />
+                      {perm}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <p className="text-muted-foreground font-sans mt-1">
-                Groomer profiles automatically suppress business financial ledgers, system operational configurations, COGS inventory purchase costs, and client credit card tokens.
-              </p>
-            </div>
-
-            <div className="border border-border bg-card p-3 space-y-1">
-              <div className="flex items-center gap-1.5 text-success font-bold uppercase">
-                <Check className="w-3.5 h-3.5" />
-                <span>UNRESTRICTED CAPABILITIES</span>
-              </div>
-              <p className="text-muted-foreground font-sans mt-1">
-                Full read and write execution over assigned dogs, coat triage records, 21-stage dog workflow advance machine, styling photo upload, and personal timeclock tracking.
-              </p>
-            </div>
-
-            <div className="border border-border bg-card p-3 space-y-1">
-              <div className="flex items-center gap-1.5 text-foreground font-bold uppercase">
-                <Terminal className="w-3.5 h-3.5" />
-                <span>AUDIT TRAIL VERIFICATION</span>
-              </div>
-              <div className="text-muted-foreground mt-1 tabular-nums text-[11px] space-y-0.5">
-                <div><strong className="text-foreground font-bold">SYS ADMIN:</strong> David Chen</div>
-                <div><strong className="text-foreground font-bold">REVISION:</strong> 2025-05-18 14:02 CST</div>
-                <div><strong className="text-foreground font-bold">HASH:</strong> 9a2f7c04e8b31a5d</div>
-              </div>
-            </div>
-          </div>
+            ))
+          )}
         </div>
-      </div>
+      )}
+
+      {/* Invitations tab */}
+      {activeSubTab === 'invitations' && (
+        <div className="bg-card border border-border rounded-xl shadow-card p-8 text-center">
+          <p className="text-[13px] text-muted-foreground">No pending invitations.</p>
+        </div>
+      )}
     </div>
   );
 };
