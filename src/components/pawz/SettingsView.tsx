@@ -468,6 +468,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               onNavigateScreen={navigateToScreen}
               selectedLocation={selectedLocation}
               onSelectLocation={onSelectLocation}
+              systemSettings={systemSettings}
+              saveSettingsToDb={saveSettingsToDb}
             />
           )}
 
@@ -476,6 +478,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               onNavigateScreen={navigateToScreen}
               selectedLocation={selectedLocation}
               onSelectLocation={onSelectLocation}
+              systemSettings={systemSettings}
+              saveSettingsToDb={saveSettingsToDb}
             />
           )}
 
