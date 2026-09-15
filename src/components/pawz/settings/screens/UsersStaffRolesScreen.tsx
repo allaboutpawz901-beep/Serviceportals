@@ -31,6 +31,12 @@ interface RoleDef {
   signoff_max_level: number;
 }
 
+interface PermissionModule {
+  code: string;
+  label: string;
+  module: string;
+}
+
 interface ScreenProps {
   onNavigateScreen?: (screenId: string) => void;
   selectedLocation?: string;
@@ -41,7 +47,10 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
   onNavigateScreen,
   selectedLocation = 'All Locations',
 }) => {
-  const [activeSubTab, setActiveSubTab] = useState<'users' | 'roles' | 'invitations'>('users');
+  const [activeSubTab, setActiveSubTab] = useState<'users' | 'permissions' | 'roles' | 'invitations'>('users');
+  const [permissionModules, setPermissionModules] = useState<PermissionModule[]>([]);
+  const [userPermissions, setUserPermissions] = useState<Record<string, string>>({});
+  const [selectedPermissionUser, setSelectedPermissionUser] = useState<AdminUser | null>(null);
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [roles, setRoles] = useState<RoleDef[]>([]);
   const [loading, setLoading] = useState(true);
@@ -71,6 +80,12 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
           setUsers([...(data.admins || []), ...(data.staff || []), ...(data.customers || [])]);
           setRoles(data.roles || []);
         }
+        // Also fetch permission modules
+        const permRes = await fetch('/api/admin/permissions');
+        if (permRes.ok) {
+          const permData = await permRes.json();
+          setPermissionModules(permData.modules || []);
+        }
       } catch (err) {
         console.error('Failed to fetch users:', err);
       } finally {
@@ -79,6 +94,41 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
     }
     fetchData();
   }, []);
+
+  // Fetch per-user permissions when a user is selected
+  const fetchUserPermissions = async (user: AdminUser) => {
+    setSelectedPermissionUser(user);
+    try {
+      const res = await fetch(`/api/admin/permissions?userId=${user.userId}`);
+      if (res.ok) {
+        const data = await res.json();
+        setUserPermissions(data.userPermissions || {});
+      }
+    } catch (err) {
+      console.error('Failed to fetch permissions:', err);
+    }
+  };
+
+  // Toggle a module permission for the selected user
+  const togglePermission = async (moduleCode: string, level: 'view' | 'edit' | 'none') => {
+    if (!selectedPermissionUser) return;
+    const newLevel = userPermissions[moduleCode] === level ? 'none' : level;
+    setUserPermissions(prev => {
+      const next = { ...prev };
+      if (newLevel === 'none') delete next[moduleCode];
+      else next[moduleCode] = newLevel;
+      return next;
+    });
+    try {
+      await fetch('/api/admin/permissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: selectedPermissionUser.userId, moduleCode, accessLevel: newLevel }),
+      });
+    } catch (err) {
+      console.error('Failed to update permission:', err);
+    }
+  };
 
   const handleCreateUser = async () => {
     if (!newEmail || !newRole) {
@@ -306,6 +356,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
       <div className="flex items-center gap-1 border-b border-border">
         {([
           { id: 'users', label: 'Users' },
+          { id: 'permissions', label: 'Module Access' },
           { id: 'roles', label: 'Roles & Permissions' },
           { id: 'invitations', label: 'Pending Invitations' },
         ] as const).map((tab) => (
@@ -405,6 +456,87 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
                 ))}
               </tbody>
             </table>
+          )}
+        </div>
+      )}
+
+      {/* Module Access (per-user permission checklist) */}
+      {activeSubTab === 'permissions' && (
+        <div className="space-y-4">
+          {/* User selector */}
+          <div className="bg-card border border-border rounded-xl shadow-card p-5">
+            <h3 className="text-[15px] font-semibold text-foreground mb-3">Select User to Configure Module Access</h3>
+            <div className="flex flex-wrap gap-2">
+              {users.filter(u => u.scope !== 'customer').map((user) => (
+                <button
+                  key={user.userId}
+                  onClick={() => fetchUserPermissions(user)}
+                  className={cn(
+                    'inline-flex items-center gap-2 rounded-md border px-3 h-8 text-[12px] font-medium cursor-pointer transition-colors',
+                    selectedPermissionUser?.userId === user.userId
+                      ? 'bg-primary/10 text-primary border-primary/20'
+                      : 'border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground'
+                  )}
+                >
+                  <span className="size-5 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center justify-center text-[9px] font-semibold">{user.avatarInitials}</span>
+                  {user.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Permission checklist */}
+          {selectedPermissionUser && (
+            <div className="bg-card border border-border rounded-xl shadow-card overflow-hidden">
+              <div className="bg-muted/40 border-b border-border px-4 py-2.5">
+                <span className="text-[13px] font-medium text-foreground">Module Access for {selectedPermissionUser.name}</span>
+                <span className="text-[11px] text-muted-foreground ml-2">({selectedPermissionUser.role})</span>
+              </div>
+              <table className="w-full text-left text-[13px] text-foreground">
+                <thead>
+                  <tr className="border-b border-border text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    <th className="p-3 font-semibold">Module</th>
+                    <th className="p-3 text-center font-semibold">View</th>
+                    <th className="p-3 text-center font-semibold">Edit</th>
+                    <th className="p-3 text-center font-semibold">No Access</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {(['CRM', 'ORDERS', 'ACCOUNTING', 'SYSTEM'].map(group => ({
+                    group,
+                    items: permissionModules.filter(m => m.module === group)
+                  }))).map(({ group, items }) => (
+                    <>
+                      <tr key={group} className="bg-muted/20">
+                        <td colSpan={4} className="p-2 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{group}</td>
+                      </tr>
+                      {items.map((mod) => {
+                        const current = userPermissions[mod.code] || 'none';
+                        return (
+                          <tr key={mod.code} className="hover:bg-accent/50 transition-colors">
+                            <td className="p-3 font-medium text-foreground">{mod.label}</td>
+                            <td className="p-3 text-center">
+                              <input type="radio" name={mod.code} checked={current === 'view'} onChange={() => togglePermission(mod.code, 'view')} className="size-4 cursor-pointer accent-primary" />
+                            </td>
+                            <td className="p-3 text-center">
+                              <input type="radio" name={mod.code} checked={current === 'edit'} onChange={() => togglePermission(mod.code, 'edit')} className="size-4 cursor-pointer accent-primary" />
+                            </td>
+                            <td className="p-3 text-center">
+                              <input type="radio" name={mod.code} checked={current === 'none'} onChange={() => togglePermission(mod.code, 'none')} className="size-4 cursor-pointer accent-muted-foreground" />
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          {!selectedPermissionUser && (
+            <div className="bg-card border border-border rounded-xl shadow-card p-8 text-center">
+              <p className="text-[13px] text-muted-foreground">Select a user above to configure their module access.</p>
+            </div>
           )}
         </div>
       )}
