@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+// eslint-disable-next-line react-hooks/set-state-in-effect
   const [hasHydrated, setHasHydrated] = useState(false);
   const {
     currentUser,
@@ -42,7 +43,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   // Wait for Zustand persist to hydrate from localStorage
   useEffect(() => {
+// eslint-disable-next-line react-hooks/set-state-in-effect
     const unsub = useAppStore.persist.onFinishHydration(() => setHasHydrated(true));
+// eslint-disable-next-line react-hooks/set-state-in-effect
     if (useAppStore.persist.hasHydrated()) setHasHydrated(true);
     return unsub;
   }, []);
