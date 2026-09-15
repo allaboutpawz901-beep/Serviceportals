@@ -166,7 +166,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
           </div>
           <div className="hidden lg:flex items-center gap-2 tabular-nums text-[10px]">
             <span>POLICY REV: <strong className="text-foreground font-bold">SEC-4029-B</strong></span>
-            <span className="bg-success/10 border border-green-800 text-success px-2 py-0.5 font-bold">STRICT ENFORCEMENT</span>
+            <span className="bg-success/10 border border-success text-success px-2 py-0.5 font-bold">STRICT ENFORCEMENT</span>
           </div>
         </div>
       </div>
@@ -218,7 +218,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
                 key={tier.id}
                 onClick={() => { setActiveTier(tier.id as any); showToast(`SWITCHED EDITING SCOPE TO ${tier.title.toUpperCase()}`); }}
                 className={`p-3 text-left transition-colors flex flex-col justify-between h-20 cursor-pointer ${
-                  tier.active ? 'bg-card border-2 border-border -m-[1.5px] z-10 shadow-[2px_2px_0px_#ea580c]' : 'hover:bg-muted/40'
+                  tier.active ? 'bg-card border-2 border-border -m-[1.5px] z-10 shadow-card' : 'hover:bg-muted/40'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1 tabular-nums text-[10px]">
@@ -233,7 +233,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
         </div>
 
         {/* Main Granular Permission Matrix Table */}
-        <div className="border border-border bg-card shadow-[4px_4px_0px_#000000]">
+        <div className="border border-border bg-card shadow-card-md">
           {/* Matrix Header Info Bar */}
           <div className="px-4 py-3 bg-muted/40  border-border flex flex-col md:flex-row md:items-center justify-between gap-2 tabular-nums">
             <div className="flex items-center gap-2 flex-wrap">
@@ -242,7 +242,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
             </div>
             <div className="flex items-center gap-4 text-[11px]">
               <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 bg-green-600 inline-block border border-border"></span>
+                <span className="w-3 h-3 bg-success inline-block border border-border"></span>
                 <span className="text-foreground">ENABLED [GRANT]</span>
               </div>
               <div className="flex items-center gap-1.5">
@@ -287,7 +287,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
               <tbody className="divide-y divide-border tabular-nums text-[11px]">
                 
                 {/* SECTION 1: SALON OPS */}
-                <tr className="bg-muted/30 border-t-2 border-b border-border">
+                <tr className="bg-muted/30  border-b border-border">
                   <td className="px-4 py-2 tabular-nums font-bold text-foreground" colSpan={5}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
@@ -339,7 +339,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
                           onClick={() => togglePermission(p.id, 'view')}
                           className={`inline-flex items-center gap-1.5 px-2.5 py-1 border transition-all cursor-pointer ${
                             p.view 
-                              ? 'border-green-800 bg-success/10 text-success font-bold' 
+                              ? 'border-success bg-success/10 text-success font-bold' 
                               : 'border-border bg-card text-muted-foreground/70'
                           }`}
                         >
@@ -356,7 +356,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
                           onClick={() => togglePermission(p.id, 'edit')}
                           className={`inline-flex items-center gap-1.5 px-2.5 py-1 border transition-all cursor-pointer ${
                             p.edit 
-                              ? 'border-green-800 bg-success/10 text-success font-bold' 
+                              ? 'border-success bg-success/10 text-success font-bold' 
                               : 'border-border bg-card text-muted-foreground/70'
                           }`}
                         >
@@ -373,7 +373,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
                           onClick={() => togglePermission(p.id, 'del')}
                           className={`inline-flex items-center gap-1.5 px-2.5 py-1 border transition-all cursor-pointer ${
                             p.del 
-                              ? 'border-green-800 bg-success/10 text-success font-bold' 
+                              ? 'border-success bg-success/10 text-success font-bold' 
                               : 'border-border bg-card text-muted-foreground/70'
                           }`}
                         >
@@ -387,7 +387,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
                       {/* FINANCIAL / PII */}
                       <td className="p-3 text-center bg-card">
                         {p.pii === 'masked' ? (
-                          <div className="inline-flex items-center gap-1 px-2.5 py-1 border border-orange-600 bg-warning/5 text-warning font-bold text-[10px] uppercase">
+                          <div className="inline-flex items-center gap-1 px-2.5 py-1 border border-warning bg-warning/5 text-warning font-bold text-[10px] uppercase">
                             <EyeOff className="w-3.5 h-3.5" />
                             <span>MASKED</span>
                           </div>
@@ -396,7 +396,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
                             onClick={() => togglePermission(p.id, 'pii')}
                             className={`inline-flex items-center gap-1.5 px-2.5 py-1 border transition-all cursor-pointer ${
                               p.pii === true
-                                ? 'border-green-800 bg-success/10 text-success font-bold' 
+                                ? 'border-success bg-success/10 text-success font-bold' 
                                 : 'border-border bg-card text-muted-foreground/70'
                             }`}
                           >
@@ -436,7 +436,7 @@ export const UsersStaffRolesScreen: React.FC<ScreenProps> = ({
         </div>
 
         {/* Summary & Override Rules Callout Banner */}
-        <div className="border border-border bg-muted/30 p-5 space-y-4 shadow-[4px_4px_0px_#000000]">
+        <div className="border border-border bg-muted/30 p-5 space-y-4 shadow-card-md">
           <div className="flex items-center justify-between border-b border-border pb-2">
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-foreground" />

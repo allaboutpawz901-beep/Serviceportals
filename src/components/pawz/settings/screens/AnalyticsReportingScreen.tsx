@@ -48,7 +48,7 @@ export const AnalyticsReportingScreen: React.FC<ScreenProps> = ({
       {/* SECURITY CLEARANCE & CONTEXT BAR */}
       <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-red-600"></span>
+          <span className="inline-block w-2 h-2 bg-destructive"></span>
           <span className="text-destructive font-bold tracking-tight">RESTRICTED ACCREDITATION</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
@@ -503,7 +503,7 @@ export const AnalyticsReportingScreen: React.FC<ScreenProps> = ({
                 </tr>
               </tbody>
               <tfoot>
-                <tr className="bg-muted/40 font-bold border-t-2 border-border text-foreground">
+                <tr className="bg-muted/40 font-bold  border-border text-foreground">
                   <td className="p-3 border-r border-border uppercase font-bold text-[10px]">
                     TOTAL CONSOLIDATED ROLLUP
                   </td>

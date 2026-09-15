@@ -79,7 +79,7 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
       {/* SECURITY CLEARANCE BAR */}
       <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-red-600"></span>
+          <span className="inline-block w-2 h-2 bg-destructive"></span>
           <span className="text-destructive font-bold tracking-tight">RESTRICTED FINANCIAL ACCESS</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
@@ -212,7 +212,7 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
           <div className="my-2">
             <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">{agingBuckets.overNinety}</div>
           </div>
-          <span className="text-[9px] bg-destructive/10 border border-red-800 text-destructive px-1 py-0.2 font-bold w-max uppercase">COLLECTIONS</span>
+          <span className="text-[9px] bg-destructive/10 border border-destructive text-destructive px-1 py-0.2 font-bold w-max uppercase">COLLECTIONS</span>
         </button>
 
         {/* TOTAL REVENUE DELINQUENT */}

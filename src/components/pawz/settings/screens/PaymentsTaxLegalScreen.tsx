@@ -392,7 +392,7 @@ export const PaymentsTaxLegalScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* BOTTOM TELEMETRY FOOTER BAR */}
-      <div className="mt-auto border-t-2 border-border bg-muted/30 px-6 py-2.5 flex items-center justify-between text-xs tabular-nums">
+      <div className="mt-auto  border-border bg-muted/30 px-6 py-2.5 flex items-center justify-between text-xs tabular-nums">
         <div className="flex items-center gap-4 text-muted-foreground">
           <span className="">HOST: US-CENTRAL-NODE-01</span>
           <span className="">{"//"}</span>

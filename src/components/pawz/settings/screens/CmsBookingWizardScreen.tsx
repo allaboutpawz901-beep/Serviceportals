@@ -91,7 +91,7 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
       {/* SECURITY CLEARANCE BAR */}
       <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-red-600"></span>
+          <span className="inline-block w-2 h-2 bg-destructive"></span>
           <span className="text-destructive font-bold tracking-tight">RESTRICTED CMS DESIGNER</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>

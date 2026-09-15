@@ -66,7 +66,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
       {/* SECURITY CLEARANCE BAR */}
       <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-red-600"></span>
+          <span className="inline-block w-2 h-2 bg-destructive"></span>
           <span className="text-destructive font-bold tracking-tight">RESTRICTED MERCHANT CONNECT</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
@@ -157,7 +157,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
         
         {/* COLUMN 1-7: MERCHANT KEYS & ENVIRONMENT (7 COLS) */}
         <div className="xl:col-span-7 space-y-6">
-          <div className="border-2 border-border p-5 bg-card shadow-[4px_4px_0px_#000000]">
+          <div className="border-2 border-border p-5 bg-card shadow-card-md">
             <div className="flex items-center justify-between border-b border-border pb-3 mb-4 tabular-nums">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-black"></span>
@@ -189,7 +189,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
                     onChange={(e) => setPublicKey(e.target.value)}
                     className="flex-1 border-2 border-border p-2 bg-muted/30 tabular-nums text-foreground font-bold focus:outline-none focus:bg-card" 
                   />
-                  <button onClick={() => { navigator.clipboard.writeText(publicKey); showToast('COPIED PUBLISHABLE KEY'); }} className="border-2 border-l-0 border-border p-2 bg-muted/40 hover:bg-muted cursor-pointer">
+                  <button onClick={() => { navigator.clipboard.writeText(publicKey); showToast('COPIED PUBLISHABLE KEY'); }} className="border-2  border-border p-2 bg-muted/40 hover:bg-muted cursor-pointer">
                     <Copy className="w-4 h-4 text-foreground" />
                   </button>
                 </div>
@@ -204,7 +204,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
                     className="flex-1 border-2 border-border p-2 bg-muted/30 tabular-nums text-foreground font-bold focus:outline-none" 
                     readOnly
                   />
-                  <button onClick={() => showToast('SECRET KEY CAN ONLY BE MUTATED SERVER-SIDE IN .ENV VAULT')} className="border-2 border-l-0 border-border p-2 bg-muted/40 hover:bg-muted cursor-pointer">
+                  <button onClick={() => showToast('SECRET KEY CAN ONLY BE MUTATED SERVER-SIDE IN .ENV VAULT')} className="border-2  border-border p-2 bg-muted/40 hover:bg-muted cursor-pointer">
                     <Lock className="w-4 h-4 text-foreground" />
                   </button>
                 </div>
@@ -213,7 +213,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
             </div>
           </div>
 
-          <div className="border-2 border-border p-5 bg-card shadow-[4px_4px_0px_#000000]">
+          <div className="border-2 border-border p-5 bg-card shadow-card-md">
             <div className="flex items-center justify-between border-b border-border pb-3 mb-4">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-black"></span>
@@ -232,7 +232,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
                     className="flex-1 border border-border p-2 bg-muted/40 tabular-nums text-muted-foreground font-bold focus:outline-none" 
                     readOnly 
                   />
-                  <button onClick={() => { navigator.clipboard.writeText("https://api.pawzbookings.com/api/v1/webhooks/stripe"); showToast('COPIED WEBHOOK ENDPOINT'); }} className="border border-l-0 border-border p-2 bg-muted/40 hover:bg-muted cursor-pointer">
+                  <button onClick={() => { navigator.clipboard.writeText("https://api.pawzbookings.com/api/v1/webhooks/stripe"); showToast('COPIED WEBHOOK ENDPOINT'); }} className="border  border-border p-2 bg-muted/40 hover:bg-muted cursor-pointer">
                     <Copy className="w-4 h-4 text-foreground" />
                   </button>
                 </div>
@@ -247,7 +247,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
                     onChange={(e) => setWebhookSecret(e.target.value)}
                     className="flex-1 border-2 border-border p-2 bg-muted/30 tabular-nums text-foreground font-bold focus:outline-none focus:bg-card" 
                   />
-                  <button onClick={() => { navigator.clipboard.writeText(webhookSecret); showToast('COPIED WEBHOOK SIGNING SECRET'); }} className="border-2 border-l-0 border-border p-2 bg-muted/40 hover:bg-muted cursor-pointer">
+                  <button onClick={() => { navigator.clipboard.writeText(webhookSecret); showToast('COPIED WEBHOOK SIGNING SECRET'); }} className="border-2  border-border p-2 bg-muted/40 hover:bg-muted cursor-pointer">
                     <Copy className="w-4 h-4 text-foreground" />
                   </button>
                 </div>
@@ -271,7 +271,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
 
         {/* COLUMN 8-12: STRIPE CONNECT CONNECTIVITY CARD */}
         <div className="xl:col-span-5 space-y-6">
-          <div className="border-2 border-border p-4 bg-card shadow-[4px_4px_0px_#000000]">
+          <div className="border-2 border-border p-4 bg-card shadow-card-md">
             <div className="flex items-center justify-between border-b border-border pb-2 mb-3">
               <h4 className="font-bold text-xs uppercase tabular-nums tracking-wider">STRIPE CONNECTED MERCHANT DIRECTORY</h4>
               <span className="text-[10px] tabular-nums text-muted-foreground">LIVE MERCHANT</span>

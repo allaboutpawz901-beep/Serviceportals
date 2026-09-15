@@ -154,7 +154,7 @@ export const OrgMultiLocationScreen: React.FC<ScreenProps> = ({
                   <div className="flex items-center gap-2">
                     <h3 className="font-bold text-base uppercase">ALL ABOUT PAWZ - FRISCO HQ (MAIN LOCATION)</h3>
                     <span className="bg-primary text-primary-foreground tabular-nums text-[10px] px-1.5 py-0.2 font-bold uppercase">PRIMARY HQ</span>
-                    <span className="border border-border tabular-nums text-[10px] px-1.5 py-0.2 uppercase bg-success/10 text-success border-green-800">ONLINE &amp; ACTIVE</span>
+                    <span className="border border-border tabular-nums text-[10px] px-1.5 py-0.2 uppercase bg-success/10 text-success border-success">ONLINE &amp; ACTIVE</span>
                   </div>
                   <div className="text-xs tabular-nums text-muted-foreground">FACILITY_ID: LOC-TX-FRISCO-001 // ROUTING NODE: OMS-01</div>
                 </div>
@@ -229,7 +229,7 @@ export const OrgMultiLocationScreen: React.FC<ScreenProps> = ({
                   <div className="flex items-center gap-2">
                     <h3 className="font-bold text-base uppercase">ALL ABOUT PAWZ - PLANO WEST BRANCH</h3>
                     <span className="border border-border tabular-nums text-[10px] px-1.5 py-0.2 uppercase bg-muted/40">BRANCH SALON</span>
-                    <span className="border border-border tabular-nums text-[10px] px-1.5 py-0.2 uppercase bg-success/10 text-success border-green-800">ONLINE &amp; ACTIVE</span>
+                    <span className="border border-border tabular-nums text-[10px] px-1.5 py-0.2 uppercase bg-success/10 text-success border-success">ONLINE &amp; ACTIVE</span>
                   </div>
                   <div className="text-xs tabular-nums text-muted-foreground">FACILITY_ID: LOC-TX-PLANO-002 // ROUTING NODE: OMS-02</div>
                 </div>
@@ -304,7 +304,7 @@ export const OrgMultiLocationScreen: React.FC<ScreenProps> = ({
                   <div className="flex items-center gap-2">
                     <h3 className="font-bold text-base uppercase">ALL ABOUT PAWZ - MOBILE VAN DISPATCH FLEET</h3>
                     <span className="border border-border tabular-nums text-[10px] px-1.5 py-0.2 uppercase bg-muted/40">MOBILE UNIT</span>
-                    <span className="border border-border tabular-nums text-[10px] px-1.5 py-0.2 uppercase bg-success/10 text-success border-green-800">ONLINE &amp; DISPATCHING</span>
+                    <span className="border border-border tabular-nums text-[10px] px-1.5 py-0.2 uppercase bg-success/10 text-success border-success">ONLINE &amp; DISPATCHING</span>
                   </div>
                   <div className="text-xs tabular-nums text-muted-foreground">FACILITY_ID: LOC-TX-MOBILE-VAN-003 // FLEET CENTER: 03 VANS ACTIVE</div>
                 </div>
@@ -603,7 +603,7 @@ export const OrgMultiLocationScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* BOTTOM TELEMETRY FOOTER BAR */}
-      <div className="mt-auto border-t-2 border-border bg-muted/30 px-6 py-2.5 flex items-center justify-between text-xs tabular-nums">
+      <div className="mt-auto  border-border bg-muted/30 px-6 py-2.5 flex items-center justify-between text-xs tabular-nums">
         <div className="flex items-center gap-4 text-muted-foreground">
           <span className="">HOST: US-CENTRAL-NODE-01</span>
           <span className="">{"//"}</span>

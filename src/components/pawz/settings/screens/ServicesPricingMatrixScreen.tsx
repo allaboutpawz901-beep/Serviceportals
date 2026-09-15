@@ -75,7 +75,7 @@ export const ServicesPricingMatrixScreen: React.FC<ScreenProps> = ({
       {/* SECURITY CLEARANCE BAR */}
       <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-red-600"></span>
+          <span className="inline-block w-2 h-2 bg-destructive"></span>
           <span className="text-destructive font-bold tracking-tight">RESTRICTED SERVICES LEDGER</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
@@ -165,7 +165,7 @@ export const ServicesPricingMatrixScreen: React.FC<ScreenProps> = ({
       <div className="p-6 grid grid-cols-1 xl:grid-cols-12 gap-6">
         
         {/* COLUMN 1-8: MAIN PRICING TABLE BY CANINE BREED MASS SIZES */}
-        <div className="xl:col-span-8 bg-card border-2 border-border flex flex-col shadow-[4px_4px_0px_#000000]">
+        <div className="xl:col-span-8 bg-card border-2 border-border flex flex-col shadow-card-md">
           <div className="px-4 py-2.5  border-border bg-muted/40 flex items-center justify-between tabular-nums">
             <div className="flex items-center gap-2">
               <Scissors className="w-4 h-4 text-foreground" />
@@ -303,7 +303,7 @@ export const ServicesPricingMatrixScreen: React.FC<ScreenProps> = ({
         </div>
 
         {/* COLUMN 9-12: SALON ADD-ONS & RETAIL UPSELLS LIST */}
-        <div className="xl:col-span-4 bg-card border-2 border-border flex flex-col shadow-[4px_4px_0px_#000000]">
+        <div className="xl:col-span-4 bg-card border-2 border-border flex flex-col shadow-card-md">
           <div className="px-4 py-2.5  border-border bg-muted/40 flex items-center justify-between tabular-nums">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-foreground" />

@@ -86,7 +86,7 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
       {/* SECURITY CLEARANCE BAR */}
       <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-red-600 animate-pulse"></span>
+          <span className="inline-block w-2 h-2 bg-destructive animate-pulse"></span>
           <span className="text-destructive font-bold tracking-tight">RESTRICTED SECURITY PROFILE</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
@@ -206,7 +206,7 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
             <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">04 / 20 ACTIVE</div>
           </div>
           <div className="flex items-center gap-1 tabular-nums text-[10px]">
-            <span className="bg-success/10 border border-green-800 text-success px-1 font-bold">OPTIMAL</span>
+            <span className="bg-success/10 border border-success text-success px-1 font-bold">OPTIMAL</span>
             <span className="text-muted-foreground">queue duration 0.2ms</span>
           </div>
         </div>
@@ -289,18 +289,18 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
 
               {/* LIVE CONSOLE EXCERPT */}
               <div className="border border-border bg-primary text-primary-foreground tabular-nums p-3 text-[11px] leading-relaxed space-y-1 overflow-y-auto max-h-[180px]">
-                <div className="text-muted-foreground text-[10px] uppercase border-b border-neutral-800 pb-1 flex items-center justify-between">
+                <div className="text-muted-foreground text-[10px] uppercase border-b border-border pb-1 flex items-center justify-between">
                   <span>LIVE POSTGRESQL AUDIT STREAM // SITE_SETTINGS</span>
                   <span className="animate-pulse text-success font-bold">[CONNECTED]</span>
                 </div>
                 {dbLogs.map((log) => (
                   <div key={log.id} className="text-success truncate flex gap-2">
                     <span className="text-muted-foreground">[{new Date(log.timestamp).toLocaleTimeString()}]</span>
-                    <span className="text-yellow-500 font-bold">[{log.action}]</span>
+                    <span className="text-warning font-bold">[{log.action}]</span>
                     <span>{log.details}</span>
                   </div>
                 ))}
-                <div className="text-muted-foreground text-[9px] uppercase border-y border-neutral-800 my-1 py-0.5">Static VM System Log Excerpt</div>
+                <div className="text-muted-foreground text-[9px] uppercase border-y border-border my-1 py-0.5">Static VM System Log Excerpt</div>
                 {logs.map((log, i) => (
                   <div key={i} className="truncate text-muted-foreground/50">
                     {log}

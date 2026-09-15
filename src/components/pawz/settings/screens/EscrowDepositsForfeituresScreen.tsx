@@ -80,7 +80,7 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
       {/* SECURITY CLEARANCE BAR */}
       <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-red-600 animate-pulse"></span>
+          <span className="inline-block w-2 h-2 bg-destructive animate-pulse"></span>
           <span className="text-destructive font-bold tracking-tight">RESTRICTED ESCROW ACCESS</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
@@ -162,7 +162,7 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
         
         {/* COLUMN 1-7: ESCROW RULE MATRIX & POLICY CONTROLS */}
         <div className="xl:col-span-7 space-y-6">
-          <div className="border-2 border-border p-5 bg-card shadow-[4px_4px_0px_#000000]">
+          <div className="border-2 border-border p-5 bg-card shadow-card-md">
             <div className="flex items-center justify-between border-b border-border pb-3 mb-4">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-black"></span>
@@ -213,7 +213,7 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
           </div>
 
           {/* ACTIVE HELD ESCROW LEDGER */}
-          <div className="border-2 border-border p-5 bg-card shadow-[4px_4px_0px_#000000]">
+          <div className="border-2 border-border p-5 bg-card shadow-card-md">
             <div className="flex items-center justify-between border-b border-border pb-3 mb-4">
               <span className="font-bold tabular-nums text-xs uppercase text-foreground">SECTION B: REALTIME HELD ESCROW &amp; FORFEIT TRANSACTION LEDGER</span>
               <span className="text-muted-foreground tabular-nums text-[10px] uppercase">ESC_POOL_v2</span>
@@ -247,7 +247,7 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
                         <span className={`px-1.5 py-0.2 text-[9px] font-bold uppercase ${
                           item.status === 'HELD_SECURE' ? 'bg-primary text-primary-foreground' : 
                           item.status === 'REFUNDED_100' ? 'border border-border text-foreground bg-card' : 
-                          'bg-destructive/10 text-destructive border border-red-800'
+                          'bg-destructive/10 text-destructive border border-destructive'
                         }`}>
                           {item.status}
                         </span>
@@ -258,7 +258,7 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
                             <>
                               <button 
                                 onClick={() => handleForfeitManual(item.id)}
-                                className="bg-red-600 text-white px-1.5 py-0.5 text-[9px] uppercase font-bold hover:bg-red-700 cursor-pointer"
+                                className="bg-destructive text-white px-1.5 py-0.5 text-[9px] uppercase font-bold hover:bg-destructive cursor-pointer"
                               >
                                 FORFEIT
                               </button>
@@ -285,7 +285,7 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
 
         {/* COLUMN 8-12: ESCROW POOL METRICS & ANALYTICS */}
         <div className="xl:col-span-5 space-y-6">
-          <div className="border-2 border-border p-4 bg-card shadow-[4px_4px_0px_#000000]">
+          <div className="border-2 border-border p-4 bg-card shadow-card-md">
             <div className="flex items-center justify-between border-b border-border pb-2 mb-3">
               <h4 className="font-bold text-xs uppercase tabular-nums tracking-wider">ESCROW COMPLIANCE DIRECTORY</h4>
               <span className="text-[10px] tabular-nums text-muted-foreground">POOL RECOVERED</span>

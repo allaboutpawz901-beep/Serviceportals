@@ -473,7 +473,7 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* BOTTOM TELEMETRY FOOTER BAR */}
-      <div className="mt-auto border-t-2-black bg-muted/30 px-6 py-2.5 flex flex-wrap items-center justify-between text-xs tabular-nums gap-2">
+      <div className="mt-auto -black bg-muted/30 px-6 py-2.5 flex flex-wrap items-center justify-between text-xs tabular-nums gap-2">
         <div className="flex items-center gap-4 text-muted-foreground">
           <span>HOST: US-CENTRAL-NODE-01</span>
           <span>{'//'}</span>

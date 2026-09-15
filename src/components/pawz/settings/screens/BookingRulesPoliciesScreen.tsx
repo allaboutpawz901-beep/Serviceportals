@@ -284,7 +284,7 @@ export const BookingRulesPoliciesScreen: React.FC<ScreenProps> = ({
                 <h4 className="font-bold text-xs uppercase tabular-nums tracking-wider">SECTION D: EMERGENCY WEATHER OVERRIDE</h4>
               </div>
               <span className={`px-1.5 py-0.5 text-[9px] font-bold uppercase ${
-                emergencyWeatherActive ? 'bg-red-600 text-white animate-pulse' : 'bg-primary text-primary-foreground'
+                emergencyWeatherActive ? 'bg-destructive text-white animate-pulse' : 'bg-primary text-primary-foreground'
               }`}>
                 {emergencyWeatherActive ? 'MUTING ACTIVATED' : 'IDLE - NORMAL'}
               </span>
@@ -309,7 +309,7 @@ export const BookingRulesPoliciesScreen: React.FC<ScreenProps> = ({
                 }}
                 className={`w-full py-1.5 text-xs font-bold uppercase transition-colors cursor-pointer border ${
                   emergencyWeatherActive 
-                    ? 'bg-red-600 text-white border-red-800 hover:bg-red-700' 
+                    ? 'bg-destructive text-white border-destructive hover:bg-destructive' 
                     : 'bg-primary text-primary-foreground border-border hover:bg-muted'
                 }`}
               >
@@ -321,7 +321,7 @@ export const BookingRulesPoliciesScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* BOTTOM TELEMETRY FOOTER BAR */}
-      <div className="mt-auto border-t-2 border-border bg-muted/30 px-6 py-2.5 flex items-center justify-between text-xs tabular-nums">
+      <div className="mt-auto  border-border bg-muted/30 px-6 py-2.5 flex items-center justify-between text-xs tabular-nums">
         <div className="flex items-center gap-4 text-muted-foreground">
           <span className="">HOST: US-CENTRAL-NODE-01</span>
           <span className="">{"//"}</span>

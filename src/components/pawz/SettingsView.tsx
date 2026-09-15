@@ -380,7 +380,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                           <span
                             className={`text-[9px] uppercase font-bold px-1.5 py-0.2 ${
                               isTabActive
-                                ? 'bg-muted text-white border border-neutral-700'
+                                ? 'bg-muted text-white border border-border'
                                 : 'bg-muted/40 text-foreground border border-border'
                             }`}
                           >
