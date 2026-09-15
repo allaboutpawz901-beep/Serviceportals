@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import pg from "pg";
 
 async function getPgClient() {
-  const connectionString = process.env.SUPABSE_SESSION_POOLER || process.env.SUPABSE_DIRECT_CONNECTION;
+  const connectionString = process.env.SUPABASE_SESSION_POOLER || process.env.SUPABASE_DIRECT_CONNECTION;
   if (!connectionString) return null;
   const client = new pg.Client({
     connectionString,

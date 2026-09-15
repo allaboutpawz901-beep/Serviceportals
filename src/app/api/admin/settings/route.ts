@@ -3,7 +3,7 @@ import pg from "pg";
 import { DEFAULT_SETTINGS, SystemSettings } from "@/lib/settings-types";
 
 async function getPgClient() {
-  const connectionString = process.env.SUPABSE_SESSION_POOLER || process.env.SUPABSE_DIRECT_CONNECTION;
+  const connectionString = process.env.SUPABASE_SESSION_POOLER || process.env.SUPABASE_DIRECT_CONNECTION;
   if (!connectionString) return null;
   const client = new pg.Client({
     connectionString,
