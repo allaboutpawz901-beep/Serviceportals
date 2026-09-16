@@ -65,7 +65,7 @@ export const StripeConnectionsView: React.FC<StripeConnectionsViewProps> = ({ on
 
       <div className="p-6 border-b border-border">
         <h1 className="font-display text-xl font-semibold tracking-tight text-foreground">Stripe Connections</h1>
-        <p className="text-xs text-muted-foreground mt-0.5 max-w-3xl">
+        <p className="text-[13px] text-muted-foreground mt-0.5 max-w-3xl">
           Integrate Stripe merchant processors, terminal card swipers, and Plaid bank reconciliation streams instantly to keep accounts synchronized.
         </p>
       </div>
@@ -78,7 +78,7 @@ export const StripeConnectionsView: React.FC<StripeConnectionsViewProps> = ({ on
             <div className="border border-border bg-card p-6 shadow-card-md space-y-4">
               <div className="border-b border-border pb-2 flex justify-between items-center">
                 <h3 className="tabular-nums text-sm font-semibold text-foreground">01 // STRIPE MERCHANT SERVICES</h3>
-                <span className={`text-[9px] font-bold px-1.5 py-0.5 border uppercase ${
+                <span className={`text-[9px] font-semibold px-1.5 py-0.5 border uppercase ${
                   stripeConnected ? 'bg-success/10 border-success/30 text-success' : 'bg-destructive/5 border-destructive/30 text-destructive'
                 }`}>
                   {stripeConnected ? 'ACTIVE_LIVE' : 'LINK_REQUIRED'}
@@ -103,7 +103,7 @@ export const StripeConnectionsView: React.FC<StripeConnectionsViewProps> = ({ on
               <div className="pt-2">
                 <button
                   onClick={handleStripeToggle}
-                  className={`w-full border border-border px-4 py-2 text-[12px] uppercase font-bold tracking-wider transition-colors rounded-md cursor-pointer ${
+                  className={`w-full border border-border px-4 py-2 text-[12px] uppercase font-semibold tracking-wider transition-colors rounded-md cursor-pointer ${
                     stripeConnected ? 'bg-card hover:bg-destructive/5 text-foreground' : 'bg-black hover:bg-muted text-white'
                   }`}
                 >
@@ -116,7 +116,7 @@ export const StripeConnectionsView: React.FC<StripeConnectionsViewProps> = ({ on
             <div className="border border-border bg-card p-6 shadow-card-md space-y-4">
               <div className="border-b border-border pb-2 flex justify-between items-center">
                 <h3 className="tabular-nums text-sm font-semibold text-foreground">02 // PLAID BANK FEED LINK</h3>
-                <span className={`text-[9px] font-bold px-1.5 py-0.5 border uppercase ${
+                <span className={`text-[9px] font-semibold px-1.5 py-0.5 border uppercase ${
                   plaidLinked ? 'bg-success/10 border-success/30 text-success' : 'bg-muted/40 border-border text-muted-foreground'
                 }`}>
                   {plaidLinked ? 'FEED_LIVE' : 'LINK_PENDING'}
@@ -141,7 +141,7 @@ export const StripeConnectionsView: React.FC<StripeConnectionsViewProps> = ({ on
               <div className="pt-2">
                 <button
                   onClick={handlePlaidLink}
-                  className="w-full bg-card hover:bg-muted/40 text-foreground border border-border px-4 py-2 text-[12px] uppercase font-bold tracking-wider transition-colors rounded-md cursor-pointer"
+                  className="w-full bg-card hover:bg-muted/40 text-foreground border border-border px-4 py-2 text-[12px] uppercase font-semibold tracking-wider transition-colors rounded-md cursor-pointer"
                 >
                   {plaidLinked ? 'DISCONNECT BANK FEED' : 'LINK BANK INSTITUTION WITH PLAID'}
                 </button>
@@ -151,11 +151,11 @@ export const StripeConnectionsView: React.FC<StripeConnectionsViewProps> = ({ on
 
           {/* LOWER SECTION: STRIPE WEBHOOK COMPLIANCE PANEL */}
           <div className="border border-border bg-card">
-            <div className="bg-muted/40 border-b border-border p-3 flex justify-between items-center text-[13px] text-foreground font-bold">
+            <div className="bg-muted/40 border-b border-border p-3 flex justify-between items-center text-[13px] text-foreground font-semibold">
               <span>03 // WEBHOOK DISPATCH LOG CONSOLE</span>
               <button
                 onClick={handleSimulateWebhook}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-3 py-1 text-[11px] text-muted-foreground font-bold cursor-pointer"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-3 py-1 text-[11px] text-muted-foreground font-semibold cursor-pointer"
               >
                 SIMULATE WEBHOOK TEST CALLBACK
               </button>
@@ -173,7 +173,7 @@ export const StripeConnectionsView: React.FC<StripeConnectionsViewProps> = ({ on
         {/* RIGHT COMPONENT: METRIC SPECS (4 COLS) */}
         <div className="lg:col-span-4 p-6 bg-muted/30 space-y-6 text-[12px]">
           <div className="border border-border p-4 bg-card space-y-2">
-            <h4 className="font-bold text-foreground uppercase">WEBHOOK COMPLIANCE ENDPOINTS</h4>
+            <h4 className="font-semibold text-foreground uppercase">WEBHOOK COMPLIANCE ENDPOINTS</h4>
             <div className="space-y-1.5 text-muted-foreground">
               <p>1. https://pawzos-backend.ai/api/v2/stripe</p>
               <p>2. https://reconcile.pawzos-fin.net/sync</p>

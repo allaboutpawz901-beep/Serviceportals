@@ -223,7 +223,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
         <div className="flex items-center gap-4 text-[10px] uppercase text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 bg-success/100 inline-block"></span>
-            <span className="text-foreground font-bold">LEDGER_SYNC: 100.00% SYNCED [31MS]</span>
+            <span className="text-foreground font-semibold">LEDGER_SYNC: 100.00% SYNCED [31MS]</span>
           </div>
           <span>|</span>
           <span>FISCAL_CYCLE: <strong className="text-foreground">FY25-Q1 OPEN</strong></span>
@@ -235,7 +235,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
         <button
           onClick={() => setActiveTab('dashboard')}
           className={`px-4 py-2.5 border-r border-border flex items-center gap-2 cursor-pointer transition-colors ${
-            activeTab === 'dashboard' ? 'bg-primary text-primary-foreground font-bold' : 'bg-card text-foreground hover:bg-muted/40'
+            activeTab === 'dashboard' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-card text-foreground hover:bg-muted/40'
           }`}
         >
           <span>[01]</span>
@@ -244,7 +244,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
         <button
           onClick={() => setActiveTab('employees')}
           className={`px-4 py-2.5 border-r border-border flex items-center gap-2 cursor-pointer transition-colors ${
-            activeTab === 'employees' ? 'bg-primary text-primary-foreground font-bold' : 'bg-card text-foreground hover:bg-muted/40'
+            activeTab === 'employees' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-card text-foreground hover:bg-muted/40'
           }`}
         >
           <span>[02]</span>
@@ -253,7 +253,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
         <button
           onClick={() => setActiveTab('timesheets')}
           className={`px-4 py-2.5 border-r border-border flex items-center gap-2 cursor-pointer transition-colors ${
-            activeTab === 'timesheets' ? 'bg-primary text-primary-foreground font-bold' : 'bg-card text-foreground hover:bg-muted/40'
+            activeTab === 'timesheets' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-card text-foreground hover:bg-muted/40'
           }`}
         >
           <span>[03]</span>
@@ -262,7 +262,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
         <button
           onClick={() => setActiveTab('transactions')}
           className={`px-4 py-2.5 border-r border-border flex items-center gap-2 cursor-pointer transition-colors ${
-            activeTab === 'transactions' ? 'bg-primary text-primary-foreground font-bold' : 'bg-card text-foreground hover:bg-muted/40'
+            activeTab === 'transactions' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-card text-foreground hover:bg-muted/40'
           }`}
         >
           <span>[04]</span>
@@ -271,7 +271,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
         <button
           onClick={() => setActiveTab('taxes')}
           className={`px-4 py-2.5 border-r border-border flex items-center gap-2 cursor-pointer transition-colors ${
-            activeTab === 'taxes' ? 'bg-primary text-primary-foreground font-bold' : 'bg-card text-foreground hover:bg-muted/40'
+            activeTab === 'taxes' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-card text-foreground hover:bg-muted/40'
           }`}
         >
           <span>[05]</span>
@@ -285,19 +285,19 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           {/* HEADER ACTION BANNER */}
           <div className="p-4 border-b border-border flex flex-col md:flex-row md:items-center justify-between gap-3 bg-card">
             <div>
-              <div className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">SEC:3.11 // DISBURSEMENT PROTOCOL &amp; CYCLES</div>
-              <h1 className="text-sm font-bold uppercase mt-0.5">3.11 PAYROLL // EXECUTIVE DASHBOARD &amp; DISBURSEMENT CYCLES</h1>
+              <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">SEC:3.11 // DISBURSEMENT PROTOCOL &amp; CYCLES</div>
+              <h1 className="text-sm font-semibold uppercase mt-0.5">3.11 PAYROLL // EXECUTIVE DASHBOARD &amp; DISBURSEMENT CYCLES</h1>
             </div>
             <div className="flex items-center gap-2">
               <button 
                 onClick={handleInitiateDisbursement}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-3.5 py-1.5 font-bold text-[10px] tracking-wide cursor-pointer"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-3.5 py-1.5 font-semibold text-[10px] tracking-wide cursor-pointer"
               >
                 + INITIATE DISBURSEMENT RUN
               </button>
               <button 
                 onClick={() => alert('NACHA ACH standard batch file downloaded.')}
-                className="bg-card text-foreground hover:bg-muted/40 border border-border px-3.5 py-1.5 font-bold text-[10px] tracking-wide cursor-pointer"
+                className="bg-card text-foreground hover:bg-muted/40 border border-border px-3.5 py-1.5 font-semibold text-[10px] tracking-wide cursor-pointer"
               >
                 DOWNLOAD ACH BATCH FILE
               </button>
@@ -307,31 +307,31 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           {/* SUMMARY METRICS */}
           <div className="grid grid-cols-1 md:grid-cols-4 border-b border-border divide-y md:divide-y-0 md:divide-x divide-border bg-card">
             <div className="p-4 flex flex-col justify-between">
-              <div className="text-[10px] text-muted-foreground font-bold uppercase">METRIC:01 // NEXT DISBURSEMENT CYCLE</div>
+              <div className="text-[10px] text-muted-foreground font-semibold uppercase">METRIC:01 // NEXT DISBURSEMENT CYCLE</div>
               <div className="my-2">
-                <div className="text-lg font-bold tracking-tight">MAY 15, 2025</div>
-                <div className="text-[10px] text-muted-foreground font-sans uppercase font-bold mt-1">[T-MINUS 48H TO TRANSMISSION]</div>
+                <div className="text-lg font-semibold tracking-tight">MAY 15, 2025</div>
+                <div className="text-[10px] text-muted-foreground font-sans uppercase font-semibold mt-1">[T-MINUS 48H TO TRANSMISSION]</div>
               </div>
             </div>
             <div className="p-4 flex flex-col justify-between">
-              <div className="text-[10px] text-muted-foreground font-bold uppercase">METRIC:02 // GROSS PAYROLL</div>
+              <div className="text-[10px] text-muted-foreground font-semibold uppercase">METRIC:02 // GROSS PAYROLL</div>
               <div className="my-2">
-                <div className="text-lg font-bold tracking-tight">${activeBatchGross.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
-                <div className="text-[10px] text-muted-foreground font-sans uppercase font-bold mt-1">[{activeBatchHeadcount} ACTIVE ELIGIBLE STAFF]</div>
+                <div className="text-lg font-semibold tracking-tight">${activeBatchGross.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                <div className="text-[10px] text-muted-foreground font-sans uppercase font-semibold mt-1">[{activeBatchHeadcount} ACTIVE ELIGIBLE STAFF]</div>
               </div>
             </div>
             <div className="p-4 flex flex-col justify-between">
-              <div className="text-[10px] text-muted-foreground font-bold uppercase">METRIC:03 // NET CASH REQUIREMENT</div>
+              <div className="text-[10px] text-muted-foreground font-semibold uppercase">METRIC:03 // NET CASH REQUIREMENT</div>
               <div className="my-2">
-                <div className="text-lg font-bold tracking-tight">${activeBatchNet.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
-                <div className="text-[10px] text-muted-foreground font-sans uppercase font-bold mt-1">[TAX WH ESCROW: ${activeBatchTax.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}]</div>
+                <div className="text-lg font-semibold tracking-tight">${activeBatchNet.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                <div className="text-[10px] text-muted-foreground font-sans uppercase font-semibold mt-1">[TAX WH ESCROW: ${activeBatchTax.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}]</div>
               </div>
             </div>
             <div className="p-4 bg-muted/30 flex flex-col justify-between">
-              <div className="text-[10px] text-muted-foreground font-bold uppercase">METRIC:04 // COMMISSION &amp; TIPS POOL</div>
+              <div className="text-[10px] text-muted-foreground font-semibold uppercase">METRIC:04 // COMMISSION &amp; TIPS POOL</div>
               <div className="my-2">
-                <div className="text-lg font-bold tracking-tight">${(activeBatchCommission + activeBatchTips).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
-                <div className="text-[10px] text-muted-foreground font-sans uppercase font-bold mt-1">[COMM: ${activeBatchCommission} | TIPS: ${activeBatchTips}]</div>
+                <div className="text-lg font-semibold tracking-tight">${(activeBatchCommission + activeBatchTips).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                <div className="text-[10px] text-muted-foreground font-sans uppercase font-semibold mt-1">[COMM: ${activeBatchCommission} | TIPS: ${activeBatchTips}]</div>
               </div>
             </div>
           </div>
@@ -341,13 +341,13 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
             {/* Table Area (8 Cols) */}
             <div className="lg:col-span-8 border-b lg: lg:border-r border-border flex flex-col">
               <div className="p-2.5 border-b border-border bg-muted/30 flex items-center justify-between text-[10px]">
-                <span className="font-bold">BATCH #PR-2025-05A // RUN PREPARATION [MID-MONTH]</span>
-                <span className="border border-border px-1.5 py-0.5 bg-card text-[9px] font-bold">STATUS: STAGED</span>
+                <span className="font-semibold">BATCH #PR-2025-05A // RUN PREPARATION [MID-MONTH]</span>
+                <span className="border border-border px-1.5 py-0.5 bg-card text-[9px] font-semibold">STATUS: STAGED</span>
               </div>
               <div className="overflow-x-auto w-full">
                 <table className="w-full text-left text-[11px] border-collapse min-w-[650px]">
                   <thead>
-                    <tr className="border-b border-border text-muted-foreground bg-card font-bold uppercase text-[10px]">
+                    <tr className="border-b border-border text-muted-foreground bg-card font-semibold uppercase text-[10px]">
                       <th className="p-2 border-r border-border text-center w-8">
                         <input type="checkbox" defaultChecked className="h-3 w-3 border-border text-foreground" />
                       </th>
@@ -369,9 +369,9 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                         <td className="p-2 border-r border-border text-center">
                           <input type="checkbox" defaultChecked className="h-3 w-3 border-border text-foreground" />
                         </td>
-                        <td className="p-2 border-r border-border font-bold tabular-nums">{emp.id}</td>
+                        <td className="p-2 border-r border-border font-semibold tabular-nums">{emp.id}</td>
                         <td className="p-2 border-r border-border whitespace-nowrap">
-                          <div className="font-bold">{emp.name}</div>
+                          <div className="font-semibold">{emp.name}</div>
                           <div className="text-[9px] text-muted-foreground uppercase">{emp.role}</div>
                         </td>
                         <td className="p-2 border-r border-border">{emp.class}</td>
@@ -379,16 +379,16 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                         <td className="p-2 border-r border-border text-right">{emp.class === 'SALARY' ? '--' : emp.otHours}</td>
                         <td className="p-2 border-r border-border text-right">${emp.commissionAmt.toFixed(2)}</td>
                         <td className="p-2 border-r border-border text-right">${emp.tipsAmt.toFixed(2)}</td>
-                        <td className="p-2 border-r border-border text-right font-bold">${calculateGross(emp).toFixed(2)}</td>
-                        <td className="p-2 border-r border-border text-right font-bold text-foreground">${calculateNet(emp).toFixed(2)}</td>
+                        <td className="p-2 border-r border-border text-right font-semibold">${calculateGross(emp).toFixed(2)}</td>
+                        <td className="p-2 border-r border-border text-right font-semibold text-foreground">${calculateNet(emp).toFixed(2)}</td>
                         <td className="p-2 text-center whitespace-nowrap">
-                          <span className="bg-muted/40 text-foreground px-1.5 py-0.5 border border-border text-[9px] font-bold">READY</span>
+                          <span className="bg-muted/40 text-foreground px-1.5 py-0.5 border border-border text-[9px] font-semibold">READY</span>
                         </td>
                       </tr>
                     ))}
                   </tbody>
                   <tfoot>
-                    <tr className="border-t-2 border-border bg-muted/30 font-bold uppercase text-[10px]">
+                    <tr className="border-t-2 border-border bg-muted/30 font-semibold uppercase text-[10px]">
                       <td className="p-2 border-r border-border text-center">-</td>
                       <td className="p-2 border-r border-border" colSpan={3}>AGGREGATE RUN TOTALS (6 STAGED)</td>
                       <td className="p-2 border-r border-border text-right">{activeBatchRegularHours}h</td>
@@ -408,27 +408,27 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
             <div className="lg:col-span-4 p-4 space-y-4 bg-card">
               {/* Source Liquidity */}
               <div className="border border-border bg-card">
-                <div className="p-2 border-b border-border bg-muted/30 font-bold uppercase text-[10px] flex justify-between items-center">
+                <div className="p-2 border-b border-border bg-muted/30 font-semibold uppercase text-[10px] flex justify-between items-center">
                   <span>TREASURY SOURCE DISBURSEMENT</span>
                   <span className="text-[9px] font-normal">[VERIFIED]</span>
                 </div>
                 <div className="p-3 space-y-2 text-[11px]">
                   <div>
-                    <div className="text-[9px] text-muted-foreground uppercase font-bold">SOURCE LIQUIDITY DEPOT</div>
-                    <div className="font-bold uppercase mt-0.5 text-xs">JPMORGAN CHASE Commercial •••• 9921</div>
+                    <div className="text-[9px] text-muted-foreground uppercase font-semibold">SOURCE LIQUIDITY DEPOT</div>
+                    <div className="font-semibold uppercase mt-0.5 text-[13px]">JPMORGAN CHASE Commercial •••• 9921</div>
                   </div>
                   <div className="border-t border-border pt-2 space-y-1">
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">AVAILABLE CASH:</span>
-                      <span className="font-bold text-sm">$142,850.12</span>
+                      <span className="font-semibold text-sm">$142,850.12</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">REQUIRED FOR RUN:</span>
-                      <span className="font-bold text-sm text-foreground">${activeBatchNet.toFixed(2)}</span>
+                      <span className="font-semibold text-sm text-foreground">${activeBatchNet.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center border-t border-border mt-1 pt-1 text-[10px] text-muted-foreground">
                       <span>COVERAGE RATIO:</span>
-                      <span className="font-bold bg-muted/40 border border-border px-1">9.6X SAFETY FACTOR</span>
+                      <span className="font-semibold bg-muted/40 border border-border px-1">9.6X SAFETY FACTOR</span>
                     </div>
                   </div>
                 </div>
@@ -436,28 +436,28 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
               {/* Tax Escrow */}
               <div className="border border-border bg-card">
-                <div className="p-2 border-b border-border bg-muted/30 font-bold uppercase text-[10px] flex justify-between items-center">
+                <div className="p-2 border-b border-border bg-muted/30 font-semibold uppercase text-[10px] flex justify-between items-center">
                   <span>TAX ACCRUAL ESCROW</span>
                   <span className="text-[9px] font-normal">[IRS COMPLIANT]</span>
                 </div>
                 <div className="p-3 space-y-1.5 text-[11px]">
                   <div className="flex justify-between items-center py-0.5 border-b border-border">
                     <span className="text-muted-foreground">Federal Withholding (941):</span>
-                    <span className="font-bold">${(activeBatchTax * 0.52).toFixed(2)}</span>
+                    <span className="font-semibold">${(activeBatchTax * 0.52).toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center py-0.5 border-b border-border">
                     <span className="text-muted-foreground">FICA / Social Security (6.2%):</span>
-                    <span className="font-bold">${(activeBatchTax * 0.32).toFixed(2)}</span>
+                    <span className="font-semibold">${(activeBatchTax * 0.32).toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center py-0.5 border-b border-border">
                     <span className="text-muted-foreground">FICA / Medicare (1.45%):</span>
-                    <span className="font-bold">${(activeBatchTax * 0.08).toFixed(2)}</span>
+                    <span className="font-semibold">${(activeBatchTax * 0.08).toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center py-0.5 border-b border-border">
                     <span className="text-muted-foreground">State SUI/SDI Withholding:</span>
-                    <span className="font-bold">${(activeBatchTax * 0.08).toFixed(2)}</span>
+                    <span className="font-semibold">${(activeBatchTax * 0.08).toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between items-center pt-2 font-bold border-t border-border">
+                  <div className="flex justify-between items-center pt-2 font-semibold border-t border-border">
                     <span>TOTAL ACCRUED ESCROW:</span>
                     <span className="text-sm font-semibold underline decoration-double">${activeBatchTax.toFixed(2)}</span>
                   </div>
@@ -466,30 +466,30 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
               {/* NACHA PPD */}
               <div className="border border-border bg-card">
-                <div className="p-2 border-b border-border bg-muted/30 font-bold uppercase text-[10px]">
+                <div className="p-2 border-b border-border bg-muted/30 font-semibold uppercase text-[10px]">
                   NACHA PPD FILE PROTOCOL
                 </div>
                 <div className="p-3 space-y-1.5 text-[11px]">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">ORIGINATOR ID:</span>
-                    <span className="font-bold">1134902811</span>
+                    <span className="font-semibold">1134902811</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">FEDWIRE ROUTING:</span>
-                    <span className="font-bold">021000021</span>
+                    <span className="font-semibold">021000021</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">FILE FORMAT:</span>
-                    <span className="font-bold">ACH STANDARD 94-BYTE</span>
+                    <span className="font-semibold">ACH STANDARD 94-BYTE</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">SETTLEMENT DATE:</span>
-                    <span className="font-bold">2025-05-15 (SAME-DAY)</span>
+                    <span className="font-semibold">2025-05-15 (SAME-DAY)</span>
                   </div>
                   <div className="mt-2 pt-2 border-t border-border">
                     <button 
                       onClick={() => alert('Dry run ACH simulation completed successfully. 12 accounts matched.')}
-                      className="w-full border border-border bg-card py-1 hover:bg-black hover:text-white uppercase font-bold text-[9px] transition-colors cursor-pointer"
+                      className="w-full border border-border bg-card py-1 hover:bg-black hover:text-white uppercase font-semibold text-[9px] transition-colors cursor-pointer"
                     >
                       &gt; RUN DRY TEST SIMULATION
                     </button>
@@ -507,8 +507,8 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           {/* HEADER ACTION BANNER */}
           <div className="p-4 border-b border-border flex flex-col md:flex-row md:items-center justify-between gap-3 bg-card">
             <div>
-              <div className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">SEC:3.11 // WORKFORCE COMPENSATION &amp; TAX ELECTIONS</div>
-              <h1 className="text-sm font-bold uppercase mt-0.5">3.11 PAYROLL // EMPLOYEES DIRECTORY &amp; WAGE SETUP</h1>
+              <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">SEC:3.11 // WORKFORCE COMPENSATION &amp; TAX ELECTIONS</div>
+              <h1 className="text-sm font-semibold uppercase mt-0.5">3.11 PAYROLL // EMPLOYEES DIRECTORY &amp; WAGE SETUP</h1>
             </div>
             <div className="flex items-center gap-2">
               <button 
@@ -542,7 +542,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                     alert(`Employee record created for ${name}.`);
                   }
                 }}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-3.5 py-1.5 font-bold text-[10px] tracking-wide cursor-pointer"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-3.5 py-1.5 font-semibold text-[10px] tracking-wide cursor-pointer"
               >
                 + ADD EMPLOYEE / CONTRACTOR
               </button>
@@ -555,10 +555,10 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
               {/* Table Filters */}
               <div className="p-2 border-b border-border bg-muted/30 flex items-center justify-between text-[11px] shrink-0">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-bold">FILTER:</span>
+                  <span className="font-semibold">FILTER:</span>
                   <button 
                     onClick={() => setFilterFilterClass('ALL')}
-                    className={`border border-border px-2 py-0.5 font-bold cursor-pointer ${filterClass === 'ALL' ? 'bg-primary text-primary-foreground' : 'bg-card text-foreground'}`}
+                    className={`border border-border px-2 py-0.5 font-semibold cursor-pointer ${filterClass === 'ALL' ? 'bg-primary text-primary-foreground' : 'bg-card text-foreground'}`}
                   >
                     ALL ({employeesList.length})
                   </button>
@@ -575,14 +575,14 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                     1099-NEC ({employeesList.filter(e => e.class === '1099-NEC').length})
                   </button>
                 </div>
-                <div className="text-[10px] uppercase font-bold text-muted-foreground">SORT: EMP_ID ASC</div>
+                <div className="text-[10px] uppercase font-semibold text-muted-foreground">SORT: EMP_ID ASC</div>
               </div>
 
               {/* Roster Table */}
               <div className="overflow-x-auto w-full">
                 <table className="w-full text-left text-[11px] border-collapse">
                   <thead>
-                    <tr className="bg-muted/40 border-b border-border text-[10px] uppercase font-bold">
+                    <tr className="bg-muted/40 border-b border-border text-[10px] uppercase font-semibold">
                       <th className="p-2 w-8 text-center border-r border-border">
                         <input type="checkbox" className="h-3.5 w-3.5 border-border text-foreground" />
                       </th>
@@ -600,25 +600,25 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <tr 
                         key={emp.id} 
                         onClick={() => setSelectedEmployeeId(emp.id)}
-                        className={`hover:bg-muted/30 cursor-pointer ${emp.id === selectedEmpId ? 'bg-muted/40 font-bold border-l-4 border-l-black' : ''}`}
+                        className={`hover:bg-muted/30 cursor-pointer ${emp.id === selectedEmpId ? 'bg-muted/40 font-semibold border-l-4 border-l-black' : ''}`}
                       >
                         <td className="p-2 border-r border-border text-center" onClick={(e) => e.stopPropagation()}>
                           <input type="checkbox" className="h-3.5 w-3.5 border-border text-foreground" />
                         </td>
                         <td className="p-2 border-r border-border tabular-nums font-semibold">{emp.id}</td>
                         <td className="p-2 border-r border-border">
-                          <div className="font-bold uppercase text-foreground">{emp.name}</div>
+                          <div className="font-semibold uppercase text-foreground">{emp.name}</div>
                           <div className="text-[9px] text-muted-foreground">{emp.role}</div>
                         </td>
                         <td className="p-2 border-r border-border">{emp.class}</td>
                         <td className="p-2 border-r border-border text-right">
-                          <div className="font-bold">${emp.baseWage.toFixed(2)}/hr</div>
+                          <div className="font-semibold">${emp.baseWage.toFixed(2)}/hr</div>
                           {emp.commissionRate > 0 && <div className="text-[9px] text-muted-foreground">+{emp.commissionRate}% Svc Comm</div>}
                         </td>
                         <td className="p-2 border-r border-border">{emp.w4Status}</td>
                         <td className="p-2 border-r border-border tabular-nums">{emp.account}</td>
                         <td className="p-2 text-center">
-                          <span className="bg-primary text-primary-foreground px-1.5 py-0.5 text-[9px] font-bold">ACTIVE</span>
+                          <span className="bg-primary text-primary-foreground px-1.5 py-0.5 text-[9px] font-semibold">ACTIVE</span>
                         </td>
                       </tr>
                     ))}
@@ -633,7 +633,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
               <div className="p-3 border-b border-border bg-muted/30">
                 <div className="flex items-center justify-between">
                   <span className="text-[9px] font-medium uppercase tracking-wider text-muted-foreground">Employee Record {selectedEmployee.id}</span>
-                  <span className="bg-primary text-primary-foreground px-1.5 py-0.5 text-[9px] font-bold uppercase">{selectedEmployee.class} Verified</span>
+                  <span className="bg-primary text-primary-foreground px-1.5 py-0.5 text-[9px] font-semibold uppercase">{selectedEmployee.class} Verified</span>
                 </div>
                 <h2 className="font-display text-sm font-semibold tracking-tight text-foreground mt-1">{selectedEmployee.name}</h2>
                 <div className="text-[10px] text-muted-foreground font-medium uppercase mt-0.5">{selectedEmployee.role} {"//"} Full-Time</div>
@@ -643,75 +643,75 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
               <div className="p-3.5 space-y-4 flex-1">
                 {/* YTD Cumulative */}
                 <div className="border border-border p-3 bg-card">
-                  <div className="text-[9px] uppercase font-bold text-muted-foreground">YTD GROSS DISBURSED (FY25)</div>
+                  <div className="text-[9px] uppercase font-semibold text-muted-foreground">YTD GROSS DISBURSED (FY25)</div>
                   <div className="text-lg font-semibold text-foreground tracking-tight mt-0.5">${selectedEmployee.ytdGross.toLocaleString('en-US', { minimumFractionDigits: 2 })}</div>
                   <div className="flex justify-between items-center text-[10px] text-muted-foreground border-t border-border pt-1.5 mt-2">
                     <span>YTD NET DISBURSED:</span>
-                    <span className="font-bold text-foreground">${selectedEmployee.ytdNet.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+                    <span className="font-semibold text-foreground">${selectedEmployee.ytdNet.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
                   </div>
                   <div className="flex justify-between items-center text-[10px] text-muted-foreground mt-1">
                     <span>TOTAL TAXES WITHHELD:</span>
-                    <span className="font-bold text-foreground">${selectedEmployee.ytdTax.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+                    <span className="font-semibold text-foreground">${selectedEmployee.ytdTax.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
                   </div>
                 </div>
 
                 {/* Earnings Structure */}
                 <div className="border border-border p-3 space-y-1.5">
-                  <div className="text-[9px] font-bold text-foreground uppercase border-b border-border pb-1 flex justify-between">
+                  <div className="text-[9px] font-semibold text-foreground uppercase border-b border-border pb-1 flex justify-between">
                     <span>EARNINGS STRUCTURE</span>
                     <span className="font-normal text-muted-foreground">TIER-1</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">BASE HOURLY WAGE:</span>
-                    <span className="font-bold">${selectedEmployee.baseWage.toFixed(2)} / HOUR</span>
+                    <span className="font-semibold">${selectedEmployee.baseWage.toFixed(2)} / HOUR</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">COMMISSION ALLOCATION:</span>
-                    <span className="font-bold">{selectedEmployee.commissionRate}% SERVICE GROSS</span>
+                    <span className="font-semibold">{selectedEmployee.commissionRate}% SERVICE GROSS</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">OVERTIME MULTIPLIER:</span>
-                    <span className="font-bold">{selectedEmployee.otMultiplier}X BASE (${(selectedEmployee.baseWage * selectedEmployee.otMultiplier).toFixed(2)}/HR)</span>
+                    <span className="font-semibold">{selectedEmployee.otMultiplier}X BASE (${(selectedEmployee.baseWage * selectedEmployee.otMultiplier).toFixed(2)}/HR)</span>
                   </div>
                 </div>
 
                 {/* Withholdings */}
                 <div className="border border-border p-3 space-y-1.5">
-                  <div className="text-[9px] font-bold text-foreground uppercase border-b border-border pb-1 flex justify-between">
+                  <div className="text-[9px] font-semibold text-foreground uppercase border-b border-border pb-1 flex justify-between">
                     <span>WITHHOLDING ELECTIONS</span>
                     <span className="font-normal text-muted-foreground">W-4 CURRENT</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">FEDERAL STATUS:</span>
-                    <span className="font-bold">{selectedEmployee.class === '1099-NEC' ? 'N/A (1099)' : 'SINGLE (0 ALLOWANCES)'}</span>
+                    <span className="font-semibold">{selectedEmployee.class === '1099-NEC' ? 'N/A (1099)' : 'SINGLE (0 ALLOWANCES)'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">NY STATE TAX (IT-2104):</span>
-                    <span className="font-bold">{selectedEmployee.class === '1099-NEC' ? 'N/A' : 'SINGLE (0 ALLOWANCES)'}</span>
+                    <span className="font-semibold">{selectedEmployee.class === '1099-NEC' ? 'N/A' : 'SINGLE (0 ALLOWANCES)'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">NYC RESIDENT SURCHARGE:</span>
-                    <span className="font-bold">{selectedEmployee.class === '1099-NEC' ? 'N/A' : 'ACTIVE (NYC RESIDENT)'}</span>
+                    <span className="font-semibold">{selectedEmployee.class === '1099-NEC' ? 'N/A' : 'ACTIVE (NYC RESIDENT)'}</span>
                   </div>
                 </div>
 
                 {/* Direct Deposit */}
                 <div className="border border-border p-3 space-y-1.5">
-                  <div className="text-[9px] font-bold text-foreground uppercase border-b border-border pb-1 flex justify-between">
+                  <div className="text-[9px] font-semibold text-foreground uppercase border-b border-border pb-1 flex justify-between">
                     <span>DISBURSEMENT ROUTING</span>
                     <span className="font-normal text-muted-foreground">ACH TOKEN</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">PRIMARY DEPOSITORY:</span>
-                    <span className="font-bold uppercase">{selectedEmployee.account.split(' ')[0]}</span>
+                    <span className="font-semibold uppercase">{selectedEmployee.account.split(' ')[0]}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">ACCOUNT NUMBER:</span>
-                    <span className="font-bold tabular-nums">•••••••••••• {selectedEmployee.account.split('••••')[1]}</span>
+                    <span className="font-semibold tabular-nums">•••••••••••• {selectedEmployee.account.split('••••')[1]}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">ROUTING NUMBER:</span>
-                    <span className="font-bold tabular-nums">{selectedEmployee.routing}</span>
+                    <span className="font-semibold tabular-nums">{selectedEmployee.routing}</span>
                   </div>
                 </div>
               </div>
@@ -720,20 +720,20 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
               <div className="border-t border-border p-3.5 bg-muted/30 space-y-2">
                 <button 
                   onClick={() => alert(`Compensation editor launched for ${selectedEmployee.name}.`)}
-                  className="w-full border border-border bg-primary text-primary-foreground py-1.5 text-xs font-bold hover:bg-muted tracking-wider cursor-pointer"
+                  className="w-full border border-border bg-primary text-primary-foreground py-1.5 text-[13px] font-semibold hover:bg-muted tracking-wider cursor-pointer"
                 >
                   EDIT COMPENSATION &amp; COMMISSIONS
                 </button>
                 <div className="grid grid-cols-2 gap-1.5 text-[10px]">
                   <button 
                     onClick={() => alert(`Pay stubs generated for ${selectedEmployee.name}.`)}
-                    className="border border-border bg-card text-foreground py-1 font-bold hover:bg-muted/40 cursor-pointer text-center"
+                    className="border border-border bg-card text-foreground py-1 font-semibold hover:bg-muted/40 cursor-pointer text-center"
                   >
                     VIEW PAY STUBS
                   </button>
                   <button 
                     onClick={() => alert(`W-4 / W-9 Verification document generated.`)}
-                    className="border border-border bg-card text-foreground py-1 font-bold hover:bg-muted/40 cursor-pointer text-center"
+                    className="border border-border bg-card text-foreground py-1 font-semibold hover:bg-muted/40 cursor-pointer text-center"
                   >
                     DOWNLOAD W-4 PDF
                   </button>
@@ -750,29 +750,29 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           {/* HEADER ACTION BANNER */}
           <div className="p-4 border-b border-border flex flex-col md:flex-row md:items-center justify-between gap-3 bg-card">
             <div>
-              <div className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider">
+              <div className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">
                 SEC:3.11 // SHIFT RECONCILIATION &amp; COMMISSION AUDIT
               </div>
-              <h1 className="text-sm font-bold uppercase mt-0.5">
+              <h1 className="text-sm font-semibold uppercase mt-0.5">
                 3.11 PAYROLL // TIMESHEETS &amp; SHIFT CLOCK RECONCILIATION
               </h1>
             </div>
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => alert('All active clock-ins have been checked out.')}
-                className="border border-border px-2.5 py-1 font-bold hover:bg-black hover:text-white transition-none cursor-pointer"
+                className="border border-border px-2.5 py-1 font-semibold hover:bg-black hover:text-white transition-none cursor-pointer"
               >
                 + FORCE CLOCK-OUT ALL
               </button>
               <button 
                 onClick={() => alert('Biometric time-clock hardware feed re-synchronized.')}
-                className="border border-border px-2.5 py-1 font-bold hover:bg-black hover:text-white transition-none cursor-pointer"
+                className="border border-border px-2.5 py-1 font-semibold hover:bg-black hover:text-white transition-none cursor-pointer"
               >
                 SYNC TIME CLOCK HW
               </button>
               <button 
                 onClick={() => alert('Batch processed timesheet approvals.')}
-                className="bg-primary text-primary-foreground border border-border px-2.5 py-1 font-bold hover:bg-muted transition-none cursor-pointer"
+                className="bg-primary text-primary-foreground border border-border px-2.5 py-1 font-semibold hover:bg-muted transition-none cursor-pointer"
               >
                 BATCH APPROVE TIMESHEETS (12)
               </button>
@@ -782,14 +782,14 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           {/* TIMESHEET SUMMARY KPIs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-b border-border divide-y sm:divide-y-0 sm:divide-x divide-border bg-card">
             <div className="p-3 flex flex-col justify-between">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase">TOTAL LOGGED HOURS</span>
+              <span className="text-[10px] font-semibold text-muted-foreground uppercase">TOTAL LOGGED HOURS</span>
               <div className="text-lg font-semibold my-1">486.5 HRS</div>
               <div className="text-[10px] border-t border-border pt-1 text-muted-foreground">
                 REGULAR: <strong className="text-foreground">462.0H</strong> | OVERTIME: <strong className="text-foreground">24.5H</strong>
               </div>
             </div>
             <div className="p-3 flex flex-col justify-between">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase">TIME CARD ANOMALIES</span>
+              <span className="text-[10px] font-semibold text-muted-foreground uppercase">TIME CARD ANOMALIES</span>
               <div className="text-lg font-semibold my-1 flex items-center justify-between">
                 <span>02 EXCEPTIONS</span>
                 <span className="text-[9px] bg-primary text-primary-foreground px-1">ALERT</span>
@@ -799,14 +799,14 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
               </div>
             </div>
             <div className="p-3 flex flex-col justify-between">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase">PROJECTED OVERTIME COST</span>
+              <span className="text-[10px] font-semibold text-muted-foreground uppercase">PROJECTED OVERTIME COST</span>
               <div className="text-lg font-semibold my-1">$1,120.50</div>
               <div className="text-[10px] border-t border-border pt-1 text-muted-foreground">
                 MULTIPLIER: <strong className="text-foreground">1.500X APPLIED</strong>
               </div>
             </div>
             <div className="p-3 flex flex-col justify-between">
-              <span className="text-[10px] font-bold text-muted-foreground uppercase">MANAGER SIGN-OFF</span>
+              <span className="text-[10px] font-semibold text-muted-foreground uppercase">MANAGER SIGN-OFF</span>
               <div className="text-lg font-semibold my-1">10 / 12 COMPLETE</div>
               <div className="text-[10px] border-t border-border pt-1 text-muted-foreground">
                 APPROVAL PENDING: <strong className="text-foreground">02 EMP</strong>
@@ -817,14 +817,14 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-0">
             {/* Timesheet List Table */}
             <div className="lg:col-span-8 border-b lg: lg:border-r border-border flex flex-col overflow-hidden bg-card">
-              <div className="p-2.5 border-b border-border bg-muted/30 flex items-center justify-between text-[11px] font-bold shrink-0">
+              <div className="p-2.5 border-b border-border bg-muted/30 flex items-center justify-between text-[11px] font-semibold shrink-0">
                 <span>SHIFT CLOCK RECONCILIATION TABLE [2025-05-12]</span>
                 <span className="text-[10px] font-normal text-muted-foreground">FILTER: ACTIVE SHIFTS</span>
               </div>
               <div className="overflow-x-auto w-full">
                 <table className="w-full text-left border-collapse text-[11px]">
                   <thead>
-                    <tr className="bg-muted/40 border-b border-border text-[10px] uppercase font-bold tabular-nums">
+                    <tr className="bg-muted/40 border-b border-border text-[10px] uppercase font-semibold tabular-nums">
                       <th className="p-2 border-r border-border text-center w-8">
                         <input type="checkbox" className="h-3 w-3 border-border text-foreground" />
                       </th>
@@ -846,22 +846,22 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <tr 
                         key={punch.id} 
                         onClick={() => setSelectedPunchId(punch.id)}
-                        className={`hover:bg-muted/30 cursor-pointer ${punch.id === selectedPunchId ? 'bg-muted/40 font-bold border-l-4 border-l-black' : ''}`}
+                        className={`hover:bg-muted/30 cursor-pointer ${punch.id === selectedPunchId ? 'bg-muted/40 font-semibold border-l-4 border-l-black' : ''}`}
                       >
                         <td className="p-2 border-r border-border text-center" onClick={(e) => e.stopPropagation()}>
                           <input type="checkbox" className="h-3 w-3 border-border text-foreground" />
                         </td>
-                        <td className="p-2 border-r border-border tabular-nums font-bold">{punch.id}</td>
+                        <td className="p-2 border-r border-border tabular-nums font-semibold">{punch.id}</td>
                         <td className="p-2 border-r border-border font-semibold">{punch.name}</td>
                         <td className="p-2 border-r border-border">{punch.station}</td>
                         <td className="p-2 border-r border-border tabular-nums">{punch.punchIn}</td>
-                        <td className={`p-2 border-r border-border tabular-nums ${punch.punchOut.startsWith('[') ? 'text-destructive underline font-bold' : ''}`}>{punch.punchOut}</td>
+                        <td className={`p-2 border-r border-border tabular-nums ${punch.punchOut.startsWith('[') ? 'text-destructive underline font-semibold' : ''}`}>{punch.punchOut}</td>
                         <td className="p-2 border-r border-border tabular-nums">{punch.break}</td>
                         <td className="p-2 border-r border-border text-right">{punch.regHr}h</td>
-                        <td className="p-2 border-r border-border text-right font-bold">{punch.otHr > 0 ? `${punch.otHr}h` : '0.0h'}</td>
+                        <td className="p-2 border-r border-border text-right font-semibold">{punch.otHr > 0 ? `${punch.otHr}h` : '0.0h'}</td>
                         <td className="p-2 border-r border-border whitespace-nowrap">{punch.comm} Appts</td>
                         <td className="p-2 border-r border-border text-right">${punch.tips.toFixed(2)}</td>
-                        <td className={`p-2 font-bold text-[10px] uppercase ${punch.status.includes('ATTN') || punch.status.includes('MISSED') ? 'bg-destructive/5 text-destructive' : 'text-success'}`}>
+                        <td className={`p-2 font-semibold text-[10px] uppercase ${punch.status.includes('ATTN') || punch.status.includes('MISSED') ? 'bg-destructive/5 text-destructive' : 'text-success'}`}>
                           {punch.status}
                         </td>
                       </tr>
@@ -873,15 +873,15 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
             {/* Right Inspector & Biometrics override (4 Cols) */}
             <div className="lg:col-span-4 flex flex-col bg-card overflow-y-auto">
-              <div className="p-2 border-b border-border bg-primary text-primary-foreground text-[10px] font-bold flex justify-between items-center">
+              <div className="p-2 border-b border-border bg-primary text-primary-foreground text-[10px] font-semibold flex justify-between items-center">
                 <span>BIOMETRIC AUDIT &amp; EXCEPTION INSPECTOR</span>
                 <span className="text-[9px] uppercase tracking-wider">PANEL // 04</span>
               </div>
               <div className="p-4 space-y-4">
                 {/* Active Target Profile */}
                 <div className="border border-border p-2.5 bg-muted/30 space-y-1">
-                  <div className="text-[9px] text-muted-foreground uppercase font-bold">SELECTED TARGET PROFILE</div>
-                  <div className="text-xs font-bold flex justify-between items-center text-foreground">
+                  <div className="text-[9px] text-muted-foreground uppercase font-semibold">SELECTED TARGET PROFILE</div>
+                  <div className="text-[13px] font-semibold flex justify-between items-center text-foreground">
                     <span>{selectedPunch.id} {selectedPunch.name}</span>
                     <span className="bg-primary text-primary-foreground px-1 text-[9px]">ACTIVE CLOCK</span>
                   </div>
@@ -890,10 +890,10 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
                 {/* Exception Warning box */}
                 <div className="border border-border p-2.5 space-y-2">
-                  <div className="text-[9px] font-bold uppercase bg-primary text-primary-foreground px-1 py-0.5 inline-block">
+                  <div className="text-[9px] font-semibold uppercase bg-primary text-primary-foreground px-1 py-0.5 inline-block">
                     EXCEPTION DETECTED
                   </div>
-                  <p className="font-bold text-foreground leading-normal">
+                  <p className="font-semibold text-foreground leading-normal">
                     {selectedPunch.punchOut.startsWith('[') 
                       ? `Missing clock-out punch at scheduled shift end.` 
                       : `Regular overtime detected exceeding weekly limits.`}
@@ -912,7 +912,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                   <div className="space-y-1 text-[10px]">
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">TERMINAL ID:</span>
-                      <span className="font-bold">BIO-SCAN-LAN-04</span>
+                      <span className="font-semibold">BIO-SCAN-LAN-04</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">TERMINAL IP:</span>
@@ -924,20 +924,20 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">FINGERPRINT MATCH:</span>
-                      <span className="font-bold text-foreground">99.82% CONFIDENCE</span>
+                      <span className="font-semibold text-foreground">99.82% CONFIDENCE</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Exit Camera Logs */}
                 <div className="border border-border p-3 space-y-2">
-                  <div className="text-[9px] font-bold uppercase text-foreground border-b border-border pb-1 flex justify-between items-center">
+                  <div className="text-[9px] font-semibold uppercase text-foreground border-b border-border pb-1 flex justify-between items-center">
                     <span>SECURITY CAMERA CROSS VERIFICATION</span>
                     <Camera className="w-3.5 h-3.5 text-foreground" />
                   </div>
                   <div className="bg-muted/30 p-2 border border-border text-[10px] leading-relaxed">
                     <strong>CAM-02 (EXIT_DOOR_NORTH):</strong><br />
-                    Badge access log and exit timestamp confirms employee departure at <span className="font-bold underline">17:04:12 EST</span>.
+                    Badge access log and exit timestamp confirms employee departure at <span className="font-semibold underline">17:04:12 EST</span>.
                   </div>
                 </div>
 
@@ -947,20 +947,20 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                     MANAGER MANUAL OVERRIDE
                   </div>
                   <div className="space-y-1">
-                    <label className="text-[10px] text-muted-foreground block font-bold">ADJUSTED CLOCK-OUT PUNCH:</label>
+                    <label className="text-[10px] text-muted-foreground block font-semibold">ADJUSTED CLOCK-OUT PUNCH:</label>
                     <div className="flex items-center gap-1">
                       <input 
                         value={adjustedTime}
                         onChange={(e) => setAdjustedTime(e.target.value)}
-                        className="w-full border border-border bg-card px-2 py-1 text-xs tabular-nums font-bold focus:ring-0 focus:border-border rounded-md" 
+                        className="w-full border border-border bg-card px-2 py-1 text-[13px] tabular-nums font-semibold focus:ring-0 focus:border-border rounded-md" 
                         type="text" 
                       />
-                      <span className="border border-border px-2 py-1 bg-muted text-[10px] font-bold select-none">UTC</span>
+                      <span className="border border-border px-2 py-1 bg-muted text-[10px] font-semibold select-none">UTC</span>
                     </div>
                   </div>
                   <button 
                     onClick={handleOverridePunch}
-                    className="w-full bg-primary text-primary-foreground font-bold py-1.5 px-3 text-xs hover:bg-muted transition-none flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full bg-primary text-primary-foreground font-semibold py-1.5 px-3 text-[13px] hover:bg-muted transition-none flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>[APPROVE &amp; POST OVERRIDE]</span>
                   </button>
@@ -977,19 +977,19 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           {/* HEADER ACTION BANNER */}
           <div className="p-4 border-b border-border flex flex-wrap items-center justify-between gap-2 bg-card">
             <div>
-              <div className="text-[10px] tracking-widest text-foreground tabular-nums">SEC:3.11 // HISTORICAL DISBURSEMENTS &amp; PAY STUB LEDGER</div>
-              <h1 className="text-sm font-bold uppercase tracking-tight">3.11 PAYROLL // TRANSACTIONS &amp; DISBURSEMENTS ARCHIVE</h1>
+              <div className="text-[10px] tracking-wider text-foreground tabular-nums">SEC:3.11 // HISTORICAL DISBURSEMENTS &amp; PAY STUB LEDGER</div>
+              <h1 className="text-sm font-semibold uppercase tracking-tight">3.11 PAYROLL // TRANSACTIONS &amp; DISBURSEMENTS ARCHIVE</h1>
             </div>
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => alert('General ledger payroll CSV report generated.')}
-                className="border border-border px-2.5 py-1 text-[10px] font-bold hover:bg-black hover:text-white transition-none uppercase cursor-pointer"
+                className="border border-border px-2.5 py-1 text-[10px] font-semibold hover:bg-black hover:text-white transition-none uppercase cursor-pointer"
               >
                 [EXPORT GL CSV]
               </button>
               <button 
                 onClick={() => alert('Bulk pay stubs sent to queue.')}
-                className="border border-border px-2.5 py-1 text-[10px] font-bold hover:bg-black hover:text-white transition-none uppercase cursor-pointer"
+                className="border border-border px-2.5 py-1 text-[10px] font-semibold hover:bg-black hover:text-white transition-none uppercase cursor-pointer"
               >
                 [PRINT ALL PAY STUBS]
               </button>
@@ -997,25 +997,25 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           </div>
 
           {/* HISTORICAL KPIs */}
-          <div className="grid grid-cols-1 md:grid-cols-4 border-b border-border text-xs shrink-0">
+          <div className="grid grid-cols-1 md:grid-cols-4 border-b border-border text-[13px] shrink-0">
             <div className="p-3 border-r border-border">
-              <div className="text-[10px] uppercase font-bold text-muted-foreground">YTD CUMULATIVE</div>
-              <div className="text-lg font-bold tracking-tight my-1 tabular-nums">$182,450.00</div>
+              <div className="text-[10px] uppercase font-semibold text-muted-foreground">YTD CUMULATIVE</div>
+              <div className="text-lg font-semibold tracking-tight my-1 tabular-nums">$182,450.00</div>
               <div className="text-[9px] uppercase tabular-nums text-muted-foreground">10 CYCLES SETTLED // ZERO REVERSALS</div>
             </div>
             <div className="p-3 border-r border-border">
-              <div className="text-[10px] uppercase font-bold text-muted-foreground">LAST SETTLEMENT</div>
-              <div className="text-lg font-bold tracking-tight my-1 tabular-nums">$14,890.12</div>
+              <div className="text-[10px] uppercase font-semibold text-muted-foreground">LAST SETTLEMENT</div>
+              <div className="text-lg font-semibold tracking-tight my-1 tabular-nums">$14,890.12</div>
               <div className="text-[9px] uppercase tabular-nums text-muted-foreground">BATCH #PR-2025-04B // CLEARED APR 30</div>
             </div>
             <div className="p-3 border-r border-border">
-              <div className="text-[10px] uppercase font-bold text-muted-foreground">NACHA SUCCESS RATE</div>
-              <div className="text-lg font-bold tracking-tight my-1 tabular-nums">100.0%</div>
+              <div className="text-[10px] uppercase font-semibold text-muted-foreground">NACHA SUCCESS RATE</div>
+              <div className="text-lg font-semibold tracking-tight my-1 tabular-nums">100.0%</div>
               <div className="text-[9px] uppercase tabular-nums text-muted-foreground">120/120 ACH CLEARANCE // ZERO BOUNCE</div>
             </div>
             <div className="p-3">
-              <div className="text-[10px] uppercase font-bold text-muted-foreground">COA #1020 RECONCILIATION</div>
-              <div className="text-lg font-bold tracking-tight my-1 tabular-nums">BALANCED</div>
+              <div className="text-[10px] uppercase font-semibold text-muted-foreground">COA #1020 RECONCILIATION</div>
+              <div className="text-lg font-semibold tracking-tight my-1 tabular-nums">BALANCED</div>
               <div className="text-[9px] uppercase tabular-nums text-muted-foreground">DRIFT $0.00 // GAAP COMPLIANT</div>
             </div>
           </div>
@@ -1024,13 +1024,13 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
             {/* Batches Table (8 Cols) */}
             <div className="lg:col-span-7 border-b lg: lg:border-r border-border flex flex-col bg-card">
               <div className="p-2 border-b border-border flex items-center justify-between text-[11px] bg-muted/30 shrink-0">
-                <span className="font-bold">HISTORICAL BATCH ARCHIVE</span>
+                <span className="font-semibold">HISTORICAL BATCH ARCHIVE</span>
                 <span className="text-[10px] text-muted-foreground tabular-nums">COMPLIANCE CODE: ASC-958</span>
               </div>
               <div className="overflow-x-auto w-full">
                 <table className="w-full text-left border-collapse text-[11px]">
                   <thead>
-                    <tr className="bg-muted/40 border-b border-border text-[10px] uppercase font-bold tabular-nums">
+                    <tr className="bg-muted/40 border-b border-border text-[10px] uppercase font-semibold tabular-nums">
                       <th className="p-2 border-r border-border">BATCH ID</th>
                       <th className="p-2 border-r border-border">DATE PERIOD</th>
                       <th className="p-2 border-r border-border text-center">HEADCOUNT</th>
@@ -1041,7 +1041,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border tabular-nums">
-                    <tr className="bg-muted/30 hover:bg-muted/40 cursor-pointer font-bold">
+                    <tr className="bg-muted/30 hover:bg-muted/40 cursor-pointer font-semibold">
                       <td className="p-2 border-r border-border">PR-2025-04B</td>
                       <td className="p-2 border-r border-border whitespace-nowrap">2025-04-16 - 2025-04-30</td>
                       <td className="p-2 border-r border-border text-center">12 Staff</td>
@@ -1049,7 +1049,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <td className="p-2 border-r border-border text-right">$3,450.12</td>
                       <td className="p-2 border-r border-border text-right">$14,669.88</td>
                       <td className="p-2 text-center">
-                        <span className="bg-primary text-primary-foreground px-2 py-0.5 text-[9px] font-bold">SETTLED</span>
+                        <span className="bg-primary text-primary-foreground px-2 py-0.5 text-[9px] font-semibold">SETTLED</span>
                       </td>
                     </tr>
                     <tr className="hover:bg-muted/40 cursor-pointer">
@@ -1060,7 +1060,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <td className="p-2 border-r border-border text-right">$3,380.00</td>
                       <td className="p-2 border-r border-border text-right">$14,570.00</td>
                       <td className="p-2 text-center">
-                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-bold">SETTLED</span>
+                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-semibold">SETTLED</span>
                       </td>
                     </tr>
                     <tr className="hover:bg-muted/40 cursor-pointer">
@@ -1071,7 +1071,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <td className="p-2 border-r border-border text-right">$3,210.00</td>
                       <td className="p-2 border-r border-border text-right">$13,630.00</td>
                       <td className="p-2 text-center">
-                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-bold">SETTLED</span>
+                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-semibold">SETTLED</span>
                       </td>
                     </tr>
                     <tr className="hover:bg-muted/40 cursor-pointer">
@@ -1082,7 +1082,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <td className="p-2 border-r border-border text-right">$3,120.00</td>
                       <td className="p-2 border-r border-border text-right">$13,380.00</td>
                       <td className="p-2 text-center">
-                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-bold">SETTLED</span>
+                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-semibold">SETTLED</span>
                       </td>
                     </tr>
                   </tbody>
@@ -1093,13 +1093,13 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
             {/* Pay Stub Details & Journal Entry (4 Cols) */}
             <div className="lg:col-span-5 flex flex-col bg-card overflow-y-auto">
               <div className="p-2 border-b border-border bg-primary text-primary-foreground flex justify-between items-center shrink-0">
-                <span className="font-bold text-[10px] tracking-wider uppercase">PAY STUB &amp; VOUCHER INSPECTOR</span>
-                <span className="text-[9px] bg-card text-foreground px-1 font-bold">STUB AUDIT</span>
+                <span className="font-semibold text-[10px] tracking-wider uppercase">PAY STUB &amp; VOUCHER INSPECTOR</span>
+                <span className="text-[9px] bg-card text-foreground px-1 font-semibold">STUB AUDIT</span>
               </div>
               <div className="p-3.5 space-y-3">
                 <div className="border border-border p-3 bg-muted/30 space-y-1">
-                  <div className="text-[9px] text-muted-foreground uppercase font-bold">SELECTED RECIPIENT // BATCH PR-2025-04B</div>
-                  <div className="text-sm font-bold uppercase tracking-tight text-foreground">Marcus Reyes (EMP-0101)</div>
+                  <div className="text-[9px] text-muted-foreground uppercase font-semibold">SELECTED RECIPIENT // BATCH PR-2025-04B</div>
+                  <div className="text-sm font-semibold uppercase tracking-tight text-foreground">Marcus Reyes (EMP-0101)</div>
                   <div className="flex justify-between text-[11px] tabular-nums pt-1">
                     <span>TAX ID: <strong>XXX-XX-4192</strong></span>
                     <span>CLASS: <strong>W2 FULL-TIME</strong></span>
@@ -1108,25 +1108,25 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
                 {/* Earnings breakdown */}
                 <div className="border border-border p-3 space-y-2">
-                  <span className="font-bold text-[9px] uppercase tracking-wider block border-b border-border pb-1">EARNINGS BREAKDOWN</span>
+                  <span className="font-semibold text-[9px] uppercase tracking-wider block border-b border-border pb-1">EARNINGS BREAKDOWN</span>
                   <div className="space-y-1 text-[11px] tabular-nums">
                     <div className="flex justify-between">
                       <span>Regular Base (80h @ $26)</span>
-                      <span className="font-bold">$2,080.00</span>
+                      <span className="font-semibold">$2,080.00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Overtime (4h @ $39)</span>
-                      <span className="font-bold">$156.00</span>
+                      <span className="font-semibold">$156.00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Service Commission (45% on $2,533.33)</span>
-                      <span className="font-bold">$1,140.00</span>
+                      <span className="font-semibold">$1,140.00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Direct Tips (Pass-through)</span>
-                      <span className="font-bold">$420.00</span>
+                      <span className="font-semibold">$420.00</span>
                     </div>
-                    <div className="flex justify-between pt-1 border-t border-border font-bold bg-muted/40 px-1">
+                    <div className="flex justify-between pt-1 border-t border-border font-semibold bg-muted/40 px-1">
                       <span>TOTAL GROSS</span>
                       <span>$3,796.00</span>
                     </div>
@@ -1135,7 +1135,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
                 {/* Statutory deductions */}
                 <div className="border border-border p-3 space-y-2">
-                  <span className="font-bold text-[9px] uppercase tracking-wider block border-b border-border pb-1">STATUTORY TAX WITHHOLDINGS</span>
+                  <span className="font-semibold text-[9px] uppercase tracking-wider block border-b border-border pb-1">STATUTORY TAX WITHHOLDINGS</span>
                   <div className="space-y-1 text-[11px] tabular-nums">
                     <div className="flex justify-between text-foreground">
                       <span>Federal Income Tax (FIT)</span>
@@ -1157,7 +1157,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <span>NY Disability Surcharge (SDI)</span>
                       <span>-$3.25</span>
                     </div>
-                    <div className="flex justify-between pt-1 border-t border-border font-bold bg-muted/40 px-1">
+                    <div className="flex justify-between pt-1 border-t border-border font-semibold bg-muted/40 px-1">
                       <span>TOTAL TAX WITHHELD</span>
                       <span>-$868.34</span>
                     </div>
@@ -1166,41 +1166,41 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
                 {/* Net payout direct deposit */}
                 <div className="border border-border p-3 space-y-1 text-center bg-card">
-                  <div className="text-[9px] uppercase font-bold text-muted-foreground">NET DISBURSED PAYOUT AMOUNT</div>
-                  <div className="text-xl font-bold tabular-nums text-foreground underline decoration-double">$2,927.66</div>
+                  <div className="text-[9px] uppercase font-semibold text-muted-foreground">NET DISBURSED PAYOUT AMOUNT</div>
+                  <div className="text-xl font-semibold tabular-nums text-foreground underline decoration-double">$2,927.66</div>
                   <div className="text-[10px] text-muted-foreground">DIRECT DEPOSIT ACH TRANSFERRED TO Chase ••••4192</div>
                 </div>
 
                 {/* Double Entry Verification */}
                 <div className="border border-border p-3 space-y-2 bg-muted/30">
-                  <div className="flex justify-between items-center text-[10px] font-bold">
+                  <div className="flex justify-between items-center text-[10px] font-semibold">
                     <span className="uppercase">GAAP DOUBLE-ENTRY BALANCING</span>
                     <span className="bg-primary text-primary-foreground px-1 text-[9px]">ASC-958</span>
                   </div>
                   <div className="border border-border text-[10px] bg-card divide-y divide-border">
                     <div className="p-1.5 flex justify-between">
                       <div>
-                        <span className="font-bold bg-muted px-1 mr-1">[DR]</span>
-                        <span className="font-bold">#5010</span> Direct Labor Expense
+                        <span className="font-semibold bg-muted px-1 mr-1">[DR]</span>
+                        <span className="font-semibold">#5010</span> Direct Labor Expense
                       </div>
-                      <span className="font-bold">$3,796.00</span>
+                      <span className="font-semibold">$3,796.00</span>
                     </div>
                     <div className="p-1.5 flex justify-between pl-4">
                       <div>
-                        <span className="font-bold bg-muted px-1 mr-1">[CR]</span>
-                        <span className="font-bold">#2040</span> Payroll Taxes Payable
+                        <span className="font-semibold bg-muted px-1 mr-1">[CR]</span>
+                        <span className="font-semibold">#2040</span> Payroll Taxes Payable
                       </div>
-                      <span className="font-bold">$868.34</span>
+                      <span className="font-semibold">$868.34</span>
                     </div>
                     <div className="p-1.5 flex justify-between pl-4 bg-muted/30">
                       <div>
-                        <span className="font-bold bg-muted px-1 mr-1">[CR]</span>
-                        <span className="font-bold">#1020</span> Payroll Clearing Cash
+                        <span className="font-semibold bg-muted px-1 mr-1">[CR]</span>
+                        <span className="font-semibold">#1020</span> Payroll Clearing Cash
                       </div>
-                      <span className="font-bold">$2,927.66</span>
+                      <span className="font-semibold">$2,927.66</span>
                     </div>
                   </div>
-                  <div className="flex justify-between font-bold text-[9px] text-muted-foreground">
+                  <div className="flex justify-between font-semibold text-[9px] text-muted-foreground">
                     <span>DEBITS: $3,796.00</span>
                     <span>CREDITS: $3,796.00</span>
                     <span className="text-success">[BALANCED]</span>
@@ -1218,19 +1218,19 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           {/* HEADER ACTION BANNER */}
           <div className="p-4 border-b border-border flex flex-wrap items-center justify-between gap-3 bg-card">
             <div>
-              <div className="text-[10px] text-muted-foreground tracking-wider font-bold">SEC:3.11 // STATUTORY TAXES &amp; WITHHOLDING COMPLIANCE</div>
-              <h1 className="text-sm font-bold uppercase mt-0.5">3.11 PAYROLL // PAYROLL TAXES &amp; JURISDICTION COMPLIANCE</h1>
+              <div className="text-[10px] text-muted-foreground tracking-wider font-semibold">SEC:3.11 // STATUTORY TAXES &amp; WITHHOLDING COMPLIANCE</div>
+              <h1 className="text-sm font-semibold uppercase mt-0.5">3.11 PAYROLL // PAYROLL TAXES &amp; JURISDICTION COMPLIANCE</h1>
             </div>
             <div className="flex items-center gap-2">
               <button 
                 onClick={handleEftpsWire}
-                className="border border-border bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-1.5 text-[11px] font-bold cursor-pointer"
+                className="border border-border bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-1.5 text-[11px] font-semibold cursor-pointer"
               >
                 [INITIATE EFTPS TAX PAYMENT]
               </button>
               <button 
                 onClick={() => alert('IRS Form 941 Employer Quarterly Tax draft generated.')}
-                className="border border-border bg-card hover:bg-muted/40 px-3 py-1.5 text-[11px] font-bold cursor-pointer"
+                className="border border-border bg-card hover:bg-muted/40 px-3 py-1.5 text-[11px] font-semibold cursor-pointer"
               >
                 [DOWNLOAD IRS FORM 941 DRAFT]
               </button>
@@ -1240,37 +1240,37 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           {/* TAX KPIs */}
           <div className="grid grid-cols-1 md:grid-cols-4 border-b border-border bg-card">
             <div className="p-3.5 border-b lg: lg:border-r border-border flex flex-col justify-between">
-              <div className="text-[10px] uppercase font-bold text-muted-foreground flex justify-between">
+              <div className="text-[10px] uppercase font-semibold text-muted-foreground flex justify-between">
                 <span>Q1 TOTAL TAX LIABILITY</span>
                 <span>[FY25]</span>
               </div>
               <div className="my-2">
-                <div className="text-lg font-bold tracking-tight">$38,420.50</div>
+                <div className="text-lg font-semibold tracking-tight">$38,420.50</div>
               </div>
               <div className="text-[10px] text-muted-foreground border-t border-dotted border-border pt-1.5 flex justify-between">
                 <span>SETTLED: $28,950.00</span>
-                <span className="font-bold text-foreground">PENDING: $9,470.50</span>
+                <span className="font-semibold text-foreground">PENDING: $9,470.50</span>
               </div>
             </div>
             <div className="p-3.5 border-b lg: lg:border-r border-border flex flex-col justify-between">
-              <div className="text-[10px] uppercase font-bold text-muted-foreground flex justify-between">
+              <div className="text-[10px] uppercase font-semibold text-muted-foreground flex justify-between">
                 <span>EFTPS NEXT DEPOSIT DUE</span>
-                <span className="font-bold bg-muted px-1 text-foreground text-[9px]">URGENT</span>
+                <span className="font-semibold bg-muted px-1 text-foreground text-[9px]">URGENT</span>
               </div>
               <div className="my-2">
-                <div className="text-lg font-bold tracking-tight">MAY 15, 2025</div>
+                <div className="text-lg font-semibold tracking-tight">MAY 15, 2025</div>
               </div>
               <div className="text-[10px] text-muted-foreground border-t border-dotted border-border pt-1.5">
                 <span>SEMI-WEEKLY SCHEDULE // ZERO PENALTY</span>
               </div>
             </div>
             <div className="p-3.5 border-b md: lg:border-r border-border flex flex-col justify-between">
-              <div className="text-[10px] uppercase font-bold text-muted-foreground flex justify-between">
+              <div className="text-[10px] uppercase font-semibold text-muted-foreground flex justify-between">
                 <span>FED WITHHOLDING 941</span>
                 <span>IRS-US</span>
               </div>
               <div className="my-2">
-                <div className="text-lg font-bold tracking-tight">$18,240.00</div>
+                <div className="text-lg font-semibold tracking-tight">$18,240.00</div>
               </div>
               <div className="text-[10px] text-muted-foreground border-t border-dotted border-border pt-1.5 flex justify-between">
                 <span>FIT: $12,410.00</span>
@@ -1278,12 +1278,12 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
               </div>
             </div>
             <div className="p-3.5 flex flex-col justify-between">
-              <div className="text-[10px] uppercase font-bold text-muted-foreground flex justify-between">
+              <div className="text-[10px] uppercase font-semibold text-muted-foreground flex justify-between">
                 <span>NY SUTA SURCHARGE</span>
                 <span>NYS-DOL</span>
               </div>
               <div className="my-2">
-                <div className="text-lg font-bold tracking-tight">$2,840.10</div>
+                <div className="text-lg font-semibold tracking-tight">$2,840.10</div>
               </div>
               <div className="text-[10px] text-muted-foreground border-t border-dotted border-border pt-1.5">
                 <span>NY NYS-45 RATE: 3.40% // EXP 1.02</span>
@@ -1294,14 +1294,14 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-0">
             {/* Left Accrual Table (8 Cols) */}
             <div className="lg:col-span-8 border-b lg: lg:border-r border-border flex flex-col bg-card">
-              <div className="p-2 border-b border-border bg-muted/30 flex justify-between items-center text-[11px] shrink-0 font-bold">
+              <div className="p-2 border-b border-border bg-muted/30 flex justify-between items-center text-[11px] shrink-0 font-semibold">
                 <span>STATUTORY ACCRUAL REGISTER // JURISDICTION BREAKDOWN</span>
                 <span className="text-[10px] text-muted-foreground">5 ACTIVE TAX AGENCIES</span>
               </div>
               <div className="overflow-x-auto w-full">
                 <table className="w-full text-left border-collapse text-[11px]">
                   <thead>
-                    <tr className="border-b border-border text-[10px] uppercase tracking-wider bg-muted/40 font-bold">
+                    <tr className="border-b border-border text-[10px] uppercase tracking-wider bg-muted/40 font-semibold">
                       <th className="p-2.5 border-r border-border">JURISDICTION // AGENCY</th>
                       <th className="p-2.5 border-r border-border">DESCRIPTION / CODE</th>
                       <th className="p-2.5 border-r border-border">CYCLE</th>
@@ -1314,7 +1314,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                   </thead>
                   <tbody className="divide-y divide-border tabular-nums">
                     <tr className="hover:bg-muted/30">
-                      <td className="p-2.5 border-r border-border font-bold">
+                      <td className="p-2.5 border-r border-border font-semibold">
                         <div>IRS (Federal)</div>
                         <div className="text-[10px] text-muted-foreground font-normal">TREAS-USA-EFTPS</div>
                       </td>
@@ -1326,13 +1326,13 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <td className="p-2.5 border-r border-border text-right">$182,450.00</td>
                       <td className="p-2.5 border-r border-border text-right">$12,410.00</td>
                       <td className="p-2.5 border-r border-border text-right">$5,830.00</td>
-                      <td className="p-2.5 border-r border-border text-right font-bold">$18,240.00</td>
+                      <td className="p-2.5 border-r border-border text-right font-semibold">$18,240.00</td>
                       <td className="p-2.5 text-center whitespace-nowrap">
-                        <span className="bg-primary text-primary-foreground px-2 py-0.5 text-[9px] font-bold">DUE MAY 15</span>
+                        <span className="bg-primary text-primary-foreground px-2 py-0.5 text-[9px] font-semibold">DUE MAY 15</span>
                       </td>
                     </tr>
                     <tr className="hover:bg-muted/30">
-                      <td className="p-2.5 border-r border-border font-bold">
+                      <td className="p-2.5 border-r border-border font-semibold">
                         <div>IRS (Federal)</div>
                         <div className="text-[10px] text-muted-foreground font-normal">TREAS-USA-FUTA</div>
                       </td>
@@ -1344,13 +1344,13 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <td className="p-2.5 border-r border-border text-right">$98,000.00</td>
                       <td className="p-2.5 border-r border-border text-right">$0.00</td>
                       <td className="p-2.5 border-r border-border text-right">$588.00 (0.6%)</td>
-                      <td className="p-2.5 border-r border-border text-right font-bold">$588.00</td>
+                      <td className="p-2.5 border-r border-border text-right font-semibold">$588.00</td>
                       <td className="p-2.5 text-center whitespace-nowrap">
-                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-bold">ACCRUED</span>
+                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-semibold">ACCRUED</span>
                       </td>
                     </tr>
                     <tr className="hover:bg-muted/30">
-                      <td className="p-2.5 border-r border-border font-bold">
+                      <td className="p-2.5 border-r border-border font-semibold">
                         <div>NY Dept Taxation &amp; Finance</div>
                         <div className="text-[10px] text-muted-foreground font-normal">NYS-TAX-ALBANY</div>
                       </td>
@@ -1362,13 +1362,13 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <td className="p-2.5 border-r border-border text-right">$182,450.00</td>
                       <td className="p-2.5 border-r border-border text-right">$3,480.00</td>
                       <td className="p-2.5 border-r border-border text-right">$0.00</td>
-                      <td className="p-2.5 border-r border-border text-right font-bold">$3,480.00</td>
+                      <td className="p-2.5 border-r border-border text-right font-semibold">$3,480.00</td>
                       <td className="p-2.5 text-center whitespace-nowrap">
-                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-bold bg-muted/40">DUE APR 30</span>
+                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-semibold bg-muted/40">DUE APR 30</span>
                       </td>
                     </tr>
                     <tr className="hover:bg-muted/30">
-                      <td className="p-2.5 border-r border-border font-bold">
+                      <td className="p-2.5 border-r border-border font-semibold">
                         <div>NY Labor NYS-DOL-UI</div>
                         <div className="text-[10px] text-muted-foreground font-normal">NY-UNEMPLOY-DIV</div>
                       </td>
@@ -1380,14 +1380,14 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                       <td className="p-2.5 border-r border-border text-right">$142,000.00</td>
                       <td className="p-2.5 border-r border-border text-right">$0.00</td>
                       <td className="p-2.5 border-r border-border text-right">$4,828.00</td>
-                      <td className="p-2.5 border-r border-border text-right font-bold">$4,828.00</td>
+                      <td className="p-2.5 border-r border-border text-right font-semibold">$4,828.00</td>
                       <td className="p-2.5 text-center whitespace-nowrap">
-                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-bold bg-muted/40">DUE APR 30</span>
+                        <span className="border border-border px-1.5 py-0.5 text-[9px] font-semibold bg-muted/40">DUE APR 30</span>
                       </td>
                     </tr>
                   </tbody>
                   <tfoot>
-                    <tr className="border-t-2 border-border bg-muted/30 font-bold uppercase text-[10px]">
+                    <tr className="border-t-2 border-border bg-muted/30 font-semibold uppercase text-[10px]">
                       <td className="p-2.5 border-r border-border text-left" colSpan={3}>ACCRUAL TOTALS</td>
                       <td className="p-2.5 border-r border-border text-right">$604,900.00</td>
                       <td className="p-2.5 border-r border-border text-right">$15,890.00</td>
@@ -1402,43 +1402,43 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
             {/* Right EFTPS Gateway Console (4 Cols) */}
             <div className="lg:col-span-4 flex flex-col bg-card">
-              <div className="p-2.5 border-b border-border bg-muted/40 flex justify-between items-center text-[11px] shrink-0 font-bold">
+              <div className="p-2.5 border-b border-border bg-muted/40 flex justify-between items-center text-[11px] shrink-0 font-semibold">
                 <span>TAX ESCROW CLEANING &amp; EFTPS WIRE</span>
-                <span className="text-[10px] font-bold border border-border px-1.5 bg-card">GATEWAY: OK</span>
+                <span className="text-[10px] font-semibold border border-border px-1.5 bg-card">GATEWAY: OK</span>
               </div>
               <div className="p-4 space-y-4">
                 <div className="border border-border p-3 space-y-1 bg-card">
-                  <div className="text-[9px] uppercase font-bold text-muted-foreground">OPERATING TAX ESCROW ACCOUNT</div>
-                  <div className="font-bold text-[13px] text-foreground">Chase Operating Tax Res •••• 9921</div>
+                  <div className="text-[9px] uppercase font-semibold text-muted-foreground">OPERATING TAX ESCROW ACCOUNT</div>
+                  <div className="font-semibold text-[13px] text-foreground">Chase Operating Tax Res •••• 9921</div>
                   <div className="flex justify-between text-[11px] pt-2 border-t border-dotted border-border">
                     <span className="text-muted-foreground">ESCROW LEDGER BALANCE:</span>
-                    <span className="font-bold">$42,910.45</span>
+                    <span className="font-semibold">$42,910.45</span>
                   </div>
                   <div className="flex justify-between text-[11px]">
                     <span className="text-muted-foreground">ALLOCATED TAX LIABILITY:</span>
-                    <span className="font-bold">${activeBatchTax.toFixed(2)}</span>
+                    <span className="font-semibold">${activeBatchTax.toFixed(2)}</span>
                   </div>
                 </div>
 
                 {/* Credentials */}
                 <div className="border border-border p-3 bg-muted/30 space-y-2">
-                  <div className="text-[9px] uppercase font-bold text-muted-foreground">LEGAL ENTITY CREDENTIALS</div>
+                  <div className="text-[9px] uppercase font-semibold text-muted-foreground">LEGAL ENTITY CREDENTIALS</div>
                   <div className="grid grid-cols-2 gap-2 text-[10px]">
                     <div>
                       <div className="text-muted-foreground text-[9px]">FED EMPLOYER ID (EIN):</div>
-                      <div className="font-bold">13-8892019</div>
+                      <div className="font-semibold">13-8892019</div>
                     </div>
                     <div>
                       <div className="text-muted-foreground text-[9px]">NYS WITHHOLDING ID:</div>
-                      <div className="font-bold">W-9901428-1</div>
+                      <div className="font-semibold">W-9901428-1</div>
                     </div>
                     <div className="col-span-2">
                       <div className="text-muted-foreground text-[9px]">LEGAL REGISTERED NAME:</div>
-                      <div className="font-bold">All About Pawz NYC LLC</div>
+                      <div className="font-semibold">All About Pawz NYC LLC</div>
                     </div>
                     <div className="col-span-2">
                       <div className="text-muted-foreground text-[9px]">EFTPS PIN VERIFICATION:</div>
-                      <div className="font-bold flex justify-between">
+                      <div className="font-semibold flex justify-between">
                         <span>•••• •••• •••• 4091</span>
                         <span className="text-[8px] bg-primary text-primary-foreground px-1">ACTIVE</span>
                       </div>
@@ -1448,11 +1448,11 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
 
                 {/* Remittance Detail */}
                 <div className="border border-border p-3 space-y-2 bg-card">
-                  <div className="flex justify-between items-center text-[10px] font-bold">
+                  <div className="flex justify-between items-center text-[10px] font-semibold">
                     <span>941 FEDERAL PAYMENT DEPOSIT</span>
                     <span className="border border-border px-1 text-[9px]">PERIOD 05A</span>
                   </div>
-                  <div className="text-xl font-bold tabular-nums tracking-tight">$18,240.00</div>
+                  <div className="text-xl font-semibold tabular-nums tracking-tight">$18,240.00</div>
                   <p className="text-[10px] text-muted-foreground leading-normal border-t border-border pt-2">
                     Deposit triggers secure ACH Credit transmission through FedACH direct route via JPMorgan Chase NA Commercial client portal. Zero penalty compliance guarantee active.
                   </p>
@@ -1461,7 +1461,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
                 {/* Primary Button Wire */}
                 <button 
                   onClick={handleEftpsWire}
-                  className="w-full border border-border bg-primary text-primary-foreground hover:bg-primary/90 py-2 font-bold text-xs flex justify-center items-center gap-2 cursor-pointer transition-colors"
+                  className="w-full border border-border bg-primary text-primary-foreground hover:bg-primary/90 py-2 font-semibold text-[13px] flex justify-center items-center gap-2 cursor-pointer transition-colors"
                 >
                   <span>&gt;&gt; DISPATCH IMMEDIATE IRS WIRE</span>
                 </button>
@@ -1474,7 +1474,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
       {/* FOOTER */}
       <footer className="border-t border-border bg-muted/40 p-2.5 flex flex-wrap items-center justify-between gap-2 shrink-0 text-[10px] select-none">
         <div className="flex items-center gap-4 tabular-nums">
-          <div className="flex items-center gap-1.5 font-bold">
+          <div className="flex items-center gap-1.5 font-semibold">
             <span className="w-2 h-2 bg-black inline-block"></span>
             <span>DOUBLE-ENTRY EQUILIBRIUM: BALANCED</span>
           </div>
@@ -1484,7 +1484,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ onNavigateSection }) =
           <span className="text-muted-foreground uppercase">Immutable Ledger Vault Verified</span>
         </div>
         <div className="tabular-nums text-muted-foreground">
-          SHA-256 SEAL: <span className="font-bold text-foreground tabular-nums">8FA4.PAYROLL.2025</span>
+          SHA-256 SEAL: <span className="font-semibold text-foreground tabular-nums">8FA4.PAYROLL.2025</span>
         </div>
       </footer>
     </div>

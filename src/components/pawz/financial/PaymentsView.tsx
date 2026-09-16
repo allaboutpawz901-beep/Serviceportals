@@ -352,7 +352,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                 <span className="text-[11px] font-medium uppercase text-muted-foreground text-muted-foreground/70">LANE 01 // MAIN DESK</span>
                 <span className="w-2.5 h-2.5 bg-success/100 rounded-full animate-ping"></span>
               </div>
-              <p className="text-sm tabular-nums font-bold">PAX-A920 TERMINAL</p>
+              <p className="text-sm tabular-nums font-semibold">PAX-A920 TERMINAL</p>
               <div className="text-[11px] text-muted-foreground">IP: 192.168.1.104 // PORT: 3000</div>
               <div className="bg-muted/30 p-2 text-[10px] text-muted-foreground/70 border border-border">
                 ESC/POS RECEIPT SPOOLER: ACTIVE (PAPER: 85%)
@@ -363,7 +363,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                 <span className="text-[11px] font-medium uppercase text-muted-foreground text-muted-foreground/70">LANE 02 // BOUTIQUE RECEPT</span>
                 <span className="w-2.5 h-2.5 bg-success/100 rounded-full"></span>
               </div>
-              <p className="text-sm tabular-nums font-bold">S700 COUNTERTOP</p>
+              <p className="text-sm tabular-nums font-semibold">S700 COUNTERTOP</p>
               <div className="text-[11px] text-muted-foreground">IP: 192.168.1.109 // PORT: 3000</div>
               <div className="bg-muted/30 p-2 text-[10px] text-muted-foreground/70 border border-border">
                 ESC/POS RECEIPT SPOOLER: ACTIVE (PAPER: 100%)
@@ -374,7 +374,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                 <span className="text-[11px] font-medium uppercase text-muted-foreground text-muted-foreground/70">MOBILE VAN #1 TERM</span>
                 <span className="w-2.5 h-2.5 bg-warning/100 rounded-full"></span>
               </div>
-              <p className="text-sm tabular-nums font-bold">PAX-A920 (WIFI HOTSPOT)</p>
+              <p className="text-sm tabular-nums font-semibold">PAX-A920 (WIFI HOTSPOT)</p>
               <div className="text-[11px] text-muted-foreground">CONNECTED VIA LTE ROAMING</div>
               <div className="bg-muted/30 p-2 text-[10px] text-muted-foreground/70 border border-border">
                 PRINTER: LOW_PAPER (PAPER: 14%)
@@ -384,13 +384,13 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
 
           {/* RETAIL TRANSACTION REGISTER */}
           <div className="bg-card border border-border">
-            <div className="bg-muted/40 border-b border-border p-3 tabular-nums font-bold text-xs uppercase text-foreground">
+            <div className="bg-muted/40 border-b border-border p-3 tabular-nums font-semibold text-[13px] uppercase text-foreground">
               ACTIVE POS COUNTERTOP TRANSACTION LOG
             </div>
             <div className="p-4 overflow-x-auto">
               <table className="w-full text-left text-[13px] text-foreground border-collapse">
                 <thead>
-                  <tr className="border-b border-border bg-muted/30 font-bold uppercase">
+                  <tr className="border-b border-border bg-muted/30 font-semibold uppercase">
                     <th className="p-3 border-r border-border">TXN ID</th>
                     <th className="p-3 border-r border-border">LANE BOUND</th>
                     <th className="p-3 border-r border-border">CUSTOMER / PET</th>
@@ -402,18 +402,18 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                 <tbody className="divide-y divide-border font-medium">
                   {paymentsList.filter(p => p.method === 'CREDIT_CARD' || p.method === 'CASH').map(p => (
                     <tr key={p.id} className="hover:bg-muted/30 transition-colors">
-                      <td className="p-3 border-r border-border font-bold">{p.id}</td>
-                      <td className="p-3 border-r border-border font-bold text-muted-foreground">{p.details.split('#')[1] || 'L1-MAIN-DESK'}</td>
+                      <td className="p-3 border-r border-border font-semibold">{p.id}</td>
+                      <td className="p-3 border-r border-border font-semibold text-muted-foreground">{p.details.split('#')[1] || 'L1-MAIN-DESK'}</td>
                       <td className="p-3 border-r border-border">
-                        <div className="font-bold">{p.customer}</div>
+                        <div className="font-semibold">{p.customer}</div>
                         <div className="text-[10px] text-muted-foreground/70">{p.pet}</div>
                       </td>
-                      <td className="p-3 border-r border-border text-muted-foreground font-bold">EMV_CHIP_VERIFIED // PIN_PASS</td>
+                      <td className="p-3 border-r border-border text-muted-foreground font-semibold">EMV_CHIP_VERIFIED // PIN_PASS</td>
                       <td className="p-3 border-r border-border text-right font-semibold">${p.amount.toFixed(2)}</td>
                       <td className="p-3 text-center">
                         <button
                           onClick={() => alert(`Spooling POS thermal printer spool to hardware port 9100... Printing receipt for transaction ${p.id}.`)}
-                          className="bg-black hover:bg-muted text-white border border-border px-3 py-1 text-[11px] text-muted-foreground font-bold rounded-md cursor-pointer"
+                          className="bg-black hover:bg-muted text-white border border-border px-3 py-1 text-[11px] text-muted-foreground font-semibold rounded-md cursor-pointer"
                         >
                           PRINT ESC/POS RECEIPT
                         </button>
@@ -434,21 +434,21 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 bg-card border border-border p-4 space-y-4">
               <div className="flex items-center justify-between border-b border-border pb-2">
-                <span className="text-[12px] font-bold text-foreground uppercase">STRIPE API WEBHOOK INTAKE FEED</span>
-                <span className="text-[9px] bg-primary text-primary-foreground px-1.5 py-0.5 tabular-nums font-bold animate-pulse">LIVE NODE</span>
+                <span className="text-[12px] font-semibold text-foreground uppercase">STRIPE API WEBHOOK INTAKE FEED</span>
+                <span className="text-[9px] bg-primary text-primary-foreground px-1.5 py-0.5 tabular-nums font-semibold animate-pulse">LIVE NODE</span>
               </div>
               <div className="bg-card text-success p-4 h-[250px] overflow-y-auto text-[11px] space-y-1.5 rounded-md border border-border">
                 <div>[2025-05-12 14:21:05] SECURE mTLS HANDSHAKE ESTABLISHED - ip=3.18.12.112</div>
                 <div>[2025-05-12 14:21:06] event_type=charge.succeeded status=api_authorized</div>
                 <div>[2025-05-12 14:21:06] txn_amount=14500 currency=usd signature_check=AES-256-GCM-OK</div>
                 <div>[2025-05-12 14:21:07] clearinghouse_state=funds_deposited bank_node_id=PLD_CHKH_911</div>
-                <div className="text-white font-bold">&gt;&gt; Live webhook monitor idle. Waiting on web storefront checkout...</div>
+                <div className="text-white font-semibold">&gt;&gt; Live webhook monitor idle. Waiting on web storefront checkout...</div>
               </div>
             </div>
 
             <div className="bg-card border border-border p-4 flex flex-col justify-between">
               <div>
-                <span className="text-[11px] font-bold text-muted-foreground/70 uppercase">PLAID BANKING NETWORK</span>
+                <span className="text-[11px] font-semibold text-muted-foreground/70 uppercase">PLAID BANKING NETWORK</span>
                 <div className="border border-border p-3 mt-4 flex items-center justify-between bg-muted/30">
                   <span className="text-[12px] font-semibold">CHASE COMMERCIAL</span>
                   <span className="text-success text-[10px] font-semibold uppercase">LINKED</span>
@@ -580,7 +580,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
 
                   <div className="pt-6 border-t border-border space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-muted-foreground/70 text-[10px]">Opening Float:</span>
+                      <span className="font-semibold text-muted-foreground/70 text-[10px]">Opening Float:</span>
                       <input
                         type="number"
                         value={cashCalc.openingFloat}
@@ -589,7 +589,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                       />
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-muted-foreground/70 text-[10px]">Expected Inflow:</span>
+                      <span className="font-semibold text-muted-foreground/70 text-[10px]">Expected Inflow:</span>
                       <input
                         type="number"
                         value={cashCalc.expectedInflow}
@@ -605,7 +605,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
             {/* AUDIT SUMMARY & RECONCILIATION */}
             <div className="bg-card border border-border p-6 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <span className="text-[11px] font-bold text-muted-foreground/70 uppercase">TILL AUDITING REPORT</span>
+                <span className="text-[11px] font-semibold text-muted-foreground/70 uppercase">TILL AUDITING REPORT</span>
                 <div className="divide-y divide-neutral-200 text-[12px] pt-2">
                   <div className="py-2.5 flex justify-between">
                     <span>Counted Till Total:</span>
@@ -613,7 +613,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                   </div>
                   <div className="py-2.5 flex justify-between">
                     <span>Expected Total:</span>
-                    <strong className="text-foreground font-bold">${totalExpected.toFixed(2)}</strong>
+                    <strong className="text-foreground font-semibold">${totalExpected.toFixed(2)}</strong>
                   </div>
                   <div className="py-2.5 flex justify-between bg-muted/30 p-2">
                     <span>Variance (Drift):</span>
@@ -624,11 +624,11 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                 </div>
 
                 {variance === 0 ? (
-                  <div className="bg-success/10 border border-success/20 p-3 text-[11px] text-success font-bold uppercase text-center">
+                  <div className="bg-success/10 border border-success/20 p-3 text-[11px] text-success font-semibold uppercase text-center">
                     TILL IS PERFECTLY BALANCED
                   </div>
                 ) : (
-                  <div className="bg-warning/10 border border-warning/20 p-3 text-[11px] text-warning font-bold uppercase text-center leading-relaxed">
+                  <div className="bg-warning/10 border border-warning/20 p-3 text-[11px] text-warning font-semibold uppercase text-center leading-relaxed">
                     TILL VARIANCE: {variance > 0 ? 'SURPLUS' : 'DEFICIT'} DETECTED.<br />DISCREPANCY PENDING SUPERVISOR OVERRIDE.
                   </div>
                 )}
@@ -641,7 +641,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                     alert('Shift till audit cleared. Register log committed to books.');
                   }
                 }}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border py-2 text-[12px] uppercase font-bold tracking-wider transition-colors cursor-pointer rounded-md w-full"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border py-2 text-[12px] uppercase font-semibold tracking-wider transition-colors cursor-pointer rounded-md w-full"
               >
                 COMMIT TILL AUDIT &amp; CLOSE SHIFT
               </button>
@@ -666,7 +666,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
             <div className="overflow-x-auto">
               <table className="w-full text-left text-[13px] text-foreground border-collapse">
                 <thead>
-                  <tr className="bg-muted/30 border-b border-border font-bold uppercase">
+                  <tr className="bg-muted/30 border-b border-border font-semibold uppercase">
                     <th className="p-3 border-r border-border">AUTH ID</th>
                     <th className="p-3 border-r border-border">CLIENT ACCOUNT</th>
                     <th className="p-3 border-r border-border text-right">PRE-AUTH AMT</th>
@@ -678,15 +678,15 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                 </thead>
                 <tbody className="divide-y divide-border bg-card">
                   <tr>
-                    <td className="p-3 border-r border-border font-bold text-muted-foreground/70">ATH-4091</td>
-                    <td className="p-3 border-r border-border font-bold">Robert Plant</td>
+                    <td className="p-3 border-r border-border font-semibold text-muted-foreground/70">ATH-4091</td>
+                    <td className="p-3 border-r border-border font-semibold">Robert Plant</td>
                     <td className="p-3 border-r border-border text-right font-semibold">$165.00</td>
                     <td className="p-3 border-r border-border text-center">
-                      <span className="bg-success/10 text-success text-[10px] font-bold px-1.5 py-0.2 border border-success/20">
+                      <span className="bg-success/10 text-success text-[10px] font-semibold px-1.5 py-0.2 border border-success/20">
                         12 (LOW RISK)
                       </span>
                     </td>
-                    <td className="p-3 border-r border-border text-success font-bold">MATCHED (OK)</td>
+                    <td className="p-3 border-r border-border text-success font-semibold">MATCHED (OK)</td>
                     <td className="p-3 border-r border-border text-center text-muted-foreground">2 Days Left</td>
                     <td className="p-3 text-center">
                       <button
@@ -694,7 +694,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                           setPaymentsList(prev => prev.map(p => p.id === 'TXN-9025' ? { ...p, status: 'PAID' } : p));
                           alert('Success: Pre-authorized hold funds captured and processed.');
                         }}
-                        className="bg-black hover:bg-muted text-white border border-border px-3 py-1 text-[11px] text-muted-foreground font-bold rounded-md cursor-pointer"
+                        className="bg-black hover:bg-muted text-white border border-border px-3 py-1 text-[11px] text-muted-foreground font-semibold rounded-md cursor-pointer"
                       >
                         CAPTURE FUNDS
                       </button>
@@ -713,13 +713,13 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
           {/* TERMINAL STATUS DIAGNOSTICS */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-8 bg-card border border-border p-4 space-y-4">
-              <div className="bg-muted/40 border-b border-border p-3 tabular-nums font-bold text-xs uppercase text-foreground">
+              <div className="bg-muted/40 border-b border-border p-3 tabular-nums font-semibold text-[13px] uppercase text-foreground">
                 ACTIVE SMART TERMINAL HEARTBEATS
               </div>
               <div className="overflow-x-auto w-full">
                 <table className="w-full text-left text-[13px] text-foreground border-collapse">
                   <thead>
-                    <tr className="border-b border-border bg-muted/30 font-bold uppercase">
+                    <tr className="border-b border-border bg-muted/30 font-semibold uppercase">
                       <th className="p-3 border-r border-border">TERMINAL MODEL</th>
                       <th className="p-3 border-r border-border">SERIAL NUMBER</th>
                       <th className="p-3 border-r border-border">RSSI / SIGNAL</th>
@@ -730,33 +730,33 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                   <tbody className="divide-y divide-border font-medium">
                     <tr>
                       <td className="p-3 border-r border-border">PAX-A920 (Lane 1)</td>
-                      <td className="p-3 border-r border-border font-bold text-muted-foreground/70">SN-4921-901-PAX</td>
-                      <td className="p-3 border-r border-border text-success font-bold">-48dBm (Excellent)</td>
-                      <td className="p-3 border-r border-border text-success font-bold">PoE ETH</td>
+                      <td className="p-3 border-r border-border font-semibold text-muted-foreground/70">SN-4921-901-PAX</td>
+                      <td className="p-3 border-r border-border text-success font-semibold">-48dBm (Excellent)</td>
+                      <td className="p-3 border-r border-border text-success font-semibold">PoE ETH</td>
                       <td className="p-3 text-center">
-                        <span className="bg-success/10 border border-success/20 text-success text-[10px] font-bold px-2 py-0.5 uppercase">
+                        <span className="bg-success/10 border border-success/20 text-success text-[10px] font-semibold px-2 py-0.5 uppercase">
                           ONLINE / ACTIVE
                         </span>
                       </td>
                     </tr>
                     <tr>
                       <td className="p-3 border-r border-border">S700 (Boutique)</td>
-                      <td className="p-3 border-r border-border font-bold text-muted-foreground/70">SN-8201-445-S700</td>
-                      <td className="p-3 border-r border-border text-success font-bold">-52dBm (Good)</td>
-                      <td className="p-3 border-r border-border text-success font-bold">WI-FI (2.4Ghz)</td>
+                      <td className="p-3 border-r border-border font-semibold text-muted-foreground/70">SN-8201-445-S700</td>
+                      <td className="p-3 border-r border-border text-success font-semibold">-52dBm (Good)</td>
+                      <td className="p-3 border-r border-border text-success font-semibold">WI-FI (2.4Ghz)</td>
                       <td className="p-3 text-center">
-                        <span className="bg-success/10 border border-success/20 text-success text-[10px] font-bold px-2 py-0.5 uppercase">
+                        <span className="bg-success/10 border border-success/20 text-success text-[10px] font-semibold px-2 py-0.5 uppercase">
                           ONLINE / IDLE
                         </span>
                       </td>
                     </tr>
                     <tr>
                       <td className="p-3 border-r border-border">PAX-A920 (Mobile Van)</td>
-                      <td className="p-3 border-r border-border font-bold text-muted-foreground/70">SN-4922-108-PAX</td>
-                      <td className="p-3 border-r border-border text-warning font-bold">-74dBm (Weak)</td>
-                      <td className="p-3 border-r border-border text-warning font-bold">LTE CELULAR</td>
+                      <td className="p-3 border-r border-border font-semibold text-muted-foreground/70">SN-4922-108-PAX</td>
+                      <td className="p-3 border-r border-border text-warning font-semibold">-74dBm (Weak)</td>
+                      <td className="p-3 border-r border-border text-warning font-semibold">LTE CELULAR</td>
                       <td className="p-3 text-center">
-                        <span className="bg-warning/10 border border-warning/20 text-warning text-[10px] font-bold px-2 py-0.5 uppercase">
+                        <span className="bg-warning/10 border border-warning/20 text-warning text-[10px] font-semibold px-2 py-0.5 uppercase">
                           LOW_PAPER_WARN
                         </span>
                       </td>
@@ -768,7 +768,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
 
             {/* SERIAL CONSOLE MONITOR */}
             <div className="lg:col-span-4 bg-black text-success text-[12px] border border-border flex flex-col h-[300px]">
-              <div className="bg-card border-b border-border p-3 flex items-center gap-2 text-[10px] font-bold text-white uppercase tracking-widest">
+              <div className="bg-card border-b border-border p-3 flex items-center gap-2 text-[10px] font-semibold text-white uppercase tracking-wider">
                 <Terminal className="w-3.5 h-3.5 text-muted-foreground/70" />
                 <span>TERMINAL SERIAL PORT BUS LOG</span>
               </div>
@@ -821,7 +821,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
             <div className="overflow-x-auto w-full">
               <table className="w-full border-collapse text-left text-[13px] text-foreground">
                 <thead>
-                  <tr className="border-b border-border bg-muted/30 font-bold uppercase">
+                  <tr className="border-b border-border bg-muted/30 font-semibold uppercase">
                     <th className="p-3 border-r border-border">APPOINTMENT ID</th>
                     <th className="p-3 border-r border-border">CUSTOMER / PET</th>
                     <th className="p-3 border-r border-border">SERVICE CLASSIFICATION</th>
@@ -837,19 +837,19 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                 <tbody className="divide-y divide-border font-medium">
                   {filteredCheckouts.map((c) => (
                     <tr key={c.id} className="hover:bg-muted/30 transition-colors">
-                      <td className="p-3 border-r border-border font-bold">{c.id}</td>
+                      <td className="p-3 border-r border-border font-semibold">{c.id}</td>
                       <td className="p-3 border-r border-border">
-                        <div className="font-bold">{c.customer}</div>
+                        <div className="font-semibold">{c.customer}</div>
                         <div className="text-[10px] text-muted-foreground/70">{c.pet}</div>
                       </td>
                       <td className="p-3 border-r border-border">{c.type}</td>
-                      <td className="p-3 border-r border-border font-bold">{c.groomer}</td>
+                      <td className="p-3 border-r border-border font-semibold">{c.groomer}</td>
                       <td className="p-3 border-r border-border text-right">${c.price.toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-right tabular-nums text-muted-foreground">{c.commissionRate}</td>
-                      <td className="p-3 border-r border-border text-right text-foreground font-bold">${c.tips.toFixed(2)}</td>
+                      <td className="p-3 border-r border-border text-right text-foreground font-semibold">${c.tips.toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-right font-semibold text-foreground">{c.billable}</td>
                       <td className="p-3 border-r border-border text-center">
-                        <span className={`text-[9px] font-bold border px-2 py-0.5 uppercase tracking-widest ${
+                        <span className={`text-[9px] font-semibold border px-2 py-0.5 uppercase tracking-wider ${
                           c.status === 'COMPLETED' ? 'bg-muted/40 border-border text-muted-foreground' : 'bg-destructive/5 border-destructive/20 text-destructive animate-pulse'
                         }`}>
                           {c.status}
@@ -859,7 +859,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                         {c.status === 'AWAITING_PAYMENT' ? (
                           <button
                             onClick={() => handleCheckoutAction(c.id, 'COLLECT_NOW')}
-                            className="bg-black hover:bg-muted text-white border border-border px-3 py-1 text-[11px] text-muted-foreground font-bold tracking-wider rounded-md cursor-pointer"
+                            className="bg-black hover:bg-muted text-white border border-border px-3 py-1 text-[11px] text-muted-foreground font-semibold tracking-wider rounded-md cursor-pointer"
                           >
                             SWIPE &amp; CHECKOUT
                           </button>
@@ -873,7 +873,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
               </table>
             </div>
             
-            <div className="p-3 bg-muted/30 border-t border-border text-xs tabular-nums text-muted-foreground">
+            <div className="p-3 bg-muted/30 border-t border-border text-[13px] tabular-nums text-muted-foreground">
               Checkout terminals auto-bound to mobile grooming van GPS telemetry triggers.
             </div>
           </div>
@@ -889,7 +889,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
               <button
                 onClick={() => setRegisterTab('bills')}
                 className={`px-5 py-3 text-[12px] uppercase border-r border-border flex items-center gap-2 cursor-pointer ${
-                  registerTab === 'bills' ? 'bg-primary text-primary-foreground font-bold' : 'bg-transparent text-foreground hover:bg-muted/40'
+                  registerTab === 'bills' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-transparent text-foreground hover:bg-muted/40'
                 }`}
               >
                 01. BILLS &amp; PAYABLES
@@ -900,7 +900,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                   alert('Opening Supplier Profile Registries... 12 Suppliers Online.');
                 }}
                 className={`px-5 py-3 text-[12px] uppercase border-r border-border flex items-center gap-2 cursor-pointer ${
-                  registerTab === 'vendors' ? 'bg-primary text-primary-foreground font-bold' : 'bg-transparent text-foreground hover:bg-muted/40'
+                  registerTab === 'vendors' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-transparent text-foreground hover:bg-muted/40'
                 }`}
               >
                 02. SUPPLIERS &amp; VENDORS
@@ -911,7 +911,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                   alert('Opening Purchase Orders Subsystem...');
                 }}
                 className={`px-5 py-3 text-[12px] uppercase border-r border-border flex items-center gap-2 cursor-pointer ${
-                  registerTab === 'po' ? 'bg-primary text-primary-foreground font-bold' : 'bg-transparent text-foreground hover:bg-muted/40'
+                  registerTab === 'po' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-transparent text-foreground hover:bg-muted/40'
                 }`}
               >
                 03. PRODUCTS &amp; INVENTORY POs
@@ -921,7 +921,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
             {/* BILLS GRID */}
             <div className="p-4 bg-muted/30 border-b border-border flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="relative w-full sm:max-w-md">
-                <span className="text-[11px] font-bold absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">FILTER //</span>
+                <span className="text-[11px] font-semibold absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">FILTER //</span>
                 <input
                   value={registerSearch}
                   onChange={(e) => setRegisterSearch(e.target.value)}
@@ -955,7 +955,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                     alert(`Intake recorded for bill ${newBillId} from ${sName}! Pending compliance audit.`);
                   }
                 }}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-4 py-1.5 text-[12px] uppercase tracking-wider font-bold transition-colors cursor-pointer rounded-md"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-4 py-1.5 text-[12px] uppercase tracking-wider font-semibold transition-colors cursor-pointer rounded-md"
               >
                 + RECORD INCOMING BILL
               </button>
@@ -965,7 +965,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
             <div className="overflow-x-auto w-full">
               <table className="w-full border-collapse text-left text-[13px] text-foreground">
                 <thead>
-                  <tr className="border-b border-border bg-card font-bold uppercase">
+                  <tr className="border-b border-border bg-card font-semibold uppercase">
                     <th className="p-3 border-r border-border">BILL ID // REF</th>
                     <th className="p-3 border-r border-border">SUPPLIER // VENDOR</th>
                     <th className="p-3 border-r border-border">DUE DATE</th>
@@ -981,17 +981,17 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                   {filteredBills.map((b) => (
                     <tr key={b.id} className="hover:bg-muted/30 transition-colors">
                       <td className="p-3 border-r border-border">
-                        <div className="font-bold">{b.id}</div>
+                        <div className="font-semibold">{b.id}</div>
                         <div className="text-[10px] text-muted-foreground/70">{b.ref}</div>
                       </td>
-                      <td className="p-3 border-r border-border font-bold uppercase">{b.supplier}</td>
+                      <td className="p-3 border-r border-border font-semibold uppercase">{b.supplier}</td>
                       <td className="p-3 border-r border-border tabular-nums text-muted-foreground">{b.dueDate}</td>
-                      <td className="p-3 border-r border-border font-bold text-foreground">{b.category}</td>
-                      <td className="p-3 border-r border-border text-right font-bold">${b.gross.toFixed(2)}</td>
+                      <td className="p-3 border-r border-border font-semibold text-foreground">{b.category}</td>
+                      <td className="p-3 border-r border-border text-right font-semibold">${b.gross.toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-right text-muted-foreground/70">${b.tax.toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-right font-semibold text-foreground">${b.net.toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-center">
-                        <span className={`text-[9px] font-bold border px-2 py-0.5 uppercase tracking-wider ${
+                        <span className={`text-[9px] font-semibold border px-2 py-0.5 uppercase tracking-wider ${
                           b.status === 'SETTLED' ? 'bg-muted/40 text-muted-foreground border-border' :
                           b.status === 'APPROVED' ? 'bg-card border-border text-foreground' :
                           'bg-warning/10 border-warning/20 text-warning animate-pulse'
@@ -1003,7 +1003,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                         {b.status === 'PENDING_APPROVAL' && (
                           <button
                             onClick={() => handleBillAction(b.id, 'APPROVE')}
-                            className="bg-black hover:bg-muted text-white border border-border px-2.5 py-0.5 text-[11px] text-muted-foreground font-bold cursor-pointer rounded-md"
+                            className="bg-black hover:bg-muted text-white border border-border px-2.5 py-0.5 text-[11px] text-muted-foreground font-semibold cursor-pointer rounded-md"
                           >
                             APPROVE
                           </button>
@@ -1011,7 +1011,7 @@ export const PaymentsView: React.FC<PaymentsViewProps> = ({ onNavigateSection, o
                         {b.status === 'APPROVED' && (
                           <button
                             onClick={() => handleBillAction(b.id, 'PAY_NOW')}
-                            className="bg-card hover:bg-black hover:text-white text-foreground border border-border px-2.5 py-0.5 text-[11px] text-muted-foreground font-bold cursor-pointer rounded-md transition-colors"
+                            className="bg-card hover:bg-black hover:text-white text-foreground border border-border px-2.5 py-0.5 text-[11px] text-muted-foreground font-semibold cursor-pointer rounded-md transition-colors"
                           >
                             DISBURSE FUNDS
                           </button>

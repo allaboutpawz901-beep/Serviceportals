@@ -265,7 +265,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                       navigateToScreen(tab.id);
                       setSearchQuery('');
                     }}
-                    className="w-full text-left px-3 py-2 text-xs hover:bg-black hover:text-white tabular-nums flex items-center justify-between cursor-pointer"
+                    className="w-full text-left px-3 py-2 text-[13px] hover:bg-black hover:text-white tabular-nums flex items-center justify-between cursor-pointer"
                   >
                     <span className="flex items-center gap-2">
                       <tab.icon className="w-3.5 h-3.5" />
@@ -289,27 +289,27 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             </button>
 
             {showNotifications && (
-              <div className="absolute right-0 mt-1.5 w-80 bg-card border border-border shadow-2xl p-3 z-50 space-y-2 tabular-nums text-xs">
+              <div className="absolute right-0 mt-1.5 w-80 bg-card border border-border shadow-2xl p-3 z-50 space-y-2 tabular-nums text-[13px]">
                 <div className="flex items-center justify-between pb-2 border-b border-border">
-                  <span className="font-bold uppercase text-foreground">SYSTEM AUDIT ALERTS</span>
+                  <span className="font-semibold uppercase text-foreground">SYSTEM AUDIT ALERTS</span>
                   <button
                     onClick={() => setShowNotifications(false)}
-                    className="text-[10px] uppercase font-bold text-muted-foreground hover:text-foreground cursor-pointer"
+                    className="text-[10px] uppercase font-semibold text-muted-foreground hover:text-foreground cursor-pointer"
                   >
                     [CLOSE]
                   </button>
                 </div>
                 <div className="space-y-1.5 text-[11px]">
                   <div className="p-2 border border-border bg-muted/30 text-foreground">
-                    <p className="font-bold uppercase">WAL S3 Backup Synchronized</p>
+                    <p className="font-semibold uppercase">WAL S3 Backup Synchronized</p>
                     <p className="text-muted-foreground text-[10px]">Continuous PITR logging nominal at 03:00 UTC.</p>
                   </div>
                   <div className="p-2 border border-border bg-muted/30 text-foreground">
-                    <p className="font-bold uppercase">Stripe Connect Ledger</p>
+                    <p className="font-semibold uppercase">Stripe Connect Ledger</p>
                     <p className="text-muted-foreground text-[10px]">$4,120.00 daily settlement batch confirmed.</p>
                   </div>
                   <div className="p-2 border border-border bg-muted/30 text-foreground">
-                    <p className="font-bold uppercase">RBAC Elevation Logged</p>
+                    <p className="font-semibold uppercase">RBAC Elevation Logged</p>
                     <p className="text-muted-foreground text-[10px]">Jessica Lee unauthorized access attempt blocked (403).</p>
                   </div>
                 </div>
@@ -401,7 +401,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           <div className="p-3 border-t border-border bg-card space-y-1">
             <div className="flex items-center justify-between text-[11px]">
               <span className="text-muted-foreground font-medium">Active Branch:</span>
-              <span className="font-bold text-foreground truncate max-w-[140px]">{selectedLocation}</span>
+              <span className="font-semibold text-foreground truncate max-w-[140px]">{selectedLocation}</span>
             </div>
           </div>
         </aside>
@@ -488,6 +488,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               onNavigateScreen={navigateToScreen}
               selectedLocation={selectedLocation}
               onSelectLocation={onSelectLocation}
+              systemSettings={systemSettings}
+              saveSettingsToDb={saveSettingsToDb}
             />
           )}
 
@@ -556,6 +558,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               onNavigateScreen={navigateToScreen}
               selectedLocation={selectedLocation}
               onSelectLocation={onSelectLocation}
+              systemSettings={systemSettings}
+              saveSettingsToDb={saveSettingsToDb}
             />
           )}
 
@@ -574,6 +578,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               onNavigateScreen={navigateToScreen}
               selectedLocation={selectedLocation}
               onSelectLocation={onSelectLocation}
+              systemSettings={systemSettings}
+              saveSettingsToDb={saveSettingsToDb}
             />
           )}
 
@@ -587,14 +593,16 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             />
           )}
 
-          {activeTab === 'lms' && <LMSTab />}
+          {activeTab === 'lms' && (
+            <LMSTab systemSettings={systemSettings} saveSettingsToDb={saveSettingsToDb} />
+          )}
         </main>
       </div>
 
       {/* Help Center Modal */}
       {showHelpModal && (
         <div className="fixed inset-0 z-50 bg-foreground/[0-9]0 flex items-center justify-center p-4">
-          <div className="bg-card border-2-black max-w-md w-full p-5 shadow-2xl space-y-4 tabular-nums text-xs">
+          <div className="bg-card border-2-black max-w-md w-full p-5 shadow-2xl space-y-4 tabular-nums text-[13px]">
             <div className="flex items-center justify-between pb-3 border-b border-border">
               <div className="flex items-center gap-2">
                 <HelpCircle className="w-4 h-4 text-foreground" />
@@ -602,7 +610,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               </div>
               <button
                 onClick={() => setShowHelpModal(false)}
-                className="text-foreground hover:opacity-70 cursor-pointer font-bold"
+                className="text-foreground hover:opacity-70 cursor-pointer font-semibold"
               >
                 ✕
               </button>
@@ -610,13 +618,13 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
             <div className="space-y-2 text-muted-foreground">
               <div className="p-2.5 border border-border bg-muted/30 text-foreground">
-                <p className="font-bold uppercase">1:1 Database Marriage</p>
+                <p className="font-semibold uppercase">1:1 Database Marriage</p>
                 <p className="text-[11px] text-muted-foreground mt-0.5">
                   All 16 admin modules map directly to PostgreSQL tables for enterprise RBAC, multi-location capacity, Stripe Connect, and client portals.
                 </p>
               </div>
               <div className="p-2.5 border border-border bg-muted/30 text-foreground">
-                <p className="font-bold uppercase">Live Audit &amp; Telemetry</p>
+                <p className="font-semibold uppercase">Live Audit &amp; Telemetry</p>
                 <p className="text-[11px] text-muted-foreground mt-0.5">
                   Every permission change or billing event is cryptographically recorded in the SOC-2 immutable WORM audit ledger.
                 </p>
@@ -626,7 +634,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             <div className="pt-2 flex justify-end">
               <button
                 onClick={() => setShowHelpModal(false)}
-                className="px-4 py-1.5 bg-primary text-primary-foreground font-bold uppercase cursor-pointer"
+                className="px-4 py-1.5 bg-primary text-primary-foreground font-semibold uppercase cursor-pointer"
               >
                 [DISMISS]
               </button>

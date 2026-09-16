@@ -210,7 +210,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
               </div>
             ) : (
               <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-card text-warning/70 rounded-full text-[10px] font-bold tracking-widest uppercase mb-2">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-card text-warning/70 rounded-full text-[10px] font-semibold tracking-wider uppercase mb-2">
                   <ShieldCheck className="w-3.5 h-3.5" /> Staff &amp; Admin OS
                 </div>
                 <h1 className="text-2xl sm:text-[26px] font-serif tracking-[0.14em] text-foreground uppercase font-normal">
@@ -227,7 +227,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
               type="button"
               onClick={handleGoogleSignIn}
               disabled={isSubmitting}
-              className="w-full py-2.5 px-4 bg-card hover:bg-muted/40 active:bg-muted/40 border border-border rounded-md text-foreground text-xs font-semibold flex items-center justify-center gap-3 transition shadow-2xs cursor-pointer mb-5"
+              className="w-full py-2.5 px-4 bg-card hover:bg-muted/40 active:bg-muted/40 border border-border rounded-md text-foreground text-[13px] font-semibold flex items-center justify-center gap-3 transition shadow-2xs cursor-pointer mb-5"
             >
               <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
                 <path
@@ -324,7 +324,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-black hover:bg-muted active:bg-card text-white font-medium text-xs tracking-[0.18em] uppercase rounded-md transition shadow-xs flex items-center justify-center cursor-pointer disabled:opacity-60"
+                    className="w-full py-3 bg-black hover:bg-muted active:bg-card text-white font-medium text-[13px] tracking-[0.18em] uppercase rounded-md transition shadow-xs flex items-center justify-center cursor-pointer disabled:opacity-60"
                   >
                     {isSubmitting ? (
                       <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -336,7 +336,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   <button
                     type="button"
                     onClick={() => setRegisterModalOpen(true)}
-                    className="w-full py-2.5 bg-card hover:bg-muted/40 active:bg-muted/40 text-foreground font-medium text-xs tracking-[0.18em] uppercase border border-border rounded-md transition flex items-center justify-center cursor-pointer"
+                    className="w-full py-2.5 bg-card hover:bg-muted/40 active:bg-muted/40 text-foreground font-medium text-[13px] tracking-[0.18em] uppercase border border-border rounded-md transition flex items-center justify-center cursor-pointer"
                   >
                     REGISTER
                   </button>
@@ -363,7 +363,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   <button
                     type="button"
                     onClick={() => setStaffRole('admin')}
-                    className={`py-1.5 text-xs font-semibold rounded-md transition cursor-pointer ${
+                    className={`py-1.5 text-[13px] font-semibold rounded-md transition cursor-pointer ${
                       staffRole === 'admin' 
                         ? 'bg-card text-white shadow-xs' 
                         : 'text-muted-foreground hover:text-foreground'
@@ -374,7 +374,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   <button
                     type="button"
                     onClick={() => setStaffRole('groomer')}
-                    className={`py-1.5 text-xs font-semibold rounded-md transition cursor-pointer ${
+                    className={`py-1.5 text-[13px] font-semibold rounded-md transition cursor-pointer ${
                       staffRole === 'groomer' 
                         ? 'bg-card text-white shadow-xs' 
                         : 'text-muted-foreground hover:text-foreground'
@@ -385,7 +385,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   <button
                     type="button"
                     onClick={() => setStaffRole('frontdesk')}
-                    className={`py-1.5 text-xs font-semibold rounded-md transition cursor-pointer ${
+                    className={`py-1.5 text-[13px] font-semibold rounded-md transition cursor-pointer ${
                       staffRole === 'frontdesk' 
                         ? 'bg-card text-white shadow-xs' 
                         : 'text-muted-foreground hover:text-foreground'
@@ -433,7 +433,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-card hover:bg-primary text-primary-foreground font-medium text-xs tracking-[0.18em] uppercase rounded-md transition shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                    className="w-full py-3 bg-card hover:bg-primary text-primary-foreground font-medium text-[13px] tracking-[0.18em] uppercase rounded-md transition shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                   >
                     {isSubmitting ? (
                       <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -448,7 +448,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   <button
                     type="button"
                     onClick={() => setAuthMode('member')}
-                    className="w-full py-2.5 text-muted-foreground hover:text-foreground text-xs font-medium transition cursor-pointer"
+                    className="w-full py-2.5 text-muted-foreground hover:text-foreground text-[13px] font-medium transition cursor-pointer"
                   >
                     ← Return to Member Login
                   </button>
@@ -467,7 +467,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
       <footer className="w-full bg-black border-t border-border text-muted-foreground py-4 px-6 sm:px-10">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] tracking-wide">
           <div className="flex items-center gap-2 text-muted-foreground/70">
-            <span className="font-semibold text-muted-foreground uppercase tracking-widest text-[10px]">ALL ABOUT PAWZ</span>
+            <span className="font-semibold text-muted-foreground uppercase tracking-wider text-[10px]">ALL ABOUT PAWZ</span>
             <span>·</span>
             <span>© {new Date().getFullYear()}</span>
           </div>
@@ -502,11 +502,11 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
           <div className="w-full max-w-lg bg-card rounded-2xl shadow-2xl border border-border overflow-hidden">
             <div className="p-5 bg-card text-white flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-card text-foreground flex items-center justify-center font-bold">
+                <div className="w-8 h-8 rounded-lg bg-card text-foreground flex items-center justify-center font-semibold">
                   <PawPrint className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold tracking-tight">New Member Registration</h3>
+                  <h3 className="text-sm font-semibold tracking-tight">New Member Registration</h3>
                   <p className="text-[11px] text-muted-foreground">Join All About Pawz Rewards &amp; Booking Portal</p>
                 </div>
               </div>
@@ -522,69 +522,69 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
               {regSuccess ? (
                 <div className="p-8 text-center space-y-3">
                   <CheckCircle2 className="w-12 h-12 text-success mx-auto animate-bounce" />
-                  <h4 className="text-base font-bold text-foreground">Welcome to All About Pawz!</h4>
-                  <p className="text-xs text-muted-foreground">Setting up your member dashboard...</p>
+                  <h4 className="text-base font-semibold text-foreground">Welcome to All About Pawz!</h4>
+                  <p className="text-[13px] text-muted-foreground">Setting up your member dashboard...</p>
                 </div>
               ) : (
                 <>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-semibold text-foreground mb-1">Your Full Name</label>
+                      <label className="block text-[13px] font-semibold text-foreground mb-1">Your Full Name</label>
                       <input
                         type="text"
                         required
                         value={regName}
                         onChange={(e) => setRegName(e.target.value)}
                         placeholder="e.g. Jessica Williams"
-                        className="w-full border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-border"
+                        className="w-full border border-border rounded-lg px-3 py-2 text-[13px] text-foreground focus:outline-none focus:border-border"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-foreground mb-1">Email Address</label>
+                      <label className="block text-[13px] font-semibold text-foreground mb-1">Email Address</label>
                       <input
                         type="email"
                         required
                         value={regEmail}
                         onChange={(e) => setRegEmail(e.target.value)}
                         placeholder="jessica@example.com"
-                        className="w-full border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-border"
+                        className="w-full border border-border rounded-lg px-3 py-2 text-[13px] text-foreground focus:outline-none focus:border-border"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-semibold text-foreground mb-1">Phone Number</label>
+                      <label className="block text-[13px] font-semibold text-foreground mb-1">Phone Number</label>
                       <input
                         type="tel"
                         required
                         value={regPhone}
                         onChange={(e) => setRegPhone(e.target.value)}
                         placeholder="(214) 555-0199"
-                        className="w-full border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-border"
+                        className="w-full border border-border rounded-lg px-3 py-2 text-[13px] text-foreground focus:outline-none focus:border-border"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-foreground mb-1">Pet Name</label>
+                      <label className="block text-[13px] font-semibold text-foreground mb-1">Pet Name</label>
                       <input
                         type="text"
                         required
                         value={regPetName}
                         onChange={(e) => setRegPetName(e.target.value)}
                         placeholder="e.g. Milo"
-                        className="w-full border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-border"
+                        className="w-full border border-border rounded-lg px-3 py-2 text-[13px] text-foreground focus:outline-none focus:border-border"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-foreground mb-1">Pet Breed &amp; Details</label>
+                    <label className="block text-[13px] font-semibold text-foreground mb-1">Pet Breed &amp; Details</label>
                     <input
                       type="text"
                       value={regPetBreed}
                       onChange={(e) => setRegPetBreed(e.target.value)}
                       placeholder="e.g. Mini Goldendoodle, 22 lbs"
-                      className="w-full border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-border"
+                      className="w-full border border-border rounded-lg px-3 py-2 text-[13px] text-foreground focus:outline-none focus:border-border"
                     />
                   </div>
 
@@ -592,13 +592,13 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                     <button
                       type="button"
                       onClick={() => setRegisterModalOpen(false)}
-                      className="px-4 py-2 border border-border text-xs font-semibold text-foreground rounded-lg hover:bg-muted/40 cursor-pointer"
+                      className="px-4 py-2 border border-border text-[13px] font-semibold text-foreground rounded-lg hover:bg-muted/40 cursor-pointer"
                     >
                       Cancel
                     </button>
                     <button
                       type="submit"
-                      className="px-5 py-2 bg-black hover:bg-muted text-white text-xs font-bold rounded-lg transition cursor-pointer"
+                      className="px-5 py-2 bg-black hover:bg-muted text-white text-[13px] font-semibold rounded-lg transition cursor-pointer"
                     >
                       Complete Registration
                     </button>
@@ -616,7 +616,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/[0-9]0 backdrop-blur-xs p-4 animate-in fade-in duration-150">
           <div className="w-full max-w-sm bg-card rounded-2xl shadow-2xl border border-border p-6 space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-bold text-foreground">Reset Your Password</h3>
+              <h3 className="text-sm font-semibold text-foreground">Reset Your Password</h3>
               <button
                 onClick={() => {
                   setForgotPasswordOpen(false);
@@ -631,7 +631,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
             {resetSentEmail ? (
               <div className="space-y-3 text-center py-2">
                 <CheckCircle2 className="w-10 h-10 text-success mx-auto" />
-                <p className="text-xs text-foreground">
+                <p className="text-[13px] text-foreground">
                   Password reset link sent to <strong>{resetSentEmail}</strong>. Please check your inbox.
                 </p>
                 <button
@@ -639,7 +639,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                     setForgotPasswordOpen(false);
                     setResetSentEmail('');
                   }}
-                  className="w-full py-2 bg-card text-white text-xs font-semibold rounded-lg mt-2 cursor-pointer"
+                  className="w-full py-2 bg-card text-white text-[13px] font-semibold rounded-lg mt-2 cursor-pointer"
                 >
                   Return to Login
                 </button>
@@ -652,7 +652,7 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                 }}
                 className="space-y-3"
               >
-                <p className="text-xs text-muted-foreground">
+                <p className="text-[13px] text-muted-foreground">
                   Enter your registered username or email and we will send you a password recovery link.
                 </p>
                 <input
@@ -660,11 +660,11 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   required
                   defaultValue={usernameOrEmail}
                   placeholder="Enter your email"
-                  className="w-full border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-border"
+                  className="w-full border border-border rounded-lg px-3 py-2 text-[13px] text-foreground focus:outline-none focus:border-border"
                 />
                 <button
                   type="submit"
-                  className="w-full py-2.5 bg-black hover:bg-card text-white font-semibold text-xs rounded-lg transition cursor-pointer"
+                  className="w-full py-2.5 bg-black hover:bg-card text-white font-semibold text-[13px] rounded-lg transition cursor-pointer"
                 >
                   Send Reset Link
                 </button>

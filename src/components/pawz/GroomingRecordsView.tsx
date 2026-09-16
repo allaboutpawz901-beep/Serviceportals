@@ -17,7 +17,7 @@ export const GroomingRecordsView: React.FC<GroomingRecordsViewProps> = ({ record
           <h1 className="font-display text-xl font-semibold tracking-tight text-foreground flex items-center gap-2">
             <span>Grooming Records &amp; Style Notes</span>
           </h1>
-          <p className="text-xs text-muted-foreground mt-1">
+          <p className="text-[13px] text-muted-foreground mt-1">
             Archived haircut specifications, blade lengths, shampoo formulas, and completed receipts.
           </p>
         </div>
@@ -27,7 +27,7 @@ export const GroomingRecordsView: React.FC<GroomingRecordsViewProps> = ({ record
       <div className="bg-card border border-border overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-[13px] text-foreground">
-            <thead className="bg-muted/30 border-b border-border text-foreground font-bold uppercase text-[11px] tracking-wider">
+            <thead className="bg-muted/30 border-b border-border text-foreground font-semibold uppercase text-[11px] tracking-wider">
               <tr>
                 <th className="py-3 px-4 border-r border-border">Date</th>
                 <th className="py-3 px-4 border-r border-border">Pet &amp; Breed</th>
@@ -41,19 +41,19 @@ export const GroomingRecordsView: React.FC<GroomingRecordsViewProps> = ({ record
             <tbody className="divide-y divide-border">
               {records.map((rec) => (
                 <tr key={rec.id} className="hover:bg-accent/50 transition-colors">
-                  <td className="py-3.5 px-4 font-bold tabular-nums text-foreground whitespace-nowrap border-r border-border">
+                  <td className="py-3.5 px-4 font-semibold tabular-nums text-foreground whitespace-nowrap border-r border-border">
                     {rec.date}
                   </td>
                   <td className="py-3.5 px-4 border-r border-border">
                     <div className="flex items-center gap-2">
                       <span className="text-base">{rec.petEmoji}</span>
                       <div>
-                        <p className="font-bold text-foreground uppercase">{rec.petName}</p>
+                        <p className="font-semibold text-foreground uppercase">{rec.petName}</p>
                         <p className="text-[10px] text-muted-foreground">{rec.breed}</p>
                       </div>
                     </div>
                   </td>
-                  <td className="py-3.5 px-4 font-bold uppercase text-foreground border-r border-border">
+                  <td className="py-3.5 px-4 font-semibold uppercase text-foreground border-r border-border">
                     {rec.serviceName}
                   </td>
                   <td className="py-3.5 px-4 text-foreground border-r border-border">
@@ -69,7 +69,7 @@ export const GroomingRecordsView: React.FC<GroomingRecordsViewProps> = ({ record
                     ${rec.amount.toFixed(2)}
                   </td>
                   <td className="py-3.5 px-4 text-right">
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 border border-border text-[10px] font-bold bg-primary text-primary-foreground uppercase tabular-nums">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 border border-border text-[10px] font-semibold bg-primary text-primary-foreground uppercase tabular-nums">
                       <Check className="w-3 h-3" />
                       <span>{rec.status}</span>
                     </span>

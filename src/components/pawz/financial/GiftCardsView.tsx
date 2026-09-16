@@ -290,14 +290,14 @@ export const GiftCardsView: React.FC<GiftCardsViewProps> = ({ onNavigateSection 
 
             <div className="p-4 bg-muted/40 border border-border flex flex-col items-center justify-center text-center py-8">
               <span className="w-12 h-12 rounded-full border-4 border-border border-t-transparent animate-spin mb-4"></span>
-              <p className="text-[12px] text-foreground font-bold uppercase tracking-wider">WAITING FOR USB HARDWARE PIN / LINK...</p>
+              <p className="text-[12px] text-foreground font-semibold uppercase tracking-wider">WAITING FOR USB HARDWARE PIN / LINK...</p>
               <p className="text-[11px] text-muted-foreground/70 mt-1 uppercase">OR CONNECT TO DESKTOP KEYBOARD CHROME SCANNER</p>
             </div>
 
             <div className="space-y-4">
               <button
                 onClick={handleNFCVerify}
-                className="w-full bg-card hover:bg-muted/40 text-foreground border border-border px-4 py-2.5 text-[12px] uppercase font-bold tracking-wider transition-colors rounded-md cursor-pointer"
+                className="w-full bg-card hover:bg-muted/40 text-foreground border border-border px-4 py-2.5 text-[12px] uppercase font-semibold tracking-wider transition-colors rounded-md cursor-pointer"
               >
                 SIMULATE PHYSICAL CARD NFC SWIPE
               </button>
@@ -314,7 +314,7 @@ export const GiftCardsView: React.FC<GiftCardsViewProps> = ({ onNavigateSection 
                   />
                   <button
                     onClick={handleManualVerify}
-                    className="bg-black hover:bg-muted text-white border border-border px-4 text-[12px] uppercase font-bold tracking-wider transition-colors rounded-md cursor-pointer"
+                    className="bg-black hover:bg-muted text-white border border-border px-4 text-[12px] uppercase font-semibold tracking-wider transition-colors rounded-md cursor-pointer"
                   >
                     VERIFY Code
                   </button>
@@ -329,7 +329,7 @@ export const GiftCardsView: React.FC<GiftCardsViewProps> = ({ onNavigateSection 
             <div className="pt-4 border-t border-border">
               <button
                 onClick={() => setShowIssueModal(true)}
-                className="w-full bg-black hover:bg-muted text-white border border-border px-4 py-3 text-[12px] uppercase font-bold tracking-wider transition-colors rounded-md cursor-pointer"
+                className="w-full bg-black hover:bg-muted text-white border border-border px-4 py-3 text-[12px] uppercase font-semibold tracking-wider transition-colors rounded-md cursor-pointer"
               >
                 + ISSUE NEW GIFT CARD OR VOUCHER
               </button>
@@ -345,11 +345,11 @@ export const GiftCardsView: React.FC<GiftCardsViewProps> = ({ onNavigateSection 
             <div className="bg-muted/40 border-b border-border p-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="font-medium text-[9px] bg-primary text-primary-foreground px-1.5 py-0.5 uppercase">Issuance Portal</span>
-                <span className="font-display text-xs font-semibold tracking-tight text-foreground">Initiate Valuation Bundle</span>
+                <span className="font-display text-[13px] font-semibold tracking-tight text-foreground">Initiate Valuation Bundle</span>
               </div>
               <button 
                 onClick={() => setShowIssueModal(false)}
-                className="text-[12px] font-bold text-foreground hover:bg-black hover:text-white px-2 py-0.5 border border-border cursor-pointer"
+                className="text-[12px] font-semibold text-foreground hover:bg-black hover:text-white px-2 py-0.5 border border-border cursor-pointer"
               >
                 [X]
               </button>
@@ -375,7 +375,7 @@ export const GiftCardsView: React.FC<GiftCardsViewProps> = ({ onNavigateSection 
               </div>
               <div>
                 <label className="block text-[11px] text-muted-foreground mb-1 uppercase">CARD DELIVER INSTRUMENT //*</label>
-                <div className="grid grid-cols-2 gap-2 text-[11px] font-bold">
+                <div className="grid grid-cols-2 gap-2 text-[11px] font-semibold">
                   <button className="border border-border bg-primary text-primary-foreground p-2 text-center cursor-pointer" type="button">GENERATE WALLET DEPL-LINK (SMS/EMAIL)</button>
                   <button className="border border-border bg-card text-foreground p-2 text-center hover:bg-muted/40 cursor-pointer" type="button">WRITE PHYSICAL NFC TAG TERMINAL</button>
                 </div>

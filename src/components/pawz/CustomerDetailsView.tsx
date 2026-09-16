@@ -591,9 +591,9 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
   if (activeQuickAction === 'take_payment') {
     return (
-      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-xs sm:text-sm text-foreground flex flex-col min-h-screen">
+      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-[13px] sm:text-sm text-foreground flex flex-col min-h-screen">
         {toastMessage && (
-          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-xs font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-[13px] font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
             <Check className="w-4 h-4 text-success" />
             <span>{toastMessage}</span>
           </div>
@@ -642,9 +642,9 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
   if (activeQuickAction === 'new_appointment') {
     return (
-      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-xs sm:text-sm text-foreground flex flex-col min-h-screen">
+      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-[13px] sm:text-sm text-foreground flex flex-col min-h-screen">
         {toastMessage && (
-          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-xs font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-[13px] font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
             <Check className="w-4 h-4 text-success" />
             <span>{toastMessage}</span>
           </div>
@@ -680,9 +680,9 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
   if (activeQuickAction === 'add_pet') {
     return (
-      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-xs sm:text-sm text-foreground flex flex-col min-h-screen">
+      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-[13px] sm:text-sm text-foreground flex flex-col min-h-screen">
         {toastMessage && (
-          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-xs font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-[13px] font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
             <Check className="w-4 h-4 text-success" />
             <span>{toastMessage}</span>
           </div>
@@ -708,9 +708,9 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
   if (activeQuickAction === 'send_message') {
     return (
-      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-xs sm:text-sm text-foreground flex flex-col min-h-screen">
+      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-[13px] sm:text-sm text-foreground flex flex-col min-h-screen">
         {toastMessage && (
-          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-xs font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-[13px] font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
             <Check className="w-4 h-4 text-success" />
             <span>{toastMessage}</span>
           </div>
@@ -757,9 +757,9 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
   if (activeQuickAction === 'update_documents') {
     return (
-      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-xs sm:text-sm text-foreground flex flex-col min-h-screen">
+      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-[13px] sm:text-sm text-foreground flex flex-col min-h-screen">
         {toastMessage && (
-          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-xs font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-[13px] font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
             <Check className="w-4 h-4 text-success" />
             <span>{toastMessage}</span>
           </div>
@@ -778,9 +778,9 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
   if (activeQuickAction === 'add_note') {
     return (
-      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-xs sm:text-sm text-foreground flex flex-col min-h-screen">
+      <main className="min-w-0 flex-1 overflow-y-auto bg-[#f8fafc] antialiased font-sans text-[13px] sm:text-sm text-foreground flex flex-col min-h-screen">
         {toastMessage && (
-          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-xs font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="fixed top-5 right-5 z-50 bg-card text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 text-[13px] font-medium border border-border animate-in fade-in slide-in-from-top-2 duration-200">
             <Check className="w-4 h-4 text-success" />
             <span>{toastMessage}</span>
           </div>
@@ -812,10 +812,10 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
   }
 
   return (
-    <div className="min-w-0 flex-1 flex flex-col h-screen overflow-hidden bg-card antialiased font-sans text-xs sm:text-sm text-foreground" data-purpose="customer-profile-container">
+    <div className="min-w-0 flex-1 flex flex-col h-screen overflow-hidden bg-card antialiased font-sans text-[13px] sm:text-sm text-foreground" data-purpose="customer-profile-container">
       {/* Toast Alert */}
       {toastMessage && (
-        <div className="fixed bottom-5 right-5 z-50 bg-primary text-primary-foreground px-4 py-3 rounded-md shadow-2xl flex items-center gap-2.5 text-xs tabular-nums border border-border animate-in slide-in-from-bottom-3 duration-200">
+        <div className="fixed bottom-5 right-5 z-50 bg-primary text-primary-foreground px-4 py-3 rounded-md shadow-2xl flex items-center gap-2.5 text-[13px] tabular-nums border border-border animate-in slide-in-from-bottom-3 duration-200">
           <Check className="w-4 h-4 text-success" />
           <span>{toastMessage}</span>
         </div>
@@ -827,18 +827,18 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
           <div className="flex items-center gap-4">
             <button
               onClick={onBackToDirectory}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-border hover:border-border text-foreground hover:text-foreground text-xs tabular-nums font-bold uppercase tracking-wider transition-colors cursor-pointer bg-muted/40"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-border hover:border-border text-foreground hover:text-foreground text-[13px] tabular-nums font-semibold uppercase tracking-wider transition-colors cursor-pointer bg-muted/40"
             >
               ← Back
             </button>
             <div>
               <div className="flex items-center gap-3">
                 <h1 className="text-xl font-semibold text-foreground uppercase tracking-tight">{profile.name}</h1>
-                <span className="inline-flex items-center px-2 py-0.5 text-[10px] tabular-nums font-bold uppercase bg-primary text-primary-foreground">
+                <span className="inline-flex items-center px-2 py-0.5 text-[10px] tabular-nums font-semibold uppercase bg-primary text-primary-foreground">
                   {profile.status || 'Active'}
                 </span>
                 {profile.vip && (
-                  <span className="inline-flex items-center px-2 py-0.5 text-[10px] tabular-nums font-bold uppercase bg-muted/40 text-foreground border border-border">
+                  <span className="inline-flex items-center px-2 py-0.5 text-[10px] tabular-nums font-semibold uppercase bg-muted/40 text-foreground border border-border">
                     VIP Member
                   </span>
                 )}
@@ -850,7 +850,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                   <Pencil className="w-3.5 h-3.5" />
                 </button>
               </div>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-xs text-muted-foreground tabular-nums">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-[13px] text-muted-foreground tabular-nums">
                 <div className="flex items-center gap-1.5">
                   <Phone className="w-3 h-3 text-muted-foreground/70" />
                   <span>{profile.phone}</span>
@@ -870,7 +870,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={() => setActiveQuickAction('take_payment')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-border hover:border-border text-xs tabular-nums font-bold uppercase tracking-wider text-foreground bg-card hover:bg-muted/40 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-border hover:border-border text-[13px] tabular-nums font-semibold uppercase tracking-wider text-foreground bg-card hover:bg-muted/40 transition-colors cursor-pointer"
             >
               <CreditCard className="w-3.5 h-3.5" />
               <span>Take Payment</span>
@@ -881,7 +881,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 if (onOpenNewAppointment) onOpenNewAppointment();
                 else setActiveQuickAction('new_appointment');
               }}
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-black hover:bg-muted text-white text-xs tabular-nums font-bold uppercase tracking-wider transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-black hover:bg-muted text-white text-[13px] tabular-nums font-semibold uppercase tracking-wider transition-colors cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>New Appointment</span>
@@ -896,13 +896,13 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
         <aside className="w-full md:w-64 bg-muted/40/50 border-r border-border flex flex-col justify-between shrink-0 overflow-y-auto">
           <div className="p-4 space-y-6">
             <div>
-              <div className="text-[10px] tabular-nums uppercase tracking-widest text-muted-foreground/70 font-bold px-3 mb-2">
+              <div className="text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground/70 font-semibold px-3 mb-2">
                 Core Profile
               </div>
               <div className="space-y-1">
                 <button
                   onClick={() => setActiveTab('Overview')}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors text-left cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-3 py-2 text-[13px] font-semibold transition-colors text-left cursor-pointer ${
                     activeTab === 'Overview'
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground'
@@ -915,7 +915,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 </button>
                 <button
                   onClick={() => setActiveTab('Pets')}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors text-left cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-3 py-2 text-[13px] font-semibold transition-colors text-left cursor-pointer ${
                     activeTab === 'Pets'
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground'
@@ -935,13 +935,13 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             </div>
 
             <div>
-              <div className="text-[10px] tabular-nums uppercase tracking-widest text-muted-foreground/70 font-bold px-3 mb-2">
+              <div className="text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground/70 font-semibold px-3 mb-2">
                 Service &amp; Care
               </div>
               <div className="space-y-1">
                 <button
                   onClick={() => setActiveTab('Appointments')}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors text-left cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-3 py-2 text-[13px] font-semibold transition-colors text-left cursor-pointer ${
                     activeTab === 'Appointments'
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground'
@@ -959,7 +959,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 </button>
                 <button
                   onClick={() => setActiveTab('Grooming History')}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors text-left cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-3 py-2 text-[13px] font-semibold transition-colors text-left cursor-pointer ${
                     activeTab === 'Grooming History'
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground'
@@ -979,13 +979,13 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             </div>
 
             <div>
-              <div className="text-[10px] tabular-nums uppercase tracking-widest text-muted-foreground/70 font-bold px-3 mb-2">
+              <div className="text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground/70 font-semibold px-3 mb-2">
                 Financial &amp; Billing
               </div>
               <div className="space-y-1">
                 <button
                   onClick={() => setActiveTab('Payments')}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors text-left cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-3 py-2 text-[13px] font-semibold transition-colors text-left cursor-pointer ${
                     activeTab === 'Payments'
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground'
@@ -1000,13 +1000,13 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             </div>
 
             <div>
-              <div className="text-[10px] tabular-nums uppercase tracking-widest text-muted-foreground/70 font-bold px-3 mb-2">
+              <div className="text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground/70 font-semibold px-3 mb-2">
                 Records &amp; Comms
               </div>
               <div className="space-y-1">
                 <button
                   onClick={() => setActiveTab('Documents')}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors text-left cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-3 py-2 text-[13px] font-semibold transition-colors text-left cursor-pointer ${
                     activeTab === 'Documents'
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground'
@@ -1024,7 +1024,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 </button>
                 <button
                   onClick={() => setActiveTab('Notes & Activity')}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors text-left cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-3 py-2 text-[13px] font-semibold transition-colors text-left cursor-pointer ${
                     activeTab === 'Notes & Activity'
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground'
@@ -1042,7 +1042,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 </button>
                 <button
                   onClick={() => setActiveTab('Communication')}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors text-left cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-3 py-2 text-[13px] font-semibold transition-colors text-left cursor-pointer ${
                     activeTab === 'Communication'
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground'
@@ -1060,7 +1060,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
           {/* Sidebar Bottom Quick Actions & Balance summary */}
           <div className="p-4 border-t border-border bg-card space-y-3">
             <div className="bg-muted/40 border border-border p-3 space-y-1">
-              <div className="text-[10px] tabular-nums uppercase text-muted-foreground font-bold">Balance Due</div>
+              <div className="text-[10px] tabular-nums uppercase text-muted-foreground font-semibold">Balance Due</div>
               <div className="text-base tabular-nums font-semibold text-foreground">
                 ${(profile.outstandingBalance ?? 0).toFixed(2)}
               </div>
@@ -1072,21 +1072,21 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="space-y-1.5">
               <button
                 onClick={() => setActiveQuickAction('send_message')}
-                className="w-full py-1.5 px-2.5 border border-border hover:border-border bg-card hover:bg-muted/40 text-[11px] tabular-nums font-bold uppercase text-foreground flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                className="w-full py-1.5 px-2.5 border border-border hover:border-border bg-card hover:bg-muted/40 text-[11px] tabular-nums font-semibold uppercase text-foreground flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
               >
                 <Send className="w-3 h-3" />
                 <span>Send SMS / Message</span>
               </button>
               <button
                 onClick={() => setActiveQuickAction('add_note')}
-                className="w-full py-1.5 px-2.5 border border-border hover:border-border bg-card hover:bg-muted/40 text-[11px] tabular-nums font-bold uppercase text-foreground flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                className="w-full py-1.5 px-2.5 border border-border hover:border-border bg-card hover:bg-muted/40 text-[11px] tabular-nums font-semibold uppercase text-foreground flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
               >
                 <FileEdit className="w-3 h-3" />
                 <span>Add Note</span>
               </button>
               <button
                 onClick={() => setActiveQuickAction('add_pet')}
-                className="w-full py-1.5 px-2.5 border border-border hover:border-border bg-card hover:bg-muted/40 text-[11px] tabular-nums font-bold uppercase text-foreground flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                className="w-full py-1.5 px-2.5 border border-border hover:border-border bg-card hover:bg-muted/40 text-[11px] tabular-nums font-semibold uppercase text-foreground flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
               >
                 <Plus className="w-3 h-3" />
                 <span>Add New Pet</span>
@@ -1152,7 +1152,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                   </div>
                   <div>
                     <div className="text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground">Customer Since</div>
-                    <div className="text-sm tabular-nums font-bold text-foreground mt-0.5">{profile.customerSince || profile.memberSince || 'Apr 12, 2023'}</div>
+                    <div className="text-sm tabular-nums font-semibold text-foreground mt-0.5">{profile.customerSince || profile.memberSince || 'Apr 12, 2023'}</div>
                   </div>
                 </div>
               </section>
@@ -1162,10 +1162,10 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             {/* Pets Grid Container (Col span 7) */}
             <div className="col-span-12 lg:col-span-7 space-y-3">
               <div className="flex items-center justify-between">
-                <h2 className="text-sm font-bold text-foreground">Pets ({profile.pets.length})</h2>
+                <h2 className="text-sm font-semibold text-foreground">Pets ({profile.pets.length})</h2>
                 <button
                   onClick={onOpenAddPet}
-                  className="text-xs font-semibold text-primary hover:text-primary flex items-center gap-1 cursor-pointer"
+                  className="text-[13px] font-semibold text-primary hover:text-primary flex items-center gap-1 cursor-pointer"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Pet</span>
@@ -1191,26 +1191,26 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                         </div>
                         <div className="space-y-1">
                           <div className="flex items-center gap-2">
-                            <span className="font-bold text-foreground text-sm">{pet.name}</span>
+                            <span className="font-semibold text-foreground text-sm">{pet.name}</span>
                             {pet.isPrimary && (
                               <span className="text-[10px] bg-primary/5 text-primary px-1.5 py-0.5 rounded font-medium border border-primary/20">
                                 Primary
                               </span>
                             )}
                           </div>
-                          <div className="text-xs text-muted-foreground">{pet.breed} • {pet.gender}</div>
+                          <div className="text-[13px] text-muted-foreground">{pet.breed} • {pet.gender}</div>
                           <div className="text-[11px] text-muted-foreground/70">Born: {pet.birthDate} • {pet.age}</div>
                           <div className="text-[11px] text-muted-foreground font-medium">Weight: {pet.weight}</div>
                         </div>
                       </div>
 
                       <div className="mt-4 space-y-1.5 pt-3 border-t border-border">
-                        <div className="flex items-center gap-1.5 text-xs text-foreground">
+                        <div className="flex items-center gap-1.5 text-[13px] text-foreground">
                           <CheckCircle className="w-3.5 h-3.5 text-success" />
                           <span><strong>Vaccinations</strong> {pet.vaccinationsStatus}</span>
                         </div>
                         {pet.medicalAlert && (
-                          <div className="flex items-center gap-1.5 text-xs text-warning">
+                          <div className="flex items-center gap-1.5 text-[13px] text-warning">
                             <AlertCircle className="w-3.5 h-3.5 text-warning" />
                             <span>{pet.medicalAlert}</span>
                           </div>
@@ -1231,7 +1231,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                       </div>
                       <button
                         onClick={() => setSelectedPetDetail(pet)}
-                        className="w-full py-2 bg-muted/40 hover:bg-muted/40 text-primary text-xs font-semibold rounded-lg transition border border-border/60 cursor-pointer"
+                        className="w-full py-2 bg-muted/40 hover:bg-muted/40 text-primary text-[13px] font-semibold rounded-lg transition border border-border/60 cursor-pointer"
                       >
                         View Pet Profile
                       </button>
@@ -1243,17 +1243,17 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
             {/* Account & Payment Widget (Col span 3) */}
             <div className="col-span-12 lg:col-span-3 space-y-3">
-              <h2 className="text-sm font-bold text-foreground">Account &amp; Payment</h2>
+              <h2 className="text-sm font-semibold text-foreground">Account &amp; Payment</h2>
               <div className="bg-card border border-border rounded-xl p-4 flex flex-col justify-between h-[calc(100%-2rem)] shadow-2xs">
                 <div className="space-y-4">
-                  <div className="text-xs font-medium text-muted-foreground">Default Payment Method</div>
+                  <div className="text-[13px] font-medium text-muted-foreground">Default Payment Method</div>
                   <div className="p-3 bg-muted/40 border border-border rounded-xl flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-7 bg-primary text-primary-foreground font-bold rounded flex items-center justify-center text-[10px]">
+                      <div className="w-10 h-7 bg-primary text-primary-foreground font-semibold rounded flex items-center justify-center text-[10px]">
                         {profile.defaultPaymentMethod?.cardBrand || 'VISA'}
                       </div>
                       <div>
-                        <div className="text-xs font-semibold text-foreground">
+                        <div className="text-[13px] font-semibold text-foreground">
                           Visa •••• {profile.defaultPaymentMethod?.last4 || '4242'}
                         </div>
                         <div className="text-[10px] text-muted-foreground/70">
@@ -1268,7 +1268,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                   <button
                     onClick={() => setIsAddPaymentMethodOpen(true)}
-                    className="text-xs font-medium text-primary hover:text-primary flex items-center gap-1.5 cursor-pointer"
+                    className="text-[13px] font-medium text-primary hover:text-primary flex items-center gap-1.5 cursor-pointer"
                   >
                     <Plus className="w-3.5 h-3.5" />
                     <span>Add Payment Method</span>
@@ -1276,8 +1276,8 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-border">
-                  <div className="text-xs text-muted-foreground">Outstanding Balance</div>
-                  <div className="text-xl font-bold text-success mt-0.5">
+                  <div className="text-[13px] text-muted-foreground">Outstanding Balance</div>
+                  <div className="text-xl font-semibold text-success mt-0.5">
                     ${(profile.outstandingBalance ?? 0).toFixed(2)}
                   </div>
                 </div>
@@ -1286,11 +1286,11 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
             {/* Quick Actions Sidebar (Col span 2) - ALL ACTIONS FROM SPEC */}
             <div className="col-span-12 lg:col-span-2 space-y-3">
-              <h2 className="text-sm font-bold text-foreground">Quick Actions</h2>
+              <h2 className="text-sm font-semibold text-foreground">Quick Actions</h2>
               <div className="bg-card border border-border rounded-xl p-2.5 flex flex-col gap-1.5 shadow-2xs">
                 <button
                   onClick={() => setActiveQuickAction('new_appointment')}
-                  className="w-full text-left px-3 py-2 text-xs font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
+                  className="w-full text-left px-3 py-2 text-[13px] font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
                 >
                   <CalendarPlus className="w-4 h-4 text-primary" />
                   <span>New Appointment</span>
@@ -1298,7 +1298,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                 <button
                   onClick={() => setActiveQuickAction('add_pet')}
-                  className="w-full text-left px-3 py-2 text-xs font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
+                  className="w-full text-left px-3 py-2 text-[13px] font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
                 >
                   <PawPrint className="w-4 h-4 text-primary" />
                   <span>Add Pet</span>
@@ -1306,7 +1306,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                 <button
                   onClick={() => setActiveQuickAction('take_payment')}
-                  className="w-full text-left px-3 py-2 text-xs font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
+                  className="w-full text-left px-3 py-2 text-[13px] font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
                 >
                   <CreditCard className="w-4 h-4 text-primary" />
                   <span>Take Payment</span>
@@ -1314,7 +1314,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                 <button
                   onClick={() => setActiveQuickAction('send_message')}
-                  className="w-full text-left px-3 py-2 text-xs font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
+                  className="w-full text-left px-3 py-2 text-[13px] font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4 text-primary" />
                   <span>Send Message</span>
@@ -1322,7 +1322,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                 <button
                   onClick={() => setActiveQuickAction('add_note')}
-                  className="w-full text-left px-3 py-2 text-xs font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
+                  className="w-full text-left px-3 py-2 text-[13px] font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
                 >
                   <FileEdit className="w-4 h-4 text-primary" />
                   <span>Add Note</span>
@@ -1330,7 +1330,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                 <button
                   onClick={() => setActiveQuickAction('update_documents')}
-                  className="w-full text-left px-3 py-2 text-xs font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
+                  className="w-full text-left px-3 py-2 text-[13px] font-medium text-foreground hover:bg-muted/40 rounded-lg flex items-center gap-2.5 border border-transparent hover:border-border transition cursor-pointer"
                 >
                   <FileCheck className="w-4 h-4 text-primary" />
                   <span>Update Documents</span>
@@ -1345,10 +1345,10 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="bg-card border border-border rounded-xl p-4 flex flex-col justify-between shadow-2xs">
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-border">
-                  <h3 className="font-bold text-foreground text-sm">Upcoming Appointments</h3>
+                  <h3 className="font-semibold text-foreground text-sm">Upcoming Appointments</h3>
                   <button
                     onClick={() => setActiveTab('Appointments')}
-                    className="text-xs text-primary hover:text-primary font-medium cursor-pointer"
+                    className="text-[13px] text-primary hover:text-primary font-medium cursor-pointer"
                   >
                     View calendar
                   </button>
@@ -1356,7 +1356,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                 <div className="space-y-3.5 mt-3">
                   {appointmentsList.slice(0, 3).map((appt) => (
-                    <div key={appt.id} className="flex items-center justify-between text-xs">
+                    <div key={appt.id} className="flex items-center justify-between text-[13px]">
                       <div>
                         <div className="font-semibold text-foreground">{appt.pet} • {appt.service}</div>
                         <div className="text-muted-foreground/70 text-[11px]">{appt.date} at {appt.time} ({appt.groomer})</div>
@@ -1371,7 +1371,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
               <div className="pt-4 mt-3 border-t border-border">
                 <button
                   onClick={() => setActiveTab('Appointments')}
-                  className="text-xs font-semibold text-primary hover:text-primary flex items-center gap-1 cursor-pointer"
+                  className="text-[13px] font-semibold text-primary hover:text-primary flex items-center gap-1 cursor-pointer"
                 >
                   <span>View all appointments</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -1383,22 +1383,22 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="bg-card border border-border rounded-xl p-4 flex flex-col justify-between shadow-2xs">
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-border">
-                  <h3 className="font-bold text-foreground text-sm">Payment History</h3>
+                  <h3 className="font-semibold text-foreground text-sm">Payment History</h3>
                   <button
                     onClick={() => setActiveTab('Payments')}
-                    className="text-xs text-primary hover:text-primary font-medium cursor-pointer"
+                    className="text-[13px] text-primary hover:text-primary font-medium cursor-pointer"
                   >
                     View all
                   </button>
                 </div>
                 <div className="space-y-2 mt-3">
                   {(profile.paymentHistory || []).slice(0, 3).map((item) => (
-                    <div key={item.id} className="flex items-center justify-between text-xs py-1 border-b border-border">
+                    <div key={item.id} className="flex items-center justify-between text-[13px] py-1 border-b border-border">
                       <div>
                         <div className="font-semibold text-foreground">{item.description}</div>
                         <div className="text-[11px] text-muted-foreground/70">{item.date}</div>
                       </div>
-                      <div className="font-bold text-foreground">${item.amount.toFixed(2)}</div>
+                      <div className="font-semibold text-foreground">${item.amount.toFixed(2)}</div>
                     </div>
                   ))}
                 </div>
@@ -1406,7 +1406,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
               <div className="pt-4 mt-3 border-t border-border">
                 <button
                   onClick={() => setActiveTab('Payments')}
-                  className="text-xs font-semibold text-primary hover:text-primary flex items-center gap-1 cursor-pointer"
+                  className="text-[13px] font-semibold text-primary hover:text-primary flex items-center gap-1 cursor-pointer"
                 >
                   <span>View all payments</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -1418,17 +1418,17 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="bg-card border border-border rounded-xl p-4 flex flex-col justify-between shadow-2xs">
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-border">
-                  <h3 className="font-bold text-foreground text-sm">Recent Activity</h3>
+                  <h3 className="font-semibold text-foreground text-sm">Recent Activity</h3>
                   <button
                     onClick={() => setActiveTab('Notes & Activity')}
-                    className="text-xs text-primary hover:text-primary font-medium cursor-pointer"
+                    className="text-[13px] text-primary hover:text-primary font-medium cursor-pointer"
                   >
                     View feed
                   </button>
                 </div>
                 <div className="space-y-3 mt-3">
                   {notesList.slice(0, 3).map((act) => (
-                    <div key={act.id} className="text-xs">
+                    <div key={act.id} className="text-[13px]">
                       <div className="flex items-center justify-between text-[11px] text-muted-foreground/70">
                         <span>{act.date} • {act.time}</span>
                         <span className="font-medium text-muted-foreground">{act.actor}</span>
@@ -1441,7 +1441,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
               <div className="pt-4 mt-3 border-t border-border">
                 <button
                   onClick={() => setActiveTab('Notes & Activity')}
-                  className="text-xs font-semibold text-primary hover:text-primary flex items-center gap-1 cursor-pointer"
+                  className="text-[13px] font-semibold text-primary hover:text-primary flex items-center gap-1 cursor-pointer"
                 >
                   <span>View all activity</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -1458,10 +1458,10 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
       {activeTab === 'Pets' && (
         <div className="p-6 sm:p-8 space-y-6 max-w-7xl mx-auto" data-purpose="customer-pets-tab">
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-bold text-foreground">Pets Belonging to {profile.name}</h2>
+            <h2 className="text-base font-semibold text-foreground">Pets Belonging to {profile.name}</h2>
             <button
               onClick={onOpenAddPet}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-primary/20 text-xs font-semibold rounded-lg text-primary bg-primary/5 hover:bg-primary/10 transition shadow-2xs cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-primary/20 text-[13px] font-semibold rounded-lg text-primary bg-primary/5 hover:bg-primary/10 transition shadow-2xs cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Add Pet</span>
@@ -1489,7 +1489,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <h3 className="text-base font-bold text-foreground leading-none">{pet.name}</h3>
+                        <h3 className="text-base font-semibold text-foreground leading-none">{pet.name}</h3>
                         {pet.isPrimary ? (
                           <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-primary/5 text-primary border border-primary/20">
                             Primary Pet
@@ -1506,15 +1506,15 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                       <button
                         onClick={() => setPetToEdit(pet)}
-                        className="text-xs font-semibold text-muted-foreground hover:text-primary flex items-center gap-1 p-1 hover:bg-muted/40 rounded cursor-pointer"
+                        className="text-[13px] font-semibold text-muted-foreground hover:text-primary flex items-center gap-1 p-1 hover:bg-muted/40 rounded cursor-pointer"
                       >
                         <Pencil className="w-3.5 h-3.5" />
                         <span>Edit Pet</span>
                       </button>
                     </div>
 
-                    <p className="text-xs text-muted-foreground mt-1.5 font-medium">{pet.breed} • {pet.gender}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">
+                    <p className="text-[13px] text-muted-foreground mt-1.5 font-medium">{pet.breed} • {pet.gender}</p>
+                    <p className="text-[13px] text-muted-foreground mt-0.5">
                       Born: {pet.birthDate} ({pet.age}) • {pet.weight}
                     </p>
 
@@ -1531,7 +1531,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 </div>
 
                 {/* Bottom Action Row with View Pet Profile, Documents, History, Appointments */}
-                <div className="px-5 py-2.5 bg-muted/40/80 border-t border-border flex flex-wrap items-center justify-between text-xs text-muted-foreground font-medium">
+                <div className="px-5 py-2.5 bg-muted/40/80 border-t border-border flex flex-wrap items-center justify-between text-[13px] text-muted-foreground font-medium">
                   <button
                     onClick={() => setSelectedPetDetail(pet)}
                     className="inline-flex items-center gap-1.5 hover:text-primary transition cursor-pointer"
@@ -1567,10 +1567,10 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
           {/* Household Summary Table */}
           <section className="bg-card rounded-xl border border-border shadow-2xs overflow-hidden mt-6">
             <div className="px-6 py-4 border-b border-border">
-              <h2 className="text-sm font-bold text-foreground">All Pets in Household</h2>
+              <h2 className="text-sm font-semibold text-foreground">All Pets in Household</h2>
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse text-xs">
+              <table className="w-full text-left border-collapse text-[13px]">
                 <thead>
                   <tr className="border-b border-border bg-muted/40/75 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
                     <th className="py-3 px-6">Pet Name</th>
@@ -1633,7 +1633,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
           {/* Sub-navigation & Filter Toolbar */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-2">
             <div className="flex flex-wrap items-center gap-3">
-              <div className="inline-flex bg-muted/40 p-0.5 rounded-lg text-xs font-medium text-muted-foreground border border-border/80">
+              <div className="inline-flex bg-muted/40 p-0.5 rounded-lg text-[13px] font-medium text-muted-foreground border border-border/80">
                 {(['Upcoming', 'Past', 'All'] as const).map((filterOpt) => (
                   <button
                     key={filterOpt}
@@ -1653,7 +1653,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 <select
                   value={apptPetFilter}
                   onChange={(e) => setApptPetFilter(e.target.value)}
-                  className="appearance-none bg-card border border-border rounded-lg pl-3 pr-8 py-1.5 text-xs text-foreground font-medium hover:bg-muted/40 cursor-pointer shadow-2xs focus:outline-none focus:border-primary"
+                  className="appearance-none bg-card border border-border rounded-lg pl-3 pr-8 py-1.5 text-[13px] text-foreground font-medium hover:bg-muted/40 cursor-pointer shadow-2xs focus:outline-none focus:border-primary"
                 >
                   <option>All Pets</option>
                   <option>Buddy</option>
@@ -1666,7 +1666,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 <select
                   value={apptTypeFilter}
                   onChange={(e) => setApptTypeFilter(e.target.value)}
-                  className="appearance-none bg-card border border-border rounded-lg pl-3 pr-8 py-1.5 text-xs text-foreground font-medium hover:bg-muted/40 cursor-pointer shadow-2xs focus:outline-none focus:border-primary"
+                  className="appearance-none bg-card border border-border rounded-lg pl-3 pr-8 py-1.5 text-[13px] text-foreground font-medium hover:bg-muted/40 cursor-pointer shadow-2xs focus:outline-none focus:border-primary"
                 >
                   <option>All Statuses</option>
                   <option>Scheduled</option>
@@ -1683,7 +1683,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="flex items-center gap-2">
               <button
                 onClick={handleAddToWaitlist}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-foreground bg-card border border-border hover:bg-muted/40 rounded-lg shadow-2xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-semibold text-foreground bg-card border border-border hover:bg-muted/40 rounded-lg shadow-2xs transition-colors cursor-pointer"
               >
                 <Clock className="w-3.5 h-3.5 text-warning" />
                 <span>Add to Waitlist</span>
@@ -1691,7 +1691,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
               <button
                 onClick={onOpenNewAppointment}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg shadow-2xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[13px] font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg shadow-2xs transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>New Appointment</span>
@@ -1713,7 +1713,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                   <th className="py-3 px-6 text-right">Actions Menu</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border bg-card text-xs text-foreground">
+              <tbody className="divide-y divide-border bg-card text-[13px] text-foreground">
                 {appointmentsList
                   .filter((a) => (apptPetFilter === 'All Pets' ? true : a.pet === apptPetFilter))
                   .filter((a) => (apptTypeFilter === 'All Statuses' ? true : a.status === apptTypeFilter))
@@ -1725,7 +1725,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                       </td>
                       <td className="py-3.5 px-6 whitespace-nowrap">
                         <div className="flex items-center gap-2.5">
-                          <div className="w-7 h-7 rounded-full bg-warning/10 border border-warning/20 flex items-center justify-center text-warning font-bold overflow-hidden shrink-0">
+                          <div className="w-7 h-7 rounded-full bg-warning/10 border border-warning/20 flex items-center justify-center text-warning font-semibold overflow-hidden shrink-0">
                             <Dog className="w-4 h-4" />
                           </div>
                           <span className="font-medium text-foreground">{appt.pet}</span>
@@ -1818,7 +1818,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 <select
                   value={groomingPetFilter}
                   onChange={(e) => setGroomingPetFilter(e.target.value)}
-                  className="appearance-none bg-card border border-border rounded-lg pl-3.5 pr-8 py-1.5 text-xs text-foreground font-medium hover:border-border focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-2xs"
+                  className="appearance-none bg-card border border-border rounded-lg pl-3.5 pr-8 py-1.5 text-[13px] text-foreground font-medium hover:border-border focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-2xs"
                 >
                   <option>All Pets</option>
                   <option>Luna</option>
@@ -1831,7 +1831,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 <select
                   value={groomingServiceFilter}
                   onChange={(e) => setGroomingServiceFilter(e.target.value)}
-                  className="appearance-none bg-card border border-border rounded-lg pl-3.5 pr-8 py-1.5 text-xs text-foreground font-medium hover:border-border focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-2xs"
+                  className="appearance-none bg-card border border-border rounded-lg pl-3.5 pr-8 py-1.5 text-[13px] text-foreground font-medium hover:border-border focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-2xs"
                 >
                   <option>All Services</option>
                   <option>Full Groom + Add-ons</option>
@@ -1845,7 +1845,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 <select
                   value={groomingGroomerFilter}
                   onChange={(e) => setGroomingGroomerFilter(e.target.value)}
-                  className="appearance-none bg-card border border-border rounded-lg pl-3.5 pr-8 py-1.5 text-xs text-foreground font-medium hover:border-border focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-2xs"
+                  className="appearance-none bg-card border border-border rounded-lg pl-3.5 pr-8 py-1.5 text-[13px] text-foreground font-medium hover:border-border focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-2xs"
                 >
                   <option>All Groomers</option>
                   <option>Mike R.</option>
@@ -1859,7 +1859,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setRecommendPetName(profile.pets[0]?.name || 'Pet')}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-card border border-border hover:bg-muted/40 text-xs font-semibold text-foreground rounded-lg shadow-2xs cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-card border border-border hover:bg-muted/40 text-[13px] font-semibold text-foreground rounded-lg shadow-2xs cursor-pointer"
               >
                 <Calendar className="w-3.5 h-3.5 text-primary" />
                 <span>Recommend Next Visit</span>
@@ -1867,7 +1867,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
               <button
                 onClick={() => window.print()}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-card border border-border hover:bg-muted/40 text-xs font-semibold text-foreground rounded-lg shadow-2xs cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-card border border-border hover:bg-muted/40 text-[13px] font-semibold text-foreground rounded-lg shadow-2xs cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5 text-muted-foreground" />
                 <span>Print History</span>
@@ -1891,7 +1891,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                     <th className="py-3.5 px-4 font-semibold text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-border text-xs text-muted-foreground">
+                <tbody className="divide-y divide-border text-[13px] text-muted-foreground">
                   {groomingRecords
                     .filter((r) => (groomingPetFilter === 'All Pets' ? true : r.pet === groomingPetFilter))
                     .map((item) => (
@@ -1962,8 +1962,8 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             {/* Table Control / Search Bar Header */}
             <div className="px-6 py-4 border-b border-border flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <h2 className="text-sm font-bold text-foreground">Payment Ledger</h2>
-                <span className="text-xs bg-muted/40 text-muted-foreground px-2 py-0.5 rounded-full font-medium">
+                <h2 className="text-sm font-semibold text-foreground">Payment Ledger</h2>
+                <span className="text-[13px] bg-muted/40 text-muted-foreground px-2 py-0.5 rounded-full font-medium">
                   {(profile.paymentHistory || []).length} transactions
                 </span>
               </div>
@@ -1974,20 +1974,20 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                     value={paymentSearch}
                     onChange={(e) => setPaymentSearch(e.target.value)}
                     placeholder="Search payments..."
-                    className="pl-8 pr-3 py-1.5 text-xs bg-muted/40 border border-border rounded-lg text-foreground placeholder-slate-400 focus:bg-card focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary w-52"
+                    className="pl-8 pr-3 py-1.5 text-[13px] bg-muted/40 border border-border rounded-lg text-foreground placeholder-slate-400 focus:bg-card focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary w-52"
                   />
                   <Search className="w-3.5 h-3.5 text-muted-foreground/70 absolute left-2.5 top-2.5" />
                 </div>
                 <button
                   onClick={() => setIsAddPaymentMethodOpen(true)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-card border border-border hover:bg-muted/40 text-foreground text-xs font-semibold rounded-lg transition-colors shadow-2xs cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-card border border-border hover:bg-muted/40 text-foreground text-[13px] font-semibold rounded-lg transition-colors shadow-2xs cursor-pointer"
                 >
                   <CreditCard className="w-3.5 h-3.5 text-muted-foreground" />
                   <span>Edit / Add Method</span>
                 </button>
                 <button
                   onClick={onOpenTakePayment}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary hover:bg-primary/90 text-white text-xs font-semibold rounded-lg transition-colors shadow-2xs cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary hover:bg-primary/90 text-white text-[13px] font-semibold rounded-lg transition-colors shadow-2xs cursor-pointer"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Take Payment</span>
@@ -1997,7 +1997,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
             {/* Transactions Table */}
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse text-xs" data-purpose="payments-table">
+              <table className="w-full text-left border-collapse text-[13px]" data-purpose="payments-table">
                 <thead>
                   <tr className="bg-muted/40 border-b border-border text-[11px] font-semibold text-muted-foreground/70 uppercase tracking-wider">
                     <th className="py-3 px-6">Date</th>
@@ -2078,13 +2078,13 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
         <div className="p-6 sm:p-8 space-y-4 max-w-7xl mx-auto" data-purpose="documents-tab-content">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
             <div>
-              <h2 className="text-base font-bold text-foreground">Documents &amp; Records</h2>
-              <p className="text-xs text-muted-foreground mt-0.5">Manage vaccination proof, signed health agreements, and client waivers.</p>
+              <h2 className="text-base font-semibold text-foreground">Documents &amp; Records</h2>
+              <p className="text-[13px] text-muted-foreground mt-0.5">Manage vaccination proof, signed health agreements, and client waivers.</p>
             </div>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setIsUploadDocOpen(true)}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-primary hover:bg-primary/90 text-white text-xs font-semibold rounded-lg shadow-2xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-primary hover:bg-primary/90 text-white text-[13px] font-semibold rounded-lg shadow-2xs transition-colors cursor-pointer"
               >
                 <Upload className="w-3.5 h-3.5" />
                 <span>Upload Document</span>
@@ -2094,7 +2094,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
           <div className="bg-card rounded-xl border border-border shadow-2xs overflow-hidden flex flex-col">
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse text-xs text-muted-foreground">
+              <table className="w-full text-left border-collapse text-[13px] text-muted-foreground">
                 <thead>
                   <tr className="border-b border-border bg-muted/40/75 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
                     <th className="py-3.5 pl-6 pr-4">Document Name</th>
@@ -2185,7 +2185,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 <h2 className="text-sm font-semibold text-foreground">Add Internal Note</h2>
                 <button
                   onClick={() => setIsAuditLogOpen(true)}
-                  className="text-xs text-primary hover:text-primary font-semibold flex items-center gap-1 cursor-pointer"
+                  className="text-[13px] text-primary hover:text-primary font-semibold flex items-center gap-1 cursor-pointer"
                 >
                   <History className="w-3.5 h-3.5" />
                   <span>View Audit Log</span>
@@ -2200,7 +2200,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                     value={noteContent}
                     onChange={(e) => setNoteContent(e.target.value)}
                     placeholder="Type client or grooming notes here..."
-                    className="w-full text-xs rounded-lg border border-border placeholder-slate-400 focus:border-primary focus:ring-1 focus:ring-primary resize-none p-3"
+                    className="w-full text-[13px] rounded-lg border border-border placeholder-slate-400 focus:border-primary focus:ring-1 focus:ring-primary resize-none p-3"
                   />
                 </div>
                 <div>
@@ -2208,7 +2208,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                     <select
                       value={notePetSelection}
                       onChange={(e) => setNotePetSelection(e.target.value)}
-                      className="w-full text-xs rounded-lg border border-border text-foreground focus:border-primary focus:ring-1 focus:ring-primary appearance-none bg-card py-2 pl-3 pr-8"
+                      className="w-full text-[13px] rounded-lg border border-border text-foreground focus:border-primary focus:ring-1 focus:ring-primary appearance-none bg-card py-2 pl-3 pr-8"
                     >
                       <option value="">Select Pet (optional)</option>
                       <option value="Buddy (Golden Retriever)">Buddy (Golden Retriever)</option>
@@ -2220,7 +2220,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                 <div>
                   <button
                     type="submit"
-                    className="w-full py-2.5 px-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg text-xs shadow-2xs transition-colors flex justify-center items-center cursor-pointer"
+                    className="w-full py-2.5 px-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg text-[13px] shadow-2xs transition-colors flex justify-center items-center cursor-pointer"
                   >
                     Add Note
                   </button>
@@ -2236,7 +2236,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                     <button
                       key={fil}
                       onClick={() => setActivityFilter(fil)}
-                      className={`px-3 py-1 rounded-full text-xs transition-colors cursor-pointer ${
+                      className={`px-3 py-1 rounded-full text-[13px] transition-colors cursor-pointer ${
                         activityFilter === fil
                           ? 'font-semibold bg-primary/5 text-primary border border-primary/20'
                           : 'font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40'
@@ -2249,7 +2249,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
                 <button
                   onClick={() => setIsAuditLogOpen(true)}
-                  className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground font-medium cursor-pointer"
+                  className="inline-flex items-center gap-1 text-[13px] text-muted-foreground hover:text-foreground font-medium cursor-pointer"
                 >
                   <History className="w-3.5 h-3.5" />
                   <span>Audit History</span>
@@ -2268,7 +2268,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                       return act.actorType === 'Staff';
                     })
                     .map((act) => (
-                      <div key={act.id} className="relative flex items-start space-x-3 text-xs">
+                      <div key={act.id} className="relative flex items-start space-x-3 text-[13px]">
                         <div className={`relative z-10 w-3.5 h-3.5 rounded-full border-2 border-white ring-2 shrink-0 mt-0.5 ${
                           act.isPinned ? 'bg-warning/100 ring-amber-200' : 'bg-primary ring-indigo-100'
                         }`} />
@@ -2278,7 +2278,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                               <span className="font-semibold text-foreground">{act.date}</span>
                               <span className="text-muted-foreground/70">{act.time}</span>
                               {act.isPinned && (
-                                <span className="px-1.5 py-0.2 bg-warning/10 text-warning border border-warning/20 rounded text-[10px] font-bold flex items-center gap-0.5">
+                                <span className="px-1.5 py-0.2 bg-warning/10 text-warning border border-warning/20 rounded text-[10px] font-semibold flex items-center gap-0.5">
                                   <Pin className="w-2.5 h-2.5" /> Pinned
                                 </span>
                               )}
@@ -2313,7 +2313,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
       {activeTab === 'Communication' && (
         <div className="p-6 sm:p-8 flex flex-col md:flex-row gap-6 max-w-7xl mx-auto" data-purpose="communication-tab-content">
           <div className="w-full md:w-48 shrink-0 space-y-4">
-            <ul className="space-y-1 text-xs font-medium">
+            <ul className="space-y-1 text-[13px] font-medium">
               {(['Messages', 'Email History', 'SMS History', 'Templates'] as const).map((subItem) => (
                 <li key={subItem}>
                   <button
@@ -2333,7 +2333,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="pt-3 border-t border-border space-y-2">
               <button
                 onClick={() => setIsCampaignOpen(true)}
-                className="w-full px-3 py-2 bg-card border border-border rounded-lg text-xs font-semibold text-foreground hover:bg-muted/40 flex items-center gap-2 cursor-pointer"
+                className="w-full px-3 py-2 bg-card border border-border rounded-lg text-[13px] font-semibold text-foreground hover:bg-muted/40 flex items-center gap-2 cursor-pointer"
               >
                 <Tag className="w-3.5 h-3.5 text-primary" />
                 <span>Add to Campaign</span>
@@ -2341,7 +2341,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
               <button
                 onClick={() => setIsOptInOutOpen(true)}
-                className="w-full px-3 py-2 bg-card border border-border rounded-lg text-xs font-semibold text-foreground hover:bg-muted/40 flex items-center gap-2 cursor-pointer"
+                className="w-full px-3 py-2 bg-card border border-border rounded-lg text-[13px] font-semibold text-foreground hover:bg-muted/40 flex items-center gap-2 cursor-pointer"
               >
                 <UserCheck className="w-3.5 h-3.5 text-primary" />
                 <span>Opt In/Out Settings</span>
@@ -2352,7 +2352,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
           <div className="flex-1 bg-card rounded-xl border border-border shadow-2xs flex flex-col overflow-hidden">
             <div className="p-4 border-b border-border flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="relative inline-block text-xs">
+                <div className="relative inline-block text-[13px]">
                   <select
                     value={commChannelFilter}
                     onChange={(e) => setCommChannelFilter(e.target.value)}
@@ -2365,7 +2365,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                   <ChevronDown className="w-3.5 h-3.5 text-muted-foreground/70 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
 
-                <div className="relative inline-block text-xs">
+                <div className="relative inline-block text-[13px]">
                   <select
                     value={commTypeFilter}
                     onChange={(e) => setCommTypeFilter(e.target.value)}
@@ -2387,7 +2387,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                     setMessageChannel('Email');
                     setIsSendMessageOpen(true);
                   }}
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-foreground bg-card border border-border hover:bg-muted/40 rounded-lg transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-semibold text-foreground bg-card border border-border hover:bg-muted/40 rounded-lg transition-colors cursor-pointer"
                 >
                   <Mail className="w-3.5 h-3.5 text-primary" />
                   <span>Send Email</span>
@@ -2398,7 +2398,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                     setMessageChannel('SMS');
                     setIsSendMessageOpen(true);
                   }}
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors cursor-pointer"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>Send SMS</span>
@@ -2408,7 +2408,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
 
             {/* Communication Log Data Table */}
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs text-muted-foreground">
+              <table className="w-full text-left text-[13px] text-muted-foreground">
                 <thead className="bg-muted/40 text-muted-foreground/70 uppercase text-[10px] font-semibold border-b border-border">
                   <tr>
                     <th className="py-3 px-4">Date</th>
@@ -2483,14 +2483,14 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="p-5 border-b border-border flex items-center justify-between bg-muted/40">
               <div className="flex items-center gap-2">
                 <Pencil className="w-4 h-4 text-primary" />
-                <h3 className="font-bold text-foreground text-sm">Edit Customer Profile</h3>
+                <h3 className="font-semibold text-foreground text-sm">Edit Customer Profile</h3>
               </div>
               <button onClick={() => setIsEditCustomerOpen(false)} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <form onSubmit={handleSaveCustomer} className="p-6 space-y-4 text-xs">
+            <form onSubmit={handleSaveCustomer} className="p-6 space-y-4 text-[13px]">
               <div>
                 <label className="block text-foreground font-semibold mb-1">Customer Full Name</label>
                 <input
@@ -2562,14 +2562,14 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="p-5 border-b border-border flex items-center justify-between bg-muted/40">
               <div className="flex items-center gap-2">
                 <MessageSquare className="w-4 h-4 text-primary" />
-                <h3 className="font-bold text-foreground text-sm">Send {messageChannel}</h3>
+                <h3 className="font-semibold text-foreground text-sm">Send {messageChannel}</h3>
               </div>
               <button onClick={() => setIsSendMessageOpen(false)} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <form onSubmit={handleSendMessageSubmit} className="p-6 space-y-4 text-xs">
+            <form onSubmit={handleSendMessageSubmit} className="p-6 space-y-4 text-[13px]">
               <div className="flex gap-3">
                 <button
                   type="button"
@@ -2623,14 +2623,14 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="p-5 border-b border-border flex items-center justify-between bg-muted/40">
               <div className="flex items-center gap-2">
                 <CreditCard className="w-4 h-4 text-primary" />
-                <h3 className="font-bold text-foreground text-sm">Save Card On File</h3>
+                <h3 className="font-semibold text-foreground text-sm">Save Card On File</h3>
               </div>
               <button onClick={() => setIsAddPaymentMethodOpen(false)} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <form onSubmit={handleAddCard} className="p-6 space-y-4 text-xs">
+            <form onSubmit={handleAddCard} className="p-6 space-y-4 text-[13px]">
               <div>
                 <label className="block text-foreground font-semibold mb-1">Card Number</label>
                 <input
@@ -2686,14 +2686,14 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="p-5 border-b border-border flex items-center justify-between bg-muted/40">
               <div className="flex items-center gap-2">
                 <Upload className="w-4 h-4 text-primary" />
-                <h3 className="font-bold text-foreground text-sm">Upload Document</h3>
+                <h3 className="font-semibold text-foreground text-sm">Upload Document</h3>
               </div>
               <button onClick={() => setIsUploadDocOpen(false)} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-6 space-y-4 text-xs">
+            <div className="p-6 space-y-4 text-[13px]">
               <div>
                 <label className="block text-foreground font-semibold mb-1">Document Category</label>
                 <select className="w-full px-3 py-2 bg-muted/40 border border-border rounded-xl">
@@ -2747,7 +2747,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
             <div className="p-5 border-b border-border flex items-center justify-between bg-muted/40">
               <div className="flex items-center gap-2">
                 <PawPrint className="w-4 h-4 text-primary" />
-                <h3 className="font-bold text-foreground text-sm">
+                <h3 className="font-semibold text-foreground text-sm">
                   {selectedPetDetail.name} &bull; Pet Record
                 </h3>
               </div>
@@ -2756,7 +2756,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
               </button>
             </div>
 
-            <div className="p-6 space-y-4 text-xs">
+            <div className="p-6 space-y-4 text-[13px]">
               <div className="flex items-center gap-4">
                 <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-muted/40 shrink-0 border border-border">
                   <Image
@@ -2768,7 +2768,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                   />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="font-bold text-base text-foreground">{selectedPetDetail.name}</h4>
+                  <h4 className="font-semibold text-base text-foreground">{selectedPetDetail.name}</h4>
                   <p className="text-muted-foreground font-medium">{selectedPetDetail.breed} &bull; {selectedPetDetail.gender}</p>
                   <p className="text-muted-foreground/70">Age: {selectedPetDetail.age} (Born {selectedPetDetail.birthDate})</p>
                   <p className="text-muted-foreground font-semibold">Weight: {selectedPetDetail.weight}</p>
@@ -2778,14 +2778,14 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
               <div className="p-3.5 bg-muted/40 rounded-xl border border-border space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-foreground">Vaccination Status:</span>
-                  <span className="font-bold text-success bg-success/10 px-2 py-0.5 rounded border border-success/20">
+                  <span className="font-semibold text-success bg-success/10 px-2 py-0.5 rounded border border-success/20">
                     {selectedPetDetail.vaccinationsStatus}
                   </span>
                 </div>
                 {selectedPetDetail.medicalAlert && (
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-foreground">Special Medical / Coat Care:</span>
-                    <span className="font-bold text-warning bg-warning/10 px-2 py-0.5 rounded border border-warning/20">
+                    <span className="font-semibold text-warning bg-warning/10 px-2 py-0.5 rounded border border-warning/20">
                       {selectedPetDetail.medicalAlert}
                     </span>
                   </div>

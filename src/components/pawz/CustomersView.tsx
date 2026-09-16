@@ -1318,7 +1318,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
     return (
       <div className="flex-1 flex flex-col min-h-screen bg-muted/40">
         {toastMessage && (
-          <div className="fixed top-4 right-4 z-50 bg-card text-white px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2.5 text-xs font-semibold animate-in fade-in slide-in-from-top-3">
+          <div className="fixed top-4 right-4 z-50 bg-card text-white px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2.5 text-[13px] font-semibold animate-in fade-in slide-in-from-top-3">
             <CheckCircle2 className="w-4 h-4 text-success" />
             <span>{toastMessage}</span>
           </div>
@@ -1400,7 +1400,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
         <div className="px-4 sm:px-8 pt-4 flex items-center justify-between">
           <button
             onClick={() => setViewMode('directory')}
-            className="text-xs font-semibold text-primary hover:text-primary flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer"
+            className="text-[13px] font-semibold text-primary hover:text-primary flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer"
           >
             <Users className="w-3.5 h-3.5" />
             <span>&larr; Back to Customer Directory</span>
@@ -1789,12 +1789,12 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                                 />
                               </div>
                             ) : (
-                              <div className="w-8 h-8 border border-border bg-primary text-primary-foreground font-semibold flex items-center justify-center text-xs shrink-0">
+                              <div className="w-8 h-8 border border-border bg-primary text-primary-foreground font-semibold flex items-center justify-center text-[13px] shrink-0">
                                 {cust.initials || cust.name.substring(0, 2).toUpperCase()}
                               </div>
                             )}
                             <div>
-                              <div className="font-bold text-foreground hover:underline text-xs tracking-tight">
+                              <div className="font-semibold text-foreground hover:underline text-[13px] tracking-tight">
                                 {cust.name}
                               </div>
                               <div className="text-[11px] text-muted-foreground tabular-nums">{cust.phone}</div>
@@ -1804,7 +1804,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                         </td>
 
                         {/* Pets */}
-                        <td className="py-3 px-3 text-center font-bold text-foreground tabular-nums">
+                        <td className="py-3 px-3 text-center font-semibold text-foreground tabular-nums">
                           {cust.petCount || cust.pets.length}
                         </td>
 
@@ -1812,7 +1812,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                         {activeTab === 'upcoming' ? (
                           <>
                             <td className="py-3 px-4">
-                              <div className="font-bold text-foreground">{cust.nextAppointment}</div>
+                              <div className="font-semibold text-foreground">{cust.nextAppointment}</div>
                               <div className="text-[10px] text-muted-foreground tabular-nums">{cust.nextApptTime || '9:00 AM'}</div>
                             </td>
                             <td className="py-3 px-4">
@@ -1825,7 +1825,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                         ) : activeTab === 'followup' ? (
                           <>
                             <td className="py-3 px-4">
-                              <div className="font-bold text-foreground">{cust.lastVisit}</div>
+                              <div className="font-semibold text-foreground">{cust.lastVisit}</div>
                               <div className="text-[10px] text-muted-foreground">{cust.lastService || 'Full Groom'}</div>
                             </td>
                             <td className="py-3 px-4 text-muted-foreground/70">
@@ -1834,7 +1834,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                             <td className="py-3 px-4">
                               <div className="flex items-center gap-2">
                                 <span className="text-foreground text-[11px] font-medium">{cust.followupReason || 'No recent appt'}</span>
-                                <span className={`inline-flex items-center px-1.5 py-0.5 border border-border text-[9px] font-bold uppercase tracking-wider ${
+                                <span className={`inline-flex items-center px-1.5 py-0.5 border border-border text-[9px] font-semibold uppercase tracking-wider ${
                                   cust.followupUrgency === 'rose'
                                     ? 'bg-destructive/5 text-destructive'
                                     : 'bg-warning/10 text-warning'
@@ -1851,10 +1851,10 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                                 <span className="text-muted-foreground/70 italic">— First Visit Pending</span>
                               ) : (
                                 <>
-                                  <div className="font-bold text-foreground">{cust.lastVisit}</div>
+                                  <div className="font-semibold text-foreground">{cust.lastVisit}</div>
                                   <div className="text-[10px] text-muted-foreground">{cust.lastService || 'Full Groom'}</div>
                                   {cust.inactiveDuration && (
-                                    <div className="text-[10px] text-destructive font-bold">{cust.inactiveDuration}</div>
+                                    <div className="text-[10px] text-destructive font-semibold">{cust.inactiveDuration}</div>
                                   )}
                                 </>
                               )}
@@ -1863,7 +1863,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                             <td className="py-3 px-4">
                               {cust.nextAppointment && cust.nextAppointment !== '—' ? (
                                 <>
-                                  <div className="font-bold text-foreground">{cust.nextAppointment}</div>
+                                  <div className="font-semibold text-foreground">{cust.nextAppointment}</div>
                                   <div className="text-[10px] text-muted-foreground tabular-nums">{cust.nextApptTime || '10:30 AM'}</div>
                                 </>
                               ) : (
@@ -1876,14 +1876,14 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                               )}
                             </td>
 
-                            <td className="py-3 px-4 tabular-nums font-bold text-foreground">
+                            <td className="py-3 px-4 tabular-nums font-semibold text-foreground">
                               ${cust.lifetimeValue ? cust.lifetimeValue.toFixed(2) : (cust.totalSpent || 0).toFixed(2)}
                             </td>
                           </>
                         )}
 
                         {/* Balance */}
-                        <td className="py-3 px-4 text-right tabular-nums font-bold">
+                        <td className="py-3 px-4 text-right tabular-nums font-semibold">
                           {(cust.balance || 0) > 0 ? (
                             <span className="inline-block px-1.5 py-0.5 border border-border bg-warning/10 text-warning">${cust.balance?.toFixed(2)}</span>
                           ) : (
@@ -1914,24 +1914,24 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
             </div>
 
             {/* Pagination / Table footer */}
-            <div className="p-3 border-t border-border bg-background flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+            <div className="p-3 border-t border-border bg-background flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px]">
               <div className="text-muted-foreground tabular-nums text-[11px]">
                 Showing 1 to {Math.min(filtered.length, 10)} of {filtered.length} entries
               </div>
               <div className="flex items-center gap-1">
-                <button className="px-2.5 py-1 border border-border text-foreground hover:bg-black hover:text-white uppercase font-bold text-[11px] transition-colors cursor-pointer">
+                <button className="px-2.5 py-1 border border-border text-foreground hover:bg-black hover:text-white uppercase font-semibold text-[11px] transition-colors cursor-pointer">
                   Prev
                 </button>
-                <button className="w-7 h-7 border border-border bg-primary text-primary-foreground font-bold text-xs flex items-center justify-center cursor-pointer">
+                <button className="w-7 h-7 border border-border bg-primary text-primary-foreground font-semibold text-[13px] flex items-center justify-center cursor-pointer">
                   1
                 </button>
-                <button className="w-7 h-7 border border-border text-foreground hover:bg-accent/50 font-bold text-xs flex items-center justify-center cursor-pointer">
+                <button className="w-7 h-7 border border-border text-foreground hover:bg-accent/50 font-semibold text-[13px] flex items-center justify-center cursor-pointer">
                   2
                 </button>
-                <button className="w-7 h-7 border border-border text-foreground hover:bg-accent/50 font-bold text-xs flex items-center justify-center cursor-pointer">
+                <button className="w-7 h-7 border border-border text-foreground hover:bg-accent/50 font-semibold text-[13px] flex items-center justify-center cursor-pointer">
                   3
                 </button>
-                <button className="px-2.5 py-1 border border-border text-foreground hover:bg-black hover:text-white uppercase font-bold text-[11px] transition-colors cursor-pointer">
+                <button className="px-2.5 py-1 border border-border text-foreground hover:bg-black hover:text-white uppercase font-semibold text-[11px] transition-colors cursor-pointer">
                   Next
                 </button>
               </div>
@@ -1949,7 +1949,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="text-base font-semibold text-foreground uppercase tracking-tight leading-tight">{activeCustomer.name}</h3>
-                  <span className="inline-flex items-center px-1.5 py-0.5 border border-border text-[9px] font-bold uppercase tracking-wider bg-card text-foreground">
+                  <span className="inline-flex items-center px-1.5 py-0.5 border border-border text-[9px] font-semibold uppercase tracking-wider bg-card text-foreground">
                     Active
                   </span>
                 </div>
@@ -1963,7 +1963,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                 <button
                   type="button"
                   onClick={() => handleOpenFullProfile(activeCustomer)}
-                  className="h-8 px-3 bg-black hover:bg-muted text-white text-xs font-semibold uppercase tracking-wider border border-border inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+                  className="h-8 px-3 bg-black hover:bg-muted text-white text-[13px] font-semibold uppercase tracking-wider border border-border inline-flex items-center gap-1.5 transition-colors cursor-pointer"
                   title="Open Full Customer Profile"
                 >
                   <span>Full Profile</span>
@@ -2000,14 +2000,14 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                 </div>
               )}
 
-              <div className="space-y-1 text-xs">
+              <div className="space-y-1 text-[13px]">
                 <div className="flex items-center gap-1.5 text-foreground">
                   <Mail className="w-3.5 h-3.5 text-foreground shrink-0" />
-                  <span className="font-bold">{activeCustomer.email}</span>
+                  <span className="font-semibold">{activeCustomer.email}</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-foreground">
                   <Phone className="w-3.5 h-3.5 text-foreground shrink-0" />
-                  <span className="font-bold tabular-nums">{activeCustomer.phone}</span>
+                  <span className="font-semibold tabular-nums">{activeCustomer.phone}</span>
                 </div>
                 <div className="flex items-start gap-1.5 text-foreground">
                   <MapPin className="w-3.5 h-3.5 text-foreground shrink-0 mt-0.5" />
@@ -2029,7 +2029,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                 <button
                   type="button"
                   onClick={() => setActiveQuickActionSubView('add-pet')}
-                  className="text-[11px] font-bold text-foreground uppercase hover:underline cursor-pointer flex items-center gap-1"
+                  className="text-[11px] font-semibold text-foreground uppercase hover:underline cursor-pointer flex items-center gap-1"
                 >
                   <Plus className="w-3 h-3" />
                   Add Pet
@@ -2039,12 +2039,12 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                 {activeCustomer.pets.map((pet, idx) => {
                   const petDisplay = typeof pet === 'string' ? pet : (pet as any)?.name || 'Pet';
                   return (
-                    <div key={idx} className="flex items-center justify-between p-2 bg-card border border-border text-xs">
+                    <div key={idx} className="flex items-center justify-between p-2 bg-card border border-border text-[13px]">
                       <div className="flex items-center gap-2">
                         <span className="text-sm">🐾</span>
-                        <span className="font-bold text-foreground">{petDisplay}</span>
+                        <span className="font-semibold text-foreground">{petDisplay}</span>
                       </div>
-                      <span className="text-[10px] bg-card border border-border text-foreground font-bold uppercase px-1.5 py-0.5">
+                      <span className="text-[10px] bg-card border border-border text-foreground font-semibold uppercase px-1.5 py-0.5">
                         Active
                       </span>
                     </div>
@@ -2056,42 +2056,42 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
 
           {/* Account Snapshot Metrics */}
           <div className="p-5 border-b border-border bg-background">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-2.5">Account Snapshot</h4>
+            <h4 className="text-[13px] font-semibold uppercase tracking-wider text-foreground mb-2.5">Account Snapshot</h4>
 
             <div className="grid grid-cols-3 gap-2 text-center bg-card p-2.5 border border-border">
               <div>
-                <span className="text-[9px] uppercase font-bold text-muted-foreground block">Total Spent</span>
-                <span className="text-xs font-semibold text-foreground tabular-nums mt-0.5 block">
+                <span className="text-[9px] uppercase font-semibold text-muted-foreground block">Total Spent</span>
+                <span className="text-[13px] font-semibold text-foreground tabular-nums mt-0.5 block">
                   ${activeCustomer.totalSpent ? activeCustomer.totalSpent.toFixed(2) : (activeCustomer.lifetimeValue ? activeCustomer.lifetimeValue.toFixed(2) : '1,095.50')}
                 </span>
               </div>
               <div>
-                <span className="text-[9px] uppercase font-bold text-muted-foreground block">Balance</span>
-                <span className={`text-xs font-semibold tabular-nums mt-0.5 block ${
+                <span className="text-[9px] uppercase font-semibold text-muted-foreground block">Balance</span>
+                <span className={`text-[13px] font-semibold tabular-nums mt-0.5 block ${
                   (activeCustomer.balance || 0) > 0 ? 'text-warning' : 'text-foreground'
                 }`}>
                   ${(activeCustomer.balance || 0).toFixed(2)}
                 </span>
               </div>
               <div>
-                <span className="text-[9px] uppercase font-bold text-muted-foreground block">Loyalty</span>
-                <span className="text-xs font-semibold text-foreground tabular-nums mt-0.5 block">
+                <span className="text-[9px] uppercase font-semibold text-muted-foreground block">Loyalty</span>
+                <span className="text-[13px] font-semibold text-foreground tabular-nums mt-0.5 block">
                   {activeCustomer.loyaltyPoints || 245} pts
                 </span>
               </div>
             </div>
 
             {/* Next / Last visit banner */}
-            <div className="mt-3 flex items-center justify-between text-xs p-2.5 bg-card border border-border">
+            <div className="mt-3 flex items-center justify-between text-[13px] p-2.5 bg-card border border-border">
               <div>
-                <span className="text-[10px] text-muted-foreground font-bold uppercase block">Next Appointment</span>
-                <span className="font-bold text-foreground">
+                <span className="text-[10px] text-muted-foreground font-semibold uppercase block">Next Appointment</span>
+                <span className="font-semibold text-foreground">
                   {activeCustomer.nextAppointment && activeCustomer.nextAppointment !== '—' ? activeCustomer.nextAppointment : 'None scheduled'}
                 </span>
               </div>
               <div className="text-right">
-                <span className="text-[10px] text-muted-foreground font-bold uppercase block">Last Visit</span>
-                <span className="font-bold text-foreground">{activeCustomer.lastVisit || 'No visits yet'}</span>
+                <span className="text-[10px] text-muted-foreground font-semibold uppercase block">Last Visit</span>
+                <span className="font-semibold text-foreground">{activeCustomer.lastVisit || 'No visits yet'}</span>
               </div>
             </div>
           </div>
@@ -2099,11 +2099,11 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
           {/* Quick Actions Shortcuts */}
           <div className="p-5 flex-1 bg-card space-y-3">
             <div className="flex items-center justify-between">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground">Quick Actions</h4>
+              <h4 className="text-[13px] font-semibold uppercase tracking-wider text-foreground">Quick Actions</h4>
               <button
                 type="button"
                 onClick={() => setIsQuickActionsModalOpen(true)}
-                className="text-[11px] text-foreground font-bold uppercase hover:underline flex items-center gap-1 cursor-pointer"
+                className="text-[11px] text-foreground font-semibold uppercase hover:underline flex items-center gap-1 cursor-pointer"
               >
                 <Zap className="w-3 h-3 text-foreground" />
                 <span>All Actions</span>
@@ -2115,7 +2115,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveQuickActionSubView('new-appointment')}
-                className="flex items-center gap-2 p-2 border border-border text-xs font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
+                className="flex items-center gap-2 p-2 border border-border text-[13px] font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5 shrink-0" />
                 <span>Book Appt</span>
@@ -2125,7 +2125,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveQuickActionSubView('add-pet')}
-                className="flex items-center gap-2 p-2 border border-border text-xs font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
+                className="flex items-center gap-2 p-2 border border-border text-[13px] font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
               >
                 <PawPrint className="w-3.5 h-3.5 shrink-0" />
                 <span>Add Pet</span>
@@ -2135,7 +2135,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveQuickActionSubView('take-payment')}
-                className="flex items-center gap-2 p-2 border border-border text-xs font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
+                className="flex items-center gap-2 p-2 border border-border text-[13px] font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
               >
                 <DollarSign className="w-3.5 h-3.5 shrink-0" />
                 <span>Take Payment</span>
@@ -2145,7 +2145,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveQuickActionSubView('send-message')}
-                className="flex items-center gap-2 p-2 border border-border text-xs font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
+                className="flex items-center gap-2 p-2 border border-border text-[13px] font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
               >
                 <MessageSquare className="w-3.5 h-3.5 shrink-0" />
                 <span>Send Message</span>
@@ -2155,7 +2155,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveQuickActionSubView('add-note')}
-                className="flex items-center gap-2 p-2 border border-border text-xs font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
+                className="flex items-center gap-2 p-2 border border-border text-[13px] font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
               >
                 <FileText className="w-3.5 h-3.5 shrink-0" />
                 <span>Add Note</span>
@@ -2165,7 +2165,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveQuickActionSubView('update-documents')}
-                className="flex items-center gap-2 p-2 border border-border text-xs font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
+                className="flex items-center gap-2 p-2 border border-border text-[13px] font-medium uppercase tracking-wider text-muted-foreground hover:bg-black hover:text-white transition-colors text-left cursor-pointer"
               >
                 <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
                 <span>Documents</span>
@@ -2178,7 +2178,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
             <button
               type="button"
               onClick={() => handleOpenFullProfile(activeCustomer)}
-              className="w-full h-10 bg-black hover:bg-muted text-white font-semibold uppercase tracking-wider text-xs border border-border flex items-center justify-center gap-2 transition-colors cursor-pointer"
+              className="w-full h-10 bg-black hover:bg-muted text-white font-semibold uppercase tracking-wider text-[13px] border border-border flex items-center justify-center gap-2 transition-colors cursor-pointer"
             >
               <span>See More in Full Customer Profile</span>
               <ArrowRight className="w-4 h-4" />
@@ -2199,7 +2199,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                 </div>
                 <div>
                   <h3 className="font-display text-base font-semibold tracking-tight text-foreground">Add New Customer</h3>
-                  <p className="text-xs text-muted-foreground">Saves directly to Supabase cloud database</p>
+                  <p className="text-[13px] text-muted-foreground">Saves directly to Supabase cloud database</p>
                 </div>
               </div>
               <button
@@ -2212,7 +2212,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSaveNewCustomer} className="p-6 space-y-4 text-xs bg-card">
+            <form onSubmit={handleSaveNewCustomer} className="p-6 space-y-4 text-[13px] bg-card">
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block font-medium uppercase tracking-wider text-muted-foreground mb-1">
@@ -2293,7 +2293,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
 
               {/* Pet Details Section */}
               <div className="p-4 bg-card border border-border space-y-3 mt-3">
-                <div className="flex items-center gap-1.5 font-semibold uppercase tracking-wider text-foreground text-xs">
+                <div className="flex items-center gap-1.5 font-semibold uppercase tracking-wider text-foreground text-[13px]">
                   <PawPrint className="w-4 h-4 text-foreground" />
                   <span>Pet Information (Optional)</span>
                 </div>
@@ -2337,7 +2337,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                     <select
                       value={newCustForm.petGender}
                       onChange={(e) => setNewCustForm({ ...newCustForm, petGender: e.target.value })}
-                      className="w-full px-3 py-2 bg-card border border-border focus:outline-none focus:ring-1 focus:ring-black text-foreground font-bold uppercase tracking-wider"
+                      className="w-full px-3 py-2 bg-card border border-border focus:outline-none focus:ring-1 focus:ring-black text-foreground font-semibold uppercase tracking-wider"
                     >
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
@@ -2362,14 +2362,14 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                 <button
                   type="button"
                   onClick={() => setIsNewCustomerModalOpen(false)}
-                  className="px-4 py-2 text-xs font-medium uppercase tracking-wider text-muted-foreground border border-border bg-background hover:bg-accent/50 transition-colors cursor-pointer"
+                  className="px-4 py-2 text-[13px] font-medium uppercase tracking-wider text-muted-foreground border border-border bg-background hover:bg-accent/50 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSavingCustomer}
-                  className="px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-black hover:bg-muted border border-border transition-colors cursor-pointer disabled:opacity-50 flex items-center gap-2"
+                  className="px-5 py-2 text-[13px] font-semibold uppercase tracking-wider text-white bg-black hover:bg-muted border border-border transition-colors cursor-pointer disabled:opacity-50 flex items-center gap-2"
                 >
                   {isSavingCustomer ? (
                     <>

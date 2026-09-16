@@ -77,7 +77,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
       {/* Customer Context Header */}
       <header className="mb-6">
         {/* Breadcrumbs */}
-        <nav className="flex items-center text-xs font-medium text-muted-foreground/70 space-x-2 mb-2">
+        <nav className="flex items-center text-[13px] font-medium text-muted-foreground/70 space-x-2 mb-2">
           <button onClick={onCancel} className="hover:text-muted-foreground transition-colors cursor-pointer">
             Customers
           </button>
@@ -92,14 +92,14 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
         {/* Customer Profile Title Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
           <div className="flex items-center space-x-3">
-            <h1 className="text-2xl font-bold text-foreground tracking-tight">{customer.name}</h1>
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20">
+            <h1 className="text-2xl font-semibold text-foreground tracking-tight">{customer.name}</h1>
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[13px] font-medium bg-success/10 text-success border border-success/20">
               Active Customer
             </span>
           </div>
 
           {/* Contact Details */}
-          <div className="flex items-center space-x-4 text-xs text-muted-foreground mt-2 sm:mt-0 sm:pl-4 sm:border-l sm:border-border">
+          <div className="flex items-center space-x-4 text-[13px] text-muted-foreground mt-2 sm:mt-0 sm:pl-4 sm:border-l sm:border-border">
             <div className="flex items-center space-x-1.5">
               <Phone className="w-3.5 h-3.5 text-muted-foreground/70" />
               <span>{customer.phone}</span>
@@ -125,7 +125,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
           <div className="lg:col-span-7 space-y-6">
             {/* Group 1: Payment For */}
             <div>
-              <label className="block text-xs font-semibold text-foreground uppercase tracking-wider mb-2.5">
+              <label className="block text-[13px] font-semibold text-foreground uppercase tracking-wider mb-2.5">
                 Payment For
               </label>
               <div className="space-y-2.5">
@@ -151,8 +151,8 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
                   <div className="ml-3 flex-1 flex justify-between items-start">
                     <div>
                       <div className="text-sm font-semibold text-foreground">Appointment</div>
-                      <div className="text-xs text-muted-foreground mt-0.5">Buddy • Full Groom</div>
-                      <div className="text-xs text-muted-foreground/70 mt-0.5">May 16, 2025 at 10:30 AM</div>
+                      <div className="text-[13px] text-muted-foreground mt-0.5">Buddy • Full Groom</div>
+                      <div className="text-[13px] text-muted-foreground/70 mt-0.5">May 16, 2025 at 10:30 AM</div>
                     </div>
                     <span className="text-sm font-semibold text-foreground">$85.00</span>
                   </div>
@@ -179,12 +179,12 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
                   />
                   <div className="ml-3 flex-1">
                     <div className="text-sm font-medium text-foreground">Invoice</div>
-                    <div className="text-xs text-muted-foreground/70 mt-0.5">Select an invoice</div>
+                    <div className="text-[13px] text-muted-foreground/70 mt-0.5">Select an invoice</div>
                     {paymentTarget === 'invoice' && (
                       <select
                         value={selectedInvoice}
                         onChange={(e) => setSelectedInvoice(e.target.value)}
-                        className="mt-2 text-xs w-full rounded-md border-border py-1.5 px-2 bg-card"
+                        className="mt-2 text-[13px] w-full rounded-md border-border py-1.5 px-2 bg-card"
                       >
                         <option value="INV-2025-089">INV-2025-089 (May 2, 2025) - $95.00</option>
                         <option value="INV-2025-064">INV-2025-064 (Apr 12, 2025) - $70.00</option>
@@ -214,10 +214,10 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
                   />
                   <div className="ml-3 flex-1">
                     <div className="text-sm font-medium text-foreground">Custom Amount</div>
-                    <div className="text-xs text-muted-foreground/70 mt-0.5">Enter custom amount</div>
+                    <div className="text-[13px] text-muted-foreground/70 mt-0.5">Enter custom amount</div>
                     {paymentTarget === 'custom' && (
                       <div className="mt-2 flex items-center max-w-xs">
-                        <span className="text-xs text-muted-foreground mr-2">$</span>
+                        <span className="text-[13px] text-muted-foreground mr-2">$</span>
                         <input
                           type="number"
                           step="0.01"
@@ -228,7 +228,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
                             const t = amt * 1.0825;
                             setAmountPaid(t.toFixed(2));
                           }}
-                          className="w-full text-xs rounded-md border-border py-1.5 px-2 text-foreground"
+                          className="w-full text-[13px] rounded-md border-border py-1.5 px-2 text-foreground"
                           placeholder="0.00"
                         />
                       </div>
@@ -240,7 +240,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
 
             {/* Group 2: Payment Method */}
             <div>
-              <label className="block text-xs font-semibold text-foreground uppercase tracking-wider mb-2.5">
+              <label className="block text-[13px] font-semibold text-foreground uppercase tracking-wider mb-2.5">
                 Payment Method
               </label>
               <div className="space-y-2.5">
@@ -266,7 +266,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
                       VISA
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-foreground">Visa •••• 4242</div>
+                      <div className="text-[13px] font-semibold text-foreground">Visa •••• 4242</div>
                       <div className="text-[11px] text-muted-foreground/70">Expires 04/27</div>
                     </div>
                   </div>
@@ -298,7 +298,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
                       <div className="w-3.5 h-3.5 bg-warning rounded-full opacity-90"></div>
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-foreground">Mastercard •••• 5555</div>
+                      <div className="text-[13px] font-semibold text-foreground">Mastercard •••• 5555</div>
                       <div className="text-[11px] text-muted-foreground/70">Expires 09/26</div>
                     </div>
                   </div>
@@ -308,7 +308,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
                 <button
                   type="button"
                   onClick={() => alert('Add New Payment Method: Enter card details')}
-                  className="inline-flex items-center text-xs font-semibold text-primary hover:text-primary pt-1 transition-colors cursor-pointer"
+                  className="inline-flex items-center text-[13px] font-semibold text-primary hover:text-primary pt-1 transition-colors cursor-pointer"
                 >
                   <span className="mr-1 text-sm leading-none">+</span> Add New Payment Method
                 </button>
@@ -318,12 +318,12 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
 
           {/* RIGHT COLUMN: Order Summary & Balance */}
           <div className="lg:col-span-5 bg-muted/40/70 border border-border rounded-xl p-5">
-            <h3 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-4">
+            <h3 className="text-[13px] font-semibold text-foreground uppercase tracking-wider mb-4">
               Order Summary
             </h3>
 
             {/* Line Items */}
-            <div className="space-y-2.5 text-xs pb-4 border-b border-border">
+            <div className="space-y-2.5 text-[13px] pb-4 border-b border-border">
               <div className="flex justify-between text-muted-foreground">
                 <span>{paymentTarget === 'appointment' ? 'Full Groom' : paymentTarget === 'invoice' ? 'Grooming Services (Invoice)' : 'Custom Service'}</span>
                 <span className="font-medium text-foreground">${paymentTarget === 'appointment' ? '85.00' : subtotal.toFixed(2)}</span>
@@ -340,7 +340,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
             </div>
 
             {/* Subtotal & Tax Calculation */}
-            <div className="space-y-2 text-xs py-3 border-b border-border">
+            <div className="space-y-2 text-[13px] py-3 border-b border-border">
               <div className="flex justify-between text-muted-foreground">
                 <span>Subtotal</span>
                 <span className="font-medium text-foreground">${subtotal.toFixed(2)}</span>
@@ -354,30 +354,30 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
             {/* Total */}
             <div className="flex justify-between items-center py-4 border-b border-border">
               <span className="text-sm font-semibold text-foreground">Total</span>
-              <span className="text-base font-bold text-foreground">${total.toFixed(2)}</span>
+              <span className="text-base font-semibold text-foreground">${total.toFixed(2)}</span>
             </div>
 
             {/* Amount Paid Input Field */}
             <div className="pt-4 pb-3">
-              <label className="block text-xs font-medium text-muted-foreground mb-1.5" htmlFor="amount-paid">
+              <label className="block text-[13px] font-medium text-muted-foreground mb-1.5" htmlFor="amount-paid">
                 Amount Paid
               </label>
               <div className="relative rounded-md shadow-sm">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <span className="text-muted-foreground/70 sm:text-xs">$</span>
+                  <span className="text-muted-foreground/70 sm:text-[13px]">$</span>
                 </div>
                 <input
                   type="text"
                   id="amount-paid"
                   value={amountPaid}
                   onChange={(e) => setAmountPaid(e.target.value)}
-                  className="block w-full rounded-md border-border pl-7 pr-3 py-1.5 text-xs text-right font-medium text-foreground focus:border-primary focus:ring-primary"
+                  className="block w-full rounded-md border-border pl-7 pr-3 py-1.5 text-[13px] text-right font-medium text-foreground focus:border-primary focus:ring-primary"
                 />
               </div>
             </div>
 
             {/* Balance Due */}
-            <div className="flex justify-between items-center text-xs pt-1 text-muted-foreground">
+            <div className="flex justify-between items-center text-[13px] pt-1 text-muted-foreground">
               <span className="font-medium">Balance Due</span>
               <span className="font-semibold text-foreground">${balanceDue.toFixed(2)}</span>
             </div>
@@ -389,7 +389,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
           <button
             type="button"
             onClick={onCancel}
-            className="px-5 py-2 text-xs font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted/40 transition-colors cursor-pointer"
+            className="px-5 py-2 text-[13px] font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted/40 transition-colors cursor-pointer"
           >
             Cancel
           </button>
@@ -397,7 +397,7 @@ export const QuickActionTakePaymentView: React.FC<CustomerQuickActionsProps> = (
             type="button"
             onClick={handleProcessPayment}
             disabled={isProcessing}
-            className="px-6 py-2 text-xs font-semibold text-white bg-primary rounded-lg hover:bg-primary/90 shadow-sm transition-colors cursor-pointer flex items-center gap-2"
+            className="px-6 py-2 text-[13px] font-semibold text-white bg-primary rounded-lg hover:bg-primary/90 shadow-sm transition-colors cursor-pointer flex items-center gap-2"
           >
             {isProcessing ? 'Processing...' : `Process Payment $${numericPaid.toFixed(2)}`}
           </button>
@@ -470,7 +470,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
     <div className="flex-1 flex flex-col h-full overflow-y-auto px-6 sm:px-8 py-6 max-w-5xl mx-auto w-full">
       {/* Top Breadcrumbs and Customer Info Banner */}
       <header className="mb-6">
-        <nav className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground/70 mb-2">
+        <nav className="flex items-center gap-1.5 text-[13px] font-medium text-muted-foreground/70 mb-2">
           <button onClick={onCancel} className="hover:text-muted-foreground transition-colors cursor-pointer">
             Customers
           </button>
@@ -484,13 +484,13 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
 
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <h1 className="text-2xl font-bold tracking-tight text-foreground">{customer.name}</h1>
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20/60">
+            <h1 className="text-2xl font-semibold tracking-tight text-foreground">{customer.name}</h1>
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[13px] font-medium bg-success/10 text-success border border-success/20/60">
               Active Customer
             </span>
           </div>
 
-          <div className="flex items-center gap-6 text-xs text-muted-foreground font-normal">
+          <div className="flex items-center gap-6 text-[13px] text-muted-foreground font-normal">
             <div className="flex items-center gap-1.5">
               <Phone className="w-3.5 h-3.5 text-muted-foreground/70" />
               <span>{customer.phone}</span>
@@ -512,7 +512,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* STEP 1: Select Pet */}
           <div className="space-y-3">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-foreground">
+            <label className="block text-[13px] font-semibold uppercase tracking-wider text-foreground">
               1. Select Pet
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
@@ -536,8 +536,8 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-semibold text-foreground leading-tight">Buddy</h3>
-                  <p className="text-xs text-muted-foreground truncate mt-0.5">Golden Retriever • Male</p>
-                  <p className="text-xs text-muted-foreground/70">4 yrs • 72 lbs</p>
+                  <p className="text-[13px] text-muted-foreground truncate mt-0.5">Golden Retriever • Male</p>
+                  <p className="text-[13px] text-muted-foreground/70">4 yrs • 72 lbs</p>
                   <div className="mt-1.5 flex items-center gap-1 text-[11px] font-medium text-success">
                     <Check className="w-3 h-3 text-success stroke-[2.5]" />
                     <span>Up to date</span>
@@ -565,8 +565,8 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-semibold text-foreground leading-tight">Luna</h3>
-                  <p className="text-xs text-muted-foreground truncate mt-0.5">Poodle • Female</p>
-                  <p className="text-xs text-muted-foreground/70">2 yrs • 18 lbs</p>
+                  <p className="text-[13px] text-muted-foreground truncate mt-0.5">Poodle • Female</p>
+                  <p className="text-[13px] text-muted-foreground/70">2 yrs • 18 lbs</p>
                   <div className="mt-1.5 flex items-center gap-1 text-[11px] font-medium text-success">
                     <Check className="w-3 h-3 text-success stroke-[2.5]" />
                     <span>Up to date</span>
@@ -580,26 +580,26 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                 className="border-2 border-dashed border-border hover:border-primary/30 hover:bg-primary/5/20 rounded-xl p-3.5 flex flex-col items-center justify-center cursor-pointer text-primary transition-all min-h-[96px]"
               >
                 <Plus className="w-5 h-5 mb-1 stroke-2" />
-                <span className="text-xs font-medium">Add New Pet</span>
+                <span className="text-[13px] font-medium">Add New Pet</span>
               </div>
             </div>
           </div>
 
           {/* STEP 2: Select Service */}
           <div className="space-y-3">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-foreground">
+            <label className="block text-[13px] font-semibold uppercase tracking-wider text-foreground">
               2. Select Service
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-start">
               <div className="sm:col-span-6">
-                <label className="block text-xs text-muted-foreground mb-1" htmlFor="service-select">
+                <label className="block text-[13px] text-muted-foreground mb-1" htmlFor="service-select">
                   Service
                 </label>
                 <select
                   id="service-select"
                   value={service}
                   onChange={handleServiceChange}
-                  className="w-full text-xs rounded-lg border-border py-2.5 pl-3 pr-8 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
+                  className="w-full text-[13px] rounded-lg border-border py-2.5 pl-3 pr-8 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
                 >
                   <option>Full Groom</option>
                   <option>Bath &amp; Brush</option>
@@ -609,14 +609,14 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
               </div>
 
               <div className="sm:col-span-3">
-                <label className="block text-xs text-muted-foreground mb-1" htmlFor="duration-select">
+                <label className="block text-[13px] text-muted-foreground mb-1" htmlFor="duration-select">
                   Duration
                 </label>
                 <select
                   id="duration-select"
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
-                  className="w-full text-xs rounded-lg border-border py-2.5 pl-3 pr-8 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
+                  className="w-full text-[13px] rounded-lg border-border py-2.5 pl-3 pr-8 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
                 >
                   <option>1.0 hr</option>
                   <option>1.5 hrs</option>
@@ -627,7 +627,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
               </div>
 
               <div className="sm:col-span-3">
-                <label className="block text-xs text-muted-foreground mb-1" htmlFor="price-input">
+                <label className="block text-[13px] text-muted-foreground mb-1" htmlFor="price-input">
                   Price
                 </label>
                 <input
@@ -635,7 +635,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                   type="text"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
-                  className="w-full text-xs rounded-lg border-border py-2.5 px-3 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
+                  className="w-full text-[13px] rounded-lg border-border py-2.5 px-3 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
                 />
               </div>
             </div>
@@ -645,13 +645,13 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
               <button
                 type="button"
                 onClick={() => setShowAddons(!showAddons)}
-                className="text-xs font-medium text-primary hover:text-primary inline-flex items-center gap-1 cursor-pointer"
+                className="text-[13px] font-medium text-primary hover:text-primary inline-flex items-center gap-1 cursor-pointer"
               >
                 <span>+</span> Add-ons / Extras
               </button>
 
               {showAddons && (
-                <div className="mt-2.5 p-3 bg-muted/40 rounded-xl border border-border flex flex-wrap gap-2 text-xs">
+                <div className="mt-2.5 p-3 bg-muted/40 rounded-xl border border-border flex flex-wrap gap-2 text-[13px]">
                   {[
                     { name: 'Blueberry Facial', cost: '+$15' },
                     { name: 'Teeth Brushing', cost: '+$10' },
@@ -664,7 +664,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                         key={addon.name}
                         type="button"
                         onClick={() => handleToggleAddon(addon.name)}
-                        className={`px-3 py-1.5 rounded-lg border text-xs font-medium transition cursor-pointer ${
+                        className={`px-3 py-1.5 rounded-lg border text-[13px] font-medium transition cursor-pointer ${
                           isSelected
                             ? 'bg-primary text-white border-primary shadow-2xs'
                             : 'bg-card text-foreground border-border hover:border-border'
@@ -682,10 +682,10 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
           {/* STEP 3: Date & Time */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <label className="block text-xs font-semibold uppercase tracking-wider text-foreground">
+              <label className="block text-[13px] font-semibold uppercase tracking-wider text-foreground">
                 3. Date &amp; Time
               </label>
-              <div className="flex items-center gap-1.5 text-xs text-success font-medium mr-1">
+              <div className="flex items-center gap-1.5 text-[13px] text-success font-medium mr-1">
                 <span className="w-2 h-2 rounded-full bg-success/100"></span>
                 <span>Available</span>
               </div>
@@ -698,7 +698,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                     type="text"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full text-xs rounded-lg border-border py-2.5 px-3 pr-9 focus:border-primary focus:ring-1 focus:ring-primary text-foreground font-medium bg-card"
+                    className="w-full text-[13px] rounded-lg border-border py-2.5 px-3 pr-9 focus:border-primary focus:ring-1 focus:ring-primary text-foreground font-medium bg-card"
                   />
                   <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-muted-foreground/70">
                     <Calendar className="w-4 h-4 stroke-2" />
@@ -712,7 +712,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                     type="text"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
-                    className="w-full text-xs rounded-lg border-border py-2.5 px-3 pr-9 focus:border-primary focus:ring-1 focus:ring-primary text-foreground font-medium bg-card"
+                    className="w-full text-[13px] rounded-lg border-border py-2.5 px-3 pr-9 focus:border-primary focus:ring-1 focus:ring-primary text-foreground font-medium bg-card"
                   />
                   <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-muted-foreground/70">
                     <Clock className="w-4 h-4" />
@@ -725,7 +725,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                   <select
                     value={groomer}
                     onChange={(e) => setGroomer(e.target.value)}
-                    className="w-full text-xs rounded-lg border-border py-2.5 pl-3 pr-8 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
+                    className="w-full text-[13px] rounded-lg border-border py-2.5 pl-3 pr-8 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
                   >
                     <option>with Sarah M.</option>
                     <option>with Alex K.</option>
@@ -739,19 +739,19 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
 
           {/* STEP 4: Appointment Details */}
           <div className="space-y-3">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-foreground">
+            <label className="block text-[13px] font-semibold uppercase tracking-wider text-foreground">
               4. Appointment Details
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-3">
               <div className="sm:col-span-4">
-                <label className="block text-xs text-muted-foreground mb-1" htmlFor="location-select">
+                <label className="block text-[13px] text-muted-foreground mb-1" htmlFor="location-select">
                   Location
                 </label>
                 <select
                   id="location-select"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full text-xs rounded-lg border-border py-2.5 pl-3 pr-8 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
+                  className="w-full text-[13px] rounded-lg border-border py-2.5 pl-3 pr-8 focus:border-primary focus:ring-1 focus:ring-primary bg-card font-medium text-foreground"
                 >
                   <option>Main Location</option>
                   <option>North Branch</option>
@@ -760,7 +760,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
               </div>
 
               <div className="sm:col-span-8">
-                <label className="block text-xs text-muted-foreground mb-1" htmlFor="appointment-notes">
+                <label className="block text-[13px] text-muted-foreground mb-1" htmlFor="appointment-notes">
                   Notes (optional)
                 </label>
                 <textarea
@@ -769,7 +769,7 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="Add any notes about this appointment..."
-                  className="w-full text-xs rounded-lg border-border p-2.5 focus:border-primary focus:ring-1 focus:ring-primary text-foreground placeholder-slate-400 bg-card"
+                  className="w-full text-[13px] rounded-lg border-border p-2.5 focus:border-primary focus:ring-1 focus:ring-primary text-foreground placeholder-slate-400 bg-card"
                 ></textarea>
               </div>
             </div>
@@ -780,13 +780,13 @@ export const QuickActionNewAppointmentView: React.FC<CustomerQuickActionsProps> 
             <button
               type="button"
               onClick={onCancel}
-              className="px-5 py-2.5 text-xs font-medium text-foreground bg-card hover:bg-muted/40 border border-border rounded-lg shadow-2xs transition-colors cursor-pointer"
+              className="px-5 py-2.5 text-[13px] font-medium text-foreground bg-card hover:bg-muted/40 border border-border rounded-lg shadow-2xs transition-colors cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 text-xs font-medium text-white bg-primary hover:bg-primary/90 rounded-lg shadow-sm transition-colors cursor-pointer"
+              className="px-6 py-2.5 text-[13px] font-medium text-white bg-primary hover:bg-primary/90 rounded-lg shadow-sm transition-colors cursor-pointer"
             >
               Review Appointment
             </button>
@@ -859,7 +859,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
     <div className="flex-1 flex flex-col h-full overflow-y-auto px-6 sm:px-8 py-6 max-w-6xl mx-auto w-full">
       {/* Breadcrumb & Header */}
       <header className="space-y-1 mb-5">
-        <nav className="flex items-center text-xs text-muted-foreground font-medium space-x-1.5 mb-1">
+        <nav className="flex items-center text-[13px] text-muted-foreground font-medium space-x-1.5 mb-1">
           <button onClick={onCancel} className="hover:text-foreground cursor-pointer">
             Customers
           </button>
@@ -872,13 +872,13 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
         </nav>
 
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-xl font-bold text-foreground tracking-tight">{customer.name}</h1>
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20/60">
+          <h1 className="text-xl font-semibold text-foreground tracking-tight">{customer.name}</h1>
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[13px] font-medium bg-success/10 text-success border border-success/20/60">
             Active Customer
           </span>
         </div>
 
-        <div className="flex items-center gap-4 text-xs text-muted-foreground pt-0.5">
+        <div className="flex items-center gap-4 text-[13px] text-muted-foreground pt-0.5">
           <span className="flex items-center gap-1.5">
             <Phone className="w-3.5 h-3.5 text-muted-foreground/70 stroke-2" />
             {customer.phone}
@@ -904,16 +904,16 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
 
               {/* Photo Upload Field */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1.5">Photo</label>
+                <label className="block text-[13px] font-medium text-foreground mb-1.5">Photo</label>
                 <div className="border-2 border-dashed border-border hover:border-primary/20 rounded-lg p-5 flex flex-col items-center justify-center bg-muted/40/40 cursor-pointer transition">
-                  <span className="text-xs font-medium text-primary hover:underline">Upload Photo</span>
+                  <span className="text-[13px] font-medium text-primary hover:underline">Upload Photo</span>
                   <p className="text-[11px] text-muted-foreground/70 mt-0.5">JPG, PNG up to 5MB</p>
                 </div>
               </div>
 
               {/* Pet Name */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="pet-name">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="pet-name">
                   Pet Name <span className="text-destructive">*</span>
                 </label>
                 <input
@@ -921,21 +921,21 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                   type="text"
                   value={petName}
                   onChange={(e) => setPetName(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                   required
                 />
               </div>
 
               {/* Species */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="species">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="species">
                   Species <span className="text-destructive">*</span>
                 </label>
                 <select
                   id="species"
                   value={species}
                   onChange={(e) => setSpecies(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground bg-card"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground bg-card"
                 >
                   <option>Dog</option>
                   <option>Cat</option>
@@ -945,7 +945,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
 
               {/* Breed */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="breed">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="breed">
                   Breed <span className="text-destructive">*</span>
                 </label>
                 <input
@@ -953,21 +953,21 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                   type="text"
                   value={breed}
                   onChange={(e) => setBreed(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                   required
                 />
               </div>
 
               {/* Gender */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="gender">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="gender">
                   Gender <span className="text-destructive">*</span>
                 </label>
                 <select
                   id="gender"
                   value={gender}
                   onChange={(e) => setGender(e.target.value as 'Male' | 'Female')}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground bg-card"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground bg-card"
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -976,7 +976,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
 
               {/* Date of Birth */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="dob">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="dob">
                   Date of Birth <span className="text-destructive">*</span>
                 </label>
                 <div className="relative rounded-md shadow-sm">
@@ -985,7 +985,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                     type="text"
                     value={dob}
                     onChange={(e) => setDob(e.target.value)}
-                    className="w-full text-xs rounded-md border-border pr-9 focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                    className="w-full text-[13px] rounded-md border-border pr-9 focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                   />
                   <div className="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none text-muted-foreground/70">
                     <Calendar className="w-4 h-4 stroke-2" />
@@ -995,7 +995,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
 
               {/* Color */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="color">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="color">
                   Color
                 </label>
                 <input
@@ -1003,13 +1003,13 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                   type="text"
                   value={color}
                   onChange={(e) => setColor(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                 />
               </div>
 
               {/* Microchip Number */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="microchip">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="microchip">
                   Microchip Number
                 </label>
                 <input
@@ -1017,7 +1017,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                   type="text"
                   value={microchip}
                   onChange={(e) => setMicrochip(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                 />
               </div>
             </div>
@@ -1028,7 +1028,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
 
               {/* Allergies */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="allergies">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="allergies">
                   Allergies
                 </label>
                 <input
@@ -1036,13 +1036,13 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                   type="text"
                   value={allergies}
                   onChange={(e) => setAllergies(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                 />
               </div>
 
               {/* Medical Conditions */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="medical-conditions">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="medical-conditions">
                   Medical Conditions
                 </label>
                 <input
@@ -1050,13 +1050,13 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                   type="text"
                   value={medicalConditions}
                   onChange={(e) => setMedicalConditions(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                 />
               </div>
 
               {/* Medications */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="medications">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="medications">
                   Medications
                 </label>
                 <input
@@ -1064,13 +1064,13 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                   type="text"
                   value={medications}
                   onChange={(e) => setMedications(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                 />
               </div>
 
               {/* Behavior Notes */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1" htmlFor="behavior-notes">
+                <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="behavior-notes">
                   Behavior Notes
                 </label>
                 <textarea
@@ -1078,18 +1078,18 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                   rows={2}
                   value={behaviorNotes}
                   onChange={(e) => setBehaviorNotes(e.target.value)}
-                  className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                  className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                 />
               </div>
 
               {/* Vaccination Status */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1">Vaccination Status</label>
+                <label className="block text-[13px] font-medium text-foreground mb-1">Vaccination Status</label>
                 <div className="flex items-center justify-between gap-3">
                   <select
                     value={vaccineStatus}
                     onChange={(e) => setVaccineStatus(e.target.value as 'Up to date' | 'Expiring Soon' | 'Expired')}
-                    className="flex-1 text-xs rounded-md border-border bg-card py-1.5 px-3 font-medium text-success"
+                    className="flex-1 text-[13px] rounded-md border-border bg-card py-1.5 px-3 font-medium text-success"
                   >
                     <option value="Up to date">Up to date</option>
                     <option value="Expiring Soon">Expiring Soon</option>
@@ -1102,7 +1102,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                         onOpenManageVaccines(customer.pets[0]);
                       }
                     }}
-                    className="text-xs font-medium text-primary hover:text-primary hover:underline whitespace-nowrap cursor-pointer"
+                    className="text-[13px] font-medium text-primary hover:text-primary hover:underline whitespace-nowrap cursor-pointer"
                   >
                     Manage Vaccines
                   </button>
@@ -1111,17 +1111,17 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
 
               {/* Sub-section: Preferences */}
               <div className="pt-2">
-                <h4 className="text-xs font-semibold text-foreground tracking-tight mb-2">Preferences</h4>
+                <h4 className="text-[13px] font-semibold text-foreground tracking-tight mb-2">Preferences</h4>
 
                 <div className="mb-3">
-                  <label className="block text-xs font-medium text-foreground mb-1" htmlFor="preferred-services">
+                  <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="preferred-services">
                     Preferred Services
                   </label>
                   <select
                     id="preferred-services"
                     value={preferredService}
                     onChange={(e) => setPreferredService(e.target.value)}
-                    className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground bg-card"
+                    className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground bg-card"
                   >
                     <option>Full Groom</option>
                     <option>Bath &amp; Brush</option>
@@ -1130,14 +1130,14 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                 </div>
 
                 <div className="mb-3">
-                  <label className="block text-xs font-medium text-foreground mb-1" htmlFor="preferred-groomer">
+                  <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="preferred-groomer">
                     Preferred Groomer
                   </label>
                   <select
                     id="preferred-groomer"
                     value={preferredGroomer}
                     onChange={(e) => setPreferredGroomer(e.target.value)}
-                    className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground bg-card"
+                    className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground bg-card"
                   >
                     <option>No Preference</option>
                     <option>Sarah M.</option>
@@ -1146,7 +1146,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-foreground mb-1" htmlFor="general-notes">
+                  <label className="block text-[13px] font-medium text-foreground mb-1" htmlFor="general-notes">
                     Notes
                   </label>
                   <input
@@ -1154,7 +1154,7 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
                     type="text"
                     value={generalNotes}
                     onChange={(e) => setGeneralNotes(e.target.value)}
-                    className="w-full text-xs rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
+                    className="w-full text-[13px] rounded-md border-border shadow-sm focus:border-primary focus:ring-primary py-2 px-3 text-foreground"
                   />
                 </div>
               </div>
@@ -1166,13 +1166,13 @@ export const QuickActionAddPetView: React.FC<CustomerQuickActionsProps> = ({
             <button
               type="button"
               onClick={onCancel}
-              className="px-4 py-2 text-xs font-medium text-foreground bg-card border border-border rounded-lg hover:bg-muted/40 transition cursor-pointer"
+              className="px-4 py-2 text-[13px] font-medium text-foreground bg-card border border-border rounded-lg hover:bg-muted/40 transition cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-medium text-white bg-primary rounded-lg hover:bg-primary/90 shadow-sm transition cursor-pointer"
+              className="px-5 py-2 text-[13px] font-medium text-white bg-primary rounded-lg hover:bg-primary/90 shadow-sm transition cursor-pointer"
             >
               Save Pet
             </button>
@@ -1237,7 +1237,7 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
     <div className="flex-1 flex flex-col p-6 md:p-8 lg:p-10 max-w-7xl mx-auto w-full">
       {/* Header */}
       <header className="mb-6">
-        <nav className="flex items-center space-x-2 text-xs font-medium text-muted-foreground mb-2">
+        <nav className="flex items-center space-x-2 text-[13px] font-medium text-muted-foreground mb-2">
           <button onClick={onCancel} className="hover:text-foreground cursor-pointer">
             Customers
           </button>
@@ -1250,13 +1250,13 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
         </nav>
 
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-2xl font-bold text-foreground tracking-tight">{customer.name}</h1>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20">
+          <h1 className="text-2xl font-semibold text-foreground tracking-tight">{customer.name}</h1>
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[13px] font-medium bg-success/10 text-success border border-success/20">
             Active Customer
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-5 mt-2 text-xs text-muted-foreground font-normal">
+        <div className="flex flex-wrap items-center gap-5 mt-2 text-[13px] text-muted-foreground font-normal">
           <div className="flex items-center space-x-1.5">
             <Phone className="w-3.5 h-3.5 text-muted-foreground/70" />
             <span>{customer.phone}</span>
@@ -1277,7 +1277,7 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
         <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 flex-1">
           {/* LEFT COLUMN: Recipient Selection */}
           <div className="lg:col-span-4 flex flex-col space-y-4">
-            <label className="block text-xs font-semibold text-foreground tracking-wide uppercase">
+            <label className="block text-[13px] font-semibold text-foreground tracking-wide uppercase">
               To
             </label>
             <div className="space-y-3">
@@ -1293,7 +1293,7 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
                 </div>
                 <div className="ml-3 text-sm leading-5">
                   <div className="font-medium text-foreground">{customer.name}</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">{customer.phone}</div>
+                  <div className="text-[13px] text-muted-foreground mt-0.5">{customer.phone}</div>
                 </div>
               </label>
 
@@ -1309,7 +1309,7 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
                 </div>
                 <div className="ml-3 text-sm leading-5">
                   <div className="font-medium text-foreground">Email</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">{customer.email}</div>
+                  <div className="text-[13px] text-muted-foreground mt-0.5">{customer.email}</div>
                 </div>
               </label>
 
@@ -1325,7 +1325,7 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
                 </div>
                 <div className="ml-3 text-sm leading-5">
                   <div className="font-medium text-foreground">Buddy (SMS)</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">(Pet Owner: {customer.name})</div>
+                  <div className="text-[13px] text-muted-foreground mt-0.5">(Pet Owner: {customer.name})</div>
                 </div>
               </label>
 
@@ -1341,7 +1341,7 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
                 </div>
                 <div className="ml-3 text-sm leading-5">
                   <div className="font-medium text-foreground">Luna (SMS)</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">(Pet Owner: {customer.name})</div>
+                  <div className="text-[13px] text-muted-foreground mt-0.5">(Pet Owner: {customer.name})</div>
                 </div>
               </label>
             </div>
@@ -1351,14 +1351,14 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
           <div className="lg:col-span-8 flex flex-col space-y-5">
             {/* Channel Selection */}
             <div>
-              <label className="block text-xs font-semibold text-foreground tracking-wide uppercase mb-3">
+              <label className="block text-[13px] font-semibold text-foreground tracking-wide uppercase mb-3">
                 Message
               </label>
               <div className="inline-flex p-1 bg-muted/40 rounded-lg border border-border">
                 <button
                   type="button"
                   onClick={() => setChannel('SMS')}
-                  className={`px-5 py-1.5 text-xs font-semibold rounded-md transition cursor-pointer ${
+                  className={`px-5 py-1.5 text-[13px] font-semibold rounded-md transition cursor-pointer ${
                     channel === 'SMS'
                       ? 'bg-card text-primary shadow-sm'
                       : 'text-muted-foreground hover:text-foreground'
@@ -1369,7 +1369,7 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
                 <button
                   type="button"
                   onClick={() => setChannel('Email')}
-                  className={`px-5 py-1.5 text-xs font-medium rounded-md transition cursor-pointer ${
+                  className={`px-5 py-1.5 text-[13px] font-medium rounded-md transition cursor-pointer ${
                     channel === 'Email'
                       ? 'bg-card text-primary shadow-sm font-semibold'
                       : 'text-muted-foreground hover:text-foreground'
@@ -1390,7 +1390,7 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
               ></textarea>
               <div className="absolute bottom-3 right-3.5 flex items-center space-x-1.5 text-muted-foreground/70 pointer-events-none select-none">
                 <Sparkles className="w-4 h-4 stroke-[1.75]" />
-                <span className="text-xs font-medium text-muted-foreground/70 tracking-tight">
+                <span className="text-[13px] font-medium text-muted-foreground/70 tracking-tight">
                   {message.length}/160
                 </span>
               </div>
@@ -1398,12 +1398,12 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
 
             {/* Templates Selector */}
             <div>
-              <label className="block text-xs font-medium text-muted-foreground mb-1.5">Templates</label>
+              <label className="block text-[13px] font-medium text-muted-foreground mb-1.5">Templates</label>
               <div className="relative max-w-sm">
                 <select
                   value={template}
                   onChange={handleTemplateChange}
-                  className="w-full text-xs font-normal text-foreground bg-card border border-border rounded-lg py-2.5 pl-3 pr-10 focus:ring-1 focus:ring-primary focus:border-primary transition"
+                  className="w-full text-[13px] font-normal text-foreground bg-card border border-border rounded-lg py-2.5 pl-3 pr-10 focus:ring-1 focus:ring-primary focus:border-primary transition"
                 >
                   <option>Appointment Reminder</option>
                   <option>Vaccine Due Notice</option>
@@ -1420,14 +1420,14 @@ export const QuickActionSendMessageView: React.FC<CustomerQuickActionsProps> = (
           <button
             type="button"
             onClick={onCancel}
-            className="px-5 py-2 text-xs font-medium text-foreground bg-card border border-border hover:bg-muted/40 hover:text-foreground rounded-lg shadow-sm transition cursor-pointer"
+            className="px-5 py-2 text-[13px] font-medium text-foreground bg-card border border-border hover:bg-muted/40 hover:text-foreground rounded-lg shadow-sm transition cursor-pointer"
           >
             Cancel
           </button>
           <button
             type="button"
             onClick={handleSendMessage}
-            className="px-6 py-2 text-xs font-semibold text-white bg-primary hover:bg-primary/90 active:bg-primary rounded-lg shadow-sm transition cursor-pointer"
+            className="px-6 py-2 text-[13px] font-semibold text-white bg-primary hover:bg-primary/90 active:bg-primary rounded-lg shadow-sm transition cursor-pointer"
           >
             Send Message
           </button>
@@ -1525,7 +1525,7 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
     <div className="flex-1 flex flex-col h-full overflow-y-auto px-6 py-6 md:px-10 lg:px-12 max-w-7xl mx-auto w-full">
       {/* Header Section */}
       <header className="mb-6">
-        <div className="flex items-center space-x-2 text-xs font-medium text-muted-foreground/70 mb-2">
+        <div className="flex items-center space-x-2 text-[13px] font-medium text-muted-foreground/70 mb-2">
           <button onClick={onCancel} className="hover:text-muted-foreground transition-colors cursor-pointer">
             Customers
           </button>
@@ -1540,13 +1540,13 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-border">
           <div>
             <div className="flex items-center space-x-3">
-              <h1 className="text-2xl font-bold text-foreground tracking-tight">{customer.name}</h1>
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20/80">
+              <h1 className="text-2xl font-semibold text-foreground tracking-tight">{customer.name}</h1>
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[13px] font-medium bg-success/10 text-success border border-success/20/80">
                 Active Customer
               </span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-y-1 gap-x-5 mt-1.5 text-xs text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-y-1 gap-x-5 mt-1.5 text-[13px] text-muted-foreground">
               <div className="flex items-center space-x-1.5">
                 <Phone className="w-3.5 h-3.5 text-muted-foreground/70" />
                 <span>{customer.phone}</span>
@@ -1569,7 +1569,7 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
           <div className="inline-flex p-1 bg-muted/40 rounded-xl space-x-1" role="tablist">
             <button
               onClick={() => setDocSubTab('existing')}
-              className={`px-4 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+              className={`px-4 py-1.5 text-[13px] font-semibold rounded-lg transition-all cursor-pointer ${
                 docSubTab === 'existing'
                   ? 'bg-card text-primary shadow-sm border border-border/60'
                   : 'text-muted-foreground hover:text-foreground hover:bg-card/60'
@@ -1579,7 +1579,7 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
             </button>
             <button
               onClick={() => setDocSubTab('upload')}
-              className={`px-4 py-1.5 text-xs font-medium rounded-lg transition-all cursor-pointer ${
+              className={`px-4 py-1.5 text-[13px] font-medium rounded-lg transition-all cursor-pointer ${
                 docSubTab === 'upload'
                   ? 'bg-card text-primary shadow-sm border border-border/60 font-semibold'
                   : 'text-muted-foreground hover:text-foreground hover:bg-card/60'
@@ -1594,7 +1594,7 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
           <>
             {/* Document Records Table */}
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
+              <table className="w-full text-left text-[13px] border-collapse">
                 <thead>
                   <tr className="border-b border-border bg-muted/40/70 text-muted-foreground font-semibold uppercase tracking-wider text-[11px]">
                     <th className="py-3 px-6" scope="col">Document</th>
@@ -1637,13 +1637,13 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
 
             {/* Document Reminders Footer Box */}
             <div className="m-6 p-4 rounded-xl bg-muted/40 border border-border/70 flex flex-col space-y-1">
-              <h3 className="text-xs font-semibold text-foreground">Document Reminders</h3>
-              <p className="text-xs text-muted-foreground">Buddy has 2 documents expiring within 30 days.</p>
+              <h3 className="text-[13px] font-semibold text-foreground">Document Reminders</h3>
+              <p className="text-[13px] text-muted-foreground">Buddy has 2 documents expiring within 30 days.</p>
               <div className="pt-1">
                 <button
                   type="button"
                   onClick={() => alert('Filtering expiring documents...')}
-                  className="inline-flex items-center space-x-1.5 text-xs font-semibold text-primary hover:text-primary transition-colors cursor-pointer"
+                  className="inline-flex items-center space-x-1.5 text-[13px] font-semibold text-primary hover:text-primary transition-colors cursor-pointer"
                 >
                   <span>View Expiring Documents</span>
                   <span aria-hidden="true">→</span>
@@ -1657,27 +1657,27 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
             <div className="border-2 border-dashed border-primary/20 bg-primary/5/20 rounded-xl p-8 flex flex-col items-center justify-center text-center">
               <Upload className="w-8 h-8 text-primary mb-2" />
               <div className="text-sm font-semibold text-foreground">Drag &amp; Drop certificate or waiver PDF/JPG</div>
-              <div className="text-xs text-muted-foreground mt-1">or click to browse your device (Max 15MB)</div>
+              <div className="text-[13px] text-muted-foreground mt-1">or click to browse your device (Max 15MB)</div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1">Document Name *</label>
+                <label className="block text-[13px] font-medium text-foreground mb-1">Document Name *</label>
                 <input
                   type="text"
                   value={docName}
                   onChange={(e) => setDocName(e.target.value)}
-                  className="w-full text-xs rounded-lg border-border p-2.5 bg-card"
+                  className="w-full text-[13px] rounded-lg border-border p-2.5 bg-card"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1">Target Pet *</label>
+                <label className="block text-[13px] font-medium text-foreground mb-1">Target Pet *</label>
                 <select
                   value={docPet}
                   onChange={(e) => setDocPet(e.target.value)}
-                  className="w-full text-xs rounded-lg border-border p-2.5 bg-card"
+                  className="w-full text-[13px] rounded-lg border-border p-2.5 bg-card"
                 >
                   <option value="Buddy">Buddy (Pet)</option>
                   <option value="Luna">Luna (Pet)</option>
@@ -1686,11 +1686,11 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1">Document Type *</label>
+                <label className="block text-[13px] font-medium text-foreground mb-1">Document Type *</label>
                 <select
                   value={docType}
                   onChange={(e) => setDocType(e.target.value)}
-                  className="w-full text-xs rounded-lg border-border p-2.5 bg-card"
+                  className="w-full text-[13px] rounded-lg border-border p-2.5 bg-card"
                 >
                   <option value="Vaccination">Vaccination Record</option>
                   <option value="Waiver">Grooming Waiver</option>
@@ -1700,12 +1700,12 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1">Expiration Date</label>
+                <label className="block text-[13px] font-medium text-foreground mb-1">Expiration Date</label>
                 <input
                   type="text"
                   value={docExpires}
                   onChange={(e) => setDocExpires(e.target.value)}
-                  className="w-full text-xs rounded-lg border-border p-2.5 bg-card"
+                  className="w-full text-[13px] rounded-lg border-border p-2.5 bg-card"
                   placeholder="MM/DD/YYYY"
                 />
               </div>
@@ -1715,13 +1715,13 @@ export const QuickActionUpdateDocumentsView: React.FC<CustomerQuickActionsProps>
               <button
                 type="button"
                 onClick={() => setDocSubTab('existing')}
-                className="px-4 py-2 text-xs font-medium text-foreground bg-card border border-border rounded-lg hover:bg-muted/40"
+                className="px-4 py-2 text-[13px] font-medium text-foreground bg-card border border-border rounded-lg hover:bg-muted/40"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-5 py-2 text-xs font-semibold text-white bg-primary rounded-lg hover:bg-primary/90"
+                className="px-5 py-2 text-[13px] font-semibold text-white bg-primary rounded-lg hover:bg-primary/90"
               >
                 Upload &amp; Verify Document
               </button>
@@ -1767,7 +1767,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
     <div className="flex-1 flex flex-col p-6 sm:p-8 max-w-6xl mx-auto w-full">
       {/* Header */}
       <header className="mb-5">
-        <nav aria-label="Breadcrumb" className="flex items-center space-x-1.5 text-xs text-muted-foreground/70 font-medium mb-1.5">
+        <nav aria-label="Breadcrumb" className="flex items-center space-x-1.5 text-[13px] text-muted-foreground/70 font-medium mb-1.5">
           <button onClick={onCancel} className="hover:text-muted-foreground transition cursor-pointer">
             Customers
           </button>
@@ -1780,13 +1780,13 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
         </nav>
 
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-          <h1 className="text-2xl font-bold text-foreground tracking-tight">{customer.name}</h1>
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20">
+          <h1 className="text-2xl font-semibold text-foreground tracking-tight">{customer.name}</h1>
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[13px] font-medium bg-success/10 text-success border border-success/20">
             Active Customer
           </span>
         </div>
 
-        <div className="mt-1.5 flex flex-wrap items-center gap-5 text-xs text-muted-foreground font-normal">
+        <div className="mt-1.5 flex flex-wrap items-center gap-5 text-[13px] text-muted-foreground font-normal">
           <div className="flex items-center gap-1.5">
             <Phone className="w-3.5 h-3.5 text-muted-foreground/70 stroke-2" />
             <span>{customer.phone}</span>
@@ -1807,7 +1807,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
         <form onSubmit={handleSaveNote} className="p-6 space-y-6">
           {/* Note Details Group */}
           <fieldset className="space-y-4">
-            <legend className="text-xs font-semibold text-foreground tracking-wide uppercase">
+            <legend className="text-[13px] font-semibold text-foreground tracking-wide uppercase">
               Note Details
             </legend>
 
@@ -1815,7 +1815,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Note For */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1.5" htmlFor="note-for">
+                <label className="block text-[13px] font-medium text-foreground mb-1.5" htmlFor="note-for">
                   Note For <span className="text-destructive">*</span>
                 </label>
                 <div className="relative">
@@ -1823,7 +1823,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
                     id="note-for"
                     value={noteFor}
                     onChange={(e) => setNoteFor(e.target.value)}
-                    className="w-full text-xs rounded-lg border-border text-foreground bg-card py-2 pl-3 pr-8 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary"
+                    className="w-full text-[13px] rounded-lg border-border text-foreground bg-card py-2 pl-3 pr-8 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary"
                   >
                     <option>{customer.name} (Customer)</option>
                     <option>Buddy (Pet)</option>
@@ -1834,7 +1834,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
 
               {/* Related To */}
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1.5" htmlFor="related-to">
+                <label className="block text-[13px] font-medium text-foreground mb-1.5" htmlFor="related-to">
                   Related To
                 </label>
                 <div className="relative">
@@ -1842,7 +1842,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
                     id="related-to"
                     value={relatedTo}
                     onChange={(e) => setRelatedTo(e.target.value)}
-                    className="w-full text-xs rounded-lg border-border text-foreground bg-card py-2 pl-3 pr-8 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary"
+                    className="w-full text-[13px] rounded-lg border-border text-foreground bg-card py-2 pl-3 pr-8 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary"
                   >
                     <option>General</option>
                     <option>Appointment #4821</option>
@@ -1855,7 +1855,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
 
             {/* Note Type */}
             <div>
-              <label className="block text-xs font-medium text-foreground mb-1.5" htmlFor="note-type">
+              <label className="block text-[13px] font-medium text-foreground mb-1.5" htmlFor="note-type">
                 Note Type
               </label>
               <div className="relative">
@@ -1863,7 +1863,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
                   id="note-type"
                   value={noteType}
                   onChange={(e) => setNoteType(e.target.value)}
-                  className="w-full text-xs rounded-lg border-border text-foreground bg-card py-2 pl-3 pr-8 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary"
+                  className="w-full text-[13px] rounded-lg border-border text-foreground bg-card py-2 pl-3 pr-8 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary"
                 >
                   <option>General Note</option>
                   <option>Behavioral Note</option>
@@ -1875,7 +1875,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
 
             {/* Note Content Area */}
             <div>
-              <label className="block text-xs font-medium text-foreground mb-1.5" htmlFor="note-body">
+              <label className="block text-[13px] font-medium text-foreground mb-1.5" htmlFor="note-body">
                 Note <span className="text-destructive">*</span>
               </label>
               <textarea
@@ -1883,7 +1883,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
                 rows={4}
                 value={noteBody}
                 onChange={(e) => setNoteBody(e.target.value)}
-                className="w-full text-xs text-foreground rounded-lg border-border shadow-sm p-3 focus:border-primary focus:ring-1 focus:ring-primary leading-relaxed resize-y bg-card"
+                className="w-full text-[13px] text-foreground rounded-lg border-border shadow-sm p-3 focus:border-primary focus:ring-1 focus:ring-primary leading-relaxed resize-y bg-card"
                 required
               ></textarea>
               <div className="mt-1 flex justify-end">
@@ -1894,7 +1894,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
 
           {/* Visibility Section */}
           <fieldset className="pt-1">
-            <legend className="text-xs font-semibold text-foreground tracking-wide uppercase mb-2.5">
+            <legend className="text-[13px] font-semibold text-foreground tracking-wide uppercase mb-2.5">
               Visibility
             </legend>
             <div className="flex items-center gap-6">
@@ -1907,7 +1907,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
                   onChange={() => setVisibility('private')}
                   className="w-4 h-4 text-primary border-border focus:ring-primary focus:ring-offset-0"
                 />
-                <span className="text-xs text-foreground">Private (Internal Only)</span>
+                <span className="text-[13px] text-foreground">Private (Internal Only)</span>
               </label>
               <label className="inline-flex items-center gap-2 cursor-pointer select-none">
                 <input
@@ -1918,7 +1918,7 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
                   onChange={() => setVisibility('customer')}
                   className="w-4 h-4 text-primary border-border focus:ring-primary focus:ring-offset-0"
                 />
-                <span className="text-xs text-foreground">Visible to Customer</span>
+                <span className="text-[13px] text-foreground">Visible to Customer</span>
               </label>
             </div>
           </fieldset>
@@ -1928,13 +1928,13 @@ export const QuickActionAddNoteView: React.FC<CustomerQuickActionsProps> = ({
             <button
               type="button"
               onClick={onCancel}
-              className="px-5 py-2 text-xs font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted/40 transition cursor-pointer"
+              className="px-5 py-2 text-[13px] font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted/40 transition cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-medium text-white bg-primary rounded-lg hover:bg-primary/90 shadow-sm transition cursor-pointer font-semibold tracking-wide"
+              className="px-5 py-2 text-[13px] font-medium text-white bg-primary rounded-lg hover:bg-primary/90 shadow-sm transition cursor-pointer font-semibold tracking-wide"
             >
               Save Note
             </button>

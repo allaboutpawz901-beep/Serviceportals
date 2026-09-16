@@ -691,15 +691,15 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 border border-border bg-background flex items-center justify-center font-bold text-foreground text-base">
+                      <div className="w-9 h-9 border border-border bg-background flex items-center justify-center font-semibold text-foreground text-base">
                         {appt.petEmoji}
                       </div>
                       <div>
-                        <h4 className="font-bold text-foreground text-xs uppercase">{appt.customerName || 'Pet Parent'}</h4>
+                        <h4 className="font-semibold text-foreground text-[13px] uppercase">{appt.customerName || 'Pet Parent'}</h4>
                         <p className="text-[11px] text-muted-foreground font-medium">{appt.petName} • {appt.breed}</p>
                       </div>
                     </div>
-                    <span className={`inline-flex items-center px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider border border-border ${
+                    <span className={`inline-flex items-center px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider border border-border ${
                       appt.status === 'Checked In'
                         ? 'bg-warning/10 text-warning'
                         : appt.status === 'In Progress'
@@ -721,26 +721,26 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                   <div className="bg-card border border-border p-2.5 text-[11px] space-y-1">
                     <div className="flex justify-between">
                       <span className="text-muted-foreground uppercase tabular-nums">Service:</span>
-                      <span className="font-bold text-foreground">{appt.serviceName}</span>
+                      <span className="font-semibold text-foreground">{appt.serviceName}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground uppercase tabular-nums">Time:</span>
-                      <span className="font-bold text-foreground tabular-nums">{appt.time}</span>
+                      <span className="font-semibold text-foreground tabular-nums">{appt.time}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground uppercase tabular-nums">Groomer:</span>
-                      <span className="font-bold text-foreground">{appt.staffName || 'Unassigned'}</span>
+                      <span className="font-semibold text-foreground">{appt.staffName || 'Unassigned'}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground uppercase tabular-nums">Price:</span>
-                      <span className="font-bold text-foreground tabular-nums">${appt.price?.toFixed(2) || '85.00'}</span>
+                      <span className="font-semibold text-foreground tabular-nums">${appt.price?.toFixed(2) || '85.00'}</span>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between pt-1">
                     <button
                       onClick={() => handleActionClick('view-details', appt)}
-                      className="text-xs text-foreground font-bold uppercase hover:underline cursor-pointer"
+                      className="text-[13px] text-foreground font-semibold uppercase hover:underline cursor-pointer"
                     >
                       View Details
                     </button>
@@ -767,9 +767,9 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
             <div className="relative bg-card border border-border overflow-visible">
               <div className="overflow-x-auto">
                 {activeTab === 'Canceled' ? (
-                  <table className="w-full text-left text-xs border-collapse">
+                  <table className="w-full text-left text-[13px] border-collapse">
                     <thead>
-                      <tr className="border-b border-border bg-background text-[10px] font-semibold uppercase tracking-widest text-foreground">
+                      <tr className="border-b border-border bg-background text-[10px] font-semibold uppercase tracking-wider text-foreground">
                         <th className="py-3 px-4">Date &amp; Time</th>
                         <th className="py-3 px-4">Customer / Pet</th>
                         <th className="py-3 px-4">Service</th>
@@ -779,28 +779,28 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                         <th className="py-3 px-4">Notes</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-border/10 text-foreground text-xs">
+                    <tbody className="divide-y divide-border/10 text-foreground text-[13px]">
                       {filteredAppointments.length === 0 ? (
                         <tr>
                           <td colSpan={7} className="py-12 text-center text-muted-foreground">
-                            <p className="font-bold uppercase text-sm">No canceled appointments</p>
-                            <p className="text-xs mt-1">Try clearing filters or search query.</p>
+                            <p className="font-semibold uppercase text-sm">No canceled appointments</p>
+                            <p className="text-[13px] mt-1">Try clearing filters or search query.</p>
                           </td>
                         </tr>
                       ) : (
                         filteredAppointments.map((appt) => (
                           <tr key={appt.id} className="hover:bg-accent/50 transition-colors">
-                            <td className="py-3.5 px-4 whitespace-nowrap font-bold text-foreground">
+                            <td className="py-3.5 px-4 whitespace-nowrap font-semibold text-foreground">
                               {formatDateHeader(appt.date, activeTab)}{' '}
                               <span className="text-muted-foreground font-normal tabular-nums text-[11px]">{appt.time || '9:00 AM'}</span>
                             </td>
                             <td className="py-3.5 px-4 whitespace-nowrap">
                               <div className="flex items-center gap-2.5">
-                                <div className="w-6 h-6 border border-border bg-primary text-primary-foreground font-bold flex items-center justify-center text-[10px] shrink-0">
+                                <div className="w-6 h-6 border border-border bg-primary text-primary-foreground font-semibold flex items-center justify-center text-[10px] shrink-0">
                                   {appt.customerInitials || 'PA'}
                                 </div>
                                 <div className="flex flex-col">
-                                  <span className="font-bold text-foreground leading-tight">{appt.customerName}</span>
+                                  <span className="font-semibold text-foreground leading-tight">{appt.customerName}</span>
                                   <span className="text-[10px] text-muted-foreground leading-tight">{appt.petName}</span>
                                 </div>
                               </div>
@@ -808,7 +808,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                             <td className="py-3.5 px-4 whitespace-nowrap text-foreground font-medium">{appt.serviceName}</td>
                             <td className="py-3.5 px-4 whitespace-nowrap text-foreground">{appt.staffName || 'Sarah M.'}</td>
                             <td className="py-3.5 px-4 whitespace-nowrap">
-                              <span className={`inline-flex items-center px-1.5 py-0.5 border border-border text-[9px] font-bold uppercase tracking-wider ${
+                              <span className={`inline-flex items-center px-1.5 py-0.5 border border-border text-[9px] font-semibold uppercase tracking-wider ${
                                 appt.cancellationReason === 'Canceled by Salon'
                                   ? 'bg-warning/10 text-warning'
                                   : appt.cancellationReason === 'No Show' || appt.status === 'No Show'
@@ -826,9 +826,9 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                     </tbody>
                   </table>
                 ) : activeTab === 'Waitlist' ? (
-                  <table className="w-full text-left text-xs border-collapse">
+                  <table className="w-full text-left text-[13px] border-collapse">
                     <thead>
-                      <tr className="border-b border-border bg-background text-[10px] font-semibold uppercase tracking-widest text-foreground">
+                      <tr className="border-b border-border bg-background text-[10px] font-semibold uppercase tracking-wider text-foreground">
                         <th className="py-3.5 px-5">Customer / Pet</th>
                         <th className="py-3.5 px-4">Service</th>
                         <th className="py-3.5 px-4">Preferred Date</th>
@@ -837,12 +837,12 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                         <th className="py-3.5 px-4 text-right">Row Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-border/10 text-foreground text-xs">
+                    <tbody className="divide-y divide-border/10 text-foreground text-[13px]">
                       {filteredAppointments.length === 0 ? (
                         <tr>
                           <td colSpan={6} className="py-12 text-center text-muted-foreground">
-                            <p className="font-bold uppercase text-sm">No pets on waitlist</p>
-                            <p className="text-xs mt-1">Try clearing filters or search query.</p>
+                            <p className="font-semibold uppercase text-sm">No pets on waitlist</p>
+                            <p className="text-[13px] mt-1">Try clearing filters or search query.</p>
                           </td>
                         </tr>
                       ) : (
@@ -850,7 +850,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                           <tr key={appt.id} className="hover:bg-accent/50 transition-colors">
                             <td className="py-3.5 px-5 whitespace-nowrap">
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 border border-border bg-background overflow-hidden flex items-center justify-center shrink-0 text-foreground font-bold text-xs">
+                                <div className="w-8 h-8 border border-border bg-background overflow-hidden flex items-center justify-center shrink-0 text-foreground font-semibold text-[13px]">
                                   {appt.petAvatar ? (
                                     <img alt={appt.petName} className="w-full h-full object-cover" src={appt.petAvatar} />
                                   ) : (
@@ -858,12 +858,12 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                   )}
                                 </div>
                                 <div>
-                                  <div className="font-bold text-foreground leading-tight">{appt.customerName}</div>
+                                  <div className="font-semibold text-foreground leading-tight">{appt.customerName}</div>
                                   <div className="text-[11px] text-muted-foreground leading-tight">{appt.petName}</div>
                                 </div>
                               </div>
                             </td>
-                            <td className="py-3.5 px-4 whitespace-nowrap font-bold text-foreground">{appt.serviceName}</td>
+                            <td className="py-3.5 px-4 whitespace-nowrap font-semibold text-foreground">{appt.serviceName}</td>
                             <td className="py-3.5 px-4 whitespace-nowrap text-foreground tabular-nums">{appt.preferredDate || 'Anytime'}</td>
                             <td className="py-3.5 px-4 text-muted-foreground">{appt.notes || '—'}</td>
                             <td className="py-3.5 px-4 whitespace-nowrap text-muted-foreground tabular-nums text-[11px]">{appt.addedOn || 'May 16, 2025'}</td>
@@ -872,14 +872,14 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                 <button
                                   type="button"
                                   onClick={() => handleAddNewAppointment(undefined, undefined, undefined, 'Scheduled')}
-                                  className="px-2.5 py-1 bg-primary text-primary-foreground hover:bg-primary/90 border border-border font-bold uppercase text-[10px] transition-colors cursor-pointer"
+                                  className="px-2.5 py-1 bg-primary text-primary-foreground hover:bg-primary/90 border border-border font-semibold uppercase text-[10px] transition-colors cursor-pointer"
                                 >
                                   Book Slot
                                 </button>
                                 <button
                                   type="button"
                                   onClick={() => handleActionClick('view-details', appt)}
-                                  className="text-[11px] text-foreground font-bold uppercase px-2 py-1 border border-border hover:bg-black hover:text-white transition-colors cursor-pointer"
+                                  className="text-[11px] text-foreground font-semibold uppercase px-2 py-1 border border-border hover:bg-black hover:text-white transition-colors cursor-pointer"
                                 >
                                   Details
                                 </button>
@@ -907,9 +907,9 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                     </tbody>
                   </table>
                 ) : (
-                  <table className="w-full text-left text-xs border-collapse">
+                  <table className="w-full text-left text-[13px] border-collapse">
                     <thead>
-                      <tr className="border-b border-border bg-background text-[10px] font-semibold uppercase tracking-widest text-foreground">
+                      <tr className="border-b border-border bg-background text-[10px] font-semibold uppercase tracking-wider text-foreground">
                         <th className="py-3 px-4">Date &amp; Time</th>
                         <th className="py-3 px-4">Customer / Pet</th>
                         <th className="py-3 px-4">Service</th>
@@ -920,12 +920,12 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                         <th className="py-3 px-4 text-right">Assigned Row Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-border/10 text-foreground text-xs">
+                    <tbody className="divide-y divide-border/10 text-foreground text-[13px]">
                       {filteredAppointments.length === 0 ? (
                         <tr>
                           <td colSpan={8} className="py-12 text-center text-muted-foreground">
-                            <p className="font-bold uppercase text-sm">No appointments found</p>
-                            <p className="text-xs mt-1">Try clearing filters or search query.</p>
+                            <p className="font-semibold uppercase text-sm">No appointments found</p>
+                            <p className="text-[13px] mt-1">Try clearing filters or search query.</p>
                           </td>
                         </tr>
                       ) : (
@@ -933,7 +933,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                           <tr key={appt.id} className="hover:bg-accent/50 transition-colors relative">
                             {/* Date & Time */}
                             <td className="py-3 px-4 whitespace-nowrap">
-                              <div className="font-bold text-foreground">
+                              <div className="font-semibold text-foreground">
                                 {formatDateHeader(appt.date, activeTab)}
                               </div>
                               <div className="text-[11px] text-muted-foreground tabular-nums mt-0.5">
@@ -951,12 +951,12 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                     className="w-7 h-7 border border-border object-cover shrink-0"
                                   />
                                 ) : (
-                                  <div className="w-7 h-7 border border-border bg-primary text-primary-foreground font-bold flex items-center justify-center text-xs shrink-0">
+                                  <div className="w-7 h-7 border border-border bg-primary text-primary-foreground font-semibold flex items-center justify-center text-[13px] shrink-0">
                                     {appt.customerInitials || appt.petEmoji}
                                   </div>
                                 )}
                                 <div>
-                                  <div className="font-bold text-foreground leading-tight">
+                                  <div className="font-semibold text-foreground leading-tight">
                                     {appt.customerName || 'Sarah Johnson'}
                                   </div>
                                   <div className="text-[11px] text-muted-foreground leading-tight">
@@ -967,7 +967,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                             </td>
 
                             {/* Service */}
-                            <td className="py-3 px-4 font-bold whitespace-nowrap text-foreground">
+                            <td className="py-3 px-4 font-semibold whitespace-nowrap text-foreground">
                               {appt.serviceName}
                             </td>
 
@@ -981,7 +981,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                     className="w-6 h-6 border border-border object-cover shrink-0"
                                   />
                                 ) : (
-                                  <div className="w-5 h-5 border border-border bg-background text-[9px] font-bold text-foreground flex items-center justify-center shrink-0">
+                                  <div className="w-5 h-5 border border-border bg-background text-[9px] font-semibold text-foreground flex items-center justify-center shrink-0">
                                     {appt.staffInitials || (appt.staffName ? appt.staffName[0] : 'SM')}
                                   </div>
                                 )}
@@ -998,7 +998,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
 
                             {/* Status Badge */}
                             <td className="py-3 px-4 whitespace-nowrap">
-                              <span className={`inline-flex items-center px-1.5 py-0.5 border border-border text-[9px] font-bold uppercase tracking-wider ${getStatusBadgeStyle(appt.status)}`}>
+                              <span className={`inline-flex items-center px-1.5 py-0.5 border border-border text-[9px] font-semibold uppercase tracking-wider ${getStatusBadgeStyle(appt.status)}`}>
                                 {appt.status}
                               </span>
                             </td>
@@ -1012,7 +1012,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                   <div className="text-[10px] text-muted-foreground tabular-nums uppercase leading-none mb-1">
                                     {appt.paymentStatus || 'Deposit Paid'}
                                   </div>
-                                  <div className="font-bold text-foreground tabular-nums text-xs">
+                                  <div className="font-semibold text-foreground tabular-nums text-[13px]">
                                     ${appt.depositAmount ? appt.depositAmount.toFixed(2) : appt.price ? appt.price.toFixed(2) : '25.00'}
                                   </div>
                                 </>
@@ -1026,7 +1026,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                   <button
                                     type="button"
                                     onClick={() => updateAppointmentStatus(appt.id, 'Confirmed')}
-                                    className="px-2 py-1 bg-card hover:bg-black hover:text-white border border-border text-foreground font-bold uppercase text-[10px] transition-colors cursor-pointer"
+                                    className="px-2 py-1 bg-card hover:bg-black hover:text-white border border-border text-foreground font-semibold uppercase text-[10px] transition-colors cursor-pointer"
                                   >
                                     Confirm
                                   </button>
@@ -1035,7 +1035,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                   <button
                                     type="button"
                                     onClick={() => updateAppointmentStatus(appt.id, 'Checked In')}
-                                    className="px-2 py-1 bg-card hover:bg-black hover:text-white border border-border text-foreground font-bold uppercase text-[10px] transition-colors cursor-pointer"
+                                    className="px-2 py-1 bg-card hover:bg-black hover:text-white border border-border text-foreground font-semibold uppercase text-[10px] transition-colors cursor-pointer"
                                   >
                                     Check In
                                   </button>
@@ -1044,7 +1044,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                   <button
                                     type="button"
                                     onClick={() => updateAppointmentStatus(appt.id, 'In Progress')}
-                                    className="px-2 py-1 bg-card hover:bg-black hover:text-white border border-border text-foreground font-bold uppercase text-[10px] transition-colors cursor-pointer"
+                                    className="px-2 py-1 bg-card hover:bg-black hover:text-white border border-border text-foreground font-semibold uppercase text-[10px] transition-colors cursor-pointer"
                                   >
                                     Start Groom
                                   </button>
@@ -1053,7 +1053,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                   <button
                                     type="button"
                                     onClick={() => updateAppointmentStatus(appt.id, 'Completed')}
-                                    className="px-2 py-1 bg-primary text-primary-foreground hover:bg-primary/90 border border-border font-bold uppercase text-[10px] transition-colors cursor-pointer"
+                                    className="px-2 py-1 bg-primary text-primary-foreground hover:bg-primary/90 border border-border font-semibold uppercase text-[10px] transition-colors cursor-pointer"
                                   >
                                     Complete
                                   </button>
@@ -1062,7 +1062,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                   <button
                                     type="button"
                                     onClick={() => handleActionClick('invoice', appt)}
-                                    className="px-2 py-1 bg-card hover:bg-black hover:text-white border border-border text-foreground font-bold uppercase text-[10px] transition-colors cursor-pointer"
+                                    className="px-2 py-1 bg-card hover:bg-black hover:text-white border border-border text-foreground font-semibold uppercase text-[10px] transition-colors cursor-pointer"
                                   >
                                     Invoice
                                   </button>
@@ -1071,7 +1071,7 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
                                 <button
                                   type="button"
                                   onClick={() => handleActionClick('view-details', appt)}
-                                  className="text-[11px] text-foreground font-bold uppercase px-2 py-1 border border-border hover:bg-black hover:text-white transition-colors cursor-pointer"
+                                  className="text-[11px] text-foreground font-semibold uppercase px-2 py-1 border border-border hover:bg-black hover:text-white transition-colors cursor-pointer"
                                 >
                                   Details
                                 </button>
@@ -1105,29 +1105,29 @@ export const AppointmentsView: React.FC<AppointmentsViewProps> = ({
               </div>
 
               {/* Table Pagination Footer matching design */}
-              <div className="px-4 py-3 border-t border-border bg-background flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-foreground">
+              <div className="px-4 py-3 border-t border-border bg-background flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-foreground">
                 <div className="flex items-center gap-2">
-                  <span className="font-bold uppercase tracking-wider text-[11px]">Show</span>
+                  <span className="font-semibold uppercase tracking-wider text-[11px]">Show</span>
                   <div className="relative">
-                    <select className="appearance-none bg-card border border-border pl-2.5 pr-7 py-1 text-xs text-foreground font-bold uppercase focus:outline-none cursor-pointer">
+                    <select className="appearance-none bg-card border border-border pl-2.5 pr-7 py-1 text-[13px] text-foreground font-semibold uppercase focus:outline-none cursor-pointer">
                       <option>25</option>
                       <option>50</option>
                       <option>100</option>
                     </select>
                     <ChevronDown className="w-3.5 h-3.5 text-foreground absolute right-2 top-2 pointer-events-none" />
                   </div>
-                  <span className="font-bold uppercase tracking-wider text-[11px]">per page</span>
+                  <span className="font-semibold uppercase tracking-wider text-[11px]">per page</span>
                 </div>
 
                 <div className="flex items-center gap-1">
-                  <button className="px-2 py-1 border border-border text-foreground hover:bg-black hover:text-white uppercase font-bold text-[11px] transition-colors cursor-pointer disabled:opacity-40" disabled>
+                  <button className="px-2 py-1 border border-border text-foreground hover:bg-black hover:text-white uppercase font-semibold text-[11px] transition-colors cursor-pointer disabled:opacity-40" disabled>
                     <ChevronLeft className="w-4 h-4" />
                   </button>
-                  <button className="w-7 h-7 border border-border bg-primary text-primary-foreground font-bold flex items-center justify-center text-xs">1</button>
-                  <button className="w-7 h-7 border border-border hover:bg-accent/50 text-foreground font-bold flex items-center justify-center text-xs cursor-pointer">2</button>
-                  <button className="w-7 h-7 border border-border hover:bg-accent/50 text-foreground font-bold flex items-center justify-center text-xs cursor-pointer">3</button>
-                  <button className="w-7 h-7 border border-border hover:bg-accent/50 text-foreground font-bold flex items-center justify-center text-xs cursor-pointer">4</button>
-                  <button className="px-2 py-1 border border-border text-foreground hover:bg-black hover:text-white uppercase font-bold text-[11px] transition-colors cursor-pointer">
+                  <button className="w-7 h-7 border border-border bg-primary text-primary-foreground font-semibold flex items-center justify-center text-[13px]">1</button>
+                  <button className="w-7 h-7 border border-border hover:bg-accent/50 text-foreground font-semibold flex items-center justify-center text-[13px] cursor-pointer">2</button>
+                  <button className="w-7 h-7 border border-border hover:bg-accent/50 text-foreground font-semibold flex items-center justify-center text-[13px] cursor-pointer">3</button>
+                  <button className="w-7 h-7 border border-border hover:bg-accent/50 text-foreground font-semibold flex items-center justify-center text-[13px] cursor-pointer">4</button>
+                  <button className="px-2 py-1 border border-border text-foreground hover:bg-black hover:text-white uppercase font-semibold text-[11px] transition-colors cursor-pointer">
                     <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>

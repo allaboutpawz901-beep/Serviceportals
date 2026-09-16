@@ -134,7 +134,7 @@ export const HourlyTimelineView: React.FC<HourlyTimelineViewProps> = ({
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
-            <span className="px-3 py-1 text-xs font-bold text-foreground">
+            <span className="px-3 py-1 text-[13px] font-semibold text-foreground">
               {selectedDate === '2025-05-16' ? 'Today (Fri, May 16, 2025)' : selectedDate === '2025-05-17' ? 'Tomorrow (Sat, May 17, 2025)' : selectedDate}
             </span>
             <button
@@ -150,7 +150,7 @@ export const HourlyTimelineView: React.FC<HourlyTimelineViewProps> = ({
             <button
               type="button"
               onClick={() => setSelectedDate('2025-05-16')}
-              className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition cursor-pointer ${
+              className={`px-2.5 py-1 rounded-lg text-[13px] font-semibold transition cursor-pointer ${
                 selectedDate === '2025-05-16'
                   ? 'bg-primary text-white shadow-2xs'
                   : 'bg-card border border-border text-muted-foreground hover:bg-muted/40'
@@ -161,7 +161,7 @@ export const HourlyTimelineView: React.FC<HourlyTimelineViewProps> = ({
             <button
               type="button"
               onClick={() => setSelectedDate('2025-05-17')}
-              className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition cursor-pointer ${
+              className={`px-2.5 py-1 rounded-lg text-[13px] font-semibold transition cursor-pointer ${
                 selectedDate === '2025-05-17'
                   ? 'bg-primary text-white shadow-2xs'
                   : 'bg-card border border-border text-muted-foreground hover:bg-muted/40'
@@ -173,13 +173,13 @@ export const HourlyTimelineView: React.FC<HourlyTimelineViewProps> = ({
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-xs text-muted-foreground font-medium">
+          <span className="text-[13px] text-muted-foreground font-medium">
             {dateAppointments.length} appointments scheduled
           </span>
           <button
             type="button"
             onClick={() => onAddAppointment(selectedDate)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-xl text-xs font-semibold shadow-2xs transition cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-xl text-[13px] font-semibold shadow-2xs transition cursor-pointer"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>Book Slot</span>
@@ -191,7 +191,7 @@ export const HourlyTimelineView: React.FC<HourlyTimelineViewProps> = ({
       <div className="flex-1 overflow-y-auto overflow-x-auto relative custom-scrollbar">
         <div className="min-w-[760px]">
           {/* Column Header Row */}
-          <div className="grid grid-cols-[80px_repeat(3,1fr)] sticky top-0 z-20 bg-muted/40/95 backdrop-blur-xs border-b border-border text-xs font-bold text-foreground">
+          <div className="grid grid-cols-[80px_repeat(3,1fr)] sticky top-0 z-20 bg-muted/40/95 backdrop-blur-xs border-b border-border text-[13px] font-semibold text-foreground">
             <div className="py-2.5 px-3 border-r border-border text-center text-muted-foreground/70">
               Time
             </div>
@@ -201,7 +201,7 @@ export const HourlyTimelineView: React.FC<HourlyTimelineViewProps> = ({
                 className="py-2.5 px-4 border-r border-border last: flex items-center justify-between"
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px] font-bold">
+                  <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px] font-semibold">
                     {groomer[0]}
                   </div>
                   <span>{groomer}</span>
@@ -338,10 +338,10 @@ export const HourlyTimelineView: React.FC<HourlyTimelineViewProps> = ({
                       >
                         <div className="flex items-start justify-between gap-1">
                           <div className="flex items-center gap-1.5 min-w-0">
-                            <span className="font-bold text-xs truncate">
+                            <span className="font-semibold text-[13px] truncate">
                               {appt.petName}
                             </span>
-                            <span className={`px-1.5 py-0.2 text-[9px] font-bold rounded-full border ${styling.badge}`}>
+                            <span className={`px-1.5 py-0.2 text-[9px] font-semibold rounded-full border ${styling.badge}`}>
                               {appt.status}
                             </span>
                           </div>
@@ -379,7 +379,7 @@ export const HourlyTimelineView: React.FC<HourlyTimelineViewProps> = ({
                             <Clock className="w-3 h-3 text-muted-foreground/70" />
                             {appt.time}
                           </span>
-                          <span className="font-bold text-success">
+                          <span className="font-semibold text-success">
                             ${appt.price?.toFixed(0) || '75'}
                           </span>
                         </div>

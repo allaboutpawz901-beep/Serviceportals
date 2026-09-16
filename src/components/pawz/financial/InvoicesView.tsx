@@ -464,7 +464,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
           <div className="p-4 bg-muted/30 border-b border-border flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 flex-1 w-full">
               <div className="relative flex-1 sm:max-w-md">
-                <span className="text-[11px] font-bold absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">SEARCH QUOTES //</span>
+                <span className="text-[11px] font-semibold absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">SEARCH QUOTES //</span>
                 <input
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -498,7 +498,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                   alert(`Estimate ${newEstId} drafted for ${cName}. Outstanding balance tracked.`);
                 }
               }}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-4 py-2 text-[12px] uppercase tracking-wider font-bold transition-colors cursor-pointer rounded-md w-full sm:w-auto"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-4 py-2 text-[12px] uppercase tracking-wider font-semibold transition-colors cursor-pointer rounded-md w-full sm:w-auto"
             >
               + DRAFT ESTIMATE / QUOTE
             </button>
@@ -509,7 +509,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
             <div className="border border-border overflow-x-auto">
               <table className="w-full border-collapse text-left text-[13px] text-foreground">
                 <thead>
-                  <tr className="bg-muted/40 border-b border-border font-bold uppercase">
+                  <tr className="bg-muted/40 border-b border-border font-semibold uppercase">
                     <th className="p-3 border-r border-border">EST ID</th>
                     <th className="p-3 border-r border-border">CLIENT REFERENCE</th>
                     <th className="p-3 border-r border-border">CONTACT</th>
@@ -524,15 +524,15 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                 <tbody className="divide-y divide-border bg-card">
                   {filteredEstimates.map((est) => (
                     <tr key={est.id} className="hover:bg-muted/30 transition-colors">
-                      <td className="p-3 border-r border-border font-bold">{est.id}</td>
-                      <td className="p-3 border-r border-border font-bold uppercase">{est.customer}</td>
+                      <td className="p-3 border-r border-border font-semibold">{est.id}</td>
+                      <td className="p-3 border-r border-border font-semibold uppercase">{est.customer}</td>
                       <td className="p-3 border-r border-border text-muted-foreground text-[12px]">{est.contact}</td>
                       <td className="p-3 border-r border-border text-muted-foreground max-w-[260px] truncate text-[11px] tabular-nums">{est.serviceSpec}</td>
-                      <td className="p-3 border-r border-border text-right font-bold tabular-nums">${est.quotedAmt.toFixed(2)}</td>
+                      <td className="p-3 border-r border-border text-right font-semibold tabular-nums">${est.quotedAmt.toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-muted-foreground text-[12px]">{est.expiryDate}</td>
                       <td className="p-3 border-r border-border text-muted-foreground text-[10px]">{est.terms}</td>
                       <td className="p-3 border-r border-border text-center whitespace-nowrap">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 border uppercase ${
+                        <span className={`text-[10px] font-semibold px-2 py-0.5 border uppercase ${
                           est.status === 'ACCEPTED_BY_CLIENT' ? 'bg-success/10 text-success border-success/20' :
                           est.status === 'SENT_TO_CLIENT' ? 'bg-primary/5 text-primary border-primary/30' : 'bg-muted/30 text-foreground border-border'
                         }`}>
@@ -544,7 +544,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                           {est.status === 'DRAFT_ESTIMATE' && (
                             <button
                               onClick={() => handleEstimateAction(est.id, 'SEND')}
-                              className="bg-primary text-primary-foreground hover:bg-primary/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                              className="bg-primary text-primary-foreground hover:bg-primary/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider cursor-pointer"
                             >
                               SEND
                             </button>
@@ -552,12 +552,12 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                           {est.status !== 'CONVERTED_TO_INVOICE' ? (
                             <button
                               onClick={() => handleEstimateAction(est.id, 'CONVERT')}
-                              className="bg-card hover:bg-muted/40 text-foreground border border-border px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                              className="bg-card hover:bg-muted/40 text-foreground border border-border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider cursor-pointer"
                             >
                               CONVERT
                             </button>
                           ) : (
-                            <span className="text-[10px] text-success font-bold flex items-center gap-1">
+                            <span className="text-[10px] text-success font-semibold flex items-center gap-1">
                               <CheckCircle2 className="w-3.5 h-3.5 text-success" />
                               INVOICED
                             </span>
@@ -580,8 +580,8 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-b border-border">
             <div className="p-4 border-r border-border bg-card flex flex-col justify-between">
               <div className="flex items-center justify-between border-b border-border pb-2">
-                <span className="text-[11px] font-bold text-muted-foreground uppercase">TOTAL CUSTOMERS</span>
-                <span className="text-[9px] border border-border px-1.5 uppercase font-bold">CUS_REG</span>
+                <span className="text-[11px] font-semibold text-muted-foreground uppercase">TOTAL CUSTOMERS</span>
+                <span className="text-[9px] border border-border px-1.5 uppercase font-semibold">CUS_REG</span>
               </div>
               <div className="py-4 flex items-baseline justify-between">
                 <span className="text-3xl font-semibold font-sans leading-none tracking-tight">342</span>
@@ -589,14 +589,14 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
               </div>
               <div className="text-[10px] text-muted-foreground border-t border-border pt-2 flex justify-between tabular-nums">
                 <span>VERIFIED PROFILES</span>
-                <span className="font-bold">100%</span>
+                <span className="font-semibold">100%</span>
               </div>
             </div>
 
             <div className="p-4 border-r border-border bg-card flex flex-col justify-between">
               <div className="flex items-center justify-between border-b border-border pb-2">
-                <span className="text-[11px] font-bold text-muted-foreground uppercase">ACTIVE SUBSCRIPTIONS</span>
-                <span className="text-[9px] bg-primary text-primary-foreground px-1.5 uppercase font-bold">RUNNING</span>
+                <span className="text-[11px] font-semibold text-muted-foreground uppercase">ACTIVE SUBSCRIPTIONS</span>
+                <span className="text-[9px] bg-primary text-primary-foreground px-1.5 uppercase font-semibold">RUNNING</span>
               </div>
               <div className="py-4 flex items-baseline justify-between">
                 <span className="text-3xl font-semibold font-sans leading-none tracking-tight">48</span>
@@ -604,29 +604,29 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
               </div>
               <div className="text-[10px] text-muted-foreground border-t border-border pt-2 flex justify-between tabular-nums">
                 <span>AUTOPAY ENROLLED</span>
-                <span className="font-bold">46 / 48</span>
+                <span className="font-semibold">46 / 48</span>
               </div>
             </div>
 
             <div className="p-4 border-r border-border bg-card flex flex-col justify-between">
               <div className="flex items-center justify-between border-b border-border pb-2">
-                <span className="text-[11px] font-bold text-muted-foreground uppercase">PROJECTED MRR</span>
-                <span className="text-[9px] border border-border px-1.5 uppercase font-bold">FORECAST</span>
+                <span className="text-[11px] font-semibold text-muted-foreground uppercase">PROJECTED MRR</span>
+                <span className="text-[9px] border border-border px-1.5 uppercase font-semibold">FORECAST</span>
               </div>
               <div className="py-4 flex items-baseline justify-between">
                 <span className="text-xl font-semibold font-sans leading-none tracking-tight">$14,850.00</span>
-                <span className="text-[10px] text-success font-bold tabular-nums">+8.4%</span>
+                <span className="text-[10px] text-success font-semibold tabular-nums">+8.4%</span>
               </div>
               <div className="text-[10px] text-muted-foreground border-t border-border pt-2 flex justify-between tabular-nums">
                 <span>CYCLE VELOCITY</span>
-                <span className="font-bold">14 DAYS</span>
+                <span className="font-semibold">14 DAYS</span>
               </div>
             </div>
 
             <div className="p-4 bg-card flex flex-col justify-between">
               <div className="flex items-center justify-between border-b border-border pb-2">
-                <span className="text-[11px] font-bold text-muted-foreground uppercase">AVG ORDER VALUE</span>
-                <span className="text-[9px] border border-border px-1.5 uppercase font-bold">AOV // METRIC</span>
+                <span className="text-[11px] font-semibold text-muted-foreground uppercase">AVG ORDER VALUE</span>
+                <span className="text-[9px] border border-border px-1.5 uppercase font-semibold">AOV // METRIC</span>
               </div>
               <div className="py-4 flex items-baseline justify-between">
                 <span className="text-xl font-semibold font-sans leading-none tracking-tight">$126.40</span>
@@ -634,7 +634,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
               </div>
               <div className="text-[10px] text-muted-foreground border-t border-border pt-2 flex justify-between tabular-nums">
                 <span>TICKET VARIANCE</span>
-                <span className="font-bold">± 4.2%</span>
+                <span className="font-semibold">± 4.2%</span>
               </div>
             </div>
           </div>
@@ -642,30 +642,30 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
           {/* BATCH OPERATIONS CONTROLLER */}
           <div className="border-b border-border bg-muted/40 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-widest">BATCH OPERATIONS &gt;&gt;</span>
+              <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">BATCH OPERATIONS &gt;&gt;</span>
               <button 
                 onClick={() => alert('Compiling bulk debtor statement notices.')}
-                className="bg-card hover:bg-muted border border-border px-3 py-1 font-bold text-[10px] uppercase cursor-pointer"
+                className="bg-card hover:bg-muted border border-border px-3 py-1 font-semibold text-[10px] uppercase cursor-pointer"
               >
                 GENERATE STATEMENTS
               </button>
               <button 
                 onClick={() => alert('Batch card direct debit scheduled.')}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-3 py-1 font-bold text-[10px] uppercase cursor-pointer"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-3 py-1 font-semibold text-[10px] uppercase cursor-pointer"
               >
                 BATCH PROCESS AUTOPAY
               </button>
             </div>
             <div className="flex items-center gap-3 text-[10px] text-muted-foreground tabular-nums">
               <span>LAST_LEDGER_SYNC: <strong className="text-foreground">14:18:22 UTC</strong></span>
-              <span className="bg-card border border-border px-1.5 py-0.5 text-foreground font-bold">QUEUE: 00 PENDING</span>
+              <span className="bg-card border border-border px-1.5 py-0.5 text-foreground font-semibold">QUEUE: 00 PENDING</span>
             </div>
           </div>
 
           {/* SCHEDULING ACTION FILTER STRIP */}
           <div className="border-b border-border p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card">
             <div className="flex items-center gap-2 flex-1 max-w-xl">
-              <span className="text-muted-foreground text-[10px] font-bold uppercase">SEARCH:</span>
+              <span className="text-muted-foreground text-[10px] font-semibold uppercase">SEARCH:</span>
               <div className="relative flex-1">
                 <input 
                   value={searchQuery}
@@ -678,7 +678,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
             </div>
             <button 
               onClick={() => alert('New recurring scheduler created.')}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 font-bold text-xs uppercase tracking-wider cursor-pointer"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 font-semibold text-[13px] uppercase tracking-wider cursor-pointer"
             >
               + NEW RECURRING SCHEDULE
             </button>
@@ -689,7 +689,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
             <div className="border border-border overflow-x-auto">
               <table className="w-full border-collapse text-left text-[13px] text-foreground">
                 <thead>
-                  <tr className="bg-muted/40 border-b border-border font-bold uppercase">
+                  <tr className="bg-muted/40 border-b border-border font-semibold uppercase">
                     <th className="p-3 border-r border-border w-24">PROFILE ID</th>
                     <th className="p-3 border-r border-border min-w-[180px]">CUSTOMER &amp; PET</th>
                     <th className="p-3 border-r border-border min-w-[220px]">SERVICE TEMPLATE / ADD-ONS</th>
@@ -707,8 +707,8 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                     return !q || rec.customer.toLowerCase().includes(q) || rec.pet.toLowerCase().includes(q) || rec.service.toLowerCase().includes(q);
                   }).map((item) => (
                     <tr key={item.id} className="hover:bg-muted/30 transition-colors">
-                      <td className="p-3 border-r border-border font-bold tabular-nums">{item.id}</td>
-                      <td className="p-3 border-r border-border font-bold uppercase leading-tight">
+                      <td className="p-3 border-r border-border font-semibold tabular-nums">{item.id}</td>
+                      <td className="p-3 border-r border-border font-semibold uppercase leading-tight">
                         <div>{item.customer}</div>
                         <div className="text-[10px] text-muted-foreground font-normal mt-0.5">{item.pet}</div>
                       </td>
@@ -717,24 +717,24 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                         <div className="text-[9px] text-muted-foreground/70 tabular-nums mt-0.5 uppercase">SKU: {item.sku}</div>
                       </td>
                       <td className="p-3 border-r border-border text-center">
-                        <span className="border border-border px-2 py-0.5 font-bold text-[10px]">
+                        <span className="border border-border px-2 py-0.5 font-semibold text-[10px]">
                           {item.frequency}
                         </span>
                       </td>
                       <td className="p-3 border-r border-border leading-tight tabular-nums text-muted-foreground">
-                        <div className="font-bold">{item.nextBilling}</div>
+                        <div className="font-semibold">{item.nextBilling}</div>
                         <div className="text-[9px] text-muted-foreground/70">{item.daysDelta}</div>
                       </td>
                       <td className="p-3 border-r border-border tabular-nums text-muted-foreground text-[11px]">
                         <div className="flex items-center gap-1">
                           <CreditCard className="w-3.5 h-3.5 text-muted-foreground" />
                           <span>{item.cardOnFile}</span>
-                          <span className="text-[9px] border border-border px-1 leading-none font-bold bg-muted/40">{item.cardBrand}</span>
+                          <span className="text-[9px] border border-border px-1 leading-none font-semibold bg-muted/40">{item.cardBrand}</span>
                         </div>
                       </td>
-                      <td className="p-3 border-r border-border text-right font-bold tabular-nums text-foreground">${item.amount.toFixed(2)}</td>
+                      <td className="p-3 border-r border-border text-right font-semibold tabular-nums text-foreground">${item.amount.toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-center whitespace-nowrap">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 border ${
+                        <span className={`text-[10px] font-semibold px-2 py-0.5 border ${
                           item.autopay === 'ENABLED' ? 'bg-success/10 text-success border-success/20' :
                           item.autopay === 'PAUSED' ? 'bg-warning/10 text-warning border-warning/20' : 'bg-muted/30 text-foreground border-border'
                         }`}>
@@ -745,13 +745,13 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                         <div className="flex items-center justify-center gap-1.5">
                           <button
                             onClick={() => handleRecurringRunNow(item.id)}
-                            className="bg-primary text-primary-foreground hover:bg-primary/90 px-2 py-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                            className="bg-primary text-primary-foreground hover:bg-primary/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider cursor-pointer"
                           >
                             RUN NOW
                           </button>
                           <button
                             onClick={() => alert(`Editing contract settings for ${item.id}.`)}
-                            className="border border-border bg-card hover:bg-muted/40 px-2 py-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                            className="border border-border bg-card hover:bg-muted/40 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider cursor-pointer"
                           >
                             EDIT
                           </button>
@@ -773,76 +773,76 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
           <div className="grid grid-cols-1 md:grid-cols-5 border-b border-border">
             <div className="p-3.5 border-r border-border flex flex-col justify-between">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold text-muted-foreground uppercase">TOTAL OUTSTANDING AR</span>
-                <span className="text-[9px] border border-border px-1 font-bold">[TOTAL]</span>
+                <span className="text-[10px] font-semibold text-muted-foreground uppercase">TOTAL OUTSTANDING AR</span>
+                <span className="text-[9px] border border-border px-1 font-semibold">[TOTAL]</span>
               </div>
               <div className="my-3">
-                <div className="text-xl font-bold tracking-tight">$8,720.50</div>
+                <div className="text-xl font-semibold tracking-tight">$8,720.50</div>
                 <div className="text-[10px] text-muted-foreground uppercase mt-0.5">09 INVOICES UNSETTLED</div>
               </div>
               <div className="border-t border-border pt-2 flex justify-between text-[11px]">
                 <span>100% OF REVENUE OPEN</span>
-                <span className="font-bold text-success">AUDIT OK</span>
+                <span className="font-semibold text-success">AUDIT OK</span>
               </div>
             </div>
 
             <div className="p-3.5 border-r border-border flex flex-col justify-between">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold text-muted-foreground uppercase">CURRENT NET-30</span>
-                <span className="text-[9px] border border-border px-1 font-bold">[COMPLIANT]</span>
+                <span className="text-[10px] font-semibold text-muted-foreground uppercase">CURRENT NET-30</span>
+                <span className="text-[9px] border border-border px-1 font-semibold">[COMPLIANT]</span>
               </div>
               <div className="my-3">
-                <div className="text-xl font-bold tracking-tight">$6,380.00</div>
+                <div className="text-xl font-semibold tracking-tight">$6,380.00</div>
                 <div className="text-[10px] text-muted-foreground uppercase mt-0.5">06 INVOICES TERMS COMPLIANT</div>
               </div>
               <div className="border-t border-border pt-2 flex justify-between text-[11px]">
                 <span>EXPOSURE: 73.1%</span>
-                <span className="font-bold text-foreground">[STANDARD]</span>
+                <span className="font-semibold text-foreground">[STANDARD]</span>
               </div>
             </div>
 
             <div className="p-3.5 border-r border-border flex flex-col justify-between">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold text-muted-foreground uppercase">PAST DUE 1-30 DAYS</span>
-                <span className="text-[9px] bg-primary text-primary-foreground px-1 font-bold">[AGING]</span>
+                <span className="text-[10px] font-semibold text-muted-foreground uppercase">PAST DUE 1-30 DAYS</span>
+                <span className="text-[9px] bg-primary text-primary-foreground px-1 font-semibold">[AGING]</span>
               </div>
               <div className="my-3">
-                <div className="text-xl font-bold tracking-tight text-destructive">$1,420.00</div>
+                <div className="text-xl font-semibold tracking-tight text-destructive">$1,420.00</div>
                 <div className="text-[10px] text-muted-foreground uppercase mt-0.5">02 INVOICES AGING DELAY</div>
               </div>
               <div className="border-t border-border pt-2 flex justify-between text-[11px]">
                 <span>STAGE 1 DUNNING SENT</span>
-                <span className="font-bold text-destructive">RECOVERY ON</span>
+                <span className="font-semibold text-destructive">RECOVERY ON</span>
               </div>
             </div>
 
             <div className="p-3.5 border-r border-border flex flex-col justify-between">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold text-muted-foreground uppercase">CRITICAL (&gt;60D)</span>
-                <span className="text-[9px] bg-primary text-primary-foreground px-1 font-bold">[ALERT]</span>
+                <span className="text-[10px] font-semibold text-muted-foreground uppercase">CRITICAL (&gt;60D)</span>
+                <span className="text-[9px] bg-primary text-primary-foreground px-1 font-semibold">[ALERT]</span>
               </div>
               <div className="my-3">
-                <div className="text-xl font-bold tracking-tight text-destructive">$920.50</div>
+                <div className="text-xl font-semibold tracking-tight text-destructive">$920.50</div>
                 <div className="text-[10px] text-muted-foreground uppercase mt-0.5">01 INVOICE OVERDUE SEVERE</div>
               </div>
               <div className="border-t border-border pt-2 flex justify-between text-[11px]">
                 <span>LEGAL / DIRECT SUSPEND</span>
-                <span className="font-bold text-destructive">ESCALATE</span>
+                <span className="font-semibold text-destructive">ESCALATE</span>
               </div>
             </div>
 
             <div className="p-3.5 flex flex-col justify-between">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold text-muted-foreground uppercase">AUTOPAY PROFILES</span>
-                <span className="text-[9px] border border-border px-1 font-bold">[STRIPE CC]</span>
+                <span className="text-[10px] font-semibold text-muted-foreground uppercase">AUTOPAY PROFILES</span>
+                <span className="text-[9px] border border-border px-1 font-semibold">[STRIPE CC]</span>
               </div>
               <div className="my-3">
-                <div className="text-xl font-bold tracking-tight">7 / 9</div>
+                <div className="text-xl font-semibold tracking-tight">7 / 9</div>
                 <div className="text-[10px] text-muted-foreground uppercase mt-0.5">TOKENIZED VAULT READY (77.7%)</div>
               </div>
               <div className="border-t border-border pt-2 flex justify-between text-[11px]">
                 <span>DIRECT PULL CAPABLE</span>
-                <span className="font-bold text-foreground">$7,630.50 CAP</span>
+                <span className="font-semibold text-foreground">$7,630.50 CAP</span>
               </div>
             </div>
           </div>
@@ -854,20 +854,20 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                 onClick={() => {
                   alert('Bulk card payments initialized across tokenized active profiles.\nStripe Elements authorized $7,630.50.');
                 }}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-3.5 py-1.5 font-bold uppercase text-[10px] tracking-wider cursor-pointer flex items-center gap-1.5"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-3.5 py-1.5 font-semibold uppercase text-[10px] tracking-wider cursor-pointer flex items-center gap-1.5"
               >
                 <CreditCard className="w-3.5 h-3.5" />
                 <span>BATCH CHARGE CARDS ON FILE</span>
               </button>
               <button 
                 onClick={() => alert('Dunning system dispatched email and SMS balance demand templates to 3 past due accounts.')}
-                className="bg-card hover:bg-muted/40 border border-border text-foreground px-3.5 py-1.5 font-bold uppercase text-[10px] tracking-wider cursor-pointer flex items-center gap-1.5"
+                className="bg-card hover:bg-muted/40 border border-border text-foreground px-3.5 py-1.5 font-semibold uppercase text-[10px] tracking-wider cursor-pointer flex items-center gap-1.5"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>SEND PAYMENT REMINDER BLAST</span>
               </button>
             </div>
-            <span className="text-[11px] text-muted-foreground font-bold bg-card border border-border px-2 py-1">
+            <span className="text-[11px] text-muted-foreground font-semibold bg-card border border-border px-2 py-1">
               PROVISION RATE: 2.11% RISK RESERVE ACTIVE
             </span>
           </div>
@@ -877,7 +877,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
             <div className="border border-border overflow-x-auto">
               <table className="w-full border-collapse text-left text-[13px] text-foreground">
                 <thead>
-                  <tr className="bg-muted/40 border-b border-border font-bold uppercase">
+                  <tr className="bg-muted/40 border-b border-border font-semibold uppercase">
                     <th className="p-3 border-r border-border w-8 text-center">
                       <input type="checkbox" defaultChecked className="h-3 w-3 border-border text-foreground" />
                     </th>
@@ -888,7 +888,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                     <th className="p-3 border-r border-border">BILLED LINE ITEMS</th>
                     <th className="p-3 border-r border-border text-right">TOTAL</th>
                     <th className="p-3 border-r border-border text-right">PAID</th>
-                    <th className="p-3 border-r border-border text-right font-bold bg-muted/30">BALANCE DUE</th>
+                    <th className="p-3 border-r border-border text-right font-semibold bg-muted/30">BALANCE DUE</th>
                     <th className="p-3 border-r border-border">AUTOPAY STATUS</th>
                     <th className="p-3 border-r border-border text-center">STATUS</th>
                     <th className="p-3 text-center">ACTIONS</th>
@@ -901,13 +901,13 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                         <input type="checkbox" defaultChecked className="h-3 w-3 border-border text-foreground" />
                       </td>
                       <td className="p-3 border-r border-border">
-                        <div className="font-bold">{inv.id}</div>
+                        <div className="font-semibold">{inv.id}</div>
                         <div className="text-[10px] text-muted-foreground uppercase mt-0.5">{inv.debtor} • {inv.pet}</div>
                       </td>
                       <td className="p-3 border-r border-border text-[12px] text-muted-foreground">{inv.issueDate}</td>
                       <td className="p-3 border-r border-border text-[12px] text-muted-foreground">{inv.dueDate}</td>
                       <td className="p-3 border-r border-border whitespace-nowrap">
-                        <span className={`text-[10px] font-bold px-1.5 py-0.5 border ${
+                        <span className={`text-[10px] font-semibold px-1.5 py-0.5 border ${
                           inv.delta.includes('OVERDUE') ? 'bg-red-600 text-white border-red-700' :
                           inv.delta.includes('PAST') ? 'bg-warning/10 text-warning border-warning/20' : 'bg-muted/30 text-foreground border-border'
                         }`}>
@@ -915,13 +915,13 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                         </span>
                       </td>
                       <td className="p-3 border-r border-border text-muted-foreground truncate max-w-[200px]" title={inv.items}>{inv.items}</td>
-                      <td className="p-3 border-r border-border text-right tabular-nums font-bold">${inv.total.toFixed(2)}</td>
+                      <td className="p-3 border-r border-border text-right tabular-nums font-semibold">${inv.total.toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-right tabular-nums text-muted-foreground">${inv.paid.toFixed(2)}</td>
-                      <td className="p-3 border-r border-border text-right tabular-nums font-bold bg-muted/30 text-destructive">${(inv.total - inv.paid).toFixed(2)}</td>
+                      <td className="p-3 border-r border-border text-right tabular-nums font-semibold bg-muted/30 text-destructive">${(inv.total - inv.paid).toFixed(2)}</td>
                       <td className="p-3 border-r border-border text-center text-[10px] text-muted-foreground uppercase tabular-nums">{inv.autopay}</td>
                       <td className="p-3 border-r border-border text-center whitespace-nowrap">
-                        <span className={`text-[10px] font-bold px-1.5 py-0.5 border uppercase ${
-                          inv.status.includes('CRITICAL') ? 'bg-destructive/5 text-destructive border-destructive/30' : 'bg-warning/10 text-warning border-warning/20 font-bold'
+                        <span className={`text-[10px] font-semibold px-1.5 py-0.5 border uppercase ${
+                          inv.status.includes('CRITICAL') ? 'bg-destructive/5 text-destructive border-destructive/30' : 'bg-warning/10 text-warning border-warning/20 font-semibold'
                         }`}>
                           {inv.status}
                         </span>
@@ -931,14 +931,14 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                           {inv.autopay.includes('YES') ? (
                             <button 
                               onClick={() => alert(`Stripe Card authorized for $${inv.total - inv.paid}.`)}
-                              className="bg-primary text-primary-foreground hover:bg-primary/90 px-2 py-0.5 font-bold uppercase tracking-wider cursor-pointer"
+                              className="bg-primary text-primary-foreground hover:bg-primary/90 px-2 py-0.5 font-semibold uppercase tracking-wider cursor-pointer"
                             >
                               CHARGE
                             </button>
                           ) : (
                             <button 
                               onClick={() => alert(`Dunning demand letter compiled and sent to ${inv.debtor}.`)}
-                              className="border border-border bg-card hover:bg-muted/40 text-foreground px-2 py-0.5 font-bold uppercase tracking-wider cursor-pointer"
+                              className="border border-border bg-card hover:bg-muted/40 text-foreground px-2 py-0.5 font-semibold uppercase tracking-wider cursor-pointer"
                             >
                               DUN
                             </button>
@@ -955,8 +955,8 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
           {/* LOWER STATEMENT TRIGGERS */}
           <div className="p-4 border-t border-border bg-muted/30 flex flex-col md:flex-row md:items-center justify-between gap-4 text-[12px]">
             <div className="flex flex-col gap-1.5 flex-1 max-w-2xl">
-              <span className="font-bold text-foreground">AGING CATEGORY COMPOSITION ALLOCATION (GAAP SPEC):</span>
-              <div className="h-6 w-full border border-border p-0.5 flex bg-card text-[10px] select-none font-bold text-center">
+              <span className="font-semibold text-foreground">AGING CATEGORY COMPOSITION ALLOCATION (GAAP SPEC):</span>
+              <div className="h-6 w-full border border-border p-0.5 flex bg-card text-[10px] select-none font-semibold text-center">
                 <div className="h-full bg-primary text-primary-foreground flex items-center justify-center" style={{ width: '73.1%' }}>
                   73.1% NET-30
                 </div>
@@ -971,13 +971,13 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => alert('Debtor AR aging schedule report exported to CSV.')}
-                className="bg-card hover:bg-muted text-foreground border border-border px-4 py-2 uppercase font-bold tracking-wider cursor-pointer"
+                className="bg-card hover:bg-muted text-foreground border border-border px-4 py-2 uppercase font-semibold tracking-wider cursor-pointer"
               >
                 EXPORT AR SCHEDULE
               </button>
               <button 
                 onClick={() => alert('Risk mitigation provision adjustments recalculated.')}
-                className="bg-black hover:bg-muted text-white border border-border px-4 py-2 uppercase font-bold tracking-wider cursor-pointer"
+                className="bg-black hover:bg-muted text-white border border-border px-4 py-2 uppercase font-semibold tracking-wider cursor-pointer"
               >
                 RECONCILE BAD-DEBT GL
               </button>
@@ -993,7 +993,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
           <div className="p-4 bg-muted/30 border-b border-border flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 flex-1">
               <div className="flex items-center border border-border bg-card px-3 py-1.5 gap-2">
-                <span className="text-[11px] text-muted-foreground font-bold">CLIENT REFERENCE:</span>
+                <span className="text-[11px] text-muted-foreground font-semibold">CLIENT REFERENCE:</span>
                 <select
                   value={selectedStatementCustomer}
                   onChange={(e) => setSelectedStatementCustomer(e.target.value)}
@@ -1006,7 +1006,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                 </select>
               </div>
               <div className="flex items-center border border-border bg-card px-3 py-1.5 gap-2">
-                <span className="text-[11px] text-muted-foreground font-bold">PERIOD RANGE:</span>
+                <span className="text-[11px] text-muted-foreground font-semibold">PERIOD RANGE:</span>
                 <select
                   value={statementRange}
                   onChange={(e) => setStatementRange(e.target.value)}
@@ -1035,22 +1035,22 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                   </p>
                 </div>
                 <div className="text-right space-y-1 tabular-nums text-muted-foreground">
-                  <div className="font-bold text-foreground uppercase">RECONCILED ACCRUED SPEC</div>
+                  <div className="font-semibold text-foreground uppercase">RECONCILED ACCRUED SPEC</div>
                   <div>GENERATED: 2025-05-12 14:24 UTC</div>
-                  <div>ACCOUNT ID: <span className="font-bold text-foreground uppercase">REF-CUS-882194</span></div>
+                  <div>ACCOUNT ID: <span className="font-semibold text-foreground uppercase">REF-CUS-882194</span></div>
                 </div>
               </div>
 
               {/* TARGET DETAILS */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs border-b border-border pb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-[13px] border-b border-border pb-6">
                 <div className="space-y-1">
-                  <div className="text-[10px] text-muted-foreground font-bold uppercase">STATEMENT TO // RECIPIENT</div>
+                  <div className="text-[10px] text-muted-foreground font-semibold uppercase">STATEMENT TO // RECIPIENT</div>
                   <div className="font-semibold text-foreground uppercase">{selectedStatementCustomer}</div>
                   <div className="text-muted-foreground">PRECIPIENT CLIENT STATUS: ACTIVE MEMBER</div>
                   <div className="text-muted-foreground text-[12px]">REGISTERED TERMINAL VERIFIED</div>
                 </div>
                 <div className="space-y-1 sm:text-right tabular-nums">
-                  <div className="text-[9px] text-muted-foreground font-bold uppercase">SUMMARY BALANCES</div>
+                  <div className="text-[9px] text-muted-foreground font-semibold uppercase">SUMMARY BALANCES</div>
                   <div className="text-muted-foreground">TOTAL CHARGES THIS PERIOD: <strong className="text-foreground">$125.00</strong></div>
                   <div className="text-muted-foreground">TOTAL PAYMENTS SETTLED: <strong className="text-foreground">($125.00)</strong></div>
                   <div className="text-foreground font-semibold text-sm pt-1">
@@ -1063,7 +1063,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
               <div className="border border-border">
                 <table className="w-full border-collapse text-left text-[13px] text-foreground">
                   <thead>
-                    <tr className="bg-muted/40 border-b border-border font-bold uppercase">
+                    <tr className="bg-muted/40 border-b border-border font-semibold uppercase">
                       <th className="p-3 border-r border-border">POST DATE</th>
                       <th className="p-3 border-r border-border">REFERENCE KEY</th>
                       <th className="p-3 border-r border-border">TRANSACTION DESCRIPTION</th>
@@ -1079,7 +1079,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                       <td className="p-3 border-r border-border">INVOICE INV-2025-074 // FULL GROOMING SERVICE</td>
                       <td className="p-3 border-r border-border text-right">$125.00</td>
                       <td className="p-3 border-r border-border text-right">—</td>
-                      <td className="p-3 text-right font-bold">$125.00</td>
+                      <td className="p-3 text-right font-semibold">$125.00</td>
                     </tr>
                     <tr className="hover:bg-muted/30">
                       <td className="p-3 border-r border-border">2025-04-10</td>
@@ -1087,7 +1087,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                       <td className="p-3 border-r border-border">CARD SETTLEMENT Visa •••• 4242</td>
                       <td className="p-3 border-r border-border text-right">—</td>
                       <td className="p-3 border-r border-border text-right">($125.00)</td>
-                      <td className="p-3 text-right font-bold">$0.00</td>
+                      <td className="p-3 text-right font-semibold">$0.00</td>
                     </tr>
                     <tr className="hover:bg-muted/30 text-destructive">
                       <td className="p-3 border-r border-border">2025-05-10</td>
@@ -1095,7 +1095,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
                       <td className="p-3 border-r border-border">INVOICE TARGET // UNPAID TERM OUTSTANDING</td>
                       <td className="p-3 border-r border-border text-right">$115.00</td>
                       <td className="p-3 border-r border-border text-right">—</td>
-                      <td className="p-3 text-right font-bold">$115.00</td>
+                      <td className="p-3 text-right font-semibold">$115.00</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1110,13 +1110,13 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({ onNavigateSection })
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => alert(`Transmitting statement package for ${selectedStatementCustomer} via SMS/Email portal.`)}
-                  className="bg-card hover:bg-muted text-foreground border border-border px-4 py-2 text-[12px] uppercase font-bold tracking-wider cursor-pointer"
+                  className="bg-card hover:bg-muted text-foreground border border-border px-4 py-2 text-[12px] uppercase font-semibold tracking-wider cursor-pointer"
                 >
                   TRANSMIT STATEMENT PORTAL
                 </button>
                 <button
                   onClick={() => alert(`Statement compilation PDF download initialized for ${selectedStatementCustomer}.`)}
-                  className="bg-black hover:bg-muted text-white border border-border px-4 py-2 text-[12px] uppercase font-bold tracking-wider cursor-pointer"
+                  className="bg-black hover:bg-muted text-white border border-border px-4 py-2 text-[12px] uppercase font-semibold tracking-wider cursor-pointer"
                 >
                   DOWNLOAD COMPILED PDF
                 </button>

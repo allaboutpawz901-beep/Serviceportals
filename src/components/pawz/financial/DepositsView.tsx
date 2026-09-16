@@ -368,45 +368,45 @@ export const DepositsView: React.FC<DepositsViewProps> = ({ onNavigateSection })
               <div className="bg-muted/40 border-b border-border px-4 py-2 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-[11px] bg-primary text-primary-foreground px-1.5 py-0.5">CFG</span>
-                  <span className="text-[12px] font-bold text-foreground uppercase">DEPOSIT ESCROW POLICY SETTINGS</span>
+                  <span className="text-[12px] font-semibold text-foreground uppercase">DEPOSIT ESCROW POLICY SETTINGS</span>
                 </div>
                 <span className="text-[10px] text-muted-foreground">[SEC_ENFORCED]</span>
               </div>
-              <div className="p-4 space-y-4 text-xs text-foreground">
+              <div className="p-4 space-y-4 text-[13px] text-foreground">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
                   <div className="max-w-xl">
-                    <div className="font-bold text-foreground text-sm">24-Hour Cancellation Requirement Flag</div>
+                    <div className="font-semibold text-foreground text-sm">24-Hour Cancellation Requirement Flag</div>
                     <div className="text-[12px] text-muted-foreground/70 mt-1">
                       Appointments cancelled under 24 hours automatically tag the security escrow deposit as eligibility-forfeited.
                     </div>
                   </div>
                   <label className="flex items-center gap-2 cursor-pointer select-none">
                     <input defaultChecked className="w-4 h-4 rounded-md accent-black border border-border cursor-pointer" type="checkbox" />
-                    <span className="tabular-nums font-bold text-foreground">ENFORCE_24H</span>
+                    <span className="tabular-nums font-semibold text-foreground">ENFORCE_24H</span>
                   </label>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
                   <div className="max-w-xl">
-                    <div className="font-bold text-foreground text-sm">Automated Forfeit &amp; Ledger Allocation Rule</div>
+                    <div className="font-semibold text-foreground text-sm">Automated Forfeit &amp; Ledger Allocation Rule</div>
                     <div className="text-[12px] text-muted-foreground/70 mt-1">
                       Automatically converts unredeemed deposit amounts to General Salon Forfeit Revenue after appointment window expiration (+60m).
                     </div>
                   </div>
                   <label className="flex items-center gap-2 cursor-pointer select-none">
                     <input defaultChecked className="w-4 h-4 rounded-md accent-black border border-border cursor-pointer" type="checkbox" />
-                    <span className="tabular-nums font-bold text-foreground">AUTO_REVENUE_SWEEP</span>
+                    <span className="tabular-nums font-semibold text-foreground">AUTO_REVENUE_SWEEP</span>
                   </label>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="max-w-xl">
-                    <div className="font-bold text-foreground text-sm">PCI Card Tokenization &amp; Vaulting</div>
+                    <div className="font-semibold text-foreground text-sm">PCI Card Tokenization &amp; Vaulting</div>
                     <div className="text-[12px] text-muted-foreground/70 mt-1">
                       Retain customer billing instrument cryptographic tokens for remaining balance payment upon appointment completion.
                     </div>
                   </div>
                   <label className="flex items-center gap-2 cursor-pointer select-none">
                     <input defaultChecked className="w-4 h-4 rounded-md accent-black border border-border cursor-pointer" type="checkbox" />
-                    <span className="tabular-nums font-bold text-foreground">VAULT_ENABLED</span>
+                    <span className="tabular-nums font-semibold text-foreground">VAULT_ENABLED</span>
                   </label>
                 </div>
               </div>
@@ -426,7 +426,7 @@ export const DepositsView: React.FC<DepositsViewProps> = ({ onNavigateSection })
           <div className="border border-border bg-card flex flex-col justify-between">
             <div>
               <div className="bg-muted/40 border-b border-border px-4 py-2 flex items-center justify-between">
-                <span className="text-[12px] font-bold text-foreground uppercase">AUDIT LOG // DISPUTES</span>
+                <span className="text-[12px] font-semibold text-foreground uppercase">AUDIT LOG // DISPUTES</span>
                 <span className="text-[10px] text-muted-foreground">REALTIME_EVENT_BUS</span>
               </div>
               <div className="p-4 divide-y divide-border text-[12px] text-foreground">
@@ -435,28 +435,28 @@ export const DepositsView: React.FC<DepositsViewProps> = ({ onNavigateSection })
                     <span>EVENT #9921</span>
                     <span>13:58:12 UTC</span>
                   </div>
-                  <div className="font-bold text-foreground mt-1">FORFEIT: DEP-0439-K allocated to REV_ACCT_4100 ($50.00)</div>
+                  <div className="font-semibold text-foreground mt-1">FORFEIT: DEP-0439-K allocated to REV_ACCT_4100 ($50.00)</div>
                 </div>
                 <div className="py-2.5">
                   <div className="flex items-center justify-between text-muted-foreground/70 text-[10px]">
                     <span>EVENT #9920</span>
                     <span>11:22:04 UTC</span>
                   </div>
-                  <div className="font-bold text-foreground mt-1">APPLIED: DEP-0442-X settled against INV-891 ($75.00)</div>
+                  <div className="font-semibold text-foreground mt-1">APPLIED: DEP-0442-X settled against INV-891 ($75.00)</div>
                 </div>
                 <div className="py-2.5">
                   <div className="flex items-center justify-between text-muted-foreground/70 text-[10px]">
                     <span>EVENT #9919</span>
                     <span>08:22:15 UTC</span>
                   </div>
-                  <div className="font-bold text-foreground mt-1">INTAKE: DEP-0460-Z collected via ApplePay ($100.00)</div>
+                  <div className="font-semibold text-foreground mt-1">INTAKE: DEP-0460-Z collected via ApplePay ($100.00)</div>
                 </div>
               </div>
             </div>
             <div className="p-3 bg-muted/40 border-t border-border text-center">
               <button 
                 onClick={() => alert('Downloading deposit audit log CSV...')}
-                className="text-[12px] font-bold text-foreground hover:underline uppercase block w-full text-center"
+                className="text-[12px] font-semibold text-foreground hover:underline uppercase block w-full text-center"
               >
                 DOWNLOAD AUDIT MANIFEST (CSV) →
               </button>
@@ -472,11 +472,11 @@ export const DepositsView: React.FC<DepositsViewProps> = ({ onNavigateSection })
             <div className="bg-muted/40 border-b border-border p-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="font-medium text-[9px] bg-primary text-primary-foreground px-1.5 py-0.5 uppercase">Escrow Intake</span>
-                <span className="font-display text-xs font-semibold tracking-tight text-foreground">Collect New Deposit</span>
+                <span className="font-display text-[13px] font-semibold tracking-tight text-foreground">Collect New Deposit</span>
               </div>
               <button 
                 onClick={() => setShowCollectModal(false)}
-                className="text-[12px] font-bold text-foreground hover:bg-black hover:text-white px-2 py-0.5 border border-border cursor-pointer"
+                className="text-[12px] font-semibold text-foreground hover:bg-black hover:text-white px-2 py-0.5 border border-border cursor-pointer"
               >
                 [X]
               </button>
@@ -503,7 +503,7 @@ export const DepositsView: React.FC<DepositsViewProps> = ({ onNavigateSection })
               </div>
               <div>
                 <label className="block text-[11px] text-muted-foreground mb-1 uppercase">PAYMENT INTAKE CHANNEL //*</label>
-                <div className="grid grid-cols-3 gap-2 text-[11px] font-bold">
+                <div className="grid grid-cols-3 gap-2 text-[11px] font-semibold">
                   <button className="border border-border bg-primary text-primary-foreground p-2 text-center cursor-pointer" type="button">CARD ON FILE</button>
                   <button className="border border-border bg-card text-foreground p-2 text-center hover:bg-muted/40 cursor-pointer" type="button">TERMINAL</button>
                   <button className="border border-border bg-card text-foreground p-2 text-center hover:bg-muted/40 cursor-pointer" type="button">MANUAL LINK</button>

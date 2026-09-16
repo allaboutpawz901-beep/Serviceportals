@@ -167,7 +167,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
           <button
             type="button"
             onClick={handleToday}
-            className="px-3 py-1.5 rounded-xl border border-border bg-card hover:bg-muted/40 text-xs font-semibold text-foreground shadow-2xs transition cursor-pointer"
+            className="px-3 py-1.5 rounded-xl border border-border bg-card hover:bg-muted/40 text-[13px] font-semibold text-foreground shadow-2xs transition cursor-pointer"
           >
             Today
           </button>
@@ -191,7 +191,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
             </button>
           </div>
 
-          <h3 className="text-base font-bold text-foreground ml-1 tracking-tight">
+          <h3 className="text-base font-semibold text-foreground ml-1 tracking-tight">
             {currentTitle || 'May 16, 2025'}
           </h3>
         </div>
@@ -202,7 +202,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
           <select
             value={groomerFilter}
             onChange={(e) => setGroomerFilter(e.target.value)}
-            className="px-3 py-1.5 rounded-xl border border-border bg-card text-xs font-medium text-foreground focus:outline-none focus:border-primary shadow-2xs cursor-pointer"
+            className="px-3 py-1.5 rounded-xl border border-border bg-card text-[13px] font-medium text-foreground focus:outline-none focus:border-primary shadow-2xs cursor-pointer"
           >
             <option value="All">All Groomers</option>
             <option value="Sarah M.">Sarah M.</option>
@@ -214,7 +214,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-3 py-1.5 rounded-xl border border-border bg-card text-xs font-medium text-foreground focus:outline-none focus:border-primary shadow-2xs cursor-pointer"
+            className="px-3 py-1.5 rounded-xl border border-border bg-card text-[13px] font-medium text-foreground focus:outline-none focus:border-primary shadow-2xs cursor-pointer"
           >
             <option value="All">All Statuses</option>
             <option value="Scheduled">Scheduled</option>
@@ -231,7 +231,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
             <button
               type="button"
               onClick={() => handleChangeView('dayGridMonth')}
-              className={`px-3 py-1 text-xs font-semibold rounded-lg transition cursor-pointer ${
+              className={`px-3 py-1 text-[13px] font-semibold rounded-lg transition cursor-pointer ${
                 calendarView === 'dayGridMonth'
                   ? 'bg-card text-primary shadow-2xs'
                   : 'text-muted-foreground hover:text-foreground'
@@ -242,7 +242,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
             <button
               type="button"
               onClick={() => handleChangeView('timeGridWeek')}
-              className={`px-3 py-1 text-xs font-semibold rounded-lg transition cursor-pointer ${
+              className={`px-3 py-1 text-[13px] font-semibold rounded-lg transition cursor-pointer ${
                 calendarView === 'timeGridWeek'
                   ? 'bg-card text-primary shadow-2xs'
                   : 'text-muted-foreground hover:text-foreground'
@@ -253,7 +253,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
             <button
               type="button"
               onClick={() => handleChangeView('timeGridDay')}
-              className={`px-3 py-1 text-xs font-semibold rounded-lg transition cursor-pointer ${
+              className={`px-3 py-1 text-[13px] font-semibold rounded-lg transition cursor-pointer ${
                 calendarView === 'timeGridDay'
                   ? 'bg-card text-primary shadow-2xs'
                   : 'text-muted-foreground hover:text-foreground'
@@ -266,7 +266,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
           <button
             type="button"
             onClick={() => onAddAppointment()}
-            className="px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition cursor-pointer"
+            className="px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-xl text-[13px] font-semibold flex items-center gap-1.5 shadow-2xs transition cursor-pointer"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>Book Slot</span>
@@ -295,7 +295,7 @@ export const FullCalendarView: React.FC<FullCalendarViewProps> = ({
           eventClick={handleEventClick}
           select={handleDateSelect}
           height={680}
-          eventClassNames="cursor-pointer hover:opacity-90 font-medium text-xs rounded-md shadow-xs p-1"
+          eventClassNames="cursor-pointer hover:opacity-90 font-medium text-[13px] rounded-md shadow-xs p-1"
         />
       </div>
 

@@ -77,16 +77,16 @@ export const StatusLegendModal: React.FC<StatusLegendModalProps> = ({ onClose })
               <Sparkles className="w-5 h-5" />
             </span>
             <div>
-              <h2 className="text-xl font-bold text-foreground tracking-tight">
+              <h2 className="text-xl font-semibold text-foreground tracking-tight">
                 Appointment Status Legend
               </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
+              <p className="text-[13px] text-muted-foreground mt-0.5">
                 Lifecycle state definitions for the All About Pawz appointment schedule.
               </p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-muted/40 text-muted-foreground border border-border">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-semibold bg-muted/40 text-muted-foreground border border-border">
               <span className="w-1.5 h-1.5 rounded-full bg-success/100" />
               System v2.4 Spec
             </span>
@@ -108,11 +108,11 @@ export const StatusLegendModal: React.FC<StatusLegendModalProps> = ({ onClose })
             >
               <div className="flex items-center gap-3">
                 <span className={`w-2.5 h-2.5 rounded-full ${item.dotClass}`} />
-                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border ${item.badgeClass}`}>
+                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[13px] font-semibold border ${item.badgeClass}`}>
                   {item.status}
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground text-right">{item.desc}</p>
+              <p className="text-[13px] text-muted-foreground text-right">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -120,14 +120,14 @@ export const StatusLegendModal: React.FC<StatusLegendModalProps> = ({ onClose })
         {/* Live Table Row Preview */}
         <div className="border-t border-border pt-5 space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+            <h3 className="text-[13px] font-semibold uppercase tracking-wider text-muted-foreground">
               Live Table Appearance Example
             </h3>
-            <span className="text-xs text-muted-foreground/70">Row Context: Appointments Table</span>
+            <span className="text-[13px] text-muted-foreground/70">Row Context: Appointments Table</span>
           </div>
 
           <div className="bg-card rounded-2xl border border-border p-4 shadow-2xs overflow-x-auto">
-            <table className="w-full text-left text-xs">
+            <table className="w-full text-left text-[13px]">
               <thead>
                 <tr className="text-[11px] font-semibold text-muted-foreground/70 border-b border-border pb-2">
                   <th className="pb-2 font-medium">Date &amp; Time</th>
@@ -141,12 +141,12 @@ export const StatusLegendModal: React.FC<StatusLegendModalProps> = ({ onClose })
               <tbody className="divide-y divide-border text-foreground">
                 <tr>
                   <td className="py-3 text-muted-foreground">
-                    <span className="font-semibold text-foreground block text-xs">May 16, 2025</span>
+                    <span className="font-semibold text-foreground block text-[13px]">May 16, 2025</span>
                     8:30 AM (2.5 hrs)
                   </td>
                   <td className="py-3">
                     <div className="flex items-center gap-2.5">
-                      <span className="w-7 h-7 rounded-full bg-warning/10 flex items-center justify-center text-xs font-bold text-warning">SJ</span>
+                      <span className="w-7 h-7 rounded-full bg-warning/10 flex items-center justify-center text-[13px] font-semibold text-warning">SJ</span>
                       <div>
                         <span className="font-semibold text-foreground block leading-tight">Sarah Johnson</span>
                         <span className="text-[11px] text-muted-foreground/70">Buddy</span>
@@ -160,7 +160,7 @@ export const StatusLegendModal: React.FC<StatusLegendModalProps> = ({ onClose })
                       Scheduled
                     </span>
                   </td>
-                  <td className="py-3 text-right font-bold text-success">$25.00 <span className="text-[10px] text-muted-foreground/70 font-normal">Deposit</span></td>
+                  <td className="py-3 text-right font-semibold text-success">$25.00 <span className="text-[10px] text-muted-foreground/70 font-normal">Deposit</span></td>
                 </tr>
               </tbody>
             </table>
@@ -172,7 +172,7 @@ export const StatusLegendModal: React.FC<StatusLegendModalProps> = ({ onClose })
           <p className="text-[11px] text-muted-foreground/70">All About Pawz • Component Spec</p>
           <button
             onClick={onClose}
-            className="px-5 py-2 bg-primary hover:bg-primary/90 text-white rounded-xl text-xs font-semibold shadow-2xs transition cursor-pointer"
+            className="px-5 py-2 bg-primary hover:bg-primary/90 text-white rounded-xl text-[13px] font-semibold shadow-2xs transition cursor-pointer"
           >
             Close Guide
           </button>

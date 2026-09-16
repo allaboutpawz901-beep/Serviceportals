@@ -196,50 +196,50 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
 
         {/* Modal Body: Appointment Form */}
         {activeModal === 'appointment' && (
-          <form onSubmit={handleCreateAppointment} className="p-5 space-y-3.5 text-xs text-foreground">
+          <form onSubmit={handleCreateAppointment} className="p-5 space-y-3.5 text-[13px] text-foreground">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Pet Name</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Pet Name</label>
                 <input
                   type="text"
                   required
                   value={petName}
                   onChange={(e) => setPetName(e.target.value)}
                   placeholder="e.g. Buster"
-                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Breed</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Breed</label>
                 <input
                   type="text"
                   required
                   value={breed}
                   onChange={(e) => setBreed(e.target.value)}
                   placeholder="e.g. Golden Retriever"
-                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Client / Owner Name</label>
+              <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Client / Owner Name</label>
               <input
                 type="text"
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
                 placeholder="e.g. Sarah Johnson"
-                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Service Type</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Service Type</label>
                 <select
                   value={serviceName}
                   onChange={(e) => setServiceName(e.target.value)}
-                  className="w-full px-2 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold cursor-pointer"
+                  className="w-full px-2 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold cursor-pointer"
                 >
                   <option>Full Groom</option>
                   <option>Full Groom + De-Shed</option>
@@ -249,11 +249,11 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
                 </select>
               </div>
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Assigned Groomer</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Assigned Groomer</label>
                 <select
                   value={staffName}
                   onChange={(e) => setStaffName(e.target.value)}
-                  className="w-full px-2 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold cursor-pointer"
+                  className="w-full px-2 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold cursor-pointer"
                 >
                   <option>Sarah M. (Lead Groomer)</option>
                   <option>Mike R. (Stylist)</option>
@@ -265,28 +265,28 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Date &amp; Time</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Date &amp; Time</label>
                 <input
                   type="text"
                   value={time}
                   onChange={(e) => setTime(e.target.value)}
                   placeholder="e.g. 2:30 PM"
-                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Estimated Price ($)</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Estimated Price ($)</label>
                 <input
                   type="number"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
-                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Styling &amp; Handling Notes</label>
+              <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Styling &amp; Handling Notes</label>
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
@@ -300,13 +300,13 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-bold uppercase text-xs cursor-pointer"
+                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-semibold uppercase text-[13px] cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-1.5 border border-border bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase text-xs cursor-pointer"
+                className="px-4 py-1.5 border border-border bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase text-[13px] cursor-pointer"
               >
                 Save &amp; Confirm Booking
               </button>
@@ -316,21 +316,21 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
 
         {/* Modal Body: Customer Form */}
         {activeModal === 'customer' && (
-          <form onSubmit={handleCreateCustomer} className="p-5 space-y-3.5 text-xs text-foreground">
+          <form onSubmit={handleCreateCustomer} className="p-5 space-y-3.5 text-[13px] text-foreground">
             <div>
-              <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Full Name</label>
+              <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Full Name</label>
               <input
                 type="text"
                 required
                 value={custName}
                 onChange={(e) => setCustName(e.target.value)}
                 placeholder="e.g. Rachel Green"
-                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Email</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Email</label>
                 <input
                   type="email"
                   required
@@ -341,7 +341,7 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Phone</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Phone</label>
                 <input
                   type="tel"
                   required
@@ -353,26 +353,26 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
               </div>
             </div>
             <div>
-              <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Primary Pet(s)</label>
+              <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Primary Pet(s)</label>
               <input
                 type="text"
                 value={custPet}
                 onChange={(e) => setCustPet(e.target.value)}
                 placeholder="e.g. Chloe (Shih Tzu)"
-                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
               />
             </div>
             <div className="pt-2 border-t border-border flex items-center justify-end gap-2">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-bold uppercase text-xs cursor-pointer"
+                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-semibold uppercase text-[13px] cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-1.5 border border-border bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase text-xs cursor-pointer"
+                className="px-4 py-1.5 border border-border bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase text-[13px] cursor-pointer"
               >
                 Save Client Record
               </button>
@@ -382,45 +382,45 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
 
         {/* Modal Body: Pet Form */}
         {activeModal === 'pet' && (
-          <form onSubmit={handleCreatePet} className="p-5 space-y-3.5 text-xs text-foreground">
+          <form onSubmit={handleCreatePet} className="p-5 space-y-3.5 text-[13px] text-foreground">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Pet Name</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Pet Name</label>
                 <input
                   type="text"
                   required
                   value={newPetName}
                   onChange={(e) => setNewPetName(e.target.value)}
                   placeholder="e.g. Copper"
-                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Breed</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Breed</label>
                 <input
                   type="text"
                   required
                   value={newPetBreed}
                   onChange={(e) => setNewPetBreed(e.target.value)}
                   placeholder="e.g. Australian Shepherd"
-                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
                 />
               </div>
             </div>
             <div>
-              <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Owner Name</label>
+              <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Owner Name</label>
               <input
                 type="text"
                 required
                 value={newPetOwner}
                 onChange={(e) => setNewPetOwner(e.target.value)}
                 placeholder="e.g. Sarah Johnson"
-                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Age</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Age</label>
                 <input
                   type="text"
                   value={newPetAge}
@@ -429,7 +429,7 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Weight</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Weight</label>
                 <input
                   type="text"
                   value={newPetWeight}
@@ -442,13 +442,13 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-bold uppercase text-xs cursor-pointer"
+                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-semibold uppercase text-[13px] cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-1.5 border border-border bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase text-xs cursor-pointer"
+                className="px-4 py-1.5 border border-border bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase text-[13px] cursor-pointer"
               >
                 Save Pet Profile
               </button>
@@ -458,9 +458,9 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
 
         {/* Modal Body: Intake Form */}
         {activeModal === 'intake' && (
-          <div className="p-5 space-y-4 text-xs text-foreground tabular-nums">
+          <div className="p-5 space-y-4 text-[13px] text-foreground tabular-nums">
             <div className="p-3 bg-muted/30 border border-border space-y-1">
-              <p className="font-bold text-foreground uppercase">Rabies &amp; Bordetella Digital Waiver</p>
+              <p className="font-semibold text-foreground uppercase">Rabies &amp; Bordetella Digital Waiver</p>
               <p className="text-[11px] text-muted-foreground">
                 Verified veterinary authorization and de-matting liability release.
               </p>
@@ -469,14 +469,14 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
               <label className="flex items-center gap-2 p-2.5 border border-border bg-card cursor-pointer">
                 <input type="checkbox" defaultChecked className="rounded-md border-border accent-black" />
                 <div>
-                  <p className="font-bold text-foreground uppercase text-[11px]">Vaccinations Current</p>
+                  <p className="font-semibold text-foreground uppercase text-[11px]">Vaccinations Current</p>
                   <p className="text-[10px] text-muted-foreground">Rabies &amp; Bordetella verified within 12 mos</p>
                 </div>
               </label>
               <label className="flex items-center gap-2 p-2.5 border border-border bg-card cursor-pointer">
                 <input type="checkbox" defaultChecked className="rounded-md border-border accent-black" />
                 <div>
-                  <p className="font-bold text-foreground uppercase text-[11px]">De-Matting Authorization</p>
+                  <p className="font-semibold text-foreground uppercase text-[11px]">De-Matting Authorization</p>
                   <p className="text-[10px] text-muted-foreground">Humane restoration release signed</p>
                 </div>
               </label>
@@ -484,7 +484,7 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
             <div className="pt-2 border-t border-border flex justify-end">
               <button
                 onClick={onClose}
-                className="px-4 py-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase text-xs cursor-pointer border border-border"
+                className="px-4 py-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase text-[13px] cursor-pointer border border-border"
               >
                 Confirm &amp; File Waiver
               </button>
@@ -494,19 +494,19 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
 
         {/* Modal Body: Payment Form */}
         {activeModal === 'payment' && (
-          <form onSubmit={handleProcessPayment} className="p-5 space-y-3.5 text-xs text-foreground tabular-nums">
+          <form onSubmit={handleProcessPayment} className="p-5 space-y-3.5 text-[13px] text-foreground tabular-nums">
             <div>
-              <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Select Client / Order</label>
+              <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Select Client / Order</label>
               <input
                 type="text"
                 value={payClient}
                 onChange={(e) => setPayClient(e.target.value)}
-                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Amount Due ($)</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Amount Due ($)</label>
                 <input
                   type="text"
                   value={payAmount}
@@ -515,11 +515,11 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Method / Device</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Method / Device</label>
                 <select
                   value={payMethod}
                   onChange={(e) => setPayMethod(e.target.value)}
-                  className="w-full px-2 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold cursor-pointer"
+                  className="w-full px-2 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold cursor-pointer"
                 >
                   <option>WisePOS E Terminal #01</option>
                   <option>Apple Pay / Contactless</option>
@@ -532,13 +532,13 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-bold uppercase text-xs cursor-pointer"
+                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-semibold uppercase text-[13px] cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase text-xs cursor-pointer border border-border flex items-center gap-1.5"
+                className="px-4 py-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase text-[13px] cursor-pointer border border-border flex items-center gap-1.5"
               >
                 {paySuccess ? <Check className="w-3.5 h-3.5" /> : <DollarSign className="w-3.5 h-3.5" />}
                 <span>{paySuccess ? 'Transaction Approved!' : `Charge $${payAmount}`}</span>
@@ -549,32 +549,32 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
 
         {/* Modal Body: Invoice Form */}
         {activeModal === 'invoice' && (
-          <form onSubmit={handleCreateInvoice} className="p-5 space-y-3.5 text-xs text-foreground tabular-nums">
+          <form onSubmit={handleCreateInvoice} className="p-5 space-y-3.5 text-[13px] text-foreground tabular-nums">
             <div>
-              <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Recipient Client</label>
+              <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Recipient Client</label>
               <input
                 type="text"
                 value={invClient}
                 onChange={(e) => setInvClient(e.target.value)}
-                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Total Amount ($)</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Total Amount ($)</label>
                 <input
                   type="text"
                   value={invAmount}
                   onChange={(e) => setInvAmount(e.target.value)}
-                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold"
+                  className="w-full px-2.5 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold"
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-[10px] text-foreground mb-1">Payment Terms</label>
+                <label className="block font-semibold uppercase text-[10px] text-foreground mb-1">Payment Terms</label>
                 <select
                   value={invDue}
                   onChange={(e) => setInvDue(e.target.value)}
-                  className="w-full px-2 py-1.5 border border-border bg-card focus:outline-none text-foreground font-bold cursor-pointer"
+                  className="w-full px-2 py-1.5 border border-border bg-card focus:outline-none text-foreground font-semibold cursor-pointer"
                 >
                   <option>Due Upon Receipt</option>
                   <option>Net 15 Days</option>
@@ -586,13 +586,13 @@ export const QuickActionModals: React.FC<QuickActionModalsProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-bold uppercase text-xs cursor-pointer"
+                className="px-3.5 py-1.5 border border-border bg-card hover:bg-accent/50 font-semibold uppercase text-[13px] cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase text-xs cursor-pointer border border-border flex items-center gap-1.5"
+                className="px-4 py-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase text-[13px] cursor-pointer border border-border flex items-center gap-1.5"
               >
                 <Receipt className="w-3.5 h-3.5" />
                 <span>{invSuccess ? 'Invoice Dispatched!' : 'Send Invoice'}</span>

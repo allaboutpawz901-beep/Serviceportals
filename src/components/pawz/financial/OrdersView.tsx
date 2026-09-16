@@ -211,15 +211,15 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
       {/* Top Header */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-border pb-5">
         <div>
-          <div className="flex items-center gap-2 text-[10px] tabular-nums uppercase tracking-widest text-muted-foreground mb-1">
-            <span className="bg-primary text-primary-foreground px-1.5 py-0.5 font-bold">OMS // LIVE QUEUE</span>
+          <div className="flex items-center gap-2 text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground mb-1">
+            <span className="bg-primary text-primary-foreground px-1.5 py-0.5 font-semibold">OMS // LIVE QUEUE</span>
             <span>/</span>
-            <span className="text-foreground font-bold">STATION: MAIN-SALON-A</span>
+            <span className="text-foreground font-semibold">STATION: MAIN-SALON-A</span>
           </div>
           <h1 className="text-2xl font-semibold uppercase tracking-tight text-foreground">
             Orders &amp; Fulfillment
           </h1>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Manage customer retail orders, track warehouse picking queues, and coordinate shipping dispatches.
           </p>
         </div>
@@ -227,28 +227,28 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
         <div className="flex flex-wrap items-center gap-2">
           <button 
             onClick={() => alert('Batch exporting order ledger...')}
-            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-semibold text-[13px] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Export CSV</span>
           </button>
           <button 
             onClick={() => onNavigateSection?.('shipping')}
-            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-semibold text-[13px] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             <Truck className="w-3.5 h-3.5" />
             <span>Shipping &amp; Labels</span>
           </button>
           <button 
             onClick={() => alert('Printing all queued packing slips...')}
-            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-semibold text-[13px] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Batch Slips</span>
           </button>
           <button 
             onClick={() => alert('Opening Create Retail Order modal...')}
-            className="h-9 px-4 bg-black hover:bg-muted text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 border border-border cursor-pointer transition-colors"
+            className="h-9 px-4 bg-black hover:bg-muted text-white font-semibold text-[13px] uppercase tracking-wider flex items-center gap-1.5 border border-border cursor-pointer transition-colors"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>+ Create Order</span>
@@ -267,14 +267,14 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
             <span className="w-2 h-2 bg-black animate-pulse"></span>
           </div>
           <p className="text-2xl font-semibold tabular-nums mt-2 tracking-tight text-foreground">18</p>
-          <p className="text-[10px] text-foreground font-bold tabular-nums mt-0.5">+3 Rush queue</p>
+          <p className="text-[10px] text-foreground font-semibold tabular-nums mt-0.5">+3 Rush queue</p>
         </div>
 
         <div 
           onClick={() => setActiveTab('ready')}
           className="border border-border p-4 bg-card flex flex-col justify-between cursor-pointer hover:bg-accent/50"
         >
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>Ready to Ship</span>
             <Truck className="w-3.5 h-3.5 text-foreground" />
           </div>
@@ -286,7 +286,7 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
           onClick={() => setActiveTab('pickup')}
           className="border border-border p-4 bg-card flex flex-col justify-between cursor-pointer hover:bg-accent/50"
         >
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>Local Pickup</span>
             <Store className="w-3.5 h-3.5 text-foreground" />
           </div>
@@ -298,7 +298,7 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
           onClick={() => setActiveTab('shipped')}
           className="border border-border p-4 bg-card flex flex-col justify-between cursor-pointer hover:bg-accent/50"
         >
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>Shipped Today</span>
             <CheckCircle2 className="w-3.5 h-3.5 text-foreground" />
           </div>
@@ -310,21 +310,21 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
           onClick={() => onNavigateSection?.('returns')}
           className="border border-border p-4 bg-card flex flex-col justify-between cursor-pointer hover:bg-accent/50"
         >
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>Returns / Issues</span>
             <AlertTriangle className="w-3.5 h-3.5 text-foreground" />
           </div>
           <p className="text-2xl font-semibold tabular-nums mt-2 tracking-tight text-foreground">2</p>
-          <p className="text-[10px] text-foreground font-bold tabular-nums mt-0.5">RMA Action Req</p>
+          <p className="text-[10px] text-foreground font-semibold tabular-nums mt-0.5">RMA Action Req</p>
         </div>
 
         <div className="border border-border p-4 bg-card flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>MTD Revenue</span>
             <ShoppingBag className="w-3.5 h-3.5 text-foreground" />
           </div>
           <p className="text-2xl font-semibold tabular-nums mt-2 tracking-tight text-foreground">$14,890</p>
-          <p className="text-[10px] text-foreground font-bold tabular-nums mt-0.5">+14.2% volume</p>
+          <p className="text-[10px] text-foreground font-semibold tabular-nums mt-0.5">+14.2% volume</p>
         </div>
       </div>
 
@@ -350,7 +350,7 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
                   setActiveTab(tab.id as any);
                 }
               }}
-              className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-r border-border whitespace-nowrap cursor-pointer transition-colors ${
+              className={`px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider border-r border-border whitespace-nowrap cursor-pointer transition-colors ${
                 activeTab === tab.id
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-card text-foreground hover:bg-accent/50'
@@ -372,21 +372,21 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search order #, SKU, customer, or pet..."
-              className="w-full h-8 pl-8 pr-3 text-xs bg-card border border-border text-foreground placeholder-gray-400 focus:outline-none"
+              className="w-full h-8 pl-8 pr-3 text-[13px] bg-card border border-border text-foreground placeholder-gray-400 focus:outline-none"
             />
           </div>
 
           <div className="flex items-center gap-2 flex-wrap">
             <button 
               onClick={() => onNavigateSection?.('shipping')}
-              className="h-8 px-3 border border-border bg-card hover:bg-accent/50 text-foreground text-xs font-bold uppercase flex items-center gap-1 cursor-pointer"
+              className="h-8 px-3 border border-border bg-card hover:bg-accent/50 text-foreground text-[13px] font-semibold uppercase flex items-center gap-1 cursor-pointer"
             >
               <Truck className="w-3 h-3" />
               <span>Label Station</span>
             </button>
             <button 
               onClick={() => onNavigateSection?.('purchase-orders')}
-              className="h-8 px-3 border border-border bg-card hover:bg-accent/50 text-foreground text-xs font-bold uppercase flex items-center gap-1 cursor-pointer"
+              className="h-8 px-3 border border-border bg-card hover:bg-accent/50 text-foreground text-[13px] font-semibold uppercase flex items-center gap-1 cursor-pointer"
             >
               <Package className="w-3 h-3" />
               <span>Purchase Orders</span>
@@ -395,9 +395,9 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
         </div>
 
         {/* Batch Actions Toolbar */}
-        <div className="p-2 bg-muted/40 border-b border-border flex items-center justify-between text-xs tabular-nums">
+        <div className="p-2 bg-muted/40 border-b border-border flex items-center justify-between text-[13px] tabular-nums">
           <div className="flex items-center gap-3">
-            <label className="flex items-center gap-2 cursor-pointer font-bold uppercase">
+            <label className="flex items-center gap-2 cursor-pointer font-semibold uppercase">
               <input 
                 type="checkbox"
                 checked={selectedOrders.length === orders.length && orders.length > 0}
@@ -409,7 +409,7 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
             <span className="text-muted-foreground/70">|</span>
             <button 
               onClick={handleSelectAll}
-              className="underline font-bold uppercase text-foreground hover:opacity-70"
+              className="underline font-semibold uppercase text-foreground hover:opacity-70"
             >
               Select All
             </button>
@@ -425,14 +425,14 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
             <button 
               onClick={() => alert(`Printing pick list for ${selectedOrders.length} orders...`)}
               disabled={selectedOrders.length === 0}
-              className="px-2.5 py-1 border border-border bg-card hover:bg-accent/50 font-bold uppercase text-[10px] disabled:opacity-40 cursor-pointer"
+              className="px-2.5 py-1 border border-border bg-card hover:bg-accent/50 font-semibold uppercase text-[10px] disabled:opacity-40 cursor-pointer"
             >
               Print Pick Lists ({selectedOrders.length})
             </button>
             <button 
               onClick={() => onNavigateSection?.('shipping')}
               disabled={selectedOrders.length === 0}
-              className="px-2.5 py-1 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase text-[10px] disabled:opacity-40 cursor-pointer"
+              className="px-2.5 py-1 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase text-[10px] disabled:opacity-40 cursor-pointer"
             >
               Batch Labels
             </button>
@@ -443,7 +443,7 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
         <div className="overflow-x-auto">
           <table className="w-full text-left text-[13px] text-foreground border-collapse">
             <thead>
-              <tr className="bg-muted/30 border-b border-border font-bold uppercase text-[11px] tracking-wider text-foreground">
+              <tr className="bg-muted/30 border-b border-border font-semibold uppercase text-[11px] tracking-wider text-foreground">
                 <th className="py-2.5 px-3 w-10 text-center border-r border-border">#</th>
                 <th className="py-2.5 px-3 border-r border-border">Order # &amp; SLA</th>
                 <th className="py-2.5 px-3 border-r border-border">Date &amp; Age</th>
@@ -477,21 +477,21 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
                             onNavigateSection?.('order-details');
                           }
                         }}
-                        className="font-bold text-foreground hover:underline text-left cursor-pointer"
+                        className="font-semibold text-foreground hover:underline text-left cursor-pointer"
                       >
                         {ord.id}
                       </button>
                       <div className="flex items-center gap-1 mt-0.5">
-                        <span className="px-1 py-0.2 bg-primary text-primary-foreground text-[9px] font-bold uppercase">{ord.urgency}</span>
-                        <span className="text-[10px] text-muted-foreground font-bold">{ord.due}</span>
+                        <span className="px-1 py-0.2 bg-primary text-primary-foreground text-[9px] font-semibold uppercase">{ord.urgency}</span>
+                        <span className="text-[10px] text-muted-foreground font-semibold">{ord.due}</span>
                       </div>
                     </td>
                     <td className="py-3 px-3 border-r border-border">
-                      <p className="font-bold text-foreground">{ord.time}</p>
+                      <p className="font-semibold text-foreground">{ord.time}</p>
                       <p className="text-[10px] text-muted-foreground">{ord.dateText}</p>
                     </td>
                     <td className="py-3 px-3 border-r border-border font-sans">
-                      <p className="font-bold text-foreground uppercase">{ord.customer}</p>
+                      <p className="font-semibold text-foreground uppercase">{ord.customer}</p>
                       <p className="text-[10px] text-muted-foreground">{ord.pets}</p>
                     </td>
                     <td className="py-3 px-3 border-r border-border font-sans max-w-xs">
@@ -500,14 +500,14 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
                     </td>
                     <td className="py-3 px-3 border-r border-border text-right">
                       <p className="font-semibold text-foreground">${ord.total.toFixed(2)}</p>
-                      <p className="text-[9px] font-bold text-muted-foreground">{ord.payment}</p>
+                      <p className="text-[9px] font-semibold text-muted-foreground">{ord.payment}</p>
                     </td>
                     <td className="py-3 px-3 border-r border-border">
-                      <p className="font-bold text-foreground">{ord.method}</p>
+                      <p className="font-semibold text-foreground">{ord.method}</p>
                       <p className="text-[10px] text-muted-foreground">Wt: {ord.weight}</p>
                     </td>
                     <td className="py-3 px-3 border-r border-border text-center">
-                      <span className={`inline-block px-2 py-0.5 border border-border text-[10px] font-bold uppercase ${
+                      <span className={`inline-block px-2 py-0.5 border border-border text-[10px] font-semibold uppercase ${
                         ord.status === 'UNFULFILLED'
                           ? 'bg-primary text-primary-foreground'
                           : ord.status === 'READY'
@@ -527,7 +527,7 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
                               onNavigateSection?.('shipping');
                             }
                           }}
-                          className="px-2 py-1 bg-primary text-primary-foreground hover:bg-primary/90 text-[10px] font-bold uppercase transition-colors cursor-pointer"
+                          className="px-2 py-1 bg-primary text-primary-foreground hover:bg-primary/90 text-[10px] font-semibold uppercase transition-colors cursor-pointer"
                         >
                           {ord.methodType === 'pickup' ? 'Handover' : 'Fulfill'}
                         </button>
@@ -548,7 +548,7 @@ export const OrdersView: React.FC<OrdersViewProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-3 bg-muted/30 border-t border-border flex items-center justify-between text-xs">
+        <div className="p-3 bg-muted/30 border-t border-border flex items-center justify-between text-[13px]">
           <p className="text-muted-foreground text-[12px] uppercase">
             Showing {filteredOrders.length} of {orders.length} orders
           </p>

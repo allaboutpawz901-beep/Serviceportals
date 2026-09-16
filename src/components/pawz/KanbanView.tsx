@@ -122,15 +122,15 @@ export const KanbanView: React.FC<KanbanViewProps> = ({
               {/* Column Header */}
               <div className="flex items-center justify-between pb-3 px-1 border-b border-border/60 flex-shrink-0">
                 <div className="flex items-center gap-2">
-                  <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold border ${stage.badgeBg} ${stage.badgeText} ${stage.borderColor}`}>
+                  <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[13px] font-semibold border ${stage.badgeBg} ${stage.badgeText} ${stage.borderColor}`}>
                     {stage.title}
                   </span>
-                  <span className="text-xs font-semibold text-muted-foreground bg-card px-2 py-0.5 rounded-full border border-border">
+                  <span className="text-[13px] font-semibold text-muted-foreground bg-card px-2 py-0.5 rounded-full border border-border">
                     {stageAppts.length}
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[11px] font-bold text-muted-foreground">
+                  <span className="text-[11px] font-semibold text-muted-foreground">
                     ${totalValue.toFixed(0)}
                   </span>
                   <button
@@ -148,11 +148,11 @@ export const KanbanView: React.FC<KanbanViewProps> = ({
               <div className="flex-1 overflow-y-auto space-y-3 py-3 px-0.5 custom-scrollbar">
                 {stageAppts.length === 0 ? (
                   <div className="py-8 text-center border-2 border-dashed border-border rounded-xl bg-card/50">
-                    <p className="text-xs text-muted-foreground/70 font-medium">No appointments</p>
+                    <p className="text-[13px] text-muted-foreground/70 font-medium">No appointments</p>
                     <button
                       type="button"
                       onClick={() => onAddAppointment(stage.id === 'Waitlist' ? 'Waitlisted' : stage.id)}
-                      className="mt-2 text-xs text-primary font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
+                      className="mt-2 text-[13px] text-primary font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
                     >
                       <Plus className="w-3 h-3" /> Add Card
                     </button>
@@ -167,7 +167,7 @@ export const KanbanView: React.FC<KanbanViewProps> = ({
                       >
                         {/* Card Header: Time & Action Trigger */}
                         <div className="flex items-center justify-between gap-2 mb-2">
-                          <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+                          <div className="flex items-center gap-1.5 text-[13px] font-semibold text-foreground">
                             <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
                             <span>{appt.time}</span>
                             {appt.duration && (
@@ -208,16 +208,16 @@ export const KanbanView: React.FC<KanbanViewProps> = ({
                               className="w-9 h-9 rounded-full object-cover border border-border shrink-0"
                             />
                           ) : (
-                            <div className="w-9 h-9 rounded-full text-primary font-bold flex items-center justify-center text-xs shrink-0">
+                            <div className="w-9 h-9 rounded-full text-primary font-semibold flex items-center justify-center text-[13px] shrink-0">
                               {appt.customerInitials || appt.petEmoji || '🐾'}
                             </div>
                           )}
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center justify-between">
-                              <h4 className="text-xs font-bold text-foreground truncate hover:text-primary transition">
+                              <h4 className="text-[13px] font-semibold text-foreground truncate hover:text-primary transition">
                                 {appt.petName}
                               </h4>
-                              <span className="text-xs font-bold text-success shrink-0 ml-1">
+                              <span className="text-[13px] font-semibold text-success shrink-0 ml-1">
                                 ${appt.price?.toFixed(2) || '75.00'}
                               </span>
                             </div>

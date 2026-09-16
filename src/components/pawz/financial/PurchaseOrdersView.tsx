@@ -105,15 +105,15 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
       {/* Top Header */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-border pb-5">
         <div>
-          <div className="flex items-center gap-2 text-[10px] tabular-nums uppercase tracking-widest text-muted-foreground mb-1">
-            <span className="bg-primary text-primary-foreground px-1.5 py-0.5 font-bold">LOGISTICS // OMS</span>
+          <div className="flex items-center gap-2 text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground mb-1">
+            <span className="bg-primary text-primary-foreground px-1.5 py-0.5 font-semibold">LOGISTICS // OMS</span>
             <span>/</span>
-            <span className="text-foreground font-bold">PO-RECV-STATION-01</span>
+            <span className="text-foreground font-semibold">PO-RECV-STATION-01</span>
           </div>
           <h1 className="text-2xl font-semibold uppercase tracking-tight text-foreground">
             Purchase Orders &amp; Receiving
           </h1>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Create vendor purchase orders, receive supplier shipments, and update inventory counts in bulk.
           </p>
         </div>
@@ -121,21 +121,21 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
         <div className="flex flex-wrap items-center gap-2">
           <button 
             onClick={() => alert('Viewing vendor directory...')}
-            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-semibold text-[13px] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             <Store className="w-3.5 h-3.5" />
             <span>Vendors</span>
           </button>
           <button 
             onClick={() => alert('Exporting purchase ledger...')}
-            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
+            className="h-9 px-3 border border-border bg-card hover:bg-accent/50 text-foreground font-semibold text-[13px] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Export Ledger</span>
           </button>
           <button 
             onClick={() => alert('Opening Create Purchase Order modal...')}
-            className="h-9 px-4 bg-black hover:bg-muted text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 border border-border cursor-pointer transition-colors"
+            className="h-9 px-4 bg-black hover:bg-muted text-white font-semibold text-[13px] uppercase tracking-wider flex items-center gap-1.5 border border-border cursor-pointer transition-colors"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>+ Create PO</span>
@@ -146,7 +146,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
       {/* KPI Tiles */}
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
         <div className="border border-border p-4 bg-card flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>Open Orders</span>
             <span className="text-[12px]">03</span>
           </div>
@@ -155,7 +155,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
         </div>
 
         <div className="border border-border p-4 bg-card flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>In-Transit</span>
             <Truck className="w-3.5 h-3.5 text-foreground" />
           </div>
@@ -166,14 +166,14 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
         <div className="border border-border p-4 bg-card flex flex-col justify-between shadow-card">
           <div className="flex items-center justify-between text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
             <span>Partial Recv</span>
-            <span className="px-1 py-0.2 bg-primary text-primary-foreground text-[9px] font-bold">ACTIVE</span>
+            <span className="px-1 py-0.2 bg-primary text-primary-foreground text-[9px] font-semibold">ACTIVE</span>
           </div>
           <p className="text-2xl font-semibold tabular-nums mt-2 tracking-tight text-foreground">01</p>
-          <p className="text-[10px] text-foreground font-bold tabular-nums mt-0.5">20 units left</p>
+          <p className="text-[10px] text-foreground font-semibold tabular-nums mt-0.5">20 units left</p>
         </div>
 
         <div className="border border-border p-4 bg-card flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>Active Vendors</span>
             <Store className="w-3.5 h-3.5 text-foreground" />
           </div>
@@ -182,7 +182,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
         </div>
 
         <div className="border border-border p-4 bg-card flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>Recv This Month</span>
             <CheckCircle2 className="w-3.5 h-3.5 text-foreground" />
           </div>
@@ -191,12 +191,12 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
         </div>
 
         <div className="border border-border p-4 bg-card flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
             <span>Low Stock Alerts</span>
             <AlertTriangle className="w-3.5 h-3.5 text-foreground" />
           </div>
           <p className="text-2xl font-semibold tabular-nums mt-2 tracking-tight text-foreground">05</p>
-          <p className="text-[10px] text-foreground font-bold tabular-nums mt-0.5">Reorder points</p>
+          <p className="text-[10px] text-foreground font-semibold tabular-nums mt-0.5">Reorder points</p>
         </div>
       </div>
 
@@ -213,7 +213,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-r border-border whitespace-nowrap cursor-pointer transition-colors ${
+              className={`px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider border-r border-border whitespace-nowrap cursor-pointer transition-colors ${
                 activeTab === tab.id
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-card text-foreground hover:bg-accent/50'
@@ -235,7 +235,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter PO #, vendor, or items..."
-              className="w-full h-8 pl-8 pr-3 text-xs bg-card border border-border text-foreground placeholder-gray-400 focus:outline-none"
+              className="w-full h-8 pl-8 pr-3 text-[13px] bg-card border border-border text-foreground placeholder-gray-400 focus:outline-none"
             />
           </div>
         </div>
@@ -244,7 +244,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
         <div className="overflow-x-auto">
           <table className="w-full text-left text-[13px] text-foreground border-collapse tabular-nums">
             <thead>
-              <tr className="bg-muted/30 border-b border-border font-bold uppercase text-[11px] tracking-wider text-foreground">
+              <tr className="bg-muted/30 border-b border-border font-semibold uppercase text-[11px] tracking-wider text-foreground">
                 <th className="py-2.5 px-3 border-r border-border">PO Number</th>
                 <th className="py-2.5 px-3 border-r border-border">Vendor Name</th>
                 <th className="py-2.5 px-3 border-r border-border">Expected Delivery</th>
@@ -258,30 +258,30 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
             <tbody className="divide-y divide-border">
               {filteredPos.map((po) => (
                 <tr key={po.id} className="hover:bg-accent/50 transition-colors">
-                  <td className="py-3 px-3 font-bold text-foreground border-r border-border">
+                  <td className="py-3 px-3 font-semibold text-foreground border-r border-border">
                     {po.id}
                   </td>
                   <td className="py-3 px-3 border-r border-border font-sans">
-                    <p className="font-bold text-foreground">{po.vendor}</p>
+                    <p className="font-semibold text-foreground">{po.vendor}</p>
                     <p className="text-[10px] text-muted-foreground tabular-nums">{po.items}</p>
                   </td>
                   <td className="py-3 px-3 border-r border-border">
-                    <p className="font-bold text-foreground">{po.delivery}</p>
+                    <p className="font-semibold text-foreground">{po.delivery}</p>
                     <p className="text-[10px] text-muted-foreground">{po.eta}</p>
                   </td>
-                  <td className="py-3 px-3 border-r border-border text-center font-bold">
+                  <td className="py-3 px-3 border-r border-border text-center font-semibold">
                     {po.checkedUnits} / {po.totalUnits}
                   </td>
                   <td className="py-3 px-3 border-r border-border text-right font-semibold">
                     ${po.cost.toFixed(2)}
                   </td>
                   <td className="py-3 px-3 border-r border-border text-center">
-                    <span className="px-1.5 py-0.5 border border-border bg-muted/40 text-[10px] font-bold">
+                    <span className="px-1.5 py-0.5 border border-border bg-muted/40 text-[10px] font-semibold">
                       {po.terms}
                     </span>
                   </td>
                   <td className="py-3 px-3 border-r border-border">
-                    <span className={`inline-block px-2 py-0.5 border border-border text-[10px] font-bold uppercase ${
+                    <span className={`inline-block px-2 py-0.5 border border-border text-[10px] font-semibold uppercase ${
                       po.status === 'IN TRANSIT'
                         ? 'bg-primary text-primary-foreground'
                         : po.status === 'PARTIAL'
@@ -294,7 +294,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
                   <td className="py-3 px-3 text-right">
                     <button 
                       onClick={() => alert(`Receiving stock for ${po.id}`)}
-                      className="px-2.5 py-1 bg-primary text-primary-foreground hover:bg-primary/90 text-[10px] font-bold uppercase transition-colors cursor-pointer"
+                      className="px-2.5 py-1 bg-primary text-primary-foreground hover:bg-primary/90 text-[10px] font-semibold uppercase transition-colors cursor-pointer"
                     >
                       Receive
                     </button>
@@ -306,7 +306,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
         </div>
 
         {/* Footer */}
-        <div className="p-3 bg-muted/30 border-t border-border flex items-center justify-between text-xs tabular-nums">
+        <div className="p-3 bg-muted/30 border-t border-border flex items-center justify-between text-[13px] tabular-nums">
           <p className="text-muted-foreground text-[11px] uppercase">
             Showing {filteredPos.length} of {pos.length} purchase orders
           </p>
@@ -317,7 +317,7 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
       <div className="border border-border bg-card p-5 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border pb-2">
           <div className="flex items-center gap-2">
-            <span className="px-1.5 py-0.5 bg-primary text-primary-foreground text-[10px] tabular-nums font-bold uppercase">STATION LIVE</span>
+            <span className="px-1.5 py-0.5 bg-primary text-primary-foreground text-[10px] tabular-nums font-semibold uppercase">STATION LIVE</span>
             <h3 className="font-semibold uppercase text-[13px] text-foreground">Rapid Receiving Dock // Barcode Scanner</h3>
           </div>
           <span className="text-[11px] tabular-nums text-muted-foreground">PO CONTEXT: PO-2025-017 (BARKBOUTIQUE)</span>
@@ -325,14 +325,14 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div className="lg:col-span-7 space-y-3">
-            <p className="text-xs text-muted-foreground tabular-nums">
+            <p className="text-[13px] text-muted-foreground tabular-nums">
               Scan barcode or enter internal SKU to automatically increment verified stock.
             </p>
             <div className="flex gap-2">
               <input 
                 type="text"
                 defaultValue="SKU-88210-CLMTREAT"
-                className="flex-1 h-10 px-3 bg-muted/30 border border-border text-xs tabular-nums uppercase focus:outline-none"
+                className="flex-1 h-10 px-3 bg-muted/30 border border-border text-[13px] tabular-nums uppercase focus:outline-none"
               />
               <div className="flex items-center border border-border bg-muted/30 px-2 text-[12px]">
                 <span className="text-muted-foreground text-[10px] mr-2">QTY</span>
@@ -340,12 +340,12 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
                   type="number"
                   value={scannedQty}
                   onChange={(e) => setScannedQty(parseInt(e.target.value) || 1)}
-                  className="w-12 text-center font-bold bg-transparent focus:outline-none"
+                  className="w-12 text-center font-semibold bg-transparent focus:outline-none"
                 />
               </div>
               <button 
                 onClick={handleScanCheckIn}
-                className="px-4 bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider flex items-center gap-1 border border-border cursor-pointer hover:bg-muted"
+                className="px-4 bg-primary text-primary-foreground font-semibold text-[13px] uppercase tracking-wider flex items-center gap-1 border border-border cursor-pointer hover:bg-muted"
               >
                 <Check className="w-3.5 h-3.5" />
                 <span>Confirm</span>
@@ -357,14 +357,14 @@ export const PurchaseOrdersView: React.FC<PurchaseOrdersViewProps> = ({ onNaviga
           </div>
 
           <div className="lg:col-span-5 border border-border p-4 bg-muted/30 space-y-3 text-[12px]">
-            <div className="flex justify-between font-bold">
+            <div className="flex justify-between font-semibold">
               <span>PO PROGRESS TALLY</span>
               <span>{percentComplete}% COMPLETE</span>
             </div>
             <div className="w-full h-3 border border-border bg-card overflow-hidden">
               <div className="h-full bg-black transition-all" style={{ width: `${percentComplete}%` }}></div>
             </div>
-            <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-bold">
+            <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-semibold">
               <div className="p-2 bg-card border border-border">
                 <p className="text-muted-foreground">EXPECTED</p>
                 <p className="text-base font-semibold text-foreground mt-0.5">{totalExpected}</p>

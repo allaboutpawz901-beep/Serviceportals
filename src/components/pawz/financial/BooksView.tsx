@@ -309,7 +309,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* LEDGER DRILL DOWN LIST */}
             <div className="lg:col-span-2 bg-card border border-border">
-              <div className="bg-muted/40 border-b border-border p-3 tabular-nums font-bold text-xs uppercase flex items-center justify-between">
+              <div className="bg-muted/40 border-b border-border p-3 tabular-nums font-semibold text-[13px] uppercase flex items-center justify-between">
                 <span>RECENT POSTED GENERAL JOURNALS</span>
                 <span className="text-[10px] text-muted-foreground">GAAP STANDARD</span>
               </div>
@@ -318,10 +318,10 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                   <div key={je.id} className="border border-border p-3 space-y-3 bg-card">
                     <div className="flex items-center justify-between border-b border-border pb-2">
                       <div>
-                        <span className="tabular-nums font-semibold text-xs">{je.id}</span>
+                        <span className="tabular-nums font-semibold text-[13px]">{je.id}</span>
                         <span className="text-[11px] text-muted-foreground/70 ml-3">{je.date}</span>
                       </div>
-                      <span className={`text-[9px] tabular-nums font-bold border px-1.5 py-0.2 ${je.status === 'POSTED' ? 'bg-muted/40 text-foreground border-border' : 'bg-warning/10 text-warning border-warning/20'}`}>
+                      <span className={`text-[9px] tabular-nums font-semibold border px-1.5 py-0.2 ${je.status === 'POSTED' ? 'bg-muted/40 text-foreground border-border' : 'bg-warning/10 text-warning border-warning/20'}`}>
                         {je.status}
                       </span>
                     </div>
@@ -348,13 +348,13 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
 
             {/* LEDGER CLI / COMMAND BOX */}
             <div className="bg-black text-success text-[12px] border border-border flex flex-col h-[400px]">
-              <div className="bg-card border-b border-border p-3 flex items-center gap-2 text-[10px] font-bold text-white uppercase tracking-widest">
+              <div className="bg-card border-b border-border p-3 flex items-center gap-2 text-[10px] font-semibold text-white uppercase tracking-wider">
                 <Terminal className="w-3.5 h-3.5 text-muted-foreground/70" />
                 <span>LEDGER COMMAND CONSOLE</span>
               </div>
               <div className="flex-1 p-4 overflow-y-auto space-y-2 select-text custom-scrollbar">
                 {consoleLogs.map((log, idx) => (
-                  <div key={idx} className={log.startsWith('>') ? 'text-white' : log.startsWith('SUCCESS:') ? 'text-success font-bold' : log.startsWith('ERR:') ? 'text-destructive/70 font-bold' : 'text-muted-foreground/50'}>
+                  <div key={idx} className={log.startsWith('>') ? 'text-white' : log.startsWith('SUCCESS:') ? 'text-success font-semibold' : log.startsWith('ERR:') ? 'text-destructive/70 font-semibold' : 'text-muted-foreground/50'}>
                     {log}
                   </div>
                 ))}
@@ -391,7 +391,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
             </div>
             <button
               onClick={() => setShowAddDrawer(true)}
-              className="bg-black hover:bg-muted text-white text-[12px] uppercase px-5 py-2 font-bold cursor-pointer rounded-md border border-border w-full md:w-auto"
+              className="bg-black hover:bg-muted text-white text-[12px] uppercase px-5 py-2 font-semibold cursor-pointer rounded-md border border-border w-full md:w-auto"
             >
               + ADD ACCOUNT
             </button>
@@ -401,7 +401,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
           <div className="border border-border overflow-x-auto">
             <table className="w-full text-left text-[13px] text-foreground border-collapse">
               <thead>
-                <tr className="bg-muted/40 border-b border-border font-bold uppercase">
+                <tr className="bg-muted/40 border-b border-border font-semibold uppercase">
                   <th className="p-3 border-r border-border w-24">GL CODE</th>
                   <th className="p-3 border-r border-border">ACCOUNT NAME</th>
                   <th className="p-3 border-r border-border">GL CLASSIFICATION</th>
@@ -413,15 +413,15 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
               <tbody className="divide-y divide-border font-medium">
                 {filteredAccounts.map((acc) => (
                   <tr key={acc.code} className="hover:bg-muted/30 transition-colors">
-                    <td className="p-3 border-r border-border font-bold">{acc.code}</td>
-                    <td className="p-3 border-r border-border font-bold">{acc.name}</td>
+                    <td className="p-3 border-r border-border font-semibold">{acc.code}</td>
+                    <td className="p-3 border-r border-border font-semibold">{acc.name}</td>
                     <td className="p-3 border-r border-border uppercase text-muted-foreground">{acc.type}</td>
                     <td className="p-3 border-r border-border text-muted-foreground">{acc.sub}</td>
                     <td className="p-3 border-r border-border text-right font-semibold tabular-nums">
                       ${acc.balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </td>
                     <td className="p-3 text-center">
-                      <span className="bg-success/10 border border-success/20 text-success text-[10px] font-bold px-2 py-0.5 uppercase">
+                      <span className="bg-success/10 border border-success/20 text-success text-[10px] font-semibold px-2 py-0.5 uppercase">
                         {acc.status}
                       </span>
                     </td>
@@ -447,7 +447,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                   setTransactions(prev => prev.map(t => ({ ...t, reconciled: true })));
                   alert('Clearing house ledger reconciliation passed. Zero delta confirmed.');
                 }}
-                className="bg-primary text-primary-foreground text-[11px] tabular-nums uppercase tracking-wider font-bold px-4 py-1.5 hover:bg-muted cursor-pointer rounded-md"
+                className="bg-primary text-primary-foreground text-[11px] tabular-nums uppercase tracking-wider font-semibold px-4 py-1.5 hover:bg-muted cursor-pointer rounded-md"
               >
                 RECONCILE FEED
               </button>
@@ -455,7 +455,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
             <div className="overflow-x-auto w-full">
               <table className="w-full text-left text-[13px] text-foreground border-collapse">
                 <thead>
-                  <tr className="border-b border-border bg-muted/30 font-bold uppercase">
+                  <tr className="border-b border-border bg-muted/30 font-semibold uppercase">
                     <th className="p-3 border-r border-border">TXN ID</th>
                     <th className="p-3 border-r border-border">VALUE DATE</th>
                     <th className="p-3 border-r border-border">LEDGER ACCOUNT ALLOCATION</th>
@@ -468,9 +468,9 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                 <tbody className="divide-y divide-border bg-card font-medium">
                   {transactions.map((t, idx) => (
                     <tr key={idx} className="hover:bg-muted/30 transition-colors">
-                      <td className="p-3 border-r border-border font-bold text-muted-foreground/70">{t.id}</td>
+                      <td className="p-3 border-r border-border font-semibold text-muted-foreground/70">{t.id}</td>
                       <td className="p-3 border-r border-border text-muted-foreground">{t.date}</td>
-                      <td className="p-3 border-r border-border font-bold">{t.account}</td>
+                      <td className="p-3 border-r border-border font-semibold">{t.account}</td>
                       <td className="p-3 border-r border-border text-muted-foreground truncate max-w-[200px]">{t.memo}</td>
                       <td className="p-3 border-r border-border text-right font-semibold text-foreground">
                         {t.debit > 0 ? `$${t.debit.toFixed(2)}` : '—'}
@@ -479,7 +479,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                         {t.credit > 0 ? `$${t.credit.toFixed(2)}` : '—'}
                       </td>
                       <td className="p-3 text-center">
-                        <span className={`text-[10px] font-bold border px-2 py-0.5 uppercase ${
+                        <span className={`text-[10px] font-semibold border px-2 py-0.5 uppercase ${
                           t.reconciled ? 'bg-success/10 border-success/20 text-success' : 'bg-warning/10 border-warning/20 text-warning animate-pulse'
                         }`}>
                           {t.reconciled ? 'RECONCILED' : 'PENDING MATCH'}
@@ -499,7 +499,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
         <div className="animate-fade-in p-6 bg-muted/30 min-h-[500px] grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* LEFT SIDE: JOURNAL VOUCHERS LIST */}
           <div className="lg:col-span-4 bg-card border border-border flex flex-col">
-            <div className="bg-muted/40 border-b border-border p-3 tabular-nums font-bold text-xs uppercase text-foreground">
+            <div className="bg-muted/40 border-b border-border p-3 tabular-nums font-semibold text-[13px] uppercase text-foreground">
               JOURNAL VOUCHERS REGISTRY
             </div>
             <div className="divide-y divide-border overflow-y-auto flex-1 h-[450px] custom-scrollbar bg-card">
@@ -518,7 +518,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                   <p className="text-[12px] text-muted-foreground font-medium line-clamp-1">{je.narrative}</p>
                   <div className="flex items-center justify-between text-[10px]">
                     <span className="tabular-nums text-muted-foreground/70">{je.lines.length} Line items</span>
-                    <span className={`text-[10px] font-bold border px-1.5 py-0.2 ${je.status === 'POSTED' ? 'bg-success/10 border-success/20 text-success' : 'bg-warning/10 border-warning/20 text-warning animate-pulse'}`}>
+                    <span className={`text-[10px] font-semibold border px-1.5 py-0.2 ${je.status === 'POSTED' ? 'bg-success/10 border-success/20 text-success' : 'bg-warning/10 border-warning/20 text-warning animate-pulse'}`}>
                       {je.status}
                     </span>
                   </div>
@@ -544,7 +544,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                     <div className="bg-muted/40 border-b border-border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <div>
                         <span className="text-[11px] bg-primary text-primary-foreground px-1.5 py-0.5 font-semibold uppercase">VOUCHER DETAIL // {selectedJe.id}</span>
-                        <h3 className="text-xs font-bold tabular-nums text-foreground mt-1.5 uppercase">{selectedJe.narrative}</h3>
+                        <h3 className="text-[13px] font-semibold tabular-nums text-foreground mt-1.5 uppercase">{selectedJe.narrative}</h3>
                       </div>
                       {selectedJe.status === 'DRAFT' && (
                         <button
@@ -565,7 +565,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                             }));
                             setConsoleLogs(prev => [...prev, `JOURNAL POSTED: ${selectedJe.id} ledger entries recorded.`]);
                           }}
-                          className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-4 py-1.5 text-[12px] uppercase tracking-wider font-bold transition-colors cursor-pointer rounded-md"
+                          className="bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-4 py-1.5 text-[12px] uppercase tracking-wider font-semibold transition-colors cursor-pointer rounded-md"
                         >
                           POST JOURNAL VOUCHER
                         </button>
@@ -576,7 +576,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                       <div className="grid grid-cols-2 gap-4 border-b border-border pb-4">
                         <div>
                           <span className="text-[10px] uppercase font-semibold text-muted-foreground/70">Journal Date</span>
-                          <p className="text-[12px] font-bold text-foreground mt-1">{selectedJe.date}</p>
+                          <p className="text-[12px] font-semibold text-foreground mt-1">{selectedJe.date}</p>
                         </div>
                         <div>
                           <span className="text-[10px] uppercase font-semibold text-muted-foreground/70">Ledger Posting State</span>
@@ -591,7 +591,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                       <div className="border border-border overflow-x-auto">
                         <table className="w-full text-left text-[13px] text-foreground border-collapse">
                           <thead>
-                            <tr className="bg-muted/30 border-b border-border font-bold uppercase">
+                            <tr className="bg-muted/30 border-b border-border font-semibold uppercase">
                               <th className="p-3 border-r border-border">ACCOUNT CODE &amp; DESCRIPTION</th>
                               <th className="p-3 border-r border-border text-right w-44">DEBIT (DR)</th>
                               <th className="p-3 text-right w-44">CREDIT (CR)</th>
@@ -600,7 +600,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                           <tbody className="divide-y divide-border bg-card">
                             {selectedJe.lines.map((line, lIdx) => (
                               <tr key={lIdx} className="hover:bg-muted/30 transition-colors">
-                                <td className={`p-3 border-r border-border font-bold ${line.credit > 0 ? 'pl-8 text-muted-foreground' : 'text-foreground'}`}>
+                                <td className={`p-3 border-r border-border font-semibold ${line.credit > 0 ? 'pl-8 text-muted-foreground' : 'text-foreground'}`}>
                                   {line.account}
                                 </td>
                                 <td className="p-3 border-r border-border text-right font-semibold">
@@ -622,7 +622,7 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                         </table>
                       </div>
 
-                      <div className="flex items-center justify-between bg-muted/40 p-3 text-[11px] font-bold text-muted-foreground uppercase border border-border">
+                      <div className="flex items-center justify-between bg-muted/40 p-3 text-[11px] font-semibold text-muted-foreground uppercase border border-border">
                         <span>LEDGER DOUBLE-ENTRY BALANCING SYSTEM</span>
                         {isBalanced ? (
                           <span className="text-success flex items-center gap-1.5"><CheckCircle2 className="w-4.5 h-4.5" /> DEBITS = CREDITS (ZERO DELTA PASS)</span>
@@ -646,13 +646,13 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                             <div className="p-2 space-y-1 text-[11px]">
                               <div className="text-[8px] font-semibold text-muted-foreground/70 border-b border-border pb-1">DEBIT (DR)</div>
                               {line.debit > 0 && (
-                                <div className="text-foreground font-bold mt-2">${line.debit.toFixed(2)}</div>
+                                <div className="text-foreground font-semibold mt-2">${line.debit.toFixed(2)}</div>
                               )}
                             </div>
                             <div className="p-2 space-y-1 text-[11px] text-right">
                               <div className="text-[8px] font-semibold text-muted-foreground/70 border-b border-border pb-1 text-right">CREDIT (CR)</div>
                               {line.credit > 0 && (
-                                <div className="text-foreground font-bold mt-2">${line.credit.toFixed(2)}</div>
+                                <div className="text-foreground font-semibold mt-2">${line.credit.toFixed(2)}</div>
                               )}
                             </div>
                           </div>
@@ -750,13 +750,13 @@ export const BooksView: React.FC<BooksViewProps> = ({ onNavigateSection }) => {
                   <button
                     type="button"
                     onClick={() => setShowAddDrawer(false)}
-                    className="flex-1 bg-card hover:bg-muted/30 text-foreground border border-border py-2.5 text-[12px] uppercase font-bold cursor-pointer"
+                    className="flex-1 bg-card hover:bg-muted/30 text-foreground border border-border py-2.5 text-[12px] uppercase font-semibold cursor-pointer"
                   >
                     CANCEL
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 bg-black hover:bg-muted text-white border border-border py-2.5 text-[12px] uppercase font-bold cursor-pointer"
+                    className="flex-1 bg-black hover:bg-muted text-white border border-border py-2.5 text-[12px] uppercase font-semibold cursor-pointer"
                   >
                     REGISTER ACCOUNT
                   </button>

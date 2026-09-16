@@ -296,13 +296,13 @@ export const RefundsView: React.FC<RefundsViewProps> = ({ onNavigateSection }) =
                   <div className="text-[11px] text-muted-foreground uppercase">STRIPE DISPUTE SYSTEM INTERACTIVE ENGINE</div>
                   <h3 className="text-lg font-semibold tabular-nums mt-1 text-foreground">{selectedDispute.id} - EVIDENCE PACK</h3>
                 </div>
-                <span className="text-[10px] bg-destructive/10 border border-destructive/20 text-destructive px-2.5 py-1 font-bold animate-pulse uppercase">
+                <span className="text-[10px] bg-destructive/10 border border-destructive/20 text-destructive px-2.5 py-1 font-semibold animate-pulse uppercase">
                   REBUTTAL_WINDOW_OPEN
                 </span>
               </div>
 
               {/* DETAILS */}
-              <div className="grid grid-cols-2 gap-4 text-xs tabular-nums border-b border-border pb-4 mb-4">
+              <div className="grid grid-cols-2 gap-4 text-[13px] tabular-nums border-b border-border pb-4 mb-4">
                 <div className="space-y-2">
                   <p><span className="text-muted-foreground">DISPUTED AMT:</span> <strong className="text-foreground text-sm">${selectedDispute.amount.toFixed(2)} USD</strong></p>
                   <p><span className="text-muted-foreground">REASON CODE:</span> <strong className="text-foreground">{selectedDispute.reasonCode}</strong></p>
@@ -317,16 +317,16 @@ export const RefundsView: React.FC<RefundsViewProps> = ({ onNavigateSection }) =
 
               {/* CORE ACTIONS */}
               <div className="space-y-4">
-                <h4 className="text-[12px] font-bold text-foreground uppercase">STRIPE CHARGEBACK MITIGATION &amp; COMPLIANCE BUNDLE</h4>
+                <h4 className="text-[12px] font-semibold text-foreground uppercase">STRIPE CHARGEBACK MITIGATION &amp; COMPLIANCE BUNDLE</h4>
                 <div className="p-4 border border-border bg-muted/30 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[12px] font-bold text-foreground uppercase">01. INTAKE REGISTRATION &amp; GPS SERVICE LOG</span>
-                    <span className="text-[10px] text-success font-bold bg-success/10 border border-success/20 px-1">AUTO-BOUND</span>
+                    <span className="text-[12px] font-semibold text-foreground uppercase">01. INTAKE REGISTRATION &amp; GPS SERVICE LOG</span>
+                    <span className="text-[10px] text-success font-semibold bg-success/10 border border-success/20 px-1">AUTO-BOUND</span>
                   </div>
                   <p className="text-[11px] text-muted-foreground tabular-nums">
                     System binds GPS trace coordinates of groomer van arrival, appointment check-in, check-out timestamps and client signature.
                   </p>
-                  <div className="text-[10px] tabular-nums font-bold bg-card border border-border px-2 py-1 flex items-center justify-between text-foreground">
+                  <div className="text-[10px] tabular-nums font-semibold bg-card border border-border px-2 py-1 flex items-center justify-between text-foreground">
                     <span>GPS_AUDIT_LOG_COORD.JSON // SHAWNEE_OK_UNIT_01</span>
                     <button onClick={() => alert('Viewing bound GPS JSON file...')} className="text-muted-foreground hover:text-foreground hover:underline cursor-pointer">PREVIEW</button>
                   </div>
@@ -334,7 +334,7 @@ export const RefundsView: React.FC<RefundsViewProps> = ({ onNavigateSection }) =
 
                 <div className="p-4 border border-border bg-muted/30 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[12px] font-bold text-foreground uppercase">02. BEFORE / AFTER PHOTOGRAPHIC EVIDENCE</span>
+                    <span className="text-[12px] font-semibold text-foreground uppercase">02. BEFORE / AFTER PHOTOGRAPHIC EVIDENCE</span>
                     <span className="text-[10px] text-muted-foreground border border-border px-1">OPTIONAL</span>
                   </div>
                   <p className="text-[11px] text-muted-foreground tabular-nums">
@@ -343,7 +343,7 @@ export const RefundsView: React.FC<RefundsViewProps> = ({ onNavigateSection }) =
                   <div className="flex items-center gap-2">
                     <button
                       onClick={handleUploadEvidence}
-                      className="bg-card hover:bg-black hover:text-white text-foreground border border-border px-3 py-1 text-[12px] font-bold uppercase transition-colors rounded-md cursor-pointer"
+                      className="bg-card hover:bg-black hover:text-white text-foreground border border-border px-3 py-1 text-[12px] font-semibold uppercase transition-colors rounded-md cursor-pointer"
                     >
                       CHOOSE FILE TO BIND
                     </button>
@@ -353,13 +353,13 @@ export const RefundsView: React.FC<RefundsViewProps> = ({ onNavigateSection }) =
 
                 <div className="p-4 border border-border bg-muted/30 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[12px] font-bold text-foreground uppercase">03. DIGITAL REBATE OR ARBITRATION CONTRACT</span>
-                    <span className="text-[10px] text-warning font-bold bg-warning/10 border border-warning/20 px-1">EVIDENCE_BIND_REQUIRED</span>
+                    <span className="text-[12px] font-semibold text-foreground uppercase">03. DIGITAL REBATE OR ARBITRATION CONTRACT</span>
+                    <span className="text-[10px] text-warning font-semibold bg-warning/10 border border-warning/20 px-1">EVIDENCE_BIND_REQUIRED</span>
                   </div>
                   <p className="text-[11px] text-muted-foreground tabular-nums">
                     Bind standard digital client service disclaimer signed during initial reservation flow acknowledging strict late policy.
                   </p>
-                  <div className="text-[10px] tabular-nums font-bold bg-card border border-border px-2 py-1 flex items-center justify-between text-foreground">
+                  <div className="text-[10px] tabular-nums font-semibold bg-card border border-border px-2 py-1 flex items-center justify-between text-foreground">
                     <span>{selectedDispute.evidenceFile}</span>
                     <span className="text-muted-foreground/70">0.9 MB // VERIFIED_PCI</span>
                   </div>
@@ -369,13 +369,13 @@ export const RefundsView: React.FC<RefundsViewProps> = ({ onNavigateSection }) =
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
                   <button
                     onClick={handleAcceptDispute}
-                    className="border border-border bg-card hover:bg-destructive/5 hover:text-destructive px-4 py-2.5 text-[12px] uppercase font-bold tracking-wider transition-colors rounded-md cursor-pointer"
+                    className="border border-border bg-card hover:bg-destructive/5 hover:text-destructive px-4 py-2.5 text-[12px] uppercase font-semibold tracking-wider transition-colors rounded-md cursor-pointer"
                   >
                     ACCEPT DISPUTE (CONCEDE)
                   </button>
                   <button
                     onClick={handleRebut}
-                    className="border border-border bg-primary text-primary-foreground hover:bg-muted/40 hover:text-foreground px-4 py-2.5 text-[12px] uppercase font-bold tracking-wider transition-colors rounded-md cursor-pointer"
+                    className="border border-border bg-primary text-primary-foreground hover:bg-muted/40 hover:text-foreground px-4 py-2.5 text-[12px] uppercase font-semibold tracking-wider transition-colors rounded-md cursor-pointer"
                   >
                     SUBMIT REBUTTAL SYSTEM
                   </button>
@@ -396,12 +396,12 @@ export const RefundsView: React.FC<RefundsViewProps> = ({ onNavigateSection }) =
           <div className="w-full max-w-lg bg-card border border-border">
             <div className="bg-muted/40 border-b border-border p-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] bg-primary text-primary-foreground px-1.5 py-0.5 font-bold uppercase">TXN_REVERSAL</span>
-                <span className="text-[12px] font-bold text-foreground">INITIATE LEDGER-REVERSIBLE REFUND</span>
+                <span className="text-[10px] bg-primary text-primary-foreground px-1.5 py-0.5 font-semibold uppercase">TXN_REVERSAL</span>
+                <span className="text-[12px] font-semibold text-foreground">INITIATE LEDGER-REVERSIBLE REFUND</span>
               </div>
               <button 
                 onClick={() => setShowIssueModal(false)}
-                className="text-[12px] font-bold text-foreground hover:bg-black hover:text-white px-2 py-0.5 border border-border cursor-pointer"
+                className="text-[12px] font-semibold text-foreground hover:bg-black hover:text-white px-2 py-0.5 border border-border cursor-pointer"
               >
                 [X]
               </button>
@@ -428,7 +428,7 @@ export const RefundsView: React.FC<RefundsViewProps> = ({ onNavigateSection }) =
               </div>
               <div>
                 <label className="block text-[11px] text-muted-foreground mb-1 uppercase">REVERSAL REFUND PAYOUT TYPE //*</label>
-                <div className="grid grid-cols-2 gap-2 text-[11px] font-bold">
+                <div className="grid grid-cols-2 gap-2 text-[11px] font-semibold">
                   <button className="border border-border bg-primary text-primary-foreground p-2 text-center cursor-pointer" type="button">CREDIT BACK TO CARD</button>
                   <button className="border border-border bg-card text-foreground p-2 text-center hover:bg-muted/40 cursor-pointer" type="button">CONVERT TO STORE CREDIT</button>
                 </div>

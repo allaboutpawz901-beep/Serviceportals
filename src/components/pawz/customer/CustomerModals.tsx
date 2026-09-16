@@ -73,14 +73,14 @@ export const EditPetModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <Pencil className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Edit Pet Profile – {pet.name}</h3>
+            <h3 className="font-semibold text-foreground text-sm">Edit Pet Profile – {pet.name}</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-4 text-xs">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4 text-[13px]">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-foreground font-semibold mb-1">Pet Name</label>
@@ -218,22 +218,22 @@ export const ManageVaccinesModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-success" />
-            <h3 className="font-bold text-foreground text-sm">Manage Vaccines – {pet.name}</h3>
+            <h3 className="font-semibold text-foreground text-sm">Manage Vaccines – {pet.name}</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div className="space-y-2 max-h-60 overflow-y-auto">
             {vaccines.map((v, i) => (
               <div key={i} className="p-3 bg-muted/40 rounded-xl border border-border flex items-center justify-between">
                 <div>
-                  <div className="font-bold text-foreground">{v.name}</div>
+                  <div className="font-semibold text-foreground">{v.name}</div>
                   <div className="text-muted-foreground/70 text-[11px]">Expires: {v.expiry} • {v.clinic}</div>
                 </div>
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-success/10 text-success border border-success/20">
+                <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-success/10 text-success border border-success/20">
                   {v.status}
                 </span>
               </div>
@@ -241,26 +241,26 @@ export const ManageVaccinesModal: React.FC<{
           </div>
 
           <form onSubmit={handleAddVaccine} className="pt-3 border-t border-border space-y-3">
-            <div className="font-semibold text-foreground text-xs">Add / Update Vaccine Record</div>
+            <div className="font-semibold text-foreground text-[13px]">Add / Update Vaccine Record</div>
             <div className="grid grid-cols-2 gap-2">
               <input
                 type="text"
                 placeholder="Vaccine Name (e.g. Lyme)"
                 value={newVacName}
                 onChange={(e) => setNewVacName(e.target.value)}
-                className="px-3 py-2 bg-muted/40 border border-border rounded-xl text-xs"
+                className="px-3 py-2 bg-muted/40 border border-border rounded-xl text-[13px]"
               />
               <input
                 type="text"
                 placeholder="Expiry Date (e.g. May 2026)"
                 value={newVacExpiry}
                 onChange={(e) => setNewVacExpiry(e.target.value)}
-                className="px-3 py-2 bg-muted/40 border border-border rounded-xl text-xs"
+                className="px-3 py-2 bg-muted/40 border border-border rounded-xl text-[13px]"
               />
             </div>
             <button
               type="submit"
-              className="w-full py-2 bg-muted/40 hover:bg-muted text-foreground font-semibold rounded-xl text-xs flex items-center justify-center gap-1 cursor-pointer"
+              className="w-full py-2 bg-muted/40 hover:bg-muted text-foreground font-semibold rounded-xl text-[13px] flex items-center justify-center gap-1 cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Add Record</span>
@@ -304,16 +304,16 @@ export const RescheduleModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Reschedule – {appointment.pet}</h3>
+            <h3 className="font-semibold text-foreground text-sm">Reschedule – {appointment.pet}</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div className="p-3 bg-primary/5/60 rounded-xl border border-primary/20 text-primary">
-            <div className="font-bold">{appointment.service}</div>
+            <div className="font-semibold">{appointment.service}</div>
             <div className="text-[11px] text-primary">Current Slot: {appointment.date} at {appointment.time} ({appointment.groomer})</div>
           </div>
 
@@ -402,14 +402,14 @@ export const AddonServiceModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-warning" />
-            <h3 className="font-bold text-foreground text-sm">Add-on / Service Update – {appointment.pet}</h3>
+            <h3 className="font-semibold text-foreground text-sm">Add-on / Service Update – {appointment.pet}</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div className="font-semibold text-foreground">Select Add-on Upgrades for Grooming Session:</div>
           <div className="space-y-2">
             {addonOptions.map((opt) => {
@@ -475,20 +475,20 @@ export const AppointmentDetailsModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Appointment Details – #{appointment.id}</h3>
+            <h3 className="font-semibold text-foreground text-sm">Appointment Details – #{appointment.id}</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div className="flex items-center justify-between p-3.5 bg-muted/40 rounded-xl border border-border">
             <div>
-              <div className="text-base font-bold text-foreground">{appointment.pet}</div>
+              <div className="text-base font-semibold text-foreground">{appointment.pet}</div>
               <div className="text-muted-foreground">{appointment.service}</div>
             </div>
-            <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-primary/5 text-primary border border-primary/20">
+            <span className="px-2.5 py-1 rounded-full text-[13px] font-semibold bg-primary/5 text-primary border border-primary/20">
               {appointment.status}
             </span>
           </div>
@@ -513,7 +513,7 @@ export const AppointmentDetailsModal: React.FC<{
           </div>
 
           <div className="p-3 bg-warning/10 rounded-xl border border-warning/20 text-warning">
-            <div className="font-bold flex items-center gap-1.5">
+            <div className="font-semibold flex items-center gap-1.5">
               <AlertCircle className="w-3.5 h-3.5 text-warning" />
               <span>Grooming Intake Instructions:</span>
             </div>
@@ -552,31 +552,31 @@ export const ViewGroomingRecordModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <Scissors className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Grooming Record – {record.pet} ({record.date})</h3>
+            <h3 className="font-semibold text-foreground text-sm">Grooming Record – {record.pet} ({record.date})</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div className="grid grid-cols-3 gap-3">
             <div className="p-3 bg-muted/40 border border-border rounded-xl">
               <div className="text-[10px] text-muted-foreground/70 font-medium uppercase">Service</div>
-              <div className="font-bold text-foreground mt-0.5">{record.service}</div>
+              <div className="font-semibold text-foreground mt-0.5">{record.service}</div>
             </div>
             <div className="p-3 bg-muted/40 border border-border rounded-xl">
               <div className="text-[10px] text-muted-foreground/70 font-medium uppercase">Groomer</div>
-              <div className="font-bold text-foreground mt-0.5">{record.groomer}</div>
+              <div className="font-semibold text-foreground mt-0.5">{record.groomer}</div>
             </div>
             <div className="p-3 bg-muted/40 border border-border rounded-xl">
               <div className="text-[10px] text-muted-foreground/70 font-medium uppercase">Duration</div>
-              <div className="font-bold text-foreground mt-0.5">{record.duration}</div>
+              <div className="font-semibold text-foreground mt-0.5">{record.duration}</div>
             </div>
           </div>
 
           <div className="space-y-2 p-3.5 bg-muted/40 rounded-xl border border-border text-foreground">
-            <div className="font-bold text-foreground text-xs">Technical Grooming Specifications:</div>
+            <div className="font-semibold text-foreground text-[13px]">Technical Grooming Specifications:</div>
             <div className="grid grid-cols-2 gap-2 text-[11px]">
               <div>• <strong>Blade Used:</strong> #7F Body / #10 Sanitary</div>
               <div>• <strong>Comb Attachment:</strong> 1/2&quot; Guard Comb</div>
@@ -588,7 +588,7 @@ export const ViewGroomingRecordModal: React.FC<{
           </div>
 
           <div className="p-3 bg-primary/5/60 rounded-xl border border-primary/20 text-primary">
-            <span className="font-bold block">Groomer Clinical Note:</span>
+            <span className="font-semibold block">Groomer Clinical Note:</span>
             <p className="mt-1 text-foreground text-[11px]">{record.notes}</p>
           </div>
 
@@ -622,17 +622,17 @@ export const ViewPhotosModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <Camera className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Grooming Photos – {petName}</h3>
+            <h3 className="font-semibold text-foreground text-sm">Grooming Photos – {petName}</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <div className="text-xs font-bold text-foreground">Before Session</div>
+              <div className="text-[13px] font-semibold text-foreground">Before Session</div>
               <div className="relative h-56 rounded-xl overflow-hidden bg-muted/40 border border-border">
                 <Image
                   src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80"
@@ -646,7 +646,7 @@ export const ViewPhotosModal: React.FC<{
             </div>
 
             <div className="space-y-2">
-              <div className="text-xs font-bold text-foreground">After Full Groom</div>
+              <div className="text-[13px] font-semibold text-foreground">After Full Groom</div>
               <div className="relative h-56 rounded-xl overflow-hidden bg-muted/40 border border-border">
                 <Image
                   src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=600&q=80"
@@ -661,7 +661,7 @@ export const ViewPhotosModal: React.FC<{
           </div>
 
           <div className="pt-3 border-t border-border flex justify-between items-center">
-            <span className="text-muted-foreground text-xs">Session Date: Apr 20, 2025</span>
+            <span className="text-muted-foreground text-[13px]">Session Date: Apr 20, 2025</span>
             <button
               onClick={onClose}
               className="px-4 py-2 bg-primary text-white font-semibold rounded-xl cursor-pointer"
@@ -694,14 +694,14 @@ export const RecommendNextVisitModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Recommend Next Visit – {petName}</h3>
+            <h3 className="font-semibold text-foreground text-sm">Recommend Next Visit – {petName}</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div>
             <label className="block text-foreground font-semibold mb-1">Recommended Rebook Interval</label>
             <select
@@ -753,21 +753,21 @@ export const InvoiceModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <FileText className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Invoice INV-10482</h3>
+            <h3 className="font-semibold text-foreground text-sm">Invoice INV-10482</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div className="flex justify-between items-start border-b border-border pb-3">
             <div>
-              <div className="font-bold text-foreground text-base">All About Pawz Grooming</div>
+              <div className="font-semibold text-foreground text-base">All About Pawz Grooming</div>
               <div className="text-muted-foreground/70 text-[11px]">1234 Maple Drive, Frisco, TX</div>
             </div>
             <div className="text-right">
-              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-success/10 text-success border border-success/20">
+              <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-success/10 text-success border border-success/20">
                 PAID IN FULL
               </span>
               <div className="text-muted-foreground/70 text-[11px] mt-1">{payment.date}</div>
@@ -789,7 +789,7 @@ export const InvoiceModal: React.FC<{
                 <span>Groomer Gratuity / Tip</span>
                 <span>${(payment.amount * 0.10).toFixed(2)}</span>
               </div>
-              <div className="border-t border-border pt-2 flex justify-between font-bold text-foreground text-sm">
+              <div className="border-t border-border pt-2 flex justify-between font-semibold text-foreground text-sm">
                 <span>Total Paid</span>
                 <span className="text-primary">${payment.amount.toFixed(2)}</span>
               </div>
@@ -840,14 +840,14 @@ export const RefundModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <DollarSign className="w-4 h-4 text-destructive" />
-            <h3 className="font-bold text-foreground text-sm">Issue Refund</h3>
+            <h3 className="font-semibold text-foreground text-sm">Issue Refund</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div className="p-3 bg-destructive/5 rounded-xl border border-destructive/20 text-destructive">
             Original Transaction: <strong>${payment.amount.toFixed(2)}</strong> ({payment.description}) on {payment.date}
           </div>
@@ -859,7 +859,7 @@ export const RefundModal: React.FC<{
               step="0.01"
               value={refundAmount}
               onChange={(e) => setRefundAmount(parseFloat(e.target.value) || 0)}
-              className="w-full px-3 py-2 bg-muted/40 border border-border rounded-xl font-bold text-foreground"
+              className="w-full px-3 py-2 bg-muted/40 border border-border rounded-xl font-semibold text-foreground"
             />
           </div>
 
@@ -917,14 +917,14 @@ export const AuditLogModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <History className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Customer Record Audit Log</h3>
+            <h3 className="font-semibold text-foreground text-sm">Customer Record Audit Log</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-3 text-xs max-h-80 overflow-y-auto">
+        <div className="p-6 space-y-3 text-[13px] max-h-80 overflow-y-auto">
           {logs.map((log, i) => (
             <div key={i} className="p-3 bg-muted/40 rounded-xl border border-border space-y-1">
               <div className="flex items-center justify-between text-muted-foreground/70 text-[11px]">
@@ -965,14 +965,14 @@ export const CampaignModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <Tag className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Add to Marketing Campaign</h3>
+            <h3 className="font-semibold text-foreground text-sm">Add to Marketing Campaign</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-4 text-xs">
+        <div className="p-6 space-y-4 text-[13px]">
           <div>
             <label className="block text-foreground font-semibold mb-1">Select Marketing Segment / Campaign</label>
             <select
@@ -1025,17 +1025,17 @@ export const OptInOutModal: React.FC<{
         <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between bg-muted/40">
           <div className="flex items-center gap-2">
             <UserCheck className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Communication Preferences</h3>
+            <h3 className="font-semibold text-foreground text-sm">Communication Preferences</h3>
           </div>
           <button onClick={onClose} className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-3 text-xs">
+        <div className="p-6 space-y-3 text-[13px]">
           <label className="flex items-center justify-between p-3 bg-muted/40 rounded-xl border border-border cursor-pointer">
             <div>
-              <div className="font-bold text-foreground">SMS Appointment Reminders</div>
+              <div className="font-semibold text-foreground">SMS Appointment Reminders</div>
               <div className="text-muted-foreground/70 text-[11px]">Automated 24h &amp; 2h text messages</div>
             </div>
             <input
@@ -1048,7 +1048,7 @@ export const OptInOutModal: React.FC<{
 
           <label className="flex items-center justify-between p-3 bg-muted/40 rounded-xl border border-border cursor-pointer">
             <div>
-              <div className="font-bold text-foreground">Email Invoices &amp; Receipts</div>
+              <div className="font-semibold text-foreground">Email Invoices &amp; Receipts</div>
               <div className="text-muted-foreground/70 text-[11px]">Digital copy sent upon checkout</div>
             </div>
             <input
@@ -1061,7 +1061,7 @@ export const OptInOutModal: React.FC<{
 
           <label className="flex items-center justify-between p-3 bg-muted/40 rounded-xl border border-border cursor-pointer">
             <div>
-              <div className="font-bold text-foreground">Promotions &amp; Seasonal Offers</div>
+              <div className="font-semibold text-foreground">Promotions &amp; Seasonal Offers</div>
               <div className="text-muted-foreground/70 text-[11px]">Monthly newsletters and holiday discounts</div>
             </div>
             <input

@@ -59,7 +59,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
             </div>
             <span className="font-extrabold text-xl leading-tight tracking-tight text-[#0D62F3]">
               All About<br />
-              <span className="font-bold text-foreground text-lg tracking-normal">Pawz</span>
+              <span className="font-semibold text-foreground text-lg tracking-normal">Pawz</span>
             </span>
           </div>
 
@@ -278,12 +278,12 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
 
         {/* Support Card in Sidebar */}
         <div className="mt-8 bg-primary/5/70 border border-primary/10 rounded-xl p-4 text-center">
-          <h4 className="text-xs font-bold text-foreground">Need help?</h4>
-          <p className="text-xs text-muted-foreground mt-1">We&apos;re here for you!</p>
-          <p className="text-xs font-bold text-[#0D62F3] mt-1">(214) 555-0198</p>
+          <h4 className="text-[13px] font-semibold text-foreground">Need help?</h4>
+          <p className="text-[13px] text-muted-foreground mt-1">We&apos;re here for you!</p>
+          <p className="text-[13px] font-semibold text-[#0D62F3] mt-1">(214) 555-0198</p>
           <button
             onClick={() => setShowMessageModal(true)}
-            className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-card border border-primary/20 shadow-2xs rounded-lg px-3 py-2 text-xs font-semibold text-[#0D62F3] hover:bg-primary/5 transition cursor-pointer"
+            className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-card border border-primary/20 shadow-2xs rounded-lg px-3 py-2 text-[13px] font-semibold text-[#0D62F3] hover:bg-primary/5 transition cursor-pointer"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" strokeLinecap="round" strokeLinejoin="round" />
@@ -304,7 +304,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
             <h1 className="text-2xl font-extrabold text-foreground tracking-tight flex items-center gap-2">
               Good morning, Sarah! <span className="text-xl">👋</span>
             </h1>
-            <p className="text-xs text-muted-foreground mt-0.5">Here&apos;s what&apos;s happening with your pups today.</p>
+            <p className="text-[13px] text-muted-foreground mt-0.5">Here&apos;s what&apos;s happening with your pups today.</p>
           </div>
 
           {/* User Profile & Notifications & Role Switcher */}
@@ -317,7 +317,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="absolute top-1 right-1 bg-destructive/100 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center ring-2 ring-white">
+              <span className="absolute top-1 right-1 bg-destructive/100 text-white text-[10px] font-semibold w-4 h-4 rounded-full flex items-center justify-center ring-2 ring-white">
                 2
               </span>
             </button>
@@ -327,11 +327,11 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
               onClick={() => setShowRoleMenu(!showRoleMenu)}
               className="flex items-center gap-3 pl-3 border-l border-border cursor-pointer hover:opacity-85 transition"
             >
-              <div className="w-8 h-8 rounded-full bg-primary/10 text-[#0D62F3] font-bold text-xs flex items-center justify-center border border-primary/20">
+              <div className="w-8 h-8 rounded-full bg-primary/10 text-[#0D62F3] font-semibold text-[13px] flex items-center justify-center border border-primary/20">
                 SJ
               </div>
               <div className="text-left hidden sm:block">
-                <span className="text-xs font-semibold text-foreground block leading-tight">Sarah Johnson</span>
+                <span className="text-[13px] font-semibold text-foreground block leading-tight">Sarah Johnson</span>
                 <span className="text-[10px] text-primary font-medium">Pet Parent</span>
               </div>
               <svg className="w-4 h-4 text-muted-foreground/70" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -343,7 +343,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
             {showRoleMenu && (
               <div className="absolute right-0 top-12 w-56 bg-card border border-border rounded-xl shadow-xl py-2 z-50 animate-in fade-in zoom-in-95 duration-100">
                 <div className="px-3 py-2 border-b border-border">
-                  <p className="text-xs font-bold text-foreground">Sarah Johnson</p>
+                  <p className="text-[13px] font-semibold text-foreground">Sarah Johnson</p>
                   <p className="text-[11px] text-muted-foreground">client@test.com</p>
                 </div>
                 <div className="py-1">
@@ -353,7 +353,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                         setShowRoleMenu(false);
                         onSwitchToAdmin();
                       }}
-                      className="w-full px-3 py-1.5 text-xs text-foreground hover:bg-muted/40 flex items-center gap-2 cursor-pointer text-left"
+                      className="w-full px-3 py-1.5 text-[13px] text-foreground hover:bg-muted/40 flex items-center gap-2 cursor-pointer text-left"
                     >
                       <span>⚙️</span> Switch to Salon Admin
                     </button>
@@ -364,7 +364,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                         setShowRoleMenu(false);
                         onSwitchToGroomer();
                       }}
-                      className="w-full px-3 py-1.5 text-xs text-foreground hover:bg-muted/40 flex items-center gap-2 cursor-pointer text-left"
+                      className="w-full px-3 py-1.5 text-[13px] text-foreground hover:bg-muted/40 flex items-center gap-2 cursor-pointer text-left"
                     >
                       <span>✂️</span> Switch to Groomer Station
                     </button>
@@ -374,7 +374,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                       setShowRoleMenu(false);
                       onSignOut();
                     }}
-                    className="w-full px-3 py-1.5 text-xs text-destructive hover:bg-destructive/10 flex items-center gap-2 cursor-pointer text-left"
+                    className="w-full px-3 py-1.5 text-[13px] text-destructive hover:bg-destructive/10 flex items-center gap-2 cursor-pointer text-left"
                   >
                     <span>🚪</span> Sign Out
                   </button>
@@ -395,7 +395,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
             >
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-border">
-                  <div className="flex items-center gap-2 font-bold text-sm text-foreground">
+                  <div className="flex items-center gap-2 font-semibold text-sm text-foreground">
                     <svg className="w-4 h-4 text-[#0D62F3]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -403,7 +403,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                   </div>
                   <button
                     onClick={() => setActiveTab('appointments')}
-                    className="text-xs font-semibold text-[#0D62F3] hover:underline cursor-pointer"
+                    className="text-[13px] font-semibold text-[#0D62F3] hover:underline cursor-pointer"
                   >
                     View all
                   </button>
@@ -419,10 +419,10 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                     />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground font-medium">Wednesday, May 21, 2025</p>
+                    <p className="text-[13px] text-muted-foreground font-medium">Wednesday, May 21, 2025</p>
                     <p className="text-2xl font-extrabold text-foreground mt-0.5">10:30 AM</p>
                     <p className="text-sm font-semibold text-foreground mt-0.5">Full Groom + Blueberry Facial</p>
-                    <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1">
+                    <div className="flex items-center gap-1.5 text-[13px] text-muted-foreground mt-1">
                       <svg className="w-3.5 h-3.5 text-[#0D62F3]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" />
@@ -441,13 +441,13 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                     className="w-6 h-6 rounded-full object-cover border border-border"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNIEpDScyL977tdc-rLYh4_ksq466XZ7OpRPQzY-1HWlRGcv3nDVmyz5hiik8a4BztgOlDE8mwAglsQF7nec16VqxecRAG2BROmD6CQ6akSNSwZjZXabjJAu0lTMjgw8Z5m7gcOPZDP7UlqFU_sNGVJCwd5fNw_Mye6SCB9_SIBuisfYgH-Ry8BYMEIB0B4Fh8D_upZhRp5MafgvVz1iXHsTvXy1oA1byvfOqrP_Xg3cYGC-rQ-oye"
                   />
-                  <span className="text-xs font-medium text-muted-foreground">
+                  <span className="text-[13px] font-medium text-muted-foreground">
                     Groomer: <span className="text-foreground font-semibold">Sarah M.</span>
                   </span>
                 </div>
                 <button
                   onClick={() => setActiveTab('appointments')}
-                  className="bg-[#0D62F3] hover:bg-primary text-white text-xs font-semibold px-5 py-2.5 rounded-lg shadow-2xs transition cursor-pointer"
+                  className="bg-[#0D62F3] hover:bg-primary text-white text-[13px] font-semibold px-5 py-2.5 rounded-lg shadow-2xs transition cursor-pointer"
                 >
                   View Details
                 </button>
@@ -470,15 +470,15 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                     />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Charlie</h3>
-                    <p className="text-xs text-primary-foreground/80">Full Groom &amp; Pawdicure</p>
-                    <p className="text-xs text-primary-foreground/80 mt-0.5">Started today at 9:15 AM</p>
+                    <h3 className="text-lg font-semibold">Charlie</h3>
+                    <p className="text-[13px] text-primary-foreground/80">Full Groom &amp; Pawdicure</p>
+                    <p className="text-[13px] text-primary-foreground/80 mt-0.5">Started today at 9:15 AM</p>
                   </div>
                 </div>
                 <div className="self-start">
                   <button
                     onClick={() => setActiveTab('live-groom-status')}
-                    className="text-xs font-medium text-white/90 hover:text-white underline cursor-pointer"
+                    className="text-[13px] font-medium text-white/90 hover:text-white underline cursor-pointer"
                   >
                     View All
                   </button>
@@ -511,7 +511,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                     className="relative z-10 flex flex-col items-center cursor-pointer"
                   >
                     <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shadow-2xs ${
+                      className={`w-7 h-7 rounded-full flex items-center justify-center text-[13px] font-semibold shadow-2xs ${
                         groomStep >= 1 ? 'bg-[#0D62F3] text-white' : 'bg-muted/40 border border-border text-muted-foreground/70'
                       }`}
                     >
@@ -529,7 +529,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                     className="relative z-10 flex flex-col items-center cursor-pointer"
                   >
                     <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shadow-2xs ${
+                      className={`w-7 h-7 rounded-full flex items-center justify-center text-[13px] font-semibold shadow-2xs ${
                         groomStep >= 2
                           ? 'bg-[#0D62F3] text-white ring-4 ring-blue-100'
                           : 'bg-muted/40 border border-border text-muted-foreground/70'
@@ -555,7 +555,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                     className="relative z-10 flex flex-col items-center cursor-pointer"
                   >
                     <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium shadow-2xs ${
+                      className={`w-7 h-7 rounded-full flex items-center justify-center text-[13px] font-medium shadow-2xs ${
                         groomStep >= 3
                           ? 'bg-[#0D62F3] text-white ring-4 ring-blue-100'
                           : 'bg-muted/40 border border-border text-muted-foreground/70'
@@ -581,7 +581,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                     className="relative z-10 flex flex-col items-center cursor-pointer"
                   >
                     <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium shadow-2xs ${
+                      className={`w-7 h-7 rounded-full flex items-center justify-center text-[13px] font-medium shadow-2xs ${
                         groomStep >= 4
                           ? 'bg-success text-white ring-4 ring-emerald-100'
                           : 'bg-muted/40 border border-border text-muted-foreground/70'
@@ -593,7 +593,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                     </div>
                     <span
                       className={`text-[11px] font-medium mt-1.5 ${
-                        groomStep >= 4 ? 'text-success font-bold' : 'text-muted-foreground/70'
+                        groomStep >= 4 ? 'text-success font-semibold' : 'text-muted-foreground/70'
                       }`}
                     >
                       Ready for Pickup
@@ -610,10 +610,10 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
             {/* Left: My Pets Section (7 cols) */}
             <div className="xl:col-span-7 space-y-3">
               <div className="flex items-center justify-between">
-                <h2 className="font-bold text-sm text-foreground">My Pets</h2>
+                <h2 className="font-semibold text-sm text-foreground">My Pets</h2>
                 <button
                   onClick={() => setActiveTab('my-pets')}
-                  className="text-xs font-semibold text-[#0D62F3] hover:underline cursor-pointer"
+                  className="text-[13px] font-semibold text-[#0D62F3] hover:underline cursor-pointer"
                 >
                   View all pets
                 </button>
@@ -630,7 +630,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe7RVDYL03WE6kJ8qQuoaa5Ze-R0GLqpxLEhbnAzawZZAU3LDzmKXg6Jgndy9gnsAWMnXirp84BzfzqYT8s5CuD85T0UdrM8KYW1l5wZlPrDNK8uNfF4H2iSkEHkwwq9MlupqlYBT0Hu21h9vkmoe3k06rjUJ2PLXE_JB9ZbcWrXABRW1qmWVoaPiD1vLymYipMyRHDWOQrNSkZaGUKYoiG3282MHHxl-yx-4JLidzcdExIIPvB87o"
                       />
                       <div>
-                        <h3 className="text-sm font-bold text-foreground">Buddy</h3>
+                        <h3 className="text-sm font-semibold text-foreground">Buddy</h3>
                         <p className="text-[11px] text-muted-foreground">Golden Retriever</p>
                         <p className="text-[10px] text-muted-foreground/70">3 years old • 75 lbs</p>
                       </div>
@@ -658,7 +658,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpk72KEUuNWxOVdW6BPYXrAupBoF6C9Gp4fjCY3k4Xqp9GQaolG65TkrfuCUOZjgxZ2gM01EhiiPTVvh6L662yMZXTizz1fptlSGDqP5qFWrNZVetE9kYVLf23nyyN6W7JXAwI0WLReM4VGzGRPt7ERX4EuUpEwuQj-S_h3Gef14EeeYVpC5yLSGX2bQ7vZ1qlbVBXt772irfc8BEXobZK5jztLfhb0qiCZ0wLcElrF_msDxuphMv9"
                       />
                       <div>
-                        <h3 className="text-sm font-bold text-foreground">Luna</h3>
+                        <h3 className="text-sm font-semibold text-foreground">Luna</h3>
                         <p className="text-[11px] text-muted-foreground">Poodle</p>
                         <p className="text-[10px] text-muted-foreground/70">2 years old • 18 lbs</p>
                       </div>
@@ -686,7 +686,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                       <path d="M12 4v16m8-8H4" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <span className="text-xs font-semibold">+ Add New Pet</span>
+                  <span className="text-[13px] font-semibold">+ Add New Pet</span>
                 </button>
               </div>
             </div>
@@ -700,16 +700,16 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
               >
                 <div>
                   <div className="flex items-center gap-4">
-                    <span className="text-xs font-semibold text-muted-foreground">Current Balance</span>
+                    <span className="text-[13px] font-semibold text-muted-foreground">Current Balance</span>
                     <button
                       onClick={() => setActiveTab('my-invoices')}
-                      className="text-xs font-semibold text-[#0D62F3] hover:underline cursor-pointer"
+                      className="text-[13px] font-semibold text-[#0D62F3] hover:underline cursor-pointer"
                     >
                       View Invoices
                     </button>
                   </div>
                   <p className="text-2xl font-extrabold text-success mt-1">$0.00</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">You&apos;re all caught up! 🎉</p>
+                  <p className="text-[13px] text-muted-foreground mt-0.5">You&apos;re all caught up! 🎉</p>
                 </div>
                 <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-[#0D62F3]">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
@@ -724,10 +724,10 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 data-purpose="payment-methods-card"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-foreground">Payment Methods</span>
+                  <span className="text-[13px] font-semibold text-foreground">Payment Methods</span>
                   <button
                     onClick={() => setActiveTab('payments-cards')}
-                    className="text-xs font-semibold text-[#0D62F3] hover:underline cursor-pointer"
+                    className="text-[13px] font-semibold text-[#0D62F3] hover:underline cursor-pointer"
                   >
                     Manage Cards
                   </button>
@@ -739,7 +739,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                       VISA
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-foreground">•••• 4242</span>
+                      <span className="text-[13px] font-semibold text-foreground">•••• 4242</span>
                       <span className="text-[10px] text-muted-foreground/70 ml-2">Expires 08/27</span>
                     </div>
                   </div>
@@ -750,7 +750,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 {/* Add Payment Method Button */}
                 <button
                   onClick={() => setShowAddPaymentModal(true)}
-                  className="w-full mt-3 border border-dashed border-primary/20 rounded-lg py-2 text-xs font-semibold text-[#0D62F3] hover:bg-primary/5/50 transition flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full mt-3 border border-dashed border-primary/20 rounded-lg py-2 text-[13px] font-semibold text-[#0D62F3] hover:bg-primary/5/50 transition flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M12 4v16m8-8H4" strokeLinecap="round" strokeLinejoin="round" />
@@ -769,16 +769,16 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
               data-purpose="recent-appointments-table"
             >
               <div className="flex items-center justify-between pb-3 border-b border-border">
-                <h3 className="font-bold text-sm text-foreground">Recent Appointments</h3>
+                <h3 className="font-semibold text-sm text-foreground">Recent Appointments</h3>
                 <button
                   onClick={() => setActiveTab('appointments')}
-                  className="text-xs font-semibold text-[#0D62F3] hover:underline cursor-pointer"
+                  className="text-[13px] font-semibold text-[#0D62F3] hover:underline cursor-pointer"
                 >
                   View all
                 </button>
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs mt-3 whitespace-nowrap">
+                <table className="w-full text-left text-[13px] mt-3 whitespace-nowrap">
                   <thead>
                     <tr className="text-muted-foreground/70 text-[11px] border-b border-border font-medium">
                       <th className="pb-2">Date</th>
@@ -810,7 +810,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                           Completed
                         </span>
                       </td>
-                      <td className="py-3 text-right font-bold text-foreground">$85.00</td>
+                      <td className="py-3 text-right font-semibold text-foreground">$85.00</td>
                     </tr>
                     {/* Row 2 */}
                     <tr className="hover:bg-muted/40/70">
@@ -832,7 +832,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                           Completed
                         </span>
                       </td>
-                      <td className="py-3 text-right font-bold text-foreground">$95.00</td>
+                      <td className="py-3 text-right font-semibold text-foreground">$95.00</td>
                     </tr>
                     {/* Row 3 */}
                     <tr className="hover:bg-muted/40/70">
@@ -854,7 +854,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                           Completed
                         </span>
                       </td>
-                      <td className="py-3 text-right font-bold text-foreground">$40.00</td>
+                      <td className="py-3 text-right font-semibold text-foreground">$40.00</td>
                     </tr>
                     {/* Row 4 */}
                     <tr className="hover:bg-muted/40/70">
@@ -876,7 +876,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                           Completed
                         </span>
                       </td>
-                      <td className="py-3 text-right font-bold text-foreground">$100.00</td>
+                      <td className="py-3 text-right font-semibold text-foreground">$100.00</td>
                     </tr>
                   </tbody>
                 </table>
@@ -894,12 +894,12 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 </svg>
               </div>
               <h3 className="font-extrabold text-base text-foreground leading-snug">Refer a Friend, Get Rewarded!</h3>
-              <p className="text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed">
-                Refer a friend and you&apos;ll both get <span className="font-bold text-foreground">$20 off</span> your next service.
+              <p className="text-[13px] text-muted-foreground mt-2 max-w-xs leading-relaxed">
+                Refer a friend and you&apos;ll both get <span className="font-semibold text-foreground">$20 off</span> your next service.
               </p>
               <button
                 onClick={() => setReferralModal(true)}
-                className="mt-5 w-full bg-[#0D62F3] hover:bg-primary text-white font-semibold text-xs py-2.5 rounded-lg shadow-2xs transition cursor-pointer"
+                className="mt-5 w-full bg-[#0D62F3] hover:bg-primary text-white font-semibold text-[13px] py-2.5 rounded-lg shadow-2xs transition cursor-pointer"
               >
                 Refer Now
               </button>
@@ -919,7 +919,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 </svg>
               </div>
               <div>
-                <h4 className="text-xs font-bold text-foreground">Easy Online Booking</h4>
+                <h4 className="text-[13px] font-semibold text-foreground">Easy Online Booking</h4>
                 <p className="text-[11px] text-muted-foreground mt-0.5">Book appointments 24/7 at your convenience.</p>
                 <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0D62F3] mt-2">
                   Book Now <span>→</span>
@@ -938,7 +938,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 </svg>
               </div>
               <div>
-                <h4 className="text-xs font-bold text-foreground">VIP Rewards</h4>
+                <h4 className="text-[13px] font-semibold text-foreground">VIP Rewards</h4>
                 <p className="text-[11px] text-muted-foreground mt-0.5">Earn points with every visit and unlock special perks.</p>
                 <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0D62F3] mt-2">
                   View Rewards <span>→</span>
@@ -957,7 +957,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 </svg>
               </div>
               <div>
-                <h4 className="text-xs font-bold text-foreground">Need Help?</h4>
+                <h4 className="text-[13px] font-semibold text-foreground">Need Help?</h4>
                 <p className="text-[11px] text-muted-foreground mt-0.5">We&apos;re here for you and your pups!</p>
                 <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0D62F3] mt-2">
                   Contact Us <span>→</span>
@@ -974,7 +974,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
         <div className="fixed inset-0 z-50 bg-card/50 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-card rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-in fade-in zoom-in-95">
             <div className="flex items-center justify-between border-b border-border pb-3">
-              <h3 className="font-bold text-foreground text-sm">Add New Pet</h3>
+              <h3 className="font-semibold text-foreground text-sm">Add New Pet</h3>
               <button
                 onClick={() => setShowAddPetModal(false)}
                 className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer"
@@ -988,7 +988,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 alert('Pet profile created! Our salon concierge will review vaccination records.');
                 setShowAddPetModal(false);
               }}
-              className="space-y-3 text-xs"
+              className="space-y-3 text-[13px]"
             >
               <div>
                 <label className="font-semibold text-foreground block mb-1">Pet Name</label>
@@ -1049,7 +1049,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
           <div className="bg-card rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-in fade-in zoom-in-95">
             <div className="flex items-center justify-between border-b border-border pb-3">
               <div className="flex items-center gap-2">
-                <span className="font-bold text-foreground text-sm">Add Payment Method</span>
+                <span className="font-semibold text-foreground text-sm">Add Payment Method</span>
                 <span className="text-[10px] bg-muted/40 text-muted-foreground px-2 py-0.5 rounded tabular-nums font-semibold">
                   Powered by Stripe
                 </span>
@@ -1067,7 +1067,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 alert('Card on file updated securely via Stripe tokenization.');
                 setShowAddPaymentModal(false);
               }}
-              className="space-y-3 text-xs"
+              className="space-y-3 text-[13px]"
             >
               <div>
                 <label className="font-semibold text-foreground block mb-1">Cardholder Name</label>
@@ -1129,7 +1129,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
         <div className="fixed inset-0 z-50 bg-card/50 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-card rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-in fade-in zoom-in-95">
             <div className="flex items-center justify-between border-b border-border pb-3">
-              <h3 className="font-bold text-foreground text-sm">Send Message to All About Pawz</h3>
+              <h3 className="font-semibold text-foreground text-sm">Send Message to All About Pawz</h3>
               <button
                 onClick={() => setShowMessageModal(false)}
                 className="text-muted-foreground/70 hover:text-muted-foreground p-1 cursor-pointer"
@@ -1137,7 +1137,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
                 ✕
               </button>
             </div>
-            <div className="space-y-3 text-xs">
+            <div className="space-y-3 text-[13px]">
               <div>
                 <label className="font-semibold text-foreground block mb-1">Subject / Grooming Query</label>
                 <input
@@ -1187,7 +1187,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
             </div>
             <div>
               <h3 className="text-base font-extrabold text-foreground">Your Personal Referral Link</h3>
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-[13px] text-muted-foreground mt-1">
                 Share this link with friends. When they book their first groom, you both get $20!
               </p>
             </div>
@@ -1195,14 +1195,14 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
               <input
                 readOnly
                 value="https://allaboutpawz.com/refer/sarah-j"
-                className="bg-transparent text-xs text-foreground tabular-nums flex-1 focus:outline-none"
+                className="bg-transparent text-[13px] text-foreground tabular-nums flex-1 focus:outline-none"
               />
               <button
                 onClick={() => {
                   setReferralCopied(true);
                   setTimeout(() => setReferralCopied(false), 2000);
                 }}
-                className="px-3 py-1.5 bg-[#0D62F3] text-white text-xs font-semibold rounded-lg hover:bg-primary transition cursor-pointer"
+                className="px-3 py-1.5 bg-[#0D62F3] text-white text-[13px] font-semibold rounded-lg hover:bg-primary transition cursor-pointer"
               >
                 {referralCopied ? 'Copied! ✓' : 'Copy'}
               </button>
@@ -1210,7 +1210,7 @@ export const CustomerPortalView: React.FC<CustomerPortalViewProps> = ({
             <div className="pt-2">
               <button
                 onClick={() => setReferralModal(false)}
-                className="w-full py-2 border border-border text-muted-foreground rounded-lg text-xs font-semibold hover:bg-muted/40 cursor-pointer"
+                className="w-full py-2 border border-border text-muted-foreground rounded-lg text-[13px] font-semibold hover:bg-muted/40 cursor-pointer"
               >
                 Close
               </button>

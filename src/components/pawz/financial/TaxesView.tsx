@@ -106,7 +106,7 @@ export const TaxesView: React.FC<TaxesViewProps> = ({ onNavigateSection }) => {
       {/* TOP SUMMARY STRIP */}
       <div className="p-6 border-b border-border">
         <h1 className="font-display text-xl font-semibold tracking-tight text-foreground">Taxes &amp; Rules</h1>
-        <p className="text-xs text-muted-foreground mt-0.5 max-w-3xl">
+        <p className="text-[13px] text-muted-foreground mt-0.5 max-w-3xl">
           Configure real-time tax rules, jurisdiction bindings, and state/county/city nexus rules. Automatically integrated into final customer invoice checkout.
         </p>
       </div>
@@ -116,13 +116,13 @@ export const TaxesView: React.FC<TaxesViewProps> = ({ onNavigateSection }) => {
         <div className="lg:col-span-8 p-6 space-y-6">
           <div className="border border-border">
             <div className="bg-muted/40 border-b border-border px-4 py-2 flex items-center justify-between">
-              <span className="text-[12px] font-bold text-foreground uppercase">ACTIVE TAX RULES &amp; JURISDICTIONS</span>
-              <span className="text-[10px] bg-primary text-primary-foreground px-1.5 py-0.5 font-bold uppercase">NEXUS_SYNC_PASS</span>
+              <span className="text-[12px] font-semibold text-foreground uppercase">ACTIVE TAX RULES &amp; JURISDICTIONS</span>
+              <span className="text-[10px] bg-primary text-primary-foreground px-1.5 py-0.5 font-semibold uppercase">NEXUS_SYNC_PASS</span>
             </div>
             <div className="overflow-x-auto w-full">
               <table className="w-full text-left text-[13px] text-foreground border-collapse">
                 <thead>
-                  <tr className="border-b border-border bg-muted/30 font-bold">
+                  <tr className="border-b border-border bg-muted/30 font-semibold">
                     <th className="p-3 border-r border-border uppercase">ID</th>
                     <th className="p-3 border-r border-border uppercase">JURISDICTION</th>
                     <th className="p-3 border-r border-border uppercase">TAX TYPE</th>
@@ -137,13 +137,13 @@ export const TaxesView: React.FC<TaxesViewProps> = ({ onNavigateSection }) => {
                 <tbody className="divide-y divide-border bg-card">
                   {taxRules.map((r) => (
                     <tr key={r.id} className="hover:bg-muted/30 transition-colors">
-                      <td className="p-3 border-r border-border font-bold text-foreground">{r.id}</td>
-                      <td className="p-3 border-r border-border font-bold">{r.jurisdiction}</td>
+                      <td className="p-3 border-r border-border font-semibold text-foreground">{r.id}</td>
+                      <td className="p-3 border-r border-border font-semibold">{r.jurisdiction}</td>
                       <td className="p-3 border-r border-border text-muted-foreground">{r.type.replace(/_/g, ' ')}</td>
-                      <td className="p-3 border-r border-border font-bold">{r.stateCode}</td>
+                      <td className="p-3 border-r border-border font-semibold">{r.stateCode}</td>
                       <td className="p-3 border-r border-border text-right font-semibold">{r.rate.toFixed(2)}%</td>
-                      <td className="p-3 border-r border-border text-muted-foreground/70 font-bold">{r.code}</td>
-                      <td className="p-3 border-r border-border font-bold text-muted-foreground">{r.class.replace(/_/g, ' ')}</td>
+                      <td className="p-3 border-r border-border text-muted-foreground/70 font-semibold">{r.code}</td>
+                      <td className="p-3 border-r border-border font-semibold text-muted-foreground">{r.class.replace(/_/g, ' ')}</td>
                       <td className="p-3 border-r border-border text-center">
                         <span className="text-[10px] bg-muted/40 border border-border text-foreground px-1 py-0.2">
                           {r.autoCalc ? 'YES' : 'NO'}
@@ -152,7 +152,7 @@ export const TaxesView: React.FC<TaxesViewProps> = ({ onNavigateSection }) => {
                       <td className="p-3 text-center">
                         <button
                           onClick={() => handleDeleteRule(r.id)}
-                          className="bg-card hover:bg-black hover:text-white text-foreground border border-border px-2 py-0.5 text-[11px] text-muted-foreground font-bold transition-colors cursor-pointer"
+                          className="bg-card hover:bg-black hover:text-white text-foreground border border-border px-2 py-0.5 text-[11px] text-muted-foreground font-semibold transition-colors cursor-pointer"
                         >
                           DELETE
                         </button>
@@ -169,12 +169,12 @@ export const TaxesView: React.FC<TaxesViewProps> = ({ onNavigateSection }) => {
 
           {/* LOWER FORMULA CRITERIA */}
           <div className="border border-border p-4 bg-muted/30 space-y-4">
-            <h4 className="text-[12px] font-bold text-foreground uppercase">ADVANCED REVENUE CALCULATION CRITERIA RULES</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs tabular-nums">
+            <h4 className="text-[12px] font-semibold text-foreground uppercase">ADVANCED REVENUE CALCULATION CRITERIA RULES</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[13px] tabular-nums">
               <label className="flex items-start gap-3 p-3 bg-card border border-border cursor-pointer select-none">
                 <input defaultChecked className="w-4 h-4 rounded-md accent-black border border-border mt-0.5 cursor-pointer" type="checkbox" />
                 <div>
-                  <strong className="block text-foreground font-bold">Enforce Holiday Peak Surcharge Taxing</strong>
+                  <strong className="block text-foreground font-semibold">Enforce Holiday Peak Surcharge Taxing</strong>
                   <span className="text-[10px] text-muted-foreground/70 block mt-0.5">
                     Automatically enforce taxation overrides on special booking peak surcharges during seasonal high-volume slots.
                   </span>
@@ -184,7 +184,7 @@ export const TaxesView: React.FC<TaxesViewProps> = ({ onNavigateSection }) => {
               <label className="flex items-start gap-3 p-3 bg-card border border-border cursor-pointer select-none">
                 <input defaultChecked className="w-4 h-4 rounded-md accent-black border border-border mt-0.5 cursor-pointer" type="checkbox" />
                 <div>
-                  <strong className="block text-foreground font-bold">Automated State Nexus Threshold Triggers</strong>
+                  <strong className="block text-foreground font-semibold">Automated State Nexus Threshold Triggers</strong>
                   <span className="text-[10px] text-muted-foreground/70 block mt-0.5">
                     Trigger strict general ledger notification block when grooming services in bordering counties cross physical nexus thresholds.
                   </span>
@@ -282,7 +282,7 @@ export const TaxesView: React.FC<TaxesViewProps> = ({ onNavigateSection }) => {
             <div className="pt-4 border-t border-border">
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-4 py-2.5 text-[12px] uppercase font-bold tracking-wider transition-colors cursor-pointer rounded-md"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 border border-border px-4 py-2.5 text-[12px] uppercase font-semibold tracking-wider transition-colors cursor-pointer rounded-md"
               >
                 AUTHORIZE TAX NEXUS RULE
               </button>

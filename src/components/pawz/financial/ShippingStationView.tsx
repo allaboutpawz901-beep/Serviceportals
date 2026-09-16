@@ -79,40 +79,40 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
       <div className="border border-border bg-card p-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-3">
           <div>
-            <div className="flex items-center gap-2 text-[10px] tabular-nums uppercase tracking-widest text-muted-foreground">
-              <span className="bg-primary text-primary-foreground px-1.5 py-0.5 font-bold">PACK &amp; SHIP STATION</span>
+            <div className="flex items-center gap-2 text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground">
+              <span className="bg-primary text-primary-foreground px-1.5 py-0.5 font-semibold">PACK &amp; SHIP STATION</span>
               <span>•</span>
-              <span className="text-foreground font-bold">ROLLO-USB4 &amp; SCALE CONNECTED</span>
+              <span className="text-foreground font-semibold">ROLLO-USB4 &amp; SCALE CONNECTED</span>
             </div>
             <h1 className="text-2xl font-semibold uppercase tracking-tight text-foreground mt-1">
               Shipping &amp; Label Printing Station
             </h1>
-            <p className="text-xs text-muted-foreground mt-0.5">
+            <p className="text-[13px] text-muted-foreground mt-0.5">
               Configure package dimensions, compare live commercial rates, and print 4x6 thermal labels.
             </p>
           </div>
 
-          <div className="flex items-center border border-border divide-x divide-border text-xs tabular-nums">
+          <div className="flex items-center border border-border divide-x divide-border text-[13px] tabular-nums">
             <div className="p-2.5 bg-card text-center">
               <p className="text-[10px] text-muted-foreground uppercase">Queue</p>
-              <p className="font-bold text-foreground">12 Ready</p>
+              <p className="font-semibold text-foreground">12 Ready</p>
             </div>
             <div className="p-2.5 bg-card text-center">
               <p className="text-[10px] text-muted-foreground uppercase">Thermal</p>
-              <p className="font-bold text-foreground">Rollo 203 DPI</p>
+              <p className="font-semibold text-foreground">Rollo 203 DPI</p>
             </div>
             <div className="p-2.5 bg-card text-center">
               <p className="text-[10px] text-muted-foreground uppercase">Scale</p>
-              <p className="font-bold text-foreground">Online (COM3)</p>
+              <p className="font-semibold text-foreground">Online (COM3)</p>
             </div>
           </div>
         </div>
 
         {/* Order Selector */}
-        <div className="mt-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs tabular-nums">
+        <div className="mt-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] tabular-nums">
           <div className="flex items-center gap-2 w-full sm:w-auto">
-            <span className="font-bold text-foreground">DISPATCH:</span>
-            <select className="h-8 px-2 border border-border bg-card font-bold uppercase focus:outline-none w-full sm:w-96 cursor-pointer">
+            <span className="font-semibold text-foreground">DISPATCH:</span>
+            <select className="h-8 px-2 border border-border bg-card font-semibold uppercase focus:outline-none w-full sm:w-96 cursor-pointer">
               <option>#ORD-2025-1048 — Sarah Johnson (Frisco, TX) • 3 items • 1.50 lbs</option>
               <option>#ORD-2025-1044 — Jessica Ramirez (Plano, TX) • 4 items • 3.80 lbs</option>
               <option>#ORD-2025-1040 — Kevin Vance (Dallas, TX) • 2 items • 9.40 lbs</option>
@@ -121,7 +121,7 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
 
           <button 
             onClick={() => onNavigateSection?.('orders')}
-            className="px-3 py-1.5 border border-border bg-card hover:bg-accent/50 font-bold uppercase text-xs cursor-pointer"
+            className="px-3 py-1.5 border border-border bg-card hover:bg-accent/50 font-semibold uppercase text-[13px] cursor-pointer"
           >
             Back to Orders
           </button>
@@ -133,10 +133,10 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
         {/* Left Column: Scale & Carrier Engine (6 cols) */}
         <div className="lg:col-span-6 space-y-6">
           {/* Destination Summary */}
-          <div className="border border-border bg-card p-4 space-y-2 text-xs">
+          <div className="border border-border bg-card p-4 space-y-2 text-[13px]">
             <div className="flex items-center justify-between border-b border-border pb-2 tabular-nums">
-              <span className="font-bold uppercase text-[10px] text-muted-foreground">Destination: USPS CASS Certified</span>
-              <span className="font-bold text-foreground flex items-center gap-1">
+              <span className="font-semibold uppercase text-[10px] text-muted-foreground">Destination: USPS CASS Certified</span>
+              <span className="font-semibold text-foreground flex items-center gap-1">
                 <CheckCircle2 className="w-3 h-3" />
                 DPV MATCH 100%
               </span>
@@ -147,7 +147,7 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
                 <p className="tabular-nums text-foreground">1234 Maple Drive<br />Frisco, TX 75034-4921</p>
               </div>
               <div className="border-l border-border pl-3 text-[12px] text-muted-foreground space-y-1">
-                <p className="font-bold text-foreground uppercase text-[10px]">Package Items:</p>
+                <p className="font-semibold text-foreground uppercase text-[10px]">Package Items:</p>
                 <p>• 2x Blueberry Facial Wash (16 oz)</p>
                 <p>• 1x De-shedding Rake (5 oz)</p>
                 <p>• 1x Hemp Treats (3 oz)</p>
@@ -158,42 +158,42 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
           {/* Scale & Dimensions */}
           <div className="border border-border bg-card p-4 space-y-4">
             <div className="flex items-center justify-between border-b border-border pb-2 text-[12px]">
-              <span className="font-bold uppercase text-[10px] text-muted-foreground">Package Weight &amp; Scale</span>
-              <span className="font-bold text-foreground">SCALE: LIVE</span>
+              <span className="font-semibold uppercase text-[10px] text-muted-foreground">Package Weight &amp; Scale</span>
+              <span className="font-semibold text-foreground">SCALE: LIVE</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="border border-border p-3 bg-muted/30 flex items-center justify-between">
                 <div>
-                  <p className="text-[10px] tabular-nums text-muted-foreground uppercase font-bold">DIGITAL SCALE</p>
+                  <p className="text-[10px] tabular-nums text-muted-foreground uppercase font-semibold">DIGITAL SCALE</p>
                   <p className="text-3xl font-semibold tabular-nums text-foreground">{weight.toFixed(2)} <span className="text-sm font-normal">LBS</span></p>
                 </div>
                 <button 
                   onClick={() => setWeight(0.00)}
-                  className="px-2 py-1 border border-border bg-card text-[10px] tabular-nums font-bold uppercase hover:bg-black hover:text-white transition-colors cursor-pointer"
+                  className="px-2 py-1 border border-border bg-card text-[10px] tabular-nums font-semibold uppercase hover:bg-black hover:text-white transition-colors cursor-pointer"
                 >
                   Tare
                 </button>
               </div>
 
               <div className="space-y-1.5 text-[12px]">
-                <p className="text-[10px] text-muted-foreground uppercase font-bold">Presets:</p>
+                <p className="text-[10px] text-muted-foreground uppercase font-semibold">Presets:</p>
                 <div className="grid grid-cols-3 gap-1">
                   <button 
                     onClick={() => setWeight(0.75)} 
-                    className="p-1 border border-border bg-card hover:bg-accent/50 text-[10px] font-bold"
+                    className="p-1 border border-border bg-card hover:bg-accent/50 text-[10px] font-semibold"
                   >
                     0.75#
                   </button>
                   <button 
                     onClick={() => setWeight(1.50)} 
-                    className="p-1 border border-border bg-primary text-primary-foreground text-[10px] font-bold"
+                    className="p-1 border border-border bg-primary text-primary-foreground text-[10px] font-semibold"
                   >
                     1.50#
                   </button>
                   <button 
                     onClick={() => setWeight(3.80)} 
-                    className="p-1 border border-border bg-card hover:bg-accent/50 text-[10px] font-bold"
+                    className="p-1 border border-border bg-card hover:bg-accent/50 text-[10px] font-semibold"
                   >
                     3.80#
                   </button>
@@ -203,7 +203,7 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
 
             {/* Box Presets */}
             <div className="space-y-1.5 text-[12px]">
-              <p className="text-[10px] text-muted-foreground uppercase font-bold">Preset Box Size:</p>
+              <p className="text-[10px] text-muted-foreground uppercase font-semibold">Preset Box Size:</p>
               <div className="grid grid-cols-3 gap-2">
                 {[
                   { id: 'small', label: 'Small Box', dims: '8 x 6 x 4 in' },
@@ -217,7 +217,7 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
                       boxPreset === b.id ? 'bg-primary text-primary-foreground' : 'bg-card text-foreground hover:bg-accent/50'
                     }`}
                   >
-                    <p className="font-bold uppercase text-[11px]">{b.label}</p>
+                    <p className="font-semibold uppercase text-[11px]">{b.label}</p>
                     <p className="text-[10px]">{b.dims}</p>
                   </button>
                 ))}
@@ -228,8 +228,8 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
           {/* Live Commercial Rates */}
           <div className="border border-border bg-card p-4 space-y-3">
             <div className="flex items-center justify-between border-b border-border pb-2 text-[12px]">
-              <span className="font-bold uppercase text-[10px] text-muted-foreground">Live Carrier Rates</span>
-              <span className="font-bold text-foreground">COMMERCIAL PLUS</span>
+              <span className="font-semibold uppercase text-[10px] text-muted-foreground">Live Carrier Rates</span>
+              <span className="font-semibold text-foreground">COMMERCIAL PLUS</span>
             </div>
 
             <div className="space-y-2">
@@ -245,8 +245,8 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
                 >
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-xs uppercase text-foreground">{r.carrier}</span>
-                      <span className="px-1.5 py-0.2 border border-border text-[9px] tabular-nums font-bold bg-card text-foreground">
+                      <span className="font-semibold text-[13px] uppercase text-foreground">{r.carrier}</span>
+                      <span className="px-1.5 py-0.2 border border-border text-[9px] tabular-nums font-semibold bg-card text-foreground">
                         {r.badge}
                       </span>
                     </div>
@@ -261,8 +261,8 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
             </div>
 
             {/* Endorsement options */}
-            <div className="pt-2 border-t border-border flex items-center justify-between text-xs tabular-nums">
-              <label className="flex items-center gap-2 cursor-pointer font-bold">
+            <div className="pt-2 border-t border-border flex items-center justify-between text-[13px] tabular-nums">
+              <label className="flex items-center gap-2 cursor-pointer font-semibold">
                 <input 
                   type="checkbox"
                   checked={sigRequired}
@@ -288,7 +288,7 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
         {/* Right Column: 4x6 Thermal Label Visual Raster (6 cols) */}
         <div className="lg:col-span-6 space-y-4">
           <div className="border border-border bg-card p-3 flex items-center justify-between text-[12px]">
-            <span className="font-bold uppercase text-foreground">Live Raster Preview // 4&quot; × 6&quot; Thermal</span>
+            <span className="font-semibold uppercase text-foreground">Live Raster Preview // 4&quot; × 6&quot; Thermal</span>
             <span className="px-2 py-0.5 border border-border bg-muted/40 text-[10px]">203 DPI · 1:1 SCALE</span>
           </div>
 
@@ -298,24 +298,24 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
             <div className="border-b-4 border-border pb-2 flex items-start justify-between">
               <div>
                 <p className="text-3xl font-semibold leading-none">P</p>
-                <p className="text-[9px] uppercase font-bold leading-tight mt-1">
+                <p className="text-[9px] uppercase font-semibold leading-tight mt-1">
                   U.S. POSTAGE PAID<br />
                   FRISCO TX<br />
                   PERMIT NO. 448
                 </p>
               </div>
               <div className="text-right">
-                <span className="border border-border px-2 py-0.5 font-semibold text-xs uppercase inline-block">
+                <span className="border border-border px-2 py-0.5 font-semibold text-[13px] uppercase inline-block">
                   {currentRate.carrier}
                 </span>
-                <p className="text-[10px] font-bold mt-1">COMMERCIAL PLUS</p>
-                <p className="text-[10px] font-bold">ZONE 2 • {weight.toFixed(2)} LBS</p>
+                <p className="text-[10px] font-semibold mt-1">COMMERCIAL PLUS</p>
+                <p className="text-[10px] font-semibold">ZONE 2 • {weight.toFixed(2)} LBS</p>
               </div>
             </div>
 
             {/* Return Address & 2D Matrix */}
             <div className=" border-border pb-2 text-[10px] uppercase space-y-0.5">
-              <p className="font-bold">SHIP FROM:</p>
+              <p className="font-semibold">SHIP FROM:</p>
               <p className="font-semibold">ALL ABOUT PAWZ - MAIN SALON</p>
               <p>7820 MAIN STREET, SUITE 104</p>
               <p>FRISCO TX 75034-4001</p>
@@ -323,15 +323,15 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
 
             {/* Ship To Recipient */}
             <div className="border-b-4 border-border pb-3 pt-1 space-y-1">
-              <p className="text-[10px] font-bold uppercase text-muted-foreground">SHIP TO:</p>
+              <p className="text-[10px] font-semibold uppercase text-muted-foreground">SHIP TO:</p>
               <p className="text-base font-semibold uppercase leading-none">SARAH JOHNSON</p>
-              <p className="text-sm font-bold uppercase leading-tight">1234 MAPLE DRIVE</p>
+              <p className="text-sm font-semibold uppercase leading-tight">1234 MAPLE DRIVE</p>
               <p className="text-base font-semibold uppercase tracking-wide">FRISCO TX 75034-4921</p>
             </div>
 
             {/* Barcode representation */}
             <div className="py-2  border-border text-center space-y-2">
-              <p className="text-[10px] font-bold uppercase tracking-widest">USPS TRACKING # eVS</p>
+              <p className="text-[10px] font-semibold uppercase tracking-wider">USPS TRACKING # eVS</p>
               
               {/* Simulated high contrast barcode strip */}
               <div className="h-14 bg-black flex items-center justify-between px-1 py-0.5">
@@ -343,11 +343,11 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
                 ))}
               </div>
 
-              <p className="text-xs font-semibold tracking-widest">{currentRate.tracking}</p>
+              <p className="text-[13px] font-semibold tracking-wider">{currentRate.tracking}</p>
             </div>
 
             {/* Footer */}
-            <div className="flex items-center justify-between text-[9px] pt-1 uppercase font-bold">
+            <div className="flex items-center justify-between text-[9px] pt-1 uppercase font-semibold">
               <span className="border border-border px-1 py-0.5">★ FRAGILE // PET CARE LIQUIDS ★</span>
               <span>PKG 1 OF 1</span>
             </div>
@@ -357,26 +357,26 @@ export const ShippingStationView: React.FC<ShippingStationViewProps> = ({ onNavi
           <div className="grid grid-cols-3 gap-2">
             <button 
               onClick={handleBuyAndPrint}
-              className="p-2 border border-border bg-primary text-primary-foreground hover:bg-primary/90 text-xs font-bold uppercase text-center cursor-pointer"
+              className="p-2 border border-border bg-primary text-primary-foreground hover:bg-primary/90 text-[13px] font-semibold uppercase text-center cursor-pointer"
             >
               Print 4x6
             </button>
             <button 
               onClick={() => alert('Downloaded PDF')}
-              className="p-2 border border-border bg-card hover:bg-accent/50 text-xs font-bold uppercase text-center cursor-pointer"
+              className="p-2 border border-border bg-card hover:bg-accent/50 text-[13px] font-semibold uppercase text-center cursor-pointer"
             >
               Download PDF
             </button>
             <button 
               onClick={() => alert('Tracking SMS sent to customer')}
-              className="p-2 border border-border bg-card hover:bg-accent/50 text-xs font-bold uppercase text-center cursor-pointer"
+              className="p-2 border border-border bg-card hover:bg-accent/50 text-[13px] font-semibold uppercase text-center cursor-pointer"
             >
               SMS Tracking
             </button>
           </div>
 
           {printedNotice && (
-            <div className="p-3 border border-border bg-primary text-primary-foreground text-xs tabular-nums flex items-center gap-2">
+            <div className="p-3 border border-border bg-primary text-primary-foreground text-[13px] tabular-nums flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-white" />
               <span>Label successfully spooled to Rollo Direct Thermal!</span>
             </div>

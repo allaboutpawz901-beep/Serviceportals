@@ -114,15 +114,15 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
               <Zap className="w-5 h-5 text-primary fill-indigo-100" />
             </div>
             <div>
-              <h2 id="modal-title" className="text-lg font-bold text-foreground leading-tight flex items-center gap-2">
+              <h2 id="modal-title" className="text-lg font-semibold text-foreground leading-tight flex items-center gap-2">
                 <span>Quick Actions</span>
                 {customer && (
-                  <span className="text-xs font-medium text-muted-foreground bg-muted/40 px-2 py-0.5 rounded-full">
+                  <span className="text-[13px] font-medium text-muted-foreground bg-muted/40 px-2 py-0.5 rounded-full">
                     {customer.name}
                   </span>
                 )}
               </h2>
-              <p id="modal-description" className="text-xs text-muted-foreground mt-0.5">
+              <p id="modal-description" className="text-[13px] text-muted-foreground mt-0.5">
                 Choose an action to perform or customize your quick action workflows.
               </p>
             </div>
@@ -146,7 +146,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
             <div className="flex items-center justify-between mb-2.5">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-3.5 bg-primary rounded-full inline-block"></span>
-                <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Customer</h3>
+                <h3 className="text-[13px] font-semibold text-foreground uppercase tracking-wider">Customer</h3>
               </div>
               <span className="text-[11px] text-muted-foreground/70 font-medium">Client & Pet Management</span>
             </div>
@@ -158,11 +158,11 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 onClick={() => handleActionClick('new-appointment')}
                 className="group p-3 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex items-start gap-3 cursor-pointer"
               >
-                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] shrink-0 group-hover:scale-105 transition-transform">
                   <CalendarPlus className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">New Appointment</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">New Appointment</span>
                   <span className="text-[10px] text-muted-foreground leading-tight mt-0.5 block truncate">Create a new appointment for customer</span>
                 </div>
                 <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all mt-1 shrink-0" />
@@ -174,11 +174,11 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 onClick={() => handleActionClick('add-pet')}
                 className="group p-3 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex items-start gap-3 cursor-pointer"
               >
-                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] shrink-0 group-hover:scale-105 transition-transform">
                   <PawPrint className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Add Pet</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Add Pet</span>
                   <span className="text-[10px] text-muted-foreground leading-tight mt-0.5 block truncate">Register a new pet to profile</span>
                 </div>
                 <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all mt-1 shrink-0" />
@@ -190,11 +190,11 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 onClick={() => handleActionClick('take-payment')}
                 className="group p-3 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex items-start gap-3 cursor-pointer"
               >
-                <div className="w-8 h-8 rounded-lg bg-success/10 text-success flex items-center justify-center text-xs shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 rounded-lg bg-success/10 text-success flex items-center justify-center text-[13px] shrink-0 group-hover:scale-105 transition-transform">
                   <DollarSign className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Take Payment</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Take Payment</span>
                   <span className="text-[10px] text-muted-foreground leading-tight mt-0.5 block truncate">Charge or record payment</span>
                 </div>
                 <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all mt-1 shrink-0" />
@@ -206,11 +206,11 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 onClick={() => handleActionClick('send-message')}
                 className="group p-3 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex items-start gap-3 cursor-pointer"
               >
-                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] shrink-0 group-hover:scale-105 transition-transform">
                   <MessageSquare className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Send Message</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Send Message</span>
                   <span className="text-[10px] text-muted-foreground leading-tight mt-0.5 block truncate">SMS or email message</span>
                 </div>
                 <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all mt-1 shrink-0" />
@@ -222,11 +222,11 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 onClick={() => handleActionClick('add-note')}
                 className="group p-3 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex items-start gap-3 cursor-pointer"
               >
-                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] shrink-0 group-hover:scale-105 transition-transform">
                   <FileText className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Add Note</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Add Note</span>
                   <span className="text-[10px] text-muted-foreground leading-tight mt-0.5 block truncate">Internal or customer note</span>
                 </div>
                 <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all mt-1 shrink-0" />
@@ -238,11 +238,11 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 onClick={() => handleActionClick('update-documents')}
                 className="group p-3 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex items-start gap-3 cursor-pointer"
               >
-                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] shrink-0 group-hover:scale-105 transition-transform">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Update Documents</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Update Documents</span>
                   <span className="text-[10px] text-muted-foreground leading-tight mt-0.5 block truncate">Vaccines, waivers & forms</span>
                 </div>
                 <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all mt-1 shrink-0" />
@@ -255,7 +255,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-3.5 bg-primary rounded-full inline-block"></span>
-                <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Appointment</h3>
+                <h3 className="text-[13px] font-semibold text-foreground uppercase tracking-wider">Appointment</h3>
               </div>
               <span className="text-[11px] text-muted-foreground/70 font-medium">Scheduling & Status Controls</span>
             </div>
@@ -269,13 +269,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="group p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex flex-col justify-between h-[96px] cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs group-hover:scale-105 transition-transform">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] group-hover:scale-105 transition-transform">
                     <ClipboardList className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Add to Waitlist</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Add to Waitlist</span>
                   <span className="text-[9.5px] text-muted-foreground/70 leading-snug mt-0.5 block truncate">Queue customer for opening</span>
                 </div>
               </button>
@@ -287,13 +287,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="group p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex flex-col justify-between h-[96px] cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs group-hover:scale-105 transition-transform">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] group-hover:scale-105 transition-transform">
                     <Edit3 className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Reschedule</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Reschedule</span>
                   <span className="text-[9.5px] text-muted-foreground/70 leading-snug mt-0.5 block truncate">Change date or time</span>
                 </div>
               </button>
@@ -305,13 +305,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="group p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex flex-col justify-between h-[96px] cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs group-hover:scale-105 transition-transform">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] group-hover:scale-105 transition-transform">
                     <Copy className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Duplicate</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Duplicate</span>
                   <span className="text-[9.5px] text-muted-foreground/70 leading-snug mt-0.5 block truncate">Clone appointment details</span>
                 </div>
               </button>
@@ -323,13 +323,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="group p-2.5 bg-card border border-border rounded-xl hover:border-destructive/30 hover:shadow-xs transition-all duration-150 text-left flex flex-col justify-between h-[96px] cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-destructive/5 text-destructive flex items-center justify-center text-xs group-hover:scale-105 transition-transform">
+                  <div className="w-7 h-7 rounded-lg bg-destructive/5 text-destructive flex items-center justify-center text-[13px] group-hover:scale-105 transition-transform">
                     <XCircle className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-destructive/70 group-hover:text-destructive group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Cancel</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Cancel</span>
                   <span className="text-[9.5px] text-muted-foreground/70 leading-snug mt-0.5 block truncate">Cancel scheduled appointment</span>
                 </div>
               </button>
@@ -341,13 +341,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="group p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex flex-col justify-between h-[96px] cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs group-hover:scale-105 transition-transform">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] group-hover:scale-105 transition-transform">
                     <CheckCheck className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Confirm Appointment</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Confirm Appointment</span>
                   <span className="text-[9.5px] text-muted-foreground/70 leading-snug mt-0.5 block truncate">Mark appointment confirmed</span>
                 </div>
               </button>
@@ -359,13 +359,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="group p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex flex-col justify-between h-[96px] cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs group-hover:scale-105 transition-transform">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] group-hover:scale-105 transition-transform">
                     <Bell className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Send Reminder</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Send Reminder</span>
                   <span className="text-[9.5px] text-muted-foreground/70 leading-snug mt-0.5 block truncate">Trigger SMS/email reminder</span>
                 </div>
               </button>
@@ -377,13 +377,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="group p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all duration-150 text-left flex flex-col justify-between h-[96px] cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs group-hover:scale-105 transition-transform">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px] group-hover:scale-105 transition-transform">
                     <RotateCw className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground leading-tight block truncate">Follow Up</span>
+                  <span className="text-[13px] font-semibold text-foreground leading-tight block truncate">Follow Up</span>
                   <span className="text-[9.5px] text-muted-foreground/70 leading-snug mt-0.5 block truncate">Log post-groom follow up</span>
                 </div>
               </button>
@@ -404,7 +404,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 >
                   <span className="text-success shrink-0"><CheckCircle2 className="w-4 h-4" /></span>
                   <div className="overflow-hidden">
-                    <span className="text-xs font-semibold text-success block truncate">Check In</span>
+                    <span className="text-[13px] font-semibold text-success block truncate">Check In</span>
                     <span className="text-[9px] text-success/80 block truncate">Arrived</span>
                   </div>
                 </button>
@@ -417,7 +417,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 >
                   <span className="text-primary shrink-0"><Activity className="w-4 h-4" /></span>
                   <div className="overflow-hidden">
-                    <span className="text-xs font-semibold text-primary block truncate">In Service</span>
+                    <span className="text-[13px] font-semibold text-primary block truncate">In Service</span>
                     <span className="text-[9px] text-primary/80 block truncate">Grooming</span>
                   </div>
                 </button>
@@ -430,7 +430,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 >
                   <span className="text-primary shrink-0"><CheckCircle className="w-4 h-4" /></span>
                   <div className="overflow-hidden">
-                    <span className="text-xs font-semibold text-primary block truncate">Complete</span>
+                    <span className="text-[13px] font-semibold text-primary block truncate">Complete</span>
                     <span className="text-[9px] text-primary/80 block truncate">Ready</span>
                   </div>
                 </button>
@@ -443,7 +443,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 >
                   <span className="text-warning shrink-0"><PauseCircle className="w-4 h-4" /></span>
                   <div className="overflow-hidden">
-                    <span className="text-xs font-semibold text-warning block truncate">Hold</span>
+                    <span className="text-[13px] font-semibold text-warning block truncate">Hold</span>
                     <span className="text-[9px] text-warning/80 block truncate">Paused</span>
                   </div>
                 </button>
@@ -456,7 +456,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 >
                   <span className="text-destructive shrink-0"><XCircle className="w-4 h-4" /></span>
                   <div className="overflow-hidden">
-                    <span className="text-xs font-semibold text-destructive block truncate">No Show</span>
+                    <span className="text-[13px] font-semibold text-destructive block truncate">No Show</span>
                     <span className="text-[9px] text-destructive/80 block truncate">Missed</span>
                   </div>
                 </button>
@@ -469,7 +469,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
             <div className="flex items-center justify-between mb-2.5">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-3.5 bg-primary rounded-full inline-block"></span>
-                <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Shared</h3>
+                <h3 className="text-[13px] font-semibold text-foreground uppercase tracking-wider">Shared</h3>
               </div>
               <span className="text-[11px] text-muted-foreground/70 font-medium">Operations, Comms & Billing</span>
             </div>
@@ -482,13 +482,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all text-left flex flex-col justify-between h-[88px] group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px]">
                     <MessageSquare className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground block leading-snug truncate">Send Message</span>
+                  <span className="text-[13px] font-semibold text-foreground block leading-snug truncate">Send Message</span>
                   <span className="text-[9.5px] text-muted-foreground/70 block leading-tight mt-0.5 truncate">Chat, SMS, or email</span>
                 </div>
               </button>
@@ -500,13 +500,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all text-left flex flex-col justify-between h-[88px] group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px]">
                     <Phone className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground block leading-snug truncate">Call Customer</span>
+                  <span className="text-[13px] font-semibold text-foreground block leading-snug truncate">Call Customer</span>
                   <span className="text-[9.5px] text-muted-foreground/70 block leading-tight mt-0.5 truncate">Direct voice call link</span>
                 </div>
               </button>
@@ -518,13 +518,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all text-left flex flex-col justify-between h-[88px] group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px]">
                     <FileText className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground block leading-snug truncate">Add Note</span>
+                  <span className="text-[13px] font-semibold text-foreground block leading-snug truncate">Add Note</span>
                   <span className="text-[9.5px] text-muted-foreground/70 block leading-tight mt-0.5 truncate">Activity & record note</span>
                 </div>
               </button>
@@ -536,13 +536,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all text-left flex flex-col justify-between h-[88px] group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px]">
                     <User className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground block leading-snug truncate">View Customer</span>
+                  <span className="text-[13px] font-semibold text-foreground block leading-snug truncate">View Customer</span>
                   <span className="text-[9.5px] text-muted-foreground/70 block leading-tight mt-0.5 truncate">Open full client profile</span>
                 </div>
               </button>
@@ -554,13 +554,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all text-left flex flex-col justify-between h-[88px] group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-success/10 text-success flex items-center justify-center text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-success/10 text-success flex items-center justify-center text-[13px]">
                     <DollarSign className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground block leading-snug truncate">Take Payment</span>
+                  <span className="text-[13px] font-semibold text-foreground block leading-snug truncate">Take Payment</span>
                   <span className="text-[9.5px] text-muted-foreground/70 block leading-tight mt-0.5 truncate">Terminal or card on file</span>
                 </div>
               </button>
@@ -572,13 +572,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all text-left flex flex-col justify-between h-[88px] group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px]">
                     <Receipt className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground block leading-snug truncate">Create Invoice</span>
+                  <span className="text-[13px] font-semibold text-foreground block leading-snug truncate">Create Invoice</span>
                   <span className="text-[9.5px] text-muted-foreground/70 block leading-tight mt-0.5 truncate">Generate billing invoice</span>
                 </div>
               </button>
@@ -590,13 +590,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all text-left flex flex-col justify-between h-[88px] group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px]">
                     <RotateCcw className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground block leading-snug truncate">Issue Refund</span>
+                  <span className="text-[13px] font-semibold text-foreground block leading-snug truncate">Issue Refund</span>
                   <span className="text-[9.5px] text-muted-foreground/70 block leading-tight mt-0.5 truncate">Process customer refund</span>
                 </div>
               </button>
@@ -608,13 +608,13 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
                 className="p-2.5 bg-card border border-border rounded-xl hover:border-primary/30 hover:shadow-xs transition-all text-left flex flex-col justify-between h-[88px] group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-primary/5 text-primary flex items-center justify-center text-[13px]">
                     <History className="w-3.5 h-3.5" />
                   </div>
                   <ArrowRight className="w-3 h-3 text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-foreground block leading-snug truncate">Payment History</span>
+                  <span className="text-[13px] font-semibold text-foreground block leading-snug truncate">Payment History</span>
                   <span className="text-[9.5px] text-muted-foreground/70 block leading-tight mt-0.5 truncate">View ledger & receipts</span>
                 </div>
               </button>
@@ -628,11 +628,11 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
               onClick={() => handleActionClick('add-custom-action')}
               className="w-full py-3 px-4 border-2 border-dashed border-primary/20 hover:border-primary/30 bg-primary/5/40 hover:bg-primary/5/80 rounded-xl transition-all flex items-center justify-center gap-2.5 text-center group cursor-pointer"
             >
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold group-hover:scale-110 transition-transform">
+              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[13px] font-semibold group-hover:scale-110 transition-transform">
                 <Plus className="w-3.5 h-3.5" />
               </div>
               <div className="text-left">
-                <span className="text-xs font-bold text-primary block leading-tight">Add Quick Action</span>
+                <span className="text-[13px] font-semibold text-primary block leading-tight">Add Quick Action</span>
                 <span className="text-[10px] text-primary leading-tight block">Customize or add a new shortcut to your workflow</span>
               </div>
             </button>
@@ -644,7 +644,7 @@ export const QuickActionsModal: React.FC<QuickActionsModalProps> = ({
           <button 
             type="button" 
             onClick={onClose}
-            className="px-6 py-2 bg-card border border-border hover:bg-muted/40 text-foreground text-xs font-semibold rounded-lg shadow-xs hover:border-border transition-all focus:outline-none cursor-pointer"
+            className="px-6 py-2 bg-card border border-border hover:bg-muted/40 text-foreground text-[13px] font-semibold rounded-lg shadow-xs hover:border-border transition-all focus:outline-none cursor-pointer"
           >
             Close
           </button>

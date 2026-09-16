@@ -137,7 +137,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
             <div className="pt-4 border-t border-border flex justify-end">
               <button
                 onClick={handleSaveSettings}
-                className="bg-black hover:bg-muted text-white border border-border px-5 py-2 text-[12px] uppercase font-bold tracking-wider transition-colors cursor-pointer rounded-md"
+                className="bg-black hover:bg-muted text-white border border-border px-5 py-2 text-[12px] uppercase font-semibold tracking-wider transition-colors cursor-pointer rounded-md"
               >
                 SAVE COMPANY DETAILS
               </button>
@@ -158,7 +158,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
             <div className="space-y-4 text-[12px] text-foreground">
               <div className="flex items-center justify-between gap-4 pb-4 border-b border-border">
                 <div className="max-w-xl">
-                  <div className="font-bold text-foreground text-sm">Require Escrow Security Hold on Booking</div>
+                  <div className="font-semibold text-foreground text-sm">Require Escrow Security Hold on Booking</div>
                   <div className="text-[12px] text-muted-foreground/70 mt-1">
                     Enforces automatic credit/debit deposit hold when booking through salon client portal or POS terminal.
                   </div>
@@ -170,7 +170,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
                     className="w-4 h-4 rounded-md accent-black border border-border cursor-pointer"
                     type="checkbox"
                   />
-                  <span className="tabular-nums font-bold text-foreground uppercase">ENFORCE_DEP</span>
+                  <span className="tabular-nums font-semibold text-foreground uppercase">ENFORCE_DEP</span>
                 </label>
               </div>
 
@@ -188,7 +188,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
 
               <div className="flex items-center justify-between gap-4 pb-4 border-b border-border">
                 <div className="max-w-xl">
-                  <div className="font-bold text-foreground text-sm">Outstanding Invoice Payment Grace Period</div>
+                  <div className="font-semibold text-foreground text-sm">Outstanding Invoice Payment Grace Period</div>
                   <div className="text-[12px] text-muted-foreground/70 mt-1">
                     Maximum billing days grace allowed before automatic penalty charge is applied and marked as Overdue.
                   </div>
@@ -200,7 +200,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
                     className="w-16 bg-card border border-border px-2 py-1 text-center text-[13px] text-foreground focus:outline-none"
                     type="text"
                   />
-                  <span className="text-[11px] font-bold text-foreground uppercase">DAYS</span>
+                  <span className="text-[11px] font-semibold text-foreground uppercase">DAYS</span>
                 </div>
               </div>
             </div>
@@ -208,7 +208,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
             <div className="pt-4 border-t border-border flex justify-end">
               <button
                 onClick={handleSaveSettings}
-                className="bg-black hover:bg-muted text-white border border-border px-5 py-2 text-[12px] uppercase font-bold tracking-wider transition-colors cursor-pointer rounded-md"
+                className="bg-black hover:bg-muted text-white border border-border px-5 py-2 text-[12px] uppercase font-semibold tracking-wider transition-colors cursor-pointer rounded-md"
               >
                 SAVE INTAKE CRITERIA
               </button>
@@ -229,7 +229,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
             <div className="space-y-4 text-[12px] text-foreground">
               <div className="flex items-center justify-between gap-4 pb-4 border-b border-border">
                 <div className="max-w-xl">
-                  <div className="font-bold text-foreground text-sm">Allow Self-Service Grooming Booking</div>
+                  <div className="font-semibold text-foreground text-sm">Allow Self-Service Grooming Booking</div>
                   <div className="text-[12px] text-muted-foreground/70 mt-1">
                     Permits registered clients to select timeslots, assign groomers, and submit deposits via their portal.
                   </div>
@@ -241,13 +241,13 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
                     className="w-4 h-4 rounded-md accent-black border border-border cursor-pointer"
                     type="checkbox"
                   />
-                  <span className="tabular-nums font-bold text-foreground uppercase">ALLOW_PORTAL</span>
+                  <span className="tabular-nums font-semibold text-foreground uppercase">ALLOW_PORTAL</span>
                 </label>
               </div>
 
               <div className="flex items-center justify-between gap-4 pb-4 border-b border-border">
                 <div className="max-w-xl">
-                  <div className="font-bold text-foreground text-sm">Expose Real-time Invoice &amp; Statement Ledger</div>
+                  <div className="font-semibold text-foreground text-sm">Expose Real-time Invoice &amp; Statement Ledger</div>
                   <div className="text-[12px] text-muted-foreground/70 mt-1">
                     Clients can securely download past transaction statements, pay outstanding balances, and check digital gift card histories.
                   </div>
@@ -259,7 +259,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
                     className="w-4 h-4 rounded-md accent-black border border-border cursor-pointer"
                     type="checkbox"
                   />
-                  <span className="tabular-nums font-bold text-foreground uppercase">EXPOSE_LEDGER</span>
+                  <span className="tabular-nums font-semibold text-foreground uppercase">EXPOSE_LEDGER</span>
                 </label>
               </div>
             </div>
@@ -267,7 +267,7 @@ export const FinancialSettingsView: React.FC<FinancialSettingsViewProps> = ({ on
             <div className="pt-4 border-t border-border flex justify-end">
               <button
                 onClick={handleSaveSettings}
-                className="bg-black hover:bg-muted text-white border border-border px-5 py-2 text-[12px] uppercase font-bold tracking-wider transition-colors cursor-pointer rounded-md"
+                className="bg-black hover:bg-muted text-white border border-border px-5 py-2 text-[12px] uppercase font-semibold tracking-wider transition-colors cursor-pointer rounded-md"
               >
                 SAVE PORTAL PERMISSIONS
               </button>

@@ -72,7 +72,7 @@ export const AppointmentActionMenu: React.FC<AppointmentActionMenuProps> = ({
 
       {activeSubTab === 'Columns' ? (
         <div className="py-2 px-3 text-[11px] space-y-1.5 text-muted-foreground">
-          <p className="font-bold text-muted-foreground/70 uppercase text-[9px] tracking-wider mb-1">Visible Columns</p>
+          <p className="font-semibold text-muted-foreground/70 uppercase text-[9px] tracking-wider mb-1">Visible Columns</p>
           {['Date & Time', 'Customer / Pet', 'Service', 'Groomer', 'Location', 'Status', 'Payment'].map((col) => (
             <label key={col} className="flex items-center gap-2 cursor-pointer hover:text-foreground">
               <input type="checkbox" defaultChecked className="rounded text-primary focus:ring-0" />
@@ -83,7 +83,7 @@ export const AppointmentActionMenu: React.FC<AppointmentActionMenuProps> = ({
       ) : (
         /* Menu Group: Appointment Actions (16 items exact match to design spec) */
         <div className="py-1.5 text-[11px] max-h-80 overflow-y-auto custom-scrollbar">
-          <p className="px-3 py-1 text-[9px] uppercase font-bold tracking-wider text-muted-foreground/70">
+          <p className="px-3 py-1 text-[9px] uppercase font-semibold tracking-wider text-muted-foreground/70">
             Appointment Actions
           </p>
 
@@ -146,7 +146,7 @@ export const AppointmentActionMenu: React.FC<AppointmentActionMenuProps> = ({
             onClick={() => onAction('check-in', appointment)}
             className="w-full flex items-center gap-2.5 px-3 py-1.5 text-foreground hover:bg-muted/40 hover:text-success transition text-left cursor-pointer"
           >
-            <Check className="w-3.5 h-3.5 text-success font-bold" />
+            <Check className="w-3.5 h-3.5 text-success font-semibold" />
             <span>Check In</span>
           </button>
 

@@ -221,17 +221,17 @@ const ViewDetailsModalContent: React.FC<{
       {/* Header */}
       <div className="p-5 border-b border-border flex items-center justify-between bg-muted/40/50">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl text-primary flex items-center justify-center text-2xl font-bold shadow-2xs">
+          <div className="w-12 h-12 rounded-2xl text-primary flex items-center justify-center text-2xl font-semibold shadow-2xs">
             {appointment.petEmoji || '🐕'}
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-lg font-bold text-foreground">{appointment.petName}</h2>
-              <span className="text-xs px-2.5 py-0.5 rounded-full font-bold bg-primary/5 text-primary border border-primary/20">
+              <h2 className="text-lg font-semibold text-foreground">{appointment.petName}</h2>
+              <span className="text-[13px] px-2.5 py-0.5 rounded-full font-semibold bg-primary/5 text-primary border border-primary/20">
                 {appointment.breed}
               </span>
             </div>
-            <p className="text-xs text-muted-foreground mt-0.5">
+            <p className="text-[13px] text-muted-foreground mt-0.5">
               Owner: <span className="font-semibold text-foreground">{appointment.customerName || 'Pet Parent'}</span> • ID: <span className="tabular-nums">{appointment.id}</span>
             </p>
           </div>
@@ -245,7 +245,7 @@ const ViewDetailsModalContent: React.FC<{
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-border px-5 text-xs font-semibold text-muted-foreground">
+      <div className="flex border-b border-border px-5 text-[13px] font-semibold text-muted-foreground">
         <button
           onClick={() => setActiveTab('overview')}
           className={`py-2.5 px-3  cursor-pointer ${
@@ -273,14 +273,14 @@ const ViewDetailsModalContent: React.FC<{
       </div>
 
       {/* Body */}
-      <div className="p-6 space-y-4 text-xs max-h-[65vh] overflow-y-auto custom-scrollbar">
+      <div className="p-6 space-y-4 text-[13px] max-h-[65vh] overflow-y-auto custom-scrollbar">
         {activeTab === 'overview' && (
           <div className="space-y-4">
             {/* Status & Quick Action Pipeline */}
             <div className="p-3.5 bg-muted/40 border border-border/80 rounded-2xl space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-muted-foreground font-medium">Current Status:</span>
-                <span className="px-2.5 py-1 rounded-full text-xs font-bold text-primary">
+                <span className="px-2.5 py-1 rounded-full text-[13px] font-semibold text-primary">
                   {appointment.status}
                 </span>
               </div>
@@ -288,7 +288,7 @@ const ViewDetailsModalContent: React.FC<{
                 <button
                   type="button"
                   onClick={() => handleQuickStatusChange('Checked In')}
-                  className={`px-2.5 py-1 rounded-lg font-bold text-[11px] transition cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-lg font-semibold text-[11px] transition cursor-pointer ${
                     appointment.status === 'Checked In'
                       ? 'bg-warning text-white'
                       : 'bg-card border border-border text-foreground hover:bg-muted/40'
@@ -299,7 +299,7 @@ const ViewDetailsModalContent: React.FC<{
                 <button
                   type="button"
                   onClick={() => handleQuickStatusChange('In Progress')}
-                  className={`px-2.5 py-1 rounded-lg font-bold text-[11px] transition cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-lg font-semibold text-[11px] transition cursor-pointer ${
                     appointment.status === 'In Progress'
                       ? 'bg-primary text-white'
                       : 'bg-card border border-border text-foreground hover:bg-muted/40'
@@ -310,7 +310,7 @@ const ViewDetailsModalContent: React.FC<{
                 <button
                   type="button"
                   onClick={() => handleQuickStatusChange('Completed')}
-                  className={`px-2.5 py-1 rounded-lg font-bold text-[11px] transition cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-lg font-semibold text-[11px] transition cursor-pointer ${
                     appointment.status === 'Completed'
                       ? 'bg-primary text-white'
                       : 'bg-card border border-border text-foreground hover:bg-muted/40'
@@ -325,25 +325,25 @@ const ViewDetailsModalContent: React.FC<{
             <div className="grid grid-cols-2 gap-3">
               <div className="p-3 bg-card border border-border rounded-2xl space-y-1">
                 <span className="text-[11px] text-muted-foreground/70 font-medium">Scheduled Time</span>
-                <p className="font-bold text-foreground text-sm">{appointment.time}</p>
+                <p className="font-semibold text-foreground text-sm">{appointment.time}</p>
                 <p className="text-[11px] text-muted-foreground">{appointment.date || 'May 16, 2025'} ({appointment.duration || '2.5 hrs'})</p>
               </div>
 
               <div className="p-3 bg-card border border-border rounded-2xl space-y-1">
                 <span className="text-[11px] text-muted-foreground/70 font-medium">Assigned Groomer</span>
-                <p className="font-bold text-foreground text-sm">{appointment.staffName || 'Sarah M.'}</p>
+                <p className="font-semibold text-foreground text-sm">{appointment.staffName || 'Sarah M.'}</p>
                 <p className="text-[11px] text-muted-foreground">{appointment.location || 'Main Location'}</p>
               </div>
 
               <div className="p-3 bg-card border border-border rounded-2xl space-y-1">
                 <span className="text-[11px] text-muted-foreground/70 font-medium">Primary Service</span>
-                <p className="font-bold text-foreground text-sm">{appointment.serviceName}</p>
+                <p className="font-semibold text-foreground text-sm">{appointment.serviceName}</p>
                 <p className="text-[11px] text-muted-foreground">{appointment.serviceCategory || 'Full Grooming Package'}</p>
               </div>
 
               <div className="p-3 bg-card border border-border rounded-2xl space-y-1">
                 <span className="text-[11px] text-muted-foreground/70 font-medium">Price &amp; Payment</span>
-                <p className="font-bold text-success text-sm">${appointment.price?.toFixed(2) || '85.00'}</p>
+                <p className="font-semibold text-success text-sm">${appointment.price?.toFixed(2) || '85.00'}</p>
                 <p className="text-[11px] text-muted-foreground">Deposit: ${appointment.depositAmount?.toFixed(2) || '25.00'} ({appointment.paymentStatus || 'Deposit Paid'})</p>
               </div>
             </div>
@@ -352,10 +352,10 @@ const ViewDetailsModalContent: React.FC<{
             <div className="p-3.5 bg-muted/40 border border-border rounded-2xl flex items-center justify-between">
               <div>
                 <span className="text-[11px] text-muted-foreground/70 block font-medium">Customer Contact</span>
-                <span className="font-bold text-foreground">{appointment.customerName || 'Pet Parent'}</span>
-                <span className="text-muted-foreground text-xs ml-2">📱 {appointment.customerPhone || '(555) 349-2810'}</span>
+                <span className="font-semibold text-foreground">{appointment.customerName || 'Pet Parent'}</span>
+                <span className="text-muted-foreground text-[13px] ml-2">📱 {appointment.customerPhone || '(555) 349-2810'}</span>
               </div>
-              <span className="text-xs px-2.5 py-1 bg-success/10 text-success font-bold rounded-lg border border-success/20">
+              <span className="text-[13px] px-2.5 py-1 bg-success/10 text-success font-semibold rounded-lg border border-success/20">
                 Rabies Verified ✓
               </span>
             </div>
@@ -365,14 +365,14 @@ const ViewDetailsModalContent: React.FC<{
         {activeTab === 'notes' && (
           <div className="space-y-3">
             <div className="p-3.5 bg-warning/10/70 border border-warning/20 rounded-2xl">
-              <span className="font-bold text-warning block text-xs">Styling &amp; Handling Notes:</span>
-              <p className="text-xs text-warning mt-1">
+              <span className="font-semibold text-warning block text-[13px]">Styling &amp; Handling Notes:</span>
+              <p className="text-[13px] text-warning mt-1">
                 {appointment.notes || '1/2 inch guard on body, teddy bear round head, clip nails short, hypoallergenic shampoo only.'}
               </p>
             </div>
             <div className="p-3.5 bg-muted/40 border border-border rounded-2xl space-y-1.5">
-              <span className="font-bold text-foreground block text-xs">Behavioral &amp; Health Flags:</span>
-              <ul className="list-disc pl-4 text-xs text-muted-foreground space-y-1">
+              <span className="font-semibold text-foreground block text-[13px]">Behavioral &amp; Health Flags:</span>
+              <ul className="list-disc pl-4 text-[13px] text-muted-foreground space-y-1">
                 <li>Sensitive ears — clean gently with warm organic solution.</li>
                 <li>Loves salmon crunch treats during blow dry.</li>
                 <li>Vaccinations on file valid until October 2025.</li>
@@ -382,7 +382,7 @@ const ViewDetailsModalContent: React.FC<{
         )}
 
         {activeTab === 'history' && (
-          <div className="space-y-3 text-xs">
+          <div className="space-y-3 text-[13px]">
             <div className="border-l-2 border-primary/20 pl-3.5 space-y-3">
               <div>
                 <span className="text-[10px] text-muted-foreground/70 tabular-nums">Today, 8:45 AM</span>
@@ -403,10 +403,10 @@ const ViewDetailsModalContent: React.FC<{
 
       {/* Footer */}
       <div className="p-4 border-t border-border flex items-center justify-between bg-muted/40/50">
-        <span className="text-xs text-muted-foreground/70 tabular-nums">Ref: {appointment.id}</span>
+        <span className="text-[13px] text-muted-foreground/70 tabular-nums">Ref: {appointment.id}</span>
         <button
           onClick={onClose}
-          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white text-xs font-bold rounded-xl transition cursor-pointer shadow-2xs"
+          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white text-[13px] font-semibold rounded-xl transition cursor-pointer shadow-2xs"
         >
           Close File
         </button>
@@ -463,8 +463,8 @@ const EditAppointmentModalContent: React.FC<{
             <Edit3 className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Edit Appointment</h2>
-            <p className="text-xs text-muted-foreground">Update pet, schedule, service, and pricing details</p>
+            <h2 className="text-base font-semibold text-foreground">Edit Appointment</h2>
+            <p className="text-[13px] text-muted-foreground">Update pet, schedule, service, and pricing details</p>
           </div>
         </div>
         <button type="button" onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -472,7 +472,7 @@ const EditAppointmentModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs max-h-[65vh] overflow-y-auto custom-scrollbar">
+      <div className="p-6 space-y-4 text-[13px] max-h-[65vh] overflow-y-auto custom-scrollbar">
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block text-foreground font-semibold mb-1">Pet Name</label>
@@ -576,7 +576,7 @@ const EditAppointmentModalContent: React.FC<{
               step="0.01"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              className="w-full px-3 py-2 border border-border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary font-bold text-foreground"
+              className="w-full px-3 py-2 border border-border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary font-semibold text-foreground"
             />
           </div>
         </div>
@@ -602,7 +602,7 @@ const EditAppointmentModalContent: React.FC<{
         </button>
         <button
           type="submit"
-          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-2xs cursor-pointer transition"
+          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition"
         >
           Save Changes
         </button>
@@ -650,8 +650,8 @@ const RescheduleModalContent: React.FC<{
             <CalendarIcon className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Reschedule Appointment</h2>
-            <p className="text-xs text-muted-foreground">Pick a new date, time slot, and groomer for {appointment.petName}</p>
+            <h2 className="text-base font-semibold text-foreground">Reschedule Appointment</h2>
+            <p className="text-[13px] text-muted-foreground">Pick a new date, time slot, and groomer for {appointment.petName}</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -659,13 +659,13 @@ const RescheduleModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs max-h-[65vh] overflow-y-auto custom-scrollbar">
+      <div className="p-6 space-y-4 text-[13px] max-h-[65vh] overflow-y-auto custom-scrollbar">
         <div className="p-3 bg-muted/40 border border-border rounded-2xl flex items-center justify-between">
           <div>
             <span className="text-[11px] text-muted-foreground/70 block font-medium">Currently Scheduled:</span>
-            <span className="font-bold text-foreground">{appointment.date || 'May 16, 2025'} at {appointment.time}</span>
+            <span className="font-semibold text-foreground">{appointment.date || 'May 16, 2025'} at {appointment.time}</span>
           </div>
-          <span className="text-xs px-2 py-0.5 bg-muted text-foreground font-semibold rounded-lg">
+          <span className="text-[13px] px-2 py-0.5 bg-muted text-foreground font-semibold rounded-lg">
             {appointment.staffName || 'Sarah M.'}
           </span>
         </div>
@@ -703,7 +703,7 @@ const RescheduleModalContent: React.FC<{
                 key={slot}
                 type="button"
                 onClick={() => setSelectedTime(slot)}
-                className={`py-2 px-1 text-center rounded-xl font-semibold transition cursor-pointer text-xs ${
+                className={`py-2 px-1 text-center rounded-xl font-semibold transition cursor-pointer text-[13px] ${
                   selectedTime === slot
                     ? 'bg-primary text-white shadow-2xs'
                     : 'bg-muted/40 hover:bg-muted/40 text-foreground border border-border'
@@ -740,7 +740,7 @@ const RescheduleModalContent: React.FC<{
         <button
           type="button"
           onClick={handleReschedule}
-          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-2xs cursor-pointer transition"
+          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition"
         >
           Confirm Reschedule
         </button>
@@ -794,8 +794,8 @@ const AddonServiceModalContent: React.FC<{
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Add-on / Service Upgrades</h2>
-            <p className="text-xs text-muted-foreground">Select premium spa treatments &amp; services for {appointment.petName}</p>
+            <h2 className="text-base font-semibold text-foreground">Add-on / Service Upgrades</h2>
+            <p className="text-[13px] text-muted-foreground">Select premium spa treatments &amp; services for {appointment.petName}</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -803,17 +803,17 @@ const AddonServiceModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs max-h-[60vh] overflow-y-auto custom-scrollbar">
+      <div className="p-6 space-y-4 text-[13px] max-h-[60vh] overflow-y-auto custom-scrollbar">
         <div className="p-3 bg-muted/40 border border-border rounded-2xl flex items-center justify-between">
           <div>
             <span className="text-[11px] text-muted-foreground/70 block font-medium">Base Grooming Package:</span>
-            <span className="font-bold text-foreground">{appointment.serviceName}</span>
+            <span className="font-semibold text-foreground">{appointment.serviceName}</span>
           </div>
-          <span className="font-bold text-foreground text-sm">${basePrice.toFixed(2)}</span>
+          <span className="font-semibold text-foreground text-sm">${basePrice.toFixed(2)}</span>
         </div>
 
         <div className="space-y-2">
-          <span className="font-bold text-foreground block text-xs">Select Spa Add-ons:</span>
+          <span className="font-semibold text-foreground block text-[13px]">Select Spa Add-ons:</span>
           {AVAILABLE_ADDONS.map((addon) => {
             const isChecked = selectedAddons.includes(addon.id);
             return (
@@ -829,11 +829,11 @@ const AddonServiceModalContent: React.FC<{
                 <div className="flex items-center gap-3">
                   <span className="text-lg">{addon.icon}</span>
                   <div>
-                    <span className="font-semibold block text-xs">{addon.name}</span>
+                    <span className="font-semibold block text-[13px]">{addon.name}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="font-bold text-xs text-foreground">+${addon.price.toFixed(2)}</span>
+                  <span className="font-semibold text-[13px] text-foreground">+${addon.price.toFixed(2)}</span>
                   <input
                     type="checkbox"
                     checked={isChecked}
@@ -863,7 +863,7 @@ const AddonServiceModalContent: React.FC<{
           <button
             type="button"
             onClick={handleSave}
-            className="px-5 py-2 bg-primary hover:bg-primary text-white font-bold rounded-xl shadow-2xs cursor-pointer transition"
+            className="px-5 py-2 bg-primary hover:bg-primary text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition"
           >
             Apply Services
           </button>
@@ -917,8 +917,8 @@ const TakePaymentModalContent: React.FC<{
             <CreditCard className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Checkout &amp; Take Payment</h2>
-            <p className="text-xs text-muted-foreground">Process balance for {appointment.petName} ({appointment.customerName || 'Client'})</p>
+            <h2 className="text-base font-semibold text-foreground">Checkout &amp; Take Payment</h2>
+            <p className="text-[13px] text-muted-foreground">Process balance for {appointment.petName} ({appointment.customerName || 'Client'})</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -926,7 +926,7 @@ const TakePaymentModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs max-h-[65vh] overflow-y-auto custom-scrollbar">
+      <div className="p-6 space-y-4 text-[13px] max-h-[65vh] overflow-y-auto custom-scrollbar">
         {/* Invoice Summary Box */}
         <div className="p-4 bg-muted/40 border border-border rounded-2xl space-y-2">
           <div className="flex justify-between text-muted-foreground">
@@ -937,7 +937,7 @@ const TakePaymentModalContent: React.FC<{
             <span>Deposit Already Paid (Online)</span>
             <span className="font-semibold">-${depositPaid.toFixed(2)}</span>
           </div>
-          <div className="border-t border-border pt-2 flex justify-between font-bold text-foreground">
+          <div className="border-t border-border pt-2 flex justify-between font-semibold text-foreground">
             <span>Balance Remaining</span>
             <span>${subtotalBalance.toFixed(2)}</span>
           </div>
@@ -955,7 +955,7 @@ const TakePaymentModalContent: React.FC<{
                   setTipPercentage(pct);
                   setCustomTip('');
                 }}
-                className={`py-2 text-center rounded-xl font-bold transition cursor-pointer text-xs ${
+                className={`py-2 text-center rounded-xl font-semibold transition cursor-pointer text-[13px] ${
                   customTip === '' && tipPercentage === pct
                     ? 'bg-success text-white shadow-2xs'
                     : 'bg-muted/40 hover:bg-muted/40 text-foreground border border-border'
@@ -1028,7 +1028,7 @@ const TakePaymentModalContent: React.FC<{
             type="button"
             disabled={isProcessing}
             onClick={handleCharge}
-            className="px-6 py-2.5 bg-success hover:bg-success text-white font-bold rounded-xl shadow-2xs cursor-pointer transition flex items-center gap-2"
+            className="px-6 py-2.5 bg-success hover:bg-success text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition flex items-center gap-2"
           >
             {isProcessing ? 'Processing...' : `Charge $${finalAmountDue.toFixed(2)}`}
           </button>
@@ -1077,8 +1077,8 @@ const SendMessageModalContent: React.FC<{
             <Send className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Send Customer Message</h2>
-            <p className="text-xs text-muted-foreground">Dispatch instant SMS or Email to {appointment.customerName || 'Client'}</p>
+            <h2 className="text-base font-semibold text-foreground">Send Customer Message</h2>
+            <p className="text-[13px] text-muted-foreground">Dispatch instant SMS or Email to {appointment.customerName || 'Client'}</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -1086,13 +1086,13 @@ const SendMessageModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs">
+      <div className="p-6 space-y-4 text-[13px]">
         <div className="flex rounded-xl bg-muted/40 p-1 font-semibold text-muted-foreground">
           <button
             type="button"
             onClick={() => setChannel('sms')}
             className={`flex-1 py-1.5 rounded-lg transition cursor-pointer text-center ${
-              channel === 'sms' ? 'bg-card text-primary shadow-2xs font-bold' : 'hover:text-foreground'
+              channel === 'sms' ? 'bg-card text-primary shadow-2xs font-semibold' : 'hover:text-foreground'
             }`}
           >
             📱 SMS Text Message ({appointment.customerPhone || '(555) 349-2810'})
@@ -1101,7 +1101,7 @@ const SendMessageModalContent: React.FC<{
             type="button"
             onClick={() => setChannel('email')}
             className={`flex-1 py-1.5 rounded-lg transition cursor-pointer text-center ${
-              channel === 'email' ? 'bg-card text-primary shadow-2xs font-bold' : 'hover:text-foreground'
+              channel === 'email' ? 'bg-card text-primary shadow-2xs font-semibold' : 'hover:text-foreground'
             }`}
           >
             ✉️ Email Notification
@@ -1167,7 +1167,7 @@ const SendMessageModalContent: React.FC<{
         <button
           type="button"
           onClick={handleSend}
-          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-2xs cursor-pointer transition flex items-center gap-1.5"
+          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition flex items-center gap-1.5"
         >
           <Send className="w-3.5 h-3.5" />
           <span>Send Message</span>
@@ -1220,8 +1220,8 @@ const AddNoteModalContent: React.FC<{
             <FileText className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Add File Note</h2>
-            <p className="text-xs text-muted-foreground">Record staff observations, handling flags, or styling details</p>
+            <h2 className="text-base font-semibold text-foreground">Add File Note</h2>
+            <p className="text-[13px] text-muted-foreground">Record staff observations, handling flags, or styling details</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -1229,7 +1229,7 @@ const AddNoteModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs">
+      <div className="p-6 space-y-4 text-[13px]">
         <div>
           <label className="block text-foreground font-semibold mb-1.5">Note Classification</label>
           <div className="grid grid-cols-3 gap-2">
@@ -1302,7 +1302,7 @@ const AddNoteModalContent: React.FC<{
         <button
           type="button"
           onClick={handleSaveNote}
-          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-2xs cursor-pointer transition"
+          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition"
         >
           Save Note to File
         </button>
@@ -1330,8 +1330,8 @@ const PrintCheckoutSheetModalContent: React.FC<{
             <Printer className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Grooming Intake &amp; Checkout Sheet</h2>
-            <p className="text-xs text-muted-foreground">Printable salon service checklist &amp; kennel card</p>
+            <h2 className="text-base font-semibold text-foreground">Grooming Intake &amp; Checkout Sheet</h2>
+            <p className="text-[13px] text-muted-foreground">Printable salon service checklist &amp; kennel card</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -1339,7 +1339,7 @@ const PrintCheckoutSheetModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs max-h-[65vh] overflow-y-auto custom-scrollbar">
+      <div className="p-6 space-y-4 text-[13px] max-h-[65vh] overflow-y-auto custom-scrollbar">
         {/* Printable Card Area */}
         <div className="p-5 bg-card border-2 border-border rounded-2xl space-y-4 font-sans text-foreground">
           <div className="flex justify-between items-start border-b border-border pb-3">
@@ -1348,33 +1348,33 @@ const PrintCheckoutSheetModalContent: React.FC<{
               <p className="text-[11px] text-muted-foreground">Kennel &amp; Service Routing Sheet</p>
             </div>
             <div className="text-right">
-              <span className="tabular-nums text-xs font-bold text-foreground">{appointment.id}</span>
+              <span className="tabular-nums text-[13px] font-semibold text-foreground">{appointment.id}</span>
               <p className="text-[11px] text-muted-foreground">{appointment.date || 'May 16, 2025'} • {appointment.time}</p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-3 bg-muted/40 p-3 rounded-xl">
             <div>
-              <span className="text-[10px] text-muted-foreground/70 uppercase font-bold block">Pet Name &amp; Breed</span>
-              <span className="font-bold text-sm text-foreground">{appointment.petName} ({appointment.breed})</span>
+              <span className="text-[10px] text-muted-foreground/70 uppercase font-semibold block">Pet Name &amp; Breed</span>
+              <span className="font-semibold text-sm text-foreground">{appointment.petName} ({appointment.breed})</span>
             </div>
             <div>
-              <span className="text-[10px] text-muted-foreground/70 uppercase font-bold block">Owner &amp; Phone</span>
-              <span className="font-semibold text-xs text-foreground">{appointment.customerName || 'Customer'} • {appointment.customerPhone || '(555) 349-2810'}</span>
+              <span className="text-[10px] text-muted-foreground/70 uppercase font-semibold block">Owner &amp; Phone</span>
+              <span className="font-semibold text-[13px] text-foreground">{appointment.customerName || 'Customer'} • {appointment.customerPhone || '(555) 349-2810'}</span>
             </div>
             <div>
-              <span className="text-[10px] text-muted-foreground/70 uppercase font-bold block">Assigned Groomer</span>
-              <span className="font-semibold text-xs text-foreground">{appointment.staffName || 'Sarah M.'}</span>
+              <span className="text-[10px] text-muted-foreground/70 uppercase font-semibold block">Assigned Groomer</span>
+              <span className="font-semibold text-[13px] text-foreground">{appointment.staffName || 'Sarah M.'}</span>
             </div>
             <div>
-              <span className="text-[10px] text-muted-foreground/70 uppercase font-bold block">Service Package</span>
-              <span className="font-semibold text-xs text-foreground">{appointment.serviceName} (${appointment.price?.toFixed(2)})</span>
+              <span className="text-[10px] text-muted-foreground/70 uppercase font-semibold block">Service Package</span>
+              <span className="font-semibold text-[13px] text-foreground">{appointment.serviceName} (${appointment.price?.toFixed(2)})</span>
             </div>
           </div>
 
           <div className="space-y-2">
-            <span className="font-bold text-xs uppercase tracking-wider text-muted-foreground block">Service Stage Checklist</span>
-            <div className="grid grid-cols-2 gap-2 text-xs">
+            <span className="font-semibold text-[13px] uppercase tracking-wider text-muted-foreground block">Service Stage Checklist</span>
+            <div className="grid grid-cols-2 gap-2 text-[13px]">
               {['Pre-Bath Brush Out', 'Warm Hydro-Bath & Shampoo', 'Tearless Facial Scrub', 'High-Velocity Blow Dry', 'Full Coat Scissor / Clip', 'Sanitary & Paw Pad Trim', 'Ear Cleaning & Plucking', 'Dremel Nail Grind'].map((task) => (
                 <label key={task} className="flex items-center gap-2 p-2 border border-border rounded-lg">
                   <div className="w-3.5 h-3.5 border border-border rounded-sm" />
@@ -1402,7 +1402,7 @@ const PrintCheckoutSheetModalContent: React.FC<{
         <button
           type="button"
           onClick={handlePrint}
-          className="px-5 py-2 bg-card hover:bg-muted text-white font-bold rounded-xl shadow-2xs cursor-pointer transition flex items-center gap-1.5"
+          className="px-5 py-2 bg-card hover:bg-muted text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition flex items-center gap-1.5"
         >
           <Printer className="w-4 h-4" />
           <span>Print Sheet Now</span>
@@ -1436,8 +1436,8 @@ const PrintInvoiceModalContent: React.FC<{
             <Receipt className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Invoice &amp; Receipt</h2>
-            <p className="text-xs text-muted-foreground">Itemized bill for {appointment.customerName || 'Client'}</p>
+            <h2 className="text-base font-semibold text-foreground">Invoice &amp; Receipt</h2>
+            <p className="text-[13px] text-muted-foreground">Itemized bill for {appointment.customerName || 'Client'}</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -1445,7 +1445,7 @@ const PrintInvoiceModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs max-h-[65vh] overflow-y-auto custom-scrollbar">
+      <div className="p-6 space-y-4 text-[13px] max-h-[65vh] overflow-y-auto custom-scrollbar">
         <div className="p-5 bg-card border border-border rounded-2xl space-y-4">
           <div className="flex justify-between items-start border-b border-border pb-3">
             <div>
@@ -1454,9 +1454,9 @@ const PrintInvoiceModalContent: React.FC<{
               <p className="text-[11px] text-muted-foreground">Tax ID: 84-2981042</p>
             </div>
             <div className="text-right">
-              <span className="font-bold text-foreground">INVOICE #{appointment.id.toUpperCase()}</span>
+              <span className="font-semibold text-foreground">INVOICE #{appointment.id.toUpperCase()}</span>
               <p className="text-[11px] text-muted-foreground">Date: {appointment.date || 'May 16, 2025'}</p>
-              <span className="inline-block mt-1 px-2 py-0.5 bg-success/10 text-success font-bold rounded text-[10px]">
+              <span className="inline-block mt-1 px-2 py-0.5 bg-success/10 text-success font-semibold rounded text-[10px]">
                 {appointment.paymentStatus || 'Deposit Paid'}
               </span>
             </div>
@@ -1514,7 +1514,7 @@ const PrintInvoiceModalContent: React.FC<{
         <button
           type="button"
           onClick={handlePrint}
-          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-2xs cursor-pointer transition flex items-center gap-1.5"
+          className="px-5 py-2 bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition flex items-center gap-1.5"
         >
           <Printer className="w-4 h-4" />
           <span>Print / Save PDF</span>
@@ -1554,8 +1554,8 @@ const CancelAppointmentModalContent: React.FC<{
             <XCircle className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Cancel Appointment</h2>
-            <p className="text-xs text-muted-foreground">Record cancellation for {appointment.petName}</p>
+            <h2 className="text-base font-semibold text-foreground">Cancel Appointment</h2>
+            <p className="text-[13px] text-muted-foreground">Record cancellation for {appointment.petName}</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -1563,7 +1563,7 @@ const CancelAppointmentModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs">
+      <div className="p-6 space-y-4 text-[13px]">
         <div>
           <label className="block text-foreground font-semibold mb-1">Cancellation Reason</label>
           <select
@@ -1604,7 +1604,7 @@ const CancelAppointmentModalContent: React.FC<{
         <button
           type="button"
           onClick={handleConfirmCancel}
-          className="px-5 py-2 bg-destructive hover:bg-destructive text-white font-bold rounded-xl shadow-2xs cursor-pointer transition"
+          className="px-5 py-2 bg-destructive hover:bg-destructive text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition"
         >
           Confirm Cancellation
         </button>
@@ -1641,8 +1641,8 @@ const NoShowModalContent: React.FC<{
             <UserMinus className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Mark as No Show</h2>
-            <p className="text-xs text-muted-foreground">Client did not arrive for scheduled slot</p>
+            <h2 className="text-base font-semibold text-foreground">Mark as No Show</h2>
+            <p className="text-[13px] text-muted-foreground">Client did not arrive for scheduled slot</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -1650,9 +1650,9 @@ const NoShowModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-4 text-xs">
+      <div className="p-6 space-y-4 text-[13px]">
         <div className="p-3 bg-warning/10 border border-warning/20 rounded-xl text-warning">
-          <p className="font-bold">No-Show Policy Enforcement</p>
+          <p className="font-semibold">No-Show Policy Enforcement</p>
           <p className="text-[11px] mt-0.5">
             Marking an appointment as No Show updates customer attendance records and releases the grooming station.
           </p>
@@ -1683,7 +1683,7 @@ const NoShowModalContent: React.FC<{
         <button
           type="button"
           onClick={handleConfirmNoShow}
-          className="px-5 py-2 bg-warning hover:bg-warning text-white font-bold rounded-xl shadow-2xs cursor-pointer transition"
+          className="px-5 py-2 bg-warning hover:bg-warning text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition"
         >
           Confirm No Show
         </button>
@@ -1715,8 +1715,8 @@ const DeleteConfirmationModalContent: React.FC<{
             <Trash2 className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold text-foreground">Delete Appointment</h2>
-            <p className="text-xs text-muted-foreground">Permanent removal confirmation</p>
+            <h2 className="text-base font-semibold text-foreground">Delete Appointment</h2>
+            <p className="text-[13px] text-muted-foreground">Permanent removal confirmation</p>
           </div>
         </div>
         <button onClick={onClose} className="p-1.5 rounded-full hover:bg-muted/40 text-muted-foreground/70">
@@ -1724,11 +1724,11 @@ const DeleteConfirmationModalContent: React.FC<{
         </button>
       </div>
 
-      <div className="p-6 space-y-3 text-xs">
+      <div className="p-6 space-y-3 text-[13px]">
         <p className="text-foreground text-sm">
           Are you sure you want to permanently delete the appointment for <strong className="text-foreground">{appointment.petName}</strong> scheduled on {appointment.date || 'May 16, 2025'} at {appointment.time}?
         </p>
-        <p className="text-destructive font-semibold text-xs">
+        <p className="text-destructive font-semibold text-[13px]">
           ⚠️ This action is irreversible and will remove all associated station bookings.
         </p>
       </div>
@@ -1744,7 +1744,7 @@ const DeleteConfirmationModalContent: React.FC<{
         <button
           type="button"
           onClick={handleDelete}
-          className="px-5 py-2 bg-destructive hover:bg-destructive text-white font-bold rounded-xl shadow-2xs cursor-pointer transition"
+          className="px-5 py-2 bg-destructive hover:bg-destructive text-white font-semibold rounded-xl shadow-2xs cursor-pointer transition"
         >
           Delete Appointment
         </button>
