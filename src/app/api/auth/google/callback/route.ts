@@ -95,23 +95,18 @@ export async function GET(req: NextRequest) {
       return NextResponse.redirect(`${loginBase}?error=email_not_verified`);
     }
 
-    // 3. Look up the email in Supabase to determine if this is a staff member
+    // 3. Look up the email across ALL persona tables to determine role.
+    //    Admin/Groomer → staff/tenant_memberships. Customer → customers.
+    //    Unknown emails are REJECTED — no auto-create (the salon gate).
     const adminClient = createClient(SB_URL, SB_SERVICE_KEY, {
       auth: { autoRefreshToken: false, persistSession: false },
     });
 
-    let detectedRole: 'admin' | 'groomer' | null = null;
-    let staffName = gUser.name;
-    let staffId: string | undefined;
+    let detectedRole: 'admin' | 'groomer' | 'customer' | null = null;
+    let userName = gUser.name;
+    let recordId: string | undefined;
 
-    // Check tenant_memberships (staff linkage)
-    const { data: memberships } = await adminClient
-      .from('tenant_memberships')
-      .select('role, user_id')
-      .eq('user_id', gUser.sub) // may not match if no auth user yet
-      .or(`user_id.eq.${gUser.sub}`);
-
-    // Also find by email in staff table
+    // Check staff table first (admin + groomer)
     const { data: staffRow } = await adminClient
       .from('staff')
       .select('id, name, role, userid, tenant_id')
@@ -119,27 +114,57 @@ export async function GET(req: NextRequest) {
 
     if (staffRow && staffRow.length > 0) {
       const s = staffRow[0];
-      staffName = s.name || gUser.name;
-      staffId = s.id;
+      userName = s.name || gUser.name;
+      recordId = s.id;
       const r = (s.role || '').toLowerCase();
       if (r.includes('admin') || r.includes('owner') || r.includes('manager') || r.includes('front desk')) {
         detectedRole = 'admin';
       } else if (r.includes('groomer') || r.includes('stylist') || r.includes('staff')) {
         detectedRole = 'groomer';
       }
-    } else if (memberships && memberships.length > 0) {
-      const topRole = (memberships[0].role || '').toLowerCase();
-      if (['owner', 'admin', 'manager', 'front desk'].includes(topRole)) {
-        detectedRole = 'admin';
-      } else if (['groomer', 'stylist', 'staff'].includes(topRole)) {
-        detectedRole = 'groomer';
+    }
+
+    // Fallback: check tenant_memberships if staff table didn't resolve
+    if (!detectedRole) {
+      const { data: memberships } = await adminClient
+        .from('tenant_memberships')
+        .select('role, user_id')
+        .eq('user_id', gUser.sub)
+        .or(`user_id.eq.${gUser.sub}`);
+      if (memberships && memberships.length > 0) {
+        const topRole = (memberships[0].role || '').toLowerCase();
+        if (['owner', 'admin', 'manager', 'front desk'].includes(topRole)) {
+          detectedRole = 'admin';
+        } else if (['groomer', 'stylist', 'staff'].includes(topRole)) {
+          detectedRole = 'groomer';
+        }
       }
     }
 
-    // 4. REJECT customers — they don't use Google OAuth
+    // Check customers table (existing clients created via checkout/booking/walk-in)
+    if (!detectedRole) {
+      const { data: custRow } = await adminClient
+        .from('customers')
+        .select('id, firstname, lastname, email, userid')
+        .ilike('email', gUser.email);
+      if (custRow && custRow.length > 0) {
+        const c = custRow[0];
+        const first = c.firstname || '';
+        const last = c.lastname || '';
+        if (first || last) {
+          userName = `${first} ${last}`.trim();
+        }
+        recordId = c.id;
+        detectedRole = 'customer';
+      }
+    }
+
+    // 4. THE GATE: reject unknown emails. No public self-registration.
+    //    The salon must create the record first (admin panel, checkout, booking,
+    //    or walk-in intake). The user is told to contact the salon.
     if (!detectedRole) {
       return NextResponse.redirect(
-        `${loginBase}?error=not_staff&email=${encodeURIComponent(gUser.email)}`,
+        `${loginBase}?error=not_authorized&email=${encodeURIComponent(gUser.email)}`,
       );
     }
 
@@ -151,8 +176,8 @@ export async function GET(req: NextRequest) {
         email: gUser.email,
         email_confirm: true,
         user_metadata: {
-          full_name: staffName,
-          name: staffName,
+          full_name: userName,
+          name: userName,
           role: detectedRole,
           avatar_url: gUser.picture,
           provider: 'google',
@@ -166,20 +191,22 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    // 6. Sign session JWT + set httpOnly cookie + redirect
-    const finalRole = portal === 'groomer' && detectedRole === 'groomer' ? 'groomer' : detectedRole;
+    // 6. Sign session JWT + set httpOnly cookie + redirect to the persona's portal
     const sessionJwt = await jwtSign({
-      sub: authUser?.id || staffId || gUser.sub,
+      sub: authUser?.id || recordId || gUser.sub,
       email: gUser.email,
-      name: staffName,
-      role: finalRole,
+      name: userName,
+      role: detectedRole,
       picture: gUser.picture,
       provider: 'google',
       iat: Math.floor(Date.now() / 1000),
       exp: Math.floor(Date.now() / 1000) + 60 * 60 * 8, // 8 hours
     });
 
-    const dest = finalRole === 'groomer' ? '/groomer/dashboard' : '/admin/dashboard';
+    const dest =
+      detectedRole === 'admin' ? '/admin/dashboard' :
+      detectedRole === 'groomer' ? '/groomer/dashboard' :
+      '/customer/dashboard';
     const res = NextResponse.redirect(new URL(dest, origin));
     res.cookies.set('aapawz_session', sessionJwt, {
       httpOnly: true,

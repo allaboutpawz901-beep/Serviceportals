@@ -15,9 +15,9 @@ function StaffLoginContent() {
   const [localError, setLocalError] = useState<string | null>(null);
 
   const errorMessages: Record<string, string> = {
-    not_staff: email
-      ? `${email} is not a registered staff member. Customers don't sign in here — they're created through the booking or checkout flow. If you're staff, contact an administrator to be added.`
-      : 'Not a registered staff member.',
+    not_authorized: email
+      ? `${email} is not registered at this salon. Access is gated — you must be an existing client (created at checkout, booking, or walk-in) or staff (pre-created by an administrator) before you can sign in. Please contact the salon to be set up.`
+      : 'Not registered at this salon. Contact the salon to be set up.',
     email_not_verified: 'Google email not verified.',
     token_exchange_failed: 'Google rejected the authorization code. Try again.',
     userinfo_failed: 'Could not fetch your Google profile.',
