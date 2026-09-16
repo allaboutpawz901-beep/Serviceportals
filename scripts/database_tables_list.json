@@ -1,0 +1,3227 @@
+[
+  {
+    "table_schema": "lms",
+    "table_name": "accessibility_variants",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_assessment_generation_jobs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_co_instructor_assignments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_competency_assessments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_consent_gates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_content_approval_queue",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_content_drafts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_escalation_queue",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_generated_lectures",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_instructor_personas",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_lecture_approval_queue",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_model_configs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_persona_configurations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_prompt_templates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_rag_chunks",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_rag_documents",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_rag_queries",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_remediation_recommendations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_roleplay_evaluations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_safety_filters",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_safety_incidents",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_session_summaries",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_session_telemetry",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_teaching_sessions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_test_case_generation",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_turn_logs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_tutor_messages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "ai_usage_tracking",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "announcements",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "artifact_submissions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "assignments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "at_risk_learners",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "attendance_records",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "audit_trail_details",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "auth_method_registry",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "badges",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "benefits_cliff_coaching",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "breakout_rooms",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "captions_transcripts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "clock_hour_audit_view",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "clock_hour_ledger",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "coding_exercises",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cohort_calendar",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cohort_capacity",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cohort_enrollments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cohort_groups",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cohort_instructors",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cohort_members",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cohort_progress_snapshots",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cohorts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "collaborative_authors",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "collaborative_tools",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "commerce_sync_queue",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "community_resources",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "completion_rules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "compliance_documents",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "compliance_report_runs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "consent_records",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "content_block_assets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "content_block_interactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "content_block_versions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "content_blocks",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "content_library_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "conversion_records",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "course_completions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "course_instructors",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "course_learning_outcomes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "course_prerequisites",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "course_reviews",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "course_skill_targets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "course_templates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "course_versions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "courses",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "credential_definition_skills",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "credential_definitions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "credential_sync_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "credential_verifications",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "credentials",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "crisis_response_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "crm_sync_queue",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cross_tenant_grants",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "cross_tenant_staff_grants",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "data_retention_policies",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "delivery_mode_history",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "delivery_modes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "delivery_schedule_templates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "discussion_replies",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "discussions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "emergency_contacts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "enrollment_extensions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "enrollment_transfers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "enrollment_waits",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "enrollments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "equipment_requirements",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "feedback_templates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "forum_posts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "forum_threads",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "free_license_grants",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "funder_reports",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "gamification_settings",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "grade_book",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "grade_book_categories",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "grading_scales",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "grading_workflow",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "guardian_consents",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "human_escalation_routing",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "in_app_messages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "instructor_profiles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "integration_credentials",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "leaderboards",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "learner_badges",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "learner_notes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "learner_points",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "learner_profiles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "learner_reminders",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "learner_wellness_checkins",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "learning_analytics_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "lesson_objectives",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "lesson_progress",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "lesson_releases",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "lesson_resources",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "lessons",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "live_session_attendance",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "live_session_recordings",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "live_sessions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "lms_role_assignments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "lms_roles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "lms_sessions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "mass_enrollment_batches",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "media_accessibility",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "media_assets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "media_captions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "media_thumbnails",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "media_transcription_jobs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "mentorship_matches",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "message_templates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "minor_consent_guardrails",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "minor_profiles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "module_completion_rules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "module_prerequisites",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "module_progress",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "modules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "navigator_caseloads",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "navigator_check_ins",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "navigator_profiles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "notification_delivery_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "notification_preferences",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "notification_queue",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "oral_practical_assessments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "pacing_schedules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "pathway_courses",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "pathways",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "peer_feedback",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "peer_review_assignments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "peer_study_group_members",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "peer_study_groups",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "personalization_state",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "platform_audit_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "platform_bridge_sync_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "point_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "prerequisites",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "program_tracks",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "progress_snapshots",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "publishing_workflows",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "qa_threads",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "question_bank",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "question_variants",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "quiz_attempt_answers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "quiz_attempts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "quiz_questions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "quiz_settings",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "quizzes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "rag_sources",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "resource_directory",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "retake_policies",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "review_summaries",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "role_definitions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "roleplay_scenarios",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "roleplay_sessions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "rubric_criteria",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "rubrics",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "safety_incidents",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "salon_conversions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "scorm_packages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "session_tokens",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "skill_domains",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "skill_progress",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "skill_signoff_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "skill_signoffs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "skills",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "streak_tracking",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "submission_attachments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "submission_reviews",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "submission_storage",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "support_case_notes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "support_referrals",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "user_notifications",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_ai_usage_summary",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_clock_hour_audit_summary",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_cohort_health",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_course_completion_summary",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_credential_readiness",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_instructor_workload",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_learner_clock_hours",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_learner_dashboard",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_navigator_caseload_summary",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_pending_ai_approvals",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_skill_mastery_summary",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_skill_progress_authority",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "v_skill_progress_drift",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "webhook_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "workforce_outcomes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "lms",
+    "table_name": "workforce_placement_tracking",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "account_balances",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_account_dimension_rules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_allocation_rules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_allocations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ap_aging",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ap_approvals",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ap_bill_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ap_bills",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ap_payment_applications",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ap_payments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ap_purchase_order_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ap_purchase_orders",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ar_aging",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ar_collections_cases",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ar_credit_memos",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ar_invoice_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ar_invoices",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ar_receipt_applications",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_ar_receipts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_asset_books",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_asset_classes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_asset_depreciation_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_asset_depreciation_runs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_attachments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_audit_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_balance_sheet",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_bank_accounts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_bank_statements",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_bank_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_book_account_mappings",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_books",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_budget_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_budget_versions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_cash_position",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_chart_of_accounts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_close_checklists",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_consolidation_groups",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_consolidation_members",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_consolidation_runs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_currencies",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_customer_statements",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_customers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_dimension_values",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_dimensions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_employees",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_entities",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_estimate_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_estimates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_exchange_rates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_expense_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_expense_reports",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_fiscal_years",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_fixed_assets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_fx_revaluation_runs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_import_jobs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_integration_idempotency",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_intercompany_partners",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_intercompany_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_journal_batches",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_journal_entries",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_journal_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_lease_payments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_leases",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_pay_periods",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_payment_terms",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_payouts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_payroll_deductions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_payroll_run_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_payroll_runs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_payroll_tax_forms",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_periods",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_profit_and_loss",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_reconciliation_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_reconciliations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_recurring_invoice_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_recurring_invoices",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_recurring_journals",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_revenue_contracts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_revenue_performance_obligations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_revenue_recognition_schedules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_tax_codes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_tax_jurisdictions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_timesheets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_trial_balance",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_vendors",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_workflow_actions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_workflow_instances",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "acct_workflows",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "activity_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "add_ons",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "appointment_grooming_requests",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ar_aging",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "availability",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "balance_sheet",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "bank_accounts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "bank_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "bill_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "bills",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "blocked_times",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "body_styles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "bookings",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "chart_of_accounts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "checkouts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "clip_lengths",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_banners",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_galleries",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_gallery_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_global_content",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_navigation",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_page_revisions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_pages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_policy_acceptances",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "cms_seo",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "coat_conditions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "coat_lengths",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "coat_techniques",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "coat_textures",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "coat_types",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_accounting_mappings",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_audit_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_barcodes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_batch_slips",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_branches",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_cart_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_carts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_cash_movements",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_catalog_category_map",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_catalog_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_categories",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_channel_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_channel_products",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_checkout_sessions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_coupon_redemptions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_coupons",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_customer_360",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_customer_accounts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_customer_addresses",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_customer_payment_methods",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_departments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_deposits",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_disputes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_export_jobs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_fulfillment_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_gift_card_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_gift_cards",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_idempotency",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_inventory_alerts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_inventory_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_loyalty_accounts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_loyalty_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_modules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_order_360",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_order_channel_refs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_order_channels",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_order_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_outbox_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_payment_allocations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_payment_methods",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_payments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_posting_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_price_lists",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_prices",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_procurement_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_product_media",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_product_tags",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_promotion_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_promotions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_receipts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_refund_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_refunds",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_register_closures",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_register_sessions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_registers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_return_actions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_return_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_sale_discounts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_sale_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_sale_taxes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_sales",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_sales_dashboard",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_shipping_labels",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_store_credit_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_store_credits",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_subscription_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_subscription_invoice_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_subscription_invoices",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_subscription_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_subscription_payments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_subscription_plan_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_subscription_plans",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_subscriptions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "commerce_webhook_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "communications",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "consultations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "contact_messages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_activity",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_appointment_financial_refs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_appointment_pets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_appointment_services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_appointment_status_history",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_appointment_steps",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_appointments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_appointments_upcoming",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_audit_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_automation_enrollments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_automation_runs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_automation_workflows",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_booking_funnel_30d",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_campaign_members",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_campaigns",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_commission_entries",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_commission_plans",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_commission_rules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_commission_tiers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_communication_preferences",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_conversations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_customer_behavior",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_customer_contact_methods",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_customer_overview",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_customer_pets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_customer_preferences",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_customer_service_profile",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_customer_tags",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_customers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_dashboard_daily",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_document_types",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_document_versions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_documents",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_duplicate_candidates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_external_identities",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_funnel_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_grooming_photos",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_grooming_record_services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_grooming_records",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_holiday_blackouts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_households",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_idempotency_keys",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_lead_activities",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_lead_sources",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_leads",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_locations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_merge_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_message_templates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_messages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_needs_attention",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_needs_rebooking",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_notes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_operating_hours",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_permanent_alerts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_pet_tags",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_pet_vaccinations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_pets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_pricing_rules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_product_recommendations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_rebooking_recommendations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_revenue_30d",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_saved_views",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_search_index",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_segment_memberships",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_segments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_service_location_availability",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_service_package_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_service_packages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_settings",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_shift_templates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff_availability",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff_commission_assignments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff_documents",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff_incident_reports",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff_performance_notes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff_shifts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff_time_clock_entries",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_staff_training_records",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_surcharges",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_tags",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_tasks",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_time_off_requests",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_unsigned_documents",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_upcoming_birthdays",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_vaccinations_expiring",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_vaccine_types",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "crm_waitlist",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "currencies",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "customer_statements",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "customers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "deshedding_services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "dog_breeds",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "dog_grooming_profiles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "dogs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ear_services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "ear_styles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "email_messages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_audit_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_backordered_orders",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_carriers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_document_sequences",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_fulfillment_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_fulfillment_orders",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_goods_receipt_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_goods_receipts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_idempotency_keys",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_availability",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_balances",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_cost_layers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_count_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_count_sessions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_lots",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_movement_history",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_movements",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_reservations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_serial_numbers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_transfer_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_inventory_transfers",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_low_inventory",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_order_addresses",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_order_fulfillment_queue",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_order_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_order_notes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_order_status_history",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_orders",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_package_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_packages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_pick_task_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_pick_tasks",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_pick_waves",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_product_barcodes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_product_categories",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_product_skus",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_product_variants",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_products",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_purchase_order_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_purchase_orders",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_replenishment_recommendations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_replenishment_rules",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_return_authorizations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_return_inspections",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_return_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_return_refunds",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_shipment_packages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_shipments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_shipping_methods",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_tracking_events",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_uom_conversions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_vendor_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_vendors",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_warehouse_locations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_warehouse_zones",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "erp_warehouses",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimates",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "face_styles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "faqs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "feet_styles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "gallery_photos",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "general_ledger",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "haircut_styles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "head_styles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "inventory_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "inventory_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "inventory_valuation",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "invoice_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "invoices",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "journal_entries",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "journal_lines",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "leg_styles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "locations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "nail_services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "newsletter",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "order_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "orders",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "paw_pad_services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "payment_transactions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "payments",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "payroll_employees",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "payroll_run_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "payroll_runs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "payroll_tax_forms",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "payroll_timesheets",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "pet_category_filters",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "pet_product_categories",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "pet_product_filter_values",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "pet_product_filters",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_admin_access_log",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_admins",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_backups",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_customer_identity_links",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_db_contract_metadata",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_feature_tree_coverage",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_integration_health_registry",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_module_permissions",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_permission_registry",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_quick_action_registry",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_quick_links",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_reserved_slugs",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_vendor_identity_links",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "platform_workflow_transition_validation",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "policies",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "portal_customer_accounts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "portal_magic_links",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "pricing_packages",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "product_reviews",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "products",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "profit_and_loss",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "purchase_order_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "purchase_orders",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "receipt_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "receipts",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "reconciliations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "recurring_invoice_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "recurring_invoices",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "sales_order_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "sales_orders",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "sanitary_options",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "service_items",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "service_pricing",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "shedding_levels",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "site_settings",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "staff",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "tags",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "tail_styles",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "taxes",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "teeth_services",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "tenant_locations",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "tenant_memberships",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "tenants",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "testimonials",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "transaction_tags",
+    "table_type": "BASE TABLE"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "trial_balance",
+    "table_type": "VIEW"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "v_groomer_commission_report",
+    "table_type": "VIEW"
+  }
+]

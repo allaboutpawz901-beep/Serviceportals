@@ -1,0 +1,36 @@
+# === USER-SPECIFIED IGNORES ===
+# Per client instruction: only ignore worklogs and prisma
+worklog*.md
+prisma/
+
+# === NON-NEGOTIABLE ESSENTIALS ===
+# (these must never be committed to any project)
+node_modules/
+.next/
+out/
+build/
+.env*
+*.pem
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# === LOCAL DEV ARTIFACTS ===
+# logs & temp files only
+*.log
+dev.log
+server.log
+*.pid
+.claude
+.z-ai-config
+tool-results/
+.zscripts/
+
+# === TRACKED (do NOT ignore) ===
+# supabase/        — migrations are source of truth, MUST be tracked
+# todo/            — findings docs, tracked
+# upload/          — client-uploaded reference files, tracked
+# docs/             — documentation, tracked
+# scripts/         — utility scripts, tracked
+# skills/          — skill definitions, tracked
+# src/             — application code, tracked

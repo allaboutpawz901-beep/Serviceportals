@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: Tracking
+  description: |
+    Contact Us: [USPS API Support](https://emailus.usps.com/s/usps-APIs) | [Terms of Service](https://about.usps.com/termsofuse.htm)
+
+    The Tracking API provides real-time tracking details, scan events, and expected delivery status for domestic and international mail packages.
+  version: 3.0.0
+servers:
+  - url: https://apis.usps.com/tracking/v3
+    description: Production Environment Endpoint
+  - url: https://apis-tem.usps.com/tracking/v3
+    description: Testing Environment Endpoint
+paths:
+  /tracking/{trackingNumber}:
+    get:
+      tags:
+        - Tracking
+      summary: Get tracking details for a package
+      description: Returns tracking status, milestone checkpoints, and proof of delivery information for a single tracking number.
+      operationId: getTracking
+      parameters:
+        - name: trackingNumber
+          in: path
+          required: true
+          description: USPS tracking number
+          schema:
+            type: string
+            example: "9400111899223191234567"
+        - name: expand
+          in: query
+          required: false
+          description: Additional tracking detail expansion
+          schema:
+            type: string
+            enum: [DETAIL, SUMMARY]
+            default: DETAIL
+      responses:
+        '200':
+          description: Successful tracking response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackingResponse'
+        '400':
+          description: Invalid tracking number
+        '404':
+          description: Tracking number not found
+components:
+  schemas:
+    TrackingResponse:
+      type: object
+      properties:
+        trackingNumber:
+          type: string
+        status:
+          type: string
+          example: "Delivered, In/At Mailbox"
+        statusCategory:
+          type: string
+          example: "DELIVERED"
+        statusSummary:
+          type: string
+        expectedDeliveryDate:
+          type: string
+          format: date-time
+        guaranteedDeliveryDate:
+          type: string
+          format: date-time
+        trackingEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/TrackingEvent'
+    TrackingEvent:
+      type: object
+      properties:
+        eventType:
+          type: string
+          example: "01"
+        eventTimestamp:
+          type: string
+          format: date-time
+        eventDescription:
+          type: string
+          example: "Delivered, In/At Mailbox"
+        eventCity:
+          type: string
+        eventState:
+          type: string
+        eventZIP:
+          type: string
