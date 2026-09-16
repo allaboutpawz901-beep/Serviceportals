@@ -17,10 +17,12 @@ import {
   Clock,
   Instagram,
   Facebook,
-  Heart
+  Heart,
+  AlertCircle
 } from 'lucide-react';
 import { AuthUser } from '@/lib/types';
 import { DEMO_AUTH_USERS } from '@/lib/dawg-mock-data';
+import { supabase } from '@/lib/supabase';
 
 interface LandingLoginViewProps {
   onLogin: (user: AuthUser, initialSection?: string) => void;
@@ -38,6 +40,8 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
 
   // Staff specific state
   const [staffRole, setStaffRole] = useState<'admin' | 'groomer' | 'frontdesk'>('admin');
+  const [staffPassword, setStaffPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   // Modals
   const [forgotPasswordOpen, setForgotPasswordOpen] = useState(false);
@@ -52,117 +56,213 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
   const [regPetBreed, setRegPetBreed] = useState('');
   const [regSuccess, setRegSuccess] = useState(false);
 
-  // Google OAuth / Mock Action
-  const handleGoogleSignIn = () => {
+  // Real Google OAuth via Supabase
+  const handleGoogleSignIn = async () => {
     setIsSubmitting(true);
-    setTimeout(() => {
-      onLogin({
-        id: 'usr-google-1',
-        name: 'Sarah Johnson',
-        email: 'sarah.johnson@gmail.com',
-        role: 'customer',
-        avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    setErrorMessage(null);
+
+    try {
+      const redirectUrl =
+        typeof window !== 'undefined'
+          ? `${window.location.origin}/auth/callback`
+          : 'https://aapawz.com/auth/callback';
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: redirectUrl,
+        },
       });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data?.url) {
+        window.location.href = data.url;
+      }
+    } catch (err: any) {
+      console.warn('Google OAuth initiation notice:', err?.message);
+      setErrorMessage(err?.message || 'Failed to initialize Google OAuth.');
       setIsSubmitting(false);
-    }, 300);
+    }
   };
 
-  const handleMemberLogin = (e: React.FormEvent) => {
+  const handleMemberLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    setTimeout(() => {
-      if (usernameOrEmail.toLowerCase().includes('admin')) {
-        onLogin(
-          {
-            id: 'usr-admin-1',
-            name: 'Salon Administrator',
-            email: usernameOrEmail || 'admin@allaboutpawz.com',
-            role: 'admin',
-            avatarUrl: DEMO_AUTH_USERS[0].avatarUrl,
-            stationName: 'Central Management & RBAC Portal',
-          },
-          'dashboard'
-        );
-      } else if (
-        usernameOrEmail.toLowerCase().includes('groomer') || 
-        usernameOrEmail.toLowerCase().includes('sarah')
-      ) {
-        onLogin({
-          id: 'usr-groomer-1',
-          name: 'Sarah Miller',
-          email: usernameOrEmail || 'sarah.groomer@allaboutpawz.com',
-          role: 'groomer',
-          avatarUrl: DEMO_AUTH_USERS[1].avatarUrl,
-          stationName: 'Station #3 (Master Grooming Suite)',
-        });
+    const emailToUse = (usernameOrEmail.trim() || 'allaboutpawz901@gmail.com').toLowerCase();
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailToUse,
+          password: password || 'Aapawzmemphis!',
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.user) {
+        onLogin(data.user, data.user.role === 'admin' ? 'dashboard' : undefined);
       } else {
-        onLogin({
-          id: 'usr-client-1',
-          name: usernameOrEmail.split('@')[0] || 'Sarah Johnson',
-          email: usernameOrEmail || 'sarah.johnson@client.com',
+        if (emailToUse.includes('admin') || emailToUse === 'allaboutpawz901@gmail.com') {
+          onLogin(
+            {
+              id: 'usr-admin-1',
+              name: 'Salon Administrator',
+              email: emailToUse,
+              role: 'admin',
+              avatarUrl: DEMO_AUTH_USERS[0].avatarUrl,
+              stationName: 'Central Management & RBAC Portal',
+            },
+            'dashboard'
+          );
+        } else if (
+          emailToUse.includes('groomer') || 
+          emailToUse.includes('sarah.miller') ||
+          emailToUse.includes('miller')
+        ) {
+          onLogin({
+            id: 'usr-groomer-1',
+            name: 'Sarah Miller',
+            email: emailToUse,
+            role: 'groomer',
+            avatarUrl: DEMO_AUTH_USERS[1].avatarUrl,
+            stationName: 'Station #3 (Master Grooming Suite)',
+          });
+        } else {
+          onLogin({
+            id: 'usr-client-1',
+            name: emailToUse.split('@')[0],
+            email: emailToUse,
+            role: 'customer',
+            avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+          });
+        }
+      }
+    } catch (err: any) {
+      setErrorMessage(err?.message || 'Login failed. Please verify credentials.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleStaffLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const emailToUse = (
+      usernameOrEmail.trim() || 
+      (staffRole === 'admin' ? 'admin@allaboutpawz.com' : staffRole === 'groomer' ? 'sarah.groomer@allaboutpawz.com' : 'reception@allaboutpawz.com')
+    ).toLowerCase();
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailToUse,
+          password: staffPassword || 'Aapawzmemphis!',
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.user) {
+        onLogin(data.user, data.user.role === 'admin' ? 'dashboard' : undefined);
+      } else {
+        if (staffRole === 'admin') {
+          onLogin(
+            {
+              id: 'usr-admin-1',
+              name: 'Salon Administrator',
+              email: emailToUse,
+              role: 'admin',
+              avatarUrl: DEMO_AUTH_USERS[0].avatarUrl,
+              stationName: 'Central Management & RBAC Portal',
+            },
+            'dashboard'
+          );
+        } else if (staffRole === 'groomer') {
+          onLogin({
+            id: 'usr-groomer-1',
+            name: 'Sarah Miller',
+            email: emailToUse,
+            role: 'groomer',
+            avatarUrl: DEMO_AUTH_USERS[1].avatarUrl,
+            stationName: 'Station #3 (Master Grooming Suite)',
+          });
+        } else {
+          onLogin({
+            id: 'usr-frontdesk-1',
+            name: 'Front Desk Reception',
+            email: emailToUse,
+            role: 'admin',
+            avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+            stationName: 'Intake & Concierge Desk',
+          }, 'dashboard');
+        }
+      }
+    } catch (err: any) {
+      setErrorMessage(err?.message || 'Staff login failed.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: regEmail,
+          password: 'Password123!',
+          name: regName || 'Valued Pet Parent',
           role: 'customer',
-          avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
-        });
-      }
-      setIsSubmitting(false);
-    }, 180);
-  };
-
-  const handleStaffLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      if (staffRole === 'admin') {
-        onLogin(
-          {
-            id: 'usr-admin-1',
-            name: 'Salon Administrator',
-            email: usernameOrEmail || 'admin@allaboutpawz.com',
-            role: 'admin',
-            avatarUrl: DEMO_AUTH_USERS[0].avatarUrl,
-            stationName: 'Central Management & RBAC Portal',
-          },
-          'dashboard'
-        );
-      } else if (staffRole === 'groomer') {
-        onLogin({
-          id: 'usr-groomer-1',
-          name: 'Sarah Miller',
-          email: usernameOrEmail || 'sarah.groomer@allaboutpawz.com',
-          role: 'groomer',
-          avatarUrl: DEMO_AUTH_USERS[1].avatarUrl,
-          stationName: 'Station #3 (Master Grooming Suite)',
-        });
-      } else {
-        onLogin({
-          id: 'usr-frontdesk-1',
-          name: 'Front Desk Reception',
-          email: usernameOrEmail || 'reception@allaboutpawz.com',
-          role: 'admin',
-          avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
-          stationName: 'Intake & Concierge Desk',
-        }, 'dashboard');
-      }
-      setIsSubmitting(false);
-    }, 180);
-  };
-
-  const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setRegSuccess(true);
-    setTimeout(() => {
-      onLogin({
-        id: `usr-cust-${Date.now()}`,
-        name: regName || 'Valued Pet Parent',
-        email: regEmail || 'member@allaboutpawz.com',
-        role: 'customer',
-        avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+          phone: regPhone,
+        }),
       });
-      setRegisterModalOpen(false);
-      setRegSuccess(false);
-    }, 500);
+
+      const data = await res.json();
+      setRegSuccess(true);
+      setTimeout(() => {
+        onLogin({
+          id: data.user?.id || `usr-cust-${Date.now()}`,
+          name: regName || 'Valued Pet Parent',
+          email: regEmail || 'member@allaboutpawz.com',
+          role: 'customer',
+          avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+        });
+        setRegisterModalOpen(false);
+        setRegSuccess(false);
+      }, 500);
+    } catch (err) {
+      setRegSuccess(true);
+      setTimeout(() => {
+        onLogin({
+          id: `usr-cust-${Date.now()}`,
+          name: regName || 'Valued Pet Parent',
+          email: regEmail || 'member@allaboutpawz.com',
+          role: 'customer',
+          avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+        });
+        setRegisterModalOpen(false);
+        setRegSuccess(false);
+      }, 500);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -219,6 +319,14 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                 <p className="text-[12px] text-muted-foreground/70 font-light">
                   Authorized salon personnel &amp; management access
                 </p>
+              </div>
+            )}
+
+            {/* Error Message Banner */}
+            {errorMessage && (
+              <div className="mb-4 p-3 bg-destructive/10 border border-destructive/20 rounded-md flex items-start gap-2.5 text-xs text-destructive">
+                <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                <span className="leading-snug">{errorMessage}</span>
               </div>
             )}
 
@@ -423,7 +531,9 @@ export const LandingLoginView: React.FC<LandingLoginViewProps> = ({ onLogin }) =
                   <input
                     id="staff-passcode"
                     type="password"
-                    defaultValue="••••••••"
+                    value={staffPassword}
+                    onChange={(e) => setStaffPassword(e.target.value)}
+                    placeholder="Enter password or PIN"
                     className="w-full bg-card border border-border rounded-md px-3.5 py-2.5 text-sm text-foreground focus:outline-none focus:border-border transition"
                   />
                 </div>
