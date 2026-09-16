@@ -224,7 +224,7 @@ const INITIAL_TRAINEES: TraineeProgress[] = [
   },
 ];
 
-export const LMSTab: React.FC = () => {
+export const LMSTab: React.FC<{ systemSettings?: any; saveSettingsToDb?: (updates: any) => void }> = ({ systemSettings, saveSettingsToDb }) => {
   const [activeSubTab, setActiveSubTab] = useState<'courses' | 'trainees' | 'certifications' | 'compliance'>('courses');
   const [courses, setCourses] = useState<Course[]>(INITIAL_COURSES);
   const [trainees, setTrainees] = useState<TraineeProgress[]>(INITIAL_TRAINEES);

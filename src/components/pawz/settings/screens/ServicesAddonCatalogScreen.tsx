@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 
 interface ScreenProps {
+  systemSettings?: any;
+  saveSettingsToDb?: (updates: any) => void;
   onNavigateScreen?: (screenId: string) => void;
   selectedLocation?: string;
   onSelectLocation?: (loc: string) => void;

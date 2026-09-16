@@ -8,6 +8,7 @@ import {
   Bell,
   HelpCircle,
   ExternalLink,
+  FileText,
   LayoutGrid,
   Building2,
   Users,
@@ -41,6 +42,7 @@ import { StripeIntegrationScreen } from './settings/screens/StripeIntegrationScr
 import { PaymentsTaxLegalScreen } from './settings/screens/PaymentsTaxLegalScreen';
 import { InvoicesAgingLedgerScreen } from './settings/screens/InvoicesAgingLedgerScreen';
 import { CmsBookingWizardScreen } from './settings/screens/CmsBookingWizardScreen';
+import { LegalWaiversScreen } from './settings/screens/LegalWaiversScreen';
 import { CustomerPortalScreen } from './settings/screens/CustomerPortalScreen';
 import { OrgSocialDirectoriesScreen } from './settings/screens/OrgSocialDirectoriesScreen';
 import { OmsAddProductScreen } from './settings/screens/OmsAddProductScreen';
@@ -139,6 +141,7 @@ const TAB_CATEGORIES: TabCategory[] = [
     title: 'WEBSITE & SYSTEM',
     tabs: [
       { id: 'cms-wizard', label: 'Website CMS & Widget', icon: Globe },
+      { id: 'legal-waivers', label: 'Legal & Waivers', icon: FileText },
       { id: 'system-telemetry', label: 'System Logs & Health', icon: Activity, badge: 'Live' },
     ],
   },
@@ -583,6 +586,15 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             />
           )}
 
+          {activeTab === 'legal-waivers' && (
+            <LegalWaiversScreen
+              onNavigateScreen={navigateToScreen}
+              selectedLocation={selectedLocation}
+              onSelectLocation={onSelectLocation}
+              systemSettings={systemSettings}
+              saveSettingsToDb={saveSettingsToDb}
+            />
+          )}
           {activeTab === 'escrow-deposits' && (
             <EscrowDepositsForfeituresScreen
               onNavigateScreen={navigateToScreen}
