@@ -4,18 +4,35 @@ const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || process.env.NEXT_PUBLIC
 const SCOPES = ['openid', 'email', 'profile'].join(' ');
 
 /**
+ * Resolve the redirect URI base. Must EXACTLY match one of the authorized
+ * redirect URIs in Google Cloud Console:
+ *   - https://ais-dev-cb2aatci5phbtljv73uphk-62947767548.us-east1.run.app/api/auth/google/callback
+ *   - https://ais-pre-cb2aatci5phbtljv73uphk-62947767548.us-east1.run.app/api/auth/google/callback
+ *   - https://aapawz.com/api/auth/google/callback
+ *
+ * Priority: NEXT_PUBLIC_SITE_URL (env) > request origin (only if it's a known authorized host) > aapawz.com
+ */
+function getSiteUrl(req: Request): string {
+  const env = (process.env.NEXT_PUBLIC_SITE_URL || '').replace(/\/$/, '');
+  if (env) return env;
+  // Fallback: aapawz.com (the production canonical)
+  return 'https://aapawz.com';
+}
+
+/**
  * GET /api/auth/google
- * Initiates Google OAuth for STAFF ONLY (groomers + admins).
- * Customers do NOT use this — they're created through the checkout/booking gate.
+ * Initiates Google OAuth — single entry for all three personas (admin, groomer, customer).
+ * The callback determines role from the DB and routes accordingly.
  */
 export async function GET(req: Request) {
   if (!GOOGLE_CLIENT_ID) {
     return NextResponse.json({ error: 'Google OAuth not configured (GOOGLE_CLIENT_ID missing)' }, { status: 500 });
   }
 
-  const { searchParams, origin } = new URL(req.url);
-  const portal = searchParams.get('portal') || 'admin'; // 'admin' | 'groomer'
-  const redirectUri = `${origin}/api/auth/google/callback`;
+  const { searchParams } = new URL(req.url);
+  const portal = searchParams.get('portal') || 'admin'; // 'admin' | 'groomer' (informational only — DB is source of truth)
+  const siteUrl = getSiteUrl(req);
+  const redirectUri = `${siteUrl}/api/auth/google/callback`;
 
   const state = Buffer.from(JSON.stringify({ portal, ts: Date.now() })).toString('base64url');
 

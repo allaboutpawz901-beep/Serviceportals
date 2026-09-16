@@ -7,6 +7,17 @@ const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
 const SB_URL = (process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || '').replace(/\/$/, '');
 const SB_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || '';
 
+/**
+ * Resolve the redirect URI base. MUST exactly match the redirect_uri sent in
+ * the auth request (in /api/auth/google/route.ts) AND one of the authorized
+ * redirect URIs in Google Cloud Console.
+ */
+function getSiteUrl(): string {
+  const env = (process.env.NEXT_PUBLIC_SITE_URL || '').replace(/\/$/, '');
+  if (env) return env;
+  return 'https://aapawz.com';
+}
+
 interface GoogleUserInfo {
   sub: string;
   email: string;
@@ -19,22 +30,22 @@ interface GoogleUserInfo {
 
 /**
  * GET /api/auth/google/callback
- * Google redirects here after staff consents. We:
- *   1. Exchange the code for Google tokens
- *   2. Fetch the user profile from Google
- *   3. Look up the email in Supabase (staff table + tenant_memberships) to determine role
- *   4. REJECT if not a known staff member (customers don't use Google OAuth — they're
- *      created through the checkout/booking gate)
- *   5. Sign a session JWT and set it as an httpOnly cookie
- *   6. Redirect to the appropriate portal (/admin or /groomer)
+ * Google redirects here after the user consents. We:
+ *   1. Exchange the code for Google tokens (using the SAME redirect_uri as the auth request)
+ *   2. Fetch the verified user profile from Google
+ *   3. Look up the email across staff / tenant_memberships / customers to determine role
+ *   4. THE GATE: reject unknown emails (no public self-registration)
+ *   5. Create/link Supabase Auth user, sign session JWT, set httpOnly cookie
+ *   6. Redirect to the persona's portal
  */
 export async function GET(req: NextRequest) {
-  const { searchParams, origin } = new URL(req.url);
+  const { searchParams } = new URL(req.url);
   const code = searchParams.get('code');
   const stateRaw = searchParams.get('state');
   const error = searchParams.get('error');
 
-  const loginBase = `${origin}/login`;
+  const siteUrl = getSiteUrl();
+  const loginBase = `${siteUrl}/login`;
   if (error) {
     return NextResponse.redirect(`${loginBase}?error=${encodeURIComponent(error)}`);
   }
@@ -49,7 +60,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.redirect(`${loginBase}?error=supabase_not_configured`);
   }
 
-  // Parse state for intended portal
+  // Parse state for intended portal (informational — DB is source of truth)
   let portal: 'admin' | 'groomer' = 'admin';
   try {
     if (stateRaw) {
@@ -60,7 +71,8 @@ export async function GET(req: NextRequest) {
     // ignore malformed state, default to admin
   }
 
-  const redirectUri = `${origin}/api/auth/google/callback`;
+  // MUST match the redirect_uri sent in the auth request exactly
+  const redirectUri = `${siteUrl}/api/auth/google/callback`;
 
   try {
     // 1. Exchange code for tokens
@@ -207,7 +219,7 @@ export async function GET(req: NextRequest) {
       detectedRole === 'admin' ? '/admin/dashboard' :
       detectedRole === 'groomer' ? '/groomer/dashboard' :
       '/customer/dashboard';
-    const res = NextResponse.redirect(new URL(dest, origin));
+    const res = NextResponse.redirect(new URL(dest, siteUrl));
     res.cookies.set('aapawz_session', sessionJwt, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
