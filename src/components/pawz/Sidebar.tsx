@@ -169,11 +169,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   const navButtonClass = (isActive: boolean) =>
     cn(
-      'group/item relative w-full flex items-center rounded-md text-[13px] leading-none transition-colors duration-150 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-sidebar',
+      'group/item relative w-full flex items-center rounded-md text-[13px] leading-none transition-colors duration-150 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background',
       isCollapsed ? 'justify-center p-2.5' : 'gap-2.5 px-3 py-2',
       isActive
-        ? 'bg-sidebar-accent text-sidebar-accent-foreground font-medium'
-        : 'text-sidebar-foreground/80 hover:bg-sidebar-accent/60 hover:text-sidebar-accent-foreground'
+        ? 'bg-accent text-accent-foreground font-medium'
+        : 'text-foreground/80 hover:bg-accent hover:text-foreground'
     );
 
   return (
@@ -182,14 +182,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {mobileOpen && (
         <div
           onClick={onCloseMobile}
-          className="fixed inset-0 z-40 bg-foreground/[0-9]0 backdrop-blur-xs lg:hidden"
+          className="fixed inset-0 z-40 bg-foreground/10 backdrop-blur-xs lg:hidden"
         />
       )}
 
       <TooltipProvider delayDuration={150}>
         <aside
           className={cn(
-            'fixed top-0 bottom-0 left-0 z-50 flex flex-col flex-shrink-0 h-screen overflow-hidden select-none bg-sidebar text-sidebar-foreground transition-[width,transform] duration-200 ease-in-out',
+            'fixed top-0 bottom-0 left-0 z-50 flex flex-col flex-shrink-0 h-screen overflow-hidden select-none bg-background text-foreground transition-[width,transform] duration-200 ease-in-out',
             mobileOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:translate-x-0',
             isCollapsed ? 'lg:w-16' : 'lg:w-64'
           )}
@@ -197,7 +197,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           {/* Brand Header — sticky at top */}
           <div
             className={cn(
-              'sticky top-0 z-10 flex items-center justify-between flex-shrink-0 bg-sidebar/95 backdrop-blur-sm',
+              'sticky top-0 z-10 flex items-center justify-between flex-shrink-0 bg-background/95 backdrop-blur-sm',
               isCollapsed ? 'flex-col gap-2 p-3' : 'p-3.5'
             )}
           >
@@ -207,10 +207,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </div>
               {!isCollapsed && (
                 <div className="min-w-0">
-                  <h1 className="truncate font-bar text-sm font-semibold leading-none tracking-tight text-sidebar-foreground">
+                  <h1 className="truncate font-bar text-sm font-semibold leading-none tracking-tight text-foreground">
                     All About Pawz
                   </h1>
-                  <p className="mt-1 text-[10px] font-medium text-sidebar-foreground/60">
+                  <p className="mt-1 text-[10px] font-medium text-muted-foreground">
                     Service Portal
                   </p>
                 </div>
@@ -220,14 +220,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
               onClick={onCloseMobile}
               type="button"
               aria-label="Close Mobile Navigation"
-              className="lg:hidden inline-flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground cursor-pointer"
+              className="lg:hidden inline-flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground cursor-pointer"
             >
               <X className="h-4 w-4" />
             </button>
           </div>
 
           {/* Navigation Groups List */}
-          <nav className="custom-scrollbar flex-1 overflow-y-hidden py-2 text-sidebar-foreground">
+          <nav className="custom-scrollbar flex-1 overflow-y-hidden py-2 text-foreground">
             {navGroups.map((group, gIdx) => (
               <div key={gIdx} className="space-y-0.5">
                 {group.category && !isCollapsed && (
@@ -239,7 +239,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           onCloseMobile();
                         }
                       }}
-                      className="font-bar text-[10px] font-medium uppercase tracking-wider text-sidebar-foreground/50 transition-colors hover:text-sidebar-foreground/80 cursor-pointer text-left"
+                      className="font-bar text-[10px] font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground cursor-pointer text-left"
                     >
                       {group.category}
                     </button>
@@ -262,8 +262,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           className={cn(
                             'h-4 w-4 shrink-0 transition-colors duration-150',
                             isActive
-                              ? 'text-sidebar-accent-foreground'
-                              : 'text-sidebar-foreground/70 group-hover/item:text-sidebar-accent-foreground'
+                              ? 'text-accent-foreground'
+                              : 'text-muted-foreground group-hover/item:text-foreground'
                           )}
                         />
                         {!isCollapsed && (
