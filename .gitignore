@@ -55,15 +55,8 @@ server.log
 # Dev artifacts
 .zscripts/
 tool-results/
-upload/
 worklog.md
 dev.log
 server.log
 *.pid
-
-# Documentation & scripts (not code)
-docs/
-scripts/
-supabase/
-todo/
 
