@@ -354,8 +354,11 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Sub-nav — pillar pills only (sub-routes are icons on the page itself) */}
-      <div className="h-10 px-3 sm:px-4 flex items-center gap-1 overflow-x-auto custom-scrollbar bg-background text-foreground">
+      {/* Sub-nav — pillar pills only (sub-routes are icons on the page itself).
+          Right-aligned so the CRM / Orders / Accounting pills sit directly
+          under the search bar on the right side, leaving the left side clean
+          for the sidebar below. */}
+      <div className="h-10 px-3 sm:px-4 flex items-center justify-end gap-1 overflow-x-auto custom-scrollbar bg-background text-foreground">
         {pillars.map((pillar) => {
           const isSelected = activePillar === pillar.id;
           return (
