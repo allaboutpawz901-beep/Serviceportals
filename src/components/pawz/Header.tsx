@@ -184,10 +184,10 @@ export const Header: React.FC<HeaderProps> = ({
     : 'User';
 
   const iconButtonClass =
-    'rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9 flex items-center justify-center transition-colors duration-150 text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background';
+    'rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-9 w-9 flex items-center justify-center transition-colors duration-150 text-topbar-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-topbar';
 
   return (
-    <header className="sticky top-0 z-30 flex-shrink-0 select-none bg-background text-foreground">
+    <header className="sticky top-0 z-30 flex-shrink-0 select-none bg-topbar text-topbar-foreground">
       {/* Top bar — global utilities only (no duplicate brand, no page CTAs) */}
       <div className="h-14 px-3 sm:px-4 flex items-center justify-between gap-2">
         {/* Left: mobile menu + sidebar toggle */}
@@ -213,7 +213,7 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           {/* Active pillar label only (no duplicate brand logo/text) */}
-          <span className="hidden sm:inline text-[13px] font-medium text-foreground/70 ml-2">
+          <span className="hidden sm:inline text-[13px] font-medium text-topbar-foreground/80 ml-2">
             {activePillar}
           </span>
         </div>
@@ -254,7 +254,7 @@ export const Header: React.FC<HeaderProps> = ({
           {currentUser ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-2 rounded-full hover:bg-accent hover:text-accent-foreground h-9 pr-2 pl-1 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+                <button className="flex items-center gap-2 rounded-full hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-9 pr-2 pl-1 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-topbar">
                   <Avatar className="size-7 ring-1 ring-border">
                     {currentUser.avatarUrl ? (
                       <AvatarImage src={currentUser.avatarUrl} alt={currentUser.name} />
@@ -263,7 +263,7 @@ export const Header: React.FC<HeaderProps> = ({
                       {initials}
                     </AvatarFallback>
                   </Avatar>
-                  <span className="hidden md:inline text-[13px] font-medium text-foreground">
+                  <span className="hidden md:inline text-[13px] font-medium text-topbar-foreground">
                     {currentUser.name}
                   </span>
                   <ChevronDown className="hidden md:inline size-3.5 text-muted-foreground" />
@@ -358,7 +358,7 @@ export const Header: React.FC<HeaderProps> = ({
           Right-aligned so the CRM / Orders / Accounting pills sit directly
           under the search bar on the right side, leaving the left side clean
           for the sidebar below. */}
-      <div className="h-10 px-3 sm:px-4 flex items-center justify-end gap-1 overflow-x-auto custom-scrollbar bg-background text-foreground">
+      <div className="h-10 px-3 sm:px-4 flex items-center justify-end gap-1 overflow-x-auto custom-scrollbar bg-topbar text-topbar-foreground">
         {pillars.map((pillar) => {
           const isSelected = activePillar === pillar.id;
           return (
@@ -368,8 +368,8 @@ export const Header: React.FC<HeaderProps> = ({
               className={cn(
                 'rounded-full px-3.5 py-1.5 text-[13px] font-medium whitespace-nowrap transition-colors duration-150 cursor-pointer',
                 isSelected
-                  ? 'bg-accent text-accent-foreground'
-                  : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+                  ? 'bg-sidebar-accent text-sidebar-accent-foreground'
+                  : 'text-topbar-foreground/60 hover:bg-sidebar-accent/60 hover:text-sidebar-accent-foreground'
               )}
             >
               {pillar.label}
