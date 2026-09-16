@@ -35,12 +35,12 @@ export const ServicesAddonCatalogScreen: React.FC<ScreenProps> = ({
     : catalogItems.filter((i) => i.cat === selectedCategory);
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
@@ -50,9 +50,9 @@ export const ServicesAddonCatalogScreen: React.FC<ScreenProps> = ({
         <div className="flex items-center min-w-max">
           <div className="px-3 py-2 bg-muted/40 border-r border-border flex items-center gap-2">
             <span className="w-2 h-2 bg-black"></span>
-            <span className="tabular-nums text-[11px] uppercase tracking-widest text-foreground font-bold">MODULE // CATALOG &amp; ADD-ONS</span>
+            <span className="tabular-nums text-[11px] uppercase tracking-wider text-foreground font-semibold">MODULE // CATALOG &amp; ADD-ONS</span>
           </div>
-          <nav className="flex items-center text-xs tabular-nums">
+          <nav className="flex items-center text-[13px] tabular-nums">
             {[
               { label: 'Overview', id: 'overview' },
               { label: 'Pricing Matrix', id: 'services-pricing' },
@@ -63,7 +63,7 @@ export const ServicesAddonCatalogScreen: React.FC<ScreenProps> = ({
               <button
                 key={tab.label}
                 onClick={() => onNavigateScreen?.(tab.id)}
-                className={`px-3 py-2 border-r border-border/30 tabular-nums text-xs cursor-pointer transition-none flex items-center gap-1.5 ${
+                className={`px-3 py-2 border-r border-border/30 tabular-nums text-[13px] cursor-pointer transition-none flex items-center gap-1.5 ${
                   tab.active ? 'bg-primary text-primary-foreground font-semibold' : 'text-muted-foreground hover:bg-black hover:text-white'
                 }`}
               >
@@ -79,25 +79,25 @@ export const ServicesAddonCatalogScreen: React.FC<ScreenProps> = ({
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[9px] tabular-nums uppercase tracking-widest px-2 py-0.5 border border-border bg-primary text-primary-foreground font-bold">
+              <span className="text-[9px] tabular-nums uppercase tracking-wider px-2 py-0.5 border border-border bg-primary text-primary-foreground font-semibold">
                 SEC:14 // SERVICE MASTER DEFINITION
               </span>
               <span className="text-[10px] tabular-nums text-muted-foreground uppercase">
                 TREATMENTS // ADD-ON SKUS // TIME DURATION OFFSETS
               </span>
             </div>
-            <h1 className="text-xl md:text-2xl font-bold uppercase tracking-tight font-sans text-foreground mt-1">
+            <h1 className="text-xl md:text-2xl font-semibold uppercase tracking-tight font-sans text-foreground mt-1">
               Service Master Catalog &amp; Add-On Treatment Editor
             </h1>
-            <p className="text-xs tabular-nums text-muted-foreground">
+            <p className="text-[13px] tabular-nums text-muted-foreground">
               Create and manage grooming services, luxury spa treatments, pricing overrides, and automated duration extensions.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 tabular-nums text-xs">
+          <div className="flex items-center gap-2 tabular-nums text-[13px]">
             <button
               onClick={() => showToast('NEW SERVICE MODAL OPEN')}
-              className="h-8 px-4 bg-primary text-primary-foreground border border-border uppercase font-bold hover:bg-muted cursor-pointer"
+              className="h-8 px-4 bg-primary text-primary-foreground border border-border uppercase font-semibold hover:bg-muted cursor-pointer"
             >
               + Create Service / Add-On
             </button>
@@ -106,13 +106,13 @@ export const ServicesAddonCatalogScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* FILTER BAR */}
-      <div className="p-3 bg-muted/30 border-b border-border flex flex-wrap items-center justify-between gap-2 tabular-nums text-xs select-none">
+      <div className="p-3 bg-muted/30 border-b border-border flex flex-wrap items-center justify-between gap-2 tabular-nums text-[13px] select-none">
         <div className="flex items-center gap-1 overflow-x-auto">
           {['ALL', 'GROOMING', 'BATH', 'SPA', 'HYGIENE', 'MEDICATED'].map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1 border border-border uppercase font-bold text-[10px] cursor-pointer ${
+              className={`px-3 py-1 border border-border uppercase font-semibold text-[10px] cursor-pointer ${
                 selectedCategory === cat ? 'bg-primary text-primary-foreground' : 'bg-card text-foreground hover:bg-muted'
               }`}
             >
@@ -124,32 +124,32 @@ export const ServicesAddonCatalogScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* CATALOG GRID */}
-      <div className="p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tabular-nums text-xs">
+      <div className="p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tabular-nums text-[13px]">
         {filteredItems.map((item) => (
           <div key={item.code} className="border-2-black bg-card p-4 flex flex-col justify-between space-y-3">
             <div>
               <div className="flex items-center justify-between">
                 <span className="text-muted-foreground text-[10px]">{item.code}</span>
-                <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.2 font-bold uppercase">{item.type}</span>
+                <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.2 font-semibold uppercase">{item.type}</span>
               </div>
-              <div className="font-sans font-bold text-sm text-foreground mt-2 leading-tight">{item.name}</div>
+              <div className="font-sans font-semibold text-sm text-foreground mt-2 leading-tight">{item.name}</div>
             </div>
 
             <div className="pt-3 border-t border-border flex items-center justify-between">
               <div className="flex items-baseline gap-2">
-                <span className="font-sans font-bold text-base">{item.price}</span>
+                <span className="font-sans font-semibold text-base">{item.price}</span>
                 <span className="text-[10px] text-muted-foreground">{item.time}</span>
               </div>
               <div className="flex items-center gap-1">
                 <button
                   onClick={() => showToast(`EDITING ${item.name}`)}
-                  className="px-2 py-1 border border-border text-[9px] uppercase font-bold hover:bg-black hover:text-white cursor-pointer"
+                  className="px-2 py-1 border border-border text-[9px] uppercase font-semibold hover:bg-black hover:text-white cursor-pointer"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => onNavigateScreen?.('services-pricing')}
-                  className="px-2 py-1 border border-border text-[9px] uppercase font-bold hover:bg-black hover:text-white cursor-pointer"
+                  className="px-2 py-1 border border-border text-[9px] uppercase font-semibold hover:bg-black hover:text-white cursor-pointer"
                 >
                   Matrix
                 </button>

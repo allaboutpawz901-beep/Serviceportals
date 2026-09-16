@@ -32,15 +32,15 @@ export const ServicesPricingTab: React.FC<TabProps> = ({ onNavigateSection }) =>
   const [saved, setSaved] = useState(false);
 
   return (
-    <div className="space-y-5 text-xs">
+    <div className="space-y-5 text-[13px]">
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-warning uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-[13px] font-semibold text-warning uppercase tracking-wider mb-1">
             <Tag className="w-4 h-4" />
             <span>Pricing Rules &amp; Add-ons</span>
           </div>
-          <h2 className="text-xl font-bold text-foreground">Services &amp; Pricing Policies</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <h2 className="text-xl font-semibold text-foreground">Services &amp; Pricing Policies</h2>
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Configure global grooming add-on surcharges, weekend rush multipliers, and gift card redemption.
           </p>
         </div>
@@ -57,7 +57,7 @@ export const ServicesPricingTab: React.FC<TabProps> = ({ onNavigateSection }) =>
       </div>
 
       {saved && (
-        <div className="p-3 bg-success/10 border border-success/20 text-success text-xs font-medium rounded-xl flex items-center gap-2">
+        <div className="p-3 bg-success/10 border border-success/20 text-success text-[13px] font-medium rounded-xl flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-success" />
           <span>Pricing rules updated successfully!</span>
         </div>
@@ -65,10 +65,10 @@ export const ServicesPricingTab: React.FC<TabProps> = ({ onNavigateSection }) =>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3">
-          <h3 className="font-bold text-foreground text-sm">Weekend Surcharge</h3>
+          <h3 className="font-semibold text-foreground text-sm">Weekend Surcharge</h3>
           <p className="text-muted-foreground text-[11px]">Applied to Saturday and Sunday appointments</p>
           <div className="flex items-center gap-2">
-            <span className="font-bold text-muted-foreground">$</span>
+            <span className="font-semibold text-muted-foreground">$</span>
             <input
               type="number"
               value={weekendSurcharge}
@@ -79,10 +79,10 @@ export const ServicesPricingTab: React.FC<TabProps> = ({ onNavigateSection }) =>
         </div>
 
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3">
-          <h3 className="font-bold text-foreground text-sm">Severe Matting Fee</h3>
+          <h3 className="font-semibold text-foreground text-sm">Severe Matting Fee</h3>
           <p className="text-muted-foreground text-[11px]">Base price for deep de-matting &amp; coat conditioning</p>
           <div className="flex items-center gap-2">
-            <span className="font-bold text-muted-foreground">$</span>
+            <span className="font-semibold text-muted-foreground">$</span>
             <input
               type="number"
               value={mattingFee}
@@ -93,10 +93,10 @@ export const ServicesPricingTab: React.FC<TabProps> = ({ onNavigateSection }) =>
         </div>
 
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3">
-          <h3 className="font-bold text-foreground text-sm">Special Handling / Senior Pet</h3>
+          <h3 className="font-semibold text-foreground text-sm">Special Handling / Senior Pet</h3>
           <p className="text-muted-foreground text-[11px]">Extra time allowance for elderly or reactive dogs</p>
           <div className="flex items-center gap-2">
-            <span className="font-bold text-muted-foreground">$</span>
+            <span className="font-semibold text-muted-foreground">$</span>
             <input
               type="number"
               value={specialHandlingFee}
@@ -109,7 +109,7 @@ export const ServicesPricingTab: React.FC<TabProps> = ({ onNavigateSection }) =>
 
       <div className="p-4 bg-primary/5 border border-primary/20 rounded-2xl flex items-center justify-between">
         <div>
-          <p className="font-bold text-primary">Manage Full Service &amp; Grooming Package Catalog</p>
+          <p className="font-semibold text-primary">Manage Full Service &amp; Grooming Package Catalog</p>
           <p className="text-primary text-[11px]">Add haircuts, bath packages, pricing tiers by weight, and duration.</p>
         </div>
         <button
@@ -132,15 +132,15 @@ export const CustomerPortalTab: React.FC = () => {
   const [saved, setSaved] = useState(false);
 
   return (
-    <div className="space-y-5 text-xs">
+    <div className="space-y-5 text-[13px]">
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-[13px] font-semibold text-primary uppercase tracking-wider mb-1">
             <UserCheck className="w-4 h-4" />
             <span>Customer Portal Experience</span>
           </div>
-          <h2 className="text-xl font-bold text-foreground">Customer Portal Configuration</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <h2 className="text-xl font-semibold text-foreground">Customer Portal Configuration</h2>
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Configure client login capabilities, document uploads, and self-service appointment changes.
           </p>
         </div>
@@ -157,7 +157,7 @@ export const CustomerPortalTab: React.FC = () => {
       </div>
 
       {saved && (
-        <div className="p-3 bg-success/10 border border-success/20 text-success text-xs font-medium rounded-xl flex items-center gap-2">
+        <div className="p-3 bg-success/10 border border-success/20 text-success text-[13px] font-medium rounded-xl flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-success" />
           <span>Customer portal rules updated!</span>
         </div>
@@ -166,7 +166,7 @@ export const CustomerPortalTab: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3 flex flex-col justify-between">
           <div>
-            <h3 className="font-bold text-foreground text-sm">Self-Service Rescheduling</h3>
+            <h3 className="font-semibold text-foreground text-sm">Self-Service Rescheduling</h3>
             <p className="text-muted-foreground text-[11px] mt-1">Allow customers to modify scheduled times up to 24h before.</p>
           </div>
           <input
@@ -179,7 +179,7 @@ export const CustomerPortalTab: React.FC = () => {
 
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3 flex flex-col justify-between">
           <div>
-            <h3 className="font-bold text-foreground text-sm">Mandatory Vaccine Proof</h3>
+            <h3 className="font-semibold text-foreground text-sm">Mandatory Vaccine Proof</h3>
             <p className="text-muted-foreground text-[11px] mt-1">Block booking if Rabies or DHPP certificate is expired or missing.</p>
           </div>
           <input
@@ -192,7 +192,7 @@ export const CustomerPortalTab: React.FC = () => {
 
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3 flex flex-col justify-between">
           <div>
-            <h3 className="font-bold text-foreground text-sm">Loyalty Points Balance Display</h3>
+            <h3 className="font-semibold text-foreground text-sm">Loyalty Points Balance Display</h3>
             <p className="text-muted-foreground text-[11px] mt-1">Show earned VIP reward points and perks in customer header.</p>
           </div>
           <input
@@ -215,15 +215,15 @@ export const CommunicationsTab: React.FC = () => {
   const [saved, setSaved] = useState(false);
 
   return (
-    <div className="space-y-5 text-xs">
+    <div className="space-y-5 text-[13px]">
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-destructive uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-[13px] font-semibold text-destructive uppercase tracking-wider mb-1">
             <MessageSquare className="w-4 h-4" />
             <span>Automated Notifications</span>
           </div>
-          <h2 className="text-xl font-bold text-foreground">Communications &amp; Messaging</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <h2 className="text-xl font-semibold text-foreground">Communications &amp; Messaging</h2>
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Configure automated SMS and email reminders, ready for pickup alerts, and Google review requests.
           </p>
         </div>
@@ -240,7 +240,7 @@ export const CommunicationsTab: React.FC = () => {
       </div>
 
       {saved && (
-        <div className="p-3 bg-success/10 border border-success/20 text-success text-xs font-medium rounded-xl flex items-center gap-2">
+        <div className="p-3 bg-success/10 border border-success/20 text-success text-[13px] font-medium rounded-xl flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-success" />
           <span>Automated messaging automations saved!</span>
         </div>
@@ -249,7 +249,7 @@ export const CommunicationsTab: React.FC = () => {
       <div className="space-y-3">
         <label className="flex items-center justify-between p-4 rounded-xl bg-card border border-border shadow-2xs cursor-pointer">
           <div>
-            <p className="font-bold text-foreground">48-Hour Appointment Reminder (SMS + Email)</p>
+            <p className="font-semibold text-foreground">48-Hour Appointment Reminder (SMS + Email)</p>
             <p className="text-muted-foreground text-[11px]">Sends client a confirmation request with option to reply &apos;C&apos; to confirm.</p>
           </div>
           <input
@@ -262,7 +262,7 @@ export const CommunicationsTab: React.FC = () => {
 
         <label className="flex items-center justify-between p-4 rounded-xl bg-card border border-border shadow-2xs cursor-pointer">
           <div>
-            <p className="font-bold text-foreground">Dog Ready for Pickup SMS Notification</p>
+            <p className="font-semibold text-foreground">Dog Ready for Pickup SMS Notification</p>
             <p className="text-muted-foreground text-[11px]">Instant text alert dispatched to owner the moment groom is marked Complete.</p>
           </div>
           <input
@@ -275,7 +275,7 @@ export const CommunicationsTab: React.FC = () => {
 
         <label className="flex items-center justify-between p-4 rounded-xl bg-card border border-border shadow-2xs cursor-pointer">
           <div>
-            <p className="font-bold text-foreground">Automated Google Review Request (24h After Groom)</p>
+            <p className="font-semibold text-foreground">Automated Google Review Request (24h After Groom)</p>
             <p className="text-muted-foreground text-[11px]">Invites happy clients to leave a 5-star review on Google Maps.</p>
           </div>
           <input
@@ -293,15 +293,15 @@ export const CommunicationsTab: React.FC = () => {
 // 4. Inventory Settings
 export const InventoryTab: React.FC<TabProps> = ({ onNavigateSection }) => {
   return (
-    <div className="space-y-5 text-xs">
+    <div className="space-y-5 text-[13px]">
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-warning uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-[13px] font-semibold text-warning uppercase tracking-wider mb-1">
             <Package className="w-4 h-4" />
             <span>Retail &amp; Supplies Management</span>
           </div>
-          <h2 className="text-xl font-bold text-foreground">Inventory &amp; Supplies Settings</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <h2 className="text-xl font-semibold text-foreground">Inventory &amp; Supplies Settings</h2>
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Configure stock reorder thresholds, vendor accounts, and retail checkout rules.
           </p>
         </div>
@@ -316,7 +316,7 @@ export const InventoryTab: React.FC<TabProps> = ({ onNavigateSection }) => {
       </div>
 
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-4">
-        <h3 className="font-bold text-foreground text-sm">Low Stock Alert Thresholds</h3>
+        <h3 className="font-semibold text-foreground text-sm">Low Stock Alert Thresholds</h3>
         <p className="text-muted-foreground text-[11px]">Automatically trigger alerts on the dashboard when product bottles drop below minimum quantity.</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -337,15 +337,15 @@ export const InventoryTab: React.FC<TabProps> = ({ onNavigateSection }) => {
 // 5. Reports Settings
 export const ReportsTab: React.FC<TabProps> = ({ onNavigateSection }) => {
   return (
-    <div className="space-y-5 text-xs">
+    <div className="space-y-5 text-[13px]">
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-[13px] font-semibold text-primary uppercase tracking-wider mb-1">
             <BarChart3 className="w-4 h-4" />
             <span>Business Intelligence &amp; Exports</span>
           </div>
-          <h2 className="text-xl font-bold text-foreground">Reports &amp; Financial Analytics</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <h2 className="text-xl font-semibold text-foreground">Reports &amp; Financial Analytics</h2>
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Export accounting spreadsheets, staff commission summaries, and customer retention metrics.
           </p>
         </div>
@@ -361,7 +361,7 @@ export const ReportsTab: React.FC<TabProps> = ({ onNavigateSection }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3">
-          <h3 className="font-bold text-foreground text-sm">Daily Revenue Summary</h3>
+          <h3 className="font-semibold text-foreground text-sm">Daily Revenue Summary</h3>
           <p className="text-muted-foreground text-[11px]">End of day breakdown of all card, cash, tips, and tax receipts.</p>
           <button
             onClick={() => alert('Exporting Daily Revenue CSV...')}
@@ -373,7 +373,7 @@ export const ReportsTab: React.FC<TabProps> = ({ onNavigateSection }) => {
         </div>
 
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3">
-          <h3 className="font-bold text-foreground text-sm">Groomer Commission Report</h3>
+          <h3 className="font-semibold text-foreground text-sm">Groomer Commission Report</h3>
           <p className="text-muted-foreground text-[11px]">Bi-weekly payout ledger with tip distribution for staff payroll.</p>
           <button
             onClick={() => alert('Exporting Payroll Report...')}
@@ -385,7 +385,7 @@ export const ReportsTab: React.FC<TabProps> = ({ onNavigateSection }) => {
         </div>
 
         <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-3">
-          <h3 className="font-bold text-foreground text-sm">Full Client Database</h3>
+          <h3 className="font-semibold text-foreground text-sm">Full Client Database</h3>
           <p className="text-muted-foreground text-[11px]">Complete backup of pet demographics, contact information, and spending history.</p>
           <button
             onClick={() => alert('Exporting Customers Database...')}
@@ -403,25 +403,25 @@ export const ReportsTab: React.FC<TabProps> = ({ onNavigateSection }) => {
 // 6. System Settings
 export const SystemTab: React.FC = () => {
   return (
-    <div className="space-y-5 text-xs text-foreground">
+    <div className="space-y-5 text-[13px] text-foreground">
       <div className="bg-card p-5 border border-border flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-semibold uppercase text-foreground">System Preferences &amp; Audit Logs</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             System audit trails, API integrations, and system preferences.
           </p>
         </div>
 
         <button
           onClick={() => alert('Database snapshot exported!')}
-          className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-xs uppercase tracking-wider border border-border cursor-pointer"
+          className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-[13px] uppercase tracking-wider border border-border cursor-pointer"
         >
           <span>Export System Backup</span>
         </button>
       </div>
 
       <div className="bg-card p-5 border border-border space-y-4">
-        <h3 className="font-bold text-foreground text-sm uppercase">System Audit Log Trail</h3>
+        <h3 className="font-semibold text-foreground text-sm uppercase">System Audit Log Trail</h3>
         <p className="text-muted-foreground text-[11px]">Immutable record of high-privilege administrator actions.</p>
 
         <div className="divide-y divide-border border border-border overflow-hidden">
@@ -431,9 +431,9 @@ export const SystemTab: React.FC = () => {
             { actor: 'Marcus Vance', action: 'Invited Jordan Hayes to Admin Users', time: 'Yesterday at 5:20 PM', ip: '192.168.1.88' },
             { actor: 'Admin User', action: 'Executed Stripe Terminal Payout Reconciliation', time: '2 days ago', ip: '192.168.1.45' },
           ].map((log, idx) => (
-            <div key={idx} className="p-3 flex items-center justify-between text-xs hover:bg-accent/50">
+            <div key={idx} className="p-3 flex items-center justify-between text-[13px] hover:bg-accent/50">
               <div>
-                <span className="font-bold text-foreground uppercase">{log.actor}</span> · <span className="text-foreground">{log.action}</span>
+                <span className="font-semibold text-foreground uppercase">{log.actor}</span> · <span className="text-foreground">{log.action}</span>
               </div>
               <div className="flex items-center gap-3 text-[11px] tabular-nums text-muted-foreground">
                 <span>{log.ip}</span>
@@ -463,7 +463,7 @@ export const HealthTab: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 text-xs text-foreground">
+    <div className="space-y-6 text-[13px] text-foreground">
       {/* Header */}
       <div className="bg-card p-6 border border-border flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -471,12 +471,12 @@ export const HealthTab: React.FC = () => {
             <span className="px-2 py-0.5 border border-border text-[10px] font-semibold uppercase tracking-wider bg-primary text-primary-foreground">
               Cloud Infrastructure
             </span>
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 border border-border text-[10px] font-bold uppercase bg-card text-foreground tabular-nums">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 border border-border text-[10px] font-semibold uppercase bg-card text-foreground tabular-nums">
               Status: Operational
             </span>
           </div>
           <h2 className="text-xl font-semibold uppercase text-foreground">System &amp; Database Health</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Real-time Supabase PostgreSQL cloud sync, connection pool telemetry, and API latency.
           </p>
         </div>
@@ -484,7 +484,7 @@ export const HealthTab: React.FC = () => {
         <button
           onClick={handlePing}
           disabled={isPinging}
-          className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-xs uppercase tracking-wider border border-border cursor-pointer disabled:opacity-50"
+          className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-[13px] uppercase tracking-wider border border-border cursor-pointer disabled:opacity-50"
         >
           {isPinging ? 'Pinging Cloud...' : 'Run Diagnostics'}
         </button>
@@ -502,29 +502,29 @@ export const HealthTab: React.FC = () => {
               <p className="text-[11px] text-muted-foreground tabular-nums">postgres://allaboutpawz.supabase.co:5432/production</p>
             </div>
           </div>
-          <span className="px-3 py-1 border border-border bg-primary text-primary-foreground text-xs tabular-nums font-bold uppercase">
+          <span className="px-3 py-1 border border-border bg-primary text-primary-foreground text-[13px] tabular-nums font-semibold uppercase">
             Connected
           </span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="p-4 border border-border bg-muted/30 space-y-1">
-            <p className="text-[10px] font-bold uppercase text-muted-foreground">Database Latency</p>
+            <p className="text-[10px] font-semibold uppercase text-muted-foreground">Database Latency</p>
             <p className="text-lg font-semibold tabular-nums text-foreground">{latency}</p>
             <p className="text-[10px] text-muted-foreground tabular-nums">SSL encrypted</p>
           </div>
           <div className="p-4 border border-border bg-muted/30 space-y-1">
-            <p className="text-[10px] font-bold uppercase text-muted-foreground">Realtime Replication</p>
+            <p className="text-[10px] font-semibold uppercase text-muted-foreground">Realtime Replication</p>
             <p className="text-lg font-semibold tabular-nums text-foreground">Active</p>
             <p className="text-[10px] text-muted-foreground tabular-nums">WebSockets live</p>
           </div>
           <div className="p-4 border border-border bg-muted/30 space-y-1">
-            <p className="text-[10px] font-bold uppercase text-muted-foreground">Connection Pool</p>
+            <p className="text-[10px] font-semibold uppercase text-muted-foreground">Connection Pool</p>
             <p className="text-lg font-semibold tabular-nums text-foreground">4 / 20 Used</p>
             <p className="text-[10px] text-muted-foreground tabular-nums">PgBouncer ready</p>
           </div>
           <div className="p-4 border border-border bg-muted/30 space-y-1">
-            <p className="text-[10px] font-bold uppercase text-muted-foreground">Last Synced</p>
+            <p className="text-[10px] font-semibold uppercase text-muted-foreground">Last Synced</p>
             <p className="text-lg font-semibold tabular-nums text-foreground">{lastCheck}</p>
             <p className="text-[10px] text-muted-foreground tabular-nums">Automatic auto-sync</p>
           </div>
@@ -534,12 +534,12 @@ export const HealthTab: React.FC = () => {
       {/* Live Table Schema Breakdown */}
       <div className="border border-border bg-card">
         <div className="p-4 border-b border-border bg-muted/30 flex items-center justify-between">
-          <h4 className="font-bold text-xs uppercase tracking-wider text-foreground">
+          <h4 className="font-semibold text-[13px] uppercase tracking-wider text-foreground">
             Synchronized Database Entities
           </h4>
           <span className="text-[10px] tabular-nums text-muted-foreground">PostgreSQL Schema v2.4</span>
         </div>
-        <div className="divide-y divide-border text-xs tabular-nums">
+        <div className="divide-y divide-border text-[13px] tabular-nums">
           {[
             { table: 'public.customers', records: '4 Live Records', schema: 'id, name, phone, email, vip, total_spent', status: 'HEALTHY' },
             { table: 'public.pets', records: '6 Live Records', schema: 'id, owner_id, name, breed, weight, notes', status: 'HEALTHY' },
@@ -548,11 +548,11 @@ export const HealthTab: React.FC = () => {
           ].map((row, idx) => (
             <div key={idx} className="p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-accent/50">
               <div>
-                <span className="font-bold text-foreground">{row.table}</span>
+                <span className="font-semibold text-foreground">{row.table}</span>
                 <span className="text-muted-foreground text-[10px] ml-2">({row.schema})</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="font-bold text-foreground">{row.records}</span>
+                <span className="font-semibold text-foreground">{row.records}</span>
                 <span className="px-2 py-0.5 border border-border text-[9px] font-semibold uppercase bg-primary text-primary-foreground">
                   {row.status}
                 </span>

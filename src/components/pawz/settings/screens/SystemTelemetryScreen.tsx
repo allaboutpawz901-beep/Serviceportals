@@ -115,12 +115,12 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
     : auditLogs;
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast Banner */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
@@ -130,9 +130,9 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
         <div className="flex items-center min-w-max">
           <div className="px-3 py-2 bg-muted/40 border-r border-border flex items-center gap-2">
             <span className="w-2 h-2 bg-black"></span>
-            <span className="tabular-nums text-[11px] uppercase tracking-widest text-foreground font-bold">MODULE // SETTINGS</span>
+            <span className="tabular-nums text-[11px] uppercase tracking-wider text-foreground font-semibold">MODULE // SETTINGS</span>
           </div>
-          <nav className="flex items-center text-xs tabular-nums">
+          <nav className="flex items-center text-[13px] tabular-nums">
             {[
               { label: 'Overview', id: 'overview' },
               { label: 'Organization', id: 'org-multiloc' },
@@ -150,7 +150,7 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
               <button
                 key={tab.label}
                 onClick={() => onNavigateScreen?.(tab.id)}
-                className={`px-3 py-2 border-r border-border/30 tabular-nums text-xs cursor-pointer transition-none flex items-center gap-1.5 ${
+                className={`px-3 py-2 border-r border-border/30 tabular-nums text-[13px] cursor-pointer transition-none flex items-center gap-1.5 ${
                   tab.active
                     ? 'bg-primary text-primary-foreground font-semibold'
                     : 'text-muted-foreground hover:bg-black hover:text-white'
@@ -169,17 +169,17 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <span className="text-[9px] tabular-nums uppercase tracking-widest px-2 py-0.5 border border-border bg-primary text-primary-foreground font-bold">
+              <span className="text-[9px] tabular-nums uppercase tracking-wider px-2 py-0.5 border border-border bg-primary text-primary-foreground font-semibold">
                 SEC:04 // SYSTEM CORE
               </span>
               <span className="text-[10px] tabular-nums text-muted-foreground uppercase">
                 TELEMETRY // API ENGINE // RETENTION POLICIES
               </span>
             </div>
-            <h1 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-foreground mt-1 font-sans">
+            <h1 className="text-xl md:text-2xl font-semibold uppercase tracking-tight text-foreground mt-1 font-sans">
               Supabase Engine, Webhook Listeners &amp; Security Logs
             </h1>
-            <p className="text-xs tabular-nums text-muted-foreground">
+            <p className="text-[13px] tabular-nums text-muted-foreground">
               Global runtime telemetry, asynchronous webhook dispatch registries, and SOC-2 cryptographically signed ledger.
             </p>
           </div>
@@ -189,24 +189,24 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
             <button
               onClick={handleSnapshot}
               disabled={snapshotLoading}
-              className="h-8 px-3 bg-primary text-primary-foreground border border-border tabular-nums text-xs uppercase hover:bg-card hover:text-foreground transition-none flex items-center gap-1.5 cursor-pointer"
+              className="h-8 px-3 bg-primary text-primary-foreground border border-border tabular-nums text-[13px] uppercase hover:bg-card hover:text-foreground transition-none flex items-center gap-1.5 cursor-pointer"
             >
               <span>{snapshotLoading ? 'ARCHIVING WAL...' : 'Trigger Manual Snapshot'}</span>
             </button>
             <button
               onClick={handleFlush}
               disabled={flushLoading}
-              className="h-8 px-3 bg-card text-foreground border border-border tabular-nums text-xs uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1.5 cursor-pointer"
+              className="h-8 px-3 bg-card text-foreground border border-border tabular-nums text-[13px] uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1.5 cursor-pointer"
             >
               <span>{flushLoading ? 'FLUSHING REDIS...' : 'Flush Redis Cache'}</span>
             </button>
             <button
               onClick={handleRotateKeys}
-              className="h-8 px-3 bg-card text-foreground border border-border tabular-nums text-xs uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1.5 cursor-pointer"
+              className="h-8 px-3 bg-card text-foreground border border-border tabular-nums text-[13px] uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1.5 cursor-pointer"
             >
               <span>Rotate Secret Keys</span>
             </button>
-            <div className="h-8 px-3 bg-muted/40 border border-border flex items-center gap-1.5 tabular-nums text-xs font-bold text-foreground">
+            <div className="h-8 px-3 bg-muted/40 border border-border flex items-center gap-1.5 tabular-nums text-[13px] font-semibold text-foreground">
               <span className="inline-block w-2 h-2 bg-black"></span>
               <span>SYS:ONLINE</span>
             </div>
@@ -222,8 +222,8 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
             <span className="text-[9px] tabular-nums border border-border px-1 bg-muted/40 text-foreground uppercase">PGSQL 15.1</span>
           </div>
           <div className="my-2">
-            <div className="text-lg font-bold font-sans uppercase text-foreground tracking-tight">HEALTHY</div>
-            <div className="text-xs tabular-nums text-muted-foreground mt-1 flex items-center gap-1.5">
+            <div className="text-lg font-semibold font-sans uppercase text-foreground tracking-tight">HEALTHY</div>
+            <div className="text-[13px] tabular-nums text-muted-foreground mt-1 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-black inline-block"></span>
               <span>14ms Direct Pooler Latency</span>
             </div>
@@ -240,8 +240,8 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
             <span className="text-[9px] tabular-nums border border-border px-1 bg-muted/40 text-foreground uppercase">ACTIVE</span>
           </div>
           <div className="my-2">
-            <div className="text-lg font-bold font-sans uppercase text-foreground tracking-tight">28 EDGE NODES</div>
-            <div className="text-xs tabular-nums text-muted-foreground mt-1 flex items-center gap-1.5">
+            <div className="text-lg font-semibold font-sans uppercase text-foreground tracking-tight">28 EDGE NODES</div>
+            <div className="text-[13px] tabular-nums text-muted-foreground mt-1 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-black inline-block"></span>
               <span>Zero Frame Droppage</span>
             </div>
@@ -258,8 +258,8 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
             <span className="text-[9px] tabular-nums border border-border px-1 bg-muted/40 text-foreground uppercase">CRON:OK</span>
           </div>
           <div className="my-2">
-            <div className="text-lg font-bold font-sans uppercase text-foreground tracking-tight">COMPLETED</div>
-            <div className="text-xs tabular-nums text-muted-foreground mt-1 flex items-center gap-1.5">
+            <div className="text-lg font-semibold font-sans uppercase text-foreground tracking-tight">COMPLETED</div>
+            <div className="text-[13px] tabular-nums text-muted-foreground mt-1 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-black inline-block"></span>
               <span>Execution: 03:00 UTC</span>
             </div>
@@ -273,11 +273,11 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
         <div className="bg-card p-3 flex flex-col justify-between">
           <div className="flex items-center justify-between">
             <span className="text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground">COMPLIANCE // ENCRYPTION</span>
-            <span className="text-[9px] tabular-nums border border-border px-1 bg-primary text-primary-foreground uppercase font-bold">TYPE-II</span>
+            <span className="text-[9px] tabular-nums border border-border px-1 bg-primary text-primary-foreground uppercase font-semibold">TYPE-II</span>
           </div>
           <div className="my-2">
-            <div className="text-lg font-bold font-sans uppercase text-foreground tracking-tight">SOC2 VERIFIED</div>
-            <div className="text-xs tabular-nums text-muted-foreground mt-1 flex items-center gap-1.5">
+            <div className="text-lg font-semibold font-sans uppercase text-foreground tracking-tight">SOC2 VERIFIED</div>
+            <div className="text-[13px] tabular-nums text-muted-foreground mt-1 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-black inline-block"></span>
               <span>AES-256 Envelope KMS</span>
             </div>
@@ -293,8 +293,8 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
       <div className="w-full grid grid-cols-1 lg:grid-cols-12 bg-black gap-px border-b border-border">
         {/* SECTION 1: PLATFORM ENVIRONMENT & API WEBHOOKS (7 COLS) */}
         <div className="lg:col-span-7 bg-card flex flex-col">
-          <div className="p-3 border-b border-border bg-muted/40 flex items-center justify-between tabular-nums text-xs">
-            <span className="font-bold uppercase text-foreground">
+          <div className="p-3 border-b border-border bg-muted/40 flex items-center justify-between tabular-nums text-[13px]">
+            <span className="font-semibold uppercase text-foreground">
               SEC:04.1 // PLATFORM ENVIRONMENT &amp; API WEBHOOK LISTENERS
             </span>
             <span className="text-[9px] uppercase border border-border px-1 bg-card text-foreground">
@@ -303,10 +303,10 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
           </div>
 
           <div className="p-3 border-b border-border bg-card">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 tabular-nums text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 tabular-nums text-[13px]">
               <div className="p-2 border border-border bg-muted/30">
                 <span className="text-[9px] text-muted-foreground uppercase block mb-1">ENVIRONMENT TYPE</span>
-                <div className="font-bold text-foreground flex items-center gap-1.5">
+                <div className="font-semibold text-foreground flex items-center gap-1.5">
                   <span className="w-2 h-2 bg-black"></span>
                   <span>Production (PROD-DALLAS-01)</span>
                 </div>
@@ -314,27 +314,27 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
               </div>
               <div className="p-2 border border-border bg-muted/30">
                 <span className="text-[9px] text-muted-foreground uppercase block mb-1">DATABASE ENGINE</span>
-                <div className="font-bold text-foreground">Supabase PostgreSQL 15.1</div>
+                <div className="font-semibold text-foreground">Supabase PostgreSQL 15.1</div>
                 <span className="text-[9px] text-muted-foreground block mt-1">POOLER: DIRECT SUPAVISOR</span>
               </div>
               <div className="p-2 border border-border bg-muted/30">
                 <span className="text-[9px] text-muted-foreground uppercase block mb-1">SSL / TRANSPORT</span>
-                <div className="font-bold text-foreground">TLS 1.3 / STRICT-HSTS</div>
+                <div className="font-semibold text-foreground">TLS 1.3 / STRICT-HSTS</div>
                 <span className="text-[9px] text-muted-foreground block mt-1">FINGERPRINT: SHA-256 VERIFIED</span>
               </div>
             </div>
           </div>
 
           {/* Webhook Registry Table */}
-          <div className="flex-1 flex flex-col tabular-nums text-xs">
+          <div className="flex-1 flex flex-col tabular-nums text-[13px]">
             <div className="px-3 py-1.5 bg-muted/40 border-b border-border flex items-center justify-between text-[10px]">
-              <span className="font-bold text-foreground uppercase">ACTIVE INGESTION HOOKS &amp; SUBSCRIPTIONS</span>
+              <span className="font-semibold text-foreground uppercase">ACTIVE INGESTION HOOKS &amp; SUBSCRIPTIONS</span>
               <span className="text-muted-foreground">AUTO-POLLING: 1000MS</span>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-left">
                 <thead>
-                  <tr className="border-b border-border bg-muted/30 text-foreground text-[10px] uppercase font-bold">
+                  <tr className="border-b border-border bg-muted/30 text-foreground text-[10px] uppercase font-semibold">
                     <th className="p-2.5">Provider // Endpoint</th>
                     <th className="p-2.5">Registered Events</th>
                     <th className="p-2.5">HTTP Status</th>
@@ -345,7 +345,7 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
                 <tbody className="divide-y divide-neutral-200 text-[11px]">
                   <tr className="hover:bg-muted/40">
                     <td className="p-2.5">
-                      <div className="font-bold text-foreground">Stripe Connect Engine</div>
+                      <div className="font-semibold text-foreground">Stripe Connect Engine</div>
                       <div className="text-[10px] text-muted-foreground">/api/v2/webhooks/stripe-ledger</div>
                     </td>
                     <td className="p-2.5">
@@ -355,11 +355,11 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
                       </div>
                     </td>
                     <td className="p-2.5">
-                      <span className="text-[9px] font-bold border border-border px-1.5 py-0.5 bg-card text-foreground">
+                      <span className="text-[9px] font-semibold border border-border px-1.5 py-0.5 bg-card text-foreground">
                         {channelStatus.stripe}
                       </span>
                     </td>
-                    <td className="p-2.5 text-right font-bold">42ms</td>
+                    <td className="p-2.5 text-right font-semibold">42ms</td>
                     <td className="p-2.5 text-center">
                       <button
                         onClick={() => pingChannel('stripe')}
@@ -372,7 +372,7 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
 
                   <tr className="hover:bg-muted/40">
                     <td className="p-2.5">
-                      <div className="font-bold text-foreground">Twilio SMS Gateway</div>
+                      <div className="font-semibold text-foreground">Twilio SMS Gateway</div>
                       <div className="text-[10px] text-muted-foreground">/api/v2/webhooks/twilio-sms</div>
                     </td>
                     <td className="p-2.5">
@@ -382,11 +382,11 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
                       </div>
                     </td>
                     <td className="p-2.5">
-                      <span className="text-[9px] font-bold border border-border px-1.5 py-0.5 bg-card text-foreground">
+                      <span className="text-[9px] font-semibold border border-border px-1.5 py-0.5 bg-card text-foreground">
                         {channelStatus.twilio}
                       </span>
                     </td>
-                    <td className="p-2.5 text-right font-bold">18ms</td>
+                    <td className="p-2.5 text-right font-semibold">18ms</td>
                     <td className="p-2.5 text-center">
                       <button
                         onClick={() => pingChannel('twilio')}
@@ -399,7 +399,7 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
 
                   <tr className="hover:bg-muted/40">
                     <td className="p-2.5">
-                      <div className="font-bold text-foreground">SendGrid Email Ingestion</div>
+                      <div className="font-semibold text-foreground">SendGrid Email Ingestion</div>
                       <div className="text-[10px] text-muted-foreground">/api/v2/webhooks/sendgrid-inbound</div>
                     </td>
                     <td className="p-2.5">
@@ -409,11 +409,11 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
                       </div>
                     </td>
                     <td className="p-2.5">
-                      <span className="text-[9px] font-bold border border-border px-1.5 py-0.5 bg-card text-foreground">
+                      <span className="text-[9px] font-semibold border border-border px-1.5 py-0.5 bg-card text-foreground">
                         {channelStatus.sendgrid}
                       </span>
                     </td>
-                    <td className="p-2.5 text-right font-bold">31ms</td>
+                    <td className="p-2.5 text-right font-semibold">31ms</td>
                     <td className="p-2.5 text-center">
                       <button
                         onClick={() => pingChannel('sendgrid')}
@@ -427,16 +427,16 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
               </table>
             </div>
             <div className="p-2.5 bg-muted/30 border-t border-border flex items-center justify-between text-[10px]">
-              <span className="text-foreground font-bold">[POLL STATUS] ALL CHANNELS NOMINAL</span>
-              <span className="text-foreground font-bold">SIG_VERIFY: ENFORCED</span>
+              <span className="text-foreground font-semibold">[POLL STATUS] ALL CHANNELS NOMINAL</span>
+              <span className="text-foreground font-semibold">SIG_VERIFY: ENFORCED</span>
             </div>
           </div>
         </div>
 
         {/* SECTION 2: DATA RETENTION & BACKUPS (5 COLS) */}
-        <div className="lg:col-span-5 bg-card flex flex-col tabular-nums text-xs">
+        <div className="lg:col-span-5 bg-card flex flex-col tabular-nums text-[13px]">
           <div className="p-3 border-b border-border bg-muted/40 flex items-center justify-between">
-            <span className="font-bold uppercase text-foreground">
+            <span className="font-semibold uppercase text-foreground">
               SEC:04.2 // DATA RETENTION &amp; BACKUPS
             </span>
             <span className="text-[9px] uppercase border border-border px-1 bg-card text-foreground">AWS S3 / ENCRYPT</span>
@@ -444,65 +444,65 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
           <div className="p-4 flex-1 flex flex-col gap-3 justify-between">
             <div className="p-3 border border-border bg-muted/30 flex flex-col gap-1">
               <div className="flex items-center justify-between">
-                <span className="font-bold uppercase text-foreground">Daily Automated Backups</span>
-                <span className="text-[9px] px-1 bg-primary text-primary-foreground font-bold uppercase">[ENABLED]</span>
+                <span className="font-semibold uppercase text-foreground">Daily Automated Backups</span>
+                <span className="text-[9px] px-1 bg-primary text-primary-foreground font-semibold uppercase">[ENABLED]</span>
               </div>
               <p className="text-[11px] text-muted-foreground">
                 Full snapshot generated every 24 hours at 03:00 UTC. Synced to immutable, cold-storage AWS S3 Glacier buckets.
               </p>
               <div className="mt-1 pt-1 border-t border-border flex items-center justify-between text-[10px]">
                 <span className="text-muted-foreground">Retention Lifespan:</span>
-                <span className="font-bold text-foreground">90 Days Off-Site</span>
+                <span className="font-semibold text-foreground">90 Days Off-Site</span>
               </div>
             </div>
 
             <div className="p-3 border border-border bg-muted/30 flex flex-col gap-1">
               <div className="flex items-center justify-between">
-                <span className="font-bold uppercase text-foreground">Point-in-Time Recovery</span>
-                <span className="text-[9px] px-1 bg-primary text-primary-foreground font-bold uppercase">[PITR: ACTIVE]</span>
+                <span className="font-semibold uppercase text-foreground">Point-in-Time Recovery</span>
+                <span className="text-[9px] px-1 bg-primary text-primary-foreground font-semibold uppercase">[PITR: ACTIVE]</span>
               </div>
               <p className="text-[11px] text-muted-foreground">
                 Continuous write-ahead log (WAL) archiving active. Restoration possible down to second-level granularity within past 14 days.
               </p>
               <div className="mt-1 pt-1 border-t border-border flex items-center justify-between text-[10px]">
                 <span className="text-muted-foreground">WAL Target Stream:</span>
-                <span className="font-bold text-foreground">supabase://wal-s3-prod</span>
+                <span className="font-semibold text-foreground">supabase://wal-s3-prod</span>
               </div>
             </div>
 
             <div className="p-3 border border-border bg-muted/30 flex flex-col gap-1">
               <div className="flex items-center justify-between">
-                <span className="font-bold uppercase text-foreground">PII Encryption at Rest</span>
-                <span className="text-[9px] px-1 border border-border bg-card text-foreground font-bold uppercase">[ENFORCED]</span>
+                <span className="font-semibold uppercase text-foreground">PII Encryption at Rest</span>
+                <span className="text-[9px] px-1 border border-border bg-card text-foreground font-semibold uppercase">[ENFORCED]</span>
               </div>
               <p className="text-[11px] text-muted-foreground">
                 All customer credentials, phone numbers, and home addresses encrypted via AES-256 envelope vault keys. Card data tokenized via Stripe.
               </p>
               <div className="mt-1 pt-1 border-t border-border flex items-center justify-between text-[10px]">
                 <span className="text-muted-foreground">Credit Card Buffer:</span>
-                <span className="font-bold text-foreground">ZERO-STORAGE STRICT</span>
+                <span className="font-semibold text-foreground">ZERO-STORAGE STRICT</span>
               </div>
             </div>
 
-            <div className="p-2.5 border border-border bg-primary text-primary-foreground flex items-center justify-between text-xs">
-              <div className="flex items-center gap-2 font-bold uppercase">
+            <div className="p-2.5 border border-border bg-primary text-primary-foreground flex items-center justify-between text-[13px]">
+              <div className="flex items-center gap-2 font-semibold uppercase">
                 <span>🛡 DISASTER RECOVERY READINESS: 99.999%</span>
               </div>
-              <span className="text-[9px] bg-card text-foreground px-1 font-bold">FAILOVER READY</span>
+              <span className="text-[9px] bg-card text-foreground px-1 font-semibold">FAILOVER READY</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* SECTION 3: SYSTEM SECURITY & REAL-TIME USER AUDIT LOG */}
-      <div className="w-full bg-card flex flex-col tabular-nums text-xs">
+      <div className="w-full bg-card flex flex-col tabular-nums text-[13px]">
         <div className="p-3 border-b border-border bg-muted/40 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-foreground uppercase">SEC:04.3 // SYSTEM SECURITY &amp; USER AUDIT LEDGER</span>
-            <span className="text-[9px] px-1 bg-primary text-primary-foreground font-bold">[WORM STREAM]</span>
+            <span className="font-semibold text-foreground uppercase">SEC:04.3 // SYSTEM SECURITY &amp; USER AUDIT LEDGER</span>
+            <span className="text-[9px] px-1 bg-primary text-primary-foreground font-semibold">[WORM STREAM]</span>
           </div>
           <div className="flex items-center gap-3 text-[10px]">
-            <span className="flex items-center gap-1.5 font-bold text-foreground">
+            <span className="flex items-center gap-1.5 font-semibold text-foreground">
               <span className="w-2 h-2 bg-black animate-ping"></span>
               LIVE TELEMETRY
             </span>
@@ -513,11 +513,11 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
         {/* Filter & Query Control Strip */}
         <div className="p-2 border-b border-border bg-muted/30 flex flex-wrap items-center justify-between gap-2 select-none">
           <div className="flex items-center gap-2 flex-1 max-w-lg">
-            <span className="font-bold text-foreground uppercase">FILTER //</span>
+            <span className="font-semibold text-foreground uppercase">FILTER //</span>
             <input
               value={filterGrep}
               onChange={(e) => setFilterGrep(e.target.value)}
-              className="w-full h-7 bg-card border border-border px-2 text-xs focus:outline-none"
+              className="w-full h-7 bg-card border border-border px-2 text-[13px] focus:outline-none"
               placeholder="Grep events (e.g. 'BLOCKED', 'David Chen', '54.187...')"
               type="text"
             />
@@ -543,7 +543,7 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
         <div className="w-full overflow-x-auto">
           <table className="w-full border-collapse text-left text-[11px]">
             <thead>
-              <tr className="border-b border-border bg-muted/40 text-foreground uppercase text-[10px] font-bold">
+              <tr className="border-b border-border bg-muted/40 text-foreground uppercase text-[10px] font-semibold">
                 <th className="p-2.5 w-36">TIMESTAMP (CST)</th>
                 <th className="p-2.5 w-48">ACTOR IDENTITY</th>
                 <th className="p-2.5 w-36">IPV4 ADDRESS</th>
@@ -556,25 +556,25 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
               {filteredLogs.map((log, idx) => (
                 <tr key={idx} className={`hover:bg-muted/30 ${log.blocked ? 'bg-muted/40 font-medium' : ''}`}>
                   <td className="p-2.5 tabular-nums whitespace-nowrap">
-                    <span className="font-bold">{log.time}</span>
+                    <span className="font-semibold">{log.time}</span>
                   </td>
                   <td className="p-2.5 whitespace-nowrap">
-                    <div className="font-bold">{log.actor}</div>
+                    <div className="font-semibold">{log.actor}</div>
                     <span className="text-[10px] text-muted-foreground">ROLE: {log.role}</span>
                   </td>
                   <td className="p-2.5 tabular-nums whitespace-nowrap">{log.ip}</td>
                   <td className="p-2.5">
-                    <div className="font-bold">{log.intent}</div>
+                    <div className="font-semibold">{log.intent}</div>
                     <div className="text-[10px] text-muted-foreground">{log.detail}</div>
                   </td>
                   <td className="p-2.5 whitespace-nowrap">
-                    <span className="border border-border px-1.5 py-0.5 bg-muted/40 text-[10px] font-bold">
+                    <span className="border border-border px-1.5 py-0.5 bg-muted/40 text-[10px] font-semibold">
                       {log.clearance}
                     </span>
                   </td>
                   <td className="p-2.5 text-right whitespace-nowrap">
                     <span
-                      className={`text-[9px] px-1.5 py-0.5 border border-border font-bold uppercase tracking-wider ${
+                      className={`text-[9px] px-1.5 py-0.5 border border-border font-semibold uppercase tracking-wider ${
                         log.blocked ? 'bg-primary text-primary-foreground' : 'bg-card text-foreground'
                       }`}
                     >
@@ -588,9 +588,9 @@ export const SystemTelemetryScreen: React.FC<ScreenProps> = ({
         </div>
 
         {/* Terminal Command Dock at Bottom */}
-        <div className="w-full bg-primary text-primary-foreground p-2.5 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-2 select-none tabular-nums text-xs">
+        <div className="w-full bg-primary text-primary-foreground p-2.5 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-2 select-none tabular-nums text-[13px]">
           <div className="flex items-center gap-2 flex-1">
-            <span className="font-bold text-white">&gt;_</span>
+            <span className="font-semibold text-white">&gt;_</span>
             <span className="text-muted-foreground/70">{"tail -f /var/log/dawgos/security.audit.jsonl | jq '.clearance == \"HIGH\"'"}</span>
             <span className="inline-block w-2 h-3.5 bg-card animate-pulse"></span>
           </div>

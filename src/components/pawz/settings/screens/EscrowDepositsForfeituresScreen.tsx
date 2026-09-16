@@ -67,21 +67,21 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
   };
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
 
       {/* SECURITY CLEARANCE BAR */}
-      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
+      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-wider uppercase">
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 bg-destructive animate-pulse"></span>
-          <span className="text-destructive font-bold tracking-tight">RESTRICTED ESCROW ACCESS</span>
+          <span className="text-destructive font-semibold tracking-tight">RESTRICTED ESCROW ACCESS</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
           <span className="text-muted-foreground">{"//"}</span>
@@ -98,13 +98,13 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2 tabular-nums text-[10px] text-muted-foreground">
             <span>ADMIN SETTINGS</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="text-foreground font-bold">ESCROW DEPOSITS &amp; FORFEITURES</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">DEPOSIT POLICIES</span>
+            <span className="text-foreground font-semibold">&gt;&gt;</span>
+            <span className="text-foreground font-semibold">ESCROW DEPOSITS &amp; FORFEITURES</span>
+            <span className="text-foreground font-semibold">&gt;&gt;</span>
+            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-semibold">DEPOSIT POLICIES</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <h1 className="font-bold text-lg md:text-xl tracking-tight uppercase text-foreground">ESCROW DEPOSITS, NO-SHOW COHORT &amp; FORFEITURES</h1>
+            <h1 className="font-semibold text-lg md:text-xl tracking-tight uppercase text-foreground">ESCROW DEPOSITS, NO-SHOW COHORT &amp; FORFEITURES</h1>
             <span className="tabular-nums text-[11px] text-muted-foreground">{"// PRE-BOOKING COMMITMENTS"}</span>
           </div>
         </div>
@@ -166,46 +166,46 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
             <div className="flex items-center justify-between border-b border-border pb-3 mb-4">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-black"></span>
-                <h3 className="font-bold text-sm uppercase tabular-nums tracking-wider">SECTION A: PRE-BOOKING DEPOSIT &amp; CANCELLATION MATRICES</h3>
+                <h3 className="font-semibold text-sm uppercase tabular-nums tracking-wider">SECTION A: PRE-BOOKING DEPOSIT &amp; CANCELLATION MATRICES</h3>
               </div>
               <span className="text-[10px] tabular-nums text-muted-foreground uppercase">ACTIVE CONFIG</span>
             </div>
 
-            <div className="space-y-4 tabular-nums text-xs">
+            <div className="space-y-4 tabular-nums text-[13px]">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="border border-border p-3.5 bg-muted/30 space-y-2">
-                  <span className="text-muted-foreground text-[10px] uppercase font-bold block">STANDARD BOOKINGS PRE-DEPOSIT RATE</span>
+                  <span className="text-muted-foreground text-[10px] uppercase font-semibold block">STANDARD BOOKINGS PRE-DEPOSIT RATE</span>
                   <div className="flex items-center">
-                    <span className="border-2  border-border p-1.5 bg-muted/40 font-bold text-foreground">%</span>
-                    <input type="text" defaultValue="50.00" className="flex-1 border-2 border-border p-1 text-xs focus:outline-none font-bold bg-card" />
+                    <span className="border-2  border-border p-1.5 bg-muted/40 font-semibold text-foreground">%</span>
+                    <input type="text" defaultValue="50.00" className="flex-1 border-2 border-border p-1 text-[13px] focus:outline-none font-semibold bg-card" />
                   </div>
                   <span className="text-[10px] text-muted-foreground block">50% pre-payment captures coat-type commitment on Stripe checkout.</span>
                 </div>
 
                 <div className="border border-border p-3.5 bg-muted/30 space-y-2">
-                  <span className="text-muted-foreground text-[10px] uppercase font-bold block">HOLIDAY / PEAK DEPOSIT LOCK</span>
+                  <span className="text-muted-foreground text-[10px] uppercase font-semibold block">HOLIDAY / PEAK DEPOSIT LOCK</span>
                   <div className="flex items-center">
-                    <span className="border-2  border-border p-1.5 bg-muted/40 font-bold text-foreground">%</span>
-                    <input type="text" defaultValue="100.00" className="flex-1 border-2 border-border p-1 text-xs focus:outline-none font-bold bg-card" />
+                    <span className="border-2  border-border p-1.5 bg-muted/40 font-semibold text-foreground">%</span>
+                    <input type="text" defaultValue="100.00" className="flex-1 border-2 border-border p-1 text-[13px] focus:outline-none font-semibold bg-card" />
                   </div>
                   <span className="text-[10px] text-muted-foreground block">Peak periods (Thanksgiving, Christmas) enforce 100% full upfront prepayments.</span>
                 </div>
               </div>
 
               <div className="border border-border p-3.5 bg-card space-y-2">
-                <span className="text-foreground text-xs font-bold uppercase block">CANCELLATION &amp; NO-SHOW TIMING THRESHOLD MATRIX</span>
+                <span className="text-foreground text-[13px] font-semibold uppercase block">CANCELLATION &amp; NO-SHOW TIMING THRESHOLD MATRIX</span>
                 <div className="space-y-1.5 text-[11px] text-muted-foreground">
                   <div className="flex justify-between border-b border-border pb-1">
                     <span>↳ Greater than 48 Hours cancellation:</span>
-                    <strong className="text-foreground font-bold">100% REFUND DISPATCHED AUTO</strong>
+                    <strong className="text-foreground font-semibold">100% REFUND DISPATCHED AUTO</strong>
                   </div>
                   <div className="flex justify-between border-b border-border pb-1">
                     <span>↳ Between 24 and 48 Hours cancellation:</span>
-                    <strong className="text-foreground font-bold">50% REFUNDED // 50% RESERVED TO STAFF COHORT</strong>
+                    <strong className="text-foreground font-semibold">50% REFUNDED // 50% RESERVED TO STAFF COHORT</strong>
                   </div>
                   <div className="flex justify-between">
                     <span>↳ Less than 24 Hours or No-show:</span>
-                    <strong className="text-destructive font-bold">100% DEPOSIT FORFEITED TO SALON DISPATCH POOL</strong>
+                    <strong className="text-destructive font-semibold">100% DEPOSIT FORFEITED TO SALON DISPATCH POOL</strong>
                   </div>
                 </div>
               </div>
@@ -215,12 +215,12 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
           {/* ACTIVE HELD ESCROW LEDGER */}
           <div className="border-2 border-border p-5 bg-card shadow-card-md">
             <div className="flex items-center justify-between border-b border-border pb-3 mb-4">
-              <span className="font-bold tabular-nums text-xs uppercase text-foreground">SECTION B: REALTIME HELD ESCROW &amp; FORFEIT TRANSACTION LEDGER</span>
+              <span className="font-semibold tabular-nums text-[13px] uppercase text-foreground">SECTION B: REALTIME HELD ESCROW &amp; FORFEIT TRANSACTION LEDGER</span>
               <span className="text-muted-foreground tabular-nums text-[10px] uppercase">ESC_POOL_v2</span>
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full text-left tabular-nums text-xs border border-border">
+              <table className="w-full text-left tabular-nums text-[13px] border border-border">
                 <thead className="bg-muted/40 border-b border-border text-[10px] uppercase text-muted-foreground">
                   <tr>
                     <th className="p-2 border-r border-border">TXN FILE ID</th>
@@ -234,17 +234,17 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
                 <tbody className="divide-y divide-border">
                   {escrowList.map((item) => (
                     <tr key={item.id} className="hover:bg-muted/30">
-                      <td className="p-2 border-r border-border font-bold">{item.id}</td>
+                      <td className="p-2 border-r border-border font-semibold">{item.id}</td>
                       <td className="p-2 border-r border-border">
                         <div>
-                          <div className="font-bold text-foreground">{item.client}</div>
+                          <div className="font-semibold text-foreground">{item.client}</div>
                           <div className="text-[10px] text-muted-foreground">{item.pet}</div>
                         </div>
                       </td>
-                      <td className="p-2 border-r border-border text-right font-bold text-foreground">{item.amt}</td>
-                      <td className="p-2 border-r border-border font-bold text-[10px]">{item.type}</td>
+                      <td className="p-2 border-r border-border text-right font-semibold text-foreground">{item.amt}</td>
+                      <td className="p-2 border-r border-border font-semibold text-[10px]">{item.type}</td>
                       <td className="p-2 border-r border-border text-center">
-                        <span className={`px-1.5 py-0.2 text-[9px] font-bold uppercase ${
+                        <span className={`px-1.5 py-0.2 text-[9px] font-semibold uppercase ${
                           item.status === 'HELD_SECURE' ? 'bg-primary text-primary-foreground' : 
                           item.status === 'REFUNDED_100' ? 'border border-border text-foreground bg-card' : 
                           'bg-destructive/10 text-destructive border border-destructive'
@@ -258,20 +258,20 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
                             <>
                               <button 
                                 onClick={() => handleForfeitManual(item.id)}
-                                className="bg-destructive text-white px-1.5 py-0.5 text-[9px] uppercase font-bold hover:bg-destructive cursor-pointer"
+                                className="bg-destructive text-white px-1.5 py-0.5 text-[9px] uppercase font-semibold hover:bg-destructive cursor-pointer"
                               >
                                 FORFEIT
                               </button>
                               <button 
                                 onClick={() => handleRefundManual(item.id)}
-                                className="border border-border bg-card text-foreground px-1.5 py-0.5 text-[9px] uppercase font-bold hover:bg-muted/40 cursor-pointer"
+                                className="border border-border bg-card text-foreground px-1.5 py-0.5 text-[9px] uppercase font-semibold hover:bg-muted/40 cursor-pointer"
                               >
                                 REFUND
                               </button>
                             </>
                           )}
                           {item.status !== 'HELD_SECURE' && (
-                            <span className="text-muted-foreground/70 font-bold uppercase text-[9px]">SETTLED</span>
+                            <span className="text-muted-foreground/70 font-semibold uppercase text-[9px]">SETTLED</span>
                           )}
                         </div>
                       </td>
@@ -287,28 +287,28 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
         <div className="xl:col-span-5 space-y-6">
           <div className="border-2 border-border p-4 bg-card shadow-card-md">
             <div className="flex items-center justify-between border-b border-border pb-2 mb-3">
-              <h4 className="font-bold text-xs uppercase tabular-nums tracking-wider">ESCROW COMPLIANCE DIRECTORY</h4>
+              <h4 className="font-semibold text-[13px] uppercase tabular-nums tracking-wider">ESCROW COMPLIANCE DIRECTORY</h4>
               <span className="text-[10px] tabular-nums text-muted-foreground">POOL RECOVERED</span>
             </div>
 
-            <div className="space-y-3 tabular-nums text-xs">
+            <div className="space-y-3 tabular-nums text-[13px]">
               <div className="border border-border p-3 bg-muted/30 flex flex-col justify-between">
-                <span className="text-muted-foreground text-[10px] uppercase font-bold">TOTAL ACTIVE SECURED DEPOSITS (MTD)</span>
-                <span className="text-xl font-bold text-foreground mt-1">$4,850.00</span>
+                <span className="text-muted-foreground text-[10px] uppercase font-semibold">TOTAL ACTIVE SECURED DEPOSITS (MTD)</span>
+                <span className="text-xl font-semibold text-foreground mt-1">$4,850.00</span>
                 <span className="text-[10px] text-muted-foreground mt-1">Held in locked Stripe escrow accounts. Releases upon successful groom checkout completion.</span>
               </div>
 
               <div className="border border-border p-3 bg-muted/30 flex flex-col justify-between">
-                <span className="text-muted-foreground text-[10px] uppercase font-bold">TOTAL CANCELLATION FORFEITS SECURED</span>
-                <span className="text-xl font-bold text-destructive mt-1">$680.00</span>
+                <span className="text-muted-foreground text-[10px] uppercase font-semibold">TOTAL CANCELLATION FORFEITS SECURED</span>
+                <span className="text-xl font-semibold text-destructive mt-1">$680.00</span>
                 <span className="text-[10px] text-muted-foreground mt-1">100% of collected no-show fees disbursed to stylist grooming commission pools to offset idle bay hours.</span>
               </div>
             </div>
           </div>
 
           {/* Compliance & Liability Banner */}
-          <div className="border border-border bg-muted/30 p-4 space-y-2.5 tabular-nums text-xs">
-            <div className="flex items-center gap-1.5 font-bold uppercase text-foreground border-b border-border pb-1.5">
+          <div className="border border-border bg-muted/30 p-4 space-y-2.5 tabular-nums text-[13px]">
+            <div className="flex items-center gap-1.5 font-semibold uppercase text-foreground border-b border-border pb-1.5">
               <ShieldCheck className="w-4 h-4 text-foreground" />
               <span>PCI-DSS &amp; STRIPE ESCROW COMPLIANCE</span>
             </div>
@@ -321,15 +321,15 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* SUPER ADMIN SECURITY LOCK FOOTER / HARDWARE ATTESTATION */}
-      <div className="w-full bg-muted/30 border-t border-border border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-xs">
+      <div className="w-full bg-muted/30 border-t border-border border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-[13px]">
         <div className="flex items-center gap-3">
-          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-bold">
+          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-semibold">
             <Lock className="w-3.5 h-3.5" />
           </div>
           <div className="flex flex-col">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-foreground uppercase">
+            <div className="flex items-center gap-2 text-[10px] font-semibold text-foreground uppercase">
               <span>SUPER_ADMIN LEVEL 0 // ESCROW CONFIG VAULT KEY</span>
-              <span className="border border-border px-1.5 bg-card text-[9px] font-bold">[YUBIKEY_FIDO2_ACTIVE]</span>
+              <span className="border border-border px-1.5 bg-card text-[9px] font-semibold">[YUBIKEY_FIDO2_ACTIVE]</span>
             </div>
             <span className="text-[11px] text-muted-foreground">
               Changes to standard deposit rates, peak period triggers, cancellation thresholds, or payout bank routes require dual-signature multi-factor ratification.
@@ -338,10 +338,10 @@ export const EscrowDepositsForfeituresScreen: React.FC<ScreenProps> = ({
         </div>
         <div className="flex items-center gap-3">
           <span className="text-muted-foreground text-[10px] uppercase">AUDIT TRAIL:</span>
-          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-bold tabular-nums">ESC_REF #TX-91024-2025</span>
+          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-semibold tabular-nums">ESC_REF #TX-91024-2025</span>
           <button 
             onClick={() => showToast('SUPER_ADMIN ENCLAVE SESSION TERMINATED')}
-            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-bold hover:bg-muted transition-none cursor-pointer"
+            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-semibold hover:bg-muted transition-none cursor-pointer"
           >
             TERMINATE SESSION
           </button>

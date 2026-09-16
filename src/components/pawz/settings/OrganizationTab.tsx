@@ -93,9 +93,9 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
         <div>
-          <span className="text-[10px] tabular-nums uppercase tracking-widest text-muted-foreground font-bold">Enterprise &amp; Infrastructure</span>
+          <span className="text-[10px] tabular-nums uppercase tracking-wider text-muted-foreground font-semibold">Enterprise &amp; Infrastructure</span>
           <h2 className="text-xl font-semibold uppercase tracking-tight text-foreground mt-0.5">Organization Settings</h2>
-          <p className="text-xs text-muted-foreground mt-1 tabular-nums">
+          <p className="text-[13px] text-muted-foreground mt-1 tabular-nums">
             Manage company profile, multi-unit salon locations, operating hours, and brand identity.
           </p>
         </div>
@@ -103,7 +103,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
         {subSection === 'locations' && (
           <button
             onClick={() => setIsAddModalOpen(true)}
-            className="px-4 py-2 bg-black hover:bg-muted text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer"
+            className="px-4 py-2 bg-black hover:bg-muted text-white text-[13px] font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             <span>+ Add New Location</span>
@@ -112,14 +112,14 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
       </div>
 
       {isSaved && (
-        <div className="p-3 bg-card text-white text-xs tabular-nums flex items-center gap-2 border border-border">
+        <div className="p-3 bg-card text-white text-[13px] tabular-nums flex items-center gap-2 border border-border">
           <CheckCircle2 className="w-4 h-4 text-success" />
           <span>Organization settings saved successfully!</span>
         </div>
       )}
 
       {/* Sub navigation */}
-      <div className="flex border-b border-border gap-6 text-xs font-bold uppercase tracking-wider overflow-x-auto custom-scrollbar">
+      <div className="flex border-b border-border gap-6 text-[13px] font-semibold uppercase tracking-wider overflow-x-auto custom-scrollbar">
         <button
           onClick={() => setSubSection('profile')}
           className={`pb-3 flex items-center gap-2 transition-colors  cursor-pointer ${
@@ -183,7 +183,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
 
       {/* Sub Section 1: Business Profile */}
       {subSection === 'profile' && (
-        <form onSubmit={handleSaveProfile} className="bg-card p-6 border border-border shadow-2xs space-y-5 text-xs">
+        <form onSubmit={handleSaveProfile} className="bg-card p-6 border border-border shadow-2xs space-y-5 text-[13px]">
           <div className="flex items-center gap-3 pb-3 border-b border-border">
             <div className="w-10 h-10 bg-primary text-primary-foreground font-semibold flex items-center justify-center text-sm tabular-nums">
               AD
@@ -196,7 +196,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Company / Brand Name</label>
+              <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Company / Brand Name</label>
               <input
                 type="text"
                 value={businessName}
@@ -206,7 +206,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             </div>
 
             <div>
-              <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Tagline / Motto</label>
+              <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Tagline / Motto</label>
               <input
                 type="text"
                 value={tagline}
@@ -216,7 +216,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             </div>
 
             <div>
-              <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Central Phone Line</label>
+              <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Central Phone Line</label>
               <input
                 type="text"
                 value={phone}
@@ -226,7 +226,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             </div>
 
             <div>
-              <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Official Business Email</label>
+              <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Official Business Email</label>
               <input
                 type="email"
                 value={email}
@@ -236,7 +236,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             </div>
 
             <div className="md:col-span-2">
-              <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Primary Headquarters Address</label>
+              <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Primary Headquarters Address</label>
               <input
                 type="text"
                 value={address}
@@ -246,7 +246,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             </div>
 
             <div>
-              <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Website URL</label>
+              <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Website URL</label>
               <input
                 type="url"
                 value={website}
@@ -256,7 +256,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             </div>
 
             <div>
-              <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Operating Timezone</label>
+              <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Operating Timezone</label>
               <select
                 value={timezone}
                 onChange={(e) => setTimezone(e.target.value)}
@@ -273,7 +273,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
           <div className="pt-3 border-t border-border flex justify-end">
             <button
               type="submit"
-              className="px-5 py-2 bg-black hover:bg-muted text-white font-bold uppercase tracking-wider cursor-pointer transition-colors"
+              className="px-5 py-2 bg-black hover:bg-muted text-white font-semibold uppercase tracking-wider cursor-pointer transition-colors"
             >
               Save Profile Changes
             </button>
@@ -328,11 +328,11 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
                       )}
                     </div>
 
-                    <div className="space-y-2 text-xs text-muted-foreground border-t border-border pt-3 tabular-nums">
+                    <div className="space-y-2 text-[13px] text-muted-foreground border-t border-border pt-3 tabular-nums">
                       <div className="flex items-start gap-2.5">
                         <MapPin className="w-3.5 h-3.5 text-muted-foreground/70 shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-bold text-foreground">{loc.address}</p>
+                          <p className="font-semibold text-foreground">{loc.address}</p>
                           <p className="text-muted-foreground text-[11px]">{loc.cityStateZip}</p>
                         </div>
                       </div>
@@ -347,7 +347,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
                           <User className="w-3.5 h-3.5 text-muted-foreground/70" />
                           <span>Manager: <strong className="text-foreground">{loc.manager}</strong></span>
                         </span>
-                        <span className="font-bold text-foreground">{loc.stationCount} Stations</span>
+                        <span className="font-semibold text-foreground">{loc.stationCount} Stations</span>
                       </div>
                     </div>
                   </div>
@@ -355,7 +355,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
                   <div className="mt-5 pt-3 border-t border-border flex items-center justify-between gap-2">
                     <button
                       onClick={() => onSelectLocation(loc.name)}
-                      className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 transition-colors cursor-pointer ${
+                      className={`text-[13px] font-semibold uppercase tracking-wider px-3 py-1.5 transition-colors cursor-pointer ${
                         isSelected
                           ? 'bg-primary text-primary-foreground'
                           : 'bg-muted/40 hover:bg-muted text-foreground border border-border'
@@ -388,7 +388,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
               </div>
               <div>
                 <h4 className="font-semibold uppercase tracking-tight text-foreground text-sm">Add Salon or Mobile Van</h4>
-                <p className="text-xs text-muted-foreground mt-1 max-w-[220px] tabular-nums">
+                <p className="text-[13px] text-muted-foreground mt-1 max-w-[220px] tabular-nums">
                   Scale operations with new salon locations or mobile grooming vehicles.
                 </p>
               </div>
@@ -399,13 +399,13 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
 
       {/* Sub Section 3: Brand & Identity */}
       {subSection === 'brand' && (
-        <div className="bg-card p-6 border border-border shadow-2xs space-y-5 text-xs">
+        <div className="bg-card p-6 border border-border shadow-2xs space-y-5 text-[13px]">
           <h3 className="font-semibold uppercase tracking-tight text-foreground text-sm">Visual Identity &amp; System Palette</h3>
           <p className="text-muted-foreground text-[11px] tabular-nums">Colors used on the public booking page, customer portal, and email notifications.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
             <div className="p-4 border border-border space-y-2">
-              <span className="font-bold uppercase tracking-wider text-[11px] text-foreground">Primary Monolith</span>
+              <span className="font-semibold uppercase tracking-wider text-[11px] text-foreground">Primary Monolith</span>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-black border border-border" />
                 <span className="tabular-nums text-foreground">#000000</span>
@@ -413,7 +413,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             </div>
 
             <div className="p-4 border border-border space-y-2">
-              <span className="font-bold uppercase tracking-wider text-[11px] text-foreground">Neutral Tone</span>
+              <span className="font-semibold uppercase tracking-wider text-[11px] text-foreground">Neutral Tone</span>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-muted-foreground border border-border" />
                 <span className="tabular-nums text-foreground">#52525b</span>
@@ -421,7 +421,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             </div>
 
             <div className="p-4 border border-border space-y-2">
-              <span className="font-bold uppercase tracking-wider text-[11px] text-foreground">Canvas Surface</span>
+              <span className="font-semibold uppercase tracking-wider text-[11px] text-foreground">Canvas Surface</span>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-[#fafafa] border border-border" />
                 <span className="tabular-nums text-foreground">#fafafa</span>
@@ -433,21 +433,21 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
 
       {/* Sub Section 4: Opening Hours */}
       {subSection === 'hours' && (
-        <div className="bg-card p-6 border border-border shadow-2xs space-y-4 text-xs">
+        <div className="bg-card p-6 border border-border shadow-2xs space-y-4 text-[13px]">
           <h3 className="font-semibold uppercase tracking-tight text-foreground text-sm">Weekly Salon Operating Hours</h3>
           <p className="text-muted-foreground text-[11px] tabular-nums">Define standard appointment booking windows for groomers and bathers.</p>
 
           <div className="divide-y divide-border border border-border overflow-hidden tabular-nums">
             {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
               <div key={day} className="flex items-center justify-between p-3 hover:bg-muted/40">
-                <span className="font-bold text-foreground w-28 uppercase">{day}</span>
+                <span className="font-semibold text-foreground w-28 uppercase">{day}</span>
                 <div className="flex items-center gap-3">
                   {day === 'Sunday' ? (
-                    <span className="px-3 py-1 bg-muted/40 text-muted-foreground border border-border font-bold text-[11px]">
+                    <span className="px-3 py-1 bg-muted/40 text-muted-foreground border border-border font-semibold text-[11px]">
                       Closed for Deep Cleaning
                     </span>
                   ) : (
-                    <span className="px-3 py-1 bg-primary text-primary-foreground font-bold text-[11px]">
+                    <span className="px-3 py-1 bg-primary text-primary-foreground font-semibold text-[11px]">
                       8:00 AM – 6:00 PM
                     </span>
                   )}
@@ -460,7 +460,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
 
       {/* Sub Section 5: Holiday Blackouts */}
       {subSection === 'holidays' && (
-        <div className="bg-card p-6 border border-border shadow-2xs space-y-4 text-xs">
+        <div className="bg-card p-6 border border-border shadow-2xs space-y-4 text-[13px]">
           <h3 className="font-semibold uppercase tracking-tight text-foreground text-sm">Holiday Blackout Calendar</h3>
           <p className="text-muted-foreground text-[11px] tabular-nums">Automatic closure dates where the online scheduler prevents bookings.</p>
 
@@ -474,10 +474,10 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
             ].map((hol) => (
               <div key={hol.name} className="flex items-center justify-between p-3 bg-muted/40 border border-border">
                 <div>
-                  <p className="font-bold text-foreground uppercase">{hol.name}</p>
+                  <p className="font-semibold text-foreground uppercase">{hol.name}</p>
                   <p className="text-muted-foreground text-[11px]">{hol.date}</p>
                 </div>
-                <span className="px-2.5 py-1 bg-primary text-primary-foreground font-bold text-[10px]">
+                <span className="px-2.5 py-1 bg-primary text-primary-foreground font-semibold text-[10px]">
                   {hol.status}
                 </span>
               </div>
@@ -492,7 +492,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
           <div className="bg-card max-w-md w-full p-6 border border-border shadow-2xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-border">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                   <Plus className="w-4 h-4" />
                 </div>
                 <div>
@@ -508,9 +508,9 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCreateLocation} className="space-y-3.5 text-xs tabular-nums">
+            <form onSubmit={handleCreateLocation} className="space-y-3.5 text-[13px] tabular-nums">
               <div>
-                <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Branch Name</label>
+                <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Branch Name</label>
                 <input
                   type="text"
                   required
@@ -522,7 +522,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
               </div>
 
               <div>
-                <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Location Type</label>
+                <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Location Type</label>
                 <select
                   value={newLocType}
                   onChange={(e) => setNewLocType(e.target.value as any)}
@@ -536,7 +536,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
               </div>
 
               <div>
-                <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Street Address</label>
+                <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Street Address</label>
                 <input
                   type="text"
                   value={newLocAddress}
@@ -548,7 +548,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Lead Manager</label>
+                  <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Lead Manager</label>
                   <input
                     type="text"
                     value={newLocManager}
@@ -558,7 +558,7 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
                   />
                 </div>
                 <div>
-                  <label className="block text-foreground font-bold uppercase tracking-wider text-[11px] mb-1">Grooming Stations</label>
+                  <label className="block text-foreground font-semibold uppercase tracking-wider text-[11px] mb-1">Grooming Stations</label>
                   <input
                     type="number"
                     min="1"
@@ -574,13 +574,13 @@ export const OrganizationTab: React.FC<OrganizationTabProps> = ({
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="px-3.5 py-1.5 border border-border text-foreground font-bold uppercase tracking-wider hover:bg-muted/40 cursor-pointer"
+                  className="px-3.5 py-1.5 border border-border text-foreground font-semibold uppercase tracking-wider hover:bg-muted/40 cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 bg-black hover:bg-muted text-white font-bold uppercase tracking-wider cursor-pointer"
+                  className="px-4 py-1.5 bg-black hover:bg-muted text-white font-semibold uppercase tracking-wider cursor-pointer"
                 >
                   Create Branch
                 </button>

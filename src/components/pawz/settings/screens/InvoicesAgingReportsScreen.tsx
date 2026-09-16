@@ -82,12 +82,12 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
   });
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
@@ -97,9 +97,9 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
         <div className="flex items-center min-w-max">
           <div className="px-3 py-2 bg-muted/40 border-r border-border flex items-center gap-2">
             <span className="w-2 h-2 bg-black"></span>
-            <span className="tabular-nums text-[11px] uppercase tracking-widest text-foreground font-bold">MODULE // REPORTS &amp; AR</span>
+            <span className="tabular-nums text-[11px] uppercase tracking-wider text-foreground font-semibold">MODULE // REPORTS &amp; AR</span>
           </div>
-          <nav className="flex items-center text-xs tabular-nums">
+          <nav className="flex items-center text-[13px] tabular-nums">
             {[
               { label: 'Overview', id: 'overview' },
               { label: 'Payments & Gateway', id: 'revenue-stripe' },
@@ -111,7 +111,7 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
               <button
                 key={tab.label}
                 onClick={() => onNavigateScreen?.(tab.id)}
-                className={`px-3 py-2 border-r border-border/30 tabular-nums text-xs cursor-pointer transition-none flex items-center gap-1.5 ${
+                className={`px-3 py-2 border-r border-border/30 tabular-nums text-[13px] cursor-pointer transition-none flex items-center gap-1.5 ${
                   tab.active ? 'bg-primary text-primary-foreground font-semibold' : 'text-muted-foreground hover:bg-black hover:text-white'
                 }`}
               >
@@ -127,26 +127,26 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[9px] tabular-nums uppercase tracking-widest px-2 py-0.5 border border-border bg-primary text-primary-foreground font-bold">
+              <span className="text-[9px] tabular-nums uppercase tracking-wider px-2 py-0.5 border border-border bg-primary text-primary-foreground font-semibold">
                 SEC:07 // FINANCIAL REPORTING &amp; AGING
               </span>
               <span className="text-[10px] tabular-nums text-muted-foreground uppercase">
                 ACCOUNTS RECEIVABLE // LEDGER DISPATCH // GAAP TAX BREAKDOWN
               </span>
             </div>
-            <h1 className="text-xl md:text-2xl font-bold uppercase tracking-tight font-sans text-foreground mt-1">
+            <h1 className="text-xl md:text-2xl font-semibold uppercase tracking-tight font-sans text-foreground mt-1">
               Invoices, Accounts Receivable Aging &amp; Revenue Reports
             </h1>
-            <p className="text-xs tabular-nums text-muted-foreground">
+            <p className="text-[13px] tabular-nums text-muted-foreground">
               Audit unpaid balances by aging bracket, trigger automated SMS/email payment dunning cascades, and export general ledger records.
             </p>
           </div>
 
           {/* Action Toolbar */}
-          <div className="flex flex-wrap items-center gap-2 tabular-nums text-xs">
+          <div className="flex flex-wrap items-center gap-2 tabular-nums text-[13px]">
             <button
               onClick={() => showToast('NEW INVOICE GENERATOR OPEN')}
-              className="h-8 px-3 bg-primary text-primary-foreground border border-border uppercase font-bold hover:bg-muted cursor-pointer"
+              className="h-8 px-3 bg-primary text-primary-foreground border border-border uppercase font-semibold hover:bg-muted cursor-pointer"
             >
               + Create Invoice
             </button>
@@ -173,7 +173,7 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
             <span>CURRENT (0-30D)</span>
             <span className="border border-border px-1 text-[9px] bg-muted/40">84%</span>
           </div>
-          <div className="text-2xl font-bold font-sans mt-2 text-foreground">$3,420.00</div>
+          <div className="text-2xl font-semibold font-sans mt-2 text-foreground">$3,420.00</div>
           <div className="text-[10px] text-muted-foreground mt-1">18 INVOICES ACTIVE</div>
         </div>
 
@@ -182,7 +182,7 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
             <span>31-60 DAYS</span>
             <span className="border border-border px-1 text-[9px] bg-muted/40">10%</span>
           </div>
-          <div className="text-2xl font-bold font-sans mt-2 text-foreground">$840.00</div>
+          <div className="text-2xl font-semibold font-sans mt-2 text-foreground">$840.00</div>
           <div className="text-[10px] text-muted-foreground mt-1">4 INVOICES (FIRST DUNNING)</div>
         </div>
 
@@ -191,37 +191,37 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
             <span>61-90 DAYS</span>
             <span className="border border-border px-1 text-[9px] bg-muted/40">4%</span>
           </div>
-          <div className="text-2xl font-bold font-sans mt-2 text-foreground">$360.00</div>
+          <div className="text-2xl font-semibold font-sans mt-2 text-foreground">$360.00</div>
           <div className="text-[10px] text-muted-foreground mt-1">2 INVOICES (URGENT NOTICE)</div>
         </div>
 
         <div className="bg-card p-4 flex flex-col justify-between">
           <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase">
             <span>90+ DAYS (DELINQUENT)</span>
-            <span className="border border-border px-1 text-[9px] bg-primary text-primary-foreground font-bold">CRITICAL</span>
+            <span className="border border-border px-1 text-[9px] bg-primary text-primary-foreground font-semibold">CRITICAL</span>
           </div>
-          <div className="text-2xl font-bold font-sans mt-2 text-foreground">$250.00</div>
+          <div className="text-2xl font-semibold font-sans mt-2 text-foreground">$250.00</div>
           <div className="text-[10px] text-muted-foreground mt-1">1 ACCOUNT ON HOLD</div>
         </div>
 
         <div className="bg-muted/40 p-4 flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-bold">
+          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-semibold">
             <span>TOTAL UNCOLLECTED AR</span>
-            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">TOTAL</span>
+            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-semibold">TOTAL</span>
           </div>
-          <div className="text-2xl font-bold font-sans mt-2 text-foreground">$4,870.00</div>
+          <div className="text-2xl font-semibold font-sans mt-2 text-foreground">$4,870.00</div>
           <div className="text-[10px] text-muted-foreground mt-1">COLLECTION EFFICIENCY: 96.8%</div>
         </div>
       </div>
 
       {/* FILTER CONTROLS STRIP */}
-      <div className="p-3 bg-muted/30 border-b border-border flex flex-wrap items-center justify-between gap-3 tabular-nums text-xs select-none">
+      <div className="p-3 bg-muted/30 border-b border-border flex flex-wrap items-center justify-between gap-3 tabular-nums text-[13px] select-none">
         <div className="flex items-center gap-2 flex-1 max-w-md">
-          <span className="font-bold text-foreground uppercase">SEARCH //</span>
+          <span className="font-semibold text-foreground uppercase">SEARCH //</span>
           <input
             value={searchGrep}
             onChange={(e) => setSearchGrep(e.target.value)}
-            className="w-full h-8 bg-card border border-border px-2 text-xs focus:outline-none"
+            className="w-full h-8 bg-card border border-border px-2 text-[13px] focus:outline-none"
             placeholder="Filter invoice # or client name..."
             type="text"
           />
@@ -232,7 +232,7 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
             <select
               value={locFilter}
               onChange={(e) => setLocFilter(e.target.value)}
-              className="h-8 border border-border bg-card px-2 font-bold focus:outline-none"
+              className="h-8 border border-border bg-card px-2 font-semibold focus:outline-none"
             >
               <option value="ALL">ALL LOCATIONS</option>
               <option value="FRISCO">FRISCO HQ</option>
@@ -245,7 +245,7 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
             <select
               value={selectedRange}
               onChange={(e) => setSelectedRange(e.target.value)}
-              className="h-8 border border-border bg-card px-2 font-bold focus:outline-none"
+              className="h-8 border border-border bg-card px-2 font-semibold focus:outline-none"
             >
               <option value="ALL">ALL AGING BUCKETS</option>
               <option value="CURRENT">CURRENT (0-30)</option>
@@ -257,9 +257,9 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
 
       {/* AGING INVOICE TABLE */}
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse tabular-nums text-xs">
+        <table className="w-full text-left border-collapse tabular-nums text-[13px]">
           <thead>
-            <tr className="border-b border-border bg-muted/40 uppercase text-[10px] font-bold text-foreground">
+            <tr className="border-b border-border bg-muted/40 uppercase text-[10px] font-semibold text-foreground">
               <th className="p-3 border-r border-border">Invoice ID</th>
               <th className="p-3 border-r border-border min-w-[220px]">Client / Pet Name</th>
               <th className="p-3 border-r border-border">Salon Facility</th>
@@ -276,34 +276,34 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
           <tbody className="divide-y divide-neutral-200">
             {filteredInvoices.map((inv) => (
               <tr key={inv.inv} className="hover:bg-muted/30">
-                <td className="p-3 border-r border-border font-bold whitespace-nowrap">{inv.inv}</td>
-                <td className="p-3 border-r border-border font-sans font-bold text-foreground">{inv.client}</td>
+                <td className="p-3 border-r border-border font-semibold whitespace-nowrap">{inv.inv}</td>
+                <td className="p-3 border-r border-border font-sans font-semibold text-foreground">{inv.client}</td>
                 <td className="p-3 border-r border-border text-[11px]">{inv.location}</td>
                 <td className="p-3 border-r border-border text-[11px] text-muted-foreground">{inv.issued}</td>
                 <td className="p-3 border-r border-border text-[11px] text-muted-foreground">{inv.due}</td>
-                <td className="p-3 border-r border-border text-right font-bold font-sans">{inv.total}</td>
+                <td className="p-3 border-r border-border text-right font-semibold font-sans">{inv.total}</td>
                 <td className="p-3 border-r border-border text-right text-muted-foreground font-sans">{inv.paid}</td>
-                <td className="p-3 border-r border-border text-right font-bold text-foreground font-sans text-sm">{inv.balance}</td>
+                <td className="p-3 border-r border-border text-right font-semibold text-foreground font-sans text-sm">{inv.balance}</td>
                 <td className="p-3 border-r border-border text-center">
-                  <span className="border border-border px-2 py-0.5 text-[9px] font-bold bg-muted/40 uppercase">
+                  <span className="border border-border px-2 py-0.5 text-[9px] font-semibold bg-muted/40 uppercase">
                     {inv.bucket}
                   </span>
                 </td>
                 <td className="p-3 border-r border-border text-center">
-                  <span className="px-2 py-0.5 bg-primary text-primary-foreground text-[9px] font-bold uppercase">
+                  <span className="px-2 py-0.5 bg-primary text-primary-foreground text-[9px] font-semibold uppercase">
                     {inv.status}
                   </span>
                 </td>
                 <td className="p-3 text-right whitespace-nowrap">
                   <button
                     onClick={() => showToast(`PAYMENT LINK DISPATCHED FOR ${inv.inv}`)}
-                    className="px-2 py-1 border border-border text-[10px] uppercase font-bold hover:bg-muted cursor-pointer"
+                    className="px-2 py-1 border border-border text-[10px] uppercase font-semibold hover:bg-muted cursor-pointer"
                   >
                     SMS Link
                   </button>
                   <button
                     onClick={() => showToast(`CHARGING CARD ON FILE FOR ${inv.inv}`)}
-                    className="ml-1 px-2 py-1 bg-primary text-primary-foreground border border-border text-[10px] uppercase font-bold hover:bg-muted cursor-pointer"
+                    className="ml-1 px-2 py-1 bg-primary text-primary-foreground border border-border text-[10px] uppercase font-semibold hover:bg-muted cursor-pointer"
                   >
                     Charge Card
                   </button>
@@ -315,47 +315,47 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* REVENUE BREAKDOWN & TAX LEDGER */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-border divide-y lg:divide-y-0 lg:divide-x divide-border tabular-nums text-xs">
+      <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-border divide-y lg:divide-y-0 lg:divide-x divide-border tabular-nums text-[13px]">
         <div className="p-4 bg-card space-y-3">
           <div className="flex items-center justify-between border-b border-border pb-2">
-            <span className="font-bold uppercase text-foreground">MONTH-TO-DATE REVENUE STREAM BREAKDOWN</span>
+            <span className="font-semibold uppercase text-foreground">MONTH-TO-DATE REVENUE STREAM BREAKDOWN</span>
             <span className="text-[10px] text-muted-foreground">FEB 2025</span>
           </div>
-          <div className="space-y-2 text-xs">
+          <div className="space-y-2 text-[13px]">
             <div className="flex justify-between items-center p-2 bg-muted/30 border border-border">
               <span>Full Groom Services (Grooming Tiers)</span>
-              <span className="font-bold text-foreground font-sans">$24,190.00</span>
+              <span className="font-semibold text-foreground font-sans">$24,190.00</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-muted/30 border border-border">
               <span>Bath &amp; Brush (Hydro-Massage)</span>
-              <span className="font-bold text-foreground font-sans">$8,450.00</span>
+              <span className="font-semibold text-foreground font-sans">$8,450.00</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-muted/30 border border-border">
               <span>Spa Add-Ons (Facial, Teeth, Paw Wax)</span>
-              <span className="font-bold text-foreground font-sans">$4,120.00</span>
+              <span className="font-semibold text-foreground font-sans">$4,120.00</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-muted/30 border border-border">
               <span>Retail &amp; Boutique Merchandising</span>
-              <span className="font-bold text-foreground font-sans">$2,940.00</span>
+              <span className="font-semibold text-foreground font-sans">$2,940.00</span>
             </div>
           </div>
         </div>
 
         <div className="p-4 bg-card space-y-3">
           <div className="flex items-center justify-between border-b border-border pb-2">
-            <span className="font-bold uppercase text-foreground">TEXAS COMPTROLLER SALES TAX LEDGER</span>
-            <span className="text-[9px] bg-primary text-primary-foreground px-1.5 py-0.5 font-bold">STATE + LOCAL (8.25%)</span>
+            <span className="font-semibold uppercase text-foreground">TEXAS COMPTROLLER SALES TAX LEDGER</span>
+            <span className="text-[9px] bg-primary text-primary-foreground px-1.5 py-0.5 font-semibold">STATE + LOCAL (8.25%)</span>
           </div>
-          <div className="space-y-2 text-xs">
+          <div className="space-y-2 text-[13px]">
             <div className="flex justify-between items-center p-2 bg-muted/30 border border-border">
               <span>Gross Taxable Service Revenue</span>
-              <span className="font-bold text-foreground font-sans">$36,760.00</span>
+              <span className="font-semibold text-foreground font-sans">$36,760.00</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-muted/30 border border-border">
               <span>Taxable Retail Merchandise</span>
-              <span className="font-bold text-foreground font-sans">$2,940.00</span>
+              <span className="font-semibold text-foreground font-sans">$2,940.00</span>
             </div>
-            <div className="flex justify-between items-center p-2 bg-primary text-primary-foreground border border-border font-bold">
+            <div className="flex justify-between items-center p-2 bg-primary text-primary-foreground border border-border font-semibold">
               <span>Accrued Sales Tax Remittance Due</span>
               <span className="text-sm font-sans">$3,275.25</span>
             </div>
@@ -364,10 +364,10 @@ export const InvoicesAgingReportsScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* FOOTER */}
-      <div className="border-t border-border bg-muted/40 p-3 flex items-center justify-between tabular-nums text-xs">
+      <div className="border-t border-border bg-muted/40 p-3 flex items-center justify-between tabular-nums text-[13px]">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 bg-black"></span>
-          <span className="font-bold uppercase">FINANCIAL ENGINE: AUTOMATED RECONCILIATION COMPLETE</span>
+          <span className="font-semibold uppercase">FINANCIAL ENGINE: AUTOMATED RECONCILIATION COMPLETE</span>
         </div>
         <div className="text-muted-foreground text-[10px]">
           STRIPE SETTLEMENT CYCLE: DAILY BATCH 23:59 UTC

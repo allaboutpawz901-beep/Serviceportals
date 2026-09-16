@@ -45,10 +45,10 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
         <div className="lg:col-span-8 bg-card border border-border p-5 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4 pb-2 border-b border-border">
-              <h3 className="text-xs tabular-nums font-bold uppercase tracking-widest text-foreground">Business Overview</h3>
+              <h3 className="text-[13px] tabular-nums font-semibold uppercase tracking-wider text-foreground">Business Overview</h3>
               <button
                 onClick={() => onSelectTab('organization')}
-                className="text-xs font-bold uppercase tracking-wider text-foreground hover:underline flex items-center gap-1 cursor-pointer"
+                className="text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline flex items-center gap-1 cursor-pointer"
               >
                 <span>Edit Profile</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -63,7 +63,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
                   className="w-full h-full object-cover object-center grayscale contrast-125"
                   src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=400&q=80"
                 />
-                <span className="absolute bottom-2 left-2 text-[10px] tabular-nums font-bold uppercase text-white bg-black px-2 py-0.5 border border-white">
+                <span className="absolute bottom-2 left-2 text-[10px] tabular-nums font-semibold uppercase text-white bg-black px-2 py-0.5 border border-white">
                   Main Salon
                 </span>
               </div>
@@ -72,13 +72,13 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <h4 className="text-base font-semibold uppercase tracking-tight text-foreground">All About Pawz</h4>
-                  <span className="inline-flex items-center px-2 py-0.5 text-[10px] tabular-nums font-bold uppercase bg-muted/40 text-foreground border border-border">
+                  <span className="inline-flex items-center px-2 py-0.5 text-[10px] tabular-nums font-semibold uppercase bg-muted/40 text-foreground border border-border">
                     Active
                   </span>
                 </div>
-                <p className="text-xs text-muted-foreground mt-0.5 font-medium">Luxury pet grooming with love and precision care.</p>
+                <p className="text-[13px] text-muted-foreground mt-0.5 font-medium">Luxury pet grooming with love and precision care.</p>
 
-                <div className="mt-3 space-y-1.5 tabular-nums text-xs">
+                <div className="mt-3 space-y-1.5 tabular-nums text-[13px]">
                   <div className="flex items-center gap-2 text-foreground">
                     <Phone className="w-3.5 h-3.5 text-muted-foreground/70 shrink-0" />
                     <span>(214) 555-0198</span>
@@ -94,7 +94,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
                   <div className="flex items-center gap-2 text-foreground">
                     <Globe className="w-3.5 h-3.5 text-muted-foreground/70 shrink-0" />
                     <a
-                      className="text-foreground font-bold hover:underline"
+                      className="text-foreground font-semibold hover:underline"
                       href="https://www.allaboutthedawg.com"
                       target="_blank"
                       rel="noreferrer"
@@ -110,44 +110,44 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           {/* KPI Metrics Row */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-5 border-t border-border">
             <div>
-              <span className="text-[10px] tabular-nums font-bold uppercase tracking-wider text-muted-foreground">Today&apos;s Appointments</span>
+              <span className="text-[10px] tabular-nums font-semibold uppercase tracking-wider text-muted-foreground">Today&apos;s Appointments</span>
               <p className="text-xl font-semibold text-foreground mt-0.5">12</p>
               <button
                 onClick={() => onNavigateSection && onNavigateSection('appointments')}
-                className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-foreground hover:underline mt-1 cursor-pointer"
+                className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-foreground hover:underline mt-1 cursor-pointer"
               >
                 <span>Calendar</span>
                 <span aria-hidden="true">→</span>
               </button>
             </div>
             <div>
-              <span className="text-[10px] tabular-nums font-bold uppercase tracking-wider text-muted-foreground">Today&apos;s Revenue</span>
+              <span className="text-[10px] tabular-nums font-semibold uppercase tracking-wider text-muted-foreground">Today&apos;s Revenue</span>
               <p className="text-xl font-semibold text-foreground mt-0.5">$2,450.00</p>
               <button
                 onClick={() => onNavigateSection && onNavigateSection('reports')}
-                className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-foreground hover:underline mt-1 cursor-pointer"
+                className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-foreground hover:underline mt-1 cursor-pointer"
               >
                 <span>Reports</span>
                 <span aria-hidden="true">→</span>
               </button>
             </div>
             <div>
-              <span className="text-[10px] tabular-nums font-bold uppercase tracking-wider text-muted-foreground">New Customers (30d)</span>
+              <span className="text-[10px] tabular-nums font-semibold uppercase tracking-wider text-muted-foreground">New Customers (30d)</span>
               <p className="text-xl font-semibold text-foreground mt-0.5">24</p>
               <button
                 onClick={() => onNavigateSection && onNavigateSection('customers')}
-                className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-foreground hover:underline mt-1 cursor-pointer"
+                className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-foreground hover:underline mt-1 cursor-pointer"
               >
                 <span>Customers</span>
                 <span aria-hidden="true">→</span>
               </button>
             </div>
             <div>
-              <span className="text-[10px] tabular-nums font-bold uppercase tracking-wider text-muted-foreground">Outstanding Balance</span>
+              <span className="text-[10px] tabular-nums font-semibold uppercase tracking-wider text-muted-foreground">Outstanding Balance</span>
               <p className="text-xl font-semibold text-foreground mt-0.5">$1,245.50</p>
               <button
                 onClick={() => onNavigateSection && onNavigateSection('invoices')}
-                className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-foreground hover:underline mt-1 cursor-pointer"
+                className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-foreground hover:underline mt-1 cursor-pointer"
               >
                 <span>Invoices</span>
                 <span aria-hidden="true">→</span>
@@ -160,21 +160,21 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
         <div className="lg:col-span-4 bg-card border border-border p-5 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4 pb-2 border-b border-border">
-              <h3 className="text-xs tabular-nums font-bold uppercase tracking-widest text-foreground">System Status</h3>
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] tabular-nums font-bold uppercase bg-muted/40 text-foreground border border-border">
+              <h3 className="text-[13px] tabular-nums font-semibold uppercase tracking-wider text-foreground">System Status</h3>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] tabular-nums font-semibold uppercase bg-muted/40 text-foreground border border-border">
                 <span className="w-1.5 h-1.5 bg-black" />
                 Operational
               </span>
             </div>
 
-            <div className="space-y-3 tabular-nums text-xs">
+            <div className="space-y-3 tabular-nums text-[13px]">
               {/* Status Item: Website */}
               <div className="flex items-center justify-between py-1 border-b border-border">
                 <div className="flex items-center gap-2 text-foreground">
                   <Globe className="w-4 h-4 text-muted-foreground/70" />
                   <span>Website</span>
                 </div>
-                <span className="font-bold text-foreground flex items-center gap-1">
+                <span className="font-semibold text-foreground flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> LIVE
                 </span>
               </div>
@@ -184,7 +184,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
                   <UserCheck className="w-4 h-4 text-muted-foreground/70" />
                   <span>Customer Portal</span>
                 </div>
-                <span className="font-bold text-foreground flex items-center gap-1">
+                <span className="font-semibold text-foreground flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> ACTIVE
                 </span>
               </div>
@@ -194,7 +194,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
                   <CreditCard className="w-4 h-4 text-muted-foreground/70" />
                   <span>Stripe Terminal</span>
                 </div>
-                <span className="font-bold text-foreground flex items-center gap-1">
+                <span className="font-semibold text-foreground flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> READY
                 </span>
               </div>
@@ -204,7 +204,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
                   <Mail className="w-4 h-4 text-muted-foreground/70" />
                   <span>Email (Postmark)</span>
                 </div>
-                <span className="font-bold text-foreground flex items-center gap-1">
+                <span className="font-semibold text-foreground flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> READY
                 </span>
               </div>
@@ -214,7 +214,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
                   <MessageSquare className="w-4 h-4 text-muted-foreground/70" />
                   <span>SMS (Twilio)</span>
                 </div>
-                <span className="font-bold text-foreground flex items-center gap-1">
+                <span className="font-semibold text-foreground flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> READY
                 </span>
               </div>
@@ -224,7 +224,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
                   <Sliders className="w-4 h-4 text-muted-foreground/70" />
                   <span>PostgreSQL Backups</span>
                 </div>
-                <span className="font-bold text-foreground flex items-center gap-1">
+                <span className="font-semibold text-foreground flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> SYNCED
                 </span>
               </div>
@@ -234,7 +234,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-6 pt-4 border-t border-border">
             <button
               onClick={() => onSelectTab('system')}
-              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>View System Health</span>
               <span aria-hidden="true">→</span>
@@ -255,7 +255,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
             <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed">
               Manage business profile, locations, hours, holidays, and brand settings.
             </p>
-            <ul className="mt-4 space-y-1 text-xs text-foreground">
+            <ul className="mt-4 space-y-1 text-[13px] text-foreground">
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('organization')}>• Business Profile</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('organization')}>• Locations (3 Active)</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('organization')}>• Brand &amp; Identity</li>
@@ -266,7 +266,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('organization')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>Configure</span>
               <span aria-hidden="true">→</span>
@@ -284,7 +284,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
             <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed">
               Manage staff, roles, permissions, and customer portal access.
             </p>
-            <ul className="mt-4 space-y-1 text-xs text-foreground">
+            <ul className="mt-4 space-y-1 text-[13px] text-foreground">
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('users')}>• Admin Users</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('users')}>• Staff Members</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('users')}>• Roles &amp; Permissions</li>
@@ -294,7 +294,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('users')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>Manage Users</span>
               <span aria-hidden="true">→</span>
@@ -312,7 +312,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
             <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed">
               Configure booking rules, deposits, cancellations, and availability.
             </p>
-            <ul className="mt-4 space-y-1 text-xs text-foreground">
+            <ul className="mt-4 space-y-1 text-[13px] text-foreground">
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('booking')}>• Booking Settings</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('booking')}>• Deposits &amp; Holds</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('booking')}>• Cancellation Rules</li>
@@ -322,7 +322,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('booking')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>Manage Booking</span>
               <span aria-hidden="true">→</span>
@@ -340,7 +340,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
             <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed">
               Manage grooming packages, add-ons, pricing surcharges, and credits.
             </p>
-            <ul className="mt-4 space-y-1 text-xs text-foreground">
+            <ul className="mt-4 space-y-1 text-[13px] text-foreground">
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('services')}>• Service Catalog</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('services')}>• Surcharges &amp; Fees</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('services')}>• Weekend Rules</li>
@@ -350,7 +350,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('services')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>Manage Rates</span>
               <span aria-hidden="true">→</span>
@@ -368,7 +368,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
             <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed">
               Configure terminals, Stripe payouts, invoices, taxes, and ledgers.
             </p>
-            <ul className="mt-4 space-y-1 text-xs text-foreground">
+            <ul className="mt-4 space-y-1 text-[13px] text-foreground">
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('payments')}>• Stripe Terminal</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('payments')}>• Payment Methods</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('payments')}>• Tax Settings</li>
@@ -378,7 +378,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('payments')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>Manage Payments</span>
               <span aria-hidden="true">→</span>
@@ -396,7 +396,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
             <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed">
               Staff training, grooming certifications, CPR drills, and safety courses.
             </p>
-            <ul className="mt-4 space-y-1 text-xs text-foreground">
+            <ul className="mt-4 space-y-1 text-[13px] text-foreground">
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('lms')}>• Course Catalog (5 Active)</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('lms')}>• Trainee Progress Tracker</li>
               <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('lms')}>• Safety &amp; CPR Certifications</li>
@@ -406,7 +406,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('lms')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>Open Academy</span>
               <span aria-hidden="true">→</span>
@@ -427,7 +427,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
             <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed">
               System preferences, integrations, audit logs, and cloud database.
             </p>
-            <div className="grid grid-cols-2 gap-x-2 mt-4 text-xs text-foreground">
+            <div className="grid grid-cols-2 gap-x-2 mt-4 text-[13px] text-foreground">
               <ul className="space-y-1">
                 <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('system')}>• Audit Log</li>
                 <li className="cursor-pointer hover:underline" onClick={() => onSelectTab('system')}>• Integrations</li>
@@ -443,7 +443,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('system')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>System Settings</span>
               <span aria-hidden="true">→</span>
@@ -460,11 +460,11 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
               </div>
               <h4 className="text-sm font-semibold uppercase tracking-tight text-foreground">Release Notes</h4>
             </div>
-            <div className="space-y-3 mt-4 text-xs">
+            <div className="space-y-3 mt-4 text-[13px]">
               <div className="border-b border-border pb-2">
                 <div className="flex items-center justify-between">
-                  <h5 className="text-xs font-bold text-foreground uppercase">Multi-Location Branching</h5>
-                  <span className="text-[10px] tabular-nums font-bold uppercase px-1 bg-muted/40 border border-border">
+                  <h5 className="text-[13px] font-semibold text-foreground uppercase">Multi-Location Branching</h5>
+                  <span className="text-[10px] tabular-nums font-semibold uppercase px-1 bg-muted/40 border border-border">
                     Live
                   </span>
                 </div>
@@ -472,8 +472,8 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
               </div>
               <div className="border-b border-border pb-2">
                 <div className="flex items-center justify-between">
-                  <h5 className="text-xs font-bold text-foreground uppercase">PostgreSQL Global Search</h5>
-                  <span className="text-[10px] tabular-nums font-bold uppercase px-1 bg-muted/40 border border-border">
+                  <h5 className="text-[13px] font-semibold text-foreground uppercase">PostgreSQL Global Search</h5>
+                  <span className="text-[10px] tabular-nums font-semibold uppercase px-1 bg-muted/40 border border-border">
                     Live
                   </span>
                 </div>
@@ -481,8 +481,8 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
               </div>
               <div>
                 <div className="flex items-center justify-between">
-                  <h5 className="text-xs font-bold text-foreground uppercase">WisePOS E Terminal Support</h5>
-                  <span className="text-[10px] tabular-nums font-bold uppercase px-1 bg-muted/40 border border-border">
+                  <h5 className="text-[13px] font-semibold text-foreground uppercase">WisePOS E Terminal Support</h5>
+                  <span className="text-[10px] tabular-nums font-semibold uppercase px-1 bg-muted/40 border border-border">
                     Live
                   </span>
                 </div>
@@ -493,7 +493,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('website')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>Release Log</span>
               <span aria-hidden="true">→</span>
@@ -510,7 +510,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
               </div>
               <h4 className="text-sm font-semibold uppercase tracking-tight text-foreground">Quick Links</h4>
             </div>
-            <ul className="space-y-2 mt-4 text-xs font-bold uppercase tracking-wider">
+            <ul className="space-y-2 mt-4 text-[13px] font-semibold uppercase tracking-wider">
               <li>
                 <button
                   onClick={() => onSelectTab('website')}
@@ -552,7 +552,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
           <div className="mt-5 pt-3 border-t border-border">
             <button
               onClick={() => onSelectTab('system')}
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wider text-foreground hover:underline cursor-pointer"
             >
               <span>Help &amp; Docs</span>
               <span aria-hidden="true">→</span>

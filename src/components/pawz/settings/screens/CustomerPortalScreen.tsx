@@ -80,19 +80,19 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
   };
 
   return (
-    <div className="w-full bg-surface text-on-surface font-sans antialiased text-xs">
+    <div className="w-full bg-surface text-on-surface font-sans antialiased text-[13px]">
       {/* Toast Banner */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-on-primary px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-on-primary px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
 
       {/* Sub-Navigation Strip */}
       <div className="w-full bg-card border-b border-primary flex items-center overflow-x-auto select-none">
-        <div className="px-4 py-2 bg-primary text-on-primary tabular-nums text-[11px] font-bold tracking-wider uppercase flex items-center gap-2 shrink-0 border-r border-primary">
+        <div className="px-4 py-2 bg-primary text-on-primary tabular-nums text-[11px] font-semibold tracking-wider uppercase flex items-center gap-2 shrink-0 border-r border-primary">
           <span className="w-1.5 h-1.5 bg-card"></span>
           <span>CFG://ADMIN</span>
         </div>
@@ -133,14 +133,14 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
       <div className="w-full bg-card border-b border-primary p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
-            <span className="tabular-nums text-[11px] text-primary font-bold">
+            <span className="tabular-nums text-[11px] text-primary font-semibold">
               SEC:04 // BUSINESS OPS // ADMIN SETTINGS // CUSTOMER PORTAL
             </span>
             <span className="text-[9px] tabular-nums px-1.5 py-0.5 border border-primary text-primary bg-muted/40 uppercase">
               NODE:PRTL-90
             </span>
           </div>
-          <h1 className="text-xl md:text-2xl font-bold tracking-tight uppercase text-primary font-sans">
+          <h1 className="text-xl md:text-2xl font-semibold tracking-tight uppercase text-primary font-sans">
             Client Self-Service Portal Configuration &amp; Feature Flags
           </h1>
           <div className="flex items-center gap-2 mt-1 flex-wrap">
@@ -161,14 +161,14 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
         <div className="flex items-center gap-2 shrink-0 flex-wrap">
           <button
             onClick={() => showToast('PREVIEWING CLIENT SELF-SERVICE PORTAL')}
-            className="h-8 px-3 bg-card border border-primary text-primary tabular-nums text-xs uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1 cursor-pointer"
+            className="h-8 px-3 bg-card border border-primary text-primary tabular-nums text-[13px] uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1 cursor-pointer"
           >
             <span>Preview Portal View</span>
             <span>↗</span>
           </button>
           <button
             onClick={handleResetDefaults}
-            className="h-8 px-3 bg-card border border-primary text-primary tabular-nums text-xs uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1 cursor-pointer"
+            className="h-8 px-3 bg-card border border-primary text-primary tabular-nums text-[13px] uppercase hover:bg-black hover:text-white transition-none flex items-center gap-1 cursor-pointer"
           >
             <span>↺ Reset Defaults</span>
           </button>
@@ -183,7 +183,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
               }
               showToast('PORTAL CONFIGURATION SAVED & PERSISTED TO SUPABASE');
             }}
-            className="h-8 px-4 bg-primary border border-primary text-on-primary tabular-nums text-xs uppercase font-semibold hover:bg-muted transition-none flex items-center gap-1 cursor-pointer"
+            className="h-8 px-4 bg-primary border border-primary text-on-primary tabular-nums text-[13px] uppercase font-semibold hover:bg-muted transition-none flex items-center gap-1 cursor-pointer"
           >
             <span>💾 Save Configuration</span>
           </button>
@@ -195,28 +195,28 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
         <div className="p-3 border-r border-primary flex flex-col justify-between">
           <span className="text-[9px] tabular-nums uppercase text-muted-foreground">ACTIVE SELF-SERVE SESSIONS (24H)</span>
           <div className="flex items-baseline justify-between mt-1">
-            <span className="text-lg font-bold tabular-nums">482</span>
+            <span className="text-lg font-semibold tabular-nums">482</span>
             <span className="text-[9px] tabular-nums border border-primary px-1">▲ +14.2%</span>
           </div>
         </div>
         <div className="p-3 border-r border-primary flex flex-col justify-between">
           <span className="text-[9px] tabular-nums uppercase text-muted-foreground">SELF-RESCHEDULE VOLUME</span>
           <div className="flex items-baseline justify-between mt-1">
-            <span className="text-lg font-bold tabular-nums">67</span>
+            <span className="text-lg font-semibold tabular-nums">67</span>
             <span className="text-[9px] tabular-nums text-muted-foreground">4.8% TOTAL</span>
           </div>
         </div>
         <div className="p-3 border-r border-primary flex flex-col justify-between">
           <span className="text-[9px] tabular-nums uppercase text-muted-foreground">VACCINE UPLOADS PENDING REVIEW</span>
           <div className="flex items-baseline justify-between mt-1">
-            <span className="text-lg font-bold tabular-nums">12</span>
+            <span className="text-lg font-semibold tabular-nums">12</span>
             <span className="text-[9px] tabular-nums bg-primary text-on-primary px-1">ACTION REQ</span>
           </div>
         </div>
         <div className="p-3 flex flex-col justify-between">
           <span className="text-[9px] tabular-nums uppercase text-muted-foreground">DIGITAL WAIVER COMPLIANCE</span>
           <div className="flex items-baseline justify-between mt-1">
-            <span className="text-lg font-bold tabular-nums">99.1%</span>
+            <span className="text-lg font-semibold tabular-nums">99.1%</span>
             <span className="text-[9px] tabular-nums text-primary">1,092/1,102</span>
           </div>
         </div>
@@ -229,7 +229,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
           {/* Section 1: Customer Authentication & Registration */}
           <div className="border border-primary bg-card">
             <div className="px-3 py-2 bg-muted/40 border-b border-primary flex items-center justify-between">
-              <span className="tabular-nums text-[11px] uppercase font-bold text-primary">
+              <span className="tabular-nums text-[11px] uppercase font-semibold text-primary">
                 SEC:01 // CUSTOMER AUTHENTICATION &amp; ACCESS
               </span>
               <span className="text-[9px] tabular-nums text-muted-foreground">[AUTH.RULESET]</span>
@@ -238,7 +238,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
               {/* Toggle Row 1 */}
               <div className="flex items-start justify-between gap-3 pb-2 border-b border-border">
                 <div>
-                  <div className="text-xs font-semibold text-primary uppercase">Allow Client Self-Registration</div>
+                  <div className="text-[13px] font-semibold text-primary uppercase">Allow Client Self-Registration</div>
                   <p className="text-[11px] text-muted-foreground mt-0.5">Allows new pet owners to create account and register dogs without front-desk manual pre-creation.</p>
                 </div>
                 <label className="relative flex items-center cursor-pointer select-none pt-0.5">
@@ -257,7 +257,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
               {/* Toggle Row 2 */}
               <div className="flex items-start justify-between gap-3 pb-2 border-b border-border">
                 <div>
-                  <div className="text-xs font-semibold text-primary uppercase flex items-center gap-1.5">
+                  <div className="text-[13px] font-semibold text-primary uppercase flex items-center gap-1.5">
                     <span>Require Phone Verification (SMS OTP)</span>
                     <span className="text-[9px] px-1 border border-primary text-primary bg-muted/40">TWILIO</span>
                   </div>
@@ -279,7 +279,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
               {/* Toggle Row 3 */}
               <div className="flex items-start justify-between gap-3 pb-2 border-b border-border">
                 <div>
-                  <div className="text-xs font-semibold text-primary uppercase">Google One-Tap / OAuth SSO</div>
+                  <div className="text-[13px] font-semibold text-primary uppercase">Google One-Tap / OAuth SSO</div>
                   <p className="text-[11px] text-muted-foreground mt-0.5">Enables federated credential exchange for low-friction parent registration &amp; logins.</p>
                 </div>
                 <label className="relative flex items-center cursor-pointer select-none pt-0.5">
@@ -297,15 +297,15 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
 
               {/* Password Policy */}
               <div className="pt-1">
-                <label className="block text-[10px] uppercase text-primary font-bold mb-1">PASSWORD POLICY ENFORCEMENT</label>
+                <label className="block text-[10px] uppercase text-primary font-semibold mb-1">PASSWORD POLICY ENFORCEMENT</label>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="border border-primary p-2 bg-muted/40">
                     <span className="text-[9px] uppercase block text-muted-foreground">POLICY STANDARD</span>
-                    <span className="text-xs font-bold text-primary">MIN 8 CHARS // ALPHANUM</span>
+                    <span className="text-[13px] font-semibold text-primary">MIN 8 CHARS // ALPHANUM</span>
                   </div>
                   <div className="border border-primary p-2 bg-muted/40">
                     <span className="text-[9px] uppercase block text-muted-foreground">SESSION TIMEOUT</span>
-                    <span className="text-xs font-bold text-primary">14 DAYS (STAY LOGGED IN)</span>
+                    <span className="text-[13px] font-semibold text-primary">14 DAYS (STAY LOGGED IN)</span>
                   </div>
                 </div>
               </div>
@@ -323,21 +323,21 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
             <div className="p-3 space-y-3 tabular-nums">
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="text-[10px] uppercase font-bold text-primary">CLIENT SELF-CANCELLATION CUTOFF</label>
+                  <label className="text-[10px] uppercase font-semibold text-primary">CLIENT SELF-CANCELLATION CUTOFF</label>
                   <span className="text-[9px] text-muted-foreground">[HOURS PRIOR TO SLOT]</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <select
                     value={cutoff}
                     onChange={(e) => setCutoff(e.target.value)}
-                    className="flex-1 h-8 bg-card border border-primary px-2 text-xs focus:outline-none"
+                    className="flex-1 h-8 bg-card border border-primary px-2 text-[13px] focus:outline-none"
                   >
                     <option value="12">12 Hours Prior</option>
                     <option value="24">24 Hours Prior (Standard Policy)</option>
                     <option value="48">48 Hours Prior</option>
                     <option value="72">72 Hours Prior (Peak / Holiday Strict)</option>
                   </select>
-                  <div className="h-8 px-2 bg-muted/40 border border-primary flex items-center justify-center text-[10px] uppercase font-bold">
+                  <div className="h-8 px-2 bg-muted/40 border border-primary flex items-center justify-center text-[10px] uppercase font-semibold">
                     {cutoff}H
                   </div>
                 </div>
@@ -348,7 +348,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
 
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="text-[10px] uppercase font-bold text-primary">SELF-RESCHEDULE LIMIT PER APPOINTMENT</label>
+                  <label className="text-[10px] uppercase font-semibold text-primary">SELF-RESCHEDULE LIMIT PER APPOINTMENT</label>
                   <span className="text-[9px] text-muted-foreground">[MAX ATTEMPTS]</span>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
@@ -360,7 +360,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
                         reschedLimit === opt ? 'bg-primary text-primary-foreground' : 'hover:bg-muted/40 bg-card text-foreground'
                       }`}
                     >
-                      <span className="text-xs font-bold uppercase">{opt === 'unlimited' ? 'UNLIMITED' : `${opt} TIME${opt === '1' ? '' : 'S'}`}</span>
+                      <span className="text-[13px] font-semibold uppercase">{opt === 'unlimited' ? 'UNLIMITED' : `${opt} TIME${opt === '1' ? '' : 'S'}`}</span>
                     </label>
                   ))}
                 </div>
@@ -370,7 +370,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
               <div className="border-t border-border pt-2">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <div className="text-xs font-semibold text-primary uppercase">Forfeiture &amp; Fee Penalty Modal Prompt</div>
+                    <div className="text-[13px] font-semibold text-primary uppercase">Forfeiture &amp; Fee Penalty Modal Prompt</div>
                     <p className="text-[10px] text-muted-foreground mt-0.5">Displays explicit $35 late-cancellation forfeit warning prompt requiring confirmation check before cancelling.</p>
                   </div>
                   <label className="relative flex items-center cursor-pointer select-none pt-0.5">
@@ -392,36 +392,36 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
           {/* Section 4: Portal Branding & Navigation Customization */}
           <div className="border border-primary bg-card">
             <div className="px-3 py-2 bg-muted/40 border-b border-primary flex items-center justify-between">
-              <span className="tabular-nums text-[11px] uppercase font-bold text-primary">
+              <span className="tabular-nums text-[11px] uppercase font-semibold text-primary">
                 SEC:04 // BRANDING &amp; SUPPORT CHANNELS
               </span>
               <span className="text-[9px] tabular-nums text-muted-foreground">[PORTAL.UI]</span>
             </div>
             <div className="p-3 space-y-3 tabular-nums">
               <div>
-                <label className="block text-[10px] uppercase font-bold text-primary mb-1">PORTAL WELCOME GREETING STRING</label>
+                <label className="block text-[10px] uppercase font-semibold text-primary mb-1">PORTAL WELCOME GREETING STRING</label>
                 <input
                   value={portalGreeting}
                   onChange={(e) => setPortalGreeting(e.target.value)}
-                  className="w-full h-8 bg-card border border-primary px-2 text-xs tabular-nums focus:outline-none"
+                  className="w-full h-8 bg-card border border-primary px-2 text-[13px] tabular-nums focus:outline-none"
                   type="text"
                 />
                 <span className="text-[9px] text-muted-foreground mt-1 block">RENDERED AT TOP OF CLIENT PORTAL DASHBOARD</span>
               </div>
               <div>
-                <label className="block text-[10px] uppercase font-bold text-primary mb-1">EXPOSED SUPPORT CHANNELS IN CLIENT TRAY</label>
-                <div className="space-y-1.5 text-xs">
+                <label className="block text-[10px] uppercase font-semibold text-primary mb-1">EXPOSED SUPPORT CHANNELS IN CLIENT TRAY</label>
+                <div className="space-y-1.5 text-[13px]">
                   <div className="flex items-center justify-between p-1.5 border border-primary bg-card">
                     <span className="font-semibold">Phone Helpline: (214) 555-0198</span>
-                    <span className="text-[9px] px-1.5 py-0.5 bg-primary text-primary-foreground font-bold">[ACTIVE]</span>
+                    <span className="text-[9px] px-1.5 py-0.5 bg-primary text-primary-foreground font-semibold">[ACTIVE]</span>
                   </div>
                   <div className="flex items-center justify-between p-1.5 border border-primary bg-card">
                     <span className="font-semibold">Two-Way SMS Messaging (Twilio)</span>
-                    <span className="text-[9px] px-1.5 py-0.5 bg-primary text-primary-foreground font-bold">[ACTIVE]</span>
+                    <span className="text-[9px] px-1.5 py-0.5 bg-primary text-primary-foreground font-semibold">[ACTIVE]</span>
                   </div>
                   <div className="flex items-center justify-between p-1.5 border border-primary bg-card">
                     <span className="font-semibold">Knowledge Base FAQ Link</span>
-                    <span className="text-[9px] px-1.5 py-0.5 bg-primary text-primary-foreground font-bold">[ACTIVE]</span>
+                    <span className="text-[9px] px-1.5 py-0.5 bg-primary text-primary-foreground font-semibold">[ACTIVE]</span>
                   </div>
                 </div>
               </div>
@@ -434,7 +434,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
           <div className="border border-primary bg-card flex flex-col">
             <div className="px-3 py-2 bg-muted/40 border-b border-primary flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="tabular-nums text-[11px] uppercase font-bold text-primary">
+                <span className="tabular-nums text-[11px] uppercase font-semibold text-primary">
                   SEC:02 // SELF-SERVICE FEATURE ACCESS FLAGS
                 </span>
                 <span className="text-[9px] tabular-nums border border-primary px-1 bg-card text-primary">
@@ -446,8 +446,8 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
 
             <div className="p-3 border-b border-primary bg-muted/30 tabular-nums">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <div className="text-xs text-foreground">
-                  <span className="font-bold text-primary uppercase">Granular Capability Engine</span> — Real-time authorization flags governing what registered clients can perform autonomously inside their authenticated session.
+                <div className="text-[13px] text-foreground">
+                  <span className="font-semibold text-primary uppercase">Granular Capability Engine</span> — Real-time authorization flags governing what registered clients can perform autonomously inside their authenticated session.
                 </div>
                 <div className="flex items-center gap-1.5 shrink-0">
                   <button
@@ -470,22 +470,22 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
             <div className="w-full overflow-x-auto">
               <table className="w-full text-left border-collapse tabular-nums">
                 <thead>
-                  <tr className="border-b border-primary bg-muted/40 text-[10px] uppercase text-primary font-bold">
+                  <tr className="border-b border-primary bg-muted/40 text-[10px] uppercase text-primary font-semibold">
                     <th className="p-2 w-12 text-center border-r border-primary">KEY</th>
                     <th className="p-2 border-r border-primary">FEATURE CAPABILITY / DESCRIPTION</th>
                     <th className="p-2 w-36 border-r border-primary">INTEGRATION</th>
                     <th className="p-2 w-28 text-center">STATUS</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-primary text-xs">
+                <tbody className="divide-y divide-primary text-[13px]">
                   {featureFlags.map((flag) => (
                     <tr key={flag.key} className="hover:bg-muted/30">
                       <td className="p-2 text-center border-r border-primary text-muted-foreground text-[10px]">{flag.key}</td>
                       <td className="p-2 border-r border-primary">
-                        <div className="font-bold text-primary uppercase flex items-center gap-1.5">
+                        <div className="font-semibold text-primary uppercase flex items-center gap-1.5">
                           <span>{flag.title}</span>
                           {flag.badge && (
-                            <span className="text-[9px] px-1 bg-primary text-primary-foreground font-bold">{flag.badge}</span>
+                            <span className="text-[9px] px-1 bg-primary text-primary-foreground font-semibold">{flag.badge}</span>
                           )}
                         </div>
                         <div className="text-[11px] text-muted-foreground mt-0.5">{flag.desc}</div>
@@ -515,15 +515,15 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
             </div>
 
             {/* Terminal Diagnostic Footer */}
-            <div className="mt-auto border-t border-primary p-2.5 bg-card flex flex-col md:flex-row md:items-center justify-between gap-1 text-xs tabular-nums">
+            <div className="mt-auto border-t border-primary p-2.5 bg-card flex flex-col md:flex-row md:items-center justify-between gap-1 text-[13px] tabular-nums">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-black inline-block"></span>
-                <span className="font-bold text-primary uppercase">DAWG-OS PORTAL RUNTIME:</span>
+                <span className="font-semibold text-primary uppercase">DAWG-OS PORTAL RUNTIME:</span>
                 <span className="text-muted-foreground">TLS 1.3 // EDGE CDN CACHE ACTIVE // SYNCHRONIZED</span>
               </div>
               <div className="flex items-center gap-1 text-[10px]">
                 <span className="border border-primary px-1.5 py-0.5 uppercase bg-muted/40">BUILD: #2409-P</span>
-                <span className="border border-primary px-1.5 py-0.5 uppercase bg-primary text-primary-foreground font-bold">ALL SERVICES GREEN</span>
+                <span className="border border-primary px-1.5 py-0.5 uppercase bg-primary text-primary-foreground font-semibold">ALL SERVICES GREEN</span>
               </div>
             </div>
           </div>
@@ -531,7 +531,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
           {/* Live Client Preview Simulated Viewport */}
           <div className="border border-primary bg-card">
             <div className="px-3 py-2 bg-muted/40 border-b border-primary flex items-center justify-between">
-              <span className="tabular-nums text-[11px] uppercase font-bold text-primary">
+              <span className="tabular-nums text-[11px] uppercase font-semibold text-primary">
                 SIMULATOR // CLIENT PORTAL DASHBOARD WIREFRAME PREVIEW
               </span>
               <span className="text-[9px] tabular-nums text-muted-foreground">[VIEWPORT: DESKTOP/MOBILE AUTO]</span>
@@ -541,23 +541,23 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
                 <div className="border-b border-primary pb-2 flex items-center justify-between flex-wrap gap-2">
                   <div>
                     <span className="text-[9px] tabular-nums text-muted-foreground block uppercase">PORTAL BANNER</span>
-                    <span className="font-sans font-bold text-base uppercase text-primary">{portalGreeting}</span>
+                    <span className="font-sans font-semibold text-base uppercase text-primary">{portalGreeting}</span>
                   </div>
                   <div className="text-right">
                     <span className="text-[9px] tabular-nums text-muted-foreground block uppercase">ACCOUNT STATUS</span>
-                    <span className="tabular-nums text-xs font-bold text-primary">CLIENT: SARAH JENKINS (2 DOGS)</span>
+                    <span className="tabular-nums text-[13px] font-semibold text-primary">CLIENT: SARAH JENKINS (2 DOGS)</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center tabular-nums text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center tabular-nums text-[13px]">
                   <div className="border border-primary p-2 bg-muted/30">
                     <span className="text-[9px] text-muted-foreground uppercase block">NEXT BOOKING</span>
-                    <span className="font-bold text-primary uppercase text-sm">Tomorrow 10:30 AM</span>
+                    <span className="font-semibold text-primary uppercase text-sm">Tomorrow 10:30 AM</span>
                     <span className="text-[10px] block text-muted-foreground mt-0.5">Milo • Full Pawz Spa</span>
                   </div>
                   <div className="border border-primary p-2 bg-muted/30">
                     <span className="text-[9px] text-muted-foreground uppercase block">LIVE STATUS</span>
-                    <span className="font-bold text-primary uppercase text-sm flex items-center justify-center gap-1">
+                    <span className="font-semibold text-primary uppercase text-sm flex items-center justify-center gap-1">
                       <span className="w-1.5 h-1.5 bg-black inline-block"></span>
                       BATH &amp; DRY (STAGE 2/4)
                     </span>
@@ -565,8 +565,8 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
                   </div>
                   <div className="border border-primary p-2 bg-muted/30">
                     <span className="text-[9px] text-muted-foreground uppercase block">REWARDS WALLET</span>
-                    <span className="font-bold text-primary uppercase text-sm">480 PTS ($24.00)</span>
-                    <span className="text-[10px] block text-primary font-bold mt-0.5">[REDEEM AT CHECKOUT]</span>
+                    <span className="font-semibold text-primary uppercase text-sm">480 PTS ($24.00)</span>
+                    <span className="text-[10px] block text-primary font-semibold mt-0.5">[REDEEM AT CHECKOUT]</span>
                   </div>
                 </div>
 

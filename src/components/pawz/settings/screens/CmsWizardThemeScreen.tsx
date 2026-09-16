@@ -35,12 +35,12 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
   };
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
@@ -50,9 +50,9 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
         <div className="flex items-center min-w-max">
           <div className="px-3 py-2 bg-muted/40 border-r border-border flex items-center gap-2">
             <span className="w-2 h-2 bg-black"></span>
-            <span className="tabular-nums text-[11px] uppercase tracking-widest text-foreground font-bold">MODULE // CMS &amp; WEBSITE</span>
+            <span className="tabular-nums text-[11px] uppercase tracking-wider text-foreground font-semibold">MODULE // CMS &amp; WEBSITE</span>
           </div>
-          <nav className="flex items-center text-xs tabular-nums">
+          <nav className="flex items-center text-[13px] tabular-nums">
             {[
               { label: 'Overview', id: 'overview' },
               { label: 'Organization', id: 'org-multiloc' },
@@ -64,7 +64,7 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
               <button
                 key={tab.label}
                 onClick={() => onNavigateScreen?.(tab.id)}
-                className={`px-3 py-2 border-r border-border/30 tabular-nums text-xs cursor-pointer transition-none flex items-center gap-1.5 ${
+                className={`px-3 py-2 border-r border-border/30 tabular-nums text-[13px] cursor-pointer transition-none flex items-center gap-1.5 ${
                   tab.active ? 'bg-primary text-primary-foreground font-semibold' : 'text-muted-foreground hover:bg-black hover:text-white'
                 }`}
               >
@@ -80,32 +80,32 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[9px] tabular-nums uppercase tracking-widest px-2 py-0.5 border border-border bg-primary text-primary-foreground font-bold">
+              <span className="text-[9px] tabular-nums uppercase tracking-wider px-2 py-0.5 border border-border bg-primary text-primary-foreground font-semibold">
                 SEC:08 // CONTENT MANAGEMENT SYSTEM
               </span>
               <span className="text-[10px] tabular-nums text-muted-foreground uppercase">
                 EMBEDDABLE WIZARD // MICRO-SITE GENERATOR // HERO LAYOUTS
               </span>
             </div>
-            <h1 className="text-xl md:text-2xl font-bold uppercase tracking-tight font-sans text-foreground mt-1">
+            <h1 className="text-xl md:text-2xl font-semibold uppercase tracking-tight font-sans text-foreground mt-1">
               Public Website, Booking Wizard &amp; Theme Engine
             </h1>
-            <p className="text-xs tabular-nums text-muted-foreground">
+            <p className="text-[13px] tabular-nums text-muted-foreground">
               Customize public web copy, booking wizard steps, embed code generation, and typography tokens.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 tabular-nums text-xs">
+          <div className="flex items-center gap-2 tabular-nums text-[13px]">
             <button
               onClick={() => showToast('PREVIEWING CLIENT BOOKING WIZARD IN MODAL')}
-              className="h-8 px-3 border border-border bg-card uppercase font-bold hover:bg-muted/40 cursor-pointer"
+              className="h-8 px-3 border border-border bg-card uppercase font-semibold hover:bg-muted/40 cursor-pointer"
             >
               👁 Live Preview
             </button>
             <button
               onClick={handleSave}
               disabled={saving}
-              className="h-8 px-4 bg-primary text-primary-foreground border border-border uppercase font-bold hover:bg-muted cursor-pointer"
+              className="h-8 px-4 bg-primary text-primary-foreground border border-border uppercase font-semibold hover:bg-muted cursor-pointer"
             >
               {saving ? 'DEPLOYING...' : '[PUBLISH LIVE CHANGES]'}
             </button>
@@ -116,11 +116,11 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
       {/* MAIN SPLIT: CONFIGURATION (LEFT 7 COLS) & LIVE PREVIEW CANVAS (RIGHT 5 COLS) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 bg-black gap-px border-b border-border">
         {/* LEFT 7 COLS: CMS CONFIGURATION */}
-        <div className="lg:col-span-7 bg-card p-5 space-y-6 tabular-nums text-xs">
+        <div className="lg:col-span-7 bg-card p-5 space-y-6 tabular-nums text-[13px]">
           {/* SECTION 1: PUBLIC HOMEPAGE HERO */}
           <div className="space-y-3">
             <div className="flex items-center justify-between border-b border-border pb-2">
-              <span className="font-bold text-foreground uppercase">01 // PUBLIC HOMEPAGE HERO CONTENT</span>
+              <span className="font-semibold text-foreground uppercase">01 // PUBLIC HOMEPAGE HERO CONTENT</span>
               <span className="text-[10px] text-muted-foreground">HEADLINE / VALUE PROP</span>
             </div>
             <div>
@@ -128,7 +128,7 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
               <input
                 value={heroHeadline}
                 onChange={(e) => setHeroHeadline(e.target.value)}
-                className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 type="text"
               />
             </div>
@@ -137,7 +137,7 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
               <textarea
                 value={heroSubheadline}
                 onChange={(e) => setHeroSubheadline(e.target.value)}
-                className="w-full border border-border p-2 bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                className="w-full border border-border p-2 bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 rows={2}
               />
             </div>
@@ -146,15 +146,15 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
           {/* SECTION 2: BOOKING WIZARD STEP CONFIGURATION */}
           <div className="space-y-3 pt-3 border-t border-border">
             <div className="flex items-center justify-between border-b border-border pb-2">
-              <span className="font-bold text-foreground uppercase">02 // CLIENT BOOKING WIZARD SEQUENCING</span>
-              <span className="text-[9px] border border-border px-1.5 py-0.2 bg-primary text-primary-foreground font-bold">5 STEPS</span>
+              <span className="font-semibold text-foreground uppercase">02 // CLIENT BOOKING WIZARD SEQUENCING</span>
+              <span className="text-[9px] border border-border px-1.5 py-0.2 bg-primary text-primary-foreground font-semibold">5 STEPS</span>
             </div>
             <div>
               <label className="text-muted-foreground uppercase text-[10px] block mb-1">WIZARD TITLE HEADER</label>
               <input
                 value={bookingHeadline}
                 onChange={(e) => setBookingHeadline(e.target.value)}
-                className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 type="text"
               />
             </div>
@@ -171,12 +171,12 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
                 <div key={s.step} className="border border-border p-2.5 bg-muted/30 flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.2 font-bold">{s.step}</span>
-                      <span className="font-bold text-xs">{s.name}</span>
+                      <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.2 font-semibold">{s.step}</span>
+                      <span className="font-semibold text-[13px]">{s.name}</span>
                     </div>
                     <div className="text-[10px] text-muted-foreground mt-0.5">{s.desc}</div>
                   </div>
-                  <span className="border border-border bg-card text-[9px] px-2 py-0.5 font-bold">{s.req}</span>
+                  <span className="border border-border bg-card text-[9px] px-2 py-0.5 font-semibold">{s.req}</span>
                 </div>
               ))}
             </div>
@@ -185,14 +185,14 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
           {/* SECTION 3: DISPLAY TOGGLES */}
           <div className="space-y-3 pt-3 border-t border-border">
             <div className="flex items-center justify-between border-b border-border pb-2">
-              <span className="font-bold text-foreground uppercase">03 // WIZARD DISPLAY MODULES</span>
+              <span className="font-semibold text-foreground uppercase">03 // WIZARD DISPLAY MODULES</span>
               <span className="text-[10px] text-muted-foreground">OPT-IN MODULES</span>
             </div>
 
             <div className="space-y-2">
               <label className="flex items-center justify-between p-2 border border-border cursor-pointer bg-card">
                 <div>
-                  <div className="font-bold">Show Verified Customer Reviews</div>
+                  <div className="font-semibold">Show Verified Customer Reviews</div>
                   <div className="text-[10px] text-muted-foreground">Render 5-star Google / Yelp badge in booking footer</div>
                 </div>
                 <input
@@ -205,7 +205,7 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
 
               <label className="flex items-center justify-between p-2 border border-border cursor-pointer bg-card">
                 <div>
-                  <div className="font-bold">Live Transparent Price Breakdown</div>
+                  <div className="font-semibold">Live Transparent Price Breakdown</div>
                   <div className="text-[10px] text-muted-foreground">Display itemized base rate + size fee before final checkout step</div>
                 </div>
                 <input
@@ -218,7 +218,7 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
 
               <label className="flex items-center justify-between p-2 border border-border cursor-pointer bg-card">
                 <div>
-                  <div className="font-bold">Mandatory Texas Rabies Notice Banner</div>
+                  <div className="font-semibold">Mandatory Texas Rabies Notice Banner</div>
                   <div className="text-[10px] text-muted-foreground">Display statutory notice that expired vaccine pets cannot enter premises</div>
                 </div>
                 <input
@@ -234,10 +234,10 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
           {/* EMBED WIDGET CODE SNIPPET */}
           <div className="pt-3 border-t border-border space-y-2">
             <div className="flex items-center justify-between">
-              <span className="font-bold uppercase">EMBEDDABLE IFRAME / SCRIPT TAG</span>
+              <span className="font-semibold uppercase">EMBEDDABLE IFRAME / SCRIPT TAG</span>
               <button
                 onClick={() => showToast('SNIPPET COPIED TO SYSTEM CLIPBOARD')}
-                className="px-2 py-0.5 border border-border text-[9px] uppercase font-bold hover:bg-black hover:text-white cursor-pointer"
+                className="px-2 py-0.5 border border-border text-[9px] uppercase font-semibold hover:bg-black hover:text-white cursor-pointer"
               >
                 Copy HTML Code
               </button>
@@ -249,21 +249,21 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
         </div>
 
         {/* RIGHT 5 COLS: INTERACTIVE MOCK PREVIEW */}
-        <div className="lg:col-span-5 bg-muted/40 p-5 flex flex-col justify-between tabular-nums text-xs">
+        <div className="lg:col-span-5 bg-muted/40 p-5 flex flex-col justify-between tabular-nums text-[13px]">
           <div>
             <div className="flex items-center justify-between border-b border-border pb-2 mb-4">
-              <span className="font-bold uppercase text-foreground">LIVE SIMULATOR // WIZARD UI</span>
-              <span className="bg-primary text-primary-foreground px-1.5 py-0.2 text-[9px] font-bold">CLIENT VIEW</span>
+              <span className="font-semibold uppercase text-foreground">LIVE SIMULATOR // WIZARD UI</span>
+              <span className="bg-primary text-primary-foreground px-1.5 py-0.2 text-[9px] font-semibold">CLIENT VIEW</span>
             </div>
 
             {/* Mock Phone / Container Preview */}
             <div className="border-2-black bg-card p-4 shadow-none space-y-4">
               {/* Mock Header */}
               <div className="border-b border-border pb-3 text-center">
-                <div className="w-10 h-10 bg-primary text-primary-foreground mx-auto flex items-center justify-center font-bold text-lg mb-1">
+                <div className="w-10 h-10 bg-primary text-primary-foreground mx-auto flex items-center justify-center font-semibold text-lg mb-1">
                   🐾
                 </div>
-                <div className="font-sans font-bold uppercase tracking-tight text-sm text-foreground">
+                <div className="font-sans font-semibold uppercase tracking-tight text-sm text-foreground">
                   ALL ABOUT PAWZ
                 </div>
                 <div className="text-[9px] text-muted-foreground uppercase mt-0.5 tracking-wider">
@@ -273,7 +273,7 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
 
               {/* Mock Banner */}
               {showVaccineNotice && (
-                <div className="border border-border p-1.5 bg-muted/40 text-center text-[9px] font-bold uppercase text-foreground">
+                <div className="border border-border p-1.5 bg-muted/40 text-center text-[9px] font-semibold uppercase text-foreground">
                   ⚠️ NOTICE: Proof of current Rabies vaccination mandatory at check-in
                 </div>
               )}
@@ -291,7 +291,7 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
 
               {/* Mock Step Content */}
               <div className="space-y-2">
-                <div className="font-sans font-bold uppercase text-xs text-foreground">
+                <div className="font-sans font-semibold uppercase text-[13px] text-foreground">
                   {bookingHeadline}
                 </div>
                 <div className="text-[11px] text-muted-foreground font-sans">
@@ -301,17 +301,17 @@ export const CmsWizardThemeScreen: React.FC<ScreenProps> = ({
                 <div className="space-y-1.5">
                   <div className="border border-border p-2 bg-muted/30 flex items-center justify-between cursor-pointer">
                     <div>
-                      <div className="font-bold text-xs">Frisco Main Salon (HQ)</div>
+                      <div className="font-semibold text-[13px]">Frisco Main Salon (HQ)</div>
                       <div className="text-[10px] text-muted-foreground">8811 Preston Road, Frisco TX</div>
                     </div>
-                    <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.5 font-bold">SELECT</span>
+                    <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.5 font-semibold">SELECT</span>
                   </div>
                   <div className="border border-border p-2 bg-card flex items-center justify-between cursor-pointer">
                     <div>
-                      <div className="font-bold text-xs">Plano West Facility</div>
+                      <div className="font-semibold text-[13px]">Plano West Facility</div>
                       <div className="text-[10px] text-muted-foreground">6200 Coit Rd, Plano TX</div>
                     </div>
-                    <span className="border border-border text-[9px] px-1.5 py-0.5 font-bold">CHOOSE</span>
+                    <span className="border border-border text-[9px] px-1.5 py-0.5 font-semibold">CHOOSE</span>
                   </div>
                 </div>
               </div>

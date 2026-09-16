@@ -25,12 +25,12 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
   };
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
@@ -40,9 +40,9 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
         <div className="flex items-center min-w-max">
           <div className="px-3 py-2 bg-muted/40 border-r border-border flex items-center gap-2">
             <span className="w-2 h-2 bg-black"></span>
-            <span className="tabular-nums text-[11px] uppercase tracking-widest text-foreground font-bold">MODULE // REVENUE &amp; STRIPE</span>
+            <span className="tabular-nums text-[11px] uppercase tracking-wider text-foreground font-semibold">MODULE // REVENUE &amp; STRIPE</span>
           </div>
-          <nav className="flex items-center text-xs tabular-nums">
+          <nav className="flex items-center text-[13px] tabular-nums">
             {[
               { label: 'Overview', id: 'overview' },
               { label: '■ Stripe Gateway & Connect', id: 'revenue-stripe', active: true },
@@ -54,7 +54,7 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
               <button
                 key={tab.label}
                 onClick={() => onNavigateScreen?.(tab.id)}
-                className={`px-3 py-2 border-r border-border/30 tabular-nums text-xs cursor-pointer transition-none flex items-center gap-1.5 ${
+                className={`px-3 py-2 border-r border-border/30 tabular-nums text-[13px] cursor-pointer transition-none flex items-center gap-1.5 ${
                   tab.active ? 'bg-primary text-primary-foreground font-semibold' : 'text-muted-foreground hover:bg-black hover:text-white'
                 }`}
               >
@@ -80,21 +80,21 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
             <h1 className="font-display text-xl md:text-2xl font-semibold tracking-tight text-foreground mt-1">
               Stripe Connect, Card Vaulting &amp; Hardware POS Terminals
             </h1>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-[13px] text-muted-foreground">
               Configure Stripe custom Connect accounts, BBPOS WisePOS E counter hardware readers, tip tipping prompts, and merchant payouts.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 tabular-nums text-xs">
+          <div className="flex items-center gap-2 tabular-nums text-[13px]">
             <button
               onClick={() => showToast('STRIPE CONNECT DASHBOARD LINK GENERATED')}
-              className="h-8 px-3 border border-border bg-card uppercase font-bold hover:bg-muted/40 cursor-pointer"
+              className="h-8 px-3 border border-border bg-card uppercase font-semibold hover:bg-muted/40 cursor-pointer"
             >
               Open Stripe Dashboard
             </button>
             <button
               onClick={() => showToast('GATEWAY RE-AUTHENTICATED // KMS ENCRYPTION VALIDATED')}
-              className="h-8 px-4 bg-primary text-primary-foreground border border-border uppercase font-bold hover:bg-muted cursor-pointer"
+              className="h-8 px-4 bg-primary text-primary-foreground border border-border uppercase font-semibold hover:bg-muted cursor-pointer"
             >
               [SYNC STRIPE VAULT]
             </button>
@@ -107,9 +107,9 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
         <div className="bg-card p-4 flex flex-col justify-between">
           <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase">
             <span>STRIPE CONNECT STATUS</span>
-            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">VERIFIED</span>
+            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-semibold">VERIFIED</span>
           </div>
-          <div className="text-xl font-bold font-sans mt-2 text-foreground">ACCT_1NW49x...</div>
+          <div className="text-xl font-semibold font-sans mt-2 text-foreground">ACCT_1NW49x...</div>
           <div className="text-[10px] text-muted-foreground mt-1">CHARGES &amp; PAYOUTS: ACTIVE</div>
         </div>
 
@@ -118,7 +118,7 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
             <span>VAULTED CLIENT CARDS</span>
             <span className="border border-border px-1 text-[9px] bg-muted/40">SETUP_INTENT</span>
           </div>
-          <div className="text-xl font-bold font-sans mt-2 text-foreground">842 CARDS</div>
+          <div className="text-xl font-semibold font-sans mt-2 text-foreground">842 CARDS</div>
           <div className="text-[10px] text-muted-foreground mt-1">ZERO RAW PAN EXPOSURE</div>
         </div>
 
@@ -127,31 +127,31 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
             <span>PENDING SETTLEMENT</span>
             <span className="border border-border px-1 text-[9px] bg-muted/40">DAILY_ROLL</span>
           </div>
-          <div className="text-xl font-bold font-sans mt-2 text-foreground">$4,120.50</div>
+          <div className="text-xl font-semibold font-sans mt-2 text-foreground">$4,120.50</div>
           <div className="text-[10px] text-muted-foreground mt-1">SETTLING TONIGHT AT 23:59 UTC</div>
         </div>
 
         <div className="bg-card p-4 flex flex-col justify-between">
           <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase">
             <span>DISPUTE / CHARGEBACK</span>
-            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">0.00%</span>
+            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-semibold">0.00%</span>
           </div>
-          <div className="text-xl font-bold font-sans mt-2 text-foreground">0 ACTIVE</div>
+          <div className="text-xl font-semibold font-sans mt-2 text-foreground">0 ACTIVE</div>
           <div className="text-[10px] text-muted-foreground mt-1">RADAR SHIELD: MAXIMAL</div>
         </div>
       </div>
 
       {/* MAIN CONTENT SPLIT */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 bg-black gap-px border-b border-border tabular-nums text-xs">
+      <div className="grid grid-cols-1 lg:grid-cols-12 bg-black gap-px border-b border-border tabular-nums text-[13px]">
         {/* LEFT 7 COLS: SETTINGS & HARDWARE POS */}
         <div className="lg:col-span-7 bg-card p-5 space-y-6">
           {/* HARDWARE POS TERMINALS */}
           <div className="space-y-3">
             <div className="flex items-center justify-between border-b border-border pb-2">
-              <span className="font-bold text-foreground uppercase">01 // COUNTERTOP &amp; MOBILE EMV TERMINALS</span>
+              <span className="font-semibold text-foreground uppercase">01 // COUNTERTOP &amp; MOBILE EMV TERMINALS</span>
               <button
                 onClick={() => showToast('REGISTERING NEW WISEPOS E TERMINAL')}
-                className="border border-border px-2 py-0.5 text-[9px] uppercase font-bold hover:bg-black hover:text-white cursor-pointer"
+                className="border border-border px-2 py-0.5 text-[9px] uppercase font-semibold hover:bg-black hover:text-white cursor-pointer"
               >
                 + Pair Reader
               </button>
@@ -161,28 +161,28 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
               <div className="border border-border p-3 bg-muted/30 flex items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.2 font-bold">BBPOS WISEPOS E</span>
-                    <span className="font-bold text-xs">Frisco Front Desk Primary</span>
+                    <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.2 font-semibold">BBPOS WISEPOS E</span>
+                    <span className="font-semibold text-[13px]">Frisco Front Desk Primary</span>
                   </div>
                   <div className="text-[10px] text-muted-foreground mt-0.5">IP: 192.168.1.144 // SN: WSC514981023</div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="border border-border bg-card px-2 py-0.5 text-[9px] font-bold">BATTERY: 98%</span>
-                  <span className="bg-primary text-primary-foreground px-2 py-0.5 text-[9px] font-bold">ONLINE</span>
+                  <span className="border border-border bg-card px-2 py-0.5 text-[9px] font-semibold">BATTERY: 98%</span>
+                  <span className="bg-primary text-primary-foreground px-2 py-0.5 text-[9px] font-semibold">ONLINE</span>
                 </div>
               </div>
 
               <div className="border border-border p-3 bg-muted/30 flex items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.2 font-bold">STRIPE READER M2</span>
-                    <span className="font-bold text-xs">Mobile Van Unit #1 Bluetooth</span>
+                    <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.2 font-semibold">STRIPE READER M2</span>
+                    <span className="font-semibold text-[13px]">Mobile Van Unit #1 Bluetooth</span>
                   </div>
                   <div className="text-[10px] text-muted-foreground mt-0.5">BT: PAWZ-VAN-M2 // SN: STR9023418</div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="border border-border bg-card px-2 py-0.5 text-[9px] font-bold">STANDBY</span>
-                  <span className="border border-border bg-card px-2 py-0.5 text-[9px] font-bold">CONNECTED</span>
+                  <span className="border border-border bg-card px-2 py-0.5 text-[9px] font-semibold">STANDBY</span>
+                  <span className="border border-border bg-card px-2 py-0.5 text-[9px] font-semibold">CONNECTED</span>
                 </div>
               </div>
             </div>
@@ -191,7 +191,7 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
           {/* TIPPING & CHECKOUT PROMPTS */}
           <div className="space-y-3 pt-3 border-t border-border">
             <div className="flex items-center justify-between border-b border-border pb-2">
-              <span className="font-bold text-foreground uppercase">02 // TIP SUGGESTIONS &amp; TERMINAL DISPLAY</span>
+              <span className="font-semibold text-foreground uppercase">02 // TIP SUGGESTIONS &amp; TERMINAL DISPLAY</span>
               <span className="text-[10px] text-muted-foreground">GRATUITY ENGINE</span>
             </div>
 
@@ -201,7 +201,7 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
                 <input
                   value={tipSuggested}
                   onChange={(e) => setTipSuggested(e.target.value)}
-                  className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                  className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                   type="text"
                 />
               </div>
@@ -211,7 +211,7 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
                 <select
                   value={payoutSchedule}
                   onChange={(e) => setPayoutSchedule(e.target.value)}
-                  className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                  className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 >
                   <option value="DAILY_AUTOMATIC">DAILY AUTOMATIC BATCH (DEFAULT)</option>
                   <option value="WEEKLY_MONDAY">WEEKLY EVERY MONDAY</option>
@@ -224,18 +224,18 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
           {/* SURCHARGE & PROCESSING FEES */}
           <div className="space-y-3 pt-3 border-t border-border">
             <div className="flex items-center justify-between border-b border-border pb-2">
-              <span className="font-bold text-foreground uppercase">03 // BLENDED PROCESSING RATES</span>
+              <span className="font-semibold text-foreground uppercase">03 // BLENDED PROCESSING RATES</span>
               <span className="text-[10px] text-muted-foreground">STRIPE INTERCHANGE-PLUS</span>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div className="p-2.5 border border-border bg-muted/30">
                 <div className="text-[9px] text-muted-foreground uppercase">CARD PRESENT (EMV TAP/CHIP)</div>
-                <div className="font-bold text-sm mt-1">{cardPresentFee}</div>
+                <div className="font-semibold text-sm mt-1">{cardPresentFee}</div>
               </div>
               <div className="p-2.5 border border-border bg-muted/30">
                 <div className="text-[9px] text-muted-foreground uppercase">CARD NOT PRESENT (WEB/VAULT)</div>
-                <div className="font-bold text-sm mt-1">{cardNotPresentFee}</div>
+                <div className="font-semibold text-sm mt-1">{cardNotPresentFee}</div>
               </div>
             </div>
           </div>
@@ -244,8 +244,8 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
         {/* RIGHT 5 COLS: RECENT STRIPE SETTLEMENT RUNS */}
         <div className="lg:col-span-5 bg-muted/30 p-5 space-y-4">
           <div className="flex items-center justify-between border-b border-border pb-2">
-            <span className="font-bold text-foreground uppercase">RECENT STRIPE PAYOUT RUNS</span>
-            <span className="bg-primary text-primary-foreground px-1.5 py-0.2 text-[9px] font-bold">CHASE LEDGER</span>
+            <span className="font-semibold text-foreground uppercase">RECENT STRIPE PAYOUT RUNS</span>
+            <span className="bg-primary text-primary-foreground px-1.5 py-0.2 text-[9px] font-semibold">CHASE LEDGER</span>
           </div>
 
           <div className="space-y-2">
@@ -257,10 +257,10 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
             ].map((p) => (
               <div key={p.id} className="p-3 border border-border bg-card flex items-center justify-between">
                 <div>
-                  <div className="font-bold">{p.amount}</div>
+                  <div className="font-semibold">{p.amount}</div>
                   <div className="text-[10px] text-muted-foreground">{p.id} &bull; {p.date}</div>
                 </div>
-                <span className="border border-border bg-muted/40 text-foreground px-2 py-0.5 text-[9px] font-bold">
+                <span className="border border-border bg-muted/40 text-foreground px-2 py-0.5 text-[9px] font-semibold">
                   {p.status}
                 </span>
               </div>
@@ -268,7 +268,7 @@ export const RevenueStripeGatewayScreen: React.FC<ScreenProps> = ({
           </div>
 
           <div className="p-3 border border-border bg-card space-y-1 text-[11px]">
-            <div className="font-bold uppercase">PCI-DSS LEVEL 1 COMPLIANCE:</div>
+            <div className="font-semibold uppercase">PCI-DSS LEVEL 1 COMPLIANCE:</div>
             <p className="text-muted-foreground">
               Cardholder data is transmitted directly from client browser or reader to Stripe tokenization vaults. No card numbers ever touch salon servers.
             </p>

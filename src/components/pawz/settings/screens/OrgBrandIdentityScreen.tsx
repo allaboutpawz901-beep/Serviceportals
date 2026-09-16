@@ -37,24 +37,24 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
   };
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
 
       {/* SUB-NAV / PATH BANNER */}
-      <div className="px-6 py-2 border-b border-border bg-muted/30 flex flex-wrap items-center justify-between text-xs tabular-nums gap-2">
+      <div className="px-6 py-2 border-b border-border bg-muted/30 flex flex-wrap items-center justify-between text-[13px] tabular-nums gap-2">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="font-bold">ADMIN SETTINGS</span>
+          <span className="font-semibold">ADMIN SETTINGS</span>
           <span className="text-muted-foreground/70">&gt;&gt;</span>
           <span className="bg-primary text-primary-foreground px-2 py-0.5">ORGANIZATION &amp; MULTI-LOCATION MANAGEMENT</span>
           <span className="text-muted-foreground/70">{'//'}</span>
-          <span className="border border-border bg-muted px-1.5 py-0.5 text-[10px] font-bold uppercase">
+          <span className="border border-border bg-muted px-1.5 py-0.5 text-[10px] font-semibold uppercase">
             RESTRICTED // ADMIN PERMISSION REQUIRED
           </span>
           <span className="text-muted-foreground/70">{'//'}</span>
@@ -63,7 +63,7 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
         <div className="flex items-center gap-2">
           <button
             onClick={() => onNavigateScreen?.('org-multiloc')}
-            className="border border-border bg-card px-2.5 py-1 hover:bg-black hover:text-white font-bold text-xs uppercase cursor-pointer"
+            className="border border-border bg-card px-2.5 py-1 hover:bg-black hover:text-white font-semibold text-[13px] uppercase cursor-pointer"
           >
             + ADD NEW LOCATION
           </button>
@@ -77,7 +77,7 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
               }
               showToast('BRAND & VISUAL IDENTITY CONFIGURATION COMMITTED AND SAVED TO SUPABASE');
             }}
-            className="bg-primary text-primary-foreground px-3 py-1 hover:bg-muted font-bold text-xs uppercase cursor-pointer"
+            className="bg-primary text-primary-foreground px-3 py-1 hover:bg-muted font-semibold text-[13px] uppercase cursor-pointer"
           >
             [SAVE CONFIG CHANGES]
           </button>
@@ -88,28 +88,28 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
       <div className="p-6 border-b border-border">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
-            <div className="text-xs tabular-nums uppercase text-muted-foreground tracking-wider">
+            <div className="text-[13px] tabular-nums uppercase text-muted-foreground tracking-wider">
               BUSINESS PROFILE // ENTITY STRUCTURE // MULTI-UNIT SYNC
             </div>
-            <h2 className="text-2xl font-bold uppercase tracking-tight mt-1 font-sans">
+            <h2 className="text-2xl font-semibold uppercase tracking-tight mt-1 font-sans">
               ORGANIZATION, MULTI-LOCATION &amp; BRAND SETTINGS
             </h2>
-            <p className="text-xs tabular-nums text-muted-foreground mt-1 max-w-3xl">
+            <p className="text-[13px] tabular-nums text-muted-foreground mt-1 max-w-3xl">
               Configure enterprise brand identities, manage multi-facility tax &amp; merchant bindings, configure physical salon operating hours, and govern global salon holidays across North Texas facilities.
             </p>
           </div>
           <div className="flex items-center gap-2">
             <div className="border border-border p-2.5 bg-muted/30 text-right min-w-[120px]">
               <div className="text-[10px] tabular-nums text-muted-foreground uppercase">ACTIVE LOCATIONS</div>
-              <div className="text-xl font-bold tabular-nums">03 SALONS</div>
+              <div className="text-xl font-semibold tabular-nums">03 SALONS</div>
             </div>
             <div className="border border-border p-2.5 bg-muted/30 text-right min-w-[120px]">
               <div className="text-[10px] tabular-nums text-muted-foreground uppercase">ACTIVE STAFF</div>
-              <div className="text-xl font-bold tabular-nums">24 TEAM</div>
+              <div className="text-xl font-semibold tabular-nums">24 TEAM</div>
             </div>
             <div className="border border-border p-2.5 bg-muted/30 text-right min-w-[140px]">
               <div className="text-[10px] tabular-nums text-muted-foreground uppercase">ENTERPRISE ENTITY</div>
-              <div className="text-sm font-bold tabular-nums truncate">All About Pawz Holdings</div>
+              <div className="text-sm font-semibold tabular-nums truncate">All About Pawz Holdings</div>
             </div>
           </div>
         </div>
@@ -118,30 +118,30 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
         <div className="flex items-center gap-1 mt-6 border-b border-border -mb-6 overflow-x-auto">
           <button
             onClick={() => onNavigateScreen?.('org-multiloc')}
-            className="px-4 py-2 bg-muted/40 hover:bg-muted text-foreground tabular-nums text-xs font-bold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
+            className="px-4 py-2 bg-muted/40 hover:bg-muted text-foreground tabular-nums text-[13px] font-semibold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
           >
             LOCATIONS &amp; SALONS (3)
           </button>
           <button
-            className="px-4 py-2 bg-primary text-primary-foreground tabular-nums text-xs font-bold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
+            className="px-4 py-2 bg-primary text-primary-foreground tabular-nums text-[13px] font-semibold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
           >
             ■ BRAND &amp; VISUAL IDENTITY
           </button>
           <button
             onClick={() => onNavigateScreen?.('booking-rules')}
-            className="px-4 py-2 bg-muted/40 hover:bg-muted text-foreground tabular-nums text-xs font-bold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
+            className="px-4 py-2 bg-muted/40 hover:bg-muted text-foreground tabular-nums text-[13px] font-semibold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
           >
             OPERATING &amp; HOLIDAY HOURS
           </button>
           <button
             onClick={() => onNavigateScreen?.('org-social')}
-            className="px-4 py-2 bg-muted/40 hover:bg-muted text-foreground tabular-nums text-xs font-bold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
+            className="px-4 py-2 bg-muted/40 hover:bg-muted text-foreground tabular-nums text-[13px] font-semibold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
           >
             SOCIAL LINKS &amp; DIRECTORIES
           </button>
           <button
             onClick={() => onNavigateScreen?.('payments-tax')}
-            className="px-4 py-2 bg-muted/40 hover:bg-muted text-foreground tabular-nums text-xs font-bold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
+            className="px-4 py-2 bg-muted/40 hover:bg-muted text-foreground tabular-nums text-[13px] font-semibold border-t border-l border-r border-border uppercase whitespace-nowrap cursor-pointer"
           >
             TAX &amp; LEGAL ENTITY
           </button>
@@ -155,29 +155,29 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
           <div className="border-2-black p-5 bg-card space-y-4">
             <div className="flex items-center justify-between border-b border-border pb-3">
               <div className="flex items-center gap-2">
-                <span className="bg-primary text-primary-foreground px-2 py-0.5 tabular-nums text-xs font-bold uppercase">SECTION A</span>
-                <h3 className="font-bold text-base uppercase tabular-nums">CORE BRAND ASSETS &amp; WORDMARK SPECS</h3>
+                <span className="bg-primary text-primary-foreground px-2 py-0.5 tabular-nums text-[13px] font-semibold uppercase">SECTION A</span>
+                <h3 className="font-semibold text-base uppercase tabular-nums">CORE BRAND ASSETS &amp; WORDMARK SPECS</h3>
               </div>
-              <span className="text-xs tabular-nums text-muted-foreground">SPEC://ASSETS-V2.4</span>
+              <span className="text-[13px] tabular-nums text-muted-foreground">SPEC://ASSETS-V2.4</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Primary Logo Asset Card */}
               <div className="border border-border p-4 bg-muted/30 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-xs uppercase tabular-nums">PRIMARY LOGO MARK (VECTOR)</span>
-                  <span className="bg-success/10 border border-border text-[10px] tabular-nums px-1.5 py-0.2 uppercase font-bold">ONLINE &amp; SYNCED</span>
+                  <span className="font-semibold text-[13px] uppercase tabular-nums">PRIMARY LOGO MARK (VECTOR)</span>
+                  <span className="bg-success/10 border border-border text-[10px] tabular-nums px-1.5 py-0.2 uppercase font-semibold">ONLINE &amp; SYNCED</span>
                 </div>
                 <div className="border border-border p-4 bg-card flex items-center justify-center">
-                  <div className="w-20 h-20 bg-primary text-primary-foreground flex flex-col items-center justify-center font-bold text-2xl tracking-tighter">
+                  <div className="w-20 h-20 bg-primary text-primary-foreground flex flex-col items-center justify-center font-semibold text-2xl tracking-tighter">
                     <span className="text-2xl">🐾</span>
-                    <span className="text-[9px] tabular-nums tracking-widest mt-0.5">PAWZ</span>
+                    <span className="text-[9px] tabular-nums tracking-wider mt-0.5">PAWZ</span>
                   </div>
                 </div>
-                <div className="space-y-1 text-xs tabular-nums">
+                <div className="space-y-1 text-[13px] tabular-nums">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">CURRENT FILE:</span>
-                    <span className="font-bold text-[11px]">BRAND_LOGO_V2.SVG</span>
+                    <span className="font-semibold text-[11px]">BRAND_LOGO_V2.SVG</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">ASPECT RATIO / RES:</span>
@@ -191,13 +191,13 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
                 <div className="flex gap-2 pt-2 border-t border-border">
                   <button
                     onClick={() => showToast('SVG UPLOAD DIALOG READY')}
-                    className="flex-1 bg-primary text-primary-foreground py-1.5 text-xs tabular-nums font-bold uppercase hover:bg-muted cursor-pointer"
+                    className="flex-1 bg-primary text-primary-foreground py-1.5 text-[13px] tabular-nums font-semibold uppercase hover:bg-muted cursor-pointer"
                   >
                     [UPLOAD NEW SVG]
                   </button>
                   <button
                     onClick={() => showToast('EXPORTING BRAND_LOGO_V2.SVG')}
-                    className="border border-border px-3 py-1.5 text-xs tabular-nums font-bold uppercase hover:bg-muted cursor-pointer"
+                    className="border border-border px-3 py-1.5 text-[13px] tabular-nums font-semibold uppercase hover:bg-muted cursor-pointer"
                   >
                     EXPORT
                   </button>
@@ -207,17 +207,17 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
               {/* Secondary Horizontal Wordmark */}
               <div className="border border-border p-4 bg-muted/30 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-xs uppercase tabular-nums">SECONDARY HORIZONTAL WORDMARK</span>
-                  <span className="border border-border bg-card text-[10px] tabular-nums px-1.5 py-0.2 uppercase font-bold">PROD APPROVED</span>
+                  <span className="font-semibold text-[13px] uppercase tabular-nums">SECONDARY HORIZONTAL WORDMARK</span>
+                  <span className="border border-border bg-card text-[10px] tabular-nums px-1.5 py-0.2 uppercase font-semibold">PROD APPROVED</span>
                 </div>
                 <div className="border border-border p-4 bg-card flex flex-col items-center justify-center space-y-2">
-                  <div className="text-lg font-bold tracking-tight tabular-nums uppercase border-b border-border pb-1">ALL ABOUT PAWZ</div>
+                  <div className="text-lg font-semibold tracking-tight tabular-nums uppercase border-b border-border pb-1">ALL ABOUT PAWZ</div>
                   <div className="text-[10px] tabular-nums text-muted-foreground tracking-wider">CANINE SPA &amp; BOUTIQUE STYLISTS</div>
                 </div>
-                <div className="space-y-1 text-xs tabular-nums">
+                <div className="space-y-1 text-[13px] tabular-nums">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">EXPORT DIMENSIONS:</span>
-                    <span className="font-bold text-[11px]">1200 x 300 PX (4:1 RATIO)</span>
+                    <span className="font-semibold text-[11px]">1200 x 300 PX (4:1 RATIO)</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">VARIANTS COMPILED:</span>
@@ -231,13 +231,13 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
                 <div className="flex gap-2 pt-2 border-t border-border">
                   <button
                     onClick={() => showToast('PREVIEWING LIGHT / DARK WORDMARK VARIANTS')}
-                    className="flex-1 border border-border bg-card py-1.5 text-xs tabular-nums font-bold uppercase hover:bg-muted cursor-pointer"
+                    className="flex-1 border border-border bg-card py-1.5 text-[13px] tabular-nums font-semibold uppercase hover:bg-muted cursor-pointer"
                   >
                     [PREVIEW LIGHT/DARK]
                   </button>
                   <button
                     onClick={() => showToast('REPLACE WORDMARK DIALOG OPEN')}
-                    className="border border-border px-3 py-1.5 text-xs tabular-nums font-bold uppercase hover:bg-black hover:text-white cursor-pointer"
+                    className="border border-border px-3 py-1.5 text-[13px] tabular-nums font-semibold uppercase hover:bg-black hover:text-white cursor-pointer"
                   >
                     REPLACE
                   </button>
@@ -247,25 +247,25 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
 
             {/* Favicon, App Icon & Print Stamp Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 border-t border-border">
-              <div className="border border-border p-3 bg-muted/30 flex items-center justify-between tabular-nums text-xs">
+              <div className="border border-border p-3 bg-muted/30 flex items-center justify-between tabular-nums text-[13px]">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 border border-border bg-card flex items-center justify-center font-bold text-xs shadow-none">32px</div>
+                  <div className="w-9 h-9 border border-border bg-card flex items-center justify-center font-semibold text-[13px] shadow-none">32px</div>
                   <div>
-                    <div className="font-bold text-xs">FAVICON &amp; APP TOUCH ICON</div>
+                    <div className="font-semibold text-[13px]">FAVICON &amp; APP TOUCH ICON</div>
                     <div className="text-[10px] text-muted-foreground">32x32 / 180x180 PWA ICON</div>
                   </div>
                 </div>
-                <span className="bg-primary text-primary-foreground text-[10px] px-2 py-0.5 font-bold uppercase">GENERATED &amp; SYNCED</span>
+                <span className="bg-primary text-primary-foreground text-[10px] px-2 py-0.5 font-semibold uppercase">GENERATED &amp; SYNCED</span>
               </div>
-              <div className="border border-border p-3 bg-muted/30 flex items-center justify-between tabular-nums text-xs">
+              <div className="border border-border p-3 bg-muted/30 flex items-center justify-between tabular-nums text-[13px]">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 border border-border bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs">STAMP</div>
+                  <div className="w-9 h-9 border border-border bg-primary text-primary-foreground flex items-center justify-center font-semibold text-[13px]">STAMP</div>
                   <div>
-                    <div className="font-bold text-xs">WATERMARK &amp; PRINT STAMP</div>
+                    <div className="font-semibold text-[13px]">WATERMARK &amp; PRINT STAMP</div>
                     <div className="text-[10px] text-muted-foreground">THERMAL RECEIPT &amp; PDF SEAL</div>
                   </div>
                 </div>
-                <span className="border border-border bg-card text-[10px] px-2 py-0.5 font-bold uppercase">ACTIVE ATTACHED</span>
+                <span className="border border-border bg-card text-[10px] px-2 py-0.5 font-semibold uppercase">ACTIVE ATTACHED</span>
               </div>
             </div>
           </div>
@@ -274,39 +274,39 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
           <div className="border-2-black p-5 bg-card space-y-4">
             <div className="flex items-center justify-between border-b border-border pb-3">
               <div className="flex items-center gap-2">
-                <span className="bg-primary text-primary-foreground px-2 py-0.5 tabular-nums text-xs font-bold uppercase">SECTION B</span>
-                <h3 className="font-bold text-base uppercase tabular-nums">DESIGN SYSTEM TOKENS &amp; MONOCHROME SPECIFICATION</h3>
+                <span className="bg-primary text-primary-foreground px-2 py-0.5 tabular-nums text-[13px] font-semibold uppercase">SECTION B</span>
+                <h3 className="font-semibold text-base uppercase tabular-nums">DESIGN SYSTEM TOKENS &amp; MONOCHROME SPECIFICATION</h3>
               </div>
-              <span className="text-xs tabular-nums text-muted-foreground">DAWG_CORE // REVISION 4</span>
+              <span className="text-[13px] tabular-nums text-muted-foreground">DAWG_CORE // REVISION 4</span>
             </div>
 
             {/* Color Tokens */}
             <div className="space-y-2">
-              <div className="text-xs tabular-nums font-bold uppercase tracking-wider text-muted-foreground">01 // SYSTEM PALETTE TOKENS</div>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-2 tabular-nums text-xs">
+              <div className="text-[13px] tabular-nums font-semibold uppercase tracking-wider text-muted-foreground">01 // SYSTEM PALETTE TOKENS</div>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-2 tabular-nums text-[13px]">
                 <div className="border border-border p-2 bg-primary text-primary-foreground">
                   <div className="text-[9px] text-muted-foreground/50 uppercase">PRIMARY</div>
-                  <div className="font-bold text-xs mt-1">#000000</div>
+                  <div className="font-semibold text-[13px] mt-1">#000000</div>
                   <div className="text-[9px] text-muted-foreground/70 mt-1">PITCH BLACK</div>
                 </div>
                 <div className="border border-border p-2 bg-card text-foreground">
                   <div className="text-[9px] text-muted-foreground uppercase">BG SURFACE</div>
-                  <div className="font-bold text-xs mt-1">#FFFFFF</div>
+                  <div className="font-semibold text-[13px] mt-1">#FFFFFF</div>
                   <div className="text-[9px] text-muted-foreground mt-1">STARK WHITE</div>
                 </div>
                 <div className="border border-border p-2 bg-muted/40 text-foreground">
                   <div className="text-[9px] text-muted-foreground uppercase">SURFACE DIM</div>
-                  <div className="font-bold text-xs mt-1">#F3F3F4</div>
+                  <div className="font-semibold text-[13px] mt-1">#F3F3F4</div>
                   <div className="text-[9px] text-muted-foreground mt-1">OFF-WHITE CONT</div>
                 </div>
                 <div className="border border-border p-2 bg-muted/30 text-foreground">
                   <div className="text-[9px] text-muted-foreground uppercase">BORDER RULE</div>
-                  <div className="font-bold text-xs mt-1">#E5E5E5 / 000</div>
+                  <div className="font-semibold text-[13px] mt-1">#E5E5E5 / 000</div>
                   <div className="text-[9px] text-muted-foreground mt-1">1PX SOLID</div>
                 </div>
                 <div className="border border-border p-2 bg-primary text-primary-foreground">
                   <div className="text-[9px] text-muted-foreground/50 uppercase">ACCENT / INVERSE</div>
-                  <div className="font-bold text-xs mt-1">INVERSE_FILL</div>
+                  <div className="font-semibold text-[13px] mt-1">INVERSE_FILL</div>
                   <div className="text-[9px] text-muted-foreground/70 mt-1">HIGH CONTRAST</div>
                 </div>
               </div>
@@ -315,45 +315,45 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
             {/* Typography & Geometry Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3 border-t border-border">
               <div className="border border-border p-3 bg-muted/30 space-y-2">
-                <div className="text-xs tabular-nums font-bold uppercase">TYPOGRAPHY SYSTEM RULES</div>
-                <div className="space-y-1 text-xs tabular-nums">
+                <div className="text-[13px] tabular-nums font-semibold uppercase">TYPOGRAPHY SYSTEM RULES</div>
+                <div className="space-y-1 text-[13px] tabular-nums">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">PRIMARY DISPLAY FONT:</span>
-                    <span className="font-bold text-[11px]">SPACE GROTESK</span>
+                    <span className="font-semibold text-[11px]">SPACE GROTESK</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">DATA &amp; TABLES CODE FONT:</span>
-                    <span className="font-bold text-[11px]">JETBRAINS MONO</span>
+                    <span className="font-semibold text-[11px]">JETBRAINS MONO</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">BODY COPY SYSTEM FONT:</span>
-                    <span className="font-bold text-[11px]">INTER / CLEAN SANS</span>
+                    <span className="font-semibold text-[11px]">INTER / CLEAN SANS</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">TABULAR FIGURES NUMBERS:</span>
-                    <span className="bg-primary text-primary-foreground text-[10px] px-1 font-bold">[ENFORCED]</span>
+                    <span className="bg-primary text-primary-foreground text-[10px] px-1 font-semibold">[ENFORCED]</span>
                   </div>
                 </div>
               </div>
 
               <div className="border border-border p-3 bg-muted/30 space-y-2">
-                <div className="text-xs tabular-nums font-bold uppercase">GEOMETRY &amp; BORDER RULES</div>
-                <div className="space-y-1 text-xs tabular-nums">
+                <div className="text-[13px] tabular-nums font-semibold uppercase">GEOMETRY &amp; BORDER RULES</div>
+                <div className="space-y-1 text-[13px] tabular-nums">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">CORNER RADIUS:</span>
-                    <span className="font-bold text-[11px]">0px [SHARP / SQUARE STRICT]</span>
+                    <span className="font-semibold text-[11px]">0px [SHARP / SQUARE STRICT]</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">DEFAULT BORDER WIDTH:</span>
-                    <span className="font-bold text-[11px]">1px UNIFORM BLACK RULE</span>
+                    <span className="font-semibold text-[11px]">1px UNIFORM BLACK RULE</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">CONTAINER ACCENT BORDER:</span>
-                    <span className="font-bold text-[11px]">2px SOLID BLACK (.border-2-black)</span>
+                    <span className="font-semibold text-[11px]">2px SOLID BLACK (.border-2-black)</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground text-[10px] uppercase">SHADOW TOKEN:</span>
-                    <span className="font-bold text-[11px]">NONE (FLAT ARCHITECTURE)</span>
+                    <span className="font-semibold text-[11px]">NONE (FLAT ARCHITECTURE)</span>
                   </div>
                 </div>
               </div>
@@ -366,49 +366,49 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
           <div className="border-2-black p-4 bg-card space-y-4">
             <div className="flex items-center justify-between border-b border-border pb-2">
               <div className="flex items-center gap-2">
-                <span className="bg-primary text-primary-foreground px-2 py-0.5 tabular-nums text-[10px] font-bold uppercase">SECTION C</span>
-                <h4 className="font-bold text-xs uppercase tabular-nums tracking-wider">TOUCHPOINTS BRANDING</h4>
+                <span className="bg-primary text-primary-foreground px-2 py-0.5 tabular-nums text-[10px] font-semibold uppercase">SECTION C</span>
+                <h4 className="font-semibold text-[13px] uppercase tabular-nums tracking-wider">TOUCHPOINTS BRANDING</h4>
               </div>
               <span className="text-[10px] tabular-nums text-muted-foreground">OMNICHANNEL</span>
             </div>
 
             {/* Client Portal Theme */}
-            <div className="space-y-2 tabular-nums text-xs">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-foreground">01 // CLIENT BOOKING PORTAL THEME</div>
+            <div className="space-y-2 tabular-nums text-[13px]">
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-foreground">01 // CLIENT BOOKING PORTAL THEME</div>
               <div>
                 <label className="text-muted-foreground uppercase text-[10px] block mb-1">HEADER BRAND TAGLINE</label>
                 <input
                   value={tagline}
                   onChange={(e) => setTagline(e.target.value)}
-                  className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                  className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                   type="text"
                 />
               </div>
               <div>
                 <label className="text-muted-foreground uppercase text-[10px] block mb-1">CUSTOMER PORTAL HERO BANNER</label>
                 <div className="border border-border p-2 bg-muted/30 flex items-center justify-between">
-                  <span className="text-xs">BANNER_PAWZ_MONO_DARK.PNG</span>
-                  <button onClick={() => showToast('BANNER CONFIGURED')} className="border border-border px-2 py-0.5 text-[10px] uppercase font-bold hover:bg-black hover:text-white cursor-pointer">CONFIGURE</button>
+                  <span className="text-[13px]">BANNER_PAWZ_MONO_DARK.PNG</span>
+                  <button onClick={() => showToast('BANNER CONFIGURED')} className="border border-border px-2 py-0.5 text-[10px] uppercase font-semibold hover:bg-black hover:text-white cursor-pointer">CONFIGURE</button>
                 </div>
               </div>
               <div>
                 <label className="text-muted-foreground uppercase text-[10px] block mb-1">ACCENT PILL STYLING</label>
                 <div className="flex items-center gap-2">
-                  <span className="bg-primary text-primary-foreground px-2 py-1 text-[10px] font-bold uppercase">SOLID BLACK PILL</span>
-                  <span className="border border-border px-2 py-1 text-[10px] font-bold uppercase">MONO OUTLINE</span>
+                  <span className="bg-primary text-primary-foreground px-2 py-1 text-[10px] font-semibold uppercase">SOLID BLACK PILL</span>
+                  <span className="border border-border px-2 py-1 text-[10px] font-semibold uppercase">MONO OUTLINE</span>
                 </div>
               </div>
             </div>
 
             {/* Automated Communications */}
-            <div className="space-y-2 tabular-nums text-xs pt-3 border-t border-border">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-foreground">02 // AUTOMATED COMMUNICATIONS HEADER</div>
+            <div className="space-y-2 tabular-nums text-[13px] pt-3 border-t border-border">
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-foreground">02 // AUTOMATED COMMUNICATIONS HEADER</div>
               <div>
                 <label className="text-muted-foreground uppercase text-[10px] block mb-1">SMS NOTIFICATION HEADER BADGE</label>
                 <input
                   value={smsHeader}
                   onChange={(e) => setSmsHeader(e.target.value)}
-                  className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                  className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                   type="text"
                 />
               </div>
@@ -416,10 +416,10 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
                 <label className="text-muted-foreground uppercase text-[10px] block mb-1">EMAIL HTML NOTIFICATION HEADER</label>
                 <div className="border border-border p-2.5 bg-muted/30 space-y-1.5">
                   <div className="flex justify-between items-center">
-                    <span className="font-bold text-[10px]">EMAIL HEADER TEMPLATE PREVIEW</span>
-                    <span className="bg-primary text-primary-foreground text-[9px] px-1 py-0.2 font-bold">PREVIEW</span>
+                    <span className="font-semibold text-[10px]">EMAIL HEADER TEMPLATE PREVIEW</span>
+                    <span className="bg-primary text-primary-foreground text-[9px] px-1 py-0.2 font-semibold">PREVIEW</span>
                   </div>
-                  <div className="border border-border bg-card p-2 text-center text-xs font-bold tracking-wider uppercase">
+                  <div className="border border-border bg-card p-2 text-center text-[13px] font-semibold tracking-wider uppercase">
                     🐾 ALL ABOUT PAWZ // CONFIRMATION NOTICE
                   </div>
                   <div className="text-[10px] text-muted-foreground">CUSTOM SENDER SIGNATURE: Concierge Team @ All About Pawz</div>
@@ -428,42 +428,42 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
             </div>
 
             {/* Physical In-Salon Merchandising & POS Collateral */}
-            <div className="space-y-2 tabular-nums text-xs pt-3 border-t border-border">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-foreground">03 // PHYSICAL POS &amp; IN-SALON COLLATERAL</div>
+            <div className="space-y-2 tabular-nums text-[13px] pt-3 border-t border-border">
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-foreground">03 // PHYSICAL POS &amp; IN-SALON COLLATERAL</div>
               <div>
                 <label className="text-muted-foreground uppercase text-[10px] block mb-1">THERMAL RECEIPT FOOTER TEXT</label>
                 <textarea
                   value={receiptFooter}
                   onChange={(e) => setReceiptFooter(e.target.value)}
-                  className="w-full border border-border p-2 bg-muted/30 focus:bg-card focus:outline-none text-xs tabular-nums"
+                  className="w-full border border-border p-2 bg-muted/30 focus:bg-card focus:outline-none text-[13px] tabular-nums"
                   rows={2}
                 />
               </div>
               <div className="border border-border p-2.5 bg-muted/30 flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <div className="font-bold text-xs uppercase">DOG COLLAR TAG BRANDING PRINT</div>
+                  <div className="font-semibold text-[13px] uppercase">DOG COLLAR TAG BRANDING PRINT</div>
                   <div className="text-[10px] text-muted-foreground">DIRECT THERMAL PRINT TEMPLATE</div>
                 </div>
-                <span className="bg-primary text-primary-foreground text-[10px] px-2 py-0.5 font-bold uppercase">ACTIVE</span>
+                <span className="bg-primary text-primary-foreground text-[10px] px-2 py-0.5 font-semibold uppercase">ACTIVE</span>
               </div>
             </div>
           </div>
 
           {/* SYNC & AUDIT TRAIL MINI-PANEL */}
-          <div className="border-2-black p-4 bg-muted/30 tabular-nums text-xs space-y-2">
+          <div className="border-2-black p-4 bg-muted/30 tabular-nums text-[13px] space-y-2">
             <div className="flex items-center justify-between border-b border-border pb-1.5">
-              <span className="font-bold text-[11px] uppercase">BRAND REPLICATION STATUS</span>
-              <span className="bg-primary text-primary-foreground text-[9px] px-1 py-0.2 font-bold">3/3 NODES</span>
+              <span className="font-semibold text-[11px] uppercase">BRAND REPLICATION STATUS</span>
+              <span className="bg-primary text-primary-foreground text-[9px] px-1 py-0.2 font-semibold">3/3 NODES</span>
             </div>
             <div className="text-[10px] text-muted-foreground space-y-1">
-              <div className="flex justify-between"><span>FRISCO HQ:</span><span className="font-bold text-foreground">CURRENT (V2.4)</span></div>
-              <div className="flex justify-between"><span>PLANO WEST:</span><span className="font-bold text-foreground">SYNCED</span></div>
-              <div className="flex justify-between"><span>VAN FLEET POD:</span><span className="font-bold text-foreground">SYNCED</span></div>
+              <div className="flex justify-between"><span>FRISCO HQ:</span><span className="font-semibold text-foreground">CURRENT (V2.4)</span></div>
+              <div className="flex justify-between"><span>PLANO WEST:</span><span className="font-semibold text-foreground">SYNCED</span></div>
+              <div className="flex justify-between"><span>VAN FLEET POD:</span><span className="font-semibold text-foreground">SYNCED</span></div>
             </div>
             <div className="pt-2 border-t border-border flex gap-2">
               <button
                 onClick={() => showToast('ALL NODES SYNCHRONIZED WITH BRAND ASSETS')}
-                className="flex-1 bg-primary text-primary-foreground py-1 text-xs font-bold uppercase hover:bg-muted cursor-pointer"
+                className="flex-1 bg-primary text-primary-foreground py-1 text-[13px] font-semibold uppercase hover:bg-muted cursor-pointer"
               >
                 [FORCE SYNC ALL]
               </button>
@@ -473,7 +473,7 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* BOTTOM TELEMETRY FOOTER BAR */}
-      <div className="mt-auto -black bg-muted/30 px-6 py-2.5 flex flex-wrap items-center justify-between text-xs tabular-nums gap-2">
+      <div className="mt-auto -black bg-muted/30 px-6 py-2.5 flex flex-wrap items-center justify-between text-[13px] tabular-nums gap-2">
         <div className="flex items-center gap-4 text-muted-foreground">
           <span>HOST: US-CENTRAL-NODE-01</span>
           <span>{'//'}</span>
@@ -483,7 +483,7 @@ export const OrgBrandIdentityScreen: React.FC<ScreenProps> = ({
         </div>
         <div className="flex items-center gap-3">
           <span className="text-muted-foreground">DB: SUPABASE_POSTGRES_CORE</span>
-          <span className="bg-primary text-primary-foreground px-2 py-0.5 font-bold">[V2.4 COMMIT]</span>
+          <span className="bg-primary text-primary-foreground px-2 py-0.5 font-semibold">[V2.4 COMMIT]</span>
         </div>
       </div>
     </div>

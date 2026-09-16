@@ -78,21 +78,21 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
   };
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
 
       {/* SECURITY CLEARANCE BAR */}
-      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
+      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-wider uppercase">
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 bg-destructive"></span>
-          <span className="text-destructive font-bold tracking-tight">RESTRICTED CMS DESIGNER</span>
+          <span className="text-destructive font-semibold tracking-tight">RESTRICTED CMS DESIGNER</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
           <span className="text-muted-foreground">{"//"}</span>
@@ -109,13 +109,13 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2 tabular-nums text-[10px] text-muted-foreground">
             <span>ADMIN SETTINGS</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="text-foreground font-bold">CMS &amp; BOOKING WIZARD</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">WIZARD DESIGNER</span>
+            <span className="text-foreground font-semibold">&gt;&gt;</span>
+            <span className="text-foreground font-semibold">CMS &amp; BOOKING WIZARD</span>
+            <span className="text-foreground font-semibold">&gt;&gt;</span>
+            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-semibold">WIZARD DESIGNER</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <h1 className="font-bold text-lg md:text-xl tracking-tight uppercase text-foreground">CMS &amp; CUSTOM BOOKING WIZARD</h1>
+            <h1 className="font-semibold text-lg md:text-xl tracking-tight uppercase text-foreground">CMS &amp; CUSTOM BOOKING WIZARD</h1>
             <span className="tabular-nums text-[11px] text-muted-foreground">{"// FLOW DESIGNER"}</span>
           </div>
         </div>
@@ -174,7 +174,7 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
           <div className="px-4 py-2 bg-primary text-primary-foreground border-r border-border flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-card inline-block"></span>
             <span>08 CMS &amp; BOOKING WIZARD</span>
-            <span className="text-[9px] px-1 bg-card text-foreground uppercase font-bold ml-1">[ACTIVE]</span>
+            <span className="text-[9px] px-1 bg-card text-foreground uppercase font-semibold ml-1">[ACTIVE]</span>
           </div>
         </div>
       </div>
@@ -187,24 +187,24 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
           <div className="px-4 py-2.5 border-b border-border bg-muted/40 flex items-center justify-between tabular-nums">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-foreground" />
-              <span className="font-bold text-xs uppercase text-foreground">Booking Wizard Flow Stages</span>
+              <span className="font-semibold text-[13px] uppercase text-foreground">Booking Wizard Flow Stages</span>
             </div>
-            <span className="text-[10px] text-muted-foreground font-bold">5 Steps</span>
+            <span className="text-[10px] text-muted-foreground font-semibold">5 Steps</span>
           </div>
 
-          <div className="p-4 bg-muted/30 border-b border-border tabular-nums text-xs leading-relaxed text-muted-foreground">
-            Control the sequence and availability of active stages inside the booking workflow. Mandatory stages are marked with <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">REQUIRED</span> and cannot be skipped by pet owners.
+          <div className="p-4 bg-muted/30 border-b border-border tabular-nums text-[13px] leading-relaxed text-muted-foreground">
+            Control the sequence and availability of active stages inside the booking workflow. Mandatory stages are marked with <span className="bg-primary text-primary-foreground px-1 text-[9px] font-semibold">REQUIRED</span> and cannot be skipped by pet owners.
           </div>
 
-          <div className="divide-y divide-border tabular-nums text-xs">
+          <div className="divide-y divide-border tabular-nums text-[13px]">
             {wizardStages.map((stage) => (
               <div key={stage.id} className="p-3.5 bg-card hover:bg-muted/30 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="bg-muted/40 border border-border/20 px-1 py-0.5 text-[9px] font-bold text-foreground">{stage.code}</span>
-                    <span className="font-bold text-foreground text-xs uppercase">{stage.title}</span>
+                    <span className="bg-muted/40 border border-border/20 px-1 py-0.5 text-[9px] font-semibold text-foreground">{stage.code}</span>
+                    <span className="font-semibold text-foreground text-[13px] uppercase">{stage.title}</span>
                     {stage.required && (
-                      <span className="bg-primary text-primary-foreground px-1.5 py-0.2 text-[9px] font-bold uppercase">REQUIRED</span>
+                      <span className="bg-primary text-primary-foreground px-1.5 py-0.2 text-[9px] font-semibold uppercase">REQUIRED</span>
                     )}
                   </div>
                   <p className="text-muted-foreground font-sans leading-tight">{stage.desc}</p>
@@ -213,7 +213,7 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
                 <div className="flex items-center gap-3 tabular-nums">
                   <button 
                     onClick={() => toggleStageActive(stage.id)}
-                    className={`px-3 py-1 text-xs font-bold border transition-colors cursor-pointer ${
+                    className={`px-3 py-1 text-[13px] font-semibold border transition-colors cursor-pointer ${
                       stage.active 
                         ? 'bg-primary text-primary-foreground border-border hover:bg-muted' 
                         : 'bg-card text-muted-foreground/70 border-border hover:bg-muted/30'
@@ -221,7 +221,7 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
                   >
                     {stage.active ? 'ACTIVE [SHOW]' : 'DISABLED [HIDE]'}
                   </button>
-                  <button onClick={() => showToast('STAGE METADATA EDIT ACTIVE')} className="border border-border px-2.5 py-1 text-xs hover:bg-muted/40 font-bold uppercase cursor-pointer">
+                  <button onClick={() => showToast('STAGE METADATA EDIT ACTIVE')} className="border border-border px-2.5 py-1 text-[13px] hover:bg-muted/40 font-semibold uppercase cursor-pointer">
                     [CONFIG]
                   </button>
                 </div>
@@ -235,29 +235,29 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
           <div className="px-4 py-2.5 border-b border-border bg-muted/40 flex items-center justify-between tabular-nums">
             <div className="flex items-center gap-2">
               <Palette className="w-4 h-4 text-foreground" />
-              <span className="font-bold text-xs uppercase text-foreground">Branding &amp; Domain Settings</span>
+              <span className="font-semibold text-[13px] uppercase text-foreground">Branding &amp; Domain Settings</span>
             </div>
           </div>
 
           <div className="p-4 space-y-5">
             {/* Subdomain Router Mapping */}
-            <div className="space-y-1.5 tabular-nums text-xs">
-              <label className="block text-[10px] text-muted-foreground uppercase font-bold">WIZARD SUBDOMAIN HOSTING ROUTER</label>
+            <div className="space-y-1.5 tabular-nums text-[13px]">
+              <label className="block text-[10px] text-muted-foreground uppercase font-semibold">WIZARD SUBDOMAIN HOSTING ROUTER</label>
               <div className="flex items-center">
                 <input 
                   type="text" 
                   value={subdomain} 
                   onChange={(e) => { setSubdomain(e.target.value); showToast('SUBDOMAIN PREVIEW MOUNTED'); }}
-                  className="flex-1 border-2  border-border p-2 bg-muted/30 focus:outline-none focus:bg-card font-bold" 
+                  className="flex-1 border-2  border-border p-2 bg-muted/30 focus:outline-none focus:bg-card font-semibold" 
                 />
-                <span className="border-2 border-border p-2 bg-muted/40 font-bold tabular-nums text-foreground">.pawzbookings.com</span>
+                <span className="border-2 border-border p-2 bg-muted/40 font-semibold tabular-nums text-foreground">.pawzbookings.com</span>
               </div>
-              <p className="text-muted-foreground font-sans leading-tight mt-1 text-[11px]">Maps physical location settings to specific booking tunnels. e.g. <code className="bg-muted/40 px-1 font-bold text-foreground">https://frisco.pawzbookings.com</code></p>
+              <p className="text-muted-foreground font-sans leading-tight mt-1 text-[11px]">Maps physical location settings to specific booking tunnels. e.g. <code className="bg-muted/40 px-1 font-semibold text-foreground">https://frisco.pawzbookings.com</code></p>
             </div>
 
             {/* Custom Logo Upload Preview */}
-            <div className="space-y-1.5 tabular-nums text-xs">
-              <label className="block text-[10px] text-muted-foreground uppercase font-bold">BRAND IDENTITY LOGO MARK</label>
+            <div className="space-y-1.5 tabular-nums text-[13px]">
+              <label className="block text-[10px] text-muted-foreground uppercase font-semibold">BRAND IDENTITY LOGO MARK</label>
               <div className="border border-border p-3 bg-muted/30 flex items-center gap-4">
                 <div className="relative w-14 h-14 bg-card border border-border shrink-0 overflow-hidden flex items-center justify-center">
                   <img src={logoUrl} alt="Logo" className="w-full h-full object-cover" />
@@ -267,27 +267,27 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
                     type="text" 
                     value={logoUrl} 
                     onChange={(e) => setLogoUrl(e.target.value)}
-                    className="w-full border border-border p-1 text-xs focus:outline-none tabular-nums text-muted-foreground bg-card" 
+                    className="w-full border border-border p-1 text-[13px] focus:outline-none tabular-nums text-muted-foreground bg-card" 
                     placeholder="Logo URL"
                   />
                   <div className="flex items-center gap-2">
-                    <button onClick={() => showToast('UPLOADING AVATAR TO SUPABASE CDN')} className="bg-primary text-primary-foreground px-2.5 py-1 text-[10px] hover:bg-muted font-bold uppercase cursor-pointer flex items-center gap-1">
+                    <button onClick={() => showToast('UPLOADING AVATAR TO SUPABASE CDN')} className="bg-primary text-primary-foreground px-2.5 py-1 text-[10px] hover:bg-muted font-semibold uppercase cursor-pointer flex items-center gap-1">
                       <ImageIcon className="w-3 h-3" />
                       REPLACE LOGO
                     </button>
-                    <button onClick={() => { setLogoUrl(''); showToast('LOGO DELETED'); }} className="border border-border bg-card text-foreground px-2.5 py-1 text-[10px] hover:bg-muted/40 font-bold uppercase cursor-pointer">REMOVE</button>
+                    <button onClick={() => { setLogoUrl(''); showToast('LOGO DELETED'); }} className="border border-border bg-card text-foreground px-2.5 py-1 text-[10px] hover:bg-muted/40 font-semibold uppercase cursor-pointer">REMOVE</button>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Typography Pairing */}
-            <div className="space-y-1.5 tabular-nums text-xs">
-              <label className="block text-[10px] text-muted-foreground uppercase font-bold">TYPOGRAPHY PAIRING MODEL</label>
+            <div className="space-y-1.5 tabular-nums text-[13px]">
+              <label className="block text-[10px] text-muted-foreground uppercase font-semibold">TYPOGRAPHY PAIRING MODEL</label>
               <select 
                 value={fontFamily}
                 onChange={(e) => { setFontFamily(e.target.value); showToast(`FONT FAMILY SWITCHED TO ${e.target.value}`); }}
-                className="w-full border-2 border-border p-2 bg-card font-bold focus:outline-none cursor-pointer"
+                className="w-full border-2 border-border p-2 bg-card font-semibold focus:outline-none cursor-pointer"
               >
                 <option value="Plus Jakarta Sans">Plus Jakarta Sans (SaaS &amp; Product Density)</option>
                 <option value="Playfair Display">Playfair Display (Premium Luxury Editorial)</option>
@@ -297,13 +297,13 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
             </div>
 
             {/* Custom Color Palette */}
-            <div className="space-y-1.5 tabular-nums text-xs">
-              <label className="block text-[10px] text-muted-foreground uppercase font-bold">BRAND COLOR MATRIX</label>
+            <div className="space-y-1.5 tabular-nums text-[13px]">
+              <label className="block text-[10px] text-muted-foreground uppercase font-semibold">BRAND COLOR MATRIX</label>
               <div className="grid grid-cols-2 gap-3">
                 <div className="border border-border p-2.5 bg-muted/30 flex items-center justify-between">
                   <div>
                     <span className="text-[9px] text-muted-foreground block uppercase">PRIMARY ACCENT</span>
-                    <span className="font-bold">{primaryColor}</span>
+                    <span className="font-semibold">{primaryColor}</span>
                   </div>
                   <input 
                     type="color" 
@@ -315,7 +315,7 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
                 <div className="border border-border p-2.5 bg-muted/30 flex items-center justify-between">
                   <div>
                     <span className="text-[9px] text-muted-foreground block uppercase">SECONDARY TEXT</span>
-                    <span className="font-bold">#404040</span>
+                    <span className="font-semibold">#404040</span>
                   </div>
                   <div className="w-8 h-8 bg-muted border border-border shrink-0"></div>
                 </div>
@@ -323,11 +323,11 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
             </div>
 
             {/* Footer Custom Disclaimer */}
-            <div className="space-y-1.5 tabular-nums text-xs pt-2 border-t border-border/20">
-              <label className="block text-[10px] text-muted-foreground uppercase font-bold">FOOTER CUSTOM COMPLIANCE DISCLAIMER</label>
+            <div className="space-y-1.5 tabular-nums text-[13px] pt-2 border-t border-border/20">
+              <label className="block text-[10px] text-muted-foreground uppercase font-semibold">FOOTER CUSTOM COMPLIANCE DISCLAIMER</label>
               <textarea 
                 defaultValue="By submitting this booking, you explicitly consent to our Senior Pet Stress Protocol, authorize emergency veterinary care up to $1,500.00, and certify your pet has a valid Rabies vaccine on record."
-                className="w-full h-20 border border-border p-2 text-xs bg-muted/30 focus:outline-none focus:bg-card text-muted-foreground tabular-nums resize-none leading-relaxed"
+                className="w-full h-20 border border-border p-2 text-[13px] bg-muted/30 focus:outline-none focus:bg-card text-muted-foreground tabular-nums resize-none leading-relaxed"
               />
               <span className="text-[9px] text-muted-foreground block">Maximum 250 characters. Dynamically rendered on Stage 8 of checkout.</span>
             </div>
@@ -338,15 +338,15 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* SUPER ADMIN SECURITY LOCK FOOTER / HARDWARE ATTESTATION */}
-      <div className="w-full bg-muted/30 border-t border-border border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-xs">
+      <div className="w-full bg-muted/30 border-t border-border border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-[13px]">
         <div className="flex items-center gap-3">
-          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-bold">
+          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-semibold">
             <Lock className="w-3.5 h-3.5" />
           </div>
           <div className="flex flex-col">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-foreground uppercase">
+            <div className="flex items-center gap-2 text-[10px] font-semibold text-foreground uppercase">
               <span>SUPER_ADMIN LEVEL 0 // WIZARD SCHEMA ACCESS</span>
-              <span className="border border-border px-1.5 bg-card text-[9px] font-bold">[YUBIKEY_FIDO2_ACTIVE]</span>
+              <span className="border border-border px-1.5 bg-card text-[9px] font-semibold">[YUBIKEY_FIDO2_ACTIVE]</span>
             </div>
             <span className="text-[11px] text-muted-foreground">
               Changes to booking subdomains, DNS CNAME records, or Stripe deposit webhooks require dual-signature multi-factor ratification.
@@ -355,10 +355,10 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
         </div>
         <div className="flex items-center gap-3">
           <span className="text-muted-foreground text-[10px] uppercase">AUDIT TRAIL:</span>
-          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-bold tabular-nums">CMS_REF #TX-91029-2025</span>
+          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-semibold tabular-nums">CMS_REF #TX-91029-2025</span>
           <button 
             onClick={() => showToast('SUPER_ADMIN ENCLAVE SESSION TERMINATED')}
-            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-bold hover:bg-muted transition-none cursor-pointer"
+            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-semibold hover:bg-muted transition-none cursor-pointer"
           >
             TERMINATE SESSION
           </button>

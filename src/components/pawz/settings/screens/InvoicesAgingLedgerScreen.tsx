@@ -66,21 +66,21 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
   });
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
 
       {/* SECURITY CLEARANCE BAR */}
-      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
+      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-wider uppercase">
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 bg-destructive"></span>
-          <span className="text-destructive font-bold tracking-tight">RESTRICTED FINANCIAL ACCESS</span>
+          <span className="text-destructive font-semibold tracking-tight">RESTRICTED FINANCIAL ACCESS</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
           <span className="text-muted-foreground">{"//"}</span>
@@ -97,13 +97,13 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2 tabular-nums text-[10px] text-muted-foreground">
             <span>ADMIN SETTINGS</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="text-foreground font-bold">SALON INVOICES &amp; AGING LEDGER</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">AGING BUCKETS</span>
+            <span className="text-foreground font-semibold">&gt;&gt;</span>
+            <span className="text-foreground font-semibold">SALON INVOICES &amp; AGING LEDGER</span>
+            <span className="text-foreground font-semibold">&gt;&gt;</span>
+            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-semibold">AGING BUCKETS</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <h1 className="font-bold text-lg md:text-xl tracking-tight uppercase text-foreground">SALON INVOICES &amp; AGING LEDGER</h1>
+            <h1 className="font-semibold text-lg md:text-xl tracking-tight uppercase text-foreground">SALON INVOICES &amp; AGING LEDGER</h1>
             <span className="tabular-nums text-[11px] text-muted-foreground">{"// DEBTOR AGING STATUS MATRIX"}</span>
           </div>
         </div>
@@ -158,17 +158,17 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* QUICK KPI BUCKET CARDS */}
-      <div className="w-full grid grid-cols-2 lg:grid-cols-5 border-b border-border bg-card tabular-nums text-xs">
+      <div className="w-full grid grid-cols-2 lg:grid-cols-5 border-b border-border bg-card tabular-nums text-[13px]">
         {/* CURRENT BUCKET */}
         <button 
           onClick={() => { setActiveSegment('current'); showToast('FILTER: CURRENT'); }}
           className={`p-3 border-r border-b lg: border-border text-left flex flex-col justify-between transition-colors ${
-            activeSegment === 'current' ? 'bg-muted/40 font-bold' : 'hover:bg-muted/30'
+            activeSegment === 'current' ? 'bg-muted/40 font-semibold' : 'hover:bg-muted/30'
           }`}
         >
-          <span className="text-[10px] text-muted-foreground uppercase font-bold">01 CURRENT [0-30 DAYS]</span>
+          <span className="text-[10px] text-muted-foreground uppercase font-semibold">01 CURRENT [0-30 DAYS]</span>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">{agingBuckets.current}</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">{agingBuckets.current}</div>
           </div>
           <span className="text-[9px] text-muted-foreground">ACTIVE CLIENT CHECKOUTS</span>
         </button>
@@ -177,56 +177,56 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
         <button 
           onClick={() => { setActiveSegment('31-60'); showToast('FILTER: 31-60 DAYS'); }}
           className={`p-3 border-r border-b lg: border-border text-left flex flex-col justify-between transition-colors ${
-            activeSegment === '31-60' ? 'bg-muted/40 font-bold' : 'hover:bg-muted/30'
+            activeSegment === '31-60' ? 'bg-muted/40 font-semibold' : 'hover:bg-muted/30'
           }`}
         >
-          <span className="text-[10px] text-muted-foreground uppercase font-bold">02 AR_AGING [31-60 DAYS]</span>
+          <span className="text-[10px] text-muted-foreground uppercase font-semibold">02 AR_AGING [31-60 DAYS]</span>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">{agingBuckets.thirtyToSixty}</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">{agingBuckets.thirtyToSixty}</div>
           </div>
-          <span className="text-[9px] text-destructive font-bold">14 INVOICES UNPAID</span>
+          <span className="text-[9px] text-destructive font-semibold">14 INVOICES UNPAID</span>
         </button>
 
         {/* 61-90 DAYS */}
         <button 
           onClick={() => { setActiveSegment('61-90'); showToast('FILTER: 61-90 DAYS'); }}
           className={`p-3 border-r border-border text-left flex flex-col justify-between transition-colors ${
-            activeSegment === '61-90' ? 'bg-muted/40 font-bold' : 'hover:bg-muted/30'
+            activeSegment === '61-90' ? 'bg-muted/40 font-semibold' : 'hover:bg-muted/30'
           }`}
         >
-          <span className="text-[10px] text-muted-foreground uppercase font-bold">03 AR_AGING [61-90 DAYS]</span>
+          <span className="text-[10px] text-muted-foreground uppercase font-semibold">03 AR_AGING [61-90 DAYS]</span>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">{agingBuckets.sixtyToNinety}</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">{agingBuckets.sixtyToNinety}</div>
           </div>
-          <span className="text-[9px] text-destructive font-bold">4 DELINQUENT</span>
+          <span className="text-[9px] text-destructive font-semibold">4 DELINQUENT</span>
         </button>
 
         {/* OVER 90 DAYS */}
         <button 
           onClick={() => { setActiveSegment('over90'); showToast('FILTER: OVER 90 DAYS'); }}
           className={`p-3 border-r border-border text-left flex flex-col justify-between transition-colors ${
-            activeSegment === 'over90' ? 'bg-muted/40 font-bold' : 'hover:bg-muted/30'
+            activeSegment === 'over90' ? 'bg-muted/40 font-semibold' : 'hover:bg-muted/30'
           }`}
         >
-          <span className="text-[10px] text-muted-foreground uppercase font-bold">04 CRITICAL [90+ DAYS]</span>
+          <span className="text-[10px] text-muted-foreground uppercase font-semibold">04 CRITICAL [90+ DAYS]</span>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">{agingBuckets.overNinety}</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">{agingBuckets.overNinety}</div>
           </div>
-          <span className="text-[9px] bg-destructive/10 border border-destructive text-destructive px-1 py-0.2 font-bold w-max uppercase">COLLECTIONS</span>
+          <span className="text-[9px] bg-destructive/10 border border-destructive text-destructive px-1 py-0.2 font-semibold w-max uppercase">COLLECTIONS</span>
         </button>
 
         {/* TOTAL REVENUE DELINQUENT */}
         <div className="p-3 bg-muted/30 flex flex-col justify-between text-left">
-          <span className="text-[10px] text-muted-foreground uppercase font-bold">05 TOTAL AR DEBT ROLLUP</span>
+          <span className="text-[10px] text-muted-foreground uppercase font-semibold">05 TOTAL AR DEBT ROLLUP</span>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-destructive">{agingBuckets.totalOutstanding}</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-destructive">{agingBuckets.totalOutstanding}</div>
           </div>
           <span className="text-[9px] text-muted-foreground tabular-nums">NET RECOVERY: 88.4%</span>
         </div>
       </div>
 
       {/* FILTER & INVOICES MATRIX LIST */}
-      <div className="w-full flex flex-col tabular-nums text-xs">
+      <div className="w-full flex flex-col tabular-nums text-[13px]">
         {/* Search Toolbar */}
         <div className="px-4 py-2 border-b border-border bg-muted/40 flex flex-col md:flex-row items-center justify-between gap-2.5">
           <div className="flex items-center gap-1 w-full md:w-1/3">
@@ -236,26 +236,26 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search Alexander Dupont, Inv # or pet name..."
-              className="w-full border-b border-border focus:outline-none bg-transparent py-0.5 text-xs text-foreground" 
+              className="w-full border-b border-border focus:outline-none bg-transparent py-0.5 text-[13px] text-foreground" 
             />
           </div>
           <div className="flex items-center gap-2 tabular-nums text-[11px]">
             <button 
               onClick={() => { setActiveSegment('all'); showToast('SHOWING ALL'); }} 
-              className={`px-3 py-1 border border-border ${activeSegment === 'all' ? 'bg-primary text-primary-foreground font-bold' : 'bg-card text-foreground hover:bg-muted/40'}`}
+              className={`px-3 py-1 border border-border ${activeSegment === 'all' ? 'bg-primary text-primary-foreground font-semibold' : 'bg-card text-foreground hover:bg-muted/40'}`}
             >
               ALL ACCOUNTS
             </button>
             <span className="text-muted-foreground/50">|</span>
-            <span className="text-muted-foreground font-bold uppercase">SEGMENTED MATCHES: {filteredInvoices.length} INVOICES</span>
+            <span className="text-muted-foreground font-semibold uppercase">SEGMENTED MATCHES: {filteredInvoices.length} INVOICES</span>
           </div>
         </div>
 
         {/* Table Structure */}
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-left text-xs tabular-nums">
+          <table className="w-full border-collapse text-left text-[13px] tabular-nums">
             <thead>
-              <tr className="border-b border-border bg-muted/30 text-foreground text-[10px] uppercase font-bold">
+              <tr className="border-b border-border bg-muted/30 text-foreground text-[10px] uppercase font-semibold">
                 <th className="p-3 border-r border-border">INVOICE FILE ID</th>
                 <th className="p-3 border-r border-border">ISSUED DATE</th>
                 <th className="p-3 border-r border-border">CLIENT NAME / BREED</th>
@@ -269,33 +269,33 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
             <tbody className="divide-y divide-neutral-200">
               {filteredInvoices.map((inv) => (
                 <tr key={inv.id} className="hover:bg-muted/30 transition-none">
-                  <td className="p-3 border-r border-border font-bold text-foreground">{inv.id}</td>
+                  <td className="p-3 border-r border-border font-semibold text-foreground">{inv.id}</td>
                   <td className="p-3 border-r border-border">{inv.date}</td>
-                  <td className="p-3 border-r border-border font-bold">
+                  <td className="p-3 border-r border-border font-semibold">
                     <div className="flex flex-col">
                       <span className="uppercase text-foreground">{inv.client}</span>
                       <span className="text-[10px] text-muted-foreground font-normal">{inv.pet}</span>
                     </div>
                   </td>
-                  <td className="p-3 border-r border-border text-right font-bold text-foreground">{inv.amount}</td>
-                  <td className="p-3 border-r border-border text-right font-bold">
+                  <td className="p-3 border-r border-border text-right font-semibold text-foreground">{inv.amount}</td>
+                  <td className="p-3 border-r border-border text-right font-semibold">
                     <span className={inv.days > 60 ? 'text-destructive' : 'text-foreground'}>
                       {inv.days} DAYS LATE
                     </span>
                   </td>
                   <td className="p-3 border-r border-border uppercase">{inv.groomer}</td>
-                  <td className="p-3 border-r border-border font-bold uppercase">{inv.loc}</td>
+                  <td className="p-3 border-r border-border font-semibold uppercase">{inv.loc}</td>
                   <td className="p-3 text-center">
                     <div className="flex items-center justify-center gap-1.5">
                       <button 
                         onClick={() => showToast(`DUNNING INVOICE REMINDER DEMAND SENT TO ${inv.client}`)}
-                        className="bg-primary text-primary-foreground px-2 py-1 text-[10px] uppercase font-bold hover:bg-muted cursor-pointer"
+                        className="bg-primary text-primary-foreground px-2 py-1 text-[10px] uppercase font-semibold hover:bg-muted cursor-pointer"
                       >
                         DUN DEMAND
                       </button>
                       <button 
                         onClick={() => showToast(`SETTLED INVOICE CASH MANUAL OVERRIDE`)}
-                        className="border border-border bg-card text-foreground px-2 py-1 text-[10px] uppercase font-bold hover:bg-muted/40 cursor-pointer"
+                        className="border border-border bg-card text-foreground px-2 py-1 text-[10px] uppercase font-semibold hover:bg-muted/40 cursor-pointer"
                       >
                         SETTLE
                       </button>
@@ -309,15 +309,15 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* SUPER ADMIN SECURITY LOCK FOOTER / HARDWARE ATTESTATION */}
-      <div className="w-full bg-muted/30 border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-xs">
+      <div className="w-full bg-muted/30 border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-[13px]">
         <div className="flex items-center gap-3">
-          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-bold">
+          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-semibold">
             <Lock className="w-3.5 h-3.5" />
           </div>
           <div className="flex flex-col">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-foreground uppercase">
+            <div className="flex items-center gap-2 text-[10px] font-semibold text-foreground uppercase">
               <span>SUPER_ADMIN LEVEL 0 // ACCOUNTS RECEIVABLE LEDGER MODULE</span>
-              <span className="border border-border px-1.5 bg-card text-[9px] font-bold">[FIDO2_LEDGER_LOCKED]</span>
+              <span className="border border-border px-1.5 bg-card text-[9px] font-semibold">[FIDO2_LEDGER_LOCKED]</span>
             </div>
             <span className="text-[11px] text-muted-foreground">
               Changes to debt-aging collection tiers, automatic dunning SMS configurations, or write-off ledger transactions require hardware-key dual verification.
@@ -326,10 +326,10 @@ export const InvoicesAgingLedgerScreen: React.FC<ScreenProps> = ({
         </div>
         <div className="flex items-center gap-3">
           <span className="text-muted-foreground text-[10px] uppercase">AUDIT TRAIL:</span>
-          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-bold tabular-nums">FIN_REF #TX-8041-2025</span>
+          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-semibold tabular-nums">FIN_REF #TX-8041-2025</span>
           <button 
             onClick={() => showToast('FINANCIAL SESSION SIGNED OUT')}
-            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-bold hover:bg-muted transition-none cursor-pointer"
+            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-semibold hover:bg-muted transition-none cursor-pointer"
           >
             SIGN OUT SECURE
           </button>

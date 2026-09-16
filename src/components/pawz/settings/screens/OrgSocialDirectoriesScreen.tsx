@@ -37,12 +37,12 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
   };
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
@@ -51,18 +51,18 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
       <div className="p-6 border-b border-border">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-xl font-bold uppercase tracking-tight text-foreground">
+            <h1 className="text-xl font-semibold uppercase tracking-tight text-foreground">
               Social Links &amp; Directory Listings
             </h1>
-            <p className="text-xs text-muted-foreground mt-0.5">
+            <p className="text-[13px] text-muted-foreground mt-0.5">
               Manage social media profiles and local review destinations included in client confirmations, receipts, and portal footers.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs">
+          <div className="flex items-center gap-2 text-[13px]">
             <button
               onClick={() => showToast('Syncing Google Business Profile reviews...')}
-              className="h-8 px-3 border border-border bg-card font-bold hover:bg-muted/40 cursor-pointer"
+              className="h-8 px-3 border border-border bg-card font-semibold hover:bg-muted/40 cursor-pointer"
             >
               Refresh Reviews
             </button>
@@ -76,7 +76,7 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
                 }
                 showToast('Social profiles and directory links saved successfully');
               }}
-              className="h-8 px-4 bg-primary text-primary-foreground border border-border font-bold hover:bg-muted cursor-pointer"
+              className="h-8 px-4 bg-primary text-primary-foreground border border-border font-semibold hover:bg-muted cursor-pointer"
             >
               Save Changes
             </button>
@@ -85,10 +85,10 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* FORM FIELDS */}
-      <div className="p-5 max-w-4xl space-y-5 tabular-nums text-xs">
+      <div className="p-5 max-w-4xl space-y-5 tabular-nums text-[13px]">
         <div className="border-2-black bg-card p-4 space-y-4">
           <div className="flex items-center justify-between border-b border-border pb-2">
-            <span className="font-bold uppercase text-foreground">PRIMARY SOCIAL NETWORKS</span>
+            <span className="font-semibold uppercase text-foreground">PRIMARY SOCIAL NETWORKS</span>
             <span className="text-[10px] text-muted-foreground">PUBLIC PROFILE EMBEDS</span>
           </div>
 
@@ -98,7 +98,7 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
               <input
                 value={instagram}
                 onChange={(e) => setInstagram(e.target.value)}
-                className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 type="text"
               />
             </div>
@@ -108,7 +108,7 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
               <input
                 value={facebook}
                 onChange={(e) => setFacebook(e.target.value)}
-                className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 type="text"
               />
             </div>
@@ -118,7 +118,7 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
               <input
                 value={tiktok}
                 onChange={(e) => setTiktok(e.target.value)}
-                className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 type="text"
               />
             </div>
@@ -127,8 +127,8 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
 
         <div className="border-2-black bg-card p-4 space-y-4">
           <div className="flex items-center justify-between border-b border-border pb-2">
-            <span className="font-bold uppercase text-foreground">LOCAL DIRECTORIES &amp; REVIEW DESTINATIONS</span>
-            <span className="text-[9px] bg-primary text-primary-foreground px-1.5 py-0.2 font-bold">AUTOMATED REVIEW INVITES</span>
+            <span className="font-semibold uppercase text-foreground">LOCAL DIRECTORIES &amp; REVIEW DESTINATIONS</span>
+            <span className="text-[9px] bg-primary text-primary-foreground px-1.5 py-0.2 font-semibold">AUTOMATED REVIEW INVITES</span>
           </div>
 
           <div className="space-y-3">
@@ -137,7 +137,7 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
               <input
                 value={googlePlaceId}
                 onChange={(e) => setGooglePlaceId(e.target.value)}
-                className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 type="text"
               />
               <span className="text-[10px] text-muted-foreground mt-1 block">
@@ -150,7 +150,7 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
               <input
                 value={yelpUrl}
                 onChange={(e) => setYelpUrl(e.target.value)}
-                className="w-full border border-border p-2 font-bold bg-muted/30 focus:bg-card focus:outline-none text-xs"
+                className="w-full border border-border p-2 font-semibold bg-muted/30 focus:bg-card focus:outline-none text-[13px]"
                 type="text"
               />
             </div>

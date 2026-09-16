@@ -17,15 +17,15 @@ export const WebsiteTab: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSave} className="space-y-6 text-xs">
+    <form onSubmit={handleSave} className="space-y-6 text-[13px]">
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-[13px] font-semibold text-primary uppercase tracking-wider mb-1">
             <Globe className="w-4 h-4" />
             <span>Public Website &amp; Content</span>
           </div>
-          <h2 className="text-xl font-bold text-foreground">Website &amp; CMS Management</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <h2 className="text-xl font-semibold text-foreground">Website &amp; CMS Management</h2>
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Manage your customer-facing promotional announcements, SEO meta tags, and hero image assets.
           </p>
         </div>
@@ -50,7 +50,7 @@ export const WebsiteTab: React.FC = () => {
       </div>
 
       {saved && (
-        <div className="p-3 bg-success/10 border border-success/20 text-success text-xs font-medium rounded-xl flex items-center gap-2">
+        <div className="p-3 bg-success/10 border border-success/20 text-success text-[13px] font-medium rounded-xl flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-success" />
           <span>Website content and promotional banners updated!</span>
         </div>
@@ -61,7 +61,7 @@ export const WebsiteTab: React.FC = () => {
         <div className="flex items-center justify-between pb-3 border-b border-border">
           <div className="flex items-center gap-2">
             <Megaphone className="w-4 h-4 text-primary" />
-            <h3 className="font-bold text-foreground text-sm">Top Promotional Announcement Banner</h3>
+            <h3 className="font-semibold text-foreground text-sm">Top Promotional Announcement Banner</h3>
           </div>
           <label className="relative inline-flex items-center cursor-pointer">
             <input
@@ -96,7 +96,7 @@ export const WebsiteTab: React.FC = () => {
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs space-y-4">
         <div className="flex items-center gap-2 pb-3 border-b border-border">
           <Search className="w-4 h-4 text-muted-foreground" />
-          <h3 className="font-bold text-foreground text-sm">Search Engine Optimization (SEO)</h3>
+          <h3 className="font-semibold text-foreground text-sm">Search Engine Optimization (SEO)</h3>
         </div>
 
         <div className="space-y-3">

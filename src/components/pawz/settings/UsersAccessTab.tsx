@@ -229,12 +229,12 @@ export const UsersAccessTab: React.FC = () => {
       {/* Tab Header */}
       <div className="bg-card p-5 rounded-2xl border border-border/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-[13px] font-semibold text-primary uppercase tracking-wider mb-1">
             <ShieldCheck className="w-4 h-4" />
             <span>Supabase Auth &amp; Enterprise RBAC Control</span>
           </div>
-          <h2 className="text-xl font-bold text-foreground">Unified Portal Access &amp; Permissions</h2>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <h2 className="text-xl font-semibold text-foreground">Unified Portal Access &amp; Permissions</h2>
+          <p className="text-[13px] text-muted-foreground mt-0.5">
             Provision and control access across Admin Portal, Employee/Staff Portal, and Customer Portal directly in Supabase.
           </p>
         </div>
@@ -243,7 +243,7 @@ export const UsersAccessTab: React.FC = () => {
           <button
             onClick={fetchUsers}
             disabled={loading}
-            className="px-3 py-2 bg-muted/40 hover:bg-muted text-foreground text-xs font-semibold rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer"
+            className="px-3 py-2 bg-muted/40 hover:bg-muted text-foreground text-[13px] font-semibold rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer"
             title="Refresh live from Supabase"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
@@ -252,7 +252,7 @@ export const UsersAccessTab: React.FC = () => {
 
           <button
             onClick={() => openCreateModal(activePortalScope === 'matrix' ? 'admin' : activePortalScope)}
-            className="px-4 py-2 bg-primary hover:bg-primary/90 text-white text-xs font-semibold rounded-xl flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
+            className="px-4 py-2 bg-primary hover:bg-primary/90 text-white text-[13px] font-semibold rounded-xl flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
           >
             <UserPlus className="w-4 h-4" />
             <span>+ Create User in Supabase</span>
@@ -262,7 +262,7 @@ export const UsersAccessTab: React.FC = () => {
 
       {notification && (
         <div
-          className={`p-3.5 border text-xs font-medium rounded-xl flex items-center gap-2.5 transition-all ${
+          className={`p-3.5 border text-[13px] font-medium rounded-xl flex items-center gap-2.5 transition-all ${
             notification.type === 'success'
               ? 'bg-success/10 border-success/20 text-success'
               : 'bg-destructive/5 border-destructive/20 text-destructive'
@@ -278,12 +278,12 @@ export const UsersAccessTab: React.FC = () => {
       )}
 
       {/* Portal Scope Switcher */}
-      <div className="flex flex-wrap border-b border-border gap-6 text-xs font-medium">
+      <div className="flex flex-wrap border-b border-border gap-6 text-[13px] font-medium">
         <button
           onClick={() => setActivePortalScope('admin')}
           className={`pb-3 flex items-center gap-2 transition-colors  cursor-pointer ${
             activePortalScope === 'admin'
-              ? 'border-primary text-primary font-bold'
+              ? 'border-primary text-primary font-semibold'
               : 'border-transparent text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -295,7 +295,7 @@ export const UsersAccessTab: React.FC = () => {
           onClick={() => setActivePortalScope('employee')}
           className={`pb-3 flex items-center gap-2 transition-colors  cursor-pointer ${
             activePortalScope === 'employee'
-              ? 'border-primary text-primary font-bold'
+              ? 'border-primary text-primary font-semibold'
               : 'border-transparent text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -307,7 +307,7 @@ export const UsersAccessTab: React.FC = () => {
           onClick={() => setActivePortalScope('customer')}
           className={`pb-3 flex items-center gap-2 transition-colors  cursor-pointer ${
             activePortalScope === 'customer'
-              ? 'border-primary text-primary font-bold'
+              ? 'border-primary text-primary font-semibold'
               : 'border-transparent text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -319,7 +319,7 @@ export const UsersAccessTab: React.FC = () => {
           onClick={() => setActivePortalScope('matrix')}
           className={`pb-3 flex items-center gap-2 transition-colors  cursor-pointer ${
             activePortalScope === 'matrix'
-              ? 'border-primary text-primary font-bold'
+              ? 'border-primary text-primary font-semibold'
               : 'border-transparent text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -340,21 +340,21 @@ export const UsersAccessTab: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={`Search ${activePortalScope} users by name, email, or role...`}
-                className="w-full pl-9 pr-4 py-1.5 bg-muted/40 border border-border rounded-xl text-xs placeholder:text-muted-foreground/70 focus:bg-card focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full pl-9 pr-4 py-1.5 bg-muted/40 border border-border rounded-xl text-[13px] placeholder:text-muted-foreground/70 focus:bg-card focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <div className="flex items-center gap-2 text-[13px] text-muted-foreground">
               <span className="font-medium">Live Supabase Sync:</span>
-              <span className="font-bold text-foreground">{filteredUsers.length} Users</span>
+              <span className="font-semibold text-foreground">{filteredUsers.length} Users</span>
             </div>
           </div>
 
           {/* Table */}
           <div className="overflow-x-auto custom-scrollbar">
-            <table className="w-full text-left border-collapse text-xs">
+            <table className="w-full text-left border-collapse text-[13px]">
               <thead>
-                <tr className="bg-muted/40/75 border-b border-border text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                <tr className="bg-muted/40/75 border-b border-border text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
                   <th className="py-3 px-4">User &amp; Auth ID</th>
                   <th className="py-3 px-4">Assigned Role</th>
                   <th className="py-3 px-4">Portal Scope</th>
@@ -385,15 +385,15 @@ export const UsersAccessTab: React.FC = () => {
                                 : u.scope === 'employee'
                                 ? 'bg-success text-white'
                                 : 'bg-primary text-white'
-                            } font-bold text-xs flex items-center justify-center shrink-0`}
+                            } font-semibold text-[13px] flex items-center justify-center shrink-0`}
                           >
                             {u.avatarInitials}
                           </div>
                           <div>
                             <div className="flex items-center gap-1.5">
-                              <p className="font-bold text-foreground leading-tight">{u.name}</p>
+                              <p className="font-semibold text-foreground leading-tight">{u.name}</p>
                               {(u.isSuperAdmin || u.role === 'owner') && (
-                                <span className="text-primary text-[9px] font-bold px-1.5 py-0.2 rounded">
+                                <span className="text-primary text-[9px] font-semibold px-1.5 py-0.2 rounded">
                                   OWNER
                                 </span>
                               )}
@@ -406,7 +406,7 @@ export const UsersAccessTab: React.FC = () => {
 
                       <td className="py-3.5 px-4">
                         <span
-                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider ${
                             u.role === 'owner'
                               ? 'bg-primary/5 text-primary border border-primary/20'
                               : u.role === 'admin'
@@ -444,7 +444,7 @@ export const UsersAccessTab: React.FC = () => {
 
                       <td className="py-3.5 px-4">
                         <span
-                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold ${
                             u.status === 'Active'
                               ? 'bg-success/10 text-success border border-success/20'
                               : u.status === 'Invited'
@@ -500,10 +500,10 @@ export const UsersAccessTab: React.FC = () => {
         <div className="bg-card p-6 rounded-2xl border border-border/90 shadow-2xs space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-border">
             <div>
-              <h3 className="text-sm font-bold text-foreground">Supabase Role Definitions &amp; Portal Privileges</h3>
-              <p className="text-xs text-muted-foreground">Global role definitions stored in public.role_definitions.</p>
+              <h3 className="text-sm font-semibold text-foreground">Supabase Role Definitions &amp; Portal Privileges</h3>
+              <p className="text-[13px] text-muted-foreground">Global role definitions stored in public.role_definitions.</p>
             </div>
-            <span className="px-2.5 py-1 bg-primary/5 text-primary text-xs font-bold rounded-lg border border-primary/20">
+            <span className="px-2.5 py-1 bg-primary/5 text-primary text-[13px] font-semibold rounded-lg border border-primary/20">
               5 System Roles Active
             </span>
           </div>
@@ -512,14 +512,14 @@ export const UsersAccessTab: React.FC = () => {
             {roles.map((r) => (
               <div key={r.id} className="p-4 rounded-xl bg-muted/40 border border-border space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-foreground text-xs">{r.label}</span>
-                  <span className="px-2 py-0.5 text-primary tabular-nums text-[10px] rounded uppercase font-bold">
+                  <span className="font-semibold text-foreground text-[13px]">{r.label}</span>
+                  <span className="px-2 py-0.5 text-primary tabular-nums text-[10px] rounded uppercase font-semibold">
                     {r.role_key}
                   </span>
                 </div>
                 <p className="text-muted-foreground text-[11px]">{r.description}</p>
                 <div className="pt-2 border-t border-border/60">
-                  <p className="text-[10px] font-bold text-foreground uppercase tracking-wider mb-1.5">
+                  <p className="text-[10px] font-semibold text-foreground uppercase tracking-wider mb-1.5">
                     Granted Permissions ({r.permissions?.length || 0}):
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -542,11 +542,11 @@ export const UsersAccessTab: React.FC = () => {
           <div className="bg-card rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-in fade-in zoom-in duration-150">
             <div className="flex items-center justify-between pb-3 border-b border-border">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-xl bg-primary/5 text-primary flex items-center justify-center font-bold">
+                <div className="w-8 h-8 rounded-xl bg-primary/5 text-primary flex items-center justify-center font-semibold">
                   <UserPlus className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-foreground text-sm">Provision User to Supabase</h3>
+                  <h3 className="font-semibold text-foreground text-sm">Provision User to Supabase</h3>
                   <p className="text-[11px] text-muted-foreground">Directly syncs to Supabase Auth, CRM, and Portal tables</p>
                 </div>
               </div>
@@ -558,7 +558,7 @@ export const UsersAccessTab: React.FC = () => {
               </button>
             </div>
 
-            <form onSubmit={handleCreateUser} className="space-y-3.5 text-xs">
+            <form onSubmit={handleCreateUser} className="space-y-3.5 text-[13px]">
               <div>
                 <label className="block text-foreground font-semibold mb-1">Target Portal Scope</label>
                 <div className="grid grid-cols-3 gap-2">
@@ -682,7 +682,7 @@ export const UsersAccessTab: React.FC = () => {
 
               <div className="pt-2 border-t border-border flex items-center justify-between">
                 <div>
-                  <p className="font-semibold text-foreground text-xs">Enforce Two-Factor Authentication</p>
+                  <p className="font-semibold text-foreground text-[13px]">Enforce Two-Factor Authentication</p>
                   <p className="text-muted-foreground/70 text-[10px]">Require 2FA verification for portal access</p>
                 </div>
                 <input

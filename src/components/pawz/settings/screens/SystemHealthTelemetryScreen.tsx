@@ -73,21 +73,21 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
   };
 
   return (
-    <div className="w-full bg-card text-foreground font-sans antialiased text-xs">
+    <div className="w-full bg-card text-foreground font-sans antialiased text-[13px]">
       {/* Toast */}
       {toastMsg && (
-        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-xs shadow-2xl">
+        <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground px-4 py-3 border border-white z-50 flex items-center gap-3 tabular-nums text-[13px] shadow-2xl">
           <span className="w-2 h-2 bg-card animate-pulse"></span>
-          <span className="uppercase font-bold tracking-wider">{toastMsg}</span>
+          <span className="uppercase font-semibold tracking-wider">{toastMsg}</span>
           <button onClick={() => setToastMsg(null)} className="ml-2 text-white hover:opacity-70 cursor-pointer">✕</button>
         </div>
       )}
 
       {/* SECURITY CLEARANCE BAR */}
-      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-widest uppercase">
+      <div className="w-full bg-primary text-primary-foreground px-4 py-2 flex flex-wrap items-center justify-between border-b border-border text-[10px] tabular-nums tracking-wider uppercase">
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 bg-destructive animate-pulse"></span>
-          <span className="text-destructive font-bold tracking-tight">RESTRICTED SECURITY PROFILE</span>
+          <span className="text-destructive font-semibold tracking-tight">RESTRICTED SECURITY PROFILE</span>
           <span className="text-muted-foreground">{"//"}</span>
           <span className="text-white">AUTH_SCOPE: SUPER_ADMIN_LEVEL_0</span>
           <span className="text-muted-foreground">{"//"}</span>
@@ -104,13 +104,13 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2 tabular-nums text-[10px] text-muted-foreground">
             <span>ADMIN SETTINGS</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="text-foreground font-bold">SYSTEM TELEMETRY &amp; ENVIRONMENT</span>
-            <span className="text-foreground font-bold">&gt;&gt;</span>
-            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-bold">L0 ROOT</span>
+            <span className="text-foreground font-semibold">&gt;&gt;</span>
+            <span className="text-foreground font-semibold">SYSTEM TELEMETRY &amp; ENVIRONMENT</span>
+            <span className="text-foreground font-semibold">&gt;&gt;</span>
+            <span className="bg-primary text-primary-foreground px-1 text-[9px] font-semibold">L0 ROOT</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <h1 className="font-bold text-lg md:text-xl tracking-tight uppercase text-foreground">SYSTEM HEALTH, REPLICATION &amp; TELEMETRY</h1>
+            <h1 className="font-semibold text-lg md:text-xl tracking-tight uppercase text-foreground">SYSTEM HEALTH, REPLICATION &amp; TELEMETRY</h1>
             <span className="tabular-nums text-[11px] text-muted-foreground">{"// CLUSTER STATUS: HEALTHY"}</span>
           </div>
         </div>
@@ -152,7 +152,7 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
           <div className="px-4 py-2 bg-primary text-primary-foreground border-r border-border flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-card inline-block"></span>
             <span>05 SYSTEM HEALTH &amp; TELEMETRY</span>
-            <span className="text-[9px] px-1 bg-card text-foreground uppercase font-bold ml-1">[ACTIVE]</span>
+            <span className="text-[9px] px-1 bg-card text-foreground uppercase font-semibold ml-1">[ACTIVE]</span>
           </div>
           <button onClick={() => onNavigateScreen?.('services-pricing')} className="px-4 py-2 border-r border-border/20 hover:bg-card text-muted-foreground cursor-pointer">
             06 SERVICES &amp; PRICING MATRIX
@@ -167,15 +167,15 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* CORE INFRASTRUCTURE TELEMETRY METRIC STRIP */}
-      <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 border-b border-border bg-card tabular-nums text-xs">
+      <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 border-b border-border bg-card tabular-nums text-[13px]">
         {/* CPU */}
         <div className="p-3 border-r border-b lg: border-border flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-bold">
+          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-semibold">
             <span>CPU UTILIZATION</span>
             <Cpu className="w-3.5 h-3.5 text-muted-foreground/70" />
           </div>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">12.4%</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">12.4%</div>
           </div>
           <div className="w-full bg-muted/40 h-1.5 border border-border overflow-hidden">
             <div className="bg-black h-full" style={{ width: '12.4%' }}></div>
@@ -184,12 +184,12 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
 
         {/* MEMORY */}
         <div className="p-3 border-r border-b lg: border-border flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-bold">
+          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-semibold">
             <span>MEMORY RESIDENT</span>
             <HardDrive className="w-3.5 h-3.5 text-muted-foreground/70" />
           </div>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">412 MB / 2048 MB</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">412 MB / 2048 MB</div>
           </div>
           <div className="w-full bg-muted/40 h-1.5 border border-border overflow-hidden">
             <div className="bg-black h-full" style={{ width: '20.1%' }}></div>
@@ -198,27 +198,27 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
 
         {/* POOL CONNECTIONS */}
         <div className="p-3 border-r border-b lg: border-border flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-bold">
+          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-semibold">
             <span>DB CONNECTION POOL</span>
             <Database className="w-3.5 h-3.5 text-muted-foreground/70" />
           </div>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">04 / 20 ACTIVE</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">04 / 20 ACTIVE</div>
           </div>
           <div className="flex items-center gap-1 tabular-nums text-[10px]">
-            <span className="bg-success/10 border border-success text-success px-1 font-bold">OPTIMAL</span>
+            <span className="bg-success/10 border border-success text-success px-1 font-semibold">OPTIMAL</span>
             <span className="text-muted-foreground">queue duration 0.2ms</span>
           </div>
         </div>
 
         {/* EDGE LATENCY */}
         <div className="p-3 border-r border-b lg: border-border flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-bold">
+          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-semibold">
             <span>EDGE RESOLUTION TIME</span>
             <Network className="w-3.5 h-3.5 text-muted-foreground/70" />
           </div>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">11ms</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">11ms</div>
           </div>
           <div className="flex items-center gap-1 tabular-nums text-[10px] text-muted-foreground">
             <span>CDN: CLOUDFLARE ARGO</span>
@@ -227,15 +227,15 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
 
         {/* SYNC DELAY */}
         <div className="p-3 flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-bold">
+          <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase font-semibold">
             <span>REPLICATION STATE</span>
-            <span className="text-foreground font-bold">SYNC</span>
+            <span className="text-foreground font-semibold">SYNC</span>
           </div>
           <div className="my-2">
-            <div className="text-lg md:text-xl font-bold tracking-tight text-foreground">0.04ms DELAY</div>
+            <div className="text-lg md:text-xl font-semibold tracking-tight text-foreground">0.04ms DELAY</div>
           </div>
           <div className="flex items-center gap-1 tabular-nums text-[10px] text-muted-foreground">
-            <span className="text-foreground font-bold">CDC ACTIVE</span>
+            <span className="text-foreground font-semibold">CDC ACTIVE</span>
             <span>WAL_REPLICA</span>
           </div>
         </div>
@@ -248,41 +248,41 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
           {/* SEC:A REPLICATION ENGINE STATUS (7 COLS) */}
           <div className="lg:col-span-7 bg-card border-b lg: lg:border-r border-border flex flex-col">
             <div className="px-4 py-2 border-b border-border bg-muted/40 flex items-center justify-between">
-              <span className="font-bold tabular-nums text-xs uppercase text-foreground">SEC:A // REALTIME REPLICATION ENGINE (SUPABASE CDC)</span>
-              <span className="bg-primary text-primary-foreground px-1.5 py-0.5 text-[9px] font-bold">POSTGRES WAL STREAM</span>
+              <span className="font-semibold tabular-nums text-[13px] uppercase text-foreground">SEC:A // REALTIME REPLICATION ENGINE (SUPABASE CDC)</span>
+              <span className="bg-primary text-primary-foreground px-1.5 py-0.5 text-[9px] font-semibold">POSTGRES WAL STREAM</span>
             </div>
             
             <div className="p-4 flex-1 space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="border border-border p-3 bg-muted/30 space-y-1.5">
-                  <div className="text-[10px] text-muted-foreground uppercase font-bold">LOGICAL REPLICATION CHANNELS</div>
-                  <div className="text-xs tabular-nums font-bold text-foreground flex items-center gap-2">
+                  <div className="text-[10px] text-muted-foreground uppercase font-semibold">LOGICAL REPLICATION CHANNELS</div>
+                  <div className="text-[13px] tabular-nums font-semibold text-foreground flex items-center gap-2">
                     <span className="w-2.5 h-2.5 bg-black rounded-md"></span>
                     <span>appointments_pub // 03 CLIENTS</span>
                   </div>
-                  <div className="text-xs tabular-nums font-bold text-foreground flex items-center gap-2">
+                  <div className="text-[13px] tabular-nums font-semibold text-foreground flex items-center gap-2">
                     <span className="w-2.5 h-2.5 bg-black rounded-md"></span>
                     <span>pet_records_pub // 12 CLIENTS</span>
                   </div>
-                  <div className="text-xs tabular-nums font-bold text-foreground flex items-center gap-2">
+                  <div className="text-[13px] tabular-nums font-semibold text-foreground flex items-center gap-2">
                     <span className="w-2.5 h-2.5 bg-black rounded-md"></span>
                     <span>staff_auth_pub // L0 VERIFIED</span>
                   </div>
                 </div>
 
                 <div className="border border-border p-3 bg-muted/30 space-y-1.5">
-                  <div className="text-[10px] text-muted-foreground uppercase font-bold">CDC CLIENT CONNECTION HEALTH</div>
-                  <div className="flex justify-between text-xs tabular-nums">
+                  <div className="text-[10px] text-muted-foreground uppercase font-semibold">CDC CLIENT CONNECTION HEALTH</div>
+                  <div className="flex justify-between text-[13px] tabular-nums">
                     <span>Frisco iPad Front Desk:</span>
-                    <span className="font-bold text-foreground">ACTIVE (11ms)</span>
+                    <span className="font-semibold text-foreground">ACTIVE (11ms)</span>
                   </div>
-                  <div className="flex justify-between text-xs tabular-nums">
+                  <div className="flex justify-between text-[13px] tabular-nums">
                     <span>Plano Station 01-04 iPad:</span>
-                    <span className="font-bold text-foreground">ACTIVE (14ms)</span>
+                    <span className="font-semibold text-foreground">ACTIVE (14ms)</span>
                   </div>
-                  <div className="flex justify-between text-xs tabular-nums">
+                  <div className="flex justify-between text-[13px] tabular-nums">
                     <span>Mobile App API Gateway:</span>
-                    <span className="font-bold text-foreground">ACTIVE (18ms)</span>
+                    <span className="font-semibold text-foreground">ACTIVE (18ms)</span>
                   </div>
                 </div>
               </div>
@@ -291,12 +291,12 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
               <div className="border border-border bg-primary text-primary-foreground tabular-nums p-3 text-[11px] leading-relaxed space-y-1 overflow-y-auto max-h-[180px]">
                 <div className="text-muted-foreground text-[10px] uppercase border-b border-border pb-1 flex items-center justify-between">
                   <span>LIVE POSTGRESQL AUDIT STREAM // SITE_SETTINGS</span>
-                  <span className="animate-pulse text-success font-bold">[CONNECTED]</span>
+                  <span className="animate-pulse text-success font-semibold">[CONNECTED]</span>
                 </div>
                 {dbLogs.map((log) => (
                   <div key={log.id} className="text-success truncate flex gap-2">
                     <span className="text-muted-foreground">[{new Date(log.timestamp).toLocaleTimeString()}]</span>
-                    <span className="text-warning font-bold">[{log.action}]</span>
+                    <span className="text-warning font-semibold">[{log.action}]</span>
                     <span>{log.details}</span>
                   </div>
                 ))}
@@ -313,49 +313,49 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
           {/* SEC:B DISPATCH REPLICATION & RE-SYNC MATRIX (5 COLS) */}
           <div className="lg:col-span-5 bg-card flex flex-col">
             <div className="px-4 py-2 border-b border-border bg-muted/40 flex items-center justify-between">
-              <span className="font-bold tabular-nums text-xs uppercase text-foreground">SEC:B // MANAGE CLUSTER CONFIG &amp; ENV</span>
+              <span className="font-semibold tabular-nums text-[13px] uppercase text-foreground">SEC:B // MANAGE CLUSTER CONFIG &amp; ENV</span>
               <span className="tabular-nums text-[9px] text-muted-foreground">ENV: PRODUCTION_L0</span>
             </div>
             
             <div className="p-4 flex-1 space-y-4">
               <div className="border border-border p-3 bg-card space-y-2">
-                <div className="flex items-center justify-between text-[10px] font-bold border-b border-border pb-1">
+                <div className="flex items-center justify-between text-[10px] font-semibold border-b border-border pb-1">
                   <span className="uppercase">DATABASE DIRECTORY</span>
                   <span className="text-muted-foreground">PORT: 5432</span>
                 </div>
-                <div className="space-y-1.5 text-xs tabular-nums text-muted-foreground">
+                <div className="space-y-1.5 text-[13px] tabular-nums text-muted-foreground">
                   <div className="flex justify-between">
                     <span>Database Host:</span>
-                    <span className="font-bold text-foreground">aws-tx-replica.supabase.co</span>
+                    <span className="font-semibold text-foreground">aws-tx-replica.supabase.co</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Active Region:</span>
-                    <span className="font-bold text-foreground">us-east-1 (N. Virginia)</span>
+                    <span className="font-semibold text-foreground">us-east-1 (N. Virginia)</span>
                   </div>
                   <div className="flex justify-between">
                     <span>SSL Mode:</span>
-                    <span className="font-bold text-foreground">verify-full [STRICT]</span>
+                    <span className="font-semibold text-foreground">verify-full [STRICT]</span>
                   </div>
                 </div>
               </div>
 
               <div className="border border-border p-3 bg-card space-y-2">
-                <div className="flex items-center justify-between text-[10px] font-bold border-b border-border pb-1">
+                <div className="flex items-center justify-between text-[10px] font-semibold border-b border-border pb-1">
                   <span className="uppercase text-foreground">SMS TWILIO API TELEMETRY</span>
-                  <span className="text-foreground font-bold">OK [200]</span>
+                  <span className="text-foreground font-semibold">OK [200]</span>
                 </div>
                 <div className="text-[11px] text-muted-foreground">
                   Realtime pipeline triggers instant SMS text messaging notifications to dog owners as groomers drag and drop styling states on the pipeline board.
                 </div>
-                <div className="flex items-center justify-between text-xs tabular-nums">
+                <div className="flex items-center justify-between text-[13px] tabular-nums">
                   <span>Pending Outbound Queue:</span>
-                  <span className="font-bold text-foreground">0 MSGS</span>
+                  <span className="font-semibold text-foreground">0 MSGS</span>
                 </div>
               </div>
 
               {/* ENVIRONMENT VAULT KEYS PREVIEW */}
               <div className="border border-border p-3 bg-card space-y-2">
-                <div className="flex items-center justify-between text-[10px] font-bold border-b border-border pb-1">
+                <div className="flex items-center justify-between text-[10px] font-semibold border-b border-border pb-1">
                   <span className="uppercase text-foreground">ENVIRONMENT SECRET VAULT</span>
                   <span className="text-muted-foreground">SECRET CREDENTIALS</span>
                 </div>
@@ -380,15 +380,15 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
       </div>
 
       {/* SUPER ADMIN SECURITY LOCK FOOTER / HARDWARE ATTESTATION */}
-      <div className="w-full bg-muted/30 border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-xs">
+      <div className="w-full bg-muted/30 border-b border-border p-4 flex flex-col md:flex-row items-center justify-between gap-4 select-none tabular-nums text-[13px]">
         <div className="flex items-center gap-3">
-          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-bold">
+          <div className="w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center border border-border font-semibold">
             <Lock className="w-3.5 h-3.5" />
           </div>
           <div className="flex flex-col">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-foreground uppercase">
+            <div className="flex items-center gap-2 text-[10px] font-semibold text-foreground uppercase">
               <span>SUPER_ADMIN LEVEL 0 // CORE ENCLAVE VAULT KEY</span>
-              <span className="border border-border px-1.5 bg-card text-[9px] font-bold">[YUBIKEY_FIDO2_ACTIVE]</span>
+              <span className="border border-border px-1.5 bg-card text-[9px] font-semibold">[YUBIKEY_FIDO2_ACTIVE]</span>
             </div>
             <span className="text-[11px] text-muted-foreground">
               Changes to database credentials, Stripe webhook triggers, or SMS notification handlers require dual-signature multi-factor hardware ratification.
@@ -397,10 +397,10 @@ export const SystemHealthTelemetryScreen: React.FC<ScreenProps> = ({
         </div>
         <div className="flex items-center gap-3">
           <span className="text-muted-foreground text-[10px] uppercase">AUDIT TRAIL:</span>
-          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-bold tabular-nums">TELE_REF #TX-49210-9921</span>
+          <span className="border border-border bg-card px-2 py-0.5 text-foreground font-semibold tabular-nums">TELE_REF #TX-49210-9921</span>
           <button 
             onClick={() => showToast('SUPER_ADMIN ENCLAVE SESSION TERMINATED')}
-            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-bold hover:bg-muted transition-none cursor-pointer"
+            className="h-6 px-3 bg-primary text-primary-foreground text-[10px] uppercase font-semibold hover:bg-muted transition-none cursor-pointer"
           >
             TERMINATE SESSION
           </button>
