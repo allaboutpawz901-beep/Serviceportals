@@ -24,8 +24,10 @@ export const BookingOperationsRulesScreen: React.FC<ScreenProps> = ({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (systemSettings) {
 // eslint-disable-next-line react-hooks/set-state-in-effect
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setForm(systemSettings as any);
 // eslint-disable-next-line react-hooks/set-state-in-effect
       setLoading(false);

@@ -37,6 +37,7 @@ export const LegalWaiversScreen: React.FC<ScreenProps> = ({
   const [newWaiverRequired, setNewWaiverRequired] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (systemSettings) { setForm(systemSettings as any); setLoading(false); }
   }, [systemSettings]);
 

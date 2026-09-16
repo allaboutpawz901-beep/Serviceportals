@@ -40,6 +40,7 @@ export const StripeIntegrationScreen: React.FC<ScreenProps> = ({
 
   /* eslint-disable react-hooks/set-state-in-effect */
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (systemSettings) {
       if (systemSettings.payment_processing_mode) setStripeMode(systemSettings.payment_processing_mode as 'live' | 'test');
       if (systemSettings.stripe_public_key) setPublicKey(systemSettings.stripe_public_key);

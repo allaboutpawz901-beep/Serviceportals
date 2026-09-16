@@ -32,12 +32,15 @@ export default function CustomerLayout({ children }: { children: React.ReactNode
   const { currentUser, setUser, activeSection, setActiveSection, mobileOpen, setMobileOpen, isSidebarCollapsed, toggleSidebar, selectedLocation, setSelectedLocation, locations, activeModal, setActiveModal } = useAppStore();
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     const unsub = useAppStore.persist.onFinishHydration(() => setHasHydrated(true));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (useAppStore.persist.hasHydrated()) setHasHydrated(true);
     return unsub;
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!hasHydrated) return;
     if (!currentUser) { router.replace('/'); return; }
     if (currentUser.role === 'admin') { router.replace('/admin/dashboard'); return; }

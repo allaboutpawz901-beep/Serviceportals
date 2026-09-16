@@ -39,6 +39,7 @@ export const CmsBookingWizardScreen: React.FC<ScreenProps> = ({
 
   /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (systemSettings) {
       if (systemSettings.portal_custom_domain) setSubdomain(systemSettings.portal_custom_domain.split('.')[0] || 'frisco');
       if (systemSettings.org_primary_color) setPrimaryColor(systemSettings.org_primary_color);

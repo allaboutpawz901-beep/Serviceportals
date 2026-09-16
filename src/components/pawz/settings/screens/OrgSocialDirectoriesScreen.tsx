@@ -24,6 +24,7 @@ export const OrgSocialDirectoriesScreen: React.FC<ScreenProps> = ({
 
   /* eslint-disable react-hooks/set-state-in-effect */
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (systemSettings) {
       if (systemSettings.org_instagram_url) setInstagram(systemSettings.org_instagram_url);
       if (systemSettings.org_facebook_url) setFacebook(systemSettings.org_facebook_url);

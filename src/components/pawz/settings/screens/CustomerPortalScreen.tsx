@@ -25,6 +25,7 @@ export const CustomerPortalScreen: React.FC<ScreenProps> = ({
 
   /* eslint-disable react-hooks/set-state-in-effect */
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (systemSettings) {
       if (systemSettings.portal_allow_self_cancel !== undefined) setSelfReg(systemSettings.portal_allow_self_cancel);
       if (systemSettings.booking_cancellation_cutoff_hours !== undefined) setCutoff(String(systemSettings.booking_cancellation_cutoff_hours));

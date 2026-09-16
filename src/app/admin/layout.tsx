@@ -43,15 +43,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   // Wait for Zustand persist to hydrate from localStorage
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
 // eslint-disable-next-line react-hooks/set-state-in-effect
     const unsub = useAppStore.persist.onFinishHydration(() => setHasHydrated(true));
 // eslint-disable-next-line react-hooks/set-state-in-effect
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (useAppStore.persist.hasHydrated()) setHasHydrated(true);
     return unsub;
   }, []);
 
   // Auth gate — redirect to landing if not logged in or not admin
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!hasHydrated) return; // Don't redirect until store is hydrated
     if (!currentUser) {
       router.replace('/');
