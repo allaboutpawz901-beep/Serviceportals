@@ -32,7 +32,22 @@ export type PawzNavSection =
   | 'documents'
   | 'communications'
   | 'marketing'
-  | 'settings';
+  | 'settings'
+  // ACADEMY / LMS — 13-domain tree
+  | 'lms'
+  | 'lms-identity'
+  | 'lms-curriculum'
+  | 'lms-media'
+  | 'lms-delivery'
+  | 'lms-ai-teaching'
+  | 'lms-progress'
+  | 'lms-assessment'
+  | 'lms-credentials'
+  | 'lms-support'
+  | 'lms-communications'
+  | 'lms-compliance'
+  | 'lms-bridge'
+  | 'lms-ai-instructor';
 
 export type DawgNavSection = PawzNavSection;
 

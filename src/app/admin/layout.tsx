@@ -38,7 +38,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   // Navigate to a section — updates state AND routes to the URL
   const navigate = (section: DawgNavSection) => {
     setActiveSection(section);
-    router.push(`/admin/${section}`);
+    // LMS sub-sections route to /admin/lms/{sub}
+    if (section.startsWith('lms-')) {
+      router.push(`/admin/lms/${section.replace('lms-', '')}`);
+    } else if (section === 'lms') {
+      router.push('/admin/lms');
+    } else {
+      router.push(`/admin/${section}`);
+    }
   };
 
   // Wait for Zustand persist to hydrate from localStorage

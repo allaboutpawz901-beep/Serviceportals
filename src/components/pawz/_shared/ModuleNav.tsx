@@ -5,6 +5,9 @@ import {
   Tag, CalendarClock, Receipt, FileSearch, Package, Truck,
   ArrowDownLeft, Inbox, BookOpen, CreditCard, Coins, RotateCcw,
   Gift, Scale, BarChart3, Terminal,
+  GraduationCap, ShieldCheck, PenLine, Film, Layers, Sparkles,
+  Gauge, ClipboardCheck, Award, HeartHandshake, BellRing, FileCheck,
+  ArrowRightLeft, Bot,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { DawgNavSection } from '@/lib/types';
@@ -40,6 +43,22 @@ const moduleGroups: Record<string, { id: DawgNavSection; label: string; icon: Re
     { id: 'taxes', label: 'Taxes', icon: Scale },
     { id: 'reports', label: 'Reports', icon: BarChart3 },
     { id: 'stripe-connections', label: 'Stripe', icon: Terminal },
+  ],
+  'ACADEMY / LMS': [
+    { id: 'lms', label: 'Home', icon: GraduationCap },
+    { id: 'lms-identity', label: 'Identity', icon: ShieldCheck },
+    { id: 'lms-curriculum', label: 'Curriculum', icon: PenLine },
+    { id: 'lms-media', label: 'Media', icon: Film },
+    { id: 'lms-delivery', label: 'Delivery', icon: Layers },
+    { id: 'lms-ai-teaching', label: 'AI Teaching', icon: Sparkles },
+    { id: 'lms-progress', label: 'Progress', icon: Gauge },
+    { id: 'lms-assessment', label: 'Assessment', icon: ClipboardCheck },
+    { id: 'lms-credentials', label: 'Credentials', icon: Award },
+    { id: 'lms-support', label: 'Support', icon: HeartHandshake },
+    { id: 'lms-communications', label: 'Comms', icon: BellRing },
+    { id: 'lms-compliance', label: 'Compliance', icon: FileCheck },
+    { id: 'lms-bridge', label: 'Bridge', icon: ArrowRightLeft },
+    { id: 'lms-ai-instructor', label: 'AI Instructor', icon: Bot },
   ],
 };
 
